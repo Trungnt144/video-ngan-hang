@@ -24,8 +24,8 @@
 
 ## Lệnh dựng lại
 ```bash
-# 1. Đồng bộ nhịp và thời gian
-python3 -I xuong_html/n301_von_luu_dong_rong/n301_tao_nhip.py
+# 1. Đo chất lượng hình (cổng máy đo ngang)
+node scripts/do_chat_luong_hinh.mjs xuong_html/n301_von_luu_dong_rong --buoc 2
 
 # 2. Tạo phiếu và chạy pha máy
 node scripts/pha_may/pha_may.mjs tao n301 xuong_html/n301_von_luu_dong_rong --san-pham "san_pham/2026.11.03.Von_luu_dong_rong_la_gi"
@@ -35,6 +35,13 @@ node scripts/pha_may/pha_may.mjs chay --chi n301 --khong-bao
 .venv_vieneu/bin/python scripts/quet_khung_hong.py xuong_html/n301_von_luu_dong_rong/out/pha_may/n301_du.mp4
 cp xuong_html/n301_von_luu_dong_rong/out/pha_may/n301_du.mp4 san_pham/2026.11.03.Von_luu_dong_rong_la_gi/2026.11.03.von_luu_dong_rong_v1_nhap.mp4
 ```
+
+## Kết quả kiểm định chất lượng hình ảnh (Đợt dựng lại 03/11/2026)
+- **Cổng máy đo hình (`do_chat_luong_hinh.mjs`):** 8/8 chương đạt tiêu chuẩn (chuyển động 1.00; từ trung vị 6–11; chữ nhỏ <26px chỉ chiếm 2–7%).
+- **Cổng tự kiểm (`quet_kiem.mjs`):** 0 lỗi kiểm tra, 0 lỗi JavaScript trang (pageerror).
+- **Cổng soát độc lập (`mau_soat_doc_lap.md`):** Đạt kết luận "ĐẠT để chạy pha máy" từ phiên độc lập (0 chương nặng, 0 chương vừa).
+- **Khung hình hỏng (`quet_khung_hong.py`):** 0 khung nghi hỏng trên 9.241 khung hình.
+- **Độ to âm thanh:** -14.2 LUFS, chuẩn theo tiêu chuẩn YouTube.
 
 ## Để Trung xét khi duyệt
 1. Phát âm chữ viết tắt "NWC" ("en đắp liu xi") ở câu 1 chương 1 và xuyên suốt video nghe có tự nhiên và rõ ràng không.

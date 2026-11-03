@@ -1,6 +1,7 @@
 {
   "_ghi_chu": "Từ điển cách đọc chữ viết tắt và chữ tiếng Anh cho lời đọc VieNeu (trường 'doc' trong *.chuong.json) của kênh Chuyện nghề Ngân hàng. Trung chốt 30/10/2026 qua bảng chọn. 'doc' là cách viết phải có trong lời đọc; 'sai' là các cách viết bị cấm (đã gặp hoặc dễ gặp). Kiểm: python3 -I scripts/kiem_loi_doc.py <file .chuong.json>.",
   "muc": [
+    {"chu": "EBITDA", "doc": "i-bít-đa", "sai": [], "ghi_chu": "N302, 03/11/2026: Cambridge pronunciation bị Cloudflare/403; đối chiếu cách đọc e-bit-dah từ Chase (https://www.chase.com/business/knowledge-center/start/what-is-ebitda). Chưa xác nhận IPA; nghe thuật ngữ trong cửa duyệt."},
     {"chu": "CIC", "doc": "xi-ai-xi", "sai": ["xê i xê", "xê-i-xê"]},
     {"chu": "NIM", "doc": "nim", "sai": []},
     {"chu": "CASA", "doc": "ca-sa", "sai": ["ca sa"]},

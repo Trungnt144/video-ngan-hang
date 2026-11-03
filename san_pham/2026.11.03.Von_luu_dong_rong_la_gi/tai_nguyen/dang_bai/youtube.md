@@ -35,13 +35,13 @@ NWC - Vốn lưu động ròng là gì? Bí mật dòng tiền của doanh nghi�
 Vốn lưu động ròng, viết tắt NWC, là thước đo cốt lõi phản ánh an toàn tài chính và sức khỏe dòng tiền của doanh nghiệp. Video giải thích hai cách tính vốn lưu động ròng từ bảng cân đối kế toán, vạch trần nghịch lý có lãi nhưng cạn tiền do lấy ngắn nuôi dài, và tiêu chí ngân hàng thẩm định khi duyệt hạn mức vay.
 
 00:00 Nghịch lý có lãi nhưng cạn tiền
-00:31 Bảng cân đối kế toán 100 đồng
-01:13 Hai cách tính vốn lưu động ròng
-01:52 Tấm đệm thanh khoản bảo vệ doanh nghiệp
-02:29 Cạm bẫy lấy ngắn nuôi dài
-03:16 Phân biệt vốn lưu động ròng và nhu cầu vốn
-03:54 Ngân hàng soi vốn lưu động ròng thế nào
-04:33 Ba nguyên tắc vàng quản trị vốn lưu động
+00:31 Cắt đôi bảng cân đối kế toán
+01:13 Vốn lưu động ròng là gì và hai cách tính
+01:52 Đệm an toàn thanh khoản
+02:29 Căn bệnh nguy hiểm: Lấy ngắn nuôi dài
+03:15 Phân biệt vốn lưu động ròng và nhu cầu vốn lưu động
+03:47 Ngân hàng thẩm định vốn lưu động thế nào?
+04:32 Bài học quản trị dòng tiền và lời khuyên
 
 #vonluodongrong #nwc #taichinhdoanhnghiep #nganhang #chuyennghenganhang
 
