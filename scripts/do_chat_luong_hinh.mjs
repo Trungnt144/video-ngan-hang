@@ -1,6 +1,9 @@
 // Đo chất lượng hình của một video HTML (LM-03) bằng máy, theo từng chương: chuyển động, mật độ chữ, cỡ chữ.
 // Dùng:  node scripts/do_chat_luong_hinh.mjs xuong_html/<mã>_<tên> [--buoc 1] [--json <file>]
 // Trang phải có window.seek(t), thoi_gian.json (chương: id, t, den) và window.__san_sang như khuôn n199.
+// Máy đặt window.__do_hinh = true trước khi nạp trang; trang phải đặt window.__ho_tro_do_hinh = true và khi có cờ thì tắt lắc khung hình,
+// nhãn nhấp nhô, nền trôi, chấm chương phập phồng (khuôn n199 sau 03/11/2026). Thiếu thì thoát 2: phần lắc đó một mình đã đủ vượt ngưỡng
+// chuyển động (đo N301 giây 170–190, hình không đổi nội dung: chênh lệch khung 3,0–4,8 so với ngưỡng 0,35), nên đo mà không tắt là vô nghĩa.
 // Không đo dải phụ đề (y > 900) và màn hình kết. Ngưỡng NGUONG đặt theo số đo thật của video mẫu n199 (xem 90_bai_hoc.md).
 // Thoát 0 nếu mọi chương đạt, 1 nếu có chương không đạt (để dùng làm cổng trước pha máy).
 import { chromium } from '../xuong_html/cong_cu/node_modules/playwright-core/index.mjs';
@@ -25,8 +28,13 @@ const browser = await chromium.launch({ headless: true, args: ['--hide-scrollbar
 const page = await (await browser.newContext({ viewport: { width: 1920, height: 1080 } })).newPage();
 const tien = await (await browser.newContext()).newPage();   // trang trống để giải mã ảnh
 page.on('pageerror', (e) => console.log('pageerror:', e.message));
+await page.addInitScript(() => { window.__do_hinh = true; });
 await page.goto(pathToFileURL(path.join(thuMuc, 'trang.html')).href + '?t=0', { waitUntil: 'load' });
 for (let k = 0; k < 300; k++) { if (await page.evaluate(() => window.__san_sang === true)) break; await page.waitForTimeout(100); }
+if (!(await page.evaluate(() => window.__ho_tro_do_hinh === true))) {
+  console.error('Trang chưa hỗ trợ cờ đo hình (window.__ho_tro_do_hinh). Thêm DO_HINH vào canh.js như xuong_html/n199_hoat_dong_huy_dong_von/canh.js (tìm "DO_HINH") rồi đo lại.');
+  await browser.close(); process.exit(2);
+}
 
 async function xamNho(buf) {   // ảnh JPEG -> mảng xám 192x90 (dải hình, bỏ phụ đề)
   const b64 = buf.toString('base64');

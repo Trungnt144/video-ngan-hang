@@ -68,7 +68,7 @@ function veItem(it, S, t) {
   const an = op <= 0.002;
   it.el.style.visibility = an ? 'hidden' : 'visible';
   if (an) return;
-  const dy = it.dy * (1 - eo((t - it.a) / 0.45)) + (it.nobob ? 0 : 3 * Math.sin(6.2832 * t / 3.6 + it.ph));
+  const dy = it.dy * (1 - eo((t - it.a) / 0.45)) + (it.nobob || DO_HINH ? 0 : 3 * Math.sin(6.2832 * t / 3.6 + it.ph));
   if (it.svg) {
     it.el.setAttribute('opacity', op.toFixed(3));
     it.el.setAttribute('transform', `${it.base} translate(0,${dy.toFixed(1)})`.trim());
@@ -231,7 +231,7 @@ function veLop(t, tr) {
   LOP.cham.forEach((ch, i) => {
     const nay = i + 1 === c, qua = i + 1 < c;
     ch.setAttribute('fill', nay ? M.nhan : qua ? M.phu : M.the);
-    ch.setAttribute('r', nay ? (9 + 1.5 * Math.sin(t * 3)).toFixed(2) : 7);
+    ch.setAttribute('r', nay && !DO_HINH ? (9 + 1.5 * Math.sin(t * 3)).toFixed(2) : 7);
   });
 }
 // vùng đồ thị nhỏ trong dải dưới
@@ -932,11 +932,15 @@ function taoLogoKet() {
   quetBang = hm('div', { style: 'position:absolute;top:-100px;left:-400px;width:360px;height:1300px;transform:rotate(18deg);background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,0.18),rgba(255,255,255,0));' }, quet);
 }
 
+// Máy đo hình (scripts/do_chat_luong_hinh.mjs) đặt window.__do_hinh = true trước khi nạp trang: tắt lắc khung hình, nhãn nhấp nhô,
+// nền trôi và chấm chương phập phồng, để chỉ đo chuyển động của chính hình. Xuất video không đặt cờ này nên không đổi gì.
+const DO_HINH = window.__do_hinh === true;
+window.__ho_tro_do_hinh = true;
 // ---------- seek ----------
 let scaleNow = 1;
 function seek(t) {
   t = Math.max(0, Math.min(DUR, t));
-  const tr = `translate(${(5 * Math.sin(2 * Math.PI * t / 13) + 2 * Math.sin(2 * Math.PI * t / 4.7)).toFixed(2)}px,${(3 * Math.sin(2 * Math.PI * t / 17) + 2 * Math.sin(2 * Math.PI * t / 3.9 + 1.1)).toFixed(2)}px) scale(${(1 + 0.005 * (1 - Math.cos(2 * Math.PI * t / 11))).toFixed(5)})`;
+  const tr = DO_HINH ? '' : `translate(${(5 * Math.sin(2 * Math.PI * t / 13) + 2 * Math.sin(2 * Math.PI * t / 4.7)).toFixed(2)}px,${(3 * Math.sin(2 * Math.PI * t / 17) + 2 * Math.sin(2 * Math.PI * t / 3.9 + 1.1)).toFixed(2)}px) scale(${(1 + 0.005 * (1 - Math.cos(2 * Math.PI * t / 11))).toFixed(5)})`;
   veLop(t, tr);
   for (let c = 1; c <= CH.length; c++) {
     const S = N.canh[c];
@@ -958,7 +962,7 @@ function seek(t) {
     }
   }
   const vet = document.getElementById('vet');
-  if (vet) vet.style.transform = `translate(${(60 * Math.sin(2 * Math.PI * t / 9)).toFixed(1)}px,${(40 * Math.sin(2 * Math.PI * t / 7 + 0.8)).toFixed(1)}px)`;
+  if (vet) vet.style.transform = DO_HINH ? '' : `translate(${(60 * Math.sin(2 * Math.PI * t / 9)).toFixed(1)}px,${(40 * Math.sin(2 * Math.PI * t / 7 + 0.8)).toFixed(1)}px)`;
   phuDe.seek(t); logo.seek(t); ket.seek(t);
   phuDe.el.style.visibility = t >= KT - 0.05 ? 'hidden' : 'visible';
   quet.style.display = t >= KT ? 'block' : 'none';

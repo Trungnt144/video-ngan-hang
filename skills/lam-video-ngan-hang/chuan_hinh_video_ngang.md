@@ -71,4 +71,8 @@ Tra theo cơ chế trong câu cơ chế, không tra theo danh từ có trong l�
 node scripts/do_chat_luong_hinh.mjs xuong_html/<mã>_<tên> --buoc 2
 ```
 
-Phải ra "Tổng: N/N chương đạt" (thoát 0) trước khi ghi phiếu pha máy. Chương không đạt thì sửa chương đó, không đổi ngưỡng. Máy đo chỉ bắt được chuyển động, chữ dày, chữ nhỏ. Khung trang kế thừa từ n199 có lắc khung hình và nhãn nhấp nhô; riêng phần đó đã đủ để máy chấm chuyển động 1,00 cho một cảnh không đổi nội dung (đo N301 giây 170–190: chênh lệch 3,0–4,8, ngưỡng 0,35). Vì vậy máy đo đạt không chứng tỏ hình có chuyển động theo số liệu hay có đúng khái niệm; hai việc đó do phép thử tắt tiếng, soát độc lập và Trung xem.
+Phải ra "Tổng: N/N chương đạt" (thoát 0) trước khi ghi phiếu pha máy. Chương không đạt thì sửa chương đó, không đổi ngưỡng. Máy đo chỉ bắt được chuyển động, chữ dày, chữ nhỏ.
+
+**Cờ đo hình (từ 03/11/2026).** Khung trang n199 lắc khung hình, cho nhãn nhấp nhô, nền trôi và chấm chương phập phồng; riêng phần đó đã đủ để máy chấm chuyển động 1,00 cho một cảnh không đổi nội dung (đo N301 giây 170–190: chênh lệch khung 3,0–4,8, ngưỡng 0,35). Vì vậy máy đo đặt `window.__do_hinh = true` trước khi nạp trang, và `canh.js` phải có hằng `DO_HINH` tắt bốn phần đó khi có cờ, kèm `window.__ho_tro_do_hinh = true` (mẫu: tìm "DO_HINH" trong `xuong_html/n199_hoat_dong_huy_dong_von/canh.js`). Trang thiếu cờ thì máy đo thoát 2. Không xoá, không đổi cờ này; xuất video không đặt cờ nên hình xuất ra không đổi.
+
+Số đo trước và sau khi có cờ (03/11/2026, `--buoc 2`): n199 11/11 → 11/11 (chuyển động thấp nhất 0,63 ở chương 4); N301 8/8 → 2/8; N302 9/9 → 4/9. Máy vẫn tính chuyển động trang trí nằm trong cảnh (thanh bập bênh chương 8 N301, đường chấm chạy chương 2 N302 vẫn được 1,00). Vì vậy máy đo đạt không chứng tỏ hình có chuyển động theo số liệu hay có đúng khái niệm; hai việc đó do phép thử tắt tiếng, soát độc lập và Trung xem.

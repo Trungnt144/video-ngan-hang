@@ -75,7 +75,7 @@ function veItem(it, S, t) {
   const an = op <= 0.002;
   it.el.style.visibility = an ? 'hidden' : 'visible';
   if (an) return;
-  const dy = it.dy * (1 - eo((t - it.a) / 0.45)) + (it.nobob ? 0 : 3.5 * Math.sin(6.2832 * t / 3.2 + it.ph));
+  const dy = it.dy * (1 - eo((t - it.a) / 0.45)) + (it.nobob || DO_HINH ? 0 : 3.5 * Math.sin(6.2832 * t / 3.2 + it.ph));
   if (it.svg) {
     it.el.setAttribute('opacity', op.toFixed(3));
     it.el.setAttribute('transform', `${it.base} translate(0,${dy.toFixed(1)})`.trim());
@@ -208,7 +208,7 @@ function veLop(t, tr) {
   LOP.cham.forEach((ch, i) => {
     const nay = i + 1 === c, qua = i + 1 < c;
     ch.setAttribute('fill', nay ? M.nhan : qua ? M.phu : M.the);
-    ch.setAttribute('r', nay ? (10 + 2 * Math.sin(t * 3.5)).toFixed(2) : 8);
+    ch.setAttribute('r', nay && !DO_HINH ? (10 + 2 * Math.sin(t * 3.5)).toFixed(2) : 8);
   });
 }
 
@@ -510,9 +510,13 @@ function taoLogoKet() {
 // HÀM SEEK(T) — TÍNH TOÁN THEO THỜI GIAN
 // =========================================================================
 let scaleNow = 1;
+// Máy đo hình (scripts/do_chat_luong_hinh.mjs) đặt window.__do_hinh = true trước khi nạp trang: tắt lắc khung hình, nhãn nhấp nhô,
+// nền trôi và chấm chương phập phồng, để chỉ đo chuyển động của chính hình. Xuất video không đặt cờ này nên không đổi gì.
+const DO_HINH = window.__do_hinh === true;
+window.__ho_tro_do_hinh = true;
 function seek(t) {
   t = Math.max(0, Math.min(DUR, t));
-  const tr = `translate(${(4 * Math.sin(2 * Math.PI * t / 13) + 2 * Math.sin(2 * Math.PI * t / 4.7)).toFixed(2)}px,${(3 * Math.sin(2 * Math.PI * t / 17) + 2 * Math.sin(2 * Math.PI * t / 3.9 + 1.1)).toFixed(2)}px) scale(${(1 + 0.005 * (1 - Math.cos(2 * Math.PI * t / 11))).toFixed(5)})`;
+  const tr = DO_HINH ? '' : `translate(${(4 * Math.sin(2 * Math.PI * t / 13) + 2 * Math.sin(2 * Math.PI * t / 4.7)).toFixed(2)}px,${(3 * Math.sin(2 * Math.PI * t / 17) + 2 * Math.sin(2 * Math.PI * t / 3.9 + 1.1)).toFixed(2)}px) scale(${(1 + 0.005 * (1 - Math.cos(2 * Math.PI * t / 11))).toFixed(5)})`;
   veLop(t, tr);
 
   for (let c = 1; c <= CH.length; c++) {
