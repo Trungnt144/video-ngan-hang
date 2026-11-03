@@ -1,0 +1,92 @@
+{
+ "thu_muc": "/Users/macbooktrungnt/Documents/VideoNganHang/xuong_html/n302_ebitda",
+ "nguong": {
+  "chuyen_dong_toi_thieu": 0.6,
+  "tu_toi_da": 26,
+  "chu_nho_toi_da": 0.25,
+  "co_chu_nho": 26
+ },
+ "chuong": [
+  {
+   "chuong": 1,
+   "tu": 0,
+   "den": 26.3,
+   "chuyen_dong": 1,
+   "tu_trung_vi": 7,
+   "chu_nho": 0.09,
+   "loi": []
+  },
+  {
+   "chuong": 2,
+   "tu": 26.3,
+   "den": 65.7,
+   "chuyen_dong": 1,
+   "tu_trung_vi": 10,
+   "chu_nho": 0,
+   "loi": []
+  },
+  {
+   "chuong": 3,
+   "tu": 65.7,
+   "den": 103.3,
+   "chuyen_dong": 1,
+   "tu_trung_vi": 8,
+   "chu_nho": 0.02,
+   "loi": []
+  },
+  {
+   "chuong": 4,
+   "tu": 103.3,
+   "den": 135.7,
+   "chuyen_dong": 1,
+   "tu_trung_vi": 5,
+   "chu_nho": 0.02,
+   "loi": []
+  },
+  {
+   "chuong": 5,
+   "tu": 135.7,
+   "den": 174.4,
+   "chuyen_dong": 1,
+   "tu_trung_vi": 11,
+   "chu_nho": 0.02,
+   "loi": []
+  },
+  {
+   "chuong": 6,
+   "tu": 174.4,
+   "den": 204.9,
+   "chuyen_dong": 1,
+   "tu_trung_vi": 8,
+   "chu_nho": 0.02,
+   "loi": []
+  },
+  {
+   "chuong": 7,
+   "tu": 204.9,
+   "den": 248.8,
+   "chuyen_dong": 1,
+   "tu_trung_vi": 12,
+   "chu_nho": 0.02,
+   "loi": []
+  },
+  {
+   "chuong": 8,
+   "tu": 248.8,
+   "den": 287.8,
+   "chuyen_dong": 1,
+   "tu_trung_vi": 5,
+   "chu_nho": 0,
+   "loi": []
+  },
+  {
+   "chuong": 9,
+   "tu": 287.8,
+   "den": 318.9,
+   "chuyen_dong": 1,
+   "tu_trung_vi": 9,
+   "chu_nho": 0,
+   "loi": []
+  }
+ ]
+}

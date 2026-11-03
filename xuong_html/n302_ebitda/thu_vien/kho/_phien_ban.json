@@ -1,0 +1,93 @@
+{
+ "logo_ten_kenh": {
+  "phien_ban": "1.1",
+  "bam": [
+   "70ef7039be",
+   "a34f7cb7ea"
+  ],
+  "ngay": "2026-11-03"
+ },
+ "phu_de_chay_chu": {
+  "phien_ban": "1.0",
+  "bam": [
+   "bf905d171e"
+  ],
+  "ngay": "2026-11-03"
+ },
+ "nhan_gia_dinh": {
+  "phien_ban": "1.0",
+  "bam": [
+   "6972813df8"
+  ],
+  "ngay": "2026-11-03"
+ },
+ "binh_chua_muc_nuoc": {
+  "phien_ban": "1.0",
+  "bam": [
+   "049f463c61"
+  ],
+  "ngay": "2026-11-03"
+ },
+ "khuon_trung_gian_ba_khoi": {
+  "phien_ban": "1.1",
+  "bam": [
+   "be10d74d57"
+  ],
+  "ngay": "2026-11-03"
+ },
+ "toa_nha_ngan_hang": {
+  "phien_ban": "1.0",
+  "bam": [
+   "8dc91e96bf"
+  ],
+  "ngay": "2026-11-03"
+ },
+ "man_hinh_ung_dung": {
+  "phien_ban": "1.0",
+  "bam": [
+   "110957d20e"
+  ],
+  "ngay": "2026-11-03"
+ },
+ "kho_nen": {
+  "phien_ban": "1.0",
+  "bam": [
+   "d803b82070",
+   "bbe77399f9",
+   "314eecd61a",
+   "fbc3f74acb",
+   "c5a49e2841",
+   "50174122a4",
+   "2bc4f1f572"
+  ],
+  "ngay": "2026-11-03"
+ },
+ "khach_hang_ca_nhan": {
+  "phien_ban": "1.1",
+  "bam": [
+   "280954778f"
+  ],
+  "ngay": "2026-11-03"
+ },
+ "doanh_nghiep_nha_xuong": {
+  "phien_ban": "1.0",
+  "bam": [
+   "5f9b3a85a2"
+  ],
+  "ngay": "2026-11-03"
+ },
+ "nha_o": {
+  "phien_ban": "1.1",
+  "bam": [
+   "7209ea2d9c"
+  ],
+  "ngay": "2026-11-03"
+ },
+ "xap_tien_dong_xu": {
+  "phien_ban": "1.0",
+  "bam": [
+   "c2a0965ad9"
+  ],
+  "ngay": "2026-11-03"
+ }
+}

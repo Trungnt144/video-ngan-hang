@@ -1,0 +1,162 @@
+{
+ "ten": "n302_ebitda",
+ "ngay": "2026-11-03",
+ "ghi_chu": "N302 EBITDA; CL-14 giá trị tách/gộp; BC-08; MAU-21; NH00. Sinh bằng n302_tao_nhip.py; trường 'nhip' (storyboard) viết tay, giữ nguyên khi chạy lại.",
+ "kho": "1920x1080",
+ "thoi_luong_giay": 324.269,
+ "fps_xem_truoc": 10,
+ "fps_cuoi": 30,
+ "giong": [
+  {
+   "tep": "am_thanh/c1.wav",
+   "t": 1.2
+  },
+  {
+   "tep": "am_thanh/c2.wav",
+   "t": 26.77
+  },
+  {
+   "tep": "am_thanh/c3.wav",
+   "t": 66.162
+  },
+  {
+   "tep": "am_thanh/c4.wav",
+   "t": 103.817
+  },
+  {
+   "tep": "am_thanh/c5.wav",
+   "t": 136.201
+  },
+  {
+   "tep": "am_thanh/c6.wav",
+   "t": 174.872
+  },
+  {
+   "tep": "am_thanh/c7.wav",
+   "t": 205.414
+  },
+  {
+   "tep": "am_thanh/c8.wav",
+   "t": 249.334
+  },
+  {
+   "tep": "am_thanh/c9.wav",
+   "t": 288.33
+  }
+ ],
+ "nhac": "am_thanh/n302_nhac_noi.wav",
+ "nhac_db": -15.0,
+ "mo_dan": 2,
+ "chuong": [
+  {
+   "id": "1",
+   "ten": "Có lợi nhuận, vì sao vẫn thiếu tiền?",
+   "t": 0.0,
+   "den": 26.27
+  },
+  {
+   "id": "2",
+   "ten": "EBITDA loại những khoản nào?",
+   "t": 26.27,
+   "den": 65.662
+  },
+  {
+   "id": "3",
+   "ten": "Tính EBITDA từ một ví dụ",
+   "t": 65.662,
+   "den": 103.317
+  },
+  {
+   "id": "4",
+   "ten": "Ý nghĩa thứ nhất: so sánh sức sinh lời",
+   "t": 103.317,
+   "den": 135.701
+  },
+  {
+   "id": "5",
+   "ten": "Ý nghĩa thứ hai: nhìn gánh nợ",
+   "t": 135.701,
+   "den": 174.372
+  },
+  {
+   "id": "6",
+   "ten": "Ý nghĩa thứ ba: tham khảo định giá",
+   "t": 174.372,
+   "den": 204.914
+  },
+  {
+   "id": "7",
+   "ten": "Giới hạn lớn: EBITDA khác dòng tiền",
+   "t": 204.914,
+   "den": 248.834
+  },
+  {
+   "id": "8",
+   "ten": "Đọc kỹ EBITDA điều chỉnh",
+   "t": 248.834,
+   "den": 287.83
+  },
+  {
+   "id": "9",
+   "ten": "Dùng EBITDA cùng những gì? · Màn hình kết",
+   "t": 287.83,
+   "den": 324.269
+  }
+ ],
+ "nhip": [
+  {
+   "chuong": 1,
+   "hinh_chinh": "Hai thước giá trị đối nhau: EBITDA / tiền",
+   "chuyen_dong": "Khối EBITDA tách thành các dòng chi, thước tiền chuyển đỏ",
+   "khuon": "be, roi, soChay từ n199"
+  },
+  {
+   "chuong": 2,
+   "hinh_chinh": "Bậc lợi nhuận tách rồi gộp",
+   "chuyen_dong": "Các khối D&A/lãi/thuế rời ra làm EBITDA tăng tương ứng",
+   "khuon": "hcn, soChay, mui từ n199"
+  },
+  {
+   "chuong": 3,
+   "hinh_chinh": "100 hạt chia 80/20 rồi cầu 6+2+4+8",
+   "chuyen_dong": "Hạt chia theo giá trị, cầu lợi nhuận tăng theo từng khoản",
+   "khuon": "roi, cham, be từ n199"
+  },
+  {
+   "chuong": 4,
+   "hinh_chinh": "Thước tỷ trọng 20/100",
+   "chuyen_dong": "Các hạt đi qua phép chia và lấp 20% thước",
+   "khuon": "cham, soChay từ n199"
+  },
+  {
+   "chuong": 5,
+   "hinh_chinh": "Nợ 60 trừ tiền 10 so EBITDA 20",
+   "chuyen_dong": "Hạt nợ ròng chia theo lô EBITDA; EBITDA co 20 xuống 10",
+   "khuon": "roi, be từ n199"
+  },
+  {
+   "chuong": 6,
+   "hinh_chinh": "20 nhân 5 thành 100 rồi tách nợ/vốn",
+   "chuyen_dong": "Năm khối EBITDA lắp thành EV; phần nợ 50 tách ra",
+   "khuon": "hcn, cham từ n199"
+  },
+  {
+   "chuong": 7,
+   "hinh_chinh": "Thác tiền 20 xuống âm 3",
+   "chuyen_dong": "Từng dòng chi rút số dư, phần thiếu chuyển dưới trục 0",
+   "khuon": "be, roi, hcn từ n199"
+  },
+  {
+   "chuong": 8,
+   "hinh_chinh": "Khoản điều chỉnh được soi đối chiếu",
+   "chuyen_dong": "Khối EBITDA gốc và phần cộng thêm tách/gộp, chỉ nhãn ngắn",
+   "khuon": "hcn, mui từ n199"
+  },
+  {
+   "chuong": 9,
+   "hinh_chinh": "Ba kính soi lợi nhuận/tiền/nợ",
+   "chuyen_dong": "Ba vật biểu tượng nối cùng doanh nghiệp, chuyển động dòng tiền",
+   "khuon": "be, roi, toa từ n199"
+  }
+ ]
+}

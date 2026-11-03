@@ -13,6 +13,15 @@
 - **Điều kiện bắt đầu:** Không phụ thuộc video khác.
 - **Trạng thái:** Bản nháp chờ Trung duyệt (2026-11-03)
 
+
+### N302 · EBITDA là gì và ý nghĩa trong đánh giá tài chính doanh nghiệp
+- **Ngày ghi:** 2026-11-03
+- **Trung nói nguyên văn:** "Làm video giải thích EBITDA là gì và ý nghĩa của EBITDA trong đánh giá tài chính doanh nghiệp"
+- **Cách hiểu tạm:** Giải thích định nghĩa, cách tính từ lợi nhuận sau thuế, biên EBITDA, nợ ròng/EBITDA, EV/EBITDA; giới hạn khi đánh giá dòng tiền và EBITDA điều chỉnh. Ví dụ doanh nghiệp sản xuất giả định xuyên suốt, 4–6 phút ngang 1080p, Quốc Tuấn.
+- **Trùng với video đã làm:** N301 liên quan nhu cầu vốn lưu động; chỉ giải thích ngắn trong lời đọc, không trỏ video khác.
+- **Điều kiện bắt đầu:** Trung cho phép Codex trực tiếp làm video này, giữ cổng chất lượng và cửa duyệt (03/11/2026).
+- **Trạng thái:** Pha 1 hoàn tất — ảnh và lời chờ Trung duyệt (Codex, 2026-11-03). Dài 5:24; máy đo 9/9; soát Antigravity mới 0 nặng/0 vừa, 2 nhẹ. Chưa kết xuất MP4.
+
 ## Đã đóng
 
 (trống)

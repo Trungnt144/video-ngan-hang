@@ -1,0 +1,175 @@
+{
+  "ghi_chu": "Mọi giá trị kinh doanh là giả định, đơn vị tỷ đồng trừ % và lần. Chỉ lấy số trên hình từ gia_tri bên dưới. Không dùng ngưỡng ngành hoặc thuế suất thật. Cầu nối tiền bỏ qua biến động khác, tiền đầu kỳ và vốn huy động mới. Các số dư trung gian của cầu tiền được tính từ cùng ví dụ: sau thuế và lãi 14; sau mua máy 4; sau tăng VLD -3. Số chạy giữa hai mốc chỉ là nội suy minh họa.",
+  "gia_tri": {
+    "doanh_thu": 100,
+    "chi_phi_chua_DA": 80,
+    "khau_hao_phan_bo": 8,
+    "EBIT": 12,
+    "lai_vay": 4,
+    "thue_thu_nhap": 2,
+    "loi_nhuan_sau_thue": 6,
+    "EBITDA": 20,
+    "bien_EBITDA": 20,
+    "no_vay": 60,
+    "tien": 10,
+    "no_rong": 50,
+    "no_rong_EBITDA": 2.5,
+    "EBITDA_giam": 10,
+    "ty_so_sau_giam": 5,
+    "boi_so_gia_dinh": 5,
+    "EV": 100,
+    "von_chu_so_huu": 50,
+    "chi_mua_may": 10,
+    "tang_VLD_hoat_dong": 7,
+    "thieu_hut_tien": -3
+  },
+  "muc": [
+    {
+      "id": "doanh_thu",
+      "gia_tri": 100,
+      "don_vi": "% nếu bien_EBITDA; lần nếu tỷ số/bội số; còn lại tỷ đồng",
+      "trang_thai": "minh_hoa",
+      "nguon": "D1 — tình huống tự đặt; kiểm số học bằng 10 đẳng thức trong n302_prepare.py; công thức đối chiếu nguồn A1–A7"
+    },
+    {
+      "id": "chi_phi_chua_DA",
+      "gia_tri": 80,
+      "don_vi": "% nếu bien_EBITDA; lần nếu tỷ số/bội số; còn lại tỷ đồng",
+      "trang_thai": "minh_hoa",
+      "nguon": "D1 — tình huống tự đặt; kiểm số học bằng 10 đẳng thức trong n302_prepare.py; công thức đối chiếu nguồn A1–A7"
+    },
+    {
+      "id": "khau_hao_phan_bo",
+      "gia_tri": 8,
+      "don_vi": "% nếu bien_EBITDA; lần nếu tỷ số/bội số; còn lại tỷ đồng",
+      "trang_thai": "minh_hoa",
+      "nguon": "D1 — tình huống tự đặt; kiểm số học bằng 10 đẳng thức trong n302_prepare.py; công thức đối chiếu nguồn A1–A7"
+    },
+    {
+      "id": "EBIT",
+      "gia_tri": 12,
+      "don_vi": "% nếu bien_EBITDA; lần nếu tỷ số/bội số; còn lại tỷ đồng",
+      "trang_thai": "minh_hoa",
+      "nguon": "D1 — tình huống tự đặt; kiểm số học bằng 10 đẳng thức trong n302_prepare.py; công thức đối chiếu nguồn A1–A7"
+    },
+    {
+      "id": "lai_vay",
+      "gia_tri": 4,
+      "don_vi": "% nếu bien_EBITDA; lần nếu tỷ số/bội số; còn lại tỷ đồng",
+      "trang_thai": "minh_hoa",
+      "nguon": "D1 — tình huống tự đặt; kiểm số học bằng 10 đẳng thức trong n302_prepare.py; công thức đối chiếu nguồn A1–A7"
+    },
+    {
+      "id": "thue_thu_nhap",
+      "gia_tri": 2,
+      "don_vi": "% nếu bien_EBITDA; lần nếu tỷ số/bội số; còn lại tỷ đồng",
+      "trang_thai": "minh_hoa",
+      "nguon": "D1 — tình huống tự đặt; kiểm số học bằng 10 đẳng thức trong n302_prepare.py; công thức đối chiếu nguồn A1–A7"
+    },
+    {
+      "id": "loi_nhuan_sau_thue",
+      "gia_tri": 6,
+      "don_vi": "% nếu bien_EBITDA; lần nếu tỷ số/bội số; còn lại tỷ đồng",
+      "trang_thai": "minh_hoa",
+      "nguon": "D1 — tình huống tự đặt; kiểm số học bằng 10 đẳng thức trong n302_prepare.py; công thức đối chiếu nguồn A1–A7"
+    },
+    {
+      "id": "EBITDA",
+      "gia_tri": 20,
+      "don_vi": "% nếu bien_EBITDA; lần nếu tỷ số/bội số; còn lại tỷ đồng",
+      "trang_thai": "minh_hoa",
+      "nguon": "D1 — tình huống tự đặt; kiểm số học bằng 10 đẳng thức trong n302_prepare.py; công thức đối chiếu nguồn A1–A7"
+    },
+    {
+      "id": "bien_EBITDA",
+      "gia_tri": 20,
+      "don_vi": "% nếu bien_EBITDA; lần nếu tỷ số/bội số; còn lại tỷ đồng",
+      "trang_thai": "minh_hoa",
+      "nguon": "D1 — tình huống tự đặt; kiểm số học bằng 10 đẳng thức trong n302_prepare.py; công thức đối chiếu nguồn A1–A7"
+    },
+    {
+      "id": "no_vay",
+      "gia_tri": 60,
+      "don_vi": "% nếu bien_EBITDA; lần nếu tỷ số/bội số; còn lại tỷ đồng",
+      "trang_thai": "minh_hoa",
+      "nguon": "D1 — tình huống tự đặt; kiểm số học bằng 10 đẳng thức trong n302_prepare.py; công thức đối chiếu nguồn A1–A7"
+    },
+    {
+      "id": "tien",
+      "gia_tri": 10,
+      "don_vi": "% nếu bien_EBITDA; lần nếu tỷ số/bội số; còn lại tỷ đồng",
+      "trang_thai": "minh_hoa",
+      "nguon": "D1 — tình huống tự đặt; kiểm số học bằng 10 đẳng thức trong n302_prepare.py; công thức đối chiếu nguồn A1–A7"
+    },
+    {
+      "id": "no_rong",
+      "gia_tri": 50,
+      "don_vi": "% nếu bien_EBITDA; lần nếu tỷ số/bội số; còn lại tỷ đồng",
+      "trang_thai": "minh_hoa",
+      "nguon": "D1 — tình huống tự đặt; kiểm số học bằng 10 đẳng thức trong n302_prepare.py; công thức đối chiếu nguồn A1–A7"
+    },
+    {
+      "id": "no_rong_EBITDA",
+      "gia_tri": 2.5,
+      "don_vi": "% nếu bien_EBITDA; lần nếu tỷ số/bội số; còn lại tỷ đồng",
+      "trang_thai": "minh_hoa",
+      "nguon": "D1 — tình huống tự đặt; kiểm số học bằng 10 đẳng thức trong n302_prepare.py; công thức đối chiếu nguồn A1–A7"
+    },
+    {
+      "id": "EBITDA_giam",
+      "gia_tri": 10,
+      "don_vi": "% nếu bien_EBITDA; lần nếu tỷ số/bội số; còn lại tỷ đồng",
+      "trang_thai": "minh_hoa",
+      "nguon": "D1 — tình huống tự đặt; kiểm số học bằng 10 đẳng thức trong n302_prepare.py; công thức đối chiếu nguồn A1–A7"
+    },
+    {
+      "id": "ty_so_sau_giam",
+      "gia_tri": 5,
+      "don_vi": "% nếu bien_EBITDA; lần nếu tỷ số/bội số; còn lại tỷ đồng",
+      "trang_thai": "minh_hoa",
+      "nguon": "D1 — tình huống tự đặt; kiểm số học bằng 10 đẳng thức trong n302_prepare.py; công thức đối chiếu nguồn A1–A7"
+    },
+    {
+      "id": "boi_so_gia_dinh",
+      "gia_tri": 5,
+      "don_vi": "% nếu bien_EBITDA; lần nếu tỷ số/bội số; còn lại tỷ đồng",
+      "trang_thai": "minh_hoa",
+      "nguon": "D1 — tình huống tự đặt; kiểm số học bằng 10 đẳng thức trong n302_prepare.py; công thức đối chiếu nguồn A1–A7"
+    },
+    {
+      "id": "EV",
+      "gia_tri": 100,
+      "don_vi": "% nếu bien_EBITDA; lần nếu tỷ số/bội số; còn lại tỷ đồng",
+      "trang_thai": "minh_hoa",
+      "nguon": "D1 — tình huống tự đặt; kiểm số học bằng 10 đẳng thức trong n302_prepare.py; công thức đối chiếu nguồn A1–A7"
+    },
+    {
+      "id": "von_chu_so_huu",
+      "gia_tri": 50,
+      "don_vi": "% nếu bien_EBITDA; lần nếu tỷ số/bội số; còn lại tỷ đồng",
+      "trang_thai": "minh_hoa",
+      "nguon": "D1 — tình huống tự đặt; kiểm số học bằng 10 đẳng thức trong n302_prepare.py; công thức đối chiếu nguồn A1–A7"
+    },
+    {
+      "id": "chi_mua_may",
+      "gia_tri": 10,
+      "don_vi": "% nếu bien_EBITDA; lần nếu tỷ số/bội số; còn lại tỷ đồng",
+      "trang_thai": "minh_hoa",
+      "nguon": "D1 — tình huống tự đặt; kiểm số học bằng 10 đẳng thức trong n302_prepare.py; công thức đối chiếu nguồn A1–A7"
+    },
+    {
+      "id": "tang_VLD_hoat_dong",
+      "gia_tri": 7,
+      "don_vi": "% nếu bien_EBITDA; lần nếu tỷ số/bội số; còn lại tỷ đồng",
+      "trang_thai": "minh_hoa",
+      "nguon": "D1 — tình huống tự đặt; kiểm số học bằng 10 đẳng thức trong n302_prepare.py; công thức đối chiếu nguồn A1–A7"
+    },
+    {
+      "id": "thieu_hut_tien",
+      "gia_tri": -3,
+      "don_vi": "% nếu bien_EBITDA; lần nếu tỷ số/bội số; còn lại tỷ đồng",
+      "trang_thai": "minh_hoa",
+      "nguon": "D1 — tình huống tự đặt; kiểm số học bằng 10 đẳng thức trong n302_prepare.py; công thức đối chiếu nguồn A1–A7"
+    }
+  ]
+}

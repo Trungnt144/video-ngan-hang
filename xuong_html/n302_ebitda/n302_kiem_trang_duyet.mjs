@@ -1,0 +1,17 @@
+import {chromium} from '../cong_cu/node_modules/playwright-core/index.mjs';
+import {pathToFileURL} from 'node:url';
+import fs from 'node:fs';
+const root='/Users/macbooktrungnt/Documents/VideoNganHang';
+const browser=await chromium.launch({headless:true});
+const page=await browser.newPage({viewport:{width:1400,height:1100}});const errors=[];
+page.on('pageerror',e=>errors.push(e.message));
+await page.goto(pathToFileURL(root+'/san_pham/2026.11.03.EBITDA_la_gi/2026.11.03.ebitda_duyet.html').href);
+await page.waitForFunction(()=>document.getElementById('screen').contentWindow.__san_sang===true,{},{timeout:15000});
+await page.locator('button[data-t="204.914"]').click();
+await page.evaluate(async()=>{const a=document.getElementById('voice');a.muted=true;a.currentTime=83.8;await a.play();});
+await page.waitForTimeout(1200);
+await page.evaluate(()=>document.getElementById('voice').pause());
+const check=await page.evaluate(()=>({ready,frameReady:document.getElementById('screen').contentWindow.__san_sang,time:document.getElementById('voice').currentTime,duration:document.getElementById('voice').duration,state:document.getElementById('state').textContent,words:document.getElementById('screen').contentWindow.chuHienThi(document.getElementById('voice').currentTime)}));
+await page.screenshot({path:root+'/xuong_html/n302_ebitda/anh_tinh/trang_duyet.png',fullPage:true});
+await browser.close();
+console.log(JSON.stringify({check,errors}));if(errors.length||!check.ready||!Number.isFinite(check.duration))process.exitCode=1;
