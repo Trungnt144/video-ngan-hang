@@ -404,3 +404,16 @@ cd xuong_html/cong_cu && node xuat_mp4.mjs "<đường dẫn>/trang.html" 30 --f
 **Chỗ dễ sai:** phải viết liền dấu `=` (`--co-chromium=--use-angle=metal`). Viết tách `--co-chromium "--use-angle=metal"` thì bộ đọc tham số `parseArgs` của Node coi giá trị bắt đầu bằng `--` là một cờ khác và báo lỗi. Script chụp ảnh bằng Playwright tự viết thì truyền `args: ['--use-angle=metal']` khi `chromium.launch` (xem `tai_san/kho_hinh_chung/khu_cong_nghiep/chup_anh_mau.mjs`).
 
 **Bài học chính:** mọi trang HTML có WebGL (Three.js) xuất ra video trên máy này đều thêm cờ trên; trước khi kết luận cảnh quá nặng, kiểm chuỗi tên bộ vẽ trước.
+
+## 2026-11-03 — Video N301 do Gemini 3.8 Flash dựng thành slide chữ: thêm máy đo hình làm cổng
+
+**Bối cảnh:** project VideoNganHang, video N301 "Vốn lưu động ròng" dựng bằng Antigravity (Gemini 3.8 Flash) trong khoảng 40 phút, hai vòng sửa, chỉ chạy công cụ tự động kiểm chữ đè. Hình xấu hơn n199 (Claude dựng, năm vòng ảnh tĩnh, soát độc lập, đợt sửa C).
+
+**Số đo** (`scripts/do_chat_luong_hinh.mjs --buoc 2`, mỗi chương): n199 chuyển động 1,00, 4–11 từ trên hình, chữ nhỏ dưới 26 px 0–15%; n301 chuyển động 0,15–0,36, 62–196 từ, chữ nhỏ 65–88%. Mã n301 có khoảng 90 chỗ tạo thẻ chữ (n199: 11) và không gọi khuôn nào trong kho (n199 gọi 3). Ghi nhãn CL-14 nhưng dựng thẻ chữ.
+
+**Nguyên nhân:** (1) công cụ tự kiểm cũ (chữ đè, tràn khung, tương phản) không đo được "hình có đẹp, có chuyển động không"; (2) skill không có chuẩn hình và không có bước soát độc lập; (3) model rẻ tự khen kết quả.
+
+**Cách xử lý:** máy đo hình làm cổng trước pha máy; `skills/lam-video-ngan-hang/chuan_hinh_video_ngang.md`; `mau_soat_doc_lap.md` (phiên mới soát); ảnh chuẩn `tai_san/anh_chuan_hinh/`; ít nhất 3 vòng ảnh tĩnh. N301 chưa được dựng lại.
+
+**Cảnh báo:** máy đo chỉ bắt chuyển động, chữ dày, chữ nhỏ. Model có thể thêm chuyển động giả (hạt nền) để qua cổng: phiên soát độc lập và Trung xem vẫn cần. Ngưỡng đặt theo một video mẫu (n199), nên điều chỉnh khi có thêm video đạt.
+

@@ -3,3 +3,4 @@ trigger: always_on
 ---
 
 Project VideoNganHang: xưởng làm video chiến dịch Chuyện nghề Ngân hàng. Đọc `AGENTS.md` ở gốc project trước mọi việc, rồi làm theo skill `lam-video-ngan-hang`. Chỉ một công cụ làm việc trong project một lúc. Không tự tải lên YouTube, không đổi bản nháp thành bản cuối khi Trung chưa nói "duyệt". Không có dữ liệu nội bộ ngân hàng nào được phép vào project; tình huống thực tế phải ẩn danh. Commit tay cuối lượt: `git add` đúng file của mình.
+Cổng bắt buộc trước pha máy: ảnh tĩnh ít nhất 3 vòng, `node scripts/do_chat_luong_hinh.mjs xuong_html/<mã>_<tên> --buoc 2` thoát 0, và bản soát độc lập từ một hội thoại Antigravity MỚI (theo `skills/lam-video-ngan-hang/mau_soat_doc_lap.md`). Mỗi chương một hình chính chuyển động, tối đa 12 từ trên hình; dùng khuôn trong `tai_san/kho_hinh_chung/`; không dựng thẻ chữ dày hay bảng chữ nhỏ. Không tự khen hình.
