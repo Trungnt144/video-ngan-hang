@@ -1,0 +1,50 @@
+<template>
+<style>
+
+@font-face{font-family:"Be Vietnam Pro";font-weight:300;font-style:normal;src:local("Be Vietnam Pro Light"),local("BeVietnamPro-Light");}
+@font-face{font-family:"Be Vietnam Pro";font-weight:400;font-style:normal;src:local("Be Vietnam Pro Regular"),local("BeVietnamPro-Regular");}
+@font-face{font-family:"Be Vietnam Pro";font-weight:500;font-style:normal;src:local("Be Vietnam Pro Medium"),local("BeVietnamPro-Medium");}
+@font-face{font-family:"Be Vietnam Pro";font-weight:600;font-style:normal;src:local("Be Vietnam Pro SemiBold"),local("BeVietnamPro-SemiBold");}
+@font-face{font-family:"Be Vietnam Pro";font-weight:700;font-style:normal;src:local("Be Vietnam Pro Bold"),local("BeVietnamPro-Bold");}
+@font-face{font-family:"Be Vietnam Pro";font-weight:800;font-style:normal;src:local("Be Vietnam Pro ExtraBold"),local("BeVietnamPro-ExtraBold");}
+#root{position:absolute;inset:0;font-family:"Be Vietnam Pro","Helvetica Neue",Arial,sans-serif;color:#FFFFFF;}
+.vo{position:absolute;inset:0;}
+.dau{position:absolute;left:84px;right:84px;top:190px;display:flex;justify-content:space-between;font-size:32px;font-weight:600;letter-spacing:0.08em;color:#8A8A8E;}
+.dau b{color:#FFFFFF;font-weight:800;}
+.than{position:absolute;left:84px;right:84px;}
+.icon{width:84px;height:84px;border:2px solid #3a3a3e;border-radius:18px;display:flex;align-items:center;justify-content:center;margin-bottom:28px;}
+.kicker{font-size:32px;font-weight:700;letter-spacing:0.1em;color:#FF443D;margin-bottom:22px;}
+.td{font-size:64px;font-weight:800;line-height:1.2;letter-spacing:-0.01em;}
+.td-lon{font-size:82px;font-weight:800;line-height:1.16;letter-spacing:-0.015em;}
+.doan{font-size:38px;font-weight:400;line-height:1.55;color:#8A8A8E;margin-top:36px;}
+.w{display:inline-block;}
+
+.mx{position:absolute;left:220px;width:640px;height:150px;border:2px solid #3a3a3e;border-radius:22px;background:#0c0c0e;display:flex;flex-direction:column;align-items:center;justify-content:center}
+      .mx-nhan{font-size:50px;font-weight:800}.mx-phu{font-size:34px;color:#8A8A8E;margin-top:6px}
+      .mx.nm{border-color:#FF443D}.mx.nm .mx-nhan{color:#FF443D}
+      .mt{position:absolute;left:520px}
+      .thanh{position:absolute;left:220px;width:640px;top:1258px;height:16px;display:flex;gap:6px}
+      .thanh-nho{width:90%;height:100%;background:#FFFFFF;border-radius:8px;transform-origin:left}.thanh-lon{width:10%;height:100%;background:#FF443D;border-radius:8px;transform-origin:left}
+</style>
+<div id="root" data-composition-id="canh-05" data-width="1080" data-height="1920">
+  <div id="c05-vo" class="vo">
+    <div id="c05-dau" class="dau"><span><b>05</b> / 14</span><span>AI · BẢO MẬT · 07/2026</span></div>
+    <div id="c05-than" class="than" style="top:300px"><div id="c05-icon" class="icon" style="border-color:#3a3a3e"><svg viewBox="0 0 64 64" width="56" height="56" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M32 12l16 6v12c0 11-7 18-16 22-9-4-16-11-16-22V18z"/></svg></div><div id="c05-kicker" class="kicker">MICROSOFT LÀM NGƯỢC LẠI</div><div id="c05-td" class="td"><span id="c05-td-0" class="w">Một</span> <span id="c05-td-1" class="w">tiến</span> <span id="c05-td-2" class="w">trình</span> <span id="c05-td-3" class="w">hai</span> <span id="c05-td-4" class="w">tầng</span></div></div><div id="c05-mx-0" class="mx" style="top:620px"><div class="mx-nhan">Mã nguồn</div><div class="mx-phu">cần dò lỗi</div></div><svg id="c05-mt-0" class="mt" style="top:776px" width="40" height="68" viewBox="0 0 40 80" fill="none" stroke="#8A8A8E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4V74M8 62l12 12 12-12" pathLength="1" stroke-dasharray="1 1.2" stroke-dashoffset="1.1"/></svg><div id="c05-mx-1" class="mx" style="top:850px"><div class="mx-nhan">Model nhỏ</div><div class="mx-phu">gánh 9/10</div></div><svg id="c05-mt-1" class="mt" style="top:1006px" width="40" height="68" viewBox="0 0 40 80" fill="none" stroke="#8A8A8E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4V74M8 62l12 12 12-12" pathLength="1" stroke-dasharray="1 1.2" stroke-dashoffset="1.1"/></svg><div id="c05-mx-2" class="mx nm" style="top:1080px"><div class="mx-nhan">Model lớn</div><div class="mx-phu">1/10 khó nhất</div></div>
+      <div id="c05-thanh" class="thanh"><div id="c05-thanh-nho" class="thanh-nho"></div><div id="c05-thanh-lon" class="thanh-lon"></div></div>
+  </div>
+</div>
+<script>
+(function(){
+  const tl = gsap.timeline({ paused: true });
+  
+   tl.fromTo("#c05-icon",{opacity:0,scale:0.6},{opacity:1,scale:1,duration:0.4,ease:"back.out(2)"},0.15);
+   tl.fromTo("#c05-kicker",{opacity:0,y:16},{opacity:1,y:0,duration:0.35,ease:"power3.out"},0.22999999999999998);
+  tl.fromTo("#c05-td .w",{opacity:0,y:34},{opacity:1,y:0,duration:0.45,ease:"power3.out",stagger:0.05},0.3);tl.fromTo("#c05-mx-0",{opacity:0,scale:0.85},{opacity:1,scale:1,duration:0.45,ease:"back.out(1.6)"},1.525);tl.fromTo("#c05-mx-1",{opacity:0,scale:0.85},{opacity:1,scale:1,duration:0.45,ease:"back.out(1.6)"},3.414);tl.to("#c05-mt-0 path",{strokeDashoffset:0,duration:0.4,ease:"power2.out"},3.114);tl.fromTo("#c05-mx-2",{opacity:0,scale:0.85},{opacity:1,scale:1,duration:0.45,ease:"back.out(1.6)"},8.133);tl.to("#c05-mt-1 path",{strokeDashoffset:0,duration:0.4,ease:"power2.out"},7.833);tl.fromTo("#c05-thanh-nho",{scaleX:0},{scaleX:1,duration:1.0,ease:"power2.out"},6.711);
+      tl.fromTo("#c05-thanh-lon",{scaleX:0},{scaleX:1,duration:0.5,ease:"power2.out"},9.298);
+  tl.fromTo("#c05-vo",{opacity:0},{opacity:1,duration:0.25,ease:"none"},0);
+  tl.fromTo("#c05-than",{y:0},{y:-18,duration:10.617,ease:"none"},0);
+  tl.to("#c05-vo",{opacity:0,duration:0.25,ease:"none"},10.617);
+  window.__timelines["canh-05"] = tl;
+})();
+</script>
+</template>

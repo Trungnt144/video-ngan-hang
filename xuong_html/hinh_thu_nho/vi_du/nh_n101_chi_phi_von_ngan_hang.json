@@ -1,0 +1,64 @@
+{
+  "kenh": "ngan_hang",
+  "video": "2026.10.29.COF - Chi phí vốn của ngân hàng là gì?",
+  "chu_de": "chi_phi_von_ngan_hang",
+  "phien_ban": 1,
+  "thoi_luong": "5:20",
+  "nguon_hinh": {
+    "ma": "node lay_hinh.mjs ../2026.10.29_chi_phi_von_ngan_hang/trang.html 103.26 khung/n101/n101_ma_t103.png --an_chu --he_so 3 --cat 600,120,720,740",
+    "mp4": "ffmpeg -ss 103.26 -i san_pham/2026.10.29.COF - Chi phí vốn của ngân hàng là gì?/2026.10.29.chi_phi_von_ngan_hang_youtube_v1_nhap.mp4 -frames:v 1 -vf crop=720:740:600:120 khung/n101/n101_mp4_t103.png"
+  },
+  "hinh": [
+    {
+      "id": "A",
+      "bo_cuc": "NH",
+      "nen": "#FAF0F3",
+      "nhan_kenh": "tren_trai",
+      "anh": "xuong_html/hinh_thu_nho/khung/n101/n101_ma_t103.png",
+      "hop": [
+        44,
+        150,
+        470,
+        530
+      ],
+      "vi_tri": "50% 50%",
+      "chu": {
+        "x": 540,
+        "y": 250,
+        "w": 700
+      },
+      "dong1": "CHI PHÍ VỐN",
+      "co1": 128,
+      "mau1": "#2A1A20",
+      "dong2": "(COF) là gì?",
+      "co2": 84,
+      "mau2": "#AF0B35"
+    },
+    {
+      "id": "B",
+      "bo_cuc": "NH",
+      "nen": "#FAF0F3",
+      "nhan_kenh": "tren_phai",
+      "anh": "xuong_html/hinh_thu_nho/khung/n101/n101_mp4_t103.png",
+      "hop": [
+        860,
+        150,
+        380,
+        450
+      ],
+      "vi_tri": "50% 50%",
+      "chu": {
+        "x": 60,
+        "y": 200,
+        "w": 780
+      },
+      "dong1": "COF",
+      "co1": 108,
+      "mau1": "#2A1A20",
+      "dong2": "Chi phí vốn là gì?",
+      "co2": 76,
+      "mau2": "#AF0B35"
+    }
+  ],
+  "chon": "A"
+}

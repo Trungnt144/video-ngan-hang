@@ -1,0 +1,31 @@
+{
+ "ten_file": "c2.wav",
+ "giong": "Hải Đăng",
+ "phien_ban_goi": {
+  "vieneu": "3.8.3",
+  "onnxruntime": "1.22.1",
+  "mlx-whisper": "0.4.3"
+ },
+ "mo_hinh_nghe_lai": "mlx-community/whisper-large-v3-turbo",
+ "nguong_sai_ky_tu": 0.1,
+ "khoang_nghi_cau_giay": 0.25,
+ "so_ky_tu": 89,
+ "thoi_luong_giay": 5.45,
+ "nguon_van_ban": "/private/tmp/claude-501/-Users-macbooktrungnt-Documents-Grok-Media/fdbc3bed-09ce-4469-adac-5e4ea2301f9f/scratchpad/mau_inverter.json",
+ "tung_cau": [
+  {
+   "cau": "Thiết bị đó là in-ve-tơ, còn gọi là bộ nghịch lưu.",
+   "whisper": "Thiết bị đó là inverter, còn gọi là bộ nghịch lưu.",
+   "ty_le_sai": 0.083,
+   "so_lan_doc": 1,
+   "lan_duoc_giu": 1
+  },
+  {
+   "cau": "Với nhà ở, thường dùng in-ve-tơ chuỗi.",
+   "whisper": "Với nhà ở, thường dùng inverter chuỗi.",
+   "ty_le_sai": 0.111,
+   "so_lan_doc": 3,
+   "lan_duoc_giu": 1
+  }
+ ]
+}

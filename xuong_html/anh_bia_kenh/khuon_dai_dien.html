@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Khuôn ảnh đại diện kênh</title>
+<!--
+  Ảnh đại diện kênh YouTube "Chuyện nghề Điện": phủ biểu tượng tia sét lên nền do ghep_dai_dien.py ghép (nen_dai_dien_800.png).
+  Khổ 800×800. YouTube cắt hình tròn: mọi thứ quan trọng nằm trong vòng tròn nội tiếp (bán kính 400), biểu tượng chiếm khoảng một nửa bề rộng.
+-->
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #05121b; }
+  #dd { position: relative; width: 800px; height: 800px; overflow: hidden; background: #05121b; }
+  #dd > img { position: absolute; inset: 0; width: 800px; height: 800px; display: block; }
+  .set { position: absolute; left: 400px; top: 400px; width: 430px; height: 430px; transform: translate(-50%, -50%); border-radius: 50%;
+    background: #ffd23f; display: grid; place-items: center;
+    box-shadow: 0 0 0 20px #052a62, 0 0 0 26px rgba(255,255,255,.85), 0 18px 60px rgba(0,0,0,.55), 0 0 120px 30px rgba(255,214,90,.45); }
+  .set::before { content: ""; width: 172px; height: 252px; background: #111; clip-path: polygon(60% 0, 0 58%, 45% 58%, 30% 100%, 100% 40%, 55% 40%); }
+</style>
+</head>
+<body>
+<div id="dd"><img id="nen" alt=""><div class="set"></div></div>
+<script>
+  const im = document.getElementById('nen');
+  im.onload = () => { document.body.dataset.xong = '1'; };
+  im.src = 'nen_dai_dien_800.png';
+</script>
+</body>
+</html>

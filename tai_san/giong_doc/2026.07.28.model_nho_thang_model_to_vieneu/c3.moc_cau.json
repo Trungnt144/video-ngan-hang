@@ -1,0 +1,21 @@
+{
+ "doc": "Cách nghĩ này không tự nhiên mà có. Suốt mấy năm qua, model càng lớn thì càng làm được nhiều thứ hơn, và gần như lần nâng cấp nào cũng chứng minh điều đó. Nên khi gặp một bài toán khó, phản xạ đầu tiên của tất cả chúng ta là với tay lấy model to nhất trong tầm.",
+ "giay": 13.46,
+ "cau": [
+  {
+   "cau": "Cách nghĩ này không tự nhiên mà có.",
+   "bd": 0.0,
+   "kt": 1.92
+  },
+  {
+   "cau": "Suốt mấy năm qua, model càng lớn thì càng làm được nhiều thứ hơn, và gần như lần nâng cấp nào cũng chứng minh điều đó.",
+   "bd": 2.17,
+   "kt": 7.85
+  },
+  {
+   "cau": "Nên khi gặp một bài toán khó, phản xạ đầu tiên của tất cả chúng ta là với tay lấy model to nhất trong tầm.",
+   "bd": 8.1,
+   "kt": 13.46
+  }
+ ]
+}

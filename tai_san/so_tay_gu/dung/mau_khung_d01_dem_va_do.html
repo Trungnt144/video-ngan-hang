@@ -1,0 +1,851 @@
+<title>Bản mẫu khung hình — phong cách "Đêm & đỏ"</title>
+
+<style>
+  :root {
+    /* Bảng màu đo được từ mẫu — xem the_dem_va_do.md */
+    --nen:        #000000;
+    --nen-khung:  #08080a;
+    --chu:        #ffffff;
+    --mo:         #6e7076;   /* xám ngả xanh rất nhẹ, không phải xám trung tính */
+    --mo-dam:     #3a3b40;
+    --do:         #ff443d;
+    --vang:       #f0c73c;
+    --vien:       #1c1d21;
+
+    --s: 0.30;               /* tỉ lệ thu nhỏ khung 1080×1920 */
+    --chu-giao-dien: "Segoe UI Variable Display", "Segoe UI", system-ui, -apple-system, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--nen);
+    color: var(--chu);
+    font-family: var(--chu-giao-dien);
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .trang {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 72px 28px 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 88px;
+  }
+
+  /* ---------- phần mở đầu ---------- */
+
+  .dau-trang { display: flex; flex-direction: column; gap: 20px; }
+
+  .nhan {
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--mo);
+    font-weight: 600;
+  }
+  .nhan em { color: var(--do); font-style: normal; }
+
+  h1 {
+    margin: 0;
+    font-size: clamp(34px, 5.5vw, 54px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.12;
+    text-wrap: balance;
+  }
+
+  .dan { max-width: 60ch; color: #c9cace; margin: 0; }
+  .dan strong { color: var(--chu); font-weight: 600; }
+
+  .canh-bao {
+    border-left: 2px solid var(--do);
+    padding: 14px 0 14px 20px;
+    max-width: 62ch;
+    color: #c9cace;
+    font-size: 15px;
+  }
+
+  /* ---------- mỗi khung mẫu ---------- */
+
+  .muc {
+    display: grid;
+    grid-template-columns: calc(1080px * var(--s)) 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+
+  .khung-boc {
+    width: calc(1080px * var(--s));
+    height: calc(1920px * var(--s));
+    overflow: hidden;
+    border: 1px solid var(--vien);
+    border-radius: 14px;
+    position: sticky;
+    top: 32px;
+  }
+
+  /* Bên trong khung, MỌI đơn vị px là px THẬT của video 1080×1920.
+     Đọc số nào trong đây là dùng thẳng được số đó khi dựng. */
+  .khung {
+    width: 1080px;
+    height: 1920px;
+    transform: scale(var(--s));
+    transform-origin: top left;
+    background:
+      radial-gradient(120% 62% at 50% 34%, #1a1a1d 0%, #0a0a0c 46%, #000000 100%);
+    position: relative;
+    overflow: hidden;
+    font-family: var(--chu-giao-dien);
+  }
+
+  /* vệt gradient đỏ mảnh sát mép trên — có ở mọi khung của mẫu */
+  .khung::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 5px;
+    background: linear-gradient(90deg, transparent 0%, #7a1a17 22%, var(--do) 50%, #7a1a17 78%, transparent 100%);
+  }
+
+  /* thanh đầu khung */
+  .thanh {
+    position: absolute;
+    top: 74px;
+    left: 64px;
+    right: 64px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--mo);
+  }
+
+  .kicker {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--mo);
+    text-align: center;
+  }
+  .kicker em { color: var(--do); font-style: normal; }
+
+  .tieu-de {
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 1.24;
+    text-align: center;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+    margin: 0;
+  }
+
+  .ke-dut {
+    height: 1px;
+    background: repeating-linear-gradient(90deg, var(--mo-dam) 0 6px, transparent 6px 14px);
+  }
+
+  /* phụ đề chạy — luôn ở 72% chiều cao khung */
+  .phu-de {
+    position: absolute;
+    top: 1382px;           /* = 72% của 1920 */
+    left: 90px;
+    right: 90px;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 700;
+    text-shadow: 0 3px 14px rgba(0,0,0,0.95), 0 0 3px rgba(0,0,0,0.9);
+  }
+  .phu-de em { color: var(--do); font-style: normal; }
+
+  /* khối chữ chính: đặt ở 1/4–1/3 chiều cao, KHÔNG phải giữa khung */
+  .khoi-chinh {
+    position: absolute;
+    top: 470px;
+    left: 96px;
+    right: 96px;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+  }
+
+  /* ---------- các thành phần riêng của từng khung ---------- */
+
+  .so-hang {
+    font-size: 150px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+
+  .phu-so {
+    font-size: 42px;
+    font-weight: 600;
+    text-align: center;
+    color: #d6d7db;
+  }
+
+  .cham-tien-do {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    margin-top: 12px;
+  }
+  .cham-tien-do i {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--mo-dam);
+  }
+  .cham-tien-do i.dang { background: var(--do); width: 28px; border-radius: 5px; }
+
+  .bang-so { display: flex; flex-direction: column; gap: 30px; }
+  .dong-so { display: flex; flex-direction: column; gap: 12px; }
+  .dong-so .nhan-so {
+    display: flex; justify-content: space-between;
+    font-size: 32px; font-weight: 600; color: #d6d7db;
+  }
+  .dong-so .nhan-so b { font-variant-numeric: tabular-nums; color: var(--chu); }
+  .thanh-so { height: 8px; background: #232428; border-radius: 4px; overflow: hidden; }
+  .thanh-so span { display: block; height: 100%; background: var(--do); }
+  .thanh-so.xam span { background: #5a5c63; }
+
+  .ba-o { display: flex; gap: 26px; }
+  .o {
+    flex: 1;
+    border: 1px solid var(--vien);
+    border-radius: 16px;
+    padding: 30px 22px;
+    text-align: center;
+    display: flex; flex-direction: column; gap: 14px;
+    background: rgba(255,255,255,0.018);
+  }
+  .o .dau-o { font-size: 30px; font-weight: 700; }
+  .o .than-o { font-size: 24px; color: var(--mo); line-height: 1.4; }
+
+  /* biến thể bố cục (b): căn trái, có vạch dọc đỏ bên mép trái khối chữ */
+  .khoi-trai {
+    position: absolute;
+    top: 470px;
+    left: 96px;
+    right: 96px;
+    padding-left: 44px;
+    border-left: 4px solid var(--do);
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+  .khoi-trai .tieu-de-trai {
+    font-size: 60px; font-weight: 700; line-height: 1.24;
+    text-align: left; margin: 0; letter-spacing: -0.01em;
+  }
+  .khoi-trai .than-trai {
+    font-size: 34px; font-weight: 500; line-height: 1.5;
+    color: #a9aab0; margin: 0;
+  }
+  .khoi-trai .ke-ngang-ngan {
+    width: 210px; height: 2px; background: #4a4b51;
+  }
+
+  /* ô biểu tượng kiểu emoji của mẫu — dựng lại bằng vector một bộ */
+  .o-bieu-tuong {
+    width: 128px; height: 128px; border-radius: 26px;
+    background: #17181c; border: 1px solid var(--vien);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto;
+  }
+
+  .nut-cta {
+    align-self: center;
+    border: 1px solid #2e2f34;
+    border-radius: 999px;
+    padding: 22px 46px;
+    font-size: 30px;
+    font-weight: 600;
+    color: #d6d7db;
+  }
+
+  .khung-mo-dau .vien-vang {
+    display: inline-block;
+    background: var(--vang);
+    color: #0a0a0c;
+    padding: 8px 24px;
+    font-weight: 700;
+  }
+  .khung-mo-dau .hop-nho {
+    display: inline-block;
+    border: 1px solid var(--mo-dam);
+    padding: 10px 28px;
+    font-size: 26px;
+    letter-spacing: 0.24em;
+    color: var(--mo);
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  /* ---------- phần chú giải bên phải ---------- */
+
+  .giai { display: flex; flex-direction: column; gap: 18px; padding-top: 6px; }
+
+  .giai h2 {
+    margin: 0;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  .giai h2 .stt {
+    color: var(--do);
+    font-variant-numeric: tabular-nums;
+    margin-right: 12px;
+  }
+  .giai p { margin: 0; color: #c9cace; font-size: 15.5px; max-width: 56ch; }
+  .giai p strong { color: var(--chu); font-weight: 600; }
+
+  .ts { display: flex; flex-direction: column; gap: 9px; margin-top: 4px; }
+  .ts div {
+    display: grid;
+    grid-template-columns: 152px 1fr;
+    gap: 16px;
+    font-size: 14.5px;
+    padding-bottom: 9px;
+    border-bottom: 1px solid var(--vien);
+  }
+  .ts dt, .ts .k {
+    color: var(--mo);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 12px;
+    font-weight: 600;
+    padding-top: 3px;
+  }
+  .ts .v { color: #d6d7db; font-variant-numeric: tabular-nums; }
+  .ts .v code {
+    font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+    font-size: 13px;
+    color: var(--chu);
+    background: #141519;
+    padding: 1px 6px;
+    border-radius: 4px;
+  }
+
+  /* ---------- bảng tổng cuối trang ---------- */
+
+  .tong { display: flex; flex-direction: column; gap: 26px; }
+
+  .bang-boc { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; min-width: 620px; font-size: 15px; }
+  th, td { text-align: left; padding: 13px 18px 13px 0; border-bottom: 1px solid var(--vien); vertical-align: top; }
+  th {
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--mo); font-weight: 600;
+  }
+  td:first-child { color: var(--chu); font-weight: 600; width: 210px; }
+  td { color: #c9cace; font-variant-numeric: tabular-nums; }
+  td code {
+    font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+    font-size: 13.5px; color: var(--chu);
+  }
+
+  .khac-mau { display: flex; flex-direction: column; gap: 22px; }
+  .khac-mau > div {
+    display: grid; grid-template-columns: 34px 1fr; gap: 18px;
+    padding-bottom: 22px; border-bottom: 1px solid var(--vien);
+  }
+  .khac-mau .num {
+    color: var(--do); font-weight: 700; font-size: 19px;
+    font-variant-numeric: tabular-nums;
+  }
+  .khac-mau h3 { margin: 0 0 7px; font-size: 17px; font-weight: 600; }
+  .khac-mau p { margin: 0; color: #c9cace; font-size: 15px; max-width: 62ch; }
+
+  .chan {
+    color: var(--mo); font-size: 13.5px; border-top: 1px solid var(--vien);
+    padding-top: 26px; max-width: 68ch;
+  }
+
+  @media (max-width: 900px) {
+    :root { --s: 0.26; }
+    .muc { grid-template-columns: 1fr; gap: 26px; }
+    .khung-boc { position: static; }
+    .trang { gap: 64px; padding-top: 48px; }
+  }
+</style>
+
+<div class="trang">
+
+  <header class="dau-trang">
+    <div class="nhan">Bản mẫu khung hình · phong cách <em>Đêm &amp; đỏ</em></div>
+    <h1>Bảy khung mẫu dựng theo đúng thông số đo được từ video tham khảo</h1>
+    <p class="dan">
+      Mỗi khung dưới đây là khung <strong>1080×1920 thật</strong>, chỉ thu nhỏ lại để xem trên màn hình.
+      Mọi con số px trong phần chú giải là <strong>px thật của video</strong> — đọc số nào là dùng thẳng
+      được số đó khi dựng, không phải quy đổi.
+    </p>
+    <p class="canh-bao">
+      Nội dung chữ trong các khung là <strong>ví dụ minh họa</strong> do em đặt ra để anh thấy phong cách
+      áp vào nội dung tài chính trông thế nào — không phải nhận định thị trường, không có số liệu thật.
+      Phần cần xem là bố cục, màu, cỡ chữ; phần chữ thì thay bằng kịch bản thật khi dựng.
+    </p>
+  </header>
+
+  <!-- ══════════ KHUNG 1 ══════════ -->
+  <section class="muc">
+    <div class="khung-boc"><div class="khung khung-mo-dau">
+      <div class="thanh"><span>01 / 18</span><span>Tuần 31 · Tài chính · Phần 1/2</span></div>
+      <div class="khoi-chinh" style="top: 400px; gap: 26px; text-align: center;">
+        <div style="font-size: 26px; letter-spacing: 0.3em; color: var(--mo); font-weight: 600;">· TUẦN 31 · 2026 ·</div>
+        <div style="font-size: 96px; font-weight: 700; line-height: 1.1;">NĂM SAI LẦM</div>
+        <div><span class="vien-vang" style="font-size: 52px;">KHI ĐỌC BÁO CÁO</span></div>
+        <div style="font-size: 96px; font-weight: 700; line-height: 1.1;">TÀI CHÍNH</div>
+        <div style="margin-top: 18px;"><span class="hop-nho">· Phần 1 ·</span></div>
+      </div>
+      <div class="phu-de">Năm sai lầm <em>ai</em> cũng mắc</div>
+    </div></div>
+
+    <div class="giai">
+      <h2><span class="stt">01</span>Khung mở đầu</h2>
+      <p>
+        Đây là khung <strong>duy nhất</strong> được dùng màu vàng. Trong mẫu gốc, vàng xuất hiện ở khối tiêu đề
+        mở đầu rồi biến mất hẳn khỏi 165 giây còn lại. Giữ đúng kỷ luật đó: vàng là dấu hiệu "đây là chỗ bắt đầu",
+        dùng lại ở giữa video sẽ làm mất tác dụng.
+      </p>
+      <p>
+        Thanh đầu khung xuất hiện ngay từ khung này và <strong>giữ nguyên vị trí suốt video</strong> — đó là thứ
+        làm video ra dáng một bản tin có kỳ, chứ không phải một clip lẻ.
+      </p>
+      <div class="ts">
+        <div><span class="k">Chữ tiêu đề</span><span class="v">96px · đậm 700 · viết hoa</span></div>
+        <div><span class="k">Nền vàng</span><span class="v"><code>#F0C73C</code>, chữ trên nền <code>#0A0A0C</code></span></div>
+        <div><span class="k">Thời lượng</span><span class="v">5 giây (mẫu giữ khung này lâu nhất)</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ KHUNG 2 ══════════ -->
+  <section class="muc">
+    <div class="khung-boc"><div class="khung">
+      <div class="thanh"><span>04 / 18</span><span>Tuần 31 · Tài chính · Phần 1/2</span></div>
+      <div class="khoi-chinh" style="top: 520px;">
+        <div class="so-hang">#5</div>
+        <div class="phu-so">Nhầm EBITDA với dòng tiền</div>
+        <div class="cham-tien-do">
+          <i></i><i></i><i></i><i class="dang"></i><i></i><i></i><i></i><i></i>
+        </div>
+      </div>
+      <div class="phu-de">Sai lầm <em>thứ năm</em></div>
+    </div></div>
+
+    <div class="giai">
+      <h2><span class="stt">02</span>Khung mở mục</h2>
+      <p>
+        Số thứ hạng đặt <strong>rất lớn và đứng một mình</strong> — đây là điểm nghỉ của mắt giữa hai mục.
+        Trong mẫu, khung kiểu này giữ khoảng 4–5 giây, gần như không có gì chuyển động ngoài phụ đề.
+      </p>
+      <p>
+        Dãy chấm tiến độ dưới số là thứ đáng học nhất ở khung này: nó cho người xem biết
+        <strong>còn bao nhiêu mục nữa</strong>. Video dài trên hai phút mà không có tín hiệu này thì người xem
+        dễ bỏ giữa chừng.
+      </p>
+      <div class="ts">
+        <div><span class="k">Số thứ hạng</span><span class="v">150px · đậm 700 · căn giữa</span></div>
+        <div><span class="k">Dòng phụ</span><span class="v">42px · đậm 600 · <code>#D6D7DB</code></span></div>
+        <div><span class="k">Chấm đang xem</span><span class="v">kéo dài thành gạch, màu <code>#FF443D</code></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ KHUNG 3 ══════════ -->
+  <section class="muc">
+    <div class="khung-boc"><div class="khung">
+      <div class="thanh"><span>05 / 18</span><span>Tuần 31 · Tài chính · Phần 1/2</span></div>
+      <div class="khoi-chinh">
+        <div class="kicker">Vì sao <em>sai</em></div>
+        <h3 class="tieu-de">EBITDA bỏ qua vốn lưu động</h3>
+        <div class="ke-dut" style="margin: 40px 120px 0;"></div>
+      </div>
+      <div class="phu-de">Tiền <em>kẹt</em> trong hàng tồn</div>
+    </div></div>
+
+    <div class="giai">
+      <h2><span class="stt">03</span>Khung ý chính — khung xương sống</h2>
+      <p>
+        Đây là khung dùng nhiều nhất, và là chỗ thể hiện rõ nhất cái hay của phong cách này:
+        <strong>khối chữ đặt ở khoảng 1/4 chiều cao tính từ trên, không phải giữa khung</strong>.
+        Phần dưới để trống lớn, chỉ có một đường kẻ đứt mảnh. Khoảng trống đó là cố ý — nó cho chữ chỗ thở
+        và chừa đúng vùng cho phụ đề.
+      </p>
+      <p>
+        Nhãn nhỏ phía trên tiêu đề (<em>Vì sao sai</em>) luôn viết hoa, giãn chữ rộng, xám mờ — và
+        <strong>từ cuối cùng tô đỏ</strong>. Đây là mẹo nhỏ nhưng lặp lại suốt mẫu.
+      </p>
+      <div class="ts">
+        <div><span class="k">Nhãn nhỏ</span><span class="v">24px · hoa · giãn chữ 0.26em</span></div>
+        <div><span class="k">Tiêu đề</span><span class="v">64px · đậm 700 · tối đa 2 dòng</span></div>
+        <div><span class="k">Khối chữ</span><span class="v">bắt đầu ở 470px tính từ mép trên</span></div>
+        <div><span class="k">Lề hai bên</span><span class="v">96px mỗi bên</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ KHUNG 4 — biến thể bố cục thứ hai ══════════ -->
+  <section class="muc">
+    <div class="khung-boc"><div class="khung">
+      <div class="thanh"><span>06 / 18</span><span>Tuần 31 · Tài chính · Phần 1/2</span></div>
+      <div class="khoi-trai">
+        <h3 class="tieu-de-trai">Lợi nhuận tăng mà tiền mặt vẫn cạn</h3>
+        <div class="ke-ngang-ngan"></div>
+        <p class="than-trai">
+          Doanh thu ghi nhận khi xuất hóa đơn, còn tiền về thì chờ khách trả.
+          Khoảng chờ đó dài ra là tiền mặt hụt, dù báo cáo vẫn đẹp.
+        </p>
+      </div>
+      <div class="phu-de">Tiền về <em>chậm</em> hơn sổ</div>
+    </div></div>
+
+    <div class="giai">
+      <h2><span class="stt">04</span>Khung căn trái — biến thể bố cục thứ hai</h2>
+      <p>
+        Mẫu <strong>không chỉ có một kiểu bố cục</strong>. Khi một màn cần giải thích dài hơn một câu,
+        mẫu chuyển sang kiểu này: chữ căn trái, có <strong>vạch dọc đỏ chạy dọc mép trái khối chữ</strong>
+        làm mốc, đoạn giải thích cỡ 34px màu xám nhạt nằm dưới tiêu đề.
+      </p>
+      <p>
+        Lý do rất thực dụng: căn giữa mà chữ nhiều dòng thì mắt phải tìm lại đầu dòng mỗi lần xuống hàng,
+        đọc rất mệt. Căn trái giải quyết đúng chuyện đó. <strong>Đây là chi tiết em bỏ sót ở bản mẫu đầu</strong> —
+        phát hiện khi soát lại theo tiêu chuẩn mới.
+      </p>
+      <div class="ts">
+        <div><span class="k">Tiêu đề</span><span class="v">60px · đậm 700 · căn trái</span></div>
+        <div><span class="k">Đoạn giải thích</span><span class="v">34px · <code>#A9AAB0</code> · giãn dòng 1.5</span></div>
+        <div><span class="k">Vạch dọc</span><span class="v">dày 4px · <code>#FF443D</code> · cách chữ 44px</span></div>
+        <div><span class="k">Dùng khi</span><span class="v">nội dung cần hơn một câu để nói hết</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ KHUNG 5 ══════════ -->
+  <section class="muc">
+    <div class="khung-boc"><div class="khung">
+      <div class="thanh"><span>08 / 18</span><span>Tuần 31 · Tài chính · Phần 1/2</span></div>
+      <div class="khoi-chinh" style="top: 500px;">
+        <div class="kicker">Chênh <em>lệch</em></div>
+        <div class="bang-so" style="margin-top: 16px;">
+          <div class="dong-so">
+            <div class="nhan-so"><span>EBITDA báo cáo</span><b>100</b></div>
+            <div class="thanh-so xam"><span style="width: 100%"></span></div>
+          </div>
+          <div class="dong-so">
+            <div class="nhan-so"><span>Trừ vốn lưu động tăng</span><b>−34</b></div>
+            <div class="thanh-so xam"><span style="width: 66%"></span></div>
+          </div>
+          <div class="dong-so">
+            <div class="nhan-so"><span>Trừ chi đầu tư</span><b>−29</b></div>
+            <div class="thanh-so"><span style="width: 37%"></span></div>
+          </div>
+          <div class="dong-so">
+            <div class="nhan-so"><span>Dòng tiền còn lại</span><b>37</b></div>
+            <div class="thanh-so"><span style="width: 37%"></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="phu-de">Còn lại <em>ba bảy</em> đồng</div>
+    </div></div>
+
+    <div class="giai">
+      <h2><span class="stt">05</span>Khung số liệu — <span style="color:var(--do)">thay cho ảnh chụp màn hình</span></h2>
+      <p>
+        Trong mẫu gốc, vị trí này là ảnh chụp màn hình trang web cuộn chậm. Nội dung của anh không có màn hình
+        để chụp, nên em thay bằng <strong>khối số liệu tự dựng</strong> — giữ nguyên vai trò "khối nặng thị giác
+        xen giữa các khung chữ", nhưng bằng chất liệu của mình.
+      </p>
+      <p>
+        Thanh ngang chuyển từ xám sang đỏ dần xuống dưới, dẫn mắt đi theo phép trừ. Đây là chỗ
+        <strong>duy nhất</strong> nên có nhiều số cùng lúc; các khung khác giữ một ý một khung.
+      </p>
+      <div class="ts">
+        <div><span class="k">Nhãn dòng</span><span class="v">32px · đậm 600</span></div>
+        <div><span class="k">Thanh ngang</span><span class="v">cao 8px · bo 4px · nền <code>#232428</code></span></div>
+        <div><span class="k">Chuyển động</span><span class="v">thanh chạy dài ra <strong>đồng thời</strong> với con số đếm tăng dần, mỗi dòng ~0,5 giây, các dòng chạy <strong>lần lượt từ trên xuống</strong> chứ không cùng lúc (đo bằng cắt 6 hình/giây đoạn 68–72 giây của mẫu)</span></div>
+        <div><span class="k">Số đích</span><span class="v">tô đỏ ngay khi đếm xong</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ KHUNG 6 ══════════ -->
+  <section class="muc">
+    <div class="khung-boc"><div class="khung">
+      <div class="thanh"><span>11 / 18</span><span>Tuần 31 · Tài chính · Phần 1/2</span></div>
+      <div class="khoi-chinh" style="top: 500px;">
+        <h3 class="tieu-de" style="font-size: 52px;">Ba chỗ cần soát lại</h3>
+        <div class="ba-o" style="margin-top: 22px;">
+          <div class="o">
+            <div class="o-bieu-tuong">
+              <svg width="66" height="66" viewBox="0 0 24 24" fill="none" stroke="#ff443d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M3 21h18"/><rect x="5" y="12" width="4" height="7"/><rect x="10" y="8" width="4" height="11"/><rect x="15" y="4" width="4" height="15"/>
+              </svg>
+            </div>
+            <div class="dau-o">Hàng tồn</div><div class="than-o">Tăng nhanh hơn doanh thu</div>
+          </div>
+          <div class="o">
+            <div class="o-bieu-tuong">
+              <svg width="66" height="66" viewBox="0 0 24 24" fill="none" stroke="#ff443d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2"/>
+              </svg>
+            </div>
+            <div class="dau-o">Phải thu</div><div class="than-o">Kỳ thu tiền dài ra</div>
+          </div>
+          <div class="o">
+            <div class="o-bieu-tuong">
+              <svg width="66" height="66" viewBox="0 0 24 24" fill="none" stroke="#ff443d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 18 L10 11 L14 14 L20 6"/><path d="M15 6h5v5"/>
+              </svg>
+            </div>
+            <div class="dau-o">Chi đầu tư</div><div class="than-o">Có phải khoản duy trì</div>
+          </div>
+        </div>
+      </div>
+      <div class="phu-de">Soát <em>ba</em> chỗ này</div>
+    </div></div>
+
+    <div class="giai">
+      <h2><span class="stt">06</span>Khung ba điểm nhấn — <span style="color:var(--do)">chỗ mẫu dùng emoji</span></h2>
+      <p>
+        Khung này phá nhịp "một ý một khung" — dùng đúng <strong>một hoặc hai lần trong cả video</strong>,
+        ở chỗ cần tóm lại. Ba ô là giới hạn trên: bốn ô thì chữ phải nhỏ xuống dưới ngưỡng đọc được
+        trên điện thoại.
+      </p>
+      <p>
+        <strong>Đây là chỗ mẫu gốc dùng emoji hệ thống</strong> (🌳 và 📱) đặt trong ô bo góc. Em thay bằng
+        <strong>biểu tượng vector nét mảnh một màu</strong> vì ba lý do: emoji kéo theo cả bảng màu riêng
+        (xanh lá, nâu, cam) phá bộ ba đen–trắng–đỏ; mỗi hệ điều hành vẽ emoji một kiểu nên không kiểm soát
+        được hình ra sao; và emoji đọc ra cảm giác trò chuyện, lệch tông một bản tin tài chính.
+      </p>
+      <div class="ts">
+        <div><span class="k">Ô biểu tượng</span><span class="v">128×128px · bo 26px · nền <code>#17181C</code></span></div>
+        <div><span class="k">Biểu tượng</span><span class="v">66px · nét 1.8 · một màu <code>#FF443D</code></span></div>
+        <div><span class="k">Đầu ô</span><span class="v">30px · đậm 700</span></div>
+        <div><span class="k">Số ô</span><span class="v">tối đa 3</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ KHUNG 6 ══════════ -->
+  <section class="muc">
+    <div class="khung-boc"><div class="khung">
+      <div class="thanh"><span>18 / 18</span><span>Tuần 31 · Tài chính · Phần 1/2</span></div>
+      <div class="khoi-chinh" style="top: 560px;">
+        <h3 class="tieu-de" style="font-size: 56px;">Sai lầm nào anh từng mắc?</h3>
+        <div class="ke-dut" style="margin: 30px 150px;"></div>
+        <div class="nut-cta">Phần 2 · năm sai lầm còn lại</div>
+      </div>
+      <div class="phu-de" style="top: 1500px;">Hẹn gặp ở <em>phần hai</em></div>
+    </div></div>
+
+    <div class="giai">
+      <h2><span class="stt">07</span>Khung kết</h2>
+      <p>
+        Mẫu gốc kết bằng một câu hỏi mở rồi mới tới lời mời xem tiếp — <strong>hỏi trước, mời sau</strong>.
+        Ngược thứ tự thì câu hỏi mất tác dụng vì người xem đã lướt qua rồi.
+      </p>
+      <p>
+        Đây cũng là chỗ duy nhất nhạc nền tắt dần trong mẫu (một giây cuối). Toàn bộ 164 giây trước đó
+        nhạc chạy đều không đổi.
+      </p>
+      <div class="ts">
+        <div><span class="k">Câu hỏi</span><span class="v">56px · đậm 700</span></div>
+        <div><span class="k">Nút mời</span><span class="v">30px · viền bo tròn · không tô nền</span></div>
+        <div><span class="k">Âm thanh</span><span class="v">nhạc tắt dần trong 1 giây cuối</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ BẢNG THÔNG SỐ ══════════ -->
+  <section class="tong">
+    <div class="nhan">Thông số dùng chung <em>mọi</em> khung</div>
+    <h1 style="font-size: clamp(26px, 3.4vw, 36px);">Bảng tra khi dựng</h1>
+
+    <div class="bang-boc">
+      <table>
+        <thead>
+          <tr><th>Hạng mục</th><th>Giá trị chốt</th><th>Vì sao</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Khung hình</td>
+            <td><code>1080 × 1920</code>, 30 hình/giây</td>
+            <td>Chuẩn dọc cho Zalo, TikTok, Reels</td>
+          </tr>
+          <tr>
+            <td>Nền</td>
+            <td><code>#000000</code> + vệt sáng nhẹ tỏa từ giữa</td>
+            <td>Đen phẳng tuyệt đối trông chết; vệt sáng làm chữ nổi lên</td>
+          </tr>
+          <tr>
+            <td>Chữ chính</td>
+            <td><code>#FFFFFF</code></td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Chữ mờ</td>
+            <td><code>#6E7076</code></td>
+            <td>Xám ngả xanh rất nhẹ, không phải xám trung tính</td>
+          </tr>
+          <tr>
+            <td>Màu nhấn</td>
+            <td><code>#FF443D</code></td>
+            <td>Chỉ MỘT màu nhấn cho cả video</td>
+          </tr>
+          <tr>
+            <td>Màu mở đầu</td>
+            <td><code>#F0C73C</code></td>
+            <td>Chỉ dùng ở khung mở đầu, không dùng lại</td>
+          </tr>
+          <tr>
+            <td>Phông chữ</td>
+            <td>Không chân, bo tròn, đậm 600–700</td>
+            <td>Dạng Poppins hoặc Nunito Sans. Trang này đang hiện bằng phông hệ thống Windows nên nét vuông hơn mẫu thật một chút</td>
+          </tr>
+          <tr>
+            <td>Nhịp màn</td>
+            <td>≈ 7 giây/màn</td>
+            <td>Hình đứng yên lâu, cho mắt nghỉ</td>
+          </tr>
+          <tr>
+            <td>Nhịp phụ đề</td>
+            <td>0,4 – 0,6 giây/cụm, mỗi cụm 3–4 từ</td>
+            <td>Tai bị kéo đi liên tục trong khi mắt được nghỉ</td>
+          </tr>
+          <tr>
+            <td>Vị trí phụ đề</td>
+            <td>72% chiều cao = <code>1382px</code></td>
+            <td>Đủ cao để không bị thanh giao diện của Shorts che</td>
+          </tr>
+          <tr>
+            <td>Karaoke</td>
+            <td>Một từ đỏ mỗi cụm, chạy theo lời đọc</td>
+            <td>Chỉ đổi màu, KHÔNG phóng to chữ</td>
+          </tr>
+          <tr>
+            <td>Chuyển màn</td>
+            <td>Chồng mờ trực tiếp, ≈ 0,25 giây</td>
+            <td>Màn cũ mờ đi trong khi màn mới hiện đè lên — <strong>không đi qua đen</strong>. Không dùng hiệu ứng bay, nảy, trượt ngang</td>
+          </tr>
+          <tr>
+            <td>Bố cục</td>
+            <td>Hai biến thể: căn giữa và căn trái có vạch dọc</td>
+            <td>Căn giữa cho câu ngắn; căn trái khi cần giải thích hơn một câu</td>
+          </tr>
+          <tr>
+            <td>Số liệu động</td>
+            <td>Đếm tăng dần + thanh chạy đầy, ~0,5 giây/dòng</td>
+            <td>Các dòng chạy lần lượt từ trên xuống, không cùng lúc</td>
+          </tr>
+          <tr>
+            <td>Biểu tượng</td>
+            <td>Vector nét mảnh, một màu <code>#FF443D</code></td>
+            <td>Mẫu dùng emoji hệ thống — không nên bắt chước, xem mục cải tiến</td>
+          </tr>
+          <tr>
+            <td>Giọng đọc</td>
+            <td>187 từ/phút</td>
+            <td>Nhanh hơn nói thường (140–160) nhưng chưa hụt hơi</td>
+          </tr>
+          <tr>
+            <td>Nhạc nền</td>
+            <td>Chạy liên tục, âm lượng phẳng</td>
+            <td>Nền lót cho liền mạch, không dẫn cảm xúc — xem mục cải tiến bên dưới</td>
+          </tr>
+          <tr>
+            <td>Cỡ chữ nhỏ nhất</td>
+            <td><code>32px</code></td>
+            <td>Sàn của xưởng. Mẫu dùng 19px ở thanh đầu khung — em đã nâng lên 22px, xem mục cải tiến</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ══════════ KHÁC MẪU ══════════ -->
+  <section class="tong khac-mau-boc">
+    <div class="nhan">Năm chỗ em <em>cố ý</em> làm khác mẫu</div>
+    <h1 style="font-size: clamp(26px, 3.4vw, 36px);">Không sao chép — học nguyên tắc rồi sửa chỗ không hợp</h1>
+
+    <div class="khac-mau">
+      <div>
+        <span class="num">01</span>
+        <div>
+          <h3>Chữ ở thanh đầu khung: 19px → 22px</h3>
+          <p>
+            Mẫu để 19px, thấp hơn sàn 32px của xưởng. Em nâng lên 22px chứ chưa lên thẳng 32px, vì lên đủ sàn
+            thì thanh này nặng ngang tiêu đề và phá bố cục. Đây là chữ trang trí, không mang thông tin bắt buộc
+            phải đọc — nhưng anh cần biết là em đang <strong>cố ý phá quy ước của chính xưởng</strong> ở chỗ này,
+            và anh có quyền bắt giữ đúng 32px.
+          </p>
+        </div>
+      </div>
+      <div>
+        <span class="num">02</span>
+        <div>
+          <h3>Ảnh chụp màn hình → khối số liệu tự dựng</h3>
+          <p>
+            Mẫu dành phần lớn thời lượng cho ảnh chụp giao diện GitHub. Nội dung tài chính không có màn hình để
+            chụp, và bê giao diện có nhận diện thương hiệu của bên khác vào video là chuyện phải tránh.
+            Khối số liệu ở khung 4 giữ đúng vai trò thị giác đó bằng chất liệu của mình.
+          </p>
+        </div>
+      </div>
+      <div>
+        <span class="num">03</span>
+        <div>
+          <h3>Nhạc: thêm chỗ hạ và chỗ nghỉ</h3>
+          <p>
+            Mẫu để nhạc phẳng suốt 165 giây và giọng đọc không nghỉ lấy một nhịp. Với video xếp hạng thì được,
+            nhưng nội dung tài chính có câu chốt cần đọng lại. Đề xuất: <strong>hạ nhạc và cho giọng nghỉ nửa
+            giây ngay trước câu chốt của mỗi mục</strong>. Đây là chỗ bản dựng của mình ăn đứt mẫu.
+          </p>
+        </div>
+      </div>
+      <div>
+        <span class="num">04</span>
+        <div>
+          <h3>Emoji → biểu tượng vector một bộ</h3>
+          <p>
+            Mẫu dùng emoji hệ thống (🌳 và 📱) ở khung ba điểm nhấn. Ba lý do không nên bắt chước:
+            emoji kéo theo bảng màu riêng phá bộ ba đen–trắng–đỏ; mỗi hệ điều hành vẽ emoji một kiểu nên
+            hình ra sao là ngoài tầm kiểm soát; và emoji đọc ra cảm giác trò chuyện, lệch tông bản tin
+            tài chính. Khung 6 dùng <strong>biểu tượng vector nét mảnh một màu</strong> thay thế —
+            việc gom một bộ biểu tượng thống nhất vào <code>tai_san/</code> đằng nào cũng đã là đầu việc
+            riêng của xưởng.
+          </p>
+        </div>
+      </div>
+      <div>
+        <span class="num">05</span>
+        <div>
+          <h3>Độ dài: 165 giây → nên ngắn hơn</h3>
+          <p>
+            Mẫu dài 2 phút 45 cho 10 mục chia hai phần. Nội dung của anh nếu chỉ có 3–5 ý thì đừng kéo cho đủ dài —
+            giữ nguyên nhịp 7 giây/màn và để video kết thúc ở 60–90 giây. Nhịp mới là thứ tạo cảm giác,
+            không phải thời lượng.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <p class="chan">
+    <strong>Bản 2</strong> — cập nhật 28/07/2026 chiều muộn sau lượt soát thứ hai: thêm khung 4 (biến thể bố cục căn trái),
+    thay emoji bằng biểu tượng vector ở khung 6, sửa mô tả chuyển màn (chồng mờ 0,25 giây, không qua đen)
+    và mô tả số liệu động (đếm tăng dần, không hiện sẵn).
+    Dựng từ thẻ phong cách <strong>Đêm &amp; đỏ</strong> (<code>tai_san/so_tay_gu/the_dem_va_do.md</code>, trạng thái: <strong>đã duyệt 28/07/2026</strong>).
+    Thông số đo bằng ffprobe, ffmpeg và Pillow từ video tham khảo tải về máy — video đó chỉ dùng để học trong máy,
+    không đăng lại và không cắt cảnh ghép vào bản dựng.
+  </p>
+
+</div>

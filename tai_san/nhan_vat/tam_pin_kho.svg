@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="600" height="800">
+  <!-- Nhân vật tấm pin mặt trời "Tôi khổ lắm" (Claude vẽ 28/10/2026 cho hình thu nhỏ video thử nghiệm tấm pin).
+       Mặt mệt, mồ hôi, băng dán, vết nứt do mưa đá (không vẽ viên đá: dễ nhầm với chấm của bóng suy nghĩ), đá băng trên khung, nhiệt kế đỏ. Kênh sở hữu, dùng lại được. -->
+  <defs>
+    <linearGradient id="o" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2f6fd6"/><stop offset=".55" stop-color="#1c4aa0"/><stop offset="1" stop-color="#12306d"/>
+    </linearGradient>
+    <linearGradient id="bong" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity=".35"/><stop offset=".4" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <!-- chân -->
+    <path d="M250 575 C245 630 228 660 238 712" stroke="#1b2430" stroke-width="16" fill="none"/>
+    <path d="M350 575 C362 625 378 655 366 712" stroke="#1b2430" stroke-width="16" fill="none"/>
+    <path d="M196 712 h62 a14 14 0 0 1 0 28 h-74 a16 16 0 0 1 12 -28z" fill="#e3262f" stroke="#1b2430" stroke-width="7"/>
+    <path d="M346 712 h62 a16 16 0 0 1 12 28 h-74 a14 14 0 0 1 0 -28z" fill="#e3262f" stroke="#1b2430" stroke-width="7"/>
+    <!-- tay trái giơ lên ôm trán -->
+    <path d="M150 330 C95 300 92 230 150 205" stroke="#1b2430" stroke-width="16" fill="none"/>
+    <!-- tay phải cầm nhiệt kế -->
+    <path d="M450 340 C505 360 515 410 500 445" stroke="#1b2430" stroke-width="16" fill="none"/>
+    <!-- thân: tấm pin -->
+    <rect x="150" y="120" width="300" height="460" rx="16" fill="#c9d1d9" stroke="#1b2430" stroke-width="9"/>
+    <rect x="166" y="136" width="268" height="428" rx="6" fill="url(#o)"/>
+    <g stroke="#8db3ee" stroke-width="2.4" opacity=".75">
+      <path d="M210.7 136 V564 M255.3 136 V564 M300 136 V564 M344.7 136 V564 M389.3 136 V564"/>
+      <path d="M166 189.5 H434 M166 243 H434 M166 296.5 H434 M166 350 H434 M166 403.5 H434 M166 457 H434 M166 510.5 H434"/>
+    </g>
+    <rect x="166" y="136" width="268" height="428" rx="6" fill="url(#bong)"/>
+    <!-- đá băng trên khung -->
+    <path d="M160 122 h280 l-14 34 -10 -22 -12 40 -14 -36 -12 26 -16 -30 -14 46 -14 -40 -12 24 -16 -34 -12 30 -14 -26 -14 38 -12 -32 -14 22 -12 -30 -16 36 -12 -40 z" fill="#e6f6ff" stroke="#1b2430" stroke-width="6"/>
+    <!-- vết nứt do mưa đá -->
+    <path d="M178 470 l38 -22 -8 30 34 -14 -14 34 30 -6" stroke="#ffffff" stroke-width="5" fill="none"/>
+    <!-- băng dán -->
+    <g transform="rotate(-32 395 500)">
+      <rect x="350" y="482" width="92" height="36" rx="16" fill="#f2c58f" stroke="#1b2430" stroke-width="6"/>
+      <rect x="383" y="486" width="26" height="28" fill="#e2a96b"/>
+      <circle cx="363" cy="494" r="2.6" fill="#b07b45"/><circle cx="363" cy="506" r="2.6" fill="#b07b45"/>
+      <circle cx="430" cy="494" r="2.6" fill="#b07b45"/><circle cx="430" cy="506" r="2.6" fill="#b07b45"/>
+    </g>
+    <circle cx="168" cy="204" r="25" fill="#fff" stroke="#1b2430" stroke-width="7"/>
+    <!-- mặt -->
+    <path d="M205 262 Q240 252 270 236" stroke="#0b1530" stroke-width="12" fill="none"/>
+    <path d="M395 262 Q360 252 330 236" stroke="#0b1530" stroke-width="12" fill="none"/>
+    <ellipse cx="245" cy="305" rx="38" ry="32" fill="#fff" stroke="#0b1530" stroke-width="6"/>
+    <ellipse cx="355" cy="305" rx="38" ry="32" fill="#fff" stroke="#0b1530" stroke-width="6"/>
+    <circle cx="250" cy="314" r="13" fill="#0b1530"/><circle cx="350" cy="314" r="13" fill="#0b1530"/>
+    <path d="M207 300 Q245 286 283 300 L283 275 Q245 262 207 278z" fill="#2a5fc0" stroke="#0b1530" stroke-width="6"/>
+    <path d="M317 300 Q355 286 393 300 L393 278 Q355 262 317 275z" fill="#2a5fc0" stroke="#0b1530" stroke-width="6"/>
+    <path d="M215 350 Q245 362 275 350 M325 350 Q355 362 385 350" stroke="#0b1530" stroke-width="5" fill="none" opacity=".7"/>
+    <path d="M240 452 Q300 368 360 452 Q300 438 240 452z" fill="#7a1020" stroke="#0b1530" stroke-width="7"/>
+    <path d="M268 446 Q300 424 332 446 Q300 440 268 446z" fill="#ff6b7d"/>
+    <!-- mồ hôi -->
+    <path d="M420 190 q14 22 0 36 q-14 -14 0 -36z" fill="#7fd6ff" stroke="#0b1530" stroke-width="5"/>
+    <path d="M455 240 q11 18 0 29 q-11 -11 0 -29z" fill="#7fd6ff" stroke="#0b1530" stroke-width="5"/>
+    <path d="M190 360 q10 16 0 26 q-10 -10 0 -26z" fill="#7fd6ff" stroke="#0b1530" stroke-width="4"/>
+    <!-- nhiệt kế -->
+    <g transform="rotate(18 520 470)">
+      <rect x="506" y="372" width="28" height="116" rx="14" fill="#fff" stroke="#1b2430" stroke-width="6"/>
+      <rect x="514" y="388" width="12" height="96" rx="6" fill="#e3262f"/>
+      <circle cx="520" cy="500" r="24" fill="#e3262f" stroke="#1b2430" stroke-width="6"/>
+    </g>
+    <circle cx="500" cy="452" r="22" fill="#fff" stroke="#1b2430" stroke-width="7"/>
+  </g>
+</svg>

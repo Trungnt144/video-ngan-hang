@@ -1,0 +1,115 @@
+{
+ "ten": "n199_hoat_dong_huy_dong_von",
+ "ngay": "2026-11-03",
+ "ghi_chu": "N199 Hoạt động huy động vốn của ngân hàng là gì, CL-14 mô phỏng hạt, BC-06 bảng toàn khung, MAU-58, NH09. Sinh bằng n199_tao_nhip.py; trường 'nhip' (storyboard) viết tay, giữ nguyên khi chạy lại.",
+ "kho": "1920x1080",
+ "thoi_luong_giay": 254.743,
+ "fps_xem_truoc": 10,
+ "fps_cuoi": 30,
+ "giong": [
+  {
+   "tep": "am_thanh/c1.wav",
+   "t": 1.2
+  },
+  {
+   "tep": "am_thanh/c2.wav",
+   "t": 17.816
+  },
+  {
+   "tep": "am_thanh/c3.wav",
+   "t": 38.962
+  },
+  {
+   "tep": "am_thanh/c4.wav",
+   "t": 58.696
+  },
+  {
+   "tep": "am_thanh/c5.wav",
+   "t": 77.548
+  },
+  {
+   "tep": "am_thanh/c6.wav",
+   "t": 97.851
+  },
+  {
+   "tep": "am_thanh/c7.wav",
+   "t": 120.082
+  },
+  {
+   "tep": "am_thanh/c8.wav",
+   "t": 143.216
+  },
+  {
+   "tep": "am_thanh/c9.wav",
+   "t": 175.837
+  },
+  {
+   "tep": "am_thanh/c10.wav",
+   "t": 201.826
+  },
+  {
+   "tep": "am_thanh/c11.wav",
+   "t": 229.594
+  }
+ ],
+ "nhac": "am_thanh/n199_nhac_noi.wav",
+ "nhac_db": -10.0,
+ "mo_dan": 2,
+ "chuong": [
+  {
+   "id": "1",
+   "ten": "Một trăm đồng của ngân hàng · Huy động vốn là gì",
+   "t": 0.0,
+   "den": 38.462
+  },
+  {
+   "id": "2",
+   "ten": "Nguồn thứ nhất: tiền gửi · Nguồn thứ hai: giấy tờ có giá",
+   "t": 38.462,
+   "den": 77.048
+  },
+  {
+   "id": "3",
+   "ten": "Nguồn thứ ba: tiền đi vay",
+   "t": 77.048,
+   "den": 97.351
+  },
+  {
+   "id": "4",
+   "ten": "Mọi nguồn gộp lại",
+   "t": 97.351,
+   "den": 119.582
+  },
+  {
+   "id": "5",
+   "ten": "Nguồn nào đắt, nguồn nào rẻ",
+   "t": 119.582,
+   "den": 142.716
+  },
+  {
+   "id": "6",
+   "ten": "Không được dùng hết để cho vay",
+   "t": 142.716,
+   "den": 175.337
+  },
+  {
+   "id": "7",
+   "ten": "Thời hạn và bảo hiểm tiền gửi",
+   "t": 175.337,
+   "den": 201.326
+  },
+  {
+   "id": "8",
+   "ten": "Huy động quyết định lợi nhuận",
+   "t": 201.326,
+   "den": 229.094
+  },
+  {
+   "id": "9",
+   "ten": "Tóm lại · Màn hình kết",
+   "t": 229.094,
+   "den": 254.743
+  }
+ ],
+ "nhip": []
+}

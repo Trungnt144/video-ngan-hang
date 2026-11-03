@@ -1,0 +1,145 @@
+.DS_Store
+**/.env
+xuong/node_modules/
+xuong/dist/
+xuong/out/
+khoa_api.txt
+**/khoa_api.txt
+# --- 2026-10-27 san_pham: mỗi sản phẩm một thư mục (AGENTS.md mục "Quy ước sản phẩm").
+# Video, ảnh, âm thanh, tài liệu xuất ra không vào git; chỉ kịch bản và nguon_goc.md của từng thư mục vào git.
+san_pham/**
+!san_pham/**/
+!san_pham/README.md
+!san_pham/_bang_chuyen_duong_dan_*.tsv
+!san_pham/*/tai_nguyen/nguon_goc.md
+!san_pham/*/tai_nguyen/kich_ban/**
+# 28/10/2026 chữ đăng từng nền tảng (skill viet-chu-dang-video) vào git; hinh_thu_nho.json, goi_y_tu_khoa_*.json thì không
+!san_pham/*/tai_nguyen/dang_bai/*.md
+san_pham/*/tai_nguyen/kich_ban/**/*.mp4
+san_pham/*/tai_nguyen/kich_ban/**/*.wav
+san_pham/*/tai_nguyen/kich_ban/**/*.mp3
+!san_pham/*.so_do_van_hanh_*.html
+!san_pham/*.so_do_du_an_*.html
+!san_pham/*.so_do_du_an_*.png
+tai_san/so_tay_gu/mau_tham_khao/*
+!tai_san/so_tay_gu/mau_tham_khao/README.md
+_luu_tru/*
+!_luu_tru/README.md
+
+# --- 2026-09-26 chuyen du lieu tu cay Claude cu: kho nang / du lieu khach / ban quyen - giu tren dia, KHONG dua vao git ---
+_luu_tru/tu_cay_claude/
+
+# --- 2026-10-25 giai doan 3: ma dung video dai, thu vien Node va ban xuat khong dua vao git ---
+xuong_dai/**/node_modules/
+xuong_dai/**/out/
+# Chuỗi ảnh Blender và file .blend sinh lại được bằng canh3d/dung_blender.py
+xuong_dai/**/public/blender/
+# lượt nháp và mặt nạ (thêm 26/10/2026 sau khi hook tự lưu đưa nhầm 250 MB ảnh cảnh thử D-11 vào git)
+xuong_dai/**/public/blender_*/
+xuong_dai/**/*.blend
+xuong_dai/**/*.blend1
+
+# file biên dịch của Python
+__pycache__/
+
+# --- 2026-10-25 moi truong Python cua VieNeu-TTS (giong doc chay tren may), cai lai theo 08_giong_am_thanh_phu_de.md ---
+.venv_vieneu/
+
+# ảnh môi trường và vật liệu 3D tải từ Poly Haven: file nặng, tải lại được
+tai_san/moi_truong_3d/*
+!tai_san/moi_truong_3d/README.md
+
+# --- 2026-10-26 clip video tao bang AI (Muse, Flow): file nang, giu tren dia; so va README vao git ---
+tai_san/clip_ai/**/*.mp4
+xuong_dai/**/node_modules
+
+# --- 2026-10-26 du lieu tho cua skill san-trend: giu tren may, KHONG dua vao git (Trung chot 26/10/2026) ---
+du_lieu/trend/
+
+# --- 2026-10-26 thu HyperFrames: thu vien Node, FFmpeg rieng, ky nang tai ve (khoi phuc bang skills-lock.json), ban xuat ---
+xuong_thu_hyperframes/node_modules/
+xuong_thu_hyperframes/.claude/skills/
+xuong_thu_hyperframes/**/renders/
+xuong_thu_hyperframes/**/snapshots/
+xuong_thu_hyperframes/**/node_modules/
+xuong_thu_hyperframes/khung_soat/
+xuong_thu_hyperframes/tham_khao/
+xuong_thu_hyperframes/**/assets/*.mp3
+
+# --- 2026-10-26 giong rieng cho VieNeu (nhan ban giong nguoi that): du lieu sinh trac hoc, KHONG dua vao git ---
+tai_san/giong_rieng/*
+!tai_san/giong_rieng/README.md
+
+# --- 2026-10-26 mo hinh 3D tai ve (nang, tai lai duoc): giu tren dia; README vao git ---
+tai_san/mo_hinh_3d/*/*
+!tai_san/mo_hinh_3d/*/README.md
+# khung thử lẻ của Blender (sinh lại được)
+xuong_dai/**/public/thu/
+
+# Nhạc nền tải thêm từ 27/10/2026 nằm ngoài git (18 bài cũ đã commit vẫn được theo dõi); tải lại theo trường tai_tu trong tai_san/nhac_nen/so_nhac.json
+tai_san/nhac_nen/*.mp3
+.venv_nhac/
+
+# --- 2026-10-27 xuong_html (cách làm LM-03, HTML một trang): thư viện Node, video xuất, khung xem trước sinh lại được ---
+xuong_html/**/node_modules/
+xuong_html/**/*.mp4
+xuong_html/**/xem_truoc/
+# 2026-10-28 pha máy cho LM-03: bộ đệm chuỗi ảnh, tiếng, bảng soát; dự án thử của trình chạy (mã thu_html_...)
+xuong_html/**/out/
+xuong_html/thu_html_*/
+
+# --- 2026-10-27 N56: giọng đọc và nhạc trong public/ của dự án dựng video ngang (giong/, giong_goc/, nhac/, giong_3d/, giong_vieneu/, audio_hoaimy/).
+# Giữ trên đĩa, KHÔNG đưa vào git (Trung chốt 27/10/2026). Khi giao bản cuối chép giọng và nhạc sang san_pham/<video>/tai_nguyen/am_thanh/;
+# giọng chưa giao thì sinh lại bằng scripts/sinh_giong_vieneu.py. 541 file đã theo dõi trước ngày này vẫn lấy lại được từ lịch sử git.
+xuong_dai/**/public/**/*.wav
+xuong_dai/**/public/**/*.mp3
+
+# --- 2026-10-27 bảng theo dõi video (scripts/bang_video/): đoạn xem nhanh và nhật ký thô của lượt Claude sinh lại được ---
+du_lieu/bang_video/xem_nhanh/
+du_lieu/bang_video/nhat_ky_lenh/
+du_lieu/bang_video/*.tam
+# --- 2026-10-27 mẫu hình thu nhỏ: ảnh nền không chữ sinh lại được (nguon_goc.md của san_pham/2026.10.27.mau_hinh_thu_nho/) ---
+xuong_html/hinh_thu_nho/khung/
+du_lieu/bang_video/may_chu.log
+# --- 2026-10-27 ảnh thật tải từ Wikimedia Commons: tải lại được theo tai_san/anh_that/so_anh.md ---
+tai_san/anh_that/*.jpg
+# ảnh đã tách nền (tach_nen.swift): sinh lại từ ảnh gốc theo so_anh.md
+tai_san/anh_that/tach_nen/
+
+# Hàng đợi kết xuất dùng chung (scripts/hang_doi_ket_xuat.sh)
+du_lieu/hang_doi_ket_xuat/
+# Phiếu, báo cáo, nhật ký của trình chạy pha máy (scripts/pha_may/)
+du_lieu/pha_may/
+
+# File nhật ký kết xuất của tác tử con trong dự án dựng (Trung duyệt 28/10/2026)
+xuong_dai/**/n*_*.log
+
+# Từ cấm riêng của skill viet-chu-dang-video (tên khách hàng, dự án chưa công bố): không vào git
+skills/viet-chu-dang-video/tu_cam_rieng.txt
+
+# Kết quả soi hình thu nhỏ YouTube (skills/soi-hinh-thu-nho/scripts/soi.py)
+du_lieu/soi_hinh_thu_nho/
+
+# --- 2026-10-29 xuong_html: ảnh tĩnh chụp để soát và âm thanh (giọng, nhạc) giữ trên đĩa, KHÔNG đưa vào git.
+# Hook tự lưu đã lỡ đưa ~1.600 file (~890 MB) của lô video ngân hàng vào git ngày 28–29/10/2026.
+xuong_html/**/anh_tinh/
+xuong_html/**/am_thanh/
+xuong_html/**/*.wav
+xuong_html/**/*.mp3
+xuong_html/**/*.m4a
+xuong_dai/**/anh_tinh/
+
+# Ảnh mẫu kho hình dùng chung (skill ra-soat-dung-chung), sinh lại được
+tai_san/kho_hinh_chung/anh_mau/
+
+# --- 2026-11-01 tài liệu nhập môn đồ hoạ: mã trang (HTML, CSS, JS, md) vào git, Trung chốt qua bảng chọn; PDF và ảnh không vào ---
+!san_pham/2026.11.01.tai_lieu_nhap_mon_do_hoa/*.html
+!san_pham/2026.11.01.tai_lieu_nhap_mon_do_hoa/chung/*.css
+!san_pham/2026.11.01.tai_lieu_nhap_mon_do_hoa/chung/*.js
+!san_pham/2026.11.01.tai_lieu_nhap_mon_do_hoa/tai_nguyen/*.md
+!san_pham/2026.11.01.tai_lieu_nhap_mon_do_hoa/anh/*.jpg
+!san_pham/2026.11.01.tai_lieu_nhap_mon_do_hoa/anh/*.png
+!san_pham/2026.11.01.tai_lieu_nhap_mon_do_hoa/tai_nguyen/*.py
+
+# 2026-11-02 tile ảnh vệ tinh Sentinel-2 (EOX cloudless 2016) tải về cho cảnh bản đồ, ngoài git
+xuong/public/tiles/

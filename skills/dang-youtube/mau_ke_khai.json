@@ -1,0 +1,25 @@
+{
+  "lo": "2026.10.27_mau",
+  "_huong_dan": "Chép file này ra du_lieu/dang_youtube/lo_<yyyy.mm.dd>_<ten>.json rồi sửa. Đường dẫn tính từ gốc Media. madeForKids và containsSyntheticMedia bắt buộc ghi rõ (Trung duyệt). publishAt chỉ dùng khi privacyStatus là private, ghi kèm múi giờ +07:00. Xoá khoá _huong_dan khi dùng thật cũng được, script bỏ qua.",
+  "mac_dinh": {
+    "categoryId": "28",
+    "language": "vi",
+    "privacyStatus": "private",
+    "madeForKids": false,
+    "containsSyntheticMedia": false,
+    "notify": false,
+    "playlistTitles": ["Kiến thức điện và điện mặt trời"]
+  },
+  "video": [
+    {
+      "ma": "N29",
+      "file": "san_pham/2026.10.27.Trời râm pin mặt trời có hoạt động không? Ánh sáng tới tấm pin từ đâu/2026.10.27.buc_xa_mat_troi_v1_cuoi.mp4",
+      "thumbnail": "san_pham/2026.10.27.Trời râm pin mặt trời có hoạt động không? Ánh sáng tới tấm pin từ đâu/2026.10.27.buc_xa_mat_troi_v1_thumbnail.jpg",
+      "phu_de": "",
+      "title": "Nắng chiếu thẳng, nắng tán, nắng hắt: tấm pin hứng ánh sáng từ đâu?",
+      "description": "Mô tả do Trung duyệt.\n\n00:00 Mở đầu\n00:15 Nắng chiếu thẳng\n00:40 Nắng tán\n01:05 Nắng hắt",
+      "tags": ["điện mặt trời", "bức xạ mặt trời", "GHI", "DNI", "DHI"],
+      "publishAt": "2026-11-03T19:00:00+07:00"
+    }
+  ]
+}

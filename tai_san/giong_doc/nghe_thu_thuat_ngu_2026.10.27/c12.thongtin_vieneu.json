@@ -1,0 +1,24 @@
+{
+ "ten_file": "c12.wav",
+ "giong": "Hải Đăng",
+ "phien_ban_goi": {
+  "vieneu": "3.8.3",
+  "onnxruntime": "1.22.1",
+  "mlx-whisper": "0.4.3"
+ },
+ "mo_hinh_nghe_lai": "mlx-community/whisper-large-v3-turbo",
+ "nguong_sai_ky_tu": 0.1,
+ "khoang_nghi_cau_giay": 0.25,
+ "so_ky_tu": 75,
+ "thoi_luong_giay": 3.6,
+ "nguon_van_ban": "/Users/macbooktrungnt/Documents/VideoNganHang/tai_san/giong_doc/nghe_thu_thuat_ngu_2026.10.27/nghe_thu.chuong.json",
+ "tung_cau": [
+  {
+   "cau": "Theo giới hạn Bét, phần lấy được tối đa là năm mươi chín phẩy ba phần trăm.",
+   "whisper": "Theo giới hạn BES, phần lấy được tối đa là 59,3%.",
+   "ty_le_sai": 0.164,
+   "so_lan_doc": 3,
+   "lan_duoc_giu": 1
+  }
+ ]
+}

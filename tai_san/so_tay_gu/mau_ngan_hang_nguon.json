@@ -1,0 +1,485 @@
+[
+ {
+  "ma": "MAU-32",
+  "ngan_hang": "Vietcombank",
+  "url": "https://www.vietcombank.com.vn/vi-VN",
+  "chu_dao": "#074C31",
+  "phu": [
+   "#A1C038",
+   "#065C44"
+  ],
+  "chu": "#333333",
+  "nguon": "CSS pre-optimized-min.css của VCB-Sites: biến --vcb-primary-txt-color/--vcb-primary-icon-color #074C31 (280 lần), --vcb-btn-primary-bg #A1C038 (84 lần), #065C44 (60 lần); logo PNG trang chủ có điểm ảnh xanh đậm #00512F và xanh lá #8BC53F (khớp họ màu). Chữ = --vcb-primary-heading-color rgba(0,0,0,0.8) trên nền trắng ≈ #333333.",
+  "tin_cay": "cao"
+ },
+ {
+  "ma": "MAU-33",
+  "ngan_hang": "BIDV",
+  "url": "https://bidv.com.vn/",
+  "chu_dao": "#075652",
+  "phu": [
+   "#FFB71B"
+  ],
+  "chu": "#333333",
+  "nguon": "Trang chủ không có file CSS ngoài; màu lấy bằng đếm điểm ảnh logo logopc.png (xanh ngọc đậm #075652 1065 điểm, vàng #FFB71B 257 điểm). Bài chính thức bidv.com.vn/bidv_en/tin-tuc/tin-ve-bidv/bidv-dieu-chinh-nhan-dien-thuong-hieu nêu màu chính xanh ngọc lục bảo CMYK C100 M50 Y70 K0 và màu phụ vàng hoa mai C0 M20 Y100 K0 (không có hex; đổi CMYK ngây thơ ra khoảng #007F4D và #FFCC00, lệch so với điểm ảnh logo nên chọn điểm ảnh logo). Chữ #333333 xuất hiện 3 lần trong style nội tuyến trang chủ.",
+  "tin_cay": "vua"
+ },
+ {
+  "ma": "MAU-34",
+  "ngan_hang": "Agribank",
+  "url": "https://www.agribank.com.vn/",
+  "chu_dao": "#AF0B35",
+  "phu": [
+   "#00422B",
+   "#FFDC00"
+  ],
+  "chu": "#393939",
+  "nguon": "Màu đỏ #AF0B35: 16 lần trong CSS chủ đề AGBank3 và là màu chiếm nhiều nhất trong logo PNG (172 điểm ảnh); xanh lục đậm #00422B: 140 điểm ảnh logo và 2 lần trong style trang chủ; vàng #FFDC00: 9 lần trong style nội tuyến trang chủ. Biến thể đỏ khác trên trang: #9E2B47 (22), #9D1D26 (17). Chữ #393939 trong style nội tuyến.",
+  "tin_cay": "cao"
+ },
+ {
+  "ma": "MAU-35",
+  "ngan_hang": "VietinBank",
+  "url": "https://www.vietinbank.vn/",
+  "chu_dao": "#005993",
+  "phu": [
+   "#DA2127",
+   "#5FA8D3"
+  ],
+  "chu": null,
+  "nguon": "CSS Next.js /_next/static/css/ab763b3259f0215c.css: #005993 15 lần (màu menu đang chọn text-base-nav-active, chữ gradient) và 3 lần trong HTML; #DA2127 là nền đỏ trong CSS và 3 lần; #5FA8D3 xanh nhạt 5 lần trong HTML. Chưa kiểm logo (logo không lộ trong HTML tải về). Màu chữ chỉ thấy #1F2937 của khung Tailwind, không chắc là màu thương hiệu nên để null.",
+  "tin_cay": "vua"
+ },
+ {
+  "ma": "MAU-36",
+  "ngan_hang": "MB",
+  "url": "https://commons.wikimedia.org/wiki/File:Logo_MB_new.png",
+  "chu_dao": "#141ED2",
+  "phu": [
+   "#EB2D4B"
+  ],
+  "chu": null,
+  "nguon": "Trang mbbank.com.vn chặn máy đọc (403), không vượt chặn. Đếm điểm ảnh logo MB mới trên Wikimedia Commons (File:Logo MB new.png, 1331×598): #141ED2 123.777 điểm, #EB2D4B 64.593 điểm",
+  "tin_cay": "vua"
+ },
+ {
+  "ma": "MAU-37",
+  "ngan_hang": "Techcombank",
+  "url": "http://techcombank.com/",
+  "chu_dao": "#ED1C24",
+  "phu": [
+   "#D6B973"
+  ],
+  "chu": "#333333",
+  "nguon": "CSS clientlib-site: biến --primary-red #ed1b24 và --accent #ed1c24; #ED1C24 44 lần và #ED1B24 40 lần trong CSS, 3 lần trong HTML. Biến --primary-gold #D6B973 (khai báo 1 lần, màu phụ); --primary-navy-blue #1B1564 chỉ khai báo, không thấy dùng nhiều nên không đưa vào. Chữ #333333 (24 lần gồm dạng #333).",
+  "tin_cay": "cao"
+ },
+ {
+  "ma": "MAU-38",
+  "ngan_hang": "VPBank",
+  "url": "http://vpbank.com.vn/",
+  "chu_dao": "#00B74F",
+  "phu": [
+   "#1D4289"
+  ],
+  "chu": "#2E3A5B",
+  "nguon": "CSS /_next/static/css/0585c590787ef907.css: biến --color-vpbank #00B74F (13 lần), --color-vpbank-dark #1D4289 (6 lần CSS, 2 lần trong HTML), --color-text-black #2E3A5B (biến màu chữ chính, 8 lần). Tên biến gọi thẳng là màu VPBank.",
+  "tin_cay": "cao"
+ },
+ {
+  "ma": "MAU-39",
+  "ngan_hang": "ACB",
+  "url": "https://acb.com.vn/",
+  "chu_dao": "#0038A8",
+  "phu": [
+   "#00AFFF",
+   "#0070FF"
+  ],
+  "chu": "#323F4B",
+  "nguon": "Logo SVG https://acb.com.vn/images/logo.svg: fill #0038A8 (3 phần tử) và #00AFFF (1 phần tử). CSS /_next/static/css/8ac418ce117bb6a8.css có biến --cl2 #0038A8, --cl1 #0070FF, --cl3 #021144, --cl5 #323F4B (34 lần, màu chữ phổ biến nhất). Chữ #323F4B suy từ tần suất, chưa thấy tên biến chỉ rõ.",
+  "tin_cay": "cao"
+ },
+ {
+  "ma": "MAU-40",
+  "ngan_hang": "TPBank",
+  "url": "https://tpb.vn/",
+  "chu_dao": "#652D89",
+  "phu": [
+   "#ED7523",
+   "#7B35BA"
+  ],
+  "chu": "#343441",
+  "nguon": "CSS chủ đề TPBThemev1 (index.css, main.css, stylesheet.css, customcss.css): tím #652D89 94 lần, #7B35BA 90 lần, cam #ED7523 26 lần; trong HTML tím #642E8A 38 lần (cùng họ với #652D89). Chữ #343441 84 lần (màu chữ phổ biến nhất trong CSS). Cam khác: #E65918 (23), #F68C1F (20).",
+  "tin_cay": "cao"
+ },
+ {
+  "ma": "MAU-41",
+  "ngan_hang": "Sacombank",
+  "url": "https://www.sacombank.com.vn/ca-nhan.html",
+  "chu_dao": "#0058A0",
+  "phu": [
+   "#2A81D0",
+   "#F3B643"
+  ],
+  "chu": "#2E3337",
+  "nguon": "CSS clientlib-site: xanh #0058A0 62 lần (cũng trong gradient chủ đạo cùng #00467F, #2672AD, #2999BC), #2A81D0 415 lần (màu liên kết, xanh giao diện), 1 lần trong HTML #0058A0 và #0065A4. Logo SVG logo_sacombank_bg_blue.svg (dùng trên nền xanh) có phần vàng #F3B643 và gradient #FFCD7B→#D79020; logo không chứa mã xanh nên chủ đạo xanh dựa vào CSS. Chữ #2E3337 (48 lần) chưa chắc là màu chữ chính.",
+  "tin_cay": "vua"
+ },
+ {
+  "ma": "MAU-42",
+  "ngan_hang": "LPBank",
+  "url": "https://lpbank.com.vn/ca-nhan",
+  "chu_dao": "#6D371A",
+  "phu": [
+   "#F99D1C",
+   "#B22F16"
+  ],
+  "chu": "#28140C",
+  "nguon": "Logo.png lấy mẫu pixel ~#683018 (nâu); main.css+custom.css+styles.css: #6D371A xuất hiện 187 lần (nhiều nhất), biến --color-primary: #F99D1C (139 lần), --color-secondary: #594B45, #B22F16 82 lần. Lưu ý: biến CSS 'primary' là cam #F99D1C nhưng logo là nâu; chọn nâu làm chủ đạo, cam làm nhấn; #28140C là nâu rất đậm 57 lần (chữ/nền tối).",
+  "tin_cay": "vua"
+ },
+ {
+  "ma": "MAU-43",
+  "ngan_hang": "SeABank",
+  "url": "https://www.seabank.com.vn/",
+  "chu_dao": "#D71920",
+  "phu": [
+   "#9E1E1F",
+   "#DD1B1C"
+  ],
+  "chu": null,
+  "nguon": "CSS _next/static/css/48f3766e498587a0.css: biến --primary #d71920 (40 lần), --adm-color-primary #d71920, --primary-gradient linear-gradient(95deg,#d71920,#9e1e1f); logo-seabank.png lấy mẫu ~#D01820 (đỏ).",
+  "tin_cay": "cao"
+ },
+ {
+  "ma": "MAU-44",
+  "ngan_hang": "HDBank",
+  "url": "https://hdbank.com.vn/",
+  "chu_dao": "#F00020",
+  "phu": [
+   "#FFD643",
+   "#BE1128"
+  ],
+  "chu": null,
+  "nguon": "CSS _next/static/css/a46954afa4ca502f.css: biến --hdbank-primary #f00020 (108 lần), --hdbank-primary-dark #cf001b, #BE1128 41 lần, vàng #FFD643 33 lần; logo (seoLogo.png) lấy mẫu pixel: vàng ~#F8E848 và đỏ ~#D82028.",
+  "tin_cay": "cao"
+ },
+ {
+  "ma": "MAU-45",
+  "ngan_hang": "VIB",
+  "url": "https://www.vib.com.vn/",
+  "chu_dao": "#0066B3",
+  "phu": [
+   "#FDB913",
+   "#F47920"
+  ],
+  "chu": null,
+  "nguon": "Trang vib.com.vn chặn bot (trang thách thức, curl chỉ ra 1870 byte). Lấy từ bản lưu web.archive.org ngày 14/01/2024 của vib.com.vn: static/theme/css/style_all_old_1.css, style_all_old_2.css, css-common.css: #0066B3 xuất hiện 107 lần, #FDB913 24 lần, #F7941D 14, #F47920 12. Trang tra cứu whatthelogo.com ghi #005296 (không chính thức, lệch nhẹ). Bản hiện tại chưa kiểm được.",
+  "tin_cay": "vua"
+ },
+ {
+  "ma": "MAU-46",
+  "ngan_hang": "SHB",
+  "url": "https://www.shb.com.vn/",
+  "chu_dao": "#F58220",
+  "phu": [
+   "#2E2A78",
+   "#E67817"
+  ],
+  "chu": null,
+  "nguon": "Trang shb.com.vn trả 403 (Cloudflare/xác minh bảo mật). Lấy từ bản lưu web.archive.org ngày 16/10/2026 của shb.com.vn: themes/shb/style.css: #F58220 xuất hiện 42 lần, #E67817 5 lần. Màu xanh navy ~#2E2A78 là lấy mẫu pixel từ Logo-SHB-VN.png (logo cũ), không phải mã công bố. Báo chí (vneconomy.vn, 22/04/2026) nói nhận diện mới giữ cam chủ đạo và thêm 'Midnight Navy' nhưng không nêu hex; xanh navy mới có thể khác ~#2E2A78.",
+  "tin_cay": "vua"
+ },
+ {
+  "ma": "MAU-47",
+  "ngan_hang": "OCB",
+  "url": "https://www.ocb.com.vn/",
+  "chu_dao": "#008C44",
+  "phu": [
+   "#E39717",
+   "#00401F"
+  ],
+  "chu": null,
+  "nguon": "CSS styles-FURF7FBL.css: biến --primary #008C44 (12 lần trong trang+css), --secondary #E39717; #00401F xanh lá đậm 2 lần.",
+  "tin_cay": "cao"
+ },
+ {
+  "ma": "MAU-48",
+  "ngan_hang": "MSB",
+  "url": "https://www.msb.com.vn/",
+  "chu_dao": "#EC1C24",
+  "phu": [
+   "#F4600C",
+   "#FFB81C"
+  ],
+  "chu": "#091E42",
+  "nguon": "logo_black.svg: các fill đỏ #EC1C24, #E81B23, #DB1820, #9D0B0F; child-style01.css/style: cam #F4600C 66 lần, #FF6A00 7, #ED1C24 6, vàng #FFB81C 6; chữ #091E42 136 lần (xanh đen). Logo đỏ nhưng giao diện web dùng cam nhiều; đỏ là chủ đạo thương hiệu, cam và vàng là màu nhấn.",
+  "tin_cay": "vua"
+ },
+ {
+  "ma": "MAU-49",
+  "ngan_hang": "Eximbank",
+  "url": "https://eximbank.com.vn/",
+  "chu_dao": "#005D98",
+  "phu": [
+   "#29ABE2",
+   "#003863"
+  ],
+  "chu": null,
+  "nguon": "logo.svg: fill #005D98 (13 lần), #003863 (5), xanh nhạt #29ABE2/#179EDA; CSS _next/static/css/11781d9cd33c3c1f.css: #1381BE 20 lần, #00538D 17, #1B96D5 13, #003863 7.",
+  "tin_cay": "cao"
+ },
+ {
+  "ma": "MAU-50",
+  "ngan_hang": "Nam A Bank",
+  "url": "https://www.namabank.com.vn/",
+  "chu_dao": "#0772BA",
+  "phu": [
+   "#FFDD00",
+   "#005690"
+  ],
+  "chu": null,
+  "nguon": "global.min.css, main.min.css, main2.min.css: #0772BA 248 lần, vàng #FFDD00 90 lần, #005690 58 lần; logo.png lấy mẫu pixel ~#0070B8 (xanh dương) khớp. theme-color meta chỉ là #000000.",
+  "tin_cay": "cao"
+ },
+ {
+  "ma": "MAU-51",
+  "ngan_hang": "Bac A Bank",
+  "url": "https://www.baca-bank.vn/",
+  "chu_dao": "#C88A12",
+  "phu": [
+   "#EAAB00"
+  ],
+  "chu": null,
+  "nguon": "babank.css: #C88A12 80 lần, #EAAB00 20 lần (vàng đồng/vàng nghệ); logoBAB.png lấy mẫu ~#B88830 (vàng đồng) khớp. Các màu #337AB7, #3C763D... là mặc định Bootstrap, đã loại.",
+  "tin_cay": "vua"
+ },
+ {
+  "ma": "MAU-52",
+  "ngan_hang": "ABBANK",
+  "url": "https://www.abbank.vn/",
+  "chu_dao": "#F47920",
+  "phu": [
+   "#00AE9F",
+   "#FF9315"
+  ],
+  "chu": null,
+  "nguon": "curl + trình duyệt: /frontend/css/index.css, #F47920 xuất hiện 33 lần (cam, nhiều nhất), #00AE9F 18 lần (xanh ngọc), #FF9315 11 lần; màu tính toán trên trang: #00AE9F 19, #F47920 17. #007BFF là màu mặc định Bootstrap, đã bỏ. Chưa soi logo (ảnh logo không nạp qua thẻ img).",
+  "tin_cay": "cao"
+ },
+ {
+  "ma": "MAU-53",
+  "ngan_hang": "PVcomBank",
+  "url": "https://www.pvcombank.com.vn/",
+  "chu_dao": "#0772BA",
+  "phu": [
+   "#FFC708",
+   "#0D2240"
+  ],
+  "chu": "#0D2240",
+  "nguon": "curl + trình duyệt: /ddl/styles.css khai báo --color-primary:#ffc708 (vàng), --color-secondary:#0772ba (xanh), --color-li-bl:#0d2240 (xanh đậm). Màu tính toán trên trang: #0772BA 151, #FFC708 54, #0D2240 9. Chọn xanh làm chủ đạo vì chiếm áp đảo trên trang; vàng là màu nhấn thương hiệu.",
+  "tin_cay": "cao"
+ },
+ {
+  "ma": "MAU-54",
+  "ngan_hang": "Kienlongbank",
+  "url": "https://kienlongbank.com/",
+  "chu_dao": "#EF4D23",
+  "phu": [
+   "#2898D0",
+   "#1E2452"
+  ],
+  "chu": "#1E2452",
+  "nguon": "curl + trình duyệt: logo PNG 2026 (logo-kienlongbank-klb-dinh-vi-thuong-hieu-10-1.png) lấy mẫu điểm ảnh: cam ~#E85A20 chiếm nhiều nhất, xanh dương ~#2898D0 (giá trị làm tròn theo bước 8); HTML có inline color #ef4d23 (cam) và #1e2452 (xanh navy, dùng cho chữ, 434 phần tử tính toán #1D2452). Hex cam lấy từ inline CSS, xanh dương #2898D0 chỉ xấp xỉ từ logo.",
+  "tin_cay": "vua"
+ },
+ {
+  "ma": "MAU-55",
+  "ngan_hang": "NCB",
+  "url": "https://www.ncb-bank.vn/",
+  "chu_dao": "#004E96",
+  "phu": [
+   "#D0AE63",
+   "#00457C"
+  ],
+  "chu": null,
+  "nguon": "curl bị Cloudflare 403; đọc bằng trình duyệt: màu tính toán #004E96 309 phần tử, #104885 147, #0E4A88 133; CSS: #609ADC 103, #00457C 61, #004E96 53, vàng đồng #D0AE63 45 (+#D1AE68, #C6A66A). Trang không có thẻ img logo nên không soi được logo. Vàng đồng là màu nhấn suy từ tần suất CSS, chưa xác nhận là màu logo.",
+  "tin_cay": "vua"
+ },
+ {
+  "ma": "MAU-56",
+  "ngan_hang": "VietABank",
+  "url": "https://www.vietabank.com.vn/",
+  "chu_dao": "#1B4486",
+  "phu": [
+   "#EC2028",
+   "#3864AF"
+  ],
+  "chu": null,
+  "nguon": "curl: thẻ meta theme-color = #1b4486; /Content/theme_btq/css/style.css: #1B4486 116 lần, #3864AF 38, #EC2028 29 (đỏ); header.css: #1B4486 18, #EC2028 18. Chưa soi logo.",
+  "tin_cay": "cao"
+ },
+ {
+  "ma": "MAU-57",
+  "ngan_hang": "BVBank",
+  "url": "https://www.bvbank.net.vn/",
+  "chu_dao": "#123985",
+  "phu": [
+   "#13C0F7",
+   "#4182EA"
+  ],
+  "chu": "#123985",
+  "nguon": "curl bị chặn (thử thách F5); đọc bằng trình duyệt: wp-content/themes/bvb CSS có #123985 111 lần, --swiper-theme-color:#123985; màu tính toán #123985 trên 894 phần tử (áp đảo); #13C0F7 là màu tính toán của một phần tử, logo (bvb_logo_hs.png) lấy mẫu: xanh navy ~#283078 và xanh lơ ~#00C0F0 (làm tròn bước 8, xanh lơ khớp #13C0F7 mức xấp xỉ); #4182EA 35 lần trong CSS. Logo navy hơi khác #123985 (tím hơn).",
+  "tin_cay": "vua"
+ },
+ {
+  "ma": "MAU-58",
+  "ngan_hang": "Saigonbank",
+  "url": "https://www.saigonbank.com.vn/",
+  "chu_dao": "#0165B3",
+  "phu": [],
+  "chu": null,
+  "nguon": "Website chặn bot (Imperva Incapsula) cả curl lẫn trình duyệt, không vượt. Lấy từ logo SaigonBank trên Wikimedia Commons (nguồn ghi là saigonbank.com.vn, đăng 23/05/2023): https://upload.wikimedia.org/wikipedia/commons/3/3f/Logo_SaigonBank.png, lấy mẫu điểm ảnh: xanh dương #0165B3 là màu gần như duy nhất (nhóm #0060B0 chiếm 24097/43152 điểm ảnh). Chưa đối chiếu với trang chính thức, logo có thể đã đổi.",
+  "tin_cay": "thap"
+ },
+ {
+  "ma": "MAU-59",
+  "ngan_hang": "PGBank",
+  "url": "https://www.pgbank.com.vn/",
+  "chu_dao": "#293474",
+  "phu": [
+   "#33BBEC",
+   "#BAD647"
+  ],
+  "chu": "#222257",
+  "nguon": "curl bị chặn; đọc bằng trình duyệt (trang nay mang tên Ngân hàng TMCP Thịnh vượng và Phát triển - PGBank). Logo /_nuxt/img/PGBankLogo.23998e8.png lấy mẫu điểm ảnh chính xác: navy #293474 (26795 điểm), xanh lơ #33BBEC (8118), xanh lá chanh #BAD647 (1893). CSS site: #33BBED 34 lần, #034E9F 40, #1D4078 11; chữ #222257 tính toán 63 phần tử. #0D6EFD là mặc định Bootstrap, đã bỏ.",
+  "tin_cay": "cao"
+ },
+ {
+  "ma": "MAU-60",
+  "ngan_hang": "BAOVIET Bank",
+  "url": "https://www.baovietbank.vn/",
+  "chu_dao": "#0079C1",
+  "phu": [
+   "#BB8D0B",
+   "#005BAA"
+  ],
+  "chu": null,
+  "nguon": "curl + trình duyệt: /assets/css/bvb-style.min.css có #0079C1 25 lần, vàng đồng #BB8D0B 14 lần; header.css #0079C1, #005BAA; màu tính toán trên trang #0079C1 298 phần tử. Logo (bvb-logo-2.png) lấy mẫu là vàng đồng ~#B88808-#C8A038, khớp #BB8D0B. Giao diện dùng xanh, logo dùng vàng đồng.",
+  "tin_cay": "cao"
+ },
+ {
+  "ma": "MAU-61",
+  "ngan_hang": "Vietbank",
+  "url": "https://www.vietbank.com.vn/",
+  "chu_dao": "#0071BB",
+  "phu": [
+   "#FABF00",
+   "#D02028"
+  ],
+  "chu": null,
+  "nguon": "curl + trình duyệt: /css/site.min.css có #0071BB 64 lần, #005489 41, #FABF00 23 (vàng), #FFD658 20; màu tính toán #005489 41 phần tử. Logo /img/logo.png lấy mẫu: vàng ~#F8C010, đỏ ~#D02028, xanh ~#0850A0 (làm tròn bước 8). Logo nhiều màu nên xanh chủ đạo có thể là #0850A0 thay vì #0071BB.",
+  "tin_cay": "vua"
+ },
+ {
+  "ma": "MAU-62",
+  "ngan_hang": "SCB",
+  "url": "https://www.scb.com.vn/",
+  "chu_dao": "#1825AA",
+  "phu": [
+   "#EB0029"
+  ],
+  "chu": null,
+  "nguon": "Logo svg https://www.scb.com.vn/images/logo.svg: fill #1825AA (xanh, nền logo) và #EB0029 (đỏ, biểu tượng tròn); ảnh logo_scb_2022_.jpg nền xanh ~#1724A9, biểu tượng đỏ ~#EC0928. Meta theme-color trang chủ là #005CAA (xanh nhạt hơn, không khớp logo, không dùng).",
+  "tin_cay": "cao"
+ },
+ {
+  "ma": "MAU-63",
+  "ngan_hang": "Vikki Bank",
+  "url": "https://vikkibank.vn/",
+  "chu_dao": "#0000FF",
+  "phu": [
+   "#D21686",
+   "#FAA518"
+  ],
+  "chu": "#606161",
+  "nguon": "Logo vikki-digital-bank-logo-c-1.png (nền trong suốt, chữ Vikki chuyển màu xanh -> tím hồng -> cam; lấy mẫu điểm ảnh 0200FE, D21686, FAA518; chữ 'Digital Bank' xám 606161). CSS wpfc-minified: #0000FF 35 lần, #D2008C 6 lần, #FFA133 7 lần, #003399 18 lần (xanh đậm phụ trên giao diện).",
+  "tin_cay": "cao"
+ },
+ {
+  "ma": "MAU-64",
+  "ngan_hang": "MBV",
+  "url": "https://www.mbv.com.vn/",
+  "chu_dao": "#B71D1F",
+  "phu": [
+   "#B61D22"
+  ],
+  "chu": "#374151",
+  "nguon": "Apple-touch-icon /favicon/apple-touch-icon.png (logo MBV chữ đỏ, mẫu điểm ảnh B71D1F); CSS /_next/static/css/60fb83067192c450.css: #B61D22 xuất hiện 13 lần là màu nhấn riêng (các màu khác là bảng Tailwind mặc định). Không có màu phụ thương hiệu rõ.",
+  "tin_cay": "vua"
+ },
+ {
+  "ma": "MAU-65",
+  "ngan_hang": "VCBNeo",
+  "url": "https://www.vcbneo.com.vn/",
+  "chu_dao": "#005130",
+  "phu": [
+   "#8BC43F"
+  ],
+  "chu": null,
+  "nguon": "Logo https://www.vcbneo.com.vn/img/logo.jpg: chữ VCB xanh lục đậm (005130, ~1300 điểm ảnh), chữ Neo và biểu tượng xanh lá (8BC43F, ~1400 điểm ảnh); icon iconvcbneo.png xác nhận cùng tông. CSS trang là bản cũ (Css/central.css), không chứa màu thương hiệu.",
+  "tin_cay": "cao"
+ },
+ {
+  "ma": "MAU-66",
+  "ngan_hang": "GPBank",
+  "url": "https://www.gpbank.com.vn/",
+  "chu_dao": "#F7941D",
+  "phu": [
+   "#EF4130",
+   "#3A9948",
+   "#8DC63F"
+  ],
+  "chu": "#2E3A5B",
+  "nguon": "Logo svg https://www.gpbank.com.vn/-/media/logo/logo-final.svg: chữ GPBank chuyển màu cam F7941D -> đỏ cam EF4130 (stop-color), lá xanh 8DC63F/3A9948. CSS /_next/static/chunks/07cwa-whanch2.css: #2E3A5B 7 lần (màu chữ/nền tối), #00B74F 7, #F7941D 6, #F25821 5.",
+  "tin_cay": "cao"
+ },
+ {
+  "ma": "MAU-67",
+  "ngan_hang": "Co-opBank",
+  "url": "https://www.co-opbank.vn/",
+  "chu_dao": "#004AA1",
+  "phu": [
+   "#E50019",
+   "#1B3C7B"
+  ],
+  "chu": "#0F172A",
+  "nguon": "Logo https://www.co-opbank.vn/wp-content/uploads/2026/06/Logo-1-3.svg (ảnh nhúng: biểu tượng bông lúa vòng cung đỏ, mẫu điểm ảnh E50019) và favicon (EC1C24). Giao diện theme coopbank/style.css: xanh #004AA1 92 lần, #1B3C7B 75 lần, #0B5FBA 29, đỏ #D51626 24 lần, chữ #0F172A 38 lần; biến --primary-color:#0011AF (ít dùng). Logo đỏ, giao diện xanh: nên dùng đỏ làm nhấn, xanh làm nền. · Chọn xanh #004AA1 (giao diện web) làm chủ đạo, đỏ logo làm nhấn.",
+  "tin_cay": "vua"
+ },
+ {
+  "ma": "MAU-68",
+  "ngan_hang": "Ngân hàng Chính sách xã hội",
+  "url": "https://vbsp.org.vn/",
+  "chu_dao": "#EC008C",
+  "phu": [
+   "#016D3E",
+   "#008C4F"
+  ],
+  "chu": null,
+  "nguon": "Logo https://vbsp.org.vn/wp-content/themes/vbsp/images/logo.png (giọt/ngọn lửa hồng, mẫu điểm ảnh EC008C, ~1300 điểm ảnh). Giao diện theme vbsp/style.css lại dùng xanh lục: #016D3E 30 lần, #008C4F 13 lần, #F9FFDB 20 lần (nền vàng nhạt), #174F82 6 lần. Hai tông khác nhau giữa logo và giao diện.",
+  "tin_cay": "vua"
+ },
+ {
+  "ma": "MAU-69",
+  "ngan_hang": "Ngân hàng Phát triển Việt Nam",
+  "url": "https://vdb.gov.vn/",
+  "chu_dao": "#382C76",
+  "phu": [
+   "#EE1D23"
+  ],
+  "chu": "#382C76",
+  "nguon": "Ảnh /Admin/Images/banner.png (logo VDB: biểu tượng đỏ EE1D23, chữ và dải đầu trang tím chàm 382C76, ~24.000 điểm ảnh); logo_bn.jpg là khẩu hiệu chữ đỏ ~DA0000. CSS Style_new.css của trang lại dùng xanh #1E4283 (20 lần), #4792D3 (8 lần), thuộc giao diện cũ, không khớp banner.",
+  "tin_cay": "vua"
+ }
+]

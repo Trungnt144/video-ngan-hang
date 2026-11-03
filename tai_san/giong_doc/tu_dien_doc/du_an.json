@@ -1,0 +1,8 @@
+{
+  "_ghi_chu": "Từ điển cách đọc chữ viết tắt và chữ tiếng Anh cho lời đọc VieNeu của kênh Chuyện làm dự án (quy tắc 11 chiến dịch KCN): từ đã Việt hoá đọc theo cách quen dùng; thuật ngữ tiếng Anh chưa có thì đọc theo phát âm Mỹ của Cambridge Dictionary. Tạo 02/11/2026 khi làm ba video mẫu KCN. Kiểm: python3 -I scripts/kiem_loi_doc.py <file .chuong.json> --tu-dien tai_san/giong_doc/tu_dien_doc/du_an.json",
+  "muc": [
+    {"chu": "container", "doc": "công-te-nơ", "sai": ["con-tai-nơ", "container"]},
+    {"chu": "ha", "doc": "héc-ta", "sai": []},
+    {"chu": "KCN", "doc": "khu công nghiệp", "sai": ["ca xê en"]}
+  ]
+}

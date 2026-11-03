@@ -1,0 +1,22 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Nạp mô hình 5.8 giây, giọng Quốc Tuấn
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 2466.15it/s]
+  c7 câu 2 vẫn sai 25% sau 3 lần: Trong ví dụ giả định, tiền gửi không kỳ hạn trả lãi không phẩy năm phần trăm một năm, có kỳ hạn bảy phần trăm, giấy tờ có giá tám phần trăm, tiền đi vay sáu phần trăm.
+      Whisper nghe: Trong ví dụ giả định, tiền gửi không kỳ hạn trả lãi 0,5% một năm, có kỳ hạn 7%, giấy tờ có giá 8%, tiền đi vay 6%.
+  c8 câu 6 vẫn sai 11% sau 3 lần: Từ ngày một tháng mười hai năm hai nghìn hai mươi sáu, một thông tư mới sẽ đổi cách tính tỷ lệ này.
+      Whisper nghe: Từ ngày 1 tháng 12 năm 2026, một thông tư mới sẽ đổi cách tính tỷ lệ này.
+  c9 câu 3 vẫn sai 12% sau 3 lần: Vì vậy ngân hàng thương mại chỉ được dùng tối đa bốn mươi phần trăm nguồn vốn ngắn hạn để cho vay dài hơn một năm, mức áp dụng từ ngày một tháng bảy năm hai nghìn hai mươi sáu.
+      Whisper nghe: Vì vậy, Ngân hàng Thương mại chỉ được dùng tối đa 40% nguồn vốn ngắn hạn để cho vay dài hơn một năm, mức áp dụng từ ngày 1 tháng 7 năm 2026.
+Tốc độ gốc 4.55 âm tiết/giây có tiếng, đích 5.06, kéo ×1.113
+Chương 1: 4 câu, 15.4 giây, 0 câu phải đọc lại
+Chương 2: 5 câu, 19.9 giây, 0 câu phải đọc lại
+Chương 3: 4 câu, 18.5 giây, 0 câu phải đọc lại
+Chương 4: 4 câu, 17.2 giây, 0 câu phải đọc lại
+Chương 5: 4 câu, 19.1 giây, 0 câu phải đọc lại
+Chương 6: 5 câu, 21.1 giây, 0 câu phải đọc lại
+Chương 7: 6 câu, 22.0 giây, 1 câu phải đọc lại
+Chương 8: 6 câu, 26.7 giây, 1 câu phải đọc lại
+Chương 9: 5 câu, 23.5 giây, 1 câu phải đọc lại
+Chương 10: 5 câu, 25.8 giây, 0 câu phải đọc lại
+Chương 11: 4 câu, 19.1 giây, 0 câu phải đọc lại
+Xong sau 179 giây

@@ -1,0 +1,306 @@
+{
+ "doan": "Pin mặt trời biến ánh sáng thành dòng điện nhờ lớp tiếp giáp giữa hai loại xi-li-côn. Khi có nắng, ê-léc-trôn bị đẩy ra khỏi chỗ cũ và chạy qua dây dẫn. Một tấm pin bốn trăm năm mươi oát đủ thắp sáng cả một căn phòng.",
+ "giong": [
+  {
+   "stt": 1,
+   "ten": "Adam bựa",
+   "mo_ta": "Nam · Bắc · Phong cách tự nhiên",
+   "noi_bat": 1,
+   "giay": 13.5,
+   "sai_ky_tu_tb": 0.037,
+   "cau_sai_tren_10": [],
+   "file": "01_Adam_bựa.m4a"
+  },
+  {
+   "stt": 2,
+   "ten": "Trúc Ly",
+   "mo_ta": "Nữ · Bắc · Phong cách tự nhiên",
+   "noi_bat": 2,
+   "giay": 10.8,
+   "sai_ky_tu_tb": 0.046,
+   "cau_sai_tren_10": [],
+   "file": "02_Trúc_Ly.m4a"
+  },
+  {
+   "stt": 3,
+   "ten": "Thiện Minh",
+   "mo_ta": "Nam · Bắc · Phong cách kể chuyện",
+   "noi_bat": 3,
+   "giay": 11.9,
+   "sai_ky_tu_tb": 0.037,
+   "cau_sai_tren_10": [],
+   "file": "03_Thiện_Minh.m4a"
+  },
+  {
+   "stt": 4,
+   "ten": "Mai Anh",
+   "mo_ta": "Nữ · Bắc · Phong cách tin tức",
+   "noi_bat": 4,
+   "giay": 13.3,
+   "sai_ky_tu_tb": 0.026,
+   "cau_sai_tren_10": [],
+   "file": "04_Mai_Anh.m4a"
+  },
+  {
+   "stt": 5,
+   "ten": "Hải Đăng",
+   "mo_ta": "Nam · Bắc · Phong cách tự nhiên",
+   "noi_bat": 5,
+   "giay": 11.1,
+   "sai_ky_tu_tb": 0.03,
+   "cau_sai_tren_10": [],
+   "file": "05_Hải_Đăng.m4a"
+  },
+  {
+   "stt": 6,
+   "ten": "Thùy Dung",
+   "mo_ta": "Nữ · Nam · Phong cách tin tức",
+   "noi_bat": 6,
+   "giay": 10.8,
+   "sai_ky_tu_tb": 0.078,
+   "cau_sai_tren_10": [
+    {
+     "cau": "Pin mặt trời biến ánh sáng thành dòng điện nhờ lớp tiếp giáp giữa hai loại xi-li-côn.",
+     "whisper": "Điện mặt trời điện ánh sáng thành dòng điện, gây lớp tiết giáp giữa hai loài silicon.",
+     "sai": 0.107
+    }
+   ],
+   "file": "06_Thùy_Dung.m4a"
+  },
+  {
+   "stt": 7,
+   "ten": "Thiền Tâm Đức",
+   "mo_ta": "Nam · Bắc · Phong cách kể chuyện",
+   "noi_bat": 7,
+   "giay": 16.3,
+   "sai_ky_tu_tb": 0.021,
+   "cau_sai_tren_10": [],
+   "file": "07_Thiền_Tâm_Đức.m4a"
+  },
+  {
+   "stt": 8,
+   "ten": "Ngọc Huyền",
+   "mo_ta": "Nữ · Bắc · Giọng đọc tự nhiên",
+   "noi_bat": 8,
+   "giay": 12.2,
+   "sai_ky_tu_tb": 0.041,
+   "cau_sai_tren_10": [],
+   "file": "08_Ngọc_Huyền.m4a"
+  },
+  {
+   "stt": 9,
+   "ten": "Quang Sơn",
+   "mo_ta": "Nam · Trung · Phong cách tự nhiên",
+   "noi_bat": 9,
+   "giay": 15.5,
+   "sai_ky_tu_tb": 0.129,
+   "cau_sai_tren_10": [
+    {
+     "cau": "Pin mặt trời biến ánh sáng thành dòng điện nhờ lớp tiếp giáp giữa hai loại xi-li-côn.",
+     "whisper": "Vin mặt trời, biển ảnh sáng thanh dòng điền nhờ lập tiệp dạp giữa hai loại silicon.",
+     "sai": 0.119
+    },
+    {
+     "cau": "Khi có nắng, ê-léc-trôn bị đẩy ra khỏi chỗ cũ và chạy qua dây dẫn.",
+     "whisper": "Khi có năng, electron bị đậy ra khỏi chỗ cụ và chảy qua dế dận.",
+     "sai": 0.109
+    },
+    {
+     "cau": "Một tấm pin bốn trăm năm mươi oát đủ thắp sáng cả một căn phòng.",
+     "whisper": "Một tầm pin bộ 150 hoạt, đủ thắp sẵn cả một căn phòng.",
+     "sai": 0.159
+    }
+   ],
+   "file": "09_Quang_Sơn.m4a"
+  },
+  {
+   "stt": 10,
+   "ten": "Ngọc Trân",
+   "mo_ta": "Nữ · Trung · Phong cách tự nhiên",
+   "noi_bat": 10,
+   "giay": 14.8,
+   "sai_ky_tu_tb": 0.149,
+   "cau_sai_tren_10": [
+    {
+     "cau": "Pin mặt trời biến ánh sáng thành dòng điện nhờ lớp tiếp giáp giữa hai loại xi-li-côn.",
+     "whisper": "Bên mặt trời biển ảnh sáng thanh dòng điên nhờ lập tiệp dạp giữa hai loài xí lý cún.",
+     "sai": 0.179
+    },
+    {
+     "cau": "Khi có nắng, ê-léc-trôn bị đẩy ra khỏi chỗ cũ và chạy qua dây dẫn.",
+     "whisper": "Khi có nặng, e lẹt trốn mi đậy ra khỏi chỗ cụ và chạy quá dây dận.",
+     "sai": 0.172
+    }
+   ],
+   "file": "10_Ngọc_Trân.m4a"
+  },
+  {
+   "stt": 11,
+   "ten": "Minh Đức",
+   "mo_ta": "Nam · Bắc · Phong cách tin tức",
+   "noi_bat": null,
+   "giay": 15.5,
+   "sai_ky_tu_tb": 0.021,
+   "cau_sai_tren_10": [],
+   "file": "11_Minh_Đức.m4a"
+  },
+  {
+   "stt": 12,
+   "ten": "Phạm Tuyên",
+   "mo_ta": "Nam · Bắc · Phong cách tự nhiên",
+   "noi_bat": null,
+   "giay": 12.9,
+   "sai_ky_tu_tb": 0.021,
+   "cau_sai_tren_10": [],
+   "file": "12_Phạm_Tuyên.m4a"
+  },
+  {
+   "stt": 13,
+   "ten": "Thái Sơn",
+   "mo_ta": "Nam · Nam · Phong cách kể chuyện",
+   "noi_bat": null,
+   "giay": 13.2,
+   "sai_ky_tu_tb": 0.058,
+   "cau_sai_tren_10": [
+    {
+     "cau": "Một tấm pin bốn trăm năm mươi oát đủ thắp sáng cả một căn phòng.",
+     "whisper": "Một nổm tiền 450W đủ thắp sáng cả một căn phòng.",
+     "sai": 0.127
+    }
+   ],
+   "file": "13_Thái_Sơn.m4a"
+  },
+  {
+   "stt": 14,
+   "ten": "Xuân Vĩnh",
+   "mo_ta": "Nam · Bắc · Phong cách tự nhiên",
+   "noi_bat": null,
+   "giay": 11.3,
+   "sai_ky_tu_tb": 0.05,
+   "cau_sai_tren_10": [
+    {
+     "cau": "Một tấm pin bốn trăm năm mươi oát đủ thắp sáng cả một căn phòng.",
+     "whisper": "Một tầng tin 450W đủ thắp sáng cả một căn phòng.",
+     "sai": 0.127
+    }
+   ],
+   "file": "14_Xuân_Vĩnh.m4a"
+  },
+  {
+   "stt": 15,
+   "ten": "Thanh Bình",
+   "mo_ta": "Nam · Bắc · Phong cách kể chuyện",
+   "noi_bat": null,
+   "giay": 11.9,
+   "sai_ky_tu_tb": 0.026,
+   "cau_sai_tren_10": [],
+   "file": "15_Thanh_Bình.m4a"
+  },
+  {
+   "stt": 16,
+   "ten": "Ngọc Linh",
+   "mo_ta": "Nữ · Bắc · Phong cách kể chuyện",
+   "noi_bat": null,
+   "giay": 12.3,
+   "sai_ky_tu_tb": 0.057,
+   "cau_sai_tren_10": [
+    {
+     "cau": "Một tấm pin bốn trăm năm mươi oát đủ thắp sáng cả một căn phòng.",
+     "whisper": "Một tấm pin 450W đủ thắp sáng vào một căn phòng.",
+     "sai": 0.111
+    }
+   ],
+   "file": "16_Ngọc_Linh.m4a"
+  },
+  {
+   "stt": 17,
+   "ten": "Đoan Trang",
+   "mo_ta": "Nữ · Bắc · Phong cách tự nhiên",
+   "noi_bat": null,
+   "giay": 13.4,
+   "sai_ky_tu_tb": 0.025,
+   "cau_sai_tren_10": [],
+   "file": "17_Đoan_Trang.m4a"
+  },
+  {
+   "stt": 18,
+   "ten": "Thục Đoan",
+   "mo_ta": "Nữ · Nam · Phong cách kể chuyện",
+   "noi_bat": null,
+   "giay": 13.9,
+   "sai_ky_tu_tb": 0.029,
+   "cau_sai_tren_10": [],
+   "file": "18_Thục_Đoan.m4a"
+  },
+  {
+   "stt": 19,
+   "ten": "Minh Triết",
+   "mo_ta": "Nam · Nam · Phong cách tin tức",
+   "noi_bat": null,
+   "giay": 12.4,
+   "sai_ky_tu_tb": 0.07,
+   "cau_sai_tren_10": [],
+   "file": "19_Minh_Triết.m4a"
+  },
+  {
+   "stt": 20,
+   "ten": "Mỹ Duyên",
+   "mo_ta": "Nữ · Nam · Phong cách đọc truyện",
+   "noi_bat": null,
+   "giay": 17.5,
+   "sai_ky_tu_tb": 0.029,
+   "cau_sai_tren_10": [],
+   "file": "20_Mỹ_Duyên.m4a"
+  },
+  {
+   "stt": 21,
+   "ten": "Quỳnh Anh",
+   "mo_ta": "Nữ · Bắc · Phong cách đọc truyện",
+   "noi_bat": null,
+   "giay": 13.5,
+   "sai_ky_tu_tb": 0.021,
+   "cau_sai_tren_10": [],
+   "file": "21_Quỳnh_Anh.m4a"
+  },
+  {
+   "stt": 22,
+   "ten": "Đức Trí",
+   "mo_ta": "Nam · Nam · Phong cách đọc truyện",
+   "noi_bat": null,
+   "giay": 16.3,
+   "sai_ky_tu_tb": 0.021,
+   "cau_sai_tren_10": [],
+   "file": "22_Đức_Trí.m4a"
+  },
+  {
+   "stt": 23,
+   "ten": "Kim Thanh",
+   "mo_ta": "Nữ · Nam · Phong cách đọc truyện",
+   "noi_bat": null,
+   "giay": 16.5,
+   "sai_ky_tu_tb": 0.03,
+   "cau_sai_tren_10": [],
+   "file": "23_Kim_Thanh.m4a"
+  },
+  {
+   "stt": 24,
+   "ten": "Adam",
+   "mo_ta": "Nam · Nam · Giọng đọc tự nhiên",
+   "noi_bat": null,
+   "giay": 12.5,
+   "sai_ky_tu_tb": 0.021,
+   "cau_sai_tren_10": [],
+   "file": "24_Adam.m4a"
+  },
+  {
+   "stt": 25,
+   "ten": "Quốc Tuấn",
+   "mo_ta": "Nam · Bắc · Phong cách tự nhiên",
+   "noi_bat": null,
+   "giay": 12.0,
+   "sai_ky_tu_tb": 0.021,
+   "cau_sai_tren_10": [],
+   "file": "25_Quốc_Tuấn.m4a"
+  }
+ ]
+}

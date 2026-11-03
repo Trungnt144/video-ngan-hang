@@ -1,0 +1,4 @@
+#!/bin/sh
+# ffprobe cho HyperFrames: gói ffprobe-static chỉ có bản Intel (máy không có Rosetta), nên mượn ffprobe của Remotion trong xuong/
+D="$(cd "$(dirname "$0")/../../xuong/node_modules/@remotion/compositor-darwin-arm64" && pwd)"
+DYLD_LIBRARY_PATH="$D" exec "$D/ffprobe" "$@"

@@ -1,0 +1,38 @@
+{
+ "ten_file": "c5.wav",
+ "giong": "Hải Đăng",
+ "phien_ban_goi": {
+  "vieneu": "3.8.3",
+  "onnxruntime": "1.22.1",
+  "mlx-whisper": "0.4.3"
+ },
+ "mo_hinh_nghe_lai": "mlx-community/whisper-large-v3-turbo",
+ "nguong_sai_ky_tu": 0.1,
+ "khoang_nghi_cau_giay": 0.25,
+ "so_ky_tu": 235,
+ "thoi_luong_giay": 12.26,
+ "nguon_van_ban": "/Users/macbooktrungnt/Documents/VideoNganHang/kich_ban/2026.07.28.model_nho_thang_model_to.chuong.json",
+ "tung_cau": [
+  {
+   "cau": "Microsoft vừa làm ngược lại.",
+   "whisper": "Microsoft vừa làm ngược lại.",
+   "ty_le_sai": 0.0,
+   "so_lan_doc": 1,
+   "lan_duoc_giu": 1
+  },
+  {
+   "cau": "Thay vì dồn hết cho một model lớn, họ dựng một model nhỏ chuyên đúng một việc, dò lỗ hổng bảo mật trong mã nguồn, rồi để nó gánh chín phần mười khối lượng.",
+   "whisper": "Thay vì dồn hết cho một model lớn, họ dựng một model nhỏ chuyên đúng một việc, do lỗ hổng bảo mật trong mã nguồn, rồi để nó gánh 9 phần 10 khối lượng.",
+   "ty_le_sai": 0.007,
+   "so_lan_doc": 1,
+   "lan_duoc_giu": 1
+  },
+  {
+   "cau": "Model lớn chỉ được gọi vào một phần mười khó nhất.",
+   "whisper": "Model lớn chỉ được gọi vào một phần mười khó nhất.",
+   "ty_le_sai": 0.0,
+   "so_lan_doc": 1,
+   "lan_duoc_giu": 1
+  }
+ ]
+}

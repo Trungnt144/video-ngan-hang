@@ -1,0 +1,38 @@
+{
+ "ten_file": "c3.wav",
+ "giong": "Hải Đăng",
+ "phien_ban_goi": {
+  "vieneu": "3.8.3",
+  "onnxruntime": "1.22.1",
+  "mlx-whisper": "0.4.3"
+ },
+ "mo_hinh_nghe_lai": "mlx-community/whisper-large-v3-turbo",
+ "nguong_sai_ky_tu": 0.1,
+ "khoang_nghi_cau_giay": 0.25,
+ "so_ky_tu": 261,
+ "thoi_luong_giay": 13.46,
+ "nguon_van_ban": "/Users/macbooktrungnt/Documents/VideoNganHang/kich_ban/2026.07.28.model_nho_thang_model_to.chuong.json",
+ "tung_cau": [
+  {
+   "cau": "Cách nghĩ này không tự nhiên mà có.",
+   "whisper": "Cách nghĩ này không tự nhiên mà có.",
+   "ty_le_sai": 0.0,
+   "so_lan_doc": 1,
+   "lan_duoc_giu": 1
+  },
+  {
+   "cau": "Suốt mấy năm qua, model càng lớn thì càng làm được nhiều thứ hơn, và gần như lần nâng cấp nào cũng chứng minh điều đó.",
+   "whisper": "Suốt mấy năm qua, model càng lớn thì càng làm được nhiều thứ hơn và gần như lần nâng cấp nào cũng chứng minh điều đó.",
+   "ty_le_sai": 0.0,
+   "so_lan_doc": 1,
+   "lan_duoc_giu": 1
+  },
+  {
+   "cau": "Nên khi gặp một bài toán khó, phản xạ đầu tiên của tất cả chúng ta là với tay lấy model to nhất trong tầm.",
+   "whisper": "Nên khi gặp một bài toán khó, phản xạ đầu tiên của tất cả chúng ta là với tay lấy model thứ nhất trong tầm.",
+   "ty_le_sai": 0.019,
+   "so_lan_doc": 1,
+   "lan_duoc_giu": 1
+  }
+ ]
+}

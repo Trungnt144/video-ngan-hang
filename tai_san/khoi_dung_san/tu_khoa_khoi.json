@@ -1,0 +1,21 @@
+{
+  "_ghi_chu": "Từ khoá để scripts/danh_gia_dung_lai.py nhận ra một khối 3D được nhắc tới trong kế hoạch lô và sổ nợ (chữ thường, có dấu). Khoá là tên component xuất ra trong xuong_dai/*/src. Thêm khối mới thì thêm một dòng. Lập 28/10/2026 (sổ nợ N58 đợt 3).",
+  "TuaBin": ["tua-bin", "tuabin", "turbine"],
+  "CanhDongGio": ["cánh đồng gió", "cánh đồng điện gió", "trang trại gió"],
+  "CanCau": ["cần cẩu", "cẩu bánh xích"],
+  "XeChoCanh": ["xe chở cánh", "chở cánh"],
+  "TauNang": ["tàu tự nâng", "tàu lắp đặt", "jack-up"],
+  "MongTuaBin": ["móng tua-bin", "monopile", "cọc nhóm", "đóng cọc", "móng"],
+  "CapNgam": ["cáp ngầm", "cáp biển", "cáp trung thế"],
+  "TramBienAp110": ["trạm biến áp", "trạm 110", "trạm nâng áp"],
+  "HopBo": ["hợp bộ"],
+  "MayBienAp": ["máy biến áp"],
+  "CotDoGio": ["cột đo gió"],
+  "LidarDat": ["lidar"],
+  "NhaDieuHanh": ["nhà điều hành", "scada"],
+  "CanhDongPin": ["cánh đồng pin", "nhà máy điện mặt trời"],
+  "TamPin": ["tấm pin", "pin mặt trời"],
+  "OPhao": ["phao", "điện mặt trời nổi"],
+  "KhoiBien": ["ngoài khơi", "gần bờ", "mặt cắt biển"],
+  "MatDat": ["mặt đất", "địa hình", "đồi", "trên núi"]
+}

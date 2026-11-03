@@ -1,0 +1,1 @@
+Bên dưới là xi-li-côn. Trong xi-li-côn, ê-léc-trôn bị giữ chặt trong liên kết giữa các nguyên tử. Một lớp được pha thêm phốt pho, nên dư ê-léc-trôn. Lớp kia pha bo, nên thiếu ê-léc-trôn, để lại những chỗ trống. Chỗ trống đó gọi là lỗ trống. Lớp dư là lớp en. Lớp thiếu là lớp pê. Chỗ hai lớp ghép sát nhau gọi là mối nối pê en.

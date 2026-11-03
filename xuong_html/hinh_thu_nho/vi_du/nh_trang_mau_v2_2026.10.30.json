@@ -1,0 +1,22 @@
+{
+  "tieu_de": "Mẫu hình thu nhỏ kênh Chuyện nghề Ngân hàng · bản 2",
+  "gioi_thieu": [
+    "Trung chọn phương án A cho cả ba video (N128, N101, N97) và yêu cầu: tách chữ cho rõ, bỏ bớt phần hình thừa, tỉ lệ hình và chữ thoáng. Bản 2 sửa theo ba ý đó.",
+    "Luật giãn cách mới (bảng phong cách mục 0b quy tắc 9), khuôn tự áp và tự kiểm, đo trên mép thật của nét chữ kể cả dấu: logo kênh tới đỉnh dấu dòng 1 tối thiểu 36 điểm ảnh; giữa hai dòng 22; chữ tới hình vẽ tối thiểu 44; logo tới hình vẽ tối thiểu 28; lề ngoài 44 (khung 1280×720).",
+    "N128: hình vẽ chỉ còn ba người ở tầng trên, bỏ mái và tầng dưới. N97: chữ dời xuống khỏi logo, hình vẽ đặt trong phần còn lại phía dưới. N101: bình chứa hạ thấp, cách logo rõ hơn."
+  ],
+  "nhom": [
+    {
+      "ten": "Ba hình phương án A đã sửa",
+      "kieu": "day_du",
+      "hinh": [
+        { "anh": "../xem_truoc/cac_vi_tri_ngan_hang/A.png", "nhan": "N128 Các vị trí trong ngân hàng", "thoi_luong": "5:28",
+          "ghi": ["Chữ cao 37% khung, hình vẽ 32%. Tương phản 11,3:1 và 11,1:1."] },
+        { "anh": "../xem_truoc/chi_phi_von_ngan_hang/A.png", "nhan": "N101 COF - Chi phí vốn của ngân hàng là gì?", "thoi_luong": "5:20",
+          "ghi": ["Chữ cạnh hình. Dòng 1 tự thu còn 111 điểm ảnh cho vừa cột chữ. Tương phản 14,9:1 và 6,4:1."] },
+        { "anh": "../xem_truoc/the_chap_cam_co/A.png", "nhan": "N97 Phân biệt cầm cố và thế chấp", "thoi_luong": "4:07",
+          "ghi": ["Chữ cao 30% khung, hình vẽ 33%. Dòng 1 tự thu còn 108 điểm ảnh vì câu dài. Tương phản 12,6:1 và 5,4:1."] }
+      ]
+    }
+  ]
+}

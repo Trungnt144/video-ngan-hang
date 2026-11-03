@@ -1,0 +1,65 @@
+{
+  "tieu_de": "Mẫu hình thu nhỏ kênh Chuyện nghề Ngân hàng",
+  "gioi_thieu": [
+    "Lượt chốt mẫu ngày 30/10/2026, theo bảng phong cách hình thu nhỏ mục 0b. Ba video khác chất liệu, mỗi video hai phương án A và B. Mỗi hình hiện ở ba cỡ: đủ cỡ 1280×720, cỡ laptop 320×180 và cỡ điện thoại 168×94 (cỡ hình trong danh sách gợi ý của ứng dụng YouTube trên điện thoại).",
+    "Phương án A: chữ dòng 1 cỡ 128 điểm ảnh (18% chiều cao hình), nhãn kênh góc trái trên, hình vẽ dựng lại từ mã của video (chạy trang dựng, ẩn phụ đề và mọi nhãn chữ, chụp nét ở 3840 điểm ảnh). Phương án B: chữ dòng 1 cỡ 108 điểm ảnh (15%), nhãn kênh góc phải trên, hình vẽ cắt từ file mp4 của video.",
+    "Mọi hình đã qua phép kiểm của khuôn: tương phản chữ với nền đều trên 4,5:1 (thấp nhất 5,4:1), cả câu 4–8 từ, không dòng nào nhỏ hơn 10 điểm ảnh ở cỡ điện thoại, không chữ lấn góc dưới phải (YouTube đặt thời lượng ở đó). Chữ lấy từ tiêu đề Trung đặt ở đầu kịch bản, rút gọn."
+  ],
+  "nhom": [
+    {
+      "ten": "1. Ba video, mỗi video hai phương án",
+      "kieu": "day_du",
+      "hinh": [
+        { "anh": "../xem_truoc/cac_vi_tri_ngan_hang/A.png", "nhan": "N128 Các vị trí trong ngân hàng · phương án A", "thoi_luong": "5:28",
+          "ghi": ["Chữ: CÁC VỊ TRÍ / làm việc trong ngân hàng (8 từ). Cỡ 128/84. Tương phản 11,3:1 và 11,1:1.", "Hình: toà nhà giấy cắt ở giây 184,6, dựng lại từ mã, đã ẩn phụ đề, thanh chương, nhãn Ví dụ giả định."] },
+        { "anh": "../xem_truoc/cac_vi_tri_ngan_hang/B.png", "nhan": "N128 Các vị trí trong ngân hàng · phương án B", "thoi_luong": "5:28",
+          "ghi": ["Chữ: MỘT HỒ SƠ VAY / đi qua mấy người? (8 từ, lấy từ câu hỏi đầu tiêu đề). Cỡ 108/76. Tương phản 11,3:1 và 8,3:1.", "Hình: cùng khung, cắt từ mp4 (1920 điểm ảnh, phóng lên nên mềm nét hơn)."] },
+        { "anh": "../xem_truoc/chi_phi_von_ngan_hang/A.png", "nhan": "N101 COF - Chi phí vốn của ngân hàng là gì? · phương án A", "thoi_luong": "5:20",
+          "ghi": ["Chữ: CHI PHÍ VỐN / (COF) là gì? (6 từ). Dòng 1 tự thu còn 111 điểm ảnh (15,4%) cho vừa cột chữ bên phải.", "Hình: bình chứa ba lớp và ba vòi ở giây 103,3, dựng lại từ mã, đã ẩn nhãn %/năm và tiêu đề Chi phí vốn của cảnh."] },
+        { "anh": "../xem_truoc/chi_phi_von_ngan_hang/B.png", "nhan": "N101 COF - Chi phí vốn của ngân hàng là gì? · phương án B", "thoi_luong": "5:20",
+          "ghi": ["Chữ: COF / Chi phí vốn là gì? (5 từ). Cỡ 108/76.", "Hình: cùng khung, cắt từ mp4 bản nháp: còn nhãn %/năm bị cắt ở mép, một vệt đỏ là chân chữ tiêu đề cảnh, nền chấm lệch màu với nền phẳng."] },
+        { "anh": "../xem_truoc/the_chap_cam_co/A.png", "nhan": "N97 Phân biệt cầm cố và thế chấp · phương án A", "thoi_luong": "4:07",
+          "ghi": ["Chữ: CẦM CỐ ≠ THẾ CHẤP / khác nhau ở đâu? (8 từ). Dòng 1 tự thu còn 108 điểm ảnh vì câu dài.", "Hình: ngôi nhà (thế chấp, tài sản ở lại người vay) và két sắt cạnh toà ngân hàng (cầm cố) ở giây 30, dựng lại từ mã, đã ẩn mọi nhãn."] },
+        { "anh": "../xem_truoc/the_chap_cam_co/B.png", "nhan": "N97 Phân biệt cầm cố và thế chấp · phương án B", "thoi_luong": "4:07",
+          "ghi": ["Chữ: CẦM CỐ - THẾ CHẤP / Phân biệt cho đúng (8 từ). Cỡ 108/76. Không dùng vế 'không phải ai cũng biết' của tiêu đề vì mục 0b tránh câu giật gân.", "Hình: cùng khung, cắt từ mp4: còn khung chú thích, biển NGÂN HÀNG, nhãn Người vay giữ, Bên cho vay giữ và các chấm thanh chương ở mép dưới."] }
+      ]
+    },
+    {
+      "ten": "2. So sánh riêng: cỡ chữ",
+      "mo_ta": "Cùng hình N128 phương án A, chỉ đổi cỡ chữ dòng 1 / dòng 2. Xem ở cỡ điện thoại để quyết.",
+      "kieu": "nho",
+      "hinh": [
+        { "anh": "../xem_truoc/nh_so_sanh/co15.png", "nhan": "15% chiều cao: 108 / 76 điểm ảnh", "thoi_luong": "5:28" },
+        { "anh": "../xem_truoc/nh_so_sanh/co16.png", "nhan": "16,5%: 118 / 80 điểm ảnh", "thoi_luong": "5:28" },
+        { "anh": "../xem_truoc/nh_so_sanh/co18.png", "nhan": "18%: 128 / 84 điểm ảnh", "thoi_luong": "5:28" }
+      ]
+    },
+    {
+      "ten": "3. So sánh riêng: chỗ đặt nhãn kênh",
+      "mo_ta": "Cùng hình N97 phương án A, chỉ đổi góc đặt nhãn kênh. Góc dưới phải không dùng vì YouTube đè thời lượng lên đó. Ở cỡ điện thoại chỉ còn nhận ra logo, tên kênh không đọc được ở góc nào.",
+      "kieu": "nho",
+      "hinh": [
+        { "anh": "../xem_truoc/nh_so_sanh/nhan_tren_trai.png", "nhan": "Góc trái trên", "thoi_luong": "4:07" },
+        { "anh": "../xem_truoc/nh_so_sanh/nhan_tren_phai.png", "nhan": "Góc phải trên (cùng chỗ với kênh Chuyện nghề Điện)", "thoi_luong": "4:07" },
+        { "anh": "../xem_truoc/nh_so_sanh/nhan_duoi_trai.png", "nhan": "Góc trái dưới (đè lên hình vẽ ngôi nhà)", "thoi_luong": "4:07" }
+      ]
+    },
+    {
+      "ten": "4. So sánh riêng: cách lấy hình vẽ từ video",
+      "mo_ta": "Cùng bố cục, chỉ đổi nguồn hình. Dựng từ mã: chạy lại trang dựng của video ở đúng giây, ẩn phụ đề và nhãn chữ, chụp ở 3840 điểm ảnh; nét sắc, không sót chữ; mỗi video cần chọn giây và kiểm một lần (khoảng 5 phút). Cắt từ mp4: nhanh hơn, làm được cả với video không còn mã dựng trên máy, nhưng chỉ 1920 điểm ảnh và sót nhãn chữ, chú thích của cảnh, phải che tay từng chỗ.",
+      "kieu": "nho",
+      "hinh": [
+        { "anh": "../xem_truoc/nh_so_sanh/nguon_ma.png", "nhan": "N101 · dựng từ mã", "thoi_luong": "5:20", "phong_to": [30, 100, 520, 600] },
+        { "anh": "../xem_truoc/nh_so_sanh/nguon_mp4.png", "nhan": "N101 · cắt từ mp4", "thoi_luong": "5:20", "phong_to": [30, 100, 520, 600] },
+        { "anh": "../xem_truoc/nh_so_sanh/nguon_ma_n97.png", "nhan": "N97 · dựng từ mã", "thoi_luong": "4:07", "phong_to": [0, 360, 1280, 360] },
+        { "anh": "../xem_truoc/nh_so_sanh/nguon_mp4_n97.png", "nhan": "N97 · cắt từ mp4", "thoi_luong": "4:07", "phong_to": [0, 360, 1280, 360] }
+      ]
+    }
+  ],
+  "cau_hoi": [
+    "Cỡ chữ dòng 1: 15%, 16,5% hay 18% chiều cao hình (mục 2).",
+    "Chỗ đặt nhãn kênh: góc trái trên, góc phải trên hay góc trái dưới (mục 3).",
+    "Cách lấy hình vẽ: dựng lại từ mã của video hay cắt khung từ mp4 rồi che chữ (mục 4).",
+    "Mỗi video chọn A hay B, hoặc ghép (ví dụ chữ của B với hình và cỡ của A)."
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "lo": "2026.10.29_mau",
+  "_huong_dan": "Chép file này ra du_lieu/dang_facebook/lo_<yyyy.mm.dd>_<ten>.json rồi sửa. Đường dẫn tính từ gốc Media. Chú thích lấy từ tai_nguyen/dang_bai/facebook.md của từng thư mục video (Trung duyệt ở đó), video lấy bản dọc _reels_ ngoài cùng thư mục. kenh: dien, bank hoặc kinh_te (skills/dang-facebook/trang_theo_kenh.json). che_do: nhap (tải lên, chưa công khai), len_lich (cần publish_at có múi giờ +07:00, hơn 15 phút và trong 29 ngày kể từ lúc chạy) hoặc dang_ngay. Video có nhãn AI bật trong facebook.md chỉ được che_do nhap cho tới khi lần đăng thử xác nhận sửa nhãn sau được. Xoá khoá _huong_dan khi dùng thật cũng được, script bỏ qua.",
+  "mac_dinh": {
+    "kenh": "dien",
+    "che_do": "nhap"
+  },
+  "video": [
+    {
+      "ma": "N29",
+      "thu_muc": "san_pham/2026.10.27.Trời râm pin mặt trời có hoạt động không? Ánh sáng tới tấm pin từ đâu",
+      "che_do": "nhap",
+      "publish_at": ""
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "ghi_chu": "Ba chiến dịch truyền thông của bảng video (Trung chốt 28/10/2026). Mỗi chiến dịch một kênh YouTube riêng. tu_khoa: chuỗi không dấu nối bằng dấu gạch dưới, so với tên thư mục và tên video đã bỏ dấu; chiến dịch đứng trước được xét trước. Video xếp sai thì sửa tay bằng ô Chiến dịch trên thẻ video (lưu ở du_lieu/bang_video/ghi_de.json). Khi có kênh mới: điền ma_kenh và khoa_youtube (file khoá OAuth của kênh đó, tạo theo skills/dang-youtube/SKILL.md). Chủ đề từng kênh (Trung chốt 28/10/2026): Điện gồm điện và dự án năng lượng; Bank gồm ngân hàng và tài chính; Kinh tế gồm vĩ mô, bất động sản, dự án hạ tầng, tin cập nhật (00_tam_nhin_va_muc_tieu.md mục 2). Chiến dịch KCN (Trung chốt 02/11/2026): kênh thứ tư Chuyện làm dự án, nòng cốt là khu công nghiệp, cụm công nghiệp, nhà xưởng, kho bãi và nghề phát triển dự án bất động sản; dự án điện vẫn thuộc Điện, vĩ mô, nhà ở, cao tốc vẫn thuộc Kinh tế. Đứng đầu danh sách để video có chữ khu công nghiệp không bị xếp sang Điện hay Kinh tế. Kế hoạch: san_pham/2026.11.02.chien_dich_kcn/tai_nguyen/kich_ban/2026.11.02.ke_hoach_chien_dich_kcn.md.",
+  "chien_dich": [
+    {
+      "ma": "kcn",
+      "ten": "Chiến dịch KCN",
+      "kenh_youtube": "Chuyện làm dự án",
+      "ma_kenh": null,
+      "khoa_youtube": null,
+      "tu_khoa": ["khu_cong_nghiep", "kcn", "cum_cong_nghiep", "ccn", "khu_che_xuat", "khu_kinh_te", "xuong_xay_san", "kho_xay_san", "lap_day", "giai_phong_mat_bang", "gpmb", "den_bu", "lam_du_an", "chu_dau_tu_ha_tang", "bds_cong_nghiep", "bat_dong_san_cong_nghiep"]
+    },
+    {
+      "ma": "dien",
+      "ten": "Chiến dịch Điện",
+      "kenh_youtube": "Chuyện nghề Điện",
+      "ma_kenh": "UCMo-VX6bf8_SNu8tUa5wiMw",
+      "khoa_youtube": "~/.config/dang-youtube/request.token",
+      "tu_khoa": ["dien", "gio", "tuabin", "tua_bin", "pin", "mat_troi", "nang", "luoi", "cong_suat", "san_luong", "ton_that", "bien_ap", "bess", "inverter", "scada", "monopile", "kw", "mwp", "p50", "iec"]
+    },
+    {
+      "ma": "bank",
+      "ten": "Chiến dịch Bank",
+      "kenh_youtube": "Chuyện nghề Ngân hàng",
+      "ma_kenh": "UCPhmM6_u0fTr5mWcpJiNm-w",
+      "khoa_youtube": "~/.config/dang-youtube/ngan_hang/request.token",
+      "tu_khoa": ["vay", "no", "ngan_hang", "tien_gui", "lai", "han_muc", "tin_dung", "tin_chap", "the_chap", "cam_co", "bao_dam", "cic", "du_phong", "casa", "chung_chi", "giai_ngan", "ldr", "basel", "du_tru", "tai_chinh", "chung_khoan", "co_phieu", "trai_phieu", "quy_dau_tu", "bao_hiem"]
+    },
+    {
+      "ma": "kinh_te",
+      "ten": "Chiến dịch Kinh tế",
+      "kenh_youtube": "Chuyện vĩ mô",
+      "ma_kenh": null,
+      "khoa_youtube": null,
+      "tu_khoa": ["vi_mo", "kinh_te", "gdp", "cpi", "lam_phat", "ty_gia", "xuat_khau", "nhap_khau", "fdi", "dau_tu_cong", "ngan_sach", "bat_dong_san", "bds", "nha_o", "chung_cu", "dat_nen", "ha_tang", "cao_toc", "duong_sat", "san_bay", "cang_bien", "quy_hoach", "ban_tin", "cap_nhat"]
+    }
+  ]
+}

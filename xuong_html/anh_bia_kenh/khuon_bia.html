@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Khuôn ảnh bìa kênh</title>
+<!--
+  Khuôn chữ cho ảnh bìa kênh YouTube "Chuyện nghề Điện": phủ tên kênh lên nền do ghep_nen.py ghép sẵn (nen_2560x1440.png).
+  Khổ 2560×1440. Vùng an toàn mọi thiết bị: 1546×423 ở giữa (x 507–2053, y 508–931); chữ chính nằm trọn trong vùng này.
+  Xem tay: mở khuon_bia.html?guide=1 để vẽ khung vùng an toàn và dải máy tính. xuat_bia.mjs chụp bản thật.
+  Ảnh bìa Facebook (1640×624, tỉ lệ 2,63:1; điện thoại chỉ thấy khoảng giữa rộng 1109): mở với ?kho=facebook&nen=nen_facebook_1640x624.png,
+  chữ đặt ở nửa trên giữa khung (cy 205, phóng 0,5 lần so với bản YouTube) vì app điện thoại che phần dưới giữa bằng ảnh đại diện tròn và phủ lớp tối mờ
+  lên phần trên (đo từ ảnh chụp 29/10/2026, xem mo_phong_facebook.py). Bản đầu (29/10/2026 sáng) đặt chữ ở giữa khung, bị ảnh đại diện che chữ ĐIỆN.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Nunito:ital,wght@1,900&display=block" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #05121b; }
+  #bia { --w: 2560px; --h: 1440px; --cx: 1280px; --cy: 716px; --k: 1; position: relative; width: var(--w); height: var(--h); overflow: hidden; background: #05121b; }
+  #bia > img { position: absolute; inset: 0; width: var(--w); height: var(--h); display: block; }
+  /* lớp tối mềm sau chữ để tên kênh nổi trên nền sáng; không phủ kín vùng ảnh nhà máy hai bên */
+  .toi { position: absolute; left: var(--cx); top: var(--cy); width: 800px; height: 440px; transform: translate(-50%, -50%) scale(var(--k));
+    background: radial-gradient(closest-side, rgba(8,16,36,.50) 0%, rgba(8,16,36,.30) 55%, rgba(8,16,36,0) 100%); }
+  .ten { position: absolute; left: var(--cx); top: var(--cy); transform: translate(-50%, -50%) scale(var(--k)); text-align: center; white-space: nowrap; }
+  .ten .d1 { font: 400 104px/1 'Anton', sans-serif; letter-spacing: .035em; color: #fff;
+    -webkit-text-stroke: 8px #052a62; paint-order: stroke fill; text-shadow: 0 8px 26px rgba(0,0,0,.55); }
+  .ten .d2 { margin-top: 6px; display: flex; align-items: center; justify-content: center; gap: 24px; }
+  .ten .d2 .chu { font: 400 182px/1 'Anton', sans-serif; letter-spacing: .02em; color: transparent; position: relative; }
+  .ten .d2 .chu::before, .ten .d2 .chu::after { content: attr(data-chu); position: absolute; left: 0; top: -.3em; padding: .3em 0; }
+  .ten .d2 .chu::before { z-index: -1; color: #052a62; -webkit-text-stroke: 16px #052a62; text-shadow: 0 8px 26px rgba(0,0,0,.6); }
+  .ten .d2 .chu::after { color: transparent; background: linear-gradient(180deg, #ffffff 6%, #fff1a0 38%, #ffd23f 100%);
+    -webkit-background-clip: text; background-clip: text; }
+  .ten .d2 { isolation: isolate; }
+  .set { flex: none; width: 120px; height: 120px; border-radius: 50%; background: #ffd23f; display: grid; place-items: center;
+    box-shadow: 0 0 0 6px #052a62, 0 8px 26px rgba(0,0,0,.55); }
+  .set::before { content: ""; width: 48px; height: 70px; background: #111; clip-path: polygon(60% 0, 0 58%, 45% 58%, 30% 100%, 100% 40%, 55% 40%); }
+  /* khung kiểm tra (chỉ khi ?guide=1) */
+  .guide { position: absolute; border: 3px dashed #fff; pointer-events: none; display: none; }
+  .guide span { position: absolute; left: 10px; top: 6px; font: 700 24px 'Nunito', sans-serif; color: #fff; background: rgba(0,0,0,.6); padding: 2px 8px; }
+  body.g .guide { display: block; }
+  body.g #g3 { display: none; }
+  body.g.fb #g3 { display: block; }
+</style>
+</head>
+<body>
+<div id="bia">
+  <img id="nen" alt="">
+  <div class="toi"></div>
+  <div class="ten">
+    <div class="d1">CHUYỆN NGHỀ</div>
+    <div class="d2"><div class="set"></div><div class="chu" data-chu="ĐIỆN">ĐIỆN</div></div>
+  </div>
+  <div class="guide" id="g1"><span id="t1"></span></div>
+  <div class="guide" id="g2" style="border-color:#ff0"><span id="t2"></span></div>
+  <div class="guide" id="g3"><span id="t3"></span></div>
+</div>
+<script>
+  const q = new URLSearchParams(location.search);
+  const bia = document.getElementById('bia'), dat = (id, kieu, chu) => { const e = document.getElementById(id); Object.assign(e.style, kieu); };
+  if (q.get('kho') === 'facebook') {
+    document.body.classList.add('fb');
+    for (const [k, v] of Object.entries({ '--w': '1640px', '--h': '624px', '--cx': '816px', '--cy': '205px', '--k': '0.5' })) bia.style.setProperty(k, v);
+    dat('g1', { left: '440px', top: '120px', width: '535px', height: '180px' }); document.getElementById('t1').textContent = 'vùng chữ dùng được trên app điện thoại';
+    dat('g2', { left: '354px', top: '0', width: '920px', height: '560px' }); document.getElementById('t2').textContent = 'app điện thoại thấy 920×560 giữa khung';
+    dat('g3', { left: '619px', top: '303px', width: '390px', height: '321px', borderColor: '#f55' }); document.getElementById('t3').textContent = 'ảnh đại diện đè lên';
+  } else {
+    dat('g1', { left: '507px', top: '508px', width: '1546px', height: '423px' }); document.getElementById('t1').textContent = 'điện thoại · vùng an toàn 1546×423';
+    dat('g2', { left: '0', top: '508px', width: '2560px', height: '423px' }); document.getElementById('t2').textContent = 'máy tính · 2560×423';
+  }
+  if (q.get('guide')) document.body.classList.add('g');
+  const im = document.getElementById('nen');
+  im.onload = () => document.fonts.ready.then(() => { document.body.dataset.xong = '1'; });
+  im.src = q.get('nen') || 'nen_2560x1440.png';
+</script>
+</body>
+</html>

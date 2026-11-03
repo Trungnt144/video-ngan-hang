@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Mẫu hình thu nhỏ v1</title>
+<!--
+  Năm kiểu hình thu nhỏ (A–E) áp cho hai video mẫu (tb = tua-bin gió, cg = cắt giảm công suất).
+  Mỗi <section class="tn"> là một hình 1280×720; chup.mjs chụp từng section ở hệ số 1,5 ra 1920×1080.
+  Khung nền không chữ (khung/): tua-bin lấy ảnh Blender gốc xuong_dai/tuabin_gio/public/blender/f_NNNN.jpg;
+  cắt giảm xuất bằng npx remotion still CatGiam --frame=N --scale=2 --props='{"sach":true}' (3840×2160).
+  Số trên hình lấy từ file nguồn kiểm chứng của từng video: 8–20 và hơn 1.000 vòng/phút (tua-bin),
+  365 triệu kWh năm 2020 (cắt giảm). Đồ thị kiểu B là hình minh hoạ, có ghi trên hình.
+-->
+<style>
+  :root {
+    --vang: #ffd23f; --ngoc: #2ee6c8; --hong: #ff3d5f; --xanh-dem: #0b1e3f; --den: #0a0a0c;
+    --xanh-nhu-cau: #6f9cff; --la: #2fd16b; --xam: #5d6168;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #222; font-family: 'Be Vietnam Pro', sans-serif; display: flex; flex-direction: column; gap: 24px; padding: 24px; }
+  .tn { width: 1280px; height: 720px; position: relative; overflow: hidden; background: var(--den); flex: none; }
+  .tn img.nen { position: absolute; display: block; }
+  /* phóng 1511×850, nhích lên 40: phụ đề ở 90–94% chiều cao khung rơi xuống dưới mép 720 */
+  .day { width: 1511px; left: -115px; top: -40px; }
+  .lop { position: absolute; inset: 0; }
+  .kenh { position: absolute; left: 44px; top: 36px; display: flex; align-items: center; gap: 10px;
+    font: 800 22px/1 'Be Vietnam Pro'; letter-spacing: .08em; color: #fff;
+    background: rgba(0,0,0,.55); padding: 9px 16px 9px 12px; border-radius: 999px; }
+  .kenh i { width: 22px; height: 22px; border-radius: 50%; background: var(--vang); display: grid; place-items: center; }
+  .kenh i::before { content: ""; width: 9px; height: 14px; background: #111;
+    clip-path: polygon(60% 0, 0 58%, 45% 58%, 30% 100%, 100% 40%, 55% 40%); }
+  .chu { position: absolute; font-family: 'Be Vietnam Pro'; text-transform: uppercase; line-height: .95; }
+  .bong { text-shadow: 0 4px 0 rgba(0,0,0,.35), 0 0 24px rgba(0,0,0,.45); }
+  .nhan { position: absolute; font: 900 34px/1 'Be Vietnam Pro'; text-transform: uppercase; padding: 12px 18px; border-radius: 10px; }
+  .nhan small { display: block; font: 700 22px/1.1 'Be Vietnam Pro'; text-transform: none; margin-top: 6px; }
+  /* khung 3D cắt giảm cắt mất mặt trời ở mép trên: vẽ lại một mặt trời cùng kiểu của video */
+  .mat-troi { position: absolute; width: 110px; height: 110px; border-radius: 50%; background: #ffc93c;
+    box-shadow: 0 0 0 18px rgba(255,201,60,.3), 0 0 70px 34px rgba(255,201,60,.35); }
+  svg.de { position: absolute; inset: 0; width: 1280px; height: 720px; overflow: visible; }
+</style>
+</head>
+<body>
+
+<!-- ========== KIỂU A · Mặt cắt + tiêu đề hai tầng (TN-01) ========== -->
+<section class="tn" id="A_tb">
+  <img class="nen" src="khung/tb_0720_sach.jpg" style="width:1511px;left:130px;top:-40px">
+  <div class="lop" style="background:linear-gradient(90deg,rgba(6,14,30,.95) 0%,rgba(6,14,30,.8) 30%,rgba(6,14,30,0) 58%)"></div>
+  <div class="kenh"><i></i>CHUYỆN NGHỀ ĐIỆN</div>
+  <div class="chu bong" style="left:44px;top:150px;font-weight:900;font-size:150px;color:#fff">Tua-bin<br>gió</div>
+  <div class="chu bong" style="left:48px;top:470px;font-weight:800;font-size:76px;color:var(--ngoc)">Bên trong</div>
+</section>
+
+<section class="tn" id="A_cg">
+  <img class="nen" src="khung/cg_2_sach.png" style="width:1511px;left:-60px;top:-40px">
+  <div class="lop" style="background:linear-gradient(90deg,rgba(10,10,12,.96) 0%,rgba(10,10,12,.82) 34%,rgba(10,10,12,0) 62%)"></div>
+  <div class="kenh"><i></i>CHUYỆN NGHỀ ĐIỆN</div>
+  <div class="chu bong" style="left:44px;top:150px;font-weight:900;font-size:150px;color:#fff">Cắt<br>giảm</div>
+  <div class="chu bong" style="left:48px;top:470px;font-weight:800;font-size:76px;color:var(--hong)">Điện bị bỏ</div>
+</section>
+
+<!-- ========== KIỂU B · Cơ cấu + nhãn mũi tên (TN-02) ========== -->
+<section class="tn" id="B_tb">
+  <img class="nen day" src="khung/tb_0720_sach.jpg" style="filter:brightness(.8) saturate(1.1)">
+  <div class="lop" style="background:radial-gradient(ellipse 60% 55% at 55% 52%,rgba(0,0,0,0) 40%,rgba(0,0,0,.7) 100%),linear-gradient(180deg,rgba(0,0,0,.65) 0%,rgba(0,0,0,0) 30%)"></div>
+  <div class="kenh"><i></i>CHUYỆN NGHỀ ĐIỆN</div>
+  <div class="chu bong" style="left:44px;top:100px;font-weight:900;font-size:92px;color:var(--vang)">Hộp số làm gì?</div>
+  <div class="nhan" style="right:40px;top:250px;background:var(--ngoc);color:#062a24">Chậm<small>8–20 vòng/phút</small></div>
+  <div class="nhan" style="left:44px;top:520px;background:var(--vang);color:#2a2000">Nhanh<small>hơn 1.000 vòng/phút</small></div>
+  <svg class="de" viewBox="0 0 1280 720">
+    <defs><marker id="mtB" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fff"/></marker></defs>
+    <path d="M1150,370 C1150,410 1130,420 1100,430" stroke="#fff" stroke-width="7" fill="none" stroke-linecap="round" marker-end="url(#mtB)"/>
+    <path d="M300,515 C310,450 340,420 390,395" stroke="#fff" stroke-width="7" fill="none" stroke-linecap="round" marker-end="url(#mtB)"/>
+  </svg>
+</section>
+
+<section class="tn" id="B_cg" style="background:#0c0c0f">
+  <div class="kenh" style="background:rgba(255,255,255,.08)"><i></i>CHUYỆN NGHỀ ĐIỆN</div>
+  <div class="chu bong" style="left:44px;top:100px;font-weight:900;font-size:92px;color:var(--vang)">Vì sao phải cắt?</div>
+  <svg class="de" viewBox="0 0 1280 720">
+    <defs>
+      <clipPath id="duoiNhuCau"><path d="M100,440 C200,470 300,480 375,470 S560,445 650,445 S800,420 880,370 S960,300 1000,320 S1120,420 1200,430 L1200,640 L100,640 Z"/></clipPath>
+      <marker id="mtBc" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fff"/></marker>
+    </defs>
+    <path d="M100,440 C200,470 300,480 375,470 S560,445 650,445 S800,420 880,370 S960,300 1000,320 S1120,420 1200,430 L1200,640 L100,640 Z" fill="var(--xam)"/>
+    <path d="M375,500 C480,500 540,250 650,250 C760,250 820,500 925,500 Z" fill="var(--hong)"/>
+    <path d="M375,500 C480,500 540,250 650,250 C760,250 820,500 925,500 Z" fill="var(--la)" clip-path="url(#duoiNhuCau)"/>
+    <path d="M100,440 C200,470 300,480 375,470 S560,445 650,445 S800,420 880,370 S960,300 1000,320 S1120,420 1200,430" stroke="var(--xanh-nhu-cau)" stroke-width="7" fill="none"/>
+    <line x1="100" y1="640" x2="1200" y2="640" stroke="#aaa" stroke-width="3"/>
+    <circle cx="650" cy="680" r="0"/>
+    <text x="650" y="690" text-anchor="middle" font-family="Be Vietnam Pro" font-weight="800" font-size="34" fill="#fff">12 GIỜ TRƯA</text>
+    <path d="M940,250 C880,250 800,270 740,300" stroke="#fff" stroke-width="7" fill="none" stroke-linecap="round" marker-end="url(#mtBc)"/>
+    <text x="100" y="625" font-family="Be Vietnam Pro" font-weight="600" font-size="20" fill="#d0d0d0">hình minh hoạ</text>
+  </svg>
+  <div class="nhan" style="left:950px;top:205px;background:var(--hong);color:#fff">Thừa<small>không ai nhận</small></div>
+</section>
+
+<!-- ========== KIỂU C · Câu khêu tò mò chữ khổng lồ (TN-04) ========== -->
+<section class="tn" id="C_tb">
+  <img class="nen day" src="khung/tb_1860_sach.jpg" style="top:-120px">
+  <div class="lop" style="background:linear-gradient(180deg,rgba(0,0,0,0) 30%,rgba(0,0,0,.92) 62%)"></div>
+  <div class="lop" style="border:12px solid var(--hong)"></div>
+  <div class="kenh"><i></i>CHUYỆN NGHỀ ĐIỆN</div>
+  <div class="chu bong" style="left:44px;top:400px;font-weight:900;font-size:118px;color:#fff">Quay chậm</div>
+  <div class="chu bong" style="left:44px;top:520px;font-weight:900;font-size:118px;color:var(--vang)">Sao ra điện?</div>
+</section>
+
+<section class="tn" id="C_cg">
+  <img class="nen" src="khung/cg_2_sach.png" style="width:1400px;left:0;top:-90px;filter:contrast(1.1) saturate(1.2)">
+  <div class="mat-troi" style="left:360px;top:80px"></div>
+  <div class="lop" style="background:linear-gradient(180deg,rgba(0,0,0,0) 30%,rgba(0,0,0,.92) 62%)"></div>
+  <div class="lop" style="border:12px solid var(--hong)"></div>
+  <div class="kenh"><i></i>CHUYỆN NGHỀ ĐIỆN</div>
+  <div class="chu bong" style="left:44px;top:400px;font-weight:900;font-size:118px;color:#fff">Nắng đẹp</div>
+  <div class="chu bong" style="left:44px;top:520px;font-weight:900;font-size:118px;color:var(--vang)">Vẫn bị cắt?</div>
+</section>
+
+<!-- ========== KIỂU D · Con số lớn (TN-06, kiểu mới đề xuất) ========== -->
+<section class="tn" id="D_tb" style="background:var(--xanh-dem)">
+  <img class="nen" src="khung/tb_1860_sach.jpg" style="width:1300px;left:420px;top:-60px;clip-path:polygon(28% 0,100% 0,100% 100%,12% 100%)">
+  <div class="kenh"><i></i>CHUYỆN NGHỀ ĐIỆN</div>
+  <div class="chu" style="left:44px;top:150px;font-weight:800;font-size:72px;color:var(--ngoc)">8–20 <span style="color:#fff">→</span></div>
+  <div class="chu bong" style="left:36px;top:240px;font-weight:900;font-size:230px;color:var(--vang);letter-spacing:-.03em">1.000+</div>
+  <div class="chu" style="left:48px;top:470px;font-weight:800;font-size:54px;color:#fff;text-transform:none">vòng/phút</div>
+  <div class="chu" style="left:48px;top:545px;font-weight:700;font-size:40px;color:#9fb3d9">Nhờ hộp số</div>
+</section>
+
+<section class="tn" id="D_cg" style="background:#0c0c0f">
+  <img class="nen" src="khung/cg_6_sach.png" style="width:1400px;left:430px;top:-30px;filter:grayscale(.6) brightness(.85);clip-path:polygon(34% 0,100% 0,100% 100%,18% 100%)">
+  <div class="kenh" style="background:rgba(255,255,255,.08)"><i></i>CHUYỆN NGHỀ ĐIỆN</div>
+  <div class="chu bong" style="left:36px;top:150px;font-weight:900;font-size:250px;color:var(--hong);letter-spacing:-.03em">365</div>
+  <div class="chu bong" style="left:44px;top:395px;font-weight:900;font-size:84px;color:#fff;text-transform:none">triệu kWh</div>
+  <div class="chu" style="left:48px;top:495px;font-weight:800;font-size:46px;color:var(--vang)">bị bỏ năm 2020</div>
+  <div class="chu" style="left:48px;top:600px;font-weight:600;font-size:22px;color:#9a9a9a;text-transform:none">theo EVN, công bố 1/2021</div>
+</section>
+
+<!-- ========== KIỂU E · Chia đôi đối lập (biến thể TN-05, không người dẫn) ========== -->
+<section class="tn" id="E_tb">
+  <img class="nen" src="khung/tb_0660_sach.jpg" style="width:1300px;left:-280px;top:-40px">
+  <img class="nen" src="khung/tb_1860_sach.jpg" style="width:1400px;left:250px;top:-60px;clip-path:polygon(38% 0,100% 0,100% 100%,30% 100%)">
+  <svg class="de" viewBox="0 0 1280 720"><line x1="782" y1="0" x2="670" y2="720" stroke="#fff" stroke-width="10"/></svg>
+  <div class="kenh"><i></i>CHUYỆN NGHỀ ĐIỆN</div>
+  <div class="nhan" style="left:44px;top:520px;background:#fff;color:#0b1e3f;font-size:58px">Bên ngoài</div>
+  <div class="nhan" style="left:830px;top:110px;background:var(--vang);color:#2a2000;font-size:58px">Bên trong</div>
+  <div style="position:absolute;left:670px;top:300px;width:120px;height:120px;border-radius:50%;background:var(--hong);border:8px solid #fff;display:grid;place-items:center;font:900 64px/1 'Be Vietnam Pro';color:#fff">?</div>
+</section>
+
+<section class="tn" id="E_cg">
+  <img class="nen day" src="khung/cg_2_sach.png" style="top:-90px;filter:contrast(1.1) saturate(1.25)">
+  <div class="mat-troi" style="left:330px;top:110px"></div>
+  <img class="nen day" src="khung/cg_2_sach.png" style="top:-90px;filter:grayscale(1) brightness(.55);clip-path:polygon(52% 0,100% 0,100% 100%,44% 100%)">
+  <svg class="de" viewBox="0 0 1280 720"><line x1="671" y1="0" x2="550" y2="720" stroke="#fff" stroke-width="10"/></svg>
+  <div class="kenh"><i></i>CHUYỆN NGHỀ ĐIỆN</div>
+  <div class="nhan" style="left:44px;top:520px;background:var(--vang);color:#2a2000;font-size:58px">Nắng đẹp</div>
+  <div class="nhan" style="left:800px;top:110px;background:var(--hong);color:#fff;font-size:58px">Bị cắt</div>
+  <div style="position:absolute;left:550px;top:300px;width:120px;height:120px;border-radius:50%;background:#111;border:8px solid #fff;display:grid;place-items:center;font:900 64px/1 'Be Vietnam Pro';color:#fff">?</div>
+</section>
+
+</body>
+</html>

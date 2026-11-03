@@ -1,0 +1,109 @@
+{
+  "tieu_de": "Hình thu nhỏ kênh Chuyện nghề Ngân hàng · đợt 1",
+  "gioi_thieu": [
+    "Đợt 1 gồm 5 video đã có bản cuối còn lại (N128, N97 đã xuất hình theo mẫu Trung duyệt; N101 cũng đã xuất). Mỗi video 2 phương án: A chữ trên hình dưới, B hình trên chữ dưới, khác cả hình vẽ và câu chữ.",
+    "Tất cả theo mẫu đã chốt (bảng phong cách mục 0b quy tắc 9 và 10): chữ dòng 1 cỡ 128 điểm ảnh, logo góc trái trên, hình dựng lại từ mã của video, luật giãn cách. Mọi hình qua phép kiểm: tương phản thấp nhất 6,4:1, câu 5–8 từ, không chữ lấn góc dưới phải, không chữ tràn khung.",
+    "Không đưa số giả định của video lên hình (ví dụ 5 tỷ, 3,8 tỷ ở tiêu đề N112, N95), theo mục 0b quy tắc 4. N120 phương án A dùng chữ tắt NHNN để dòng 1 vừa khung; nếu Trung thấy người xem phổ thông khó hiểu NHNN thì chọn B."
+  ],
+  "nhom": [
+    {
+      "ten": "5 video, mỗi video hai phương án",
+      "kieu": "day_du",
+      "hinh": [
+        {
+          "anh": "../xem_truoc/dinh_gia_tai_san_bao_dam/A.png",
+          "nhan": "N112 Nhà mua 5 tỷ, ngân hàng chỉ ghi 3,8 tỷ: tiền chênh đi đâu? · phương án A",
+          "thoi_luong": "4:58",
+          "ghi": [
+            "Chữ: ĐỊNH GIÁ TÀI SẢN / tính thế nào?. Bố cục chữ trên, hình dưới.",
+            "Hình vẽ: cân: tài sản một bên, tiền một bên (giây 242,6), dựng lại từ mã của video."
+          ]
+        },
+        {
+          "anh": "../xem_truoc/dinh_gia_tai_san_bao_dam/B.png",
+          "nhan": "N112 Nhà mua 5 tỷ, ngân hàng chỉ ghi 3,8 tỷ: tiền chênh đi đâu? · phương án B",
+          "thoi_luong": "4:58",
+          "ghi": [
+            "Chữ: TÀI SẢN BẢO ĐẢM / định giá ra sao?. Bố cục hình trên, chữ dưới.",
+            "Hình vẽ: toà nhà, cột giá trị và cột nét đứt phần chênh (giây 198,8), dựng lại từ mã của video."
+          ]
+        },
+        {
+          "anh": "../xem_truoc/ngan_hang_nha_nuoc/A.png",
+          "nhan": "N120 Ngân hàng Nhà nước có vai trò gì · phương án A",
+          "thoi_luong": "4:24",
+          "ghi": [
+            "Chữ: NHNN / Ngân hàng Nhà nước làm gì?. Bố cục chữ trên, hình dưới.",
+            "Hình vẽ: sa bàn 3D: Ngân hàng Nhà nước giữa các ngân hàng, có dấu tích (giây 195,2), dựng lại từ mã của video."
+          ]
+        },
+        {
+          "anh": "../xem_truoc/ngan_hang_nha_nuoc/B.png",
+          "nhan": "N120 Ngân hàng Nhà nước có vai trò gì · phương án B",
+          "thoi_luong": "4:24",
+          "ghi": [
+            "Chữ: NGÂN HÀNG / của các ngân hàng. Bố cục hình trên, chữ dưới.",
+            "Hình vẽ: sa bàn 3D, cột tiền xanh và đỏ hai bên (giây 224,1), dựng lại từ mã của video."
+          ]
+        },
+        {
+          "anh": "../xem_truoc/ty_le_cho_vay_tren_gia_tri_tai_san/A.png",
+          "nhan": "N95 Nhà 5 tỷ, vay được tối đa bao nhiêu? LTV và cái trần thứ hai · phương án A",
+          "thoi_luong": "5:05",
+          "ghi": [
+            "Chữ: TỶ LỆ LTV / vay tối đa bao nhiêu?. Bố cục chữ trên, hình dưới.",
+            "Hình vẽ: thanh giá nhà, thanh khoản vay vượt trần gạch chéo (giây 47), dựng lại từ mã của video."
+          ]
+        },
+        {
+          "anh": "../xem_truoc/ty_le_cho_vay_tren_gia_tri_tai_san/B.png",
+          "nhan": "N95 Nhà 5 tỷ, vay được tối đa bao nhiêu? LTV và cái trần thứ hai · phương án B",
+          "thoi_luong": "5:05",
+          "ghi": [
+            "Chữ: LTV / và cái trần thứ hai. Bố cục hình trên, chữ dưới.",
+            "Hình vẽ: ba thanh: giá nhà, khoản vay, trần theo thu nhập (giây 154), dựng lại từ mã của video."
+          ]
+        },
+        {
+          "anh": "../xem_truoc/co_cau_lai_thoi_han_tra_no/A.png",
+          "nhan": "N126 Giãn nợ ngân hàng: trả chậm mà vẫn giữ nhóm nợ 1 được không? · phương án A",
+          "thoi_luong": "5:10",
+          "ghi": [
+            "Chữ: GIÃN NỢ / vẫn giữ nhóm nợ 1?. Bố cục chữ trên, hình dưới.",
+            "Hình vẽ: hồ sơ → chi nhánh → cán cân, lịch trả nợ (giây 153,4), dựng lại từ mã của video."
+          ]
+        },
+        {
+          "anh": "../xem_truoc/co_cau_lai_thoi_han_tra_no/B.png",
+          "nhan": "N126 Giãn nợ ngân hàng: trả chậm mà vẫn giữ nhóm nợ 1 được không? · phương án B",
+          "thoi_luong": "5:10",
+          "ghi": [
+            "Chữ: CƠ CẤU LẠI NỢ / trả chậm được không?. Bố cục hình trên, chữ dưới.",
+            "Hình vẽ: dãy kỳ trả nợ, ba kỳ vàng kéo dài thêm (giây 88,6), dựng lại từ mã của video."
+          ]
+        },
+        {
+          "anh": "../xem_truoc/giai_ngan_vay_ca_nhan/A.png",
+          "nhan": "N129 Giải ngân khoản vay cá nhân: tiền đi đâu, qua mấy bước · phương án A",
+          "thoi_luong": "4:58",
+          "ghi": [
+            "Chữ: GIẢI NGÂN / tiền đi đâu, qua mấy bước?. Bố cục chữ trên, hình dưới.",
+            "Hình vẽ: tiền bay từ ngân hàng sang nhà người bán (giây 10,2), dựng lại từ mã của video."
+          ]
+        },
+        {
+          "anh": "../xem_truoc/giai_ngan_vay_ca_nhan/B.png",
+          "nhan": "N129 Giải ngân khoản vay cá nhân: tiền đi đâu, qua mấy bước · phương án B",
+          "thoi_luong": "4:58",
+          "ghi": [
+            "Chữ: GIẢI NGÂN / qua mấy bước?. Bố cục hình trên, chữ dưới.",
+            "Hình vẽ: bốn trạm kiểm tra trước khi giải ngân (giây 227), dựng lại từ mã của video."
+          ]
+        }
+      ]
+    }
+  ],
+  "cau_hoi": [
+    "Mỗi video chọn A hoặc B (hoặc ghi chữ, hình muốn đổi)."
+  ]
+}

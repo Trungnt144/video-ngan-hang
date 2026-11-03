@@ -1,0 +1,4076 @@
+{
+ "_ghi_chu": "Thư viện thủ pháp và hiệu ứng của Media. Nguồn dữ liệu của bản đọc `thu_vien_thu_phap.md` (sinh bằng sinh_ban_doc.py, không sửa tay file đó). Gom từ trường thu_phap_dang_hoc của 100 mục đã chấm bằng hình (317 dòng) và khoá ky_thuat_hinh, am_thanh của bản quét chữ 703 prompt, ngày 27/10/2026; dòng trùng ý đã gộp, dòng chỉ là tên thương hiệu đã bỏ. Lỗi hay gặp lấy từ ghi chú trong prompt mẫu hoặc suy ra từ cơ chế (chưa đo khi dựng thật). Trường tham_so_tu: 'mẫu' là tham số lấy nguyên từ mẫu nguồn; 'đề xuất' là tham số Claude đề xuất, chưa đo; 'mẫu + đề xuất' là trộn hai loại, phần đề xuất ghi rõ trong cach_lam. Mọi thủ pháp ở trạng thái nháp: chưa dựng thử bằng cách làm nào của Media. Video và prompt gốc thuộc tác giả; link ở tai_san/hoc_tu_repo/awesome_opus55/muc_luc.md.",
+ "phien_ban": "1.0",
+ "cap_nhat": "2026-10-27",
+ "nhom": [
+  {
+   "ma": "TP-CD",
+   "ten": "chuyển động",
+   "mo_ta": "Đường tăng giảm tốc, lò xo, lệch nhịp, nảy, máy quay ảo 2D, nền trôi, con trỏ.",
+   "so_thu_phap": 11
+  },
+  {
+   "ma": "TP-CC",
+   "ten": "chuyển cảnh",
+   "mo_ta": "Cách nối hai cảnh hoặc hai trạng thái: hình biến, vật mang theo, phóng máy quay, khối màu tràn khung, vòng lặp.",
+   "so_thu_phap": 13
+  },
+  {
+   "ma": "TP-CH",
+   "ten": "chữ",
+   "mo_ta": "Chữ vào, chữ nhấn, phụ đề, nhãn góc, nhãn chương, chữ viết tay.",
+   "so_thu_phap": 21
+  },
+  {
+   "ma": "TP-SL",
+   "ten": "số liệu, đồ thị, bản đồ",
+   "mo_ta": "Thanh, đường, bộ đếm, lưới ô, đồng hồ, bản đồ, sơ đồ, danh sách bước, chú thích.",
+   "so_thu_phap": 20
+  },
+  {
+   "ma": "TP-3D",
+   "ten": "hình 3D, máy quay, ánh sáng, vật liệu",
+   "mo_ta": "Máy quay 3D, độ sâu trường ảnh, tách lớp, ánh sáng, vật liệu, mô phỏng, shader.",
+   "so_thu_phap": 16
+  },
+  {
+   "ma": "TP-HK",
+   "ten": "hậu kỳ, lớp hoàn thiện",
+   "mo_ta": "Hạt nhiễu, vignette, tách RGB, nhoè chuyển động, quầng sáng, bokeh, nét bút, kính lỏng, pixel hoá.",
+   "so_thu_phap": 14
+  },
+  {
+   "ma": "TP-AT",
+   "ten": "âm thanh đồng bộ",
+   "mo_ta": "Lưới nhịp, đặt tiếng theo đỉnh, chuẩn âm lượng, hạ nhạc, âm sinh từ dữ liệu, mốc từng từ.",
+   "so_thu_phap": 10
+  },
+  {
+   "ma": "TP-TT",
+   "ten": "tương tác (chỉ ghi để biết)",
+   "mo_ta": "Hiệu ứng chỉ có nghĩa trong trang tương tác hoặc trò chơi; video không dùng.",
+   "so_thu_phap": 4
+  }
+ ],
+ "quy_uoc": {
+  "chi_phi_may": {
+   "nhẹ": "Tính trong một khung, không thêm lượt chụp hay xử lý ảnh nào; thời gian máy gần như không đổi.",
+   "vừa": "Thêm xử lý mỗi khung (hạt, quầng, shader nhỏ, cảnh 3D Three.js); thời gian máy tăng dưới khoảng 2 lần so với cảnh không có (ước, chưa đo riêng từng thủ pháp).",
+   "nặng": "Nhiều lượt chụp mỗi khung, hàng chục nghìn hạt hoặc shader toàn khung; đo của Media: nhoè 60 khung/giây gấp khoảng 8 lần."
+  },
+  "trang_thai": [
+   "nháp",
+   "đã duyệt"
+  ],
+  "tham_so_tu": [
+   "mẫu",
+   "đề xuất",
+   "mẫu + đề xuất"
+  ],
+  "lam_bang": "Công cụ dựng thủ pháp: GSAP, CSS, SVG, Canvas, Three.js, WebGL shader, Remotion, FFmpeg, Python/numpy, Web Audio."
+ },
+ "bang_ma": {
+  "chat_lieu": {
+   "CL-01": "2D chữ và khối",
+   "CL-02": "2D thẻ kính mờ",
+   "CL-03": "2D nét viền ăn khớp lời",
+   "CL-04": "2D ảnh chụp màn hình và sơ đồ",
+   "CL-05": "Đồ thị SVG",
+   "CL-06": "3D đất sét và bản vẽ",
+   "CL-07": "3D xuyên thấu",
+   "CL-08": "3D tả thực Blender",
+   "CL-09": "2D minh hoạ phẳng có vật thể",
+   "CL-10": "2D nét vẽ tay",
+   "CL-11": "Chữ động khổng lồ",
+   "CL-12": "Hạt và ánh sáng",
+   "CL-13": "3D sa bàn bằng mã",
+   "CL-14": "Mô phỏng và bề mặt toán",
+   "CL-15": "Minh hoạ kể chuyện có nhân vật, giấy cắt",
+   "CL-16": "Giao diện và thẻ nổi"
+  },
+  "cach_lam": {
+   "LM-01": "Remotion khối cảnh dọc",
+   "LM-02": "Remotion dự án ngang",
+   "LM-03": "HTML một trang, chụp khung theo đồng hồ ảo (seek(t))",
+   "LM-04": "HyperFrames",
+   "LM-05": "Blender Cycles ghép Remotion",
+   "LM-06": "Clip AI ghép Remotion",
+   "LM-07": "Manim (chưa cài)"
+  }
+ },
+ "lop_hoan_thien": {
+  "_ghi_chu": "Mức tối thiểu mỗi video phải có, theo nhóm chất liệu. Rút từ bài học đã đo của Media (bản chỉ đạo 27/10/2026: mẫu lịch sử AI 60 giây, bản 30 giây một lượt) và từ các mẫu đạt điểm hợp Media 3 trong 100 mục. Ngưỡng ghi 'đề xuất' chưa thử trên video thật. Cách kiểm đưa vào bảng kiểm trước khi giao (module 15) và thanh chất lượng (module 07).",
+  "nhom_chat_lieu": {
+   "2d_phang": [
+    "CL-01",
+    "CL-02",
+    "CL-04",
+    "CL-09",
+    "CL-15",
+    "CL-16"
+   ],
+   "net_ve": [
+    "CL-03",
+    "CL-10"
+   ],
+   "do_thi": [
+    "CL-05",
+    "CL-14"
+   ],
+   "3d": [
+    "CL-06",
+    "CL-07",
+    "CL-08",
+    "CL-12",
+    "CL-13"
+   ],
+   "chu_dong": [
+    "CL-11"
+   ]
+  },
+  "chung": [
+   {
+    "ma": "HT-CH-01",
+    "yeu_cau": "Mọi chuyển động có tăng tốc rồi giảm tốc; chuyển động đều chỉ dùng cho thanh tiến độ, bộ đếm theo đồng hồ toàn phim và vòng lặp.",
+    "ly_do": "Mẫu cao cấp thay easing bằng lò xo hoặc cubic-bezier; chuyển động đều làm hình cứng.",
+    "tp": [
+     "TP-CD01",
+     "TP-CD02"
+    ],
+    "cach_kiem": "Vẽ đồ thị vị trí theo thời gian của 3 phần tử bất kỳ: không có đoạn thẳng, trừ ngoại lệ đã nêu."
+   },
+   {
+    "ma": "HT-CH-02",
+    "yeu_cau": "Nhóm phần tử (ký tự, thẻ, hàng, thanh) vào lệch nhịp, không vào cùng một khung.",
+    "ly_do": "Mẫu có lò xo riêng cho từng ký tự với khoảng trễ 125 ms; vào cùng một khung thì cả nhóm hiện như một khối, không thấy thứ tự.",
+    "tp": [
+     "TP-CD03"
+    ],
+    "cach_kiem": "Chụp 3 khung liên tiếp lúc nhóm đang vào: các phần tử phải ở trạng thái khác nhau."
+   },
+   {
+    "ma": "HT-CH-03",
+    "yeu_cau": "Không phần tử nào đứng yên quá 1,5 s (nền trôi chậm, máy quay ảo đẩy chậm, vi chuyển động); ngoại lệ có chủ đích là dừng tối thiểu 400 ms trước đoạn kết.",
+    "ly_do": "Mẫu cao cấp không đóng băng máy quay; cảnh đứng yên giữ lâu làm người xem tưởng video bị đứng hình. Ngưỡng 1,5 s là yêu cầu lớp hoàn thiện của Media (đề xuất).",
+    "tp": [
+     "TP-CD07",
+     "TP-CD08",
+     "TP-CD09"
+    ],
+    "cach_kiem": "So hai khung cách nhau 1,5 s trong cùng cảnh: phải có điểm ảnh khác nhau ở nền hoặc ở một phần tử."
+   },
+   {
+    "ma": "HT-CH-04",
+    "yeu_cau": "Chuyển cảnh: cảnh sau hiện trước mốc cảnh trước ra hết 0,3–0,5 s ở lớp nền và hình; chữ cũ rời hẳn trước khi chữ mới vào cùng chỗ.",
+    "ly_do": "Cắt cứng giữa hai cảnh để lại khoảng trống hoặc va chạm; flood mẫu mất khoảng 0,3 s.",
+    "tp": [
+     "TP-CC08",
+     "TP-CC05",
+     "TP-CD04"
+    ],
+    "cach_kiem": "Chụp khung ở mốc cảnh trước ra hết: phải thấy cảnh sau đã hiện, và không có hai lớp chữ chồng nhau."
+   },
+   {
+    "ma": "HT-CH-05",
+    "yeu_cau": "Khi xuất 60 khung/giây và có chuyển động nhanh (quét, lia, đếm số nhanh): bật nhoè chuyển động bằng khung phụ. Xuất 30 khung/giây thì không bật, vì chi phí máy gấp khoảng 8 lần.",
+    "ly_do": "Số đo của Media: mẫu lịch sử AI 60 giây ở 60 khung/giây có nhoè mất 23,3 phút máy, gấp khoảng 8 lần bản không nhoè.",
+    "tp": [
+     "TP-HK04"
+    ],
+    "cach_kiem": "Bảng kiểm ghi khung/giây và có hay không nhoè; nhoè chỉ trên phần chuyển động, chữ đứng yên giữ nét."
+   },
+   {
+    "ma": "HT-CH-06",
+    "yeu_cau": "Hạt nhiễu tối đa độ đục khoảng 6%, hạt mới mỗi khung; sau khi xuất kiểm kích thước file.",
+    "ly_do": "Mẫu lịch sử AI 60 giây: lớp hạt nhiễu làm file 134 MB. Độ đục cao cũng làm mất chữ nhỏ khi nén.",
+    "tp": [
+     "TP-HK01"
+    ],
+    "cach_kiem": "Kích thước file xuất chia thời lượng ra MB mỗi giây, so với video gần nhất cùng độ dài; lệch trên 2 lần thì mở lớp hạt ra xem."
+   },
+   {
+    "ma": "HT-CH-07",
+    "yeu_cau": "Mỗi ý có chữ giữ tối thiểu 1,4 s; ý có số liệu hoặc giải thích giữ tối thiểu 2,5 s; chữ khổng lồ một ý mỗi 1–2 s.",
+    "ly_do": "Mẫu: mỗi bố cục 1,4–3,5 s; mỗi tính năng tối thiểu 2,5 s; ý mới mỗi 1,5–2 s ở chữ động.",
+    "tp": [
+     "TP-CH03",
+     "TP-CH15"
+    ],
+    "cach_kiem": "Liệt kê thời lượng từng ý từ file chương: không ý nào ngắn hơn ngưỡng của loại ý đó."
+   },
+   {
+    "ma": "HT-CH-08",
+    "yeu_cau": "Hình đọc được khi tắt tiếng: phụ đề burn-in; khổ dọc có phụ đề cách mép dưới tối thiểu 20% chiều cao.",
+    "ly_do": "Phần lớn người xem tắt tiếng; nút của mạng xã hội che mép dưới khung dọc.",
+    "tp": [
+     "TP-AT09",
+     "TP-CH15"
+    ],
+    "cach_kiem": "Xem bản không tiếng: hiểu được ý chính; đo khoảng cách phụ đề tới mép dưới trên khung dọc."
+   },
+   {
+    "ma": "HT-CH-09",
+    "yeu_cau": "Âm lượng chuẩn −14 LUFS, −2 dBTP, đo lại sau khi mã hoá AAC; hạ nhạc −18 dB khi có giọng; tiếng hiệu ứng không to hơn nhạc.",
+    "ly_do": "Chuẩn trực tuyến mà nhiều mẫu dùng.",
+    "tp": [
+     "TP-AT03",
+     "TP-AT04"
+    ],
+    "cach_kiem": "Chạy ffmpeg loudnorm ở chế độ đo trên file đã mã hoá; ghi kết quả vào bảng kiểm."
+   },
+   {
+    "ma": "HT-CH-10",
+    "yeu_cau": "Xem lại bản dựng bằng khung tĩnh mỗi nhịp; tối thiểu 3 vòng xem và sửa; khi dùng ảnh đích để tác tử con đối chiếu thì gộp thành 1–2 ảnh ghép.",
+    "ly_do": "Số đo của Media: bản một lượt 30 giây còn 1–2 lỗi nhìn thấy; đưa quá nhiều ảnh đích làm tác tử con bị đẩy ảnh ra khỏi ngữ cảnh.",
+    "tp": [],
+    "cach_kiem": "Sổ vòng sửa (module 07) ghi số vòng và lỗi còn lại của từng vòng."
+   }
+  ],
+  "theo_nhom": {
+   "2d_phang": [
+    {
+     "ma": "HT-2D-01",
+     "yeu_cau": "Phần tử vào theo thứ tự đọc: tiêu đề, rồi hình, rồi con số; mỗi bước lệch 60–150 ms (đề xuất).",
+     "ly_do": "Mẫu bàn thao tác và thẻ số liệu đọc được theo thứ tự tiêu đề, hình, con số.",
+     "tp": [
+      "TP-CD03",
+      "TP-SL17"
+     ],
+     "cach_kiem": "Xem 5 khung đầu của một cảnh: thứ tự xuất hiện đúng thứ tự đọc."
+    },
+    {
+     "ma": "HT-2D-02",
+     "yeu_cau": "Nội dung trong vật chứa đổi theo thứ tự: vào sau khi vật chứa bắt đầu biến dạng, ra trước khi biến dạng tiếp; chữ cũ rời trước chữ mới.",
+     "ly_do": "Mẫu một hình biến qua nhiều trạng thái tránh chữ chồng nhau.",
+     "tp": [
+      "TP-CD04",
+      "TP-CC01"
+     ],
+     "cach_kiem": "Chụp khung giữa lúc đổi: không có hai lớp chữ chồng nhau."
+    },
+    {
+     "ma": "HT-2D-03",
+     "yeu_cau": "Nền không đứng yên: nền trôi chậm hoặc nhiều lớp trôi khác tốc độ; chuyển cảnh có ít nhất một lần đổi nền (tối, sáng, màu đặc) để ngắt nhịp.",
+     "ly_do": "Mẫu đổi nền theo ý và xen tối sáng giữ nhịp.",
+     "tp": [
+      "TP-CD08",
+      "TP-CC10"
+     ],
+     "cach_kiem": "So nền ở hai thời điểm cách nhau 1,5 s: khác nhau; đếm số lần đổi nền trong video."
+    },
+    {
+     "ma": "HT-2D-04",
+     "yeu_cau": "Số chạy sau khi thanh hoặc vật tới nơi; chữ số độ rộng bằng nhau.",
+     "ly_do": "Mẫu thanh dài ra rồi mới hiện số; chữ số khác độ rộng làm số rung.",
+     "tp": [
+      "TP-SL01",
+      "TP-SL03"
+     ],
+     "cach_kiem": "Xem cảnh số liệu từng khung: số chỉ đổi sau khi thanh dừng, không rung ngang."
+    },
+    {
+     "ma": "HT-2D-05",
+     "yeu_cau": "Danh sách bước có ba trạng thái (đang làm, xong, chưa tới) và thanh bước luôn hiện.",
+     "ly_do": "Mẫu bàn thao tác cho người xem biết đang ở bước nào.",
+     "tp": [
+      "TP-SL17",
+      "TP-CH17"
+     ],
+     "cach_kiem": "Mỗi cảnh có đúng một bước đang làm."
+    },
+    {
+     "ma": "HT-2D-06",
+     "yeu_cau": "Một màu nhấn chỉ mang một nghĩa suốt video.",
+     "ly_do": "Mẫu đỏ cho vấn đề và cyan cho giải pháp; khoá màu theo chức năng.",
+     "tp": [
+      "TP-CH04",
+      "TP-3D07"
+     ],
+     "cach_kiem": "Liệt kê các màu nhấn và nghĩa từng màu; không màu nào hai nghĩa."
+    },
+    {
+     "ma": "HT-2D-07",
+     "yeu_cau": "Vật phẳng được lấp dần theo bước; không hiện cả vật một lúc rồi mới chú thích.",
+     "ly_do": "Mẫu mức chất lỏng dâng theo từng bước cạnh vạch chia.",
+     "tp": [
+      "TP-SL17",
+      "TP-CD01"
+     ],
+     "cach_kiem": "Xem khung đầu và cuối mỗi bước: vật khác nhau đúng phần của bước đó."
+    }
+   ],
+   "net_ve": [
+    {
+     "ma": "HT-NV-01",
+     "yeu_cau": "Nét hiện dần theo lời, một nét hoặc một cụm nét cho mỗi cụm lời; bút hiển thị đi theo nét đang vẽ.",
+     "ly_do": "Mẫu whiteboard vẽ dần theo thuyết minh.",
+     "tp": [
+      "TP-CH19",
+      "TP-CD02"
+     ],
+     "cach_kiem": "So mốc lời đọc với mốc nét đầu tiên của cảnh: nét hiện trong vòng 0,3 s kể từ khi lời nhắc tới (đề xuất)."
+    },
+    {
+     "ma": "HT-NV-02",
+     "yeu_cau": "Nét có rung nhẹ và hai lượt, có vân giấy; không dùng nét vector hoàn hảo.",
+     "ly_do": "Mẫu bút chì: sóng sin đổi pha 8 lần mỗi giây, hai lượt độ đục 90% và 40%.",
+     "tp": [
+      "TP-HK08"
+     ],
+     "cach_kiem": "Phóng một đoạn nét 400%: thấy vân giấy và độ dày không đều."
+    },
+    {
+     "ma": "HT-NV-03",
+     "yeu_cau": "Cảnh có tiêu đề câu hoàn chỉnh viết tay ở trên trái, hình vẽ dần bên dưới, câu thuyết minh ở chân khung.",
+     "ly_do": "Mẫu bảng trắng và sổ ghi chép đọc được theo thứ tự tiêu đề, hình, con số.",
+     "tp": [
+      "TP-CH19",
+      "TP-CH15"
+     ],
+     "cach_kiem": "Mỗi cảnh có đủ ba phần ở đúng vị trí."
+    },
+    {
+     "ma": "HT-NV-04",
+     "yeu_cau": "Cảnh cuối là bảng tóm tắt đánh số, mục chính tô màu nhấn dần theo lời.",
+     "ly_do": "Mẫu bảng tóm tắt toàn bộ câu chuyện.",
+     "tp": [
+      "TP-SL16"
+     ],
+     "cach_kiem": "Số mục tóm tắt khớp số ý đã nói trong video."
+    },
+    {
+     "ma": "HT-NV-05",
+     "yeu_cau": "Dấu căn lề ở bốn góc và mã cảnh nhỏ; màu nhấn đỏ chỉ ở điểm chính.",
+     "ly_do": "Mẫu tờ ghi chép dùng dấu căn lề và đỏ chỉ để nhấn.",
+     "tp": [
+      "TP-CH16",
+      "TP-HK08"
+     ],
+     "cach_kiem": "Đếm vùng đỏ trên một cảnh: chỉ ở điểm chính."
+    }
+   ],
+   "do_thi": [
+    {
+     "ma": "HT-DT-01",
+     "yeu_cau": "Đường tự vẽ theo lò xo, vượt đích rất nhỏ rồi lắng; nhãn hiện sau khi đường tới nơi.",
+     "ly_do": "Mẫu đường vẽ lò xo cạnh nhãn phần trăm.",
+     "tp": [
+      "TP-SL02",
+      "TP-CD01"
+     ],
+     "cach_kiem": "Chụp khung đường chưa tới nơi: chưa có nhãn."
+    },
+    {
+     "ma": "HT-DT-02",
+     "yeu_cau": "Thanh dài ra trước, số hiện sau.",
+     "ly_do": "Mẫu biểu đồ thanh ngang tài chính.",
+     "tp": [
+      "TP-SL01"
+     ],
+     "cach_kiem": "Như HT-2D-04."
+    },
+    {
+     "ma": "HT-DT-03",
+     "yeu_cau": "Mỗi đồ thị có chú thích bằng khung bao, nhãn và mũi tên cong chỉ đúng điểm cần xem.",
+     "ly_do": "Mẫu chú thích khung bao công thức; chú thích mũi tên cong.",
+     "tp": [
+      "TP-SL18"
+     ],
+     "cach_kiem": "Mỗi đồ thị có ít nhất một chú thích chỉ đúng điểm đang được nói."
+    },
+    {
+     "ma": "HT-DT-04",
+     "yeu_cau": "Số trên màn hình đọc từ file dữ kiện; hình và bộ đếm của mô phỏng đọc cùng một mảng dữ liệu.",
+     "ly_do": "Mẫu dựng hình đọc thẳng bảng nguồn; bộ đếm theo mô phỏng thật.",
+     "tp": [
+      "TP-SL14",
+      "TP-SL19"
+     ],
+     "cach_kiem": "Đối chiếu 5 số bất kỳ trên màn hình với file dữ kiện."
+    },
+    {
+     "ma": "HT-DT-05",
+     "yeu_cau": "Điểm đang xét có chấm kéo theo đường dọc nét đứt và hộp nhãn.",
+     "ly_do": "Mẫu đường giá trái phiếu có chấm và hộp nhãn độ nhạy.",
+     "tp": [
+      "TP-SL02"
+     ],
+     "cach_kiem": "Mỗi đồ thị đường có chấm và nhãn tại điểm đang xét."
+    },
+    {
+     "ma": "HT-DT-06",
+     "yeu_cau": "Đồ thị không đứng yên quá 1,5 s: điểm trượt, ô điền, vùng nhấn đổi.",
+     "ly_do": "Cùng nguyên tắc không đứng yên của nhóm chung.",
+     "tp": [
+      "TP-CD09"
+     ],
+     "cach_kiem": "Như HT-CH-03."
+    },
+    {
+     "ma": "HT-DT-07",
+     "yeu_cau": "Chữ trục và nhãn giữ nét: vẽ lại vector ở tỷ lệ phóng; nhoè chuyển động chỉ trên phần chuyển động.",
+     "ly_do": "Mẫu nhoè chỉ phần chuyển động, chữ và hình đứng yên giữ nét.",
+     "tp": [
+      "TP-HK04",
+      "TP-CD07"
+     ],
+     "cach_kiem": "Phóng 200% vào chữ trục ở khung sau khi phóng máy quay: không vỡ nét."
+    }
+   ],
+   "3d": [
+    {
+     "ma": "HT-3D-01",
+     "yeu_cau": "Máy quay luôn chuyển động chậm (quỹ đạo, đẩy, bay), không đứng yên hẳn; ngoại lệ là cảnh đẳng cự có chủ đích, trong đó đồ vật xuất hiện lần lượt.",
+     "ly_do": "Mẫu quỹ đạo chậm và bay chậm; mẫu sa bàn đẳng cự giữ máy quay đứng yên.",
+     "tp": [
+      "TP-3D01",
+      "TP-3D02",
+      "TP-3D03"
+     ],
+     "cach_kiem": "So hai khung cách nhau 1,5 s: góc máy khác nhau, trừ cảnh đẳng cự."
+    },
+    {
+     "ma": "HT-3D-02",
+     "yeu_cau": "Có độ sâu trường ảnh hoặc sương khí quyển để tạo chiều sâu; đổi tiêu điểm khoảng 0,5 s.",
+     "ly_do": "Mẫu cận cảnh nông và phối cảnh khí quyển.",
+     "tp": [
+      "TP-3D05",
+      "TP-3D08"
+     ],
+     "cach_kiem": "Xem một cảnh 3D: tiền cảnh và hậu cảnh khác độ nét hoặc độ sáng."
+    },
+    {
+     "ma": "HT-3D-03",
+     "yeu_cau": "Ánh sáng có đèn chính và đèn phụ, bóng mềm, sàn phản chiếu mờ dần; bloom nhẹ ở điểm sáng.",
+     "ly_do": "Mẫu ba vật cơ bản trên sàn phản chiếu; giờ vàng có bloom.",
+     "tp": [
+      "TP-3D09",
+      "TP-HK05"
+     ],
+     "cach_kiem": "Xem khung tĩnh: có bóng đổ và hướng sáng nhất quán."
+    },
+    {
+     "ma": "HT-3D-04",
+     "yeu_cau": "Nhãn bám vật bằng phép chiếu máy quay, có đường dẫn; nhãn hiện sau khi bộ phận đã rõ.",
+     "ly_do": "Mẫu tách lớp có nhãn đường dẫn tới từng tầng.",
+     "tp": [
+      "TP-SL18",
+      "TP-3D06"
+     ],
+     "cach_kiem": "Quay máy quay: nhãn vẫn bám đúng bộ phận."
+    },
+    {
+     "ma": "HT-3D-05",
+     "yeu_cau": "Màu theo chức năng, có bảng chú giải cố định, dùng nhất quán suốt video.",
+     "ly_do": "Mẫu khoá màu điện, nhiệt, làm mát.",
+     "tp": [
+      "TP-3D07"
+     ],
+     "cach_kiem": "Liệt kê màu và chức năng: một màu một chức năng."
+    },
+    {
+     "ma": "HT-3D-06",
+     "yeu_cau": "Hạt chạy theo chiều dòng để chỉ hướng của điện, nhiệt hoặc chất lỏng.",
+     "ly_do": "Mẫu hạt chạy dọc ống.",
+     "tp": [
+      "TP-3D07",
+      "TP-HK12"
+     ],
+     "cach_kiem": "Chiều chạy của hạt khớp chiều mũi tên chú giải."
+    },
+    {
+     "ma": "HT-3D-07",
+     "yeu_cau": "Hậu kỳ nhẹ: vignette khoảng 0,65 ở góc, hạt nhiễu tối đa khoảng 6%.",
+     "ly_do": "Mẫu hậu kỳ phim bằng numpy; ngưỡng hạt từ bài học mẫu lịch sử AI.",
+     "tp": [
+      "TP-HK02",
+      "TP-HK01"
+     ],
+     "cach_kiem": "Xem khung tĩnh: góc tối hơn giữa khung, hạt chỉ thấy khi phóng."
+    },
+    {
+     "ma": "HT-3D-08",
+     "yeu_cau": "Thu phóng quy mô có vật tham chiếu cho thấy tỷ lệ ở mỗi bậc.",
+     "ly_do": "Mẫu thu nhỏ theo bậc quy mô có cây thấp-poly và thước đo.",
+     "tp": [
+      "TP-CC04",
+      "TP-3D06"
+     ],
+     "cach_kiem": "Mỗi bậc quy mô có một vật tham chiếu hoặc thước đo."
+    },
+    {
+     "ma": "HT-3D-09",
+     "yeu_cau": "Dựng thử 1–2 khung của cảnh nặng (shader, mô phỏng, Blender) và ghi thời gian máy mỗi khung trước khi dựng cả cảnh.",
+     "ly_do": "Số đo của Media: 13 s máy mỗi khung ở Blender Cycles.",
+     "tp": [
+      "TP-3D14",
+      "TP-3D15",
+      "TP-3D05"
+     ],
+     "cach_kiem": "Sổ vòng sửa ghi thời gian máy ước cho cả video trước khi chạy."
+    }
+   ],
+   "chu_dong": [
+    {
+     "ma": "HT-CD-01",
+     "yeu_cau": "Một ý mỗi nhịp 1–2 s; chữ chiếm gần hết khung (đề xuất từ 70% chiều rộng khung trở lên).",
+     "ly_do": "Mẫu chữ khổng lồ mỗi ý một nhịp.",
+     "tp": [
+      "TP-CH03"
+     ],
+     "cach_kiem": "Đo chiều rộng khối chữ trên một khung mỗi ý."
+    },
+    {
+     "ma": "HT-CD-02",
+     "yeu_cau": "Nền đổi màu theo ý; màu nền cùng bộ màu đã chọn.",
+     "ly_do": "Mẫu nền kem, đen, cam đất đổi theo nhịp cắt 1,5 s.",
+     "tp": [
+      "TP-CC10"
+     ],
+     "cach_kiem": "Mỗi ý một nền; màu nền thuộc bộ màu của video."
+    },
+    {
+     "ma": "HT-CD-03",
+     "yeu_cau": "Chữ vào bằng mặt nạ hoặc lò xo, lệch nhịp theo ký tự; không vào bằng mờ dần.",
+     "ly_do": "Mẫu chữ trồi qua mặt nạ với lò xo riêng từng ký tự.",
+     "tp": [
+      "TP-CH01",
+      "TP-CD03"
+     ],
+     "cach_kiem": "Chụp 3 khung lúc chữ vào: phần chữ chưa hiện bị cắt bởi mặt nạ, không mờ."
+    },
+    {
+     "ma": "HT-CD-04",
+     "yeu_cau": "Chữ cũ rời hẳn trước khi chữ mới vào cùng chỗ.",
+     "ly_do": "Mẫu dặn chữ cũ phải rời trước chữ mới.",
+     "tp": [
+      "TP-CD04",
+      "TP-CC08"
+     ],
+     "cach_kiem": "Chụp khung giữa hai ý: không có hai lớp chữ chồng nhau."
+    },
+    {
+     "ma": "HT-CD-05",
+     "yeu_cau": "Mỗi cảnh một từ nhấn, cùng một màu nhấn.",
+     "ly_do": "Mẫu một từ serif nghiêng màu nhấn.",
+     "tp": [
+      "TP-CH05",
+      "TP-CH06"
+     ],
+     "cach_kiem": "Mỗi cảnh có đúng một từ nhấn."
+    },
+    {
+     "ma": "HT-CD-06",
+     "yeu_cau": "Sau mỗi 3–4 ý có một cảnh nhấn bằng nền đặc hoặc một vật để ngắt nhịp (đề xuất).",
+     "ly_do": "Mẫu nền cam đặc ngăn các cảnh sáng và tối.",
+     "tp": [
+      "TP-CC10"
+     ],
+     "cach_kiem": "Đếm số ý giữa hai cảnh nhấn."
+    },
+    {
+     "ma": "HT-CD-07",
+     "yeu_cau": "Chữ khổng lồ đo bằng phông thật, không tràn mép; khổ dọc co vào vùng an toàn.",
+     "ly_do": "Mẫu đo phụ đề bằng phông thật rồi co cho vừa vùng an toàn 9:16.",
+     "tp": [
+      "TP-CH15"
+     ],
+     "cach_kiem": "Không chữ nào bị cắt ở mép khung xuất."
+    },
+    {
+     "ma": "HT-CD-08",
+     "yeu_cau": "Hạt và quầng sáng chỉ dùng ở chữ nhấn kết, không dùng ở chữ thường.",
+     "ly_do": "Hạt làm chữ nhỏ khó đọc.",
+     "tp": [
+      "TP-CH12",
+      "TP-HK05"
+     ],
+     "cach_kiem": "Xem chữ thường: không hạt, không quầng."
+    }
+   ]
+  }
+ },
+ "thu_phap": [
+  {
+   "ma": "TP-CD01",
+   "ten": "Lò xo giải tích thay cho đường tăng giảm tốc",
+   "nhom": "chuyển động",
+   "cach_lam": "Giá trị chạy từ đầu tới đích theo công thức đóng x(t) = 1 − (1 + ωt)·e^(−ωt), ω từ 12 đến 40 (ω lớn thì tới đích nhanh); không vượt đích. Thông số mẫu: hình damping 0,72, lắng sau 0,35 s; máy quay damping 1,0, lắng sau 0,6 s. Giá trị đổi đích giữa chừng thì cộng thêm một lò xo cho mỗi lần đổi, nên giá trị vẫn là hàm thuần của thời gian và tua tới khung nào cũng đúng. Thanh chỉ tab hoặc núm công tắc: hai mép chạy hai lò xo khác ω, mép dẫn đầu dùng ω lớn hơn nên tới trước, thanh giãn ra rồi co lại (giá trị ω từng mép là đề xuất).",
+   "lam_bang": [
+    "Canvas",
+    "CSS",
+    "Remotion"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-02",
+    "CL-04",
+    "CL-05",
+    "CL-09",
+    "CL-16"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Đổi đích mà không cộng thêm lò xo thì giá trị nhảy bậc. Dùng easing nảy (back, elastic) thay cho lò xo gần như không vượt đích làm hình trông rẻ; khoảng 13 prompt mẫu cấm easing nảy.",
+   "mau_nguon": [
+    "heyiamnick-119558",
+    "flxrnc-251921",
+    "0xnicc0-516612",
+    "morse-369333",
+    "verbove-268381",
+    "annacher-433425"
+   ],
+   "so_mau": 6,
+   "tham_so_tu": "mẫu + đề xuất",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-CD02",
+   "ten": "Đường tăng giảm tốc chuẩn và thời lượng chuyển động",
+   "nhom": "chuyển động",
+   "cach_lam": "Mọi chuyển động có tăng tốc rồi giảm tốc, không chạy đều. Mẫu: biến hình 0,8 s theo cubic-bezier(.45, 0, .15, 1), máy quay phóng theo cùng đường cong. Máy quay đẩy, kéo, lia 1,5–3 s trên đường ease nhẹ, chậm bằng nửa mặc định; máy quay bắt đầu đúng nhịp và lắng chậm hơn hình. Quét băng chuyền: quay nhanh rồi giảm tốc trong khoảng 0,5 s, nhoè mạnh nhất lúc nhanh nhất, dừng ở thẻ chính. Chuyển động đều (tuyến tính) chỉ dùng cho thanh tiến độ, bộ đếm theo đồng hồ toàn phim và vòng lặp.",
+   "lam_bang": [
+    "GSAP",
+    "CSS",
+    "Canvas",
+    "Remotion"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-01",
+    "CL-02",
+    "CL-04",
+    "CL-05",
+    "CL-09",
+    "CL-11",
+    "CL-16"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Chuyển động đều làm hình trông cứng. Máy quay lia xong cùng lúc với hình thì mắt không kịp đọc.",
+   "mau_nguon": [
+    "rossaxbt-312793",
+    "jake11moran-414633",
+    "flxrnc-251921",
+    "twoclipping-000267"
+   ],
+   "so_mau": 4,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-CD03",
+   "ten": "Phần tử hiện lệch nhịp (stagger)",
+   "nhom": "chuyển động",
+   "cach_lam": "Nhiều phần tử cùng nhóm (ký tự, thẻ, hàng, thanh) vào lần lượt, mỗi phần tử trễ một khoảng cố định so với phần tử trước, không vào cùng khung. Mẫu: mỗi ký tự có lò xo riêng (dịch dọc, độ mờ, nhoè), trễ 125 ms (nốt 1/16 ở 120 BPM); lưới thẻ tính năng hiện lần lượt, mỗi thẻ một thông số; ba thẻ ngang hàng vào lần lượt. Đề xuất khi không có nhạc: trễ 60–150 ms cho thẻ và hàng, 20–40 ms cho ký tự, tổng thời gian vào của cả nhóm không quá 1,2 s.",
+   "lam_bang": [
+    "GSAP",
+    "CSS",
+    "Canvas",
+    "Remotion"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-01",
+    "CL-04",
+    "CL-05",
+    "CL-09",
+    "CL-11",
+    "CL-16"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Trễ cộng dồn quá lớn thì phần tử cuối vào sau khi lời đọc đã qua. Khoảng trễ đều tuyệt đối làm chuyển động có nhịp cơ học; thêm chênh lệch nhỏ giữa các phần tử (đề xuất ±15%).",
+   "mau_nguon": [
+    "techhalla-498547",
+    "sudo-kiran-254201",
+    "alex-prompter-997524",
+    "ratheejaisal-154698"
+   ],
+   "so_mau": 4,
+   "tham_so_tu": "mẫu + đề xuất",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-CD04",
+   "ten": "Nội dung vào sau khi vật chứa biến dạng, ra trước khi biến dạng tiếp",
+   "nhom": "chuyển động",
+   "cach_lam": "Khi một vật chứa (thẻ, hình chữ nhật bo góc) đổi kích thước, bán kính, màu, nội dung bên trong chỉ vào sau khi vật chứa đã bắt đầu biến dạng và ra trước khi nó biến dạng tiếp. Nội dung đổi bằng nhoè ngắn khoảng 0,15 s (mẫu khác: mờ 12 px) với thời điểm vào và ra riêng, để chữ cũ và chữ mới không chồng nhau. Chữ nằm trong hình đang biến hình cần clip (cắt theo khung vật chứa) và thời gian vào, ra riêng.",
+   "lam_bang": [
+    "CSS",
+    "Canvas",
+    "GSAP"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-02",
+    "CL-04",
+    "CL-16"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Chữ cũ chưa rời đã vào chữ mới thì hai lớp chữ chồng nhau. Không clip nội dung thì chữ tràn ra ngoài vật chứa đang co.",
+   "mau_nguon": [
+    "verbove-268381",
+    "morse-369333",
+    "annacher-433425",
+    "brainextends-606193"
+   ],
+   "so_mau": 4,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-CD05",
+   "ten": "Con trỏ chuột điều khiển mọi thay đổi (kèm nghiêng theo con trỏ)",
+   "nhom": "chuyển động",
+   "cach_lam": "Con trỏ nhấn hoặc kéo thật trước mỗi lần đổi trạng thái. Đầu mũi con trỏ khoá vào vật đang kéo; con trỏ nhắm vào vị trí đích sẽ ở khi đáp; tốc độ dưới 65 px mỗi khung; cuối video trả con trỏ về đúng vị trí và tốc độ ban đầu để lặp không giật. Giữ chuột thì giá trị tính từ vị trí con trỏ, thả ra thì lò xo bật về từ vị trí đó; kéo quá mức tối đa thì thanh giãn ra như cao su. Con trỏ phóng to theo máy quay. Biến thể: vật nghiêng theo vị trí con trỏ có độ trễ lò xo, không nảy, góc tối đa khoảng 12 độ.",
+   "lam_bang": [
+    "Canvas",
+    "CSS",
+    "Remotion"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-02",
+    "CL-04",
+    "CL-16"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-03"
+   ],
+   "loi_hay_gap": "Con trỏ tới đích chậm hơn hình đổi thì thao tác trông giả. Con trỏ không phóng theo máy quay thì nhỏ hơn giao diện đã phóng.",
+   "mau_nguon": [
+    "flxrnc-251921",
+    "0xnicc0-516612",
+    "diamai-157697",
+    "morse-369333",
+    "rossaxbt-312793",
+    "bthreeagency-827092",
+    "bilimfili1-459762"
+   ],
+   "so_mau": 7,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-CD06",
+   "ten": "Phóng nhanh rồi thu nhỏ (pop) cho chữ sự kiện",
+   "nhom": "chuyển động",
+   "cach_lam": "Chữ hoặc vật sự kiện bật lên bằng phóng to nhanh rồi nhỏ lại về cỡ chuẩn, đứng tại điểm xảy ra sự kiện, tồn tại khoảng 1 s rồi mờ đi. Đề xuất: scale 0 → 1,15 trong 0,12 s, rồi 1,15 → 1,0 trong 0,12 s. Cú vọt chỉ dùng cho điểm nhấn một lần; chuyển động còn lại vượt đích rất nhỏ hoặc không vượt.",
+   "lam_bang": [
+    "GSAP",
+    "CSS",
+    "Canvas"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-11",
+    "CL-12",
+    "CL-16"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Dùng pop cho mọi phần tử làm cảnh rối và trái nguyên tắc cấm easing nảy của các mẫu cao cấp.",
+   "mau_nguon": [
+    "froessell-562325",
+    "verbove-268381"
+   ],
+   "so_mau": 2,
+   "tham_so_tu": "mẫu + đề xuất",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-CD07",
+   "ten": "Máy quay ảo 2D: đẩy chậm liên tục và phóng cho vật đang xét lấp khung",
+   "nhom": "chuyển động",
+   "cach_lam": "Cả cảnh 2D đặt trong một lớp máy quay biến đổi theo [thời gian, zoom, x, y]; zoom nội suy trong không gian log. Đẩy chậm 1,03–1,07 ở mọi cảnh, không bao giờ đứng yên hẳn; punch-in (phóng nhanh vào) 1,0–1,08 và smash-pan (lia ngang gấp) chỉ theo nhịp, không trôi ngẫu nhiên; nổi tay cầm rất nhẹ nếu cần giả máy cầm tay. Phóng để thành phần đang xét chiếm khoảng 50% khung trở lên; con trỏ phóng theo cùng tỷ lệ.",
+   "lam_bang": [
+    "CSS",
+    "Canvas",
+    "GSAP",
+    "Remotion"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-02",
+    "CL-04",
+    "CL-09",
+    "CL-16"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Nội suy zoom tuyến tính (không phải log) làm tốc độ phóng nhìn như tăng dần. Phóng hình bitmap làm chữ vỡ nét; vẽ lại vector ở tỷ lệ mới.",
+   "mau_nguon": [
+    "twoclipping-551116",
+    "notdwd-766641",
+    "techhalla-498547",
+    "ultimaxbt-549714",
+    "flxrnc-251921",
+    "jake11moran-414633"
+   ],
+   "so_mau": 6,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-CD08",
+   "ten": "Nền nhiều lớp trôi khác tốc độ (parallax 2D)",
+   "nhom": "chuyển động",
+   "cach_lam": "Nền chia nhiều lớp (trời, đồi xa, đồi gần, tiền cảnh); mỗi lớp cuộn ngang với tốc độ khác nhau để có chiều sâu mà không cần 3D. Đề xuất: lớp xa 0,2–0,4 lần, lớp gần 1,0–1,6 lần tốc độ lớp giữa; không lớp nào đứng yên (nền trôi chậm 2–6 px mỗi giây). Chuyển ngày sang đêm xem TP-CC13.",
+   "lam_bang": [
+    "Canvas",
+    "CSS",
+    "GSAP"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-09",
+    "CL-12",
+    "CL-15"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Các lớp cùng tốc độ trông phẳng; lớp xa quá nhanh gây chóng mặt.",
+   "mau_nguon": [
+    "songkeys-384673",
+    "nolit64-347627"
+   ],
+   "so_mau": 2,
+   "tham_so_tu": "đề xuất",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-CD09",
+   "ten": "Vi chuyển động giữ cảnh tĩnh, và dừng có chủ đích trước đoạn kết",
+   "nhom": "chuyển động",
+   "cach_lam": "Cảnh tĩnh vẫn có chuyển động nhỏ liên tục: hơi nước bốc, ánh đèn nhấp nháy nhẹ, nền trôi chậm, máy quay đẩy chậm; không phần nào đứng yên quá 1,5 s (ngưỡng đề xuất). Ngoại lệ có chủ đích: dừng tuyệt đối tối thiểu 400 ms trước đoạn kết để đoạn kết nổi lên.",
+   "lam_bang": [
+    "CSS",
+    "Canvas",
+    "GSAP"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-01",
+    "CL-09",
+    "CL-11",
+    "CL-13",
+    "CL-15"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Cảnh đứng yên hoàn toàn làm người xem tưởng video bị đứng hình; ngược lại, chuyển động nhỏ ở mọi phần tử cùng lúc làm mắt khó chọn chỗ nhìn.",
+   "mau_nguon": [
+    "itsolelehmann-762215",
+    "notdwd-766641",
+    "gdgtify-130294"
+   ],
+   "so_mau": 3,
+   "tham_so_tu": "mẫu + đề xuất",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-CD10",
+   "ten": "Chuyển động lượng tử hoá (animated on twos)",
+   "nhom": "chuyển động",
+   "cach_lam": "Mô phỏng tính ở 60 Hz nhưng tư thế lượng tử hoá để chuyển động trông như 8–12 khung mỗi giây (đổi tư thế sau mỗi 2 khung ở 24 khung mỗi giây, gọi là 'một nhịp hai khung'). Dùng cho pixel art, đất sét dừng hình, nhân vật 2.5D. Toạ độ pixel art làm tròn thành số nguyên.",
+   "lam_bang": [
+    "Canvas",
+    "Three.js"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-15",
+    "CL-09"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-03"
+   ],
+   "loi_hay_gap": "Lượng tử hoá cả máy quay thì hình giật; chỉ nên lượng tử hoá nhân vật hoặc vật thể (đề xuất).",
+   "mau_nguon": [
+    "zacxbt-944604",
+    "zhu185178-255661",
+    "wikiwayne-486055"
+   ],
+   "so_mau": 3,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-CD11",
+   "ten": "Nhân vật hộp có đặc tả kích thước",
+   "nhom": "chuyển động",
+   "cach_lam": "Nhân vật dựng từ các hộp có kích thước ghi bằng số (px): thân 76×54, tay 24×16, chân 11×33, mắt 8×14; vẽ cao khoảng 250 px; chạy sáu bước mỗi giây và nghiêng 7 độ. Biểu cảm đổi theo cảnh, không cử động miệng theo lời. Hợp Media thấp; ghi để đủ.",
+   "lam_bang": [
+    "Canvas",
+    "SVG"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-15"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-03"
+   ],
+   "loi_hay_gap": "Không ghi kích thước bằng số thì mỗi lần dựng lại nhân vật ra tỷ lệ khác nhau.",
+   "mau_nguon": [
+    "heyiamnick-119558",
+    "doubleunplussed-181894"
+   ],
+   "so_mau": 2,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-CC01",
+   "ten": "Một hình duy nhất biến qua nhiều trạng thái, không cắt cảnh",
+   "nhom": "chuyển cảnh",
+   "cach_lam": "Một hình chữ nhật bo góc đổi kích thước, bán kính, màu qua các trạng thái (nút, vòng tải, dấu tick, thanh trượt, công tắc, thanh tab, biểu đồ, thông báo); mỗi lần biến hình 0,8 s, máy quay zoom theo cùng đường cong; mỗi trạng thái chiếm khoảng 50% khung; khung cuối bằng khung đầu. Cấm cross-fade, blur-in, cắt cứng giữa các trạng thái. Cấu hình mẫu phổ biến: 120 BPM, 7 phách, mỗi phách một việc.",
+   "lam_bang": [
+    "Canvas",
+    "CSS",
+    "Remotion"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-02",
+    "CL-04",
+    "CL-16"
+   ],
+   "hop_cach_lam": [
+    "LM-03"
+   ],
+   "loi_hay_gap": "Nội dung vào quá sớm khi vật chứa chưa đổi (xem TP-CD04). Khung cuối lệch khung đầu một điểm ảnh thì vòng lặp giật.",
+   "mau_nguon": [
+    "rossaxbt-312793",
+    "morse-369333",
+    "verbove-268381",
+    "0xnicc0-516612",
+    "flxrnc-251921",
+    "annacher-433425"
+   ],
+   "so_mau": 6,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-CC02",
+   "ten": "Chuyển cảnh khớp bằng vật mang theo (shared element, match cut)",
+   "nhom": "chuyển cảnh",
+   "cach_lam": "Một vật giữ danh tính xuyên các cảnh và đáp đúng cùng điểm ảnh ở hai phía chỗ cắt; chỉ cắt khi kích thước, hướng, chủ thể khớp nhau. Ví dụ: bìa album ở ô nhỏ phóng lên thành bìa lớn rồi co lại thành ô; thẻ này thành thẻ sau; đường biểu đồ thành đường nối; biên lai thành bút toán. Cấm cross-fade toàn khung.",
+   "lam_bang": [
+    "GSAP",
+    "Canvas",
+    "Remotion"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-04",
+    "CL-05",
+    "CL-09",
+    "CL-16"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Hai vật không đáp cùng kích thước và vị trí thì chỗ cắt lộ ra.",
+   "mau_nguon": [
+    "brainextends-606193",
+    "everestchris6-399895",
+    "daniel-haida-636937",
+    "0xnicc0-516612"
+   ],
+   "so_mau": 4,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-CC03",
+   "ten": "Phóng máy quay vào một tâm sáng hoặc vào màn hình trong cảnh",
+   "nhom": "chuyển cảnh",
+   "cach_lam": "Chuyển cảnh bằng đẩy máy quay vào một điểm (tâm sáng, màn hình, khung trong cảnh) tới khi điểm đó lấp khung, rồi cảnh sau mở ra từ chính điểm đó. Mẫu: thu hệ thống nhỏ dần tới một điểm giữa sao rồi phóng vào thiết bị khác; chuyển lớp bằng thu nhỏ vào màn hình trong cảnh hiện tại và hiện bộ đếm độ sâu ở góc; đẩy máy quay từ khung điện thoại nhỏ tới toàn màn hình trong khoảng 1 s.",
+   "lam_bang": [
+    "Canvas",
+    "Three.js",
+    "GSAP"
+   ],
+   "chi_phi_may": "vừa",
+   "hop_chat_lieu": [
+    "CL-04",
+    "CL-12",
+    "CL-13"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-03"
+   ],
+   "loi_hay_gap": "Điểm đích không nằm đúng giữa khung khi phóng thì cảnh sau mở lệch tâm.",
+   "mau_nguon": [
+    "miaai-lab-774895",
+    "dale-vaz-879074",
+    "emollick-019567",
+    "bthreeagency-827092"
+   ],
+   "so_mau": 4,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-CC04",
+   "ten": "Phóng xuyên thang đo (từ mét xuống nguyên tử hoặc ra vũ trụ)",
+   "nhom": "chuyển cảnh",
+   "cach_lam": "Một cú máy liên tục không cắt đi xuống hoặc đi ra, thước đo cố định bên phải cập nhật tỷ lệ (ví dụ từ khoảng 1 m xuống khoảng 2 nm). Chuỗi mẫu: bàn làm việc, thùng máy, tản nhiệt, CPU, lõi silicon, dây đồng, cổng transistor, một nguyên tử silicon nối bốn nguyên tử bên cạnh. Mỗi bậc quy mô có vật tham chiếu cho thấy tỷ lệ (toà nhà có cây thấp-poly, hàng giá máy ngang tầm mắt, một giá, một khay, một chip). Chuỗi điện thoại tới nguyên tử mẫu dài 20 s.",
+   "lam_bang": [
+    "Three.js",
+    "Canvas",
+    "Remotion"
+   ],
+   "chi_phi_may": "vừa",
+   "hop_chat_lieu": [
+    "CL-06",
+    "CL-07",
+    "CL-12",
+    "CL-13",
+    "CL-14"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-03",
+    "LM-05"
+   ],
+   "loi_hay_gap": "Thang đo nhảy bậc mà không có vật tham chiếu làm người xem mất tỷ lệ. Chi phí lớn khi chuỗi dài: một mẫu zoom từ Cabo da Roca tới vũ trụ quan sát được mất khoảng 3 giờ và 662.769 token xuất.",
+   "mau_nguon": [
+    "acoramaa-053577",
+    "irinatoxi-962937",
+    "curieuxexplorer-408141",
+    "mdaman010-111079",
+    "astrothewizard-618782",
+    "kgonia7-746268"
+   ],
+   "so_mau": 6,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-CC05",
+   "ten": "Chuyển cảnh bằng khối màu tràn khung (flood)",
+   "nhom": "chuyển cảnh",
+   "cach_lam": "Một khối (đen hoặc màu nhấn) tràn kín khung trong một nhịp, giữ kín một nhịp, rồi co về thành hình của cảnh sau; không dùng mờ dần. Khối phải tràn quá mép và mất khoảng 0,3 s, nếu không nửa màn đổi trong một khung. Biến thể: khối màu hình học trượt phủ khung; hoạ tiết lớn phủ kín khung (ví dụ bức tường gạch) trước cảnh kết.",
+   "lam_bang": [
+    "Canvas",
+    "CSS",
+    "GSAP"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-01",
+    "CL-09",
+    "CL-11",
+    "CL-16"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Khối không tràn quá mép thì lộ một khung nửa cũ nửa mới.",
+   "mau_nguon": [
+    "twoclipping-496100",
+    "twoclipping-747965",
+    "bizibeast-505124",
+    "gouthamjay8-910269"
+   ],
+   "so_mau": 4,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-CC06",
+   "ten": "Màn mống mắt 6 lá, goo và mặt nạ chạy qua nét chữ",
+   "nhom": "chuyển cảnh",
+   "cach_lam": "Màn mống mắt: 6 cánh quanh khẩu độ lục giác, mỗi cánh quay quanh tâm khoảng 0,4 s, khép lại che nhãn rồi mở ra lộ ảnh mới. Goo: làm mờ rồi lấy ngưỡng alpha để các hình dính nhau. Mặt nạ qua nét chữ: từ mới hiện qua mặt nạ lấy từ nét chữ của từ cũ; chữ trồi lên qua một đường mặt nạ.",
+   "lam_bang": [
+    "Canvas",
+    "CSS",
+    "SVG"
+   ],
+   "chi_phi_may": "vừa",
+   "hop_chat_lieu": [
+    "CL-01",
+    "CL-11",
+    "CL-16"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-03"
+   ],
+   "loi_hay_gap": "Mặt nạ lấy từ nét chữ cần vẽ lại ở độ phân giải khung xuất, nếu không mép mặt nạ răng cưa.",
+   "mau_nguon": [
+    "twoclipping-496100",
+    "techhalla-498547",
+    "thejohnnyhuy-282154"
+   ],
+   "so_mau": 3,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-CC07",
+   "ten": "Nhoè nét chữ khi chuyển cảnh thay vì cắt thẳng",
+   "nhom": "chuyển cảnh",
+   "cach_lam": "Thay cắt thẳng bằng mờ nét chữ khi chuyển: chữ cũ nhoè đi rồi chữ mới hiện từ nhoè về rõ nét; chữ tên chốt hiện từ nhoè về rõ ở cảnh cuối. Mẫu dùng mờ ngắn 12 px; đề xuất thời lượng 0,3–0,5 s.",
+   "lam_bang": [
+    "CSS",
+    "GSAP",
+    "Canvas"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-01",
+    "CL-11",
+    "CL-16"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Nhoè quá dài (trên 0,6 s) làm chữ khó đọc ở đoạn chuyển.",
+   "mau_nguon": [
+    "moritzkremb-466494",
+    "iammxfschr-955831",
+    "monokern-832979",
+    "morse-369333"
+   ],
+   "so_mau": 4,
+   "tham_so_tu": "mẫu + đề xuất",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-CC08",
+   "ten": "Cảnh sau hiện trước mốc cảnh trước ra hết 0,3–0,5 s",
+   "nhom": "chuyển cảnh",
+   "cach_lam": "Cảnh sau bắt đầu vào trước khi cảnh trước ra hết, hai cảnh chồng nhau 0,3–0,5 s ở lớp nền và hình; ở lớp chữ thì chữ cũ rời hẳn trước khi chữ mới vào cùng chỗ. Chuyển cảnh flood mất khoảng 0,3 s và flood phải tràn quá mép. Ngưỡng 0,3–0,5 s là yêu cầu lớp hoàn thiện của Media (bản chỉ đạo 27/10/2026), chưa thử trên video thật.",
+   "lam_bang": [
+    "GSAP",
+    "Remotion",
+    "Canvas"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-01",
+    "CL-02",
+    "CL-05",
+    "CL-09",
+    "CL-11"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Chồng cả lớp chữ thì hai câu đè lên nhau; không chồng lớp nào thì chỗ chuyển có một khoảng trống một hai khung.",
+   "mau_nguon": [
+    "verbove-268381",
+    "twoclipping-496100",
+    "rossaxbt-312793"
+   ],
+   "so_mau": 3,
+   "tham_so_tu": "đề xuất",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-CC09",
+   "ten": "Mô-típ và đường dẫn lặp xuyên cảnh",
+   "nhom": "chuyển cảnh",
+   "cach_lam": "Một mô-típ lặp qua mọi cảnh với biến thể khác nhau (con mắt, đường hầm mắt, vòng xoáy mắt) để thống nhất cả đoạn. Hoặc một đường nét đứt sáng chạy ngang xuyên nhiều cảnh, mỗi cảnh biến đường đó thành đối tượng cần giải thích; thanh phát nhạc mảnh ghim ở chân khung suốt đoạn giữa nối các cảnh. Mỗi chuyển cảnh minh hoạ một tính năng thay vì cắt sang tiêu đề mới.",
+   "lam_bang": [
+    "Canvas",
+    "SVG",
+    "GSAP"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-04",
+    "CL-09",
+    "CL-12",
+    "CL-16"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Mô-típ đổi hình quá nhiều giữa các cảnh thì mất tính thống nhất; đường dẫn đổi tốc độ giữa cảnh làm cảm giác bị cắt.",
+   "mau_nguon": [
+    "monokern-832979",
+    "howdevelop-733090",
+    "brainextends-606193"
+   ],
+   "so_mau": 3,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-CC10",
+   "ten": "Đổi nền xen tối, sáng, màu đặc làm điểm ngắt nhịp",
+   "nhom": "chuyển cảnh",
+   "cach_lam": "Nền đổi theo ý: kem, đen, cam đất đổi theo nhịp cắt khoảng 1,5 s; nền đen và nền trắng xen kẽ theo cảnh; một cảnh nền cam đặc ngăn các cảnh sáng và tối; một cảnh nền tối chen giữa chuỗi sáng; một khung nền sáng giữa chuỗi nền đen. Màu nền thẻ cũng mã hoá nhóm hoặc giai đoạn (đỏ, xanh lá, navy).",
+   "lam_bang": [
+    "CSS",
+    "Canvas",
+    "GSAP"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-01",
+    "CL-04",
+    "CL-09",
+    "CL-11",
+    "CL-15"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Đổi nền ở mọi cảnh thì không còn là điểm ngắt nhịp; đổi sang màu ngoài bộ màu đã chọn phá thống nhất.",
+   "mau_nguon": [
+    "souravbhar871-477361",
+    "gautam-mer1-530003",
+    "manuelogomigo-052364",
+    "ho-ba-761062",
+    "ajith-io-562538",
+    "triglyceee-161719",
+    "sudo-kiran-335993"
+   ],
+   "so_mau": 7,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-CC11",
+   "ten": "Hạt tan ra rồi gom thành hình kế tiếp",
+   "nhom": "chuyển cảnh",
+   "cach_lam": "Mỗi cảnh là một bóng đơn sắc vẽ sẵn bằng SVG; lấy mẫu 20–40 nghìn điểm trên bóng làm vị trí đích của hạt. Chuyển cảnh: hạt tan ra rồi rơi xuống trong 1–1,5 s, rồi bay lên gom thành hình kế tiếp. Biến thể nhẹ: biểu tượng dựng từ lưới chấm cam, chấm tụ lại rồi tan ra khi chuyển cảnh.",
+   "lam_bang": [
+    "Canvas",
+    "Three.js"
+   ],
+   "chi_phi_may": "nặng",
+   "hop_chat_lieu": [
+    "CL-09",
+    "CL-12"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-03"
+   ],
+   "loi_hay_gap": "Hàng chục nghìn hạt vẽ trên Canvas 2D tốn thời gian máy mỗi khung (chưa có số đo của Media).",
+   "mau_nguon": [
+    "michaelzsguo-782312",
+    "manuelogomigo-052364",
+    "ajith-io-562538",
+    "mounnna-497266"
+   ],
+   "so_mau": 4,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-CC12",
+   "ten": "Khung cuối bằng khung đầu (vòng lặp liền mạch)",
+   "nhom": "chuyển cảnh",
+   "cach_lam": "Khung cuối trùng khung đầu, kể cả vị trí và tốc độ con trỏ; xuất đoạn [0, thời lượng) không lặp khung cuối. Kiểm điểm nối: đặt khung 0 cạnh khung ở cuối chu kỳ (mẫu dùng khung 720); lệch một điểm ảnh nghĩa là có chuyển động không tuần hoàn. Vật quay thì quay liên tục, không xoay một nấc mỗi nhịp, để cuối trùng đầu. Cảnh kết nhắc lại cảnh mở cũng khép lại. Hợp video dọc ngắn và nền lặp; video ngang thuyết minh không cần.",
+   "lam_bang": [
+    "Canvas",
+    "CSS",
+    "FFmpeg"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-02",
+    "CL-04",
+    "CL-16"
+   ],
+   "hop_cach_lam": [
+    "LM-03"
+   ],
+   "loi_hay_gap": "Phần tử có chu kỳ không chia hết thời lượng thì không khớp ở điểm nối.",
+   "mau_nguon": [
+    "0xkarmi-129839",
+    "0xnicc0-516612",
+    "flxrnc-251921",
+    "techhalla-498547",
+    "thegrootdev-966114",
+    "twoclipping-551116",
+    "gautam-mer1-530003"
+   ],
+   "so_mau": 7,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-CC13",
+   "ten": "Chuyển trạng thái ngày sang đêm và kéo thanh trượt đổi ảnh",
+   "nhom": "chuyển cảnh",
+   "cach_lam": "Công tắc ngày sang đêm: đổi màu trời và đèn hướng, bật đèn điểm vàng trong cửa sổ và đèn đá trong khoảng 1 s; hoặc đổi gradient trời xanh sang tím sang xanh đen, thêm trăng, đèn chuỗi bật dần. Kéo thanh trượt đổi ảnh từ ban ngày sang giờ vàng: hai ảnh khớp vị trí, độ mờ chéo đi theo vị trí núm.",
+   "lam_bang": [
+    "Three.js",
+    "Canvas",
+    "CSS"
+   ],
+   "chi_phi_may": "vừa",
+   "hop_chat_lieu": [
+    "CL-12",
+    "CL-13",
+    "CL-15"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-03"
+   ],
+   "loi_hay_gap": "Hai ảnh không khớp vị trí thì độ mờ chéo làm vật nhân đôi.",
+   "mau_nguon": [
+    "buildfastwithai-597035",
+    "nolit64-347627",
+    "ishuagra02-678129",
+    "twoclipping-496100"
+   ],
+   "so_mau": 4,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-CH01",
+   "ten": "Chữ hiện bằng mặt nạ trượt, từng từ hoặc từng ký tự",
+   "nhom": "chữ",
+   "cach_lam": "Chữ không hiện bằng mờ dần mà trồi lên qua một đường mặt nạ (clip) từ dưới lên, từng từ đúng nhịp; mỗi ký tự có lò xo riêng (dịch dọc, độ mờ, nhoè), trễ 125 ms ở 120 BPM; chỉ một từ khoá mang màu nhấn. Số liệu lớn vào bằng cắt đẩy kèm vệt mờ dọc.",
+   "lam_bang": [
+    "GSAP",
+    "CSS",
+    "Remotion"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-01",
+    "CL-11",
+    "CL-16"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Chữ trồi lên mà không có mặt nạ cắt thì thấy chữ chạy ngoài vùng chữ.",
+   "mau_nguon": [
+    "twoclipping-000267",
+    "techhalla-498547",
+    "0xnicc0-516612",
+    "heyiamnick-119558"
+   ],
+   "so_mau": 4,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-CH02",
+   "ten": "Gõ từng ký tự có con trỏ nhấp nháy",
+   "nhom": "chữ",
+   "cach_lam": "Chữ gõ từng ký tự, con trỏ nhấp nháy. Đề xuất 25–40 ký tự mỗi giây và con trỏ nhấp một lần mỗi 0,5 s. Biến thể: ô nhập chữ có nhãn các lựa chọn phía trên; cửa sổ terminal giả gõ tin nhắn rồi hiện kết quả; mở bằng dòng lệnh với danh sách trạng thái '[ ok ]' hiện từng dòng; phụ đề gõ theo giọng sau con trỏ khối.",
+   "lam_bang": [
+    "Canvas",
+    "CSS",
+    "GSAP"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-04",
+    "CL-16"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Gõ đều tuyệt đối làm chữ hiện có nhịp cơ học; thêm nghỉ ngắn ở dấu cách và dấu câu (đề xuất).",
+   "mau_nguon": [
+    "ho-ba-761062",
+    "majorbaguette-834228",
+    "ann-nnng-852885",
+    "robvjourney-237474",
+    "lester-tyy-480587",
+    "madhav-xo-524440",
+    "twoclipping-041659"
+   ],
+   "so_mau": 7,
+   "tham_so_tu": "mẫu + đề xuất",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-CH03",
+   "ten": "Chữ khổng lồ, mỗi ý một nhịp",
+   "nhom": "chữ",
+   "cach_lam": "Một ý mỗi nhịp 1–2 s; chữ sans-serif cực đậm khít nhau chiếm gần hết khung; nền đổi màu theo ý; một từ khổng lồ mở đầu hoặc làm cảnh nhấn; câu kết bằng chấm tròn nổi khối; chữ xoay chồng lấn tràn khỏi khung ở cảnh cuối. Bản dọc: một chữ một ô, dùng bố cục chữ và số toàn khung.",
+   "lam_bang": [
+    "GSAP",
+    "CSS",
+    "Canvas",
+    "Remotion"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-01",
+    "CL-11"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Quá 2 s một ý thì người xem đọc xong và chờ; chữ khổng lồ bị cắt ở mép nếu không đo bằng phông thật.",
+   "mau_nguon": [
+    "0xfemyn-137833",
+    "melvynx-638493",
+    "souravbhar871-477361",
+    "ishaaqahamed-107563",
+    "pankajkumar-dev-718609",
+    "zheke-622583",
+    "kloss-xyz-941143"
+   ],
+   "so_mau": 7,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-CH04",
+   "ten": "Tiêu đề hai dòng, dòng hai màu nhấn",
+   "nhom": "chữ",
+   "cach_lam": "Tiêu đề hai dòng: dòng đầu trắng hoặc đen đậm, dòng hai màu nhấn (xanh dương, cam, vàng, đỏ cho vấn đề và cyan cho giải pháp), hoặc xám nhạt, hoặc in nghiêng. Dòng hai thường là kết luận. Nhãn mục nhỏ phía trên.",
+   "lam_bang": [
+    "CSS",
+    "SVG",
+    "GSAP",
+    "Remotion"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-04",
+    "CL-05",
+    "CL-09",
+    "CL-13",
+    "CL-16"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Dùng nhiều hơn một màu nhấn trong cùng tiêu đề thì mất ý nghĩa của màu.",
+   "mau_nguon": [
+    "rammanq-034553",
+    "sachaarbonel-673648",
+    "gautam-mer1-530003",
+    "alex-prompter-997524",
+    "ezshine-750731",
+    "ceowinkz-683602",
+    "ratheejaisal-154698",
+    "kloss-xyz-067876",
+    "felipemoller-936736"
+   ],
+   "so_mau": 9,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-CH05",
+   "ten": "Từ nhấn bằng serif nghiêng màu nhấn; câu chốt serif nghiêng",
+   "nhom": "chữ",
+   "cach_lam": "Trong dòng sans đậm, một từ đổi sang serif nghiêng màu nhấn (san hô, đất nung, cam, vàng); câu chốt cuối là một câu serif nghiêng trắng trên nền đen thay cho logo; dòng khẩu hiệu serif nghiêng nhỏ dưới tên in đậm.",
+   "lam_bang": [
+    "CSS",
+    "SVG",
+    "Remotion"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-01",
+    "CL-11",
+    "CL-12",
+    "CL-16"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Nhấn nhiều từ trong một cảnh thì không còn từ nào nổi.",
+   "mau_nguon": [
+    "kloss-xyz-941143",
+    "gouthamjay8-910269",
+    "amitsingha89-780553",
+    "1littlecoder-378066",
+    "spearwtf-029058",
+    "nolkeeg-635633",
+    "johnsavage-ai-427263",
+    "iammxfschr-955831"
+   ],
+   "so_mau": 8,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-CH06",
+   "ten": "Từ khoá nền chip hoặc bóng đổ lệch hai lớp",
+   "nhom": "chữ",
+   "cach_lam": "Từ khoá nổi bằng nền chip màu (xanh chanh chữ đen như nét bút dạ quang; chip nền màu như đánh dấu bút trong tiêu đề) hoặc bóng đổ lệch hai lớp (đỏ rồi đen) để nổi khối mà vẫn phẳng; chip dạng pill chứa từ khoá dưới tiêu đề.",
+   "lam_bang": [
+    "CSS",
+    "Canvas"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-01",
+    "CL-04",
+    "CL-11",
+    "CL-16"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Chip che mất phần chữ khi chữ đổi cỡ giữa chừng.",
+   "mau_nguon": [
+    "majorbaguette-834228",
+    "bizibeast-505124",
+    "souravbhar871-477361",
+    "amitsingha89-780553"
+   ],
+   "so_mau": 4,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-CH07",
+   "ten": "Gạch ngang chữ cũ rồi thay bằng chữ mới",
+   "nhom": "chữ",
+   "cach_lam": "Câu có chữ bị gạch ngang (vấn đề), chữ mới đặt ở dòng dưới hoặc lớn bên cạnh (dạng 'Not a week. About 6 minutes.'); lịch ô gạch X đỏ hiện dần dưới dòng 'Weeks of work' để thấy thời gian trôi.",
+   "lam_bang": [
+    "CSS",
+    "SVG",
+    "GSAP"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-01",
+    "CL-04",
+    "CL-09",
+    "CL-16"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Đường gạch vẽ xong sau khi chữ mới đã hiện thì mất ý đối chiếu.",
+   "mau_nguon": [
+    "sudo-kiran-335993",
+    "kmasiff-549880",
+    "ajith-io-208546"
+   ],
+   "so_mau": 3,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-CH08",
+   "ten": "Gạch chân và vòng vẽ tay quanh từ khoá",
+   "nhom": "chữ",
+   "cach_lam": "Gạch chân nét cam vẽ lên khoảng 0,4 s dưới từ khoá; gạch chân lượn màu đỏ dưới thẻ chốt hai vế đối xứng; vòng tròn vẽ một nét quanh từ khái niệm serif lớn, có chữ Hán mờ phía sau.",
+   "lam_bang": [
+    "SVG",
+    "GSAP",
+    "CSS"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-09",
+    "CL-10",
+    "CL-15",
+    "CL-16"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Nét vẽ có độ dày đều và đường thẳng tuyệt đối trông như vector, không như nét tay; thêm lệch nhẹ.",
+   "mau_nguon": [
+    "redpersongpt-284430",
+    "sudo-kiran-254201",
+    "daniel-mac8-306214",
+    "deedydas-252537"
+   ],
+   "so_mau": 4,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-CH09",
+   "ten": "Thay từ cuối câu trong khung câu cố định",
+   "nhom": "chữ",
+   "cach_lam": "Khung câu cố định ('I CAN' ở trên), từ cuối đổi liên tục kèm đổi nền cho mỗi từ; hoặc thay từ cuối bằng mờ nét rồi hiện từ mới, giữ nguyên phần câu còn lại. Từ khoá đặt ngay dưới khối 3D để chữ gắn với vật thể.",
+   "lam_bang": [
+    "GSAP",
+    "CSS",
+    "Three.js"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-11",
+    "CL-13"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Từ mới dài hơn từ cũ làm phần câu cố định xê dịch; cố định chiều rộng vùng từ đổi.",
+   "mau_nguon": [
+    "zheke-622583",
+    "iammxfschr-955831"
+   ],
+   "so_mau": 2,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-CH10",
+   "ten": "Chữ cắt lát ngang trượt lệch rồi khớp lại",
+   "nhom": "chữ",
+   "cach_lam": "Chữ cắt thành 5–6 dải ngang trượt lệch nhau rồi ghép lại đúng nhịp (ví dụ chữ 'SNAP'); chữ khổng lồ bị khe sáng cắt đôi rồi khép lại thành tên.",
+   "lam_bang": [
+    "Canvas",
+    "Three.js",
+    "CSS"
+   ],
+   "chi_phi_may": "vừa",
+   "hop_chat_lieu": [
+    "CL-11",
+    "CL-12"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-03"
+   ],
+   "loi_hay_gap": "Dải cắt tính theo pixel làm sai khi đổi khổ khung; tính theo tỷ lệ chiều cao chữ.",
+   "mau_nguon": [
+    "lukasersil-726495",
+    "zheke-622583",
+    "prasenx-693512"
+   ],
+   "so_mau": 3,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-CH11",
+   "ten": "Chữ viền rỗng chạy trên nền chất lỏng",
+   "nhom": "chữ",
+   "cach_lam": "Chữ viền rỗng (outline) chạy trên nền chất lỏng do shader tính để chữ nhẹ mà vẫn đọc được; chữ lớn có nhoè chuyển động kèm bản viền lặp phía sau.",
+   "lam_bang": [
+    "Canvas",
+    "Three.js"
+   ],
+   "chi_phi_may": "vừa",
+   "hop_chat_lieu": [
+    "CL-11",
+    "CL-12"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-03"
+   ],
+   "loi_hay_gap": "Nền chất lỏng sáng quá làm viền rỗng mất độ tương phản.",
+   "mau_nguon": [
+    "prasenx-693512",
+    "0xvalure-331584"
+   ],
+   "so_mau": 2,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-CH12",
+   "ten": "Chữ hình thành từ hạt tụ lại",
+   "nhom": "chữ",
+   "cach_lam": "Chữ hình thành từ hạt bụi tụ lại; hoặc chữ rơi thành hạt rồi tụ thành quả cầu có chữ chạy trên mặt; hoặc chữ từ nhiễu mờ chuyển sang rõ nét kèm quầng sáng.",
+   "lam_bang": [
+    "Canvas",
+    "Three.js"
+   ],
+   "chi_phi_may": "vừa",
+   "hop_chat_lieu": [
+    "CL-11",
+    "CL-12"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-03"
+   ],
+   "loi_hay_gap": "Số hạt quá ít thì chữ cuối không đủ nét đọc; hạt đích lấy mẫu từ hình chữ ở độ phân giải khung xuất.",
+   "mau_nguon": [
+    "nolkeeg-635633",
+    "ajith-io-562538",
+    "johnsavage-ai-427263"
+   ],
+   "so_mau": 3,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-CH13",
+   "ten": "Kết cấu bên trong nét chữ",
+   "nhom": "chữ",
+   "cach_lam": "Chữ lớn có kết cấu bên trong nét (thiên hà trong chữ); chữ gradient pastel mảnh trên nền đen; chữ gradient lớn trên tiêu đề lưới bento. Dòng nhỏ serif nghiêng phía trên chữ đậm để tạo nhịp đọc.",
+   "lam_bang": [
+    "CSS",
+    "Canvas",
+    "Three.js"
+   ],
+   "chi_phi_may": "vừa",
+   "hop_chat_lieu": [
+    "CL-11",
+    "CL-12",
+    "CL-16"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-03"
+   ],
+   "loi_hay_gap": "Kết cấu chuyển động mạnh bên trong chữ mảnh làm chữ khó đọc.",
+   "mau_nguon": [
+    "miaai-lab-774895",
+    "viktoroddy-402509",
+    "gautam-mer1-530003",
+    "sudo-kiran-254201"
+   ],
+   "so_mau": 4,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-CH14",
+   "ten": "Chữ có vai vật lý: mỗi từ là một hiện tượng của trường",
+   "nhom": "chữ",
+   "cach_lam": "Mỗi từ là một hiện tượng của trường: WAIT là tấm đẩy làm chữ nghiêng tránh ra; WAITING là đường sức võng dưới tải; ROOM là điểm không; FLOOR là trường dẹt thành mặt phẳng. Vai vật lý nảy ra từ chính hình chữ phản ứng với trường, không phải từ minh hoạ thêm vào. Hạt bụi sắt xác định theo băm của id và thời gian; dừng tuyệt đối tối thiểu 400 ms trước đoạn kết. Cấu hình mẫu: 1080×1080, 20 s, 60 khung mỗi giây, một file HTML, hiểu được khi tắt tiếng.",
+   "lam_bang": [
+    "Canvas",
+    "CSS"
+   ],
+   "chi_phi_may": "vừa",
+   "hop_chat_lieu": [
+    "CL-11",
+    "CL-12",
+    "CL-14"
+   ],
+   "hop_cach_lam": [
+    "LM-03"
+   ],
+   "loi_hay_gap": "Lời nguyên văn phải khoá cứng; thêm hoặc bớt chữ làm sai quy tắc vật lý gán cho từng từ (đã ghi trong prompt mẫu).",
+   "mau_nguon": [
+    "gdgtify-130294",
+    "gdgtify-929495",
+    "gdgtify-393073",
+    "gdgtify-989608"
+   ],
+   "so_mau": 4,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-CH15",
+   "ten": "Phụ đề từng từ theo giọng, và vùng an toàn khổ dọc",
+   "nhom": "chữ",
+   "cach_lam": "Phụ đề một dòng ở đáy khớp giọng đọc; từ đang đọc tô màu nhấn (một từ tô vàng); mốc từng từ lấy từ Whisper (nguồn gốc còn dùng cách khác, Media chỉ dùng Whisper); phụ đề burn-in (vẽ cứng vào hình) vì phần lớn xem khi tắt tiếng. Khổ dọc: phụ đề cách mép dưới tối thiểu 20% chiều cao để tránh nút của mạng xã hội; đo bằng phông thật rồi co để vừa vùng an toàn 9:16. Mỗi ý có phụ đề giữ tối thiểu 2,5 s.",
+   "lam_bang": [
+    "Remotion",
+    "Canvas",
+    "CSS",
+    "FFmpeg"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-03",
+    "CL-05",
+    "CL-10",
+    "CL-11",
+    "CL-16"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Mốc từng từ lệch so với giọng thì từ sáng sai chỗ; câu dài hơn vùng an toàn thì bị cắt ở mép.",
+   "mau_nguon": [
+    "notdwd-998633",
+    "linearuncle-971663",
+    "ajith-io-208546",
+    "doubleunplussed-181894",
+    "sab8a-475686",
+    "bilimfili1-459762",
+    "l3d1c-632524",
+    "tak3sh8-441895"
+   ],
+   "so_mau": 8,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-CH16",
+   "ten": "Nhãn đơn cách (monospace) ở bốn góc",
+   "nhom": "chữ",
+   "cach_lam": "Nhãn chữ monospace rất nhỏ ở bốn cạnh khung (mã cảnh, timecode, trạng thái, tên dự án, 'BAR n / BPM'), cố định suốt video, chỉ đổi nhãn cảnh khi chuyển cảnh; không che nội dung chính. Đề xuất cỡ chữ khoảng 1,2% chiều cao khung. Biến thể: đồng hồ thời gian ở góc trên phải như khung phần mềm dựng; thanh trạng thái kiểu terminal ở đầu khung.",
+   "lam_bang": [
+    "CSS",
+    "Canvas",
+    "Remotion"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-04",
+    "CL-05",
+    "CL-09",
+    "CL-12",
+    "CL-13",
+    "CL-16"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Cỡ quá nhỏ thì mờ hẳn khi nén video; quá lớn thì tranh chú ý với nội dung.",
+   "mau_nguon": [
+    "anabology-491441",
+    "pound75423-464968",
+    "monokern-832979",
+    "ann-nnng-852885",
+    "madhav-xo-524440",
+    "lukasersil-726495",
+    "heyiammallik-293397",
+    "pankajkumar-dev-718609",
+    "chatgptastra-807540"
+   ],
+   "so_mau": 9,
+   "tham_so_tu": "mẫu + đề xuất",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-CH17",
+   "ten": "Nhãn chương và thước tiến độ cố định",
+   "nhom": "chữ",
+   "cach_lam": "Nhãn chương ở góc trên trái ('03 / 08' kèm tên mục) cùng thanh mốc thời gian mảnh ở góc trên phải; hoặc thanh mốc chương ở đáy khung, mốc đang chạy có nhãn tên; thanh tiến trình mảnh chạy suốt video ở chân khung; thanh tab cố định ở đầu khung, mục đang nói sáng lên; thanh nhãn liệt kê các lớp và đánh dấu lớp đang xem.",
+   "lam_bang": [
+    "CSS",
+    "SVG",
+    "Canvas"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-04",
+    "CL-05",
+    "CL-09",
+    "CL-13"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Thước tiến độ không khớp thời lượng thật thì người xem đoán sai độ dài còn lại.",
+   "mau_nguon": [
+    "kloss-xyz-067876",
+    "henkvaness-975279",
+    "chatgptastra-807540",
+    "nolkeeg-635633",
+    "sab8a-475686",
+    "kmasiff-549880",
+    "emollick-019567"
+   ],
+   "so_mau": 7,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-CH18",
+   "ten": "Nhãn nhỏ viết hoa đánh số ý (eyebrow label)",
+   "nhom": "chữ",
+   "cach_lam": "Nhãn nhỏ viết hoa kèm chấm cam hoặc gạch ngang phía trên tiêu đề, đánh số hoặc gọi tên chủ đề của cảnh ('01 / COLLECT', 'WHY IT MATTERS'); số bước lớn '03' bằng chữ gradient pastel kèm tiêu đề ngắn bên cạnh; huy hiệu số tròn vàng ở góc thẻ.",
+   "lam_bang": [
+    "CSS",
+    "SVG",
+    "GSAP"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-04",
+    "CL-09",
+    "CL-16"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Số nhãn không khớp thứ tự cảnh khi dựng lại hoặc đổi thứ tự cảnh.",
+   "mau_nguon": [
+    "sachaarbonel-673648",
+    "amitsingha89-780553",
+    "wani-shola-459278",
+    "gouthamjay8-910269",
+    "miskinho-956105",
+    "sudo-kiran-254201",
+    "alex-prompter-997524"
+   ],
+   "so_mau": 7,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-CH19",
+   "ten": "Chữ viết tay vẽ dần theo lời",
+   "nhom": "chữ",
+   "cach_lam": "Chữ viết tay vẽ dần bằng stroke-dashoffset (phông Caveat): đường nét chữ có dash dài bằng tổng độ dài nét, dashoffset giảm về 0 theo thời gian; cây bút hiển thị đi theo nét đang vẽ. Mỗi cảnh một tiêu đề câu hoàn chỉnh viết tay ở trên, nội dung vẽ dần bên dưới, câu thuyết minh hiện ở chân khung.",
+   "lam_bang": [
+    "SVG",
+    "Canvas",
+    "GSAP"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-03",
+    "CL-10"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-03"
+   ],
+   "loi_hay_gap": "Phông có nét giao nhau cần tách từng nét; nếu mọi nét chạy cùng tốc độ thì trông không giống viết (đề xuất đổi tốc độ theo độ dài nét).",
+   "mau_nguon": [
+    "ik-builds-585923",
+    "tak3sh8-441895",
+    "groundcontrol-230877",
+    "ajith-io-615243"
+   ],
+   "so_mau": 4,
+   "tham_so_tu": "mẫu + đề xuất",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-CH20",
+   "ten": "Băng chữ chạy ngang",
+   "nhom": "chữ",
+   "cach_lam": "Băng chữ nhỏ chạy ngang ở đầu và chân khung lặp các từ khoá, cách nhau bằng chấm tròn; băng chéo kiểu băng cảnh báo cắt ngang khung, mỗi băng chứa một chuỗi khẩu hiệu ngắn.",
+   "lam_bang": [
+    "CSS",
+    "Canvas"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-01",
+    "CL-11"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Băng chạy liên tục tranh chú ý với nội dung chính; chỉ dùng ở cảnh nhấn.",
+   "mau_nguon": [
+    "ishaaqahamed-107563",
+    "0xvalure-331584",
+    "robvjourney-237474"
+   ],
+   "so_mau": 3,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-CH21",
+   "ten": "Chữ chìm cỡ lớn mờ phía sau tiêu đề",
+   "nhom": "chữ",
+   "cach_lam": "Năm hoặc số cỡ lớn, mờ, làm hình chìm phía sau tiêu đề trên thẻ nền màu đặc; mỗi mốc một hình minh hoạ phẳng chỉ một ký hiệu. Hợp Media thấp, hợp video dòng thời gian.",
+   "lam_bang": [
+    "CSS",
+    "SVG"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-15",
+    "CL-09"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Chữ chìm đậm quá thì lấn tiêu đề.",
+   "mau_nguon": [
+    "triglyceee-161719"
+   ],
+   "so_mau": 1,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-SL01",
+   "ten": "Thanh ngang dài ra trước, số hiện sau; xếp hạng đổi chỗ",
+   "nhom": "số liệu, đồ thị, bản đồ",
+   "cach_lam": "Biểu đồ thanh ngang: thanh dài ra trước, số hoặc phần trăm ở đầu thanh chỉ hiện sau khi thanh tới nơi; logo ở đầu thanh. Bản xếp hạng: cột đổi chỗ khi thứ hạng đổi và số chạy theo thời gian. Biến thể: bảng đua dọc, mỗi mục là ô bo góc đổi hạng theo số bước, mục chính viền sáng.",
+   "lam_bang": [
+    "SVG",
+    "GSAP",
+    "Canvas",
+    "Remotion"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-04",
+    "CL-05",
+    "CL-16"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Số hiện cùng lúc với thanh thì người xem không thấy mối quan hệ dài ngắn và số; đổi chỗ cột không có chuyển động trung gian thì khó theo dõi.",
+   "mau_nguon": [
+    "rammanq-034553",
+    "ratheejaisal-154698",
+    "marklaunches-041046"
+   ],
+   "so_mau": 3,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-SL02",
+   "ten": "Đường đồ thị tự vẽ, chấm kéo theo và hộp nhãn độ nhạy",
+   "nhom": "số liệu, đồ thị, bản đồ",
+   "cach_lam": "Đường tự vẽ theo đáp ứng lò xo (hoặc stroke-dashoffset), vượt đích rất nhỏ rồi lắng cạnh nhãn (ví dụ '+22%'); đường tăng trưởng có thể phát sáng chạy lên góc phải. Chấm kéo theo đường dọc nét đứt và hộp nhãn độ nhạy ('Rates +0.80% / −4.29%'). Chú giải hiện theo con trỏ (video: con trỏ ảo chạy theo kịch bản).",
+   "lam_bang": [
+    "SVG",
+    "GSAP",
+    "Canvas",
+    "Remotion"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-05",
+    "CL-04"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Đường vẽ nhanh hơn lời đọc thì số liệu xuất hiện trước khi được nói tới.",
+   "mau_nguon": [
+    "rossaxbt-707651",
+    "morse-369333",
+    "viktoroddy-402509",
+    "rammanq-034553",
+    "twoclipping-747965",
+    "annacher-433425"
+   ],
+   "so_mau": 6,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-SL03",
+   "ten": "Bộ đếm số chạy",
+   "nhom": "số liệu, đồ thị, bản đồ",
+   "cach_lam": "Số lớn đếm lên hoặc xuống kèm đơn vị nhỏ. Bộ đếm chạy tuyến tính trên đồng hồ toàn phim nên vẫn chạy khi cắt cảnh; dùng chữ số độ rộng bằng nhau (tabular) để không rung; bộ đếm đọc thời gian của khung chính, không phải khung phụ, nếu không chữ số bị nhoè. Biến thể: thẻ giá số chạy giảm kèm nhãn phần trăm rồi đổi sang số chạy tăng ở cảnh giải pháp; thẻ giá nhỏ rơi vào khung cộng thành tổng đỏ lớn; đồng hồ đếm ngược có chip đỏ khi bị vượt.",
+   "lam_bang": [
+    "Canvas",
+    "GSAP",
+    "CSS",
+    "Remotion"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-01",
+    "CL-04",
+    "CL-05",
+    "CL-11",
+    "CL-16"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Phông chữ số có độ rộng thay đổi làm số rung khi đếm; bộ đếm chạy theo khung phụ thì chữ số nhoè.",
+   "mau_nguon": [
+    "nolkeeg-635633",
+    "deedydas-252537",
+    "notdwd-998633",
+    "ceowinkz-683602",
+    "bizibeast-505124",
+    "kmasiff-549880",
+    "viktoroddy-402509",
+    "marklaunches-041046"
+   ],
+   "so_mau": 8,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-SL04",
+   "ten": "Con số lớn đơn độc kèm đơn vị và một dòng giải nghĩa",
+   "nhom": "số liệu, đồ thị, bản đồ",
+   "cach_lam": "Một con số lớn ở giữa khung, đơn vị nhỏ bên cạnh, một dòng nhỏ giải nghĩa ngay dưới; hoặc một câu serif nghiêng dưới số; hoặc số chiếm giữa khung trên nền màu đặc ('60x' nền đỏ).",
+   "lam_bang": [
+    "CSS",
+    "SVG",
+    "Remotion"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-01",
+    "CL-09",
+    "CL-11"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Thêm nhiều chữ cạnh con số làm mất cảnh nhấn một con số.",
+   "mau_nguon": [
+    "nolkeeg-635633",
+    "alex-prompter-997524",
+    "deedydas-252537",
+    "henkvaness-975279",
+    "heyiammallik-293397"
+   ],
+   "so_mau": 5,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-SL05",
+   "ten": "Con dấu cao su đóng nghiêng cạnh số lớn",
+   "nhom": "số liệu, đồ thị, bản đồ",
+   "cach_lam": "Con số lớn kèm con dấu cao su xanh đóng nghiêng ('280% of normal') để nhấn mạnh so với bình thường. Đề xuất góc nghiêng 5–8 độ; dấu đóng xuống với scale 1,3 → 1,0 trong 0,15 s, kèm tiếng đóng dấu.",
+   "lam_bang": [
+    "SVG",
+    "Canvas",
+    "GSAP"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-10",
+    "CL-09"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-03"
+   ],
+   "loi_hay_gap": "Dấu nghiêng quá nhiều làm chữ trong dấu khó đọc.",
+   "mau_nguon": [
+    "groundcontrol-230877"
+   ],
+   "so_mau": 1,
+   "tham_so_tu": "mẫu + đề xuất",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-SL06",
+   "ten": "Lưới ô sáng dần theo tỷ lệ và ma trận chấm",
+   "nhom": "số liệu, đồ thị, bản đồ",
+   "cach_lam": "Lưới ô trong đó 31% ô sáng, kèm nhãn chỉ vài ô đặc biệt; lưới ô vuông sáng dần theo giá trị để thể hiện lịch sử; ma trận chấm LED dựng con số lớn kèm thanh tiến trình ngay dưới; lưới chấm đen kín khung biểu diễn con số lớn. Biến thể: 8.144 viên bi, mỗi bi bằng 1 triệu người, dữ liệu dân số 2024.",
+   "lam_bang": [
+    "SVG",
+    "Canvas",
+    "Three.js"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-05",
+    "CL-09",
+    "CL-14"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Số ô sáng làm tròn lệch tỷ lệ thật (ví dụ 31% của 100 ô thì đủ 31 ô, không làm tròn thành 30).",
+   "mau_nguon": [
+    "deedydas-252537",
+    "ratheejaisal-154698",
+    "robvjourney-237474",
+    "melvynx-638493",
+    "rneayan-417829",
+    "sudo-kiran-335993"
+   ],
+   "so_mau": 6,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-SL07",
+   "ten": "Đồng hồ đo bán nguyệt có vùng màu và kim quay",
+   "nhom": "số liệu, đồ thị, bản đồ",
+   "cach_lam": "Đồng hồ bán nguyệt có vùng xanh, vàng, đỏ và kim quay thể hiện mức dùng so với giới hạn; biến thể đồng hồ 0–100 chạy theo thời gian thật 3,4 s, xi-lanh nháy đúng thứ tự nổ.",
+   "lam_bang": [
+    "SVG",
+    "Canvas",
+    "GSAP"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-05",
+    "CL-09",
+    "CL-15"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Kim vượt đích rồi nảy lại (kiểu lò xo vọt lớn) làm giá trị đọc sai; dùng lò xo gần như không vượt.",
+   "mau_nguon": [
+    "daniel-mac8-306214",
+    "dys-hay-749645"
+   ],
+   "so_mau": 2,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-SL08",
+   "ten": "Hai số so sánh trên khung biên lai",
+   "nhom": "số liệu, đồ thị, bản đồ",
+   "cach_lam": "Khung biên lai ở cuối: hai dòng số so sánh (26,000 s và 0.038 s); hoặc thanh ngang so sánh trước và sau; vòng tròn kiểm tra có tick quanh vòng.",
+   "lam_bang": [
+    "SVG",
+    "CSS",
+    "GSAP"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-04",
+    "CL-05",
+    "CL-09"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Hai số khác đơn vị trên cùng một thang làm thanh so sánh sai tỷ lệ.",
+   "mau_nguon": [
+    "deedydas-252537",
+    "prasad-pilla-496049"
+   ],
+   "so_mau": 2,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-SL09",
+   "ten": "Hai dải thời gian song song",
+   "nhom": "số liệu, đồ thị, bản đồ",
+   "cach_lam": "Hai dải thời gian chạy song song: một bên hành trình photon, một bên sự kiện trên Trái Đất cùng thời kỳ; kèm cảnh thu phóng từ cảnh lớn xuống mặt cắt Mặt Trời có nhãn các lớp dọc cạnh trái.",
+   "lam_bang": [
+    "Canvas",
+    "SVG"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-05",
+    "CL-14",
+    "CL-15"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-03"
+   ],
+   "loi_hay_gap": "Hai dải không chung thang thời gian thì so sánh sai.",
+   "mau_nguon": [
+    "astrothewizard-618782"
+   ],
+   "so_mau": 1,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-SL10",
+   "ten": "Đồ thị vị trí theo thời gian cạnh dãy ô minh hoạ nhịp",
+   "nhom": "số liệu, đồ thị, bản đồ",
+   "cach_lam": "Đồ thị vị trí–thời gian đặt cạnh dãy ô minh hoạ nhịp để so chuyển động tuyến tính với chuyển động làm mượt; hoặc đường easing vẽ trực tiếp với hai tay nắm và số timecode. Dùng khi chính video giải thích chuyển động hoặc đạo hàm.",
+   "lam_bang": [
+    "SVG",
+    "Canvas",
+    "GSAP"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-03",
+    "CL-05"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-03",
+    "LM-07"
+   ],
+   "loi_hay_gap": "Trục không ghi đơn vị thì người xem không đọc được độ dốc.",
+   "mau_nguon": [
+    "chatgptastra-807540",
+    "prasenx-693512"
+   ],
+   "so_mau": 2,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-SL11",
+   "ten": "Bản đồ chấm, địa cầu chấm, bản đồ nét tay",
+   "nhom": "số liệu, đồ thị, bản đồ",
+   "cach_lam": "Bản đồ chấm với nhãn ghim nhỏ; địa cầu bằng chấm trên nền đen kèm số đếm và nhãn mono nhỏ; bản đồ nét tay có vùng tô và nhãn chữ viết tay; tuyến đỏ vẽ một nét rồi đóng dấu trên giấy da. Với video lịch sử, bản đồ chỉ làm nền và niên đại phải đối chiếu trước khi giao.",
+   "lam_bang": [
+    "SVG",
+    "Canvas",
+    "Three.js"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-05",
+    "CL-10",
+    "CL-12"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-03"
+   ],
+   "loi_hay_gap": "Dùng tên địa danh hoặc ranh giới sai niên đại ở video lịch sử.",
+   "mau_nguon": [
+    "ratheejaisal-154698",
+    "manuelogomigo-052364",
+    "groundcontrol-230877",
+    "nft-chen-068069",
+    "milos-gis-317580",
+    "dotey-927166"
+   ],
+   "so_mau": 6,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-SL12",
+   "ten": "Sơ đồ Venn hai vòng với vùng giao tô màu",
+   "nhom": "số liệu, đồ thị, bản đồ",
+   "cach_lam": "Sơ đồ Venn hai vòng, vùng giao tô màu nhấn và ghi một từ, thay một đoạn giải thích dài; đặt trên thẻ nền kem xen với thẻ nền đen ghi trích dẫn.",
+   "lam_bang": [
+    "SVG",
+    "CSS"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-09",
+    "CL-11"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Ghi quá một từ trong vùng giao thì không còn thay được đoạn giải thích.",
+   "mau_nguon": [
+    "chrisjdimarco-808196"
+   ],
+   "so_mau": 1,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-SL13",
+   "ten": "Quả bóng lăn theo gradient trên bề mặt hàm số",
+   "nhom": "số liệu, đồ thị, bản đồ",
+   "cach_lam": "Bề mặt hàm số 3D tô màu theo độ cao (cam ở đỉnh, xám ở sườn, xanh ngọc ở đáy); hai nhãn bo viền có đường dẫn chỉ đỉnh và đáy; quả bóng lăn theo gradient thật; bên dưới hiện 'Step n of N', giá trị mất mát và đồ thị mất mát nhỏ vẽ dần; so sánh ba tốc độ học bằng ba quả bóng ba màu (nhỏ thì bò, lớn thì zig-zag, vừa đúng); máy quay quỹ đạo chậm trong lúc công thức hiện dần.",
+   "lam_bang": [
+    "Three.js",
+    "Canvas"
+   ],
+   "chi_phi_may": "vừa",
+   "hop_chat_lieu": [
+    "CL-14",
+    "CL-06"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-03"
+   ],
+   "loi_hay_gap": "Quả bóng đi theo đường vẽ tay thay vì tính gradient thật thì sai điểm kết luận của bài.",
+   "mau_nguon": [
+    "anirockshady-032809"
+   ],
+   "so_mau": 1,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-SL14",
+   "ten": "Số liệu từ mô phỏng tính thật",
+   "nhom": "số liệu, đồ thị, bản đồ",
+   "cach_lam": "Hiện tượng phải được tính, không vẽ: bước ngẫu nhiên là bước ngẫu nhiên thật, số liệu thật (nhiệt độ lõi, quãng đường, thời gian), nói thẳng độ bất định. Cách làm: chạy mô phỏng một lần, ghi mảng trạng thái theo thời gian, hình và bộ đếm cùng đọc mảng đó (hàm của t); bộ đếm số va chạm chạy theo mô phỏng hiện trong hộp tối ở góc trên; âm click phát từ cùng dữ liệu nảy.",
+   "lam_bang": [
+    "Canvas",
+    "Three.js"
+   ],
+   "chi_phi_may": "vừa",
+   "hop_chat_lieu": [
+    "CL-14",
+    "CL-05"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-03"
+   ],
+   "loi_hay_gap": "Mô phỏng dùng hạt giống ngẫu nhiên không cố định thì chạy lại ra kết quả khác.",
+   "mau_nguon": [
+    "astrothewizard-618782",
+    "apoorvjain25-945542",
+    "cagrimbakirci-842869",
+    "cyrilxbt-149036"
+   ],
+   "so_mau": 4,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-SL15",
+   "ten": "Sơ đồ nối nút bằng đường mảnh phát sáng",
+   "nhom": "số liệu, đồ thị, bản đồ",
+   "cach_lam": "Sơ đồ hub: logo ở giữa, đường chấm đỏ toả tới bốn công cụ có nhãn; sơ đồ phân nhánh từ một khối mã sang danh sách sáu mô hình bằng đường mảnh phát sáng, ba dòng kiểm có tick bên dưới; sơ đồ một nút nối ba đích bằng đường cong có thanh tín hiệu; sơ đồ cơ chế nét mảnh có nút phát sáng cam, mỗi chương một sơ đồ.",
+   "lam_bang": [
+    "SVG",
+    "Canvas",
+    "GSAP"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-04",
+    "CL-09"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Đường nối cắt ngang nhãn hoặc ô khác (cần kiểm ô chồng ô và mũi tên cắt ngang trước khi giao).",
+   "mau_nguon": [
+    "melvynx-638493",
+    "ezshine-750731",
+    "ceowinkz-683602",
+    "kloss-xyz-067876"
+   ],
+   "so_mau": 4,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-SL16",
+   "ten": "Trang tóm tắt cuối",
+   "nhom": "số liệu, đồ thị, bản đồ",
+   "cach_lam": "Trang tóm tắt cuối gồm bốn ý đánh số; hoặc bảng tóm tắt 'toàn bộ câu chuyện' đánh số, mục chính tô đỏ dần theo lời; hoặc lưới 3×3 ô cảnh nhỏ nối bằng đường nét đứt về ô giữa, ô xong có tick xanh; danh sách quy tắc có biểu tượng nét mảnh.",
+   "lam_bang": [
+    "SVG",
+    "CSS",
+    "GSAP"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-03",
+    "CL-05",
+    "CL-09",
+    "CL-10"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-03",
+    "LM-07"
+   ],
+   "loi_hay_gap": "Tóm tắt thêm ý chưa nói trong video thì người xem không thấy nguồn.",
+   "mau_nguon": [
+    "linearuncle-971663",
+    "tak3sh8-441895",
+    "daniel-mac8-306214",
+    "henkvaness-975279"
+   ],
+   "so_mau": 4,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-SL17",
+   "ten": "Danh sách bước ba trạng thái, thanh bước và thước đo cạnh vật (bàn thao tác)",
+   "nhom": "số liệu, đồ thị, bản đồ",
+   "cach_lam": "Thanh tiến trình 5–6 bước ở đỉnh hoặc chân khung (bước đang làm tô màu, bước xong có dấu tích); danh sách thành phần ở cột trái: mục đang làm có mũi tên, mục xong có tick, mục chưa tới mờ; thẻ bước cạnh vật thể ghi lượng cỡ lớn kèm thanh đo chạy từ 0 đến đủ lượng; vạch chia (1-2-3 oz) bên cạnh vật để thấy mức dâng theo từng bước. Đây là phần lõi của bố cục bàn thao tác.",
+   "lam_bang": [
+    "Canvas",
+    "SVG",
+    "GSAP"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-09",
+    "CL-03"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Thước đo và mức dâng không khớp nhau thì người xem đọc sai lượng.",
+   "mau_nguon": [
+    "sarut0bisasuke-069973",
+    "ror-fly-880547",
+    "ajith-io-208546",
+    "prasad-pilla-496049"
+   ],
+   "so_mau": 4,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-SL18",
+   "ten": "Chú thích: khung bao, nhãn khác màu và mũi tên cong",
+   "nhom": "số liệu, đồ thị, bản đồ",
+   "cach_lam": "Khung bao quanh phần công thức đang nhấn kèm nhãn nhỏ khác màu giải thích từng phần; chú thích viết tay màu xanh và đỏ có mũi tên cong chỉ đúng vào chuyển động cần xem; hình minh hoạ có nhãn viết tay nối bằng mũi tên cong vào từng bộ phận; khung chọn kiểu Figma có tay cầm và nhãn kích thước quanh từ khoá; nhãn bo viền có đường dẫn tới bộ phận.",
+   "lam_bang": [
+    "SVG",
+    "Canvas",
+    "GSAP"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-03",
+    "CL-04",
+    "CL-07",
+    "CL-09",
+    "CL-10"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-03",
+    "LM-07"
+   ],
+   "loi_hay_gap": "Nhãn bám vật 3D không dùng phép chiếu máy quay thì lệch khi máy quay di chuyển.",
+   "mau_nguon": [
+    "linearuncle-971663",
+    "chatgptastra-807540",
+    "sudo-kiran-254201",
+    "ajith-io-615243",
+    "ann-nnng-852885"
+   ],
+   "so_mau": 5,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-SL19",
+   "ten": "Dựng hình đọc thẳng bảng dữ liệu có nguồn",
+   "nhom": "số liệu, đồ thị, bản đồ",
+   "cach_lam": "Lập bảng nguồn trước khi dựng: mỗi mục ghi kích thước, vật liệu, người sử dụng, nguồn và mức tin cậy; script dựng đọc thẳng bảng nên mọi chi tiết trên màn hình truy được về nguồn. Cùng nguyên tắc với quy tắc của Media: file dữ kiện là nguồn duy nhất cho số trên màn hình. Mẫu khác: đánh dấu 15 chỗ kích thước in không khớp tường vẽ thay vì đoán.",
+   "lam_bang": [
+    "Three.js",
+    "Canvas",
+    "Remotion"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-13",
+    "CL-14",
+    "CL-06"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-03"
+   ],
+   "loi_hay_gap": "Gõ tay số vào mã dựng thì số trên màn hình và file dữ kiện lệch nhau.",
+   "mau_nguon": [
+    "alexalbert-274839",
+    "aayush4soni-644283"
+   ],
+   "so_mau": 2,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-SL20",
+   "ten": "Thẻ chỉ số",
+   "nhom": "số liệu, đồ thị, bản đồ",
+   "cach_lam": "Thẻ chỉ số xếp dọc: số lớn bên trái, mô tả nhỏ bên phải; ba thẻ trắng ngang hàng, mỗi thẻ một huy hiệu số tròn vàng ở góc trên trái; lưới thẻ bento bo góc có một ô nổi lớn bên dưới tiêu đề.",
+   "lam_bang": [
+    "CSS",
+    "SVG",
+    "GSAP"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-04",
+    "CL-09",
+    "CL-16"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Mô tả dài hơn hai dòng làm thẻ mất cân đối.",
+   "mau_nguon": [
+    "wani-shola-459278",
+    "alex-prompter-997524",
+    "gautam-mer1-530003",
+    "sudo-kiran-254201"
+   ],
+   "so_mau": 4,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-3D01",
+   "ten": "Máy quay đẩy thẳng hoặc bay chậm theo đường cong",
+   "nhom": "hình 3D, máy quay, ánh sáng, vật liệu",
+   "cach_lam": "Đẩy thẳng 8 s về một điểm tụ (một điểm tụ, bố cục đối xứng, vật chuyển động ở một bên để có chiều sâu); hoặc bay chậm theo đường cong với tiêu cự rộng, vật lớn ở tiền cảnh trượt qua đầu khung, hạ xuống để nhìn lên vật cao; hoặc đi ngang tầm mắt qua cổng, lên bậc, vào sảnh rồi nhìn ra qua lan can để đưa người xem vào bên trong công trình.",
+   "lam_bang": [
+    "Three.js",
+    "Remotion"
+   ],
+   "chi_phi_may": "vừa",
+   "hop_chat_lieu": [
+    "CL-06",
+    "CL-08",
+    "CL-13"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-03",
+    "LM-05"
+   ],
+   "loi_hay_gap": "Máy quay đi với tốc độ đều làm chuyển động cứng; dùng đường cong tăng giảm tốc (TP-CD02).",
+   "mau_nguon": [
+    "alexalbert-274839",
+    "lexnlin-241739",
+    "buildfastwithai-597035",
+    "1littlecoder-378066",
+    "itsolelehmann-762215"
+   ],
+   "so_mau": 5,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-3D02",
+   "ten": "Máy quay quỹ đạo chậm quanh vật, hoặc khoá chính diện",
+   "nhom": "hình 3D, máy quay, ánh sáng, vật liệu",
+   "cach_lam": "Quỹ đạo chậm quanh bề mặt hoặc vật thể trong lúc chữ và công thức hiện dần; hoặc khoá chính diện như bàn vẽ kỹ thuật, vật xoay còn máy quay đứng yên; vật thể ba chiều đơn giản đặt giữa khung để biểu thị một khái niệm.",
+   "lam_bang": [
+    "Three.js"
+   ],
+   "chi_phi_may": "vừa",
+   "hop_chat_lieu": [
+    "CL-06",
+    "CL-07",
+    "CL-13",
+    "CL-14"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-03",
+    "LM-05"
+   ],
+   "loi_hay_gap": "Quỹ đạo quá nhanh làm nhãn bám vật chạy theo và khó đọc.",
+   "mau_nguon": [
+    "anirockshady-032809",
+    "heyiamnick-119558",
+    "spearwtf-029058"
+   ],
+   "so_mau": 3,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-3D03",
+   "ten": "Camera đẳng cự đứng yên, đồ vật xuất hiện lần lượt",
+   "nhom": "hình 3D, máy quay, ánh sáng, vật liệu",
+   "cach_lam": "Mỗi cảnh một khối đẳng cự (isometric) tròn đặt giữa khung, camera đứng yên, đồ vật xuất hiện lần lượt; thẻ giao diện nhỏ hiện ở chân khung ngay sau khi nhãn giá nổi lên trong cảnh. Biến thể voxel có bóng mềm và che sáng môi trường (ambient occlusion).",
+   "lam_bang": [
+    "Three.js",
+    "GSAP"
+   ],
+   "chi_phi_may": "vừa",
+   "hop_chat_lieu": [
+    "CL-13"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-03"
+   ],
+   "loi_hay_gap": "Camera đứng yên nhưng đồ vật xuất hiện cùng lúc thì mất ý lần lượt.",
+   "mau_nguon": [
+    "felipemoller-936736",
+    "filicroval-168898",
+    "dreyk0o0-165270"
+   ],
+   "so_mau": 3,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-3D04",
+   "ten": "Chuỗi góc máy mỗi góc khoảng 5 s, đổi tiêu cự mỗi lần cắt",
+   "nhom": "hình 3D, máy quay, ánh sáng, vật liệu",
+   "cach_lam": "Chuỗi 6 góc máy mỗi góc khoảng 5 s: toàn cảnh rộng, cận chi tiết cơ khí, cận mặt, góc thấp nhìn từ sau, đi theo từ trên cao; mỗi lần cắt đổi tiêu cự và hướng.",
+   "lam_bang": [
+    "Three.js",
+    "Remotion"
+   ],
+   "chi_phi_may": "vừa",
+   "hop_chat_lieu": [
+    "CL-08",
+    "CL-13"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-05"
+   ],
+   "loi_hay_gap": "Cắt giữa hai góc cùng hướng và cùng tiêu cự trông như lỗi nhảy hình.",
+   "mau_nguon": [
+    "axtonliu-290566"
+   ],
+   "so_mau": 1,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-3D05",
+   "ten": "Độ sâu trường ảnh và đổi tiêu điểm",
+   "nhom": "hình 3D, máy quay, ánh sáng, vật liệu",
+   "cach_lam": "Cận cảnh nông: một vật chiếm khoảng 70% khung, các vật khác nhoè; đổi tiêu điểm từ vật gần sang vật xa trong khoảng 0,5 s; nền nhoè chỉ vật chính nét. Trong Three.js dùng nhoè theo khoảng cách tới mặt phẳng nét (hậu kỳ); trong Blender Cycles tính thật, đo của Media là 13 s máy mỗi khung (412 khung mất 89 phút, bản chỉ đạo 27/10/2026).",
+   "lam_bang": [
+    "Three.js",
+    "FFmpeg"
+   ],
+   "chi_phi_may": "vừa",
+   "hop_chat_lieu": [
+    "CL-08",
+    "CL-13"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-03",
+    "LM-05"
+   ],
+   "loi_hay_gap": "Độ sâu trường ảnh tính thật trong Blender tốn thời gian máy mỗi khung; bật khi thật sự cần.",
+   "mau_nguon": [
+    "anilraok-009118",
+    "axtonliu-290566",
+    "chudry223-081860",
+    "daniel-haida-636937"
+   ],
+   "so_mau": 4,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-3D06",
+   "ten": "Tách lớp, hình nổ và thu nhỏ theo bậc quy mô",
+   "nhom": "hình 3D, máy quay, ánh sáng, vật liệu",
+   "cach_lam": "Tách lớp: chip chia thành các tầng (nắp đồng, lớp bạc, khuôn chip) tách dần theo chiều đứng, nhãn có đường dẫn tới từng tầng. Hình nổ: mỗi bộ phận trượt ra kèm tên trên nhãn, bấm lại thì thu về; cắt dọc ống kính cho thấy tia sáng hội tụ trên cảm biến; bóc từng tầng động cơ kèm giải thích hút, nén, đốt, thổi. Thu nhỏ theo bậc quy mô: toàn nhà (có cây thấp-poly để thấy tỷ lệ), hàng giá máy ngang tầm, một giá, một khay, một chip.",
+   "lam_bang": [
+    "Three.js",
+    "GSAP"
+   ],
+   "chi_phi_may": "vừa",
+   "hop_chat_lieu": [
+    "CL-06",
+    "CL-07",
+    "CL-08"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-03",
+    "LM-05"
+   ],
+   "loi_hay_gap": "Các tầng tách ra không có nhãn bám vật thì người xem không biết tầng nào là gì.",
+   "mau_nguon": [
+    "mdaman010-111079",
+    "konstantinsaifo-501736",
+    "aichrislee-408244",
+    "0xspikez-483865",
+    "mrkindey-267498"
+   ],
+   "so_mau": 5,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-3D07",
+   "ten": "Khoá màu theo chức năng và hạt chạy dọc ống theo chiều dòng",
+   "nhom": "hình 3D, máy quay, ánh sáng, vật liệu",
+   "cach_lam": "Màu theo chức năng, hiện trong bảng chú giải ở góc trên phải: điện cam hoặc vàng, nhiệt đỏ hồng, làm mát xanh ngọc; mọi ống, mũi tên và hạt dùng đúng màu đó xuyên suốt video. Hạt nhỏ chạy dọc ống theo chiều dòng để thể hiện điện, nhiệt hoặc nước; nhiệt thoát ra là các đường lượn đỏ bay lên từ mặt trên toà nhà. Màu nền thẻ cũng có thể mã hoá nhóm hoặc giai đoạn.",
+   "lam_bang": [
+    "Three.js",
+    "Canvas"
+   ],
+   "chi_phi_may": "vừa",
+   "hop_chat_lieu": [
+    "CL-06",
+    "CL-07",
+    "CL-13",
+    "CL-14"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-03"
+   ],
+   "loi_hay_gap": "Một màu dùng cho hai chức năng khác nhau trong cùng video thì chú giải mất nghĩa.",
+   "mau_nguon": [
+    "mdaman010-111079",
+    "triglyceee-161719"
+   ],
+   "so_mau": 2,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-3D08",
+   "ten": "Cảnh thiên nhiên: giờ vàng, sương khí quyển, mặt nước",
+   "nhom": "hình 3D, máy quay, ánh sáng, vật liệu",
+   "cach_lam": "Giờ vàng: mặt trời thấp có bloom (quầng sáng), mây khối nhận ánh vàng cam từ bên, bóng dài nằm ngang. Phối cảnh khí quyển: sương mù màu cam nhạt tăng theo khoảng cách làm núi xa nhạt và xanh dần. Hoàng hôn sang đêm đổi gradient trời cam → tím → xanh đen. Mặt nước cộng 9 nhóm sóng ngang có biên độ và tần số khác nhau; phản chiếu bóng theo trục dọc, bóng kéo dài thẳng xuống.",
+   "lam_bang": [
+    "Three.js",
+    "WebGL shader"
+   ],
+   "chi_phi_may": "vừa",
+   "hop_chat_lieu": [
+    "CL-08",
+    "CL-12",
+    "CL-13"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-03",
+    "LM-05"
+   ],
+   "loi_hay_gap": "Bloom quá mạnh làm mất chi tiết trong vùng sáng.",
+   "mau_nguon": [
+    "lexnlin-241739",
+    "axtonliu-290566",
+    "ishuagra02-678129",
+    "demitiyageekzen-818523"
+   ],
+   "so_mau": 4,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-3D09",
+   "ten": "Ba vật cơ bản trên sàn phản chiếu mờ dần",
+   "nhom": "hình 3D, máy quay, ánh sáng, vật liệu",
+   "cach_lam": "Ba vật cơ bản (cầu xanh, lập phương đỏ cam, tấm vàng) đặt trên sàn bóng tối, đèn chính từ trên trái; sàn phản chiếu màu vật thể thành vệt mờ dần (bản sao lật mờ dần theo khoảng cách tới sàn).",
+   "lam_bang": [
+    "Three.js",
+    "CSS"
+   ],
+   "chi_phi_may": "vừa",
+   "hop_chat_lieu": [
+    "CL-06",
+    "CL-13"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-03"
+   ],
+   "loi_hay_gap": "Phản chiếu không mờ dần thì sàn phản chiếu đều ở mọi khoảng cách và không thể hiện được độ sâu.",
+   "mau_nguon": [
+    "lukasersil-726495",
+    "twoclipping-000267"
+   ],
+   "so_mau": 2,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-3D10",
+   "ten": "Thẻ giao diện nghiêng nhẹ trong không gian 3D, băng chuyền thẻ",
+   "nhom": "hình 3D, máy quay, ánh sáng, vật liệu",
+   "cach_lam": "Thẻ giao diện nghiêng nhẹ trong không gian 3D với bóng mềm, cảnh nào cũng có một thẻ chính. Băng chuyền: 10–18 thẻ dọc xếp trên một vòng cung bằng perspective, thẻ giữa lớn nhất, sàn phản chiếu; cú quét theo TP-CD02. Biến thể: thẻ ảnh chụp nghiêng phối cảnh nhẹ trôi qua khung; ba điện thoại xếp cánh quạt; ảnh chụp trang thật đặt vào khung điện thoại hoặc trình duyệt thay cho dựng giao diện giả.",
+   "lam_bang": [
+    "CSS",
+    "Three.js",
+    "GSAP"
+   ],
+   "chi_phi_may": "vừa",
+   "hop_chat_lieu": [
+    "CL-02",
+    "CL-04",
+    "CL-16"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-03"
+   ],
+   "loi_hay_gap": "Dùng CSS 3D lật vật lớn thì viền răng cưa; lật 3D lớn nên để trong WebGL.",
+   "mau_nguon": [
+    "sachaarbonel-673648",
+    "ezshine-750731",
+    "twoclipping-000267",
+    "viktoroddy-402509",
+    "redpersongpt-284430",
+    "wani-shola-459278"
+   ],
+   "so_mau": 6,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-3D11",
+   "ten": "Vật liệu Fresnel và vật phát sáng",
+   "nhom": "hình 3D, máy quay, ánh sáng, vật liệu",
+   "cach_lam": "Lá chắn: cầu bán trong có shader Fresnel (viền sáng khi nhìn nghiêng) cộng hoạ tiết lưới, hiện gợn tròn lan ra từ điểm trúng. Thân tàu: nhiều tấm hộp lặp, ô cửa là điểm sáng vàng xếp thẳng hàng phát qua emissive (vật liệu tự phát sáng) để giữ quy mô lớn mà không tốn mô hình. Hợp Media thấp.",
+   "lam_bang": [
+    "Three.js",
+    "WebGL shader"
+   ],
+   "chi_phi_may": "vừa",
+   "hop_chat_lieu": [
+    "CL-13",
+    "CL-12"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-03"
+   ],
+   "loi_hay_gap": "Số vật phát sáng lớn làm bloom bao phủ cả cảnh.",
+   "mau_nguon": [
+    "0xchuckstock-879327"
+   ],
+   "so_mau": 1,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-3D12",
+   "ten": "Cảnh 3D thủ tục, không mô hình ngoài",
+   "nhom": "hình 3D, máy quay, ánh sáng, vật liệu",
+   "cach_lam": "Vật thể 3D sinh hoàn toàn bằng mã. Cây hoa anh đào là cầu nhiều mặt nhẹ, thông là hình nón, rải ngẫu nhiên nhưng chừa lối đi để có chiều sâu mà không tốn mô hình; cột đèn là điểm sáng vàng lớn, cửa sổ là điểm sáng nhỏ. Khuôn câu lệnh mẫu: 'everything procedural, no imported 3D models'.",
+   "lam_bang": [
+    "Three.js"
+   ],
+   "chi_phi_may": "vừa",
+   "hop_chat_lieu": [
+    "CL-06",
+    "CL-13"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-03"
+   ],
+   "loi_hay_gap": "Rải ngẫu nhiên không có hạt giống cố định thì mỗi lần dựng ra cảnh khác.",
+   "mau_nguon": [
+    "buildfastwithai-597035",
+    "ved-cj-066575",
+    "thusatharan-640926",
+    "mdaman010-610173",
+    "rubenssoto-ai-802657"
+   ],
+   "so_mau": 5,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-3D13",
+   "ten": "Viền hoạt hình (toon outline) bằng hậu kỳ pháp tuyến và độ sâu",
+   "nhom": "hình 3D, máy quay, ánh sáng, vật liệu",
+   "cach_lam": "Vật 3D tô 3–4 bậc (MeshToonMaterial) với ba đèn (chính, trời, viền). Viền vẽ bằng hậu kỳ: render bản đồ pháp tuyến và độ sâu rồi shader kẻ nét; viền ngoài dày, viền nối chi tiết mỏng, đồng đều; siêu lấy mẫu 1,5 lần.",
+   "lam_bang": [
+    "Three.js",
+    "WebGL shader"
+   ],
+   "chi_phi_may": "vừa",
+   "hop_chat_lieu": [
+    "CL-13"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-03"
+   ],
+   "loi_hay_gap": "Không dùng cách phóng to mặt sau màu đen vì nét không đều và gãy ở góc; ngưỡng độ sâu phải nới, mối nối dựa chủ yếu vào pháp tuyến.",
+   "mau_nguon": [
+    "op7418-814408",
+    "op7418-818226",
+    "op7418-021491"
+   ],
+   "so_mau": 3,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-3D14",
+   "ten": "Mô phỏng vật lý tính thật",
+   "nhom": "hình 3D, máy quay, ánh sáng, vật liệu",
+   "cach_lam": "Mô phỏng thật chứ không giả hình: lửa là chất lưu 3D trên GPU, 96 khung mỗi giây ở 1080p, tự chấm hình 40 lần; 110.000 vật cứng bằng thuật toán AVBD trên WebGPU; 8.144 viên bi mà mỗi tiếng clink khớp một va chạm mô phỏng; 108.000 hạt cát, nước, dầu, lửa, dung nham ở 60 khung mỗi giây. Chạy mô phỏng một lần, ghi trạng thái, rồi dựng khung từ mảng đã ghi.",
+   "lam_bang": [
+    "Three.js",
+    "WebGL shader"
+   ],
+   "chi_phi_may": "nặng",
+   "hop_chat_lieu": [
+    "CL-14",
+    "CL-12"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-03"
+   ],
+   "loi_hay_gap": "Mô phỏng chạy theo thời gian thật của trình duyệt thì dựng khung nào cũng ra kết quả khác; phải chạy theo bước cố định.",
+   "mau_nguon": [
+    "nathanwilbanks-981110",
+    "nybobs-680050",
+    "rneayan-417829",
+    "cyrilxbt-149036",
+    "pagustafsson-566609"
+   ],
+   "so_mau": 5,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-3D15",
+   "ten": "Shader tính từng điểm ảnh (raymarching, kính màu)",
+   "nhom": "hình 3D, máy quay, ánh sáng, vật liệu",
+   "cach_lam": "Fragment shader raymarch (dò tia) với bóng mềm, che sáng môi trường, phản chiếu bóng, sương có tia sáng, độ sâu trường ảnh, nhoè chuyển động, bloom; Mandelbox thêm một cấp fractal mỗi cú kick; dựng 37 s 1080p60 offline. Cả bức tranh là một shader WebGL2. Kính màu: ánh sáng chiếu lên sàn tính từ cùng hoạ tiết, bóng sàn phản ánh chính xác lỗ nào đã mở.",
+   "lam_bang": [
+    "WebGL shader",
+    "Three.js"
+   ],
+   "chi_phi_may": "nặng",
+   "hop_chat_lieu": [
+    "CL-12",
+    "CL-14"
+   ],
+   "hop_cach_lam": [
+    "LM-03"
+   ],
+   "loi_hay_gap": "Dựng thời gian thực thì rớt khung; phải dựng offline (chụp từng khung).",
+   "mau_nguon": [
+    "xanares-738984",
+    "demitiyageekzen-818523",
+    "agioyaz-397647",
+    "agioyaz-986461",
+    "juancarlos17626-382690"
+   ],
+   "so_mau": 5,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-3D16",
+   "ten": "Khung 2.5D ghép lớp theo bản đồ độ sâu",
+   "nhom": "hình 3D, máy quay, ánh sáng, vật liệu",
+   "cach_lam": "Ảnh phẳng được ước lượng độ sâu (Depth Anything V2) rồi ghép lớp theo khoảng cách thật, máy quay lỗ kim theo tiêu cự thật, thị sai từng điểm ảnh, mưa 3D, ánh sáng thể tích; nhân vật biến dạng lưới để thở và bay tóc, tư thế đổi một nhịp hai khung; tái dựng video thành hạt có độ sâu.",
+   "lam_bang": [
+    "Three.js",
+    "Python/numpy"
+   ],
+   "chi_phi_may": "nặng",
+   "hop_chat_lieu": [
+    "CL-12",
+    "CL-15"
+   ],
+   "hop_cach_lam": [
+    "LM-06"
+   ],
+   "loi_hay_gap": "Bản đồ độ sâu sai ở mép vật làm viền vật bị kéo giãn khi máy quay dịch.",
+   "mau_nguon": [
+    "zhu185178-255661",
+    "pluvio9yte-662953",
+    "mochi-agi-421448",
+    "tanabe-fragm-706979"
+   ],
+   "so_mau": 4,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-HK01",
+   "ten": "Hạt nhiễu phim, độ đục tối đa khoảng 6%",
+   "nhom": "hậu kỳ, lớp hoàn thiện",
+   "cach_lam": "Hạt mới ở mỗi khung (không dùng một ảnh hạt cố định); độ đục tối đa khoảng 6%; dựng bằng numpy sau khi chụp khung hoặc bằng lớp canvas. Hạt nhẹ ở cuối khâu hoàn thiện; hạt phim kèm CRT cho phim phóng kiểu retro. Ngưỡng 6% rút từ bài học mẫu lịch sử AI 60 giây của Media: lớp hạt nhiễu làm file xuất 134 MB (bản chỉ đạo 27/10/2026).",
+   "lam_bang": [
+    "Canvas",
+    "FFmpeg",
+    "Python/numpy"
+   ],
+   "chi_phi_may": "vừa",
+   "hop_chat_lieu": [
+    "CL-06",
+    "CL-08",
+    "CL-10",
+    "CL-12",
+    "CL-13"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-03",
+    "LM-05"
+   ],
+   "loi_hay_gap": "Hạt dày hoặc độ đục cao làm file lớn và mất chữ nhỏ khi nén; hạt cố định (một ảnh) hiện rõ là lớp phủ không đổi giữa các khung.",
+   "mau_nguon": [
+    "notdwd-998633",
+    "jake11moran-414633",
+    "twoclipping-041659",
+    "johnsavage-ai-427263"
+   ],
+   "so_mau": 4,
+   "tham_so_tu": "mẫu + đề xuất",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-HK02",
+   "ten": "Vignette, halation và sắc sai viền",
+   "nhom": "hậu kỳ, lớp hoàn thiện",
+   "cach_lam": "Vignette (tối mép) khoảng 0,65 ở góc; halation (quầng đỏ cam quanh mép sáng); viền sắc sai 1 px kẹp ở mép; dựng bằng numpy sau khi chụp khung. Phối với viền tối ở góc của hậu kỳ phim cũ (TP-HK07).",
+   "lam_bang": [
+    "Python/numpy",
+    "FFmpeg",
+    "Canvas"
+   ],
+   "chi_phi_may": "vừa",
+   "hop_chat_lieu": [
+    "CL-06",
+    "CL-08",
+    "CL-13"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-03",
+    "LM-05"
+   ],
+   "loi_hay_gap": "Vignette mạnh làm tối nhãn ở góc (nhãn bốn góc của TP-CH16).",
+   "mau_nguon": [
+    "notdwd-998633",
+    "alexalbert-274839",
+    "twoclipping-041659"
+   ],
+   "so_mau": 3,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-HK03",
+   "ten": "Tách RGB và glitch có kiểm soát",
+   "nhom": "hậu kỳ, lớp hoàn thiện",
+   "cach_lam": "Lệch in magenta và xanh 2–4 px chỉ ở khung nhấn mạnh; glitch 1–2 khung, chỉ đặt trên cú cắt thật và luôn kèm tiếng click; chữ khổng lồ tách kênh RGB trên nền kem để ngắt nhịp giữa các câu. Dày đặc chỉ dùng trong MV: dải ngang lệch, tách RGB đúng lúc nhịp rơi, hồi lại trước nhịp sau. Nhóm 'tối giản cao cấp' cấm tách RGB.",
+   "lam_bang": [
+    "Canvas",
+    "CSS",
+    "FFmpeg"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-01",
+    "CL-11",
+    "CL-12"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Dùng glitch ở chỗ không có cú cắt thật làm người xem tưởng video lỗi; dùng ở phong cách tối giản bị coi là sai chuẩn.",
+   "mau_nguon": [
+    "techhalla-498547",
+    "notdwd-998633",
+    "pound75423-464968",
+    "kloss-xyz-941143",
+    "raphaelaubryy-687877"
+   ],
+   "so_mau": 5,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-HK04",
+   "ten": "Nhoè chuyển động thật bằng khung phụ",
+   "nhom": "hậu kỳ, lớp hoàn thiện",
+   "cach_lam": "Mỗi khung xuất ra là trung bình của 3–8 khung phụ: chụp tại t−1/240, t, t+1/240 s rồi FFmpeg trộn bằng tmix ở 60 khung mỗi giây. 4 khung phụ có thể bị bóng mờ ở cú quét nhanh thì dùng 8. Chữ và hình đứng yên giữ nét, chỉ phần chuyển động nhoè. Bộ đếm phải đọc thời gian của khung chính. Đo của Media: nhoè ở 60 khung mỗi giây gấp khoảng 8 lần chi phí; mẫu lịch sử AI 60 giây mất 23,3 phút máy (bản chỉ đạo 27/10/2026). Chỉ bật khi có chuyển động nhanh.",
+   "lam_bang": [
+    "FFmpeg",
+    "Canvas",
+    "Remotion"
+   ],
+   "chi_phi_may": "nặng",
+   "hop_chat_lieu": [
+    "CL-02",
+    "CL-05",
+    "CL-11",
+    "CL-13",
+    "CL-16"
+   ],
+   "hop_cach_lam": [
+    "LM-03"
+   ],
+   "loi_hay_gap": "Bật nhoè ở cảnh gần như tĩnh chỉ tốn máy mà không đổi hình; chữ số của bộ đếm đọc theo khung phụ thì nhoè.",
+   "mau_nguon": [
+    "twoclipping-000267",
+    "twoclipping-551116",
+    "annacher-433425",
+    "brainextends-606193",
+    "demonugc-525162",
+    "diamai-157697"
+   ],
+   "so_mau": 6,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-HK05",
+   "ten": "Bloom và quầng sáng",
+   "nhom": "hậu kỳ, lớp hoàn thiện",
+   "cach_lam": "Quầng sáng mờ nở rộng phía sau biểu tượng khi ghép xong; quầng sáng tím mờ quanh logo; quầng cam sau điện thoại ở cảnh tối; bloom ở mặt trời thấp và ở vụ nổ; chữ có nhiễu màu và quầng sáng chuyển từ mờ nhiễu sang rõ. Mẫu giao diện cao cấp cấm quầng và lens flare, nên chọn theo phong cách.",
+   "lam_bang": [
+    "Canvas",
+    "Three.js",
+    "CSS"
+   ],
+   "chi_phi_may": "vừa",
+   "hop_chat_lieu": [
+    "CL-12",
+    "CL-13",
+    "CL-16"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-03"
+   ],
+   "loi_hay_gap": "Quầng sáng chồng lên chữ làm chữ mất tương phản.",
+   "mau_nguon": [
+    "mounnna-497266",
+    "gautam-mer1-530003",
+    "redpersongpt-284430",
+    "johnsavage-ai-427263",
+    "lexnlin-241739",
+    "xanares-738984"
+   ],
+   "so_mau": 6,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-HK06",
+   "ten": "Bokeh bằng điểm tròn phát sáng",
+   "nhom": "hậu kỳ, lớp hoàn thiện",
+   "cach_lam": "Bokeh bằng các điểm tròn phát sáng nhiều cỡ, trộn cộng sáng, độ mờ tăng theo khoảng cách tới tiêu điểm; xanh và cam xen kẽ ở nền; bokeh tròn tự viết với độ mở đóng dần.",
+   "lam_bang": [
+    "Canvas",
+    "Three.js"
+   ],
+   "chi_phi_may": "vừa",
+   "hop_chat_lieu": [
+    "CL-12",
+    "CL-13"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-03"
+   ],
+   "loi_hay_gap": "Điểm bokeh quá đậm lấn chủ thể.",
+   "mau_nguon": [
+    "anilraok-009118",
+    "tanabe-fragm-322001",
+    "zhu185178-255661"
+   ],
+   "so_mau": 3,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-HK07",
+   "ten": "Hậu kỳ phim cũ",
+   "nhom": "hậu kỳ, lớp hoàn thiện",
+   "cach_lam": "Chuyển đơn sắc, thêm hạt, vết bụi ngẫu nhiên, nhấp nháy độ sáng 1–3%, viền tối ở góc; xuất ở 16 khung mỗi giây rồi nội suy lên 30.",
+   "lam_bang": [
+    "Python/numpy",
+    "FFmpeg"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-13",
+    "CL-15"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-03"
+   ],
+   "loi_hay_gap": "Nội suy từ 16 lên 30 khung tạo vệt ảnh kép ở chuyển động nhanh.",
+   "mau_nguon": [
+    "alexalbert-274839"
+   ],
+   "so_mau": 1,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-HK08",
+   "ten": "Nét bút chì, giấy và bút sáp",
+   "nhom": "hậu kỳ, lớp hoàn thiện",
+   "cach_lam": "Chế độ PAPER: nét bút chì lấy mẫu lại và đẩy lệch bởi sóng sin đổi pha 8 lần mỗi giây, vẽ hai lượt (đủ bề rộng ở độ đục 90%, nửa bề rộng ở 40% với nhiều rung hơn), đục vân giấy khỏi nét, nhân lên nền giấy có lưới xanh. Bút sáp có vân hạt, viền rung. Lệch sắc chừng mực trên nét bút chì. Giấy kem làm nền, dấu căn lề ở bốn góc.",
+   "lam_bang": [
+    "Canvas",
+    "SVG"
+   ],
+   "chi_phi_may": "vừa",
+   "hop_chat_lieu": [
+    "CL-03",
+    "CL-10",
+    "CL-15"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-03"
+   ],
+   "loi_hay_gap": "Nét rung quá mạnh làm chữ viết tay khó đọc; nét hoàn hảo thì không còn là nét tay.",
+   "mau_nguon": [
+    "heyiamnick-119558",
+    "0xcodez-474136",
+    "groundcontrol-230877",
+    "tak3sh8-441895"
+   ],
+   "so_mau": 4,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-HK09",
+   "ten": "Kiểu bản vẽ kỹ thuật (blueprint) và hologram",
+   "nhom": "hậu kỳ, lớp hoàn thiện",
+   "cach_lam": "BLUEPRINT: nét trắng 3–4 px, cạnh khuất nét đứt. HOLOGRAM: đường quét ngang bước 8 px, độ dày theo độ sáng, không quầng. Cả hai khoá chính diện như bàn vẽ kỹ thuật.",
+   "lam_bang": [
+    "Canvas",
+    "SVG"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-03",
+    "CL-06"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-03"
+   ],
+   "loi_hay_gap": "Đường quét quá dày làm chữ trong hologram khó đọc.",
+   "mau_nguon": [
+    "heyiamnick-119558"
+   ],
+   "so_mau": 1,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-HK10",
+   "ten": "Kính lỏng (liquid glass) bằng SVG feImage và feDisplacementMap",
+   "nhom": "hậu kỳ, lớp hoàn thiện",
+   "cach_lam": "Mỗi phần tử kính giữ bản sao cảnh phía sau, lọc bằng bản đồ dịch chuyển (trường khoảng cách hình chữ nhật bo góc) qua ba feDisplacementMap ở ba tỷ lệ hơi khác nhau để viền có sắc sai, thêm đèn viền. Chữ kính dựng từ trường khoảng cách vẽ trên canvas. Một số mẫu cấm hẳn glassmorphism (kính mờ).",
+   "lam_bang": [
+    "SVG",
+    "CSS",
+    "Canvas"
+   ],
+   "chi_phi_may": "vừa",
+   "hop_chat_lieu": [
+    "CL-02",
+    "CL-16"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-03"
+   ],
+   "loi_hay_gap": "backdrop-filter: url() đọc sai bản đồ dịch chuyển trong Chromium, nên phải sao chép cảnh thay vì dùng nó.",
+   "mau_nguon": [
+    "twoclipping-496100",
+    "twoclipping-747965",
+    "thejohnnyhuy-282154",
+    "techhalla-498547"
+   ],
+   "so_mau": 4,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-HK11",
+   "ten": "Pixel hoá: canvas ẩn phân giải thấp, phóng bội số nguyên",
+   "nhom": "hậu kỳ, lớp hoàn thiện",
+   "cach_lam": "Vẽ vào canvas ngoài màn hình ở độ phân giải cố định (128×96), phóng lên theo hệ số nguyên lớn nhất, image-rendering: pixelated; bảng màu cố định khoảng 24 màu; mọi toạ độ làm tròn thành số nguyên; hạt đổi chỉ số màu từ trắng sang màu phép sang tối trước khi biến mất. Phối với TP-CD10 để tư thế lượng tử hoá.",
+   "lam_bang": [
+    "Canvas"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-15"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-03"
+   ],
+   "loi_hay_gap": "Phóng theo hệ số không nguyên làm pixel to nhỏ không đều.",
+   "mau_nguon": [
+    "zacxbt-944604",
+    "majidmanzarpour-927543",
+    "xodud-rkd-160324",
+    "twoclipping-041659"
+   ],
+   "so_mau": 4,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-HK12",
+   "ten": "Hạt rải nền và hạt bung",
+   "nhom": "hậu kỳ, lớp hoàn thiện",
+   "cach_lam": "Hạt sáng nhỏ rải như chòm sao ở cảnh số lớn và cảnh kết; hạt vàng bung từ tâm khi mở khoá rồi trôi chậm lên và mờ dần trong khoảng 2 s; dải hạt kiểu ruy-băng chạy sau vật chuyển động để chỉ hướng đi; hệ hạt Canvas 2D tự viết có trọng lực, lực cản, vòng đời, trộn cộng sáng, ba kiểu bay (hút vào, theo đường cong, quay quanh). Nhóm giao diện cao cấp cấm hạt.",
+   "lam_bang": [
+    "Canvas",
+    "Three.js"
+   ],
+   "chi_phi_may": "vừa",
+   "hop_chat_lieu": [
+    "CL-12",
+    "CL-13"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-03"
+   ],
+   "loi_hay_gap": "Hạt dùng ở nền chữ làm chữ nhỏ khó đọc.",
+   "mau_nguon": [
+    "viktoroddy-402509",
+    "bthreeagency-827092",
+    "ishuagra02-678129",
+    "op7418-814408",
+    "lukasersil-726495"
+   ],
+   "so_mau": 5,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-HK13",
+   "ten": "Khung chứa bo góc cắt gọn mọi cú phóng",
+   "nhom": "hậu kỳ, lớp hoàn thiện",
+   "cach_lam": "Khung tối bo góc đặt trên nền gradient một màu; mọi cảnh và mọi cú phóng to cắt gọn theo khung.",
+   "lam_bang": [
+    "CSS",
+    "Canvas"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-04",
+    "CL-16"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Nội dung phóng tràn ra ngoài khung bo góc nếu không clip.",
+   "mau_nguon": [
+    "brainextends-606193"
+   ],
+   "so_mau": 1,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-HK14",
+   "ten": "Vụ nổ và sóng lan",
+   "nhom": "hậu kỳ, lớp hoàn thiện",
+   "cach_lam": "Vụ nổ: quả cầu cam phát sáng kèm vòng sóng trắng lan ra trong 0,5–1 s, hậu cảnh tối lại khi bloom lên; biến thể quả cầu sáng phóng to nhanh rồi mờ trong khoảng 1 s, khói đen theo sau; gợn tròn lan ra từ điểm trúng.",
+   "lam_bang": [
+    "Canvas",
+    "Three.js"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-12",
+    "CL-13"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-03"
+   ],
+   "loi_hay_gap": "Vòng sóng lan ra với tốc độ đều thiếu cảm giác tắt dần; nên giảm tốc và mờ dần khi lan (đề xuất).",
+   "mau_nguon": [
+    "0xchuckstock-879327",
+    "ved-cj-066575"
+   ],
+   "so_mau": 2,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-AT01",
+   "ten": "Lưới nhịp theo BPM và cường độ theo đoạn bài",
+   "nhom": "âm thanh đồng bộ",
+   "cach_lam": "Nêu BPM làm lưới thời gian (120 BPM chiếm 23 trong 31 prompt nêu BPM): 120 BPM, mỗi phách một việc; 60 phách là 15 ô nhịp dài 2 s, chuyển động bắt đầu sớm 0,05 s để đáp đúng phách; 128 BPM, 8 ô nhịp, mỗi cảnh một ô 1,875 s. Cường độ hiệu ứng theo đoạn bài: khoảng 40% đoạn mở đầu, 70% đoạn thường, 100% điệp khúc; không dùng cùng một tư thế ở hai nhịp liền kề; đoạn năng lượng thấp dùng cảnh tĩnh. Video thuyết minh của Media đi theo lời đọc, không dùng lưới BPM.",
+   "lam_bang": [
+    "Remotion",
+    "Canvas",
+    "Python/numpy"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-01",
+    "CL-11",
+    "CL-12",
+    "CL-16"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Hình bắt đầu đúng nhịp thay vì sớm 0,05 s thì thấy trễ so với âm.",
+   "mau_nguon": [
+    "0xnicc0-516612",
+    "heyiamnick-119558",
+    "ai9app-989009",
+    "pound75423-464968",
+    "koushikde-937635"
+   ],
+   "so_mau": 5,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-AT02",
+   "ten": "Đặt tiếng theo đỉnh biên độ đo được",
+   "nhom": "âm thanh đồng bộ",
+   "cach_lam": "Đặt hiệu ứng tiếng sao cho đỉnh biên độ đo được (không phải đầu file) trùng khung hành động; tiếng nhỏ hơn nhạc.",
+   "lam_bang": [
+    "FFmpeg",
+    "Python/numpy"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-01",
+    "CL-04",
+    "CL-16"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Đặt theo đầu file thì tiếng lệch hình do phần mở đầu im lặng của file.",
+   "mau_nguon": [
+    "twoclipping-496100",
+    "twoclipping-551116",
+    "annacher-433425",
+    "ultimaxbt-549714",
+    "twoclipping-000267"
+   ],
+   "so_mau": 5,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-AT03",
+   "ten": "Chuẩn hoá âm lượng −14 LUFS",
+   "nhom": "âm thanh đồng bộ",
+   "cach_lam": "Chuẩn hoá loudnorm −14 LUFS, −2 dBTP, đo lại sau khi mã hoá AAC (192 kbps); một nhóm chọn −16 LUFS; hiệu ứng không bao giờ to hơn nhạc, không méo.",
+   "lam_bang": [
+    "FFmpeg"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-01",
+    "CL-02",
+    "CL-03",
+    "CL-04",
+    "CL-05",
+    "CL-06",
+    "CL-07",
+    "CL-08",
+    "CL-09",
+    "CL-10",
+    "CL-11",
+    "CL-12",
+    "CL-13",
+    "CL-14",
+    "CL-15",
+    "CL-16"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Đo trước khi mã hoá AAC thì giá trị sau mã hoá lệch.",
+   "mau_nguon": [
+    "0xnicc0-516612",
+    "ik-builds-585923",
+    "tkz-aiart-864352",
+    "tanabe-fragm-322001",
+    "twoclipping-000267"
+   ],
+   "so_mau": 5,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-AT04",
+   "ten": "Hạ nhạc khi có giọng",
+   "nhom": "âm thanh đồng bộ",
+   "cach_lam": "Giọng dẫn nhạc 10–15 dB; hạ nhạc −18 dB lúc đang nói; cú nhấn đặt đúng khung hành động; hình không dừng khi người dẫn ngừng nói.",
+   "lam_bang": [
+    "FFmpeg",
+    "Python/numpy"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-01",
+    "CL-02",
+    "CL-03",
+    "CL-04",
+    "CL-05",
+    "CL-06",
+    "CL-07",
+    "CL-08",
+    "CL-09",
+    "CL-10",
+    "CL-11",
+    "CL-12",
+    "CL-13",
+    "CL-14",
+    "CL-15",
+    "CL-16"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Hạ nhạc theo đường thẳng cứng làm nghe thấy nhạc bị nén; dùng ducking có thời gian vào, ra.",
+   "mau_nguon": [
+    "notdwd-998633",
+    "tetsu-tetsu333-576886",
+    "astrothewizard-618782"
+   ],
+   "so_mau": 3,
+   "tham_so_tu": "mẫu + đề xuất",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-AT05",
+   "ten": "Tiếng ít mà đúng theo hành động",
+   "nhom": "âm thanh đồng bộ",
+   "cach_lam": "Một tiếng whoosh ngắn mềm cho mỗi lần đổi cảnh thật; click và pop nhỏ chỉ cho hành động thật trên màn hình; một tiếng nhẹ cho mỗi phần tử hiện ra và im lặng ngoài ra; mỗi hiệu ứng đặt cao hơn nhạc một chút trong dải tần riêng; luôn xuất thêm bản chỉ có nhạc.",
+   "lam_bang": [
+    "FFmpeg",
+    "Python/numpy"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-04",
+    "CL-16"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Tiếng ở mọi chuyển động làm người nghe mệt; whoosh quá dài che giọng.",
+   "mau_nguon": [
+    "everestchris6-399895",
+    "aschapmann-724497",
+    "cipherwrk-451155",
+    "ik-builds-585923"
+   ],
+   "so_mau": 4,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-AT06",
+   "ten": "Âm và hình sinh từ cùng một dữ liệu",
+   "nhom": "âm thanh đồng bộ",
+   "cach_lam": "Một dòng thời gian hoặc một mảng dữ liệu điều khiển cả hình lẫn âm: mỗi lần photon nảy là một tiếng click; mỗi nốt đến từ một va chạm thấy được; xi-lanh nháy theo thứ tự nổ thật; mỗi tiếng clink của 8.144 viên bi khớp một va chạm; tiếng lửa lấy từ độ sáng của lửa ở từng khung. Biến thể phản ứng âm thanh: FFT (biến đổi Fourier nhanh) trên chính bản trộn, các thanh equalizer là bản nhạc thật; mỗi nhịp kick lật các tấm, bass đẩy thấu kính, treble thắp lõi.",
+   "lam_bang": [
+    "Python/numpy",
+    "Canvas",
+    "Web Audio"
+   ],
+   "chi_phi_may": "vừa",
+   "hop_chat_lieu": [
+    "CL-12",
+    "CL-14"
+   ],
+   "hop_cach_lam": [
+    "LM-02",
+    "LM-03"
+   ],
+   "loi_hay_gap": "Âm và hình đọc hai nguồn dữ liệu khác nhau thì lệch dần theo thời gian.",
+   "mau_nguon": [
+    "apoorvjain25-945542",
+    "apoorvjain25-309680",
+    "rneayan-417829",
+    "dys-hay-749645",
+    "nathanwilbanks-981110",
+    "ulyssexbt-205279",
+    "acoramaa-248467",
+    "kamstudiolabs-440893"
+   ],
+   "so_mau": 8,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-AT07",
+   "ten": "Tổng hợp tiếng và nhạc bằng mã",
+   "nhom": "âm thanh đồng bộ",
+   "cach_lam": "Python và numpy: nhạc từng nốt từ sóng sin và nhiễu, tiếng giao diện đặt theo đỉnh đo được trên lưới phách. Web Audio: piano có hoà âm, tiếng click ngắn khi công tắc đổi. Karplus-Strong (mô hình dây gảy) cho đàn dây. Kèm cue sheet ghi nhạc và hiệu ứng nhấn ở đâu. Khoảng 28 prompt đòi âm tự sinh, thường kèm 'no samples, no audio files'.",
+   "lam_bang": [
+    "Python/numpy",
+    "Web Audio"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-01",
+    "CL-02",
+    "CL-03",
+    "CL-04",
+    "CL-05",
+    "CL-06",
+    "CL-07",
+    "CL-08",
+    "CL-09",
+    "CL-10",
+    "CL-11",
+    "CL-12",
+    "CL-13",
+    "CL-14",
+    "CL-15",
+    "CL-16"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Nhạc thuật toán cần nhiều vòng sửa: mẫu saltyaom-620933 ghi 13 lần sửa.",
+   "mau_nguon": [
+    "demitiyageekzen-818523",
+    "kopert0x-098349",
+    "daniel-haida-636937",
+    "annacher-433425",
+    "koushikde-937635",
+    "prasenx-693512",
+    "saltyaom-620933"
+   ],
+   "so_mau": 7,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-AT08",
+   "ten": "Mốc thời gian từng từ để chữ khớp giọng",
+   "nhom": "âm thanh đồng bộ",
+   "cach_lam": "Whisper nhanh (faster-whisper) lấy mốc từng từ, từng đoạn ngắn; (nguồn gốc còn có cách khác, Media chỉ dùng Whisper); chia giọng thành cụm (32 cụm cho 52 s) để chữ hiện đúng lúc nói; tách giọng bằng Demucs, chép lời bằng mlx_whisper, căn với lời chính thức để mỗi dòng lời là một cảnh. Media đã dùng Whisper tạo moc_tu.json cho phụ đề (module 10).",
+   "lam_bang": [
+    "Python/numpy",
+    "FFmpeg"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-03",
+    "CL-05",
+    "CL-11"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Phiên âm thuật ngữ cho máy đọc khác chữ phụ đề thì mốc từ không khớp chữ trên màn hình.",
+   "mau_nguon": [
+    "twoclipping-041659",
+    "notdwd-998633",
+    "tetsu-tetsu333-576886",
+    "okazaky-084783",
+    "tarunyadav9761-053244"
+   ],
+   "so_mau": 5,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-AT09",
+   "ten": "Phim hiểu được khi tắt tiếng",
+   "nhom": "âm thanh đồng bộ",
+   "cach_lam": "Hình tự đứng được khi tắt tiếng: phụ đề burn-in; 12 giây đầu hoàn toàn không tiếng rồi mới có tiếng đầu tiên; hoặc phim câm 45 giây trong đó âm thanh kể một nửa câu chuyện.",
+   "lam_bang": [
+    "Remotion",
+    "Canvas"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-01",
+    "CL-11"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Chữ trên hình và phụ đề cùng nói một nội dung thì thừa; chỉ một trong hai là phụ đề, còn lại là nhãn.",
+   "mau_nguon": [
+    "adrianduta96-992248",
+    "everestchris6-399895",
+    "howdevelop-733090",
+    "astrothewizard-618782",
+    "kamstudiolabs-877996"
+   ],
+   "so_mau": 5,
+   "tham_so_tu": "mẫu + đề xuất",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-AT10",
+   "ten": "Phân tích số bài nhạc khi AI không nghe được",
+   "nhom": "âm thanh đồng bộ",
+   "cach_lam": "Claude không nghe được nên phân tích bằng số: numpy tìm tempo, lưới nhịp, năng lượng từng ô nhạc, drop; hiệu chỉnh lưới theo cú kick thật; JSON bản đồ nhịp (hit, break, onset kick, snare, hat); video bắt đầu 8 hoặc 12 nhịp trước drop để cảnh quan trọng rơi đúng drop; cắt 30 s từ phách đầu tiên.",
+   "lam_bang": [
+    "Python/numpy",
+    "FFmpeg"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-01",
+    "CL-02",
+    "CL-03",
+    "CL-04",
+    "CL-05",
+    "CL-06",
+    "CL-07",
+    "CL-08",
+    "CL-09",
+    "CL-10",
+    "CL-11",
+    "CL-12",
+    "CL-13",
+    "CL-14",
+    "CL-15",
+    "CL-16"
+   ],
+   "hop_cach_lam": [
+    "LM-01",
+    "LM-02",
+    "LM-03",
+    "LM-04"
+   ],
+   "loi_hay_gap": "Lưới nhịp không hiệu chỉnh theo kick thật làm cảnh lệch drop vài chục mili giây.",
+   "mau_nguon": [
+    "raphaelaubryy-687877",
+    "xanares-738984",
+    "diamai-157697",
+    "majin-appsheet-693327"
+   ],
+   "so_mau": 4,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-TT01",
+   "ten": "Nút Explode, rê chuột hiện giải thích, kéo xoay",
+   "nhom": "tương tác (chỉ ghi để biết)",
+   "cach_lam": "Trang tương tác một file HTML với Three.js: kéo để xoay, cuộn để zoom, thanh trượt, nút Explode (mỗi bộ phận trượt ra kèm nhãn tên; bấm lại thì thu về; rê chuột lên một bộ phận thì nó sáng lên kèm một dòng giải thích). Không phải video; chỉ là nguồn ý cho cảnh khoa học có thể quay lại (xem TP-3D06).",
+   "lam_bang": [
+    "Three.js"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-07",
+    "CL-13"
+   ],
+   "hop_cach_lam": [],
+   "loi_hay_gap": "Video không có con trỏ thật nên phải thay rê chuột bằng con trỏ ảo hoặc tô sáng theo kịch bản.",
+   "mau_nguon": [
+    "0xspikez-483865",
+    "aichrislee-378670",
+    "0xsolty-735200",
+    "adomicael-707503"
+   ],
+   "so_mau": 4,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-TT02",
+   "ten": "Thẻ phóng to khi trỏ chuột và làm tối nền hộp thoại",
+   "nhom": "tương tác (chỉ ghi để biết)",
+   "cach_lam": "Thẻ bài phóng to và hiện mô tả khi trỏ chuột, nền làm tối đi một chút; làm tối nền khi mở hộp thoại để tập trung vào hộp. Chỉ ghi để biết.",
+   "lam_bang": [
+    "Canvas",
+    "CSS"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-16"
+   ],
+   "hop_cach_lam": [],
+   "loi_hay_gap": "Không dùng được trong video không tương tác, trừ khi quay màn hình.",
+   "mau_nguon": [
+    "aisongman-461057",
+    "opener-ai-843891"
+   ],
+   "so_mau": 2,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-TT03",
+   "ten": "Mũi tên chấm khi kéo và phản hồi khi tìm thấy",
+   "nhom": "tương tác (chỉ ghi để biết)",
+   "cach_lam": "Mũi tên chấm nối từ quân đang chọn tới mục tiêu khi kéo. Phản hồi khi tìm thấy: tia vàng bung ra khoảng 0,5 s kèm cập nhật bộ đếm trên bảng. Chỉ ghi để biết.",
+   "lam_bang": [
+    "Canvas",
+    "Three.js"
+   ],
+   "chi_phi_may": "nhẹ",
+   "hop_chat_lieu": [
+    "CL-16"
+   ],
+   "hop_cach_lam": [],
+   "loi_hay_gap": "Phản hồi chỉ có ý nghĩa khi người dùng thật thao tác.",
+   "mau_nguon": [
+    "aisongman-461057",
+    "mandelduck-768972"
+   ],
+   "so_mau": 2,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  },
+  {
+   "ma": "TP-TT04",
+   "ten": "Phân tích nhạc để đồng bộ hiệu ứng trong trò chơi",
+   "nhom": "tương tác (chỉ ghi để biết)",
+   "cach_lam": "Phân tích file nhạc để lấy thời điểm từng nốt rồi đồng bộ hiệu ứng; mỗi đoạn nhạc một cảnh khác tính cách; nốt nhạc là các khối neon trượt dọc bảy làn màu về phía máy quay, khối cao tương ứng cao độ. Điểm hợp Media 0; chỉ ghi để biết.",
+   "lam_bang": [
+    "Three.js",
+    "WebGL shader",
+    "Web Audio"
+   ],
+   "chi_phi_may": "nặng",
+   "hop_chat_lieu": [],
+   "hop_cach_lam": [],
+   "loi_hay_gap": "Dùng nhạc có bản quyền làm nguồn dữ liệu cần kiểm tra giấy phép.",
+   "mau_nguon": [
+    "gandamu-ml-220530"
+   ],
+   "so_mau": 1,
+   "tham_so_tu": "mẫu",
+   "trang_thai": "nháp"
+  }
+ ]
+}

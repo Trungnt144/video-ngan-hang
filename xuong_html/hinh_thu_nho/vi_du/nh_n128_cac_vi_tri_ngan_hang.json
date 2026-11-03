@@ -1,0 +1,60 @@
+{
+  "kenh": "ngan_hang",
+  "video": "2026.10.29.Các vị trí trong ngân hàng - một hồ sơ vay đi qua những ai?",
+  "chu_de": "cac_vi_tri_ngan_hang",
+  "phien_ban": 1,
+  "thoi_luong": "5:28",
+  "nguon_hinh": {
+    "ma": "node lay_hinh.mjs ../n128_cac_vi_tri_ngan_hang/trang.html 184.6 khung/n128/n128_ma_t184_tang_tren.png --an_chu --he_so 2 --cat 230,232,1570,358",
+    "mp4": "ffmpeg -ss 184.6 -i san_pham/2026.10.29.Các vị trí trong ngân hàng - một hồ sơ vay đi qua những ai?/Các vị trí trong ngân hàng - một hồ sơ vay đi qua những ai?.mp4 -frames:v 1 -vf crop=1920:800:0:130 khung/n128/n128_mp4_t184.png"
+  },
+  "hinh": [
+    {
+      "id": "A",
+      "bo_cuc": "NH",
+      "nen": "#F6F2F8",
+      "nhan_kenh": "tren_trai",
+      "anh": "xuong_html/hinh_thu_nho/khung/n128/n128_ma_t184_tang_tren.png",
+      "vi_tri": "50% 100%",
+      "chu": {
+        "x": 60,
+        "y": 0,
+        "w": 1160
+      },
+      "dong1": "CÁC VỊ TRÍ",
+      "co1": 128,
+      "mau1": "#4A1F66",
+      "dong2": "làm việc trong ngân hàng",
+      "co2": 84,
+      "mau2": "#343441",
+      "xep": "chu_tren"
+    },
+    {
+      "id": "B",
+      "bo_cuc": "NH",
+      "nen": "#F6F2F8",
+      "nhan_kenh": "tren_phai",
+      "anh": "xuong_html/hinh_thu_nho/khung/n128/n128_mp4_t184.png",
+      "hop": [
+        0,
+        0,
+        1280,
+        460
+      ],
+      "vua": "cover",
+      "vi_tri": "50% 40%",
+      "chu": {
+        "x": 60,
+        "y": 474,
+        "w": 980
+      },
+      "dong1": "MỘT HỒ SƠ VAY",
+      "co1": 108,
+      "mau1": "#4A1F66",
+      "dong2": "đi qua mấy người?",
+      "co2": 76,
+      "mau2": "#652D89"
+    }
+  ],
+  "chon": "A"
+}

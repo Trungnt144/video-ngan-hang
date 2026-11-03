@@ -1,0 +1,78 @@
+{
+  "video": "2026.10.25.tuabin_gio",
+  "chu_de": "nguyen_ly_tuabin_gio",
+  "phien_ban": 1,
+  "thoi_luong": "2:37",
+  "chon": "L3",
+  "ghi_chu": "Ví dụ: 5 bố cục cho video Nguyên lý tạo điện của tua-bin gió (đúng bộ mẫu v3 Trung duyệt 27/10/2026). Số 8–20 và hơn 1.000 vòng/phút lấy từ nguồn kiểm chứng của video.",
+  "hinh": [
+    {
+      "id": "L1",
+      "bo_cuc": "L1",
+      "anh": "tai_san/anh_that/px_binh_thuan_trai_gio_doi_cat.jpg",
+      "vi_tri": "50% 40%",
+      "dong1": "Quay chậm",
+      "dong2": "vẫn ra điện",
+      "dia_danh": "Bình Thuận",
+      "mui_ten": {
+        "d": "M690,360 C760,260 860,220 930,215"
+      }
+    },
+    {
+      "id": "L2",
+      "bo_cuc": "L2",
+      "anh": "tai_san/anh_that/trai_gio_hoang_hon_cc0.jpg",
+      "vi_tri": "50% 60%",
+      "phong": 1.25,
+      "goc_phong": "75% 15%",
+      "chu_lon": "Tua-bin gió",
+      "chu_phu": "từ cơn gió tới dòng điện",
+      "the_may": "khoa học năng lượng · 3 phút",
+      "doc": 360
+    },
+    {
+      "id": "L3",
+      "bo_cuc": "L3",
+      "anh": "xuong_html/hinh_thu_nho/khung/tb_0720_sach.jpg",
+      "vi_tri": "50% 50%",
+      "phong": 1.12,
+      "goc_phong": "70% 40%",
+      "loc": "none",
+      "dong1": "Bên trong",
+      "dong2": "tua-bin có gì?"
+    },
+    {
+      "id": "L4",
+      "bo_cuc": "L4",
+      "anh": "xuong_html/hinh_thu_nho/khung/tb_1860_sach.jpg",
+      "vi_tri": "62% 50%",
+      "so_tren": "8–20 →",
+      "so": "1.000+",
+      "don_vi": "vòng/phút",
+      "ghi_chu": [
+        "nhờ hộp số",
+        "trong buồng máy"
+      ]
+    },
+    {
+      "id": "L5",
+      "bo_cuc": "L5",
+      "anh": "tai_san/anh_that/px_tuabin_dong_lua_vn.jpg",
+      "vi_tri": "70% 50%",
+      "dong1": "Nhìn vào",
+      "dong2": "buồng máy",
+      "diem": [
+        546,
+        184
+      ],
+      "vong": {
+        "anh": "xuong_html/hinh_thu_nho/khung/tb_0720_sach.jpg",
+        "vi_tri": "58% 50%",
+        "phong": 1.5,
+        "x": 800,
+        "y": 80,
+        "d": 400
+      }
+    }
+  ]
+}

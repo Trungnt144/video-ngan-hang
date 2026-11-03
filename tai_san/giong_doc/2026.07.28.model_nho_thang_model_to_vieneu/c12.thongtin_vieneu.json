@@ -1,0 +1,31 @@
+{
+ "ten_file": "c12.wav",
+ "giong": "Hải Đăng",
+ "phien_ban_goi": {
+  "vieneu": "3.8.3",
+  "onnxruntime": "1.22.1",
+  "mlx-whisper": "0.4.3"
+ },
+ "mo_hinh_nghe_lai": "mlx-community/whisper-large-v3-turbo",
+ "nguong_sai_ky_tu": 0.1,
+ "khoang_nghi_cau_giay": 0.25,
+ "so_ky_tu": 189,
+ "thoi_luong_giay": 10.41,
+ "nguon_van_ban": "/Users/macbooktrungnt/Documents/VideoNganHang/kich_ban/2026.07.28.model_nho_thang_model_to.chuong.json",
+ "tung_cau": [
+  {
+   "cau": "Nhưng nếu vẫn giữ nguyên phản xạ cũ, cái giá không nằm ở chỗ làm sai.",
+   "whisper": "Nhưng nếu vẫn giữ nguyên phản giá cũ, cây giá không nằm ở chỗ làm sai.",
+   "ty_le_sai": 0.075,
+   "so_lan_doc": 1,
+   "lan_duoc_giu": 1
+  },
+  {
+   "cau": "Nó nằm ở chỗ trả tiền gấp đôi cho một kết quả kém hơn, mà không bao giờ biết là mình đã trả thừa, vì không có gì để so.",
+   "whisper": "Nó nằm ở chỗ trả tiền gấp đôi cho một kết quả kém hơn mà không bao giờ biết là mình đã trả thừa vì không có gì để so.",
+   "ty_le_sai": 0.0,
+   "so_lan_doc": 1,
+   "lan_duoc_giu": 1
+  }
+ ]
+}

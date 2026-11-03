@@ -1,0 +1,19 @@
+<template>
+<style>
+#root{position:absolute;inset:0;background:#000000;}
+#nen-quang{position:absolute;left:-240px;top:160px;width:1560px;height:1560px;border-radius:50%;background:radial-gradient(circle, rgba(255,255,255,0.055) 0%, rgba(255,255,255,0.02) 40%, rgba(0,0,0,0) 70%);}
+#nen-tien{position:absolute;left:0;top:0;height:6px;width:1080px;background:#FF443D;transform-origin:left;}
+</style>
+<div id="root" data-composition-id="nen" data-width="1080" data-height="1920">
+  <div id="nen-quang" data-layout-ignore></div>
+  <div id="nen-tien" data-layout-ignore></div>
+</div>
+<script>
+(function(){
+  const tl = gsap.timeline({ paused: true });
+  tl.fromTo("#nen-quang",{x:-60,y:-40,scale:1},{x:60,y:40,scale:1.08,duration:37.504,ease:"sine.inOut",yoyo:true,repeat:1},0);
+  tl.fromTo("#nen-tien",{scaleX:0},{scaleX:1,duration:75.008,ease:"none"},0);
+  window.__timelines["nen"] = tl;
+})();
+</script>
+</template>

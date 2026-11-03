@@ -1,0 +1,92 @@
+<!doctype html>
+<!-- xem_mau.html — 1.0 — trang xem mẫu kho hình dùng chung (tai_san/kho_hinh_chung/README.md).
+     Một hình:  xem_mau.html?hinh=<ten>&kieu=phang|net_tay[&mau=MAU-22][&t=1.2]   → khung 1920×1080, có window.seek(t), window.kiemTra()
+     Ảnh lưới:  xem_mau.html?luoi=<ten>                                           → ghép 6 ảnh anh_mau/<ten>/ (2 kiểu × 3 thời điểm)
+     Mỗi hình có một file mẫu xem_mau/<ten>.js khai báo cách dựng ô mẫu; danh sách file nạp ở xem_mau/_ds.js do chup_mau.mjs sinh từ danh_muc.json. -->
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Kho hình chung — xem mẫu</title>
+<style>
+  html, body { margin: 0; padding: 0; background: #7d8085; }
+  #khung { position: relative; width: 1920px; height: 1080px; overflow: hidden; }
+  #nhan { position: absolute; right: 22px; top: 12px; font: 600 18px "BVP", sans-serif; opacity: 0.55; z-index: 50; pointer-events: none; }
+  #san { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+  #luoi { display: none; width: 1920px; background: #1d1f22; color: #eee; font-family: "BVP", sans-serif; }
+  #luoi h1 { margin: 0; padding: 14px 24px 6px; font-size: 26px; font-weight: 700; }
+  #luoi .hang { display: flex; gap: 0; }
+  #luoi figure { margin: 0; width: 640px; position: relative; }
+  #luoi img { width: 640px; height: 360px; display: block; }
+  #luoi figcaption { position: absolute; left: 8px; top: 6px; font-size: 15px; font-weight: 600; background: rgba(0,0,0,.55); padding: 2px 8px; border-radius: 4px; }
+</style>
+</head>
+<body>
+<div id="khung"><div id="nhan"></div><div id="san"></div></div>
+<div id="luoi"></div>
+<script src="chung/kho_nen.js"></script>
+<script>
+(function () {
+  'use strict';
+  window.__san_sang = false;
+  const q = new URLSearchParams(location.search);
+  const nap = (src) => new Promise((ok, loi) => { const s = document.createElement('script'); s.src = src; s.onload = ok; s.onerror = () => loi(new Error('không nạp được ' + src)); document.body.appendChild(s); });
+
+  // ----- chế độ ảnh lưới -----
+  if (q.has('luoi')) {
+    const ten = q.get('luoi');
+    document.getElementById('khung').style.display = 'none';
+    const L = document.getElementById('luoi'); L.style.display = 'block';
+    nap('xem_mau/_ds.js').then(() => {
+      const ds = window.KHO_DS[ten] || {}, anh = ds.anh || [];
+      L.innerHTML = `<h1>${ten} · ${ds.phien_ban || ''}</h1>`;
+      const theoKieu = {};
+      for (const a of anh) (theoKieu[a.kieu] = theoKieu[a.kieu] || []).push(a);
+      const cho = [];
+      for (const kieu of Object.keys(theoKieu)) {
+        const h = document.createElement('div'); h.className = 'hang'; L.appendChild(h);
+        for (const a of theoKieu[kieu]) {
+          const f = document.createElement('figure');
+          f.innerHTML = `<img src="anh_mau/${ten}/${a.file}"><figcaption>${kieu} · ${a.mau} · t=${a.t}s</figcaption>`;
+          h.appendChild(f);
+          const img = f.querySelector('img'); cho.push(new Promise((ok) => { if (img.complete) ok(); else { img.onload = ok; img.onerror = ok; } }));
+        }
+      }
+      return Promise.all(cho).then(() => KHO.napPhong());
+    }).then(() => { window.__san_sang = true; }).catch((e) => { console.error(e.message); window.__san_sang = true; });
+    return;
+  }
+
+  // ----- chế độ một hình -----
+  const ten = q.get('hinh'), kieu = q.get('kieu') || 'phang';
+  let doiTuong = null;
+  window.seek = function (t) { if (doiTuong) doiTuong.seek(t); document.getElementById('nhan').textContent = `${ten} · ${kieu} · ${KHO.ma_mau} · t=${(+t).toFixed(2)}s`; };
+  window.kiemTra = function (t) { if (t != null) window.seek(t); return KHO.kiemChu(document.getElementById('san')); };
+  nap('xem_mau/_ds.js').then(async () => {
+    const ds = window.KHO_DS[ten];
+    if (!ds) throw new Error('danh_muc.json không có hình ' + ten);
+    for (const f of ds.file) if (!/kho_nen\.js$/.test(f) && /\.js$/.test(f)) await nap(f);
+    for (const f of ds.file) if (/\.css$/.test(f)) { const l = document.createElement('link'); l.rel = 'stylesheet'; l.href = f; document.head.appendChild(l); }
+    await nap(`xem_mau/${ten}.js`);
+    const spec = (window.KHO_MAU || []).find((m) => m.ten === ten);
+    if (!spec) throw new Error(`xem_mau/${ten}.js không khai báo KHO_MAU cho ${ten}`);
+    const ma = q.get('mau') || (spec.mau && spec.mau[kieu]) || (kieu === 'net_tay' ? 'MAU-23' : 'MAU-22');
+    KHO.datMau(ma);
+    const khung = document.getElementById('khung');
+    khung.style.background = KHO.mau.nen;
+    document.getElementById('nhan').style.color = KHO.mau.chu_phu;
+    let san = document.getElementById('san');
+    if (spec.khung !== 'html') {
+      const svg = KHO.svg('svg', { width: 1920, height: 1080, viewBox: '0 0 1920 1080' });
+      san.appendChild(svg); san = svg;
+    }
+    await KHO.napPhong();
+    doiTuong = spec.tao({ kieu, san, K: KHO, mau: ma }) || null;
+    window.__moc = spec.moc || [0.3, 1.2, 3];
+    window.seek(q.has('t') ? parseFloat(q.get('t')) : window.__moc[window.__moc.length - 1]);
+    window.__coPhong = KHO.coPhong();
+    window.__san_sang = true;
+  }).catch((e) => { console.error(e.message); window.__loi_nap = e.message; window.__san_sang = true; });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+ "doc": "Thiết bị đó là inverter, còn gọi là bộ nghịch lưu. Với nhà ở, thường dùng inverter chuỗi.",
+ "giay": 5.13,
+ "cau": [
+  {
+   "cau": "Thiết bị đó là inverter, còn gọi là bộ nghịch lưu.",
+   "bd": 0.0,
+   "kt": 2.8
+  },
+  {
+   "cau": "Với nhà ở, thường dùng inverter chuỗi.",
+   "bd": 3.05,
+   "kt": 5.13
+  }
+ ]
+}

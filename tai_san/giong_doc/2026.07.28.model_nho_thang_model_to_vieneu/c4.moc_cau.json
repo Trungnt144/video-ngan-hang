@@ -1,0 +1,16 @@
+{
+ "doc": "Chỗ cần nói rõ: mạnh ở đây nghĩa là biết rộng, trả lời được nhiều loại câu hỏi khác nhau. Nó không đồng nghĩa với giỏi sâu một việc.",
+ "giay": 6.65,
+ "cau": [
+  {
+   "cau": "Chỗ cần nói rõ: mạnh ở đây nghĩa là biết rộng, trả lời được nhiều loại câu hỏi khác nhau.",
+   "bd": 0.0,
+   "kt": 4.4
+  },
+  {
+   "cau": "Nó không đồng nghĩa với giỏi sâu một việc.",
+   "bd": 4.65,
+   "kt": 6.65
+  }
+ ]
+}

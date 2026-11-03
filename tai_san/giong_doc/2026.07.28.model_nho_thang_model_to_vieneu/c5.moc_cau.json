@@ -1,0 +1,21 @@
+{
+ "doc": "Microsoft vừa làm ngược lại. Thay vì dồn hết cho một model lớn, họ dựng một model nhỏ chuyên đúng một việc, dò lỗ hổng bảo mật trong mã nguồn, rồi để nó gánh chín phần mười khối lượng. Model lớn chỉ được gọi vào một phần mười khó nhất.",
+ "giay": 12.26,
+ "cau": [
+  {
+   "cau": "Microsoft vừa làm ngược lại.",
+   "bd": 0.0,
+   "kt": 1.76
+  },
+  {
+   "cau": "Thay vì dồn hết cho một model lớn, họ dựng một model nhỏ chuyên đúng một việc, dò lỗ hổng bảo mật trong mã nguồn, rồi để nó gánh chín phần mười khối lượng.",
+   "bd": 2.01,
+   "kt": 9.69
+  },
+  {
+   "cau": "Model lớn chỉ được gọi vào một phần mười khó nhất.",
+   "bd": 9.94,
+   "kt": 12.26
+  }
+ ]
+}

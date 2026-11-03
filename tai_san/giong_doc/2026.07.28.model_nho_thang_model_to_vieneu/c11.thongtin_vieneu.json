@@ -1,0 +1,31 @@
+{
+ "ten_file": "c11.wav",
+ "giong": "Hải Đăng",
+ "phien_ban_goi": {
+  "vieneu": "3.8.3",
+  "onnxruntime": "1.22.1",
+  "mlx-whisper": "0.4.3"
+ },
+ "mo_hinh_nghe_lai": "mlx-community/whisper-large-v3-turbo",
+ "nguong_sai_ky_tu": 0.1,
+ "khoang_nghi_cau_giay": 0.25,
+ "so_ky_tu": 123,
+ "thoi_luong_giay": 6.25,
+ "nguon_van_ban": "/Users/macbooktrungnt/Documents/VideoNganHang/kich_ban/2026.07.28.model_nho_thang_model_to.chuong.json",
+ "tung_cau": [
+  {
+   "cau": "Thứ ba, việc này chỉ mới đúng ở một lĩnh vực đủ hẹp để huấn luyện chuyên sâu.",
+   "whisper": "Thứ ba, việc này chỉ mới đúng ở một lĩnh vực đủ hẹp để huấn luyện chuyên sâu.",
+   "ty_le_sai": 0.0,
+   "so_lan_doc": 1,
+   "lan_duoc_giu": 1
+  },
+  {
+   "cau": "Ngoài phạm vi đó, chưa ai chứng minh được gì.",
+   "whisper": "Ngoài phạm vi đó, chưa ai chứng minh được gì.",
+   "ty_le_sai": 0.0,
+   "so_lan_doc": 1,
+   "lan_duoc_giu": 1
+  }
+ ]
+}

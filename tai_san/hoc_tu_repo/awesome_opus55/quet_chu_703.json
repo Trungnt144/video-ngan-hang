@@ -1,0 +1,2786 @@
+{
+ "_ghi_chu": "Gộp hai lô quét chữ 703 prompt (lô a và lô b) ngày 27/10/2026. Mỗi mục giữ nguyên các trường ten, mo_ta, so_prompt, slug_vi_du, trich_ngan; thêm trường lo_quet (a hoặc b) để biết mục từ lô nào. Mỗi lô quét một nửa số prompt nên cùng một kỹ thuật có thể xuất hiện ở cả hai lô với số prompt hơi khác. Trích dẫn tiếng Anh dài hơn 20 chữ trong mo_ta đã cắt còn 20 chữ kèm dấu … (luật bản quyền của Media); nội dung đầy đủ ở link prompt trên GitHub.",
+ "cong_cu_xuat": [
+  {
+   "ten": "Remotion (React dựng video)",
+   "mo_ta": "Dây chuyền phổ biến nhất. React/TypeScript viết từng cảnh, Remotion render ra MP4; nhạc do Python viết riêng rồi Remotion gọi ffmpeg ghép (aiwarts-428866). Dùng thêm @remotion/three và React Three Fiber cho cảnh 3D mở đầu (dengent-412996). Một mã nguồn xuất hai bản tiếng Nhật và tiếng Anh bằng props (dengent-412996). Có người dùng plugin chính thức của Remotion trong Claude Code, effort xhigh, nghĩ khoảng 23 phút, render khoảng 90 giây (genelab-999-088672). Kích thước hay gặp 1920x1080, 60 hoặc 30 fps. Lưu ý: 47 là số prompt có nhắc tên Remotion; phần lớn là bài đăng kể kết quả, chỉ khoảng 5 prompt là lời giao việc có nêu Remotion (aschapmann-724497, humzaakhalid-537875, howdevelop-733090, daverogenmoser-899271).",
+   "so_prompt": 47,
+   "slug_vi_du": [
+    "aiwarts-428866",
+    "dengent-412996",
+    "genelab-999-088672",
+    "alanschwegler-629665",
+    "daniel-haida-636937"
+   ],
+   "trich_ngan": "Remotion 负责画面，Python 负责配乐",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "HTML thuần, hàm thuần theo thời gian, Playwright chụp từng khung, FFmpeg ghép",
+   "mo_ta": "Dây chuyền thứ hai và cụ thể nhất về kỹ thuật. Một file HTML canvas (1440x1440 hoặc 1080x1080); mọi giá trị là hàm thuần của thời gian (seek(t), renderAt(t), draw(f)); không timer, không Math.random, không trạng thái mang qua khung. Playwright render từng khung ở 60 fps, 3-5 khung phụ trộn bằng ffmpeg tmix để có nhoè chuyển động, mã hoá H.264 CRF 16, chuẩn hoá âm lượng -14 LUFS. Thanh ?t= trên URL để đóng băng đúng một khoảnh khắc. Công thức vòng lặp: t - 14*floor(t/14) để con trỏ không giật ở điểm nối. Cùng khuôn xuất hiện ở egawa-ai-design-092323 (HTML + GSAP, seek(t), Playwright, ffmpeg, Python làm nhạc).",
+   "so_prompt": 24,
+   "slug_vi_du": [
+    "0xnicc0-516612",
+    "annacher-433425",
+    "flxrnc-251921",
+    "egawa-ai-design-092323",
+    "aichrislee-961335"
+   ],
+   "trich_ngan": "Render every frame from renderAt(frame / 60).",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Công cụ 'windowless engine' gọi draw(f) từng số khung",
+   "mo_ta": "Biến thể của dây chuyền trên: một sân khấu cố định (canvas 1000x1080, phông đã nhúng), một engine không cửa sổ gọi draw(f) mỗi số khung, ffmpeg ghi H.264 có khai pixel aspect ratio, rồi kiểm ba lượt sau mỗi bản dựng. Tác giả nói model chỉ viết phần đầu (chương trình vẽ), ba phần còn lại là bộ dùng lại. Bản dựng cuối 1.820 khung, sáu lỗi đều bằng 0.",
+   "so_prompt": 1,
+   "slug_vi_du": [
+    "0xkarmi-129839"
+   ],
+   "trich_ngan": "a windowless engine calls draw(f) once per frame number",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "HyperFrames + GSAP",
+   "mo_ta": "Thư viện dựng video từ HTML, hay đi cùng GSAP timeline và Three.js. Có registry thành phần dựng sẵn (ví dụ colorama-wipe) nên prompt dặn 'xem registry trước'; mọi trạng thái đầu phải đặt ở t=0 để seek an toàn (ik-builds-585923). Kết hợp với Python làm nhạc (dheepanratnam-706454), TTS của OpenAI (henritoivar-445215), ElevenLabs qua Fal AI (georgejimenez98-431559). Bắt đầu xuất hiện như lựa chọn thay Remotion; một người ghi chú ban đầu không tin rồi đổi ý (joao-felixl-809438).",
+   "so_prompt": 13,
+   "slug_vi_du": [
+    "ik-builds-585923",
+    "archiveexplorer-560622",
+    "jake11moran-414633",
+    "btcup99-311469",
+    "dheepanratnam-706454"
+   ],
+   "trich_ngan": "Set every from-state at t=0 (seek-safe)",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Three.js / WebGL cho cảnh 3D trong trình duyệt",
+   "mo_ta": "Dùng khi cần chiều sâu thật: nhìn xuyên máy móc, kính màu, hành tinh, quang học. Nhãn chữ là HTML đặt theo toạ độ cảnh 3D mỗi khung, không vẽ chữ trong 3D (everestchris6-399895). Có prompt dùng WebGPU và TSL (cryptowluha-060792, earthwalkerx17-912577). Một dự án nhà 3D ghi lại cách quay video xác định: dựng cùng một khung hai lần phải ra cùng điểm ảnh (aayush4soni-644283).",
+   "so_prompt": 38,
+   "slug_vi_du": [
+    "acoramaa-053577",
+    "agioyaz-397647",
+    "cryptowluha-060792",
+    "earthwalkerx17-912577",
+    "everestchris6-399895"
+   ],
+   "trich_ngan": "labels are html positioned from the 3d scene every frame",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Một file HTML tự chứa, không thư viện, không tài sản ngoài",
+   "mo_ta": "Ràng buộc rất hay gặp khi sản phẩm là trang xem trực tiếp hoặc video quay từ trang. Mẫu: 'Canvas 2D only, no libraries, no external assets', hỗ trợ tạm dừng/phát lại và ?t=90 để nhảy tới giây bất kỳ; Three.js qua import map là ngoại lệ duy nhất. Khoảng 19 prompt nêu thẳng Canvas 2D, 13 nêu SVG.",
+   "so_prompt": 32,
+   "slug_vi_du": [
+    "0xcodez-474136",
+    "0xsolty-735200",
+    "godsboy7777-150194",
+    "gdgtify-130294",
+    "aichrislee-378670"
+   ],
+   "trich_ngan": "Canvas 2D only, no libraries, no external assets.",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Python và numpy cho nhạc, hiệu ứng tiếng và đo bài hát",
+   "mo_ta": "Python (đôi khi chỉ dùng thư viện chuẩn) tổng hợp nhạc nền, từng nốt, từ sóng sin và nhiễu; numpy phân tích bài có sẵn để lấy BPM, thời điểm phách, đoạn drop rồi đặt từng tiếng click đúng đỉnh đo được. Chi tiết ở nhóm âm thanh.",
+   "so_prompt": 16,
+   "slug_vi_du": [
+    "apoorvjain25-309680",
+    "daniel-haida-636937",
+    "diamai-157697",
+    "dengent-412996",
+    "egawa-ai-design-092323"
+   ],
+   "trich_ngan": "synthesized in python from sine waves and noise",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Blender (đa số là phủ định)",
+   "mo_ta": "Blender xuất hiện ở 7 prompt nhưng 4 prompt là 'không cần Blender', 1 prompt chỉ nhắc video gốc làm bằng Blender (anabology-491441). Chỉ 2 prompt dùng thật: dựng phố Market Street San Francisco năm 1906 bằng Blender Python, có file nguồn từ bản đồ bảo hiểm Sanborn, ảnh tư liệu và mức tin cậy từng dữ kiện, ra video 10 giây (alexalbert-274839); và biến một câu thành model xuất mở được trong Blender có rig, vật liệu, tên bộ phận (0xwast3-222104).",
+   "so_prompt": 7,
+   "slug_vi_du": [
+    "alexalbert-274839",
+    "0xwast3-222104",
+    "acoramaa-053577",
+    "aayush4soni-644283",
+    "gorden-sun-797351"
+   ],
+   "trich_ngan": "No downloaded meshes, textures or HDRIs.",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "After Effects (đa số là phủ định, một ca điều khiển qua MCP)",
+   "mo_ta": "10 prompt nhắc After Effects: 8 là 'không mở After Effects lần nào', 1 lấy 'kiểu chữ After Effects' làm tham chiếu (incognitoprince-849212), 1 nối Claude trực tiếp vào project AE đang mở qua AE MCP và làm trong composition Inner nơi vòng diễn giả đã có (johncodunayo-560372).",
+   "so_prompt": 10,
+   "slug_vi_du": [
+    "johncodunayo-560372",
+    "chapi13-131449",
+    "colecornelll-047465",
+    "daniel-haida-636937",
+    "incognitoprince-849212"
+   ],
+   "trich_ngan": "connected directly to my open After Effects project through the AE MCP",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Công cụ hiếm, mỗi công cụ một prompt",
+   "mo_ta": "FrankenManim + FrankenTTS dựng video kiểu 3Blue1Brown về Hoeffding's D (eleanorina-653042); fframes (Rust + SVG, mỗi khung là một hàm, hạt, 3D, lò xo, shader, vòng phản ứng âm thanh theo nhịp 128 BPM) (buildfastwithai-844291); khung Figma làm chuẩn, chỉ thêm chuyển động (bthreeagency-827092); chấm màu trong DaVinci Resolve (dheepanratnam-706454); AE MCP (johncodunayo-560372). Không thấy Puppeteer, Lottie, Motion Canvas ở nhóm prompt này.",
+   "so_prompt": 5,
+   "slug_vi_du": [
+    "eleanorina-653042",
+    "buildfastwithai-844291",
+    "bthreeagency-827092",
+    "dheepanratnam-706454",
+    "johncodunayo-560372"
+   ],
+   "trich_ngan": "Rust + SVG via fframes where every frame is a function",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Bản ghi thật của ứng dụng, hoặc dựng lại UI bằng React thay vì phóng to ảnh chụp",
+   "mo_ta": "Hai cách dùng tư liệu thật: (1) quay từng tính năng đang chạy trong simulator, mọi số và nhãn trên màn hình phải lấy từ bản ghi (bilimfili1-459762); (2) không dùng ảnh chụp thô mà tách thành thành phần/biểu tượng để animate được, hoặc dựng lại trung thực trong React từ design system thật (ho-ba-761062, daniel-haida-636937, fractadev-861266). Một người cho Opus tự dựng ứng dụng biên tập để cắt đoạn quay thô (brainwavepub-812667).",
+   "so_prompt": 7,
+   "slug_vi_du": [
+    "bilimfili1-459762",
+    "ho-ba-761062",
+    "daniel-haida-636937",
+    "fractadev-861266",
+    "brainwavepub-812667"
+   ],
+   "trich_ngan": "break them down into components/icons so we can animate those too",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Công cụ sinh ảnh/video chỉ làm tư liệu nền",
+   "mo_ta": "Có 7 prompt dùng công cụ sinh: Seedance 2.5 và bảng nhân vật làm nền rồi vẽ đè bằng JavaScript như kỹ thuật rotoscope (anabology-491441, anjmaxx-459455); Midjourney cho nhân vật + ElevenLabs (ayumi-t820-871023); Codex CLI sinh ảnh khác biệt, Gemini TTS, Lyria 3.5 (kaiyu-ai-762929). Ngược lại ít nhất 9 prompt cấm rõ công cụ sinh video/ảnh (ví dụ advait-jayant-712107, btcup99-311469), và everestchris6-399895 dặn ưu tiên dựng cảnh bằng mã, chỉ dùng ảnh sinh cho cảnh phụ và ghi nhãn là khái niệm.",
+   "so_prompt": 7,
+   "slug_vi_du": [
+    "anabology-491441",
+    "anjmaxx-459455",
+    "ayumi-t820-871023",
+    "kaiyu-ai-762929",
+    "everestchris6-399895"
+   ],
+   "trich_ngan": "prefer building shots in code",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Skill và kho 'studio' dùng lại giữa các video",
+   "mo_ta": "10 prompt dựa vào skill hoặc kho dùng lại. francoxavier33-341663 có repo 'studio' riêng chứa style guide, token thiết kế, skill, Remotion. everestchris6-399895 dặn clone kho bộ công cụ, đọc SKILL.md trước, luật trong đó ghi đè mặc định. claudecode-ut-314769 và jiro-aicompany-487818 giao 'làm đúng SKILL.md': kịch bản cấu trúc thành 5 mục, kiểm chứng sự kiện bằng tài liệu chính thức, vẽ ảnh bằng mã, chuyển cảnh theo độ dài giọng đọc chậm.",
+   "so_prompt": 10,
+   "slug_vi_du": [
+    "francoxavier33-341663",
+    "everestchris6-399895",
+    "claudecode-ut-314769",
+    "jiro-aicompany-487818",
+    "anabology-491441"
+   ],
+   "trich_ngan": "SKILL.mdどおりに5選のショートを作って",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Ngoài web: Swift, Unity, C/C++ với OpenGL",
+   "mo_ta": "Hiếm. Quả cầu tuyết London bằng khoảng 700 dòng Swift (eigeorguy-813651); PRD game Unity (froessell-562325, không phải video); demo demoscene thập niên 1990 bằng C/C++ và OpenGL, phát bản nhạc S3M và phân tích bản nhạc trước để đồng bộ (gandamu-ml-220530).",
+   "so_prompt": 3,
+   "slug_vi_du": [
+    "eigeorguy-813651",
+    "froessell-562325",
+    "gandamu-ml-220530"
+   ],
+   "trich_ngan": "~700 lines of Swift. No 3D files.",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Remotion (React/TypeScript dựng ra MP4)",
+   "mo_ta": "Công cụ ra video được nhắc nhiều nhất (49 prompt). Claude viết mã React, Remotion render ra video. Phần lớn là video ra mắt sản phẩm 15 đến 60 giây, thường chỉ một prompt; nhiều bài trong nhóm chỉ là lời đăng kể kết quả chứ không kèm prompt. Cách dùng đáng ghi: nhập CSS token và font của website thật, rồi dựng bản 30s/15s/6s ở 16:9 và 9:16 từ cùng một mã, mỗi bản chỉ là một danh sách cảnh khác nhau (l3d1c-632524); dựng lại giao diện app desktop bằng React từ XAML và design token, không dùng ảnh chụp (proanaliteg-458642); khoá thông số 1080x1920, 30fps, 450 khung, chỉ dùng ảnh trong thư mục assets, thiếu tư liệu thì dừng và báo (qianqiongge-246969); 33 bản dựng, khoảng 90 tin nhắn trong 2 ngày, khoảng 400 USD (wustep-884086).",
+   "so_prompt": 49,
+   "slug_vi_du": [
+    "l3d1c-632524",
+    "proanaliteg-458642",
+    "qianqiongge-246969",
+    "wustep-884086",
+    "punit-io-584518"
+   ],
+   "trich_ngan": "Every frame comes from code. Don't use AI-generated video or images.",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "HyperFrames (HTML thành video)",
+   "mo_ta": "Công cụ biến một trang HTML thành video, hay đi cùng skill HyperFrames trong Claude Code. Ví dụ: BGM sinh bằng Lyria, hiệu ứng tiếng đặt theo nhịp (majin-appsheet-693327); video 30 giây trong khoảng 11 phút gồm 1 phút 36 giây render, nhạc nền Python tổng hợp tại chỗ (tankazunori0914-156748); 8 giờ 15 phút với DesignLoop, skill HyperFrames và ElevenLabs (vince-builds-355650); khoảng 35 đến 50 hoạt cảnh chèn vào tập podcast (stokebuilder-356793); quay lại replay thật của game rồi chồng chữ theo nhịp (mappletour-334921); kết hợp Gemini TTS và Three.js (petert-350098, petert-540960, petert-635793).",
+   "so_prompt": 14,
+   "slug_vi_du": [
+    "majin-appsheet-693327",
+    "tankazunori0914-156748",
+    "vince-builds-355650",
+    "stokebuilder-356793",
+    "mappletour-334921"
+   ],
+   "trich_ngan": "Claude Opus 5.5 + HyperFrames + Gemini Flash 3.8 + Three js",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Playwright (hoặc Chrome headless, puppeteer-core) chụp từng khung rồi FFmpeg ghép",
+   "mo_ta": "Dây chuyền của nhóm viết mã tay, không dùng Remotion. Một file HTML có hàm seek(t); Playwright gọi seek(t) cho từng khung và chụp PNG; FFmpeg ghép thành MP4 kèm âm thanh. Thông số hay gặp: 60fps, 1440x1440 hoặc 1920x1080. Biến thể: Chromium bật --use-angle=swiftshader để WebGL chạy không đầu hình (notdwd-998633); Chrome headless trên GPU của Mac, 16 mẫu mỗi điểm ảnh, đẩy PNG vào FFmpeg (xanares-738984); Chrome qua puppeteer-core gọi seek(t) 30 lần mỗi giây (tanabe-fragm-322001); yêu cầu \"chỉ JavaScript, Playwright và FFmpeg\" (thallisribeiro-750805, zigapoto-942208).",
+   "so_prompt": 27,
+   "slug_vi_du": [
+    "koushikde-937635",
+    "notdwd-998633",
+    "xanares-738984",
+    "thallisribeiro-750805",
+    "yankis0x-174321"
+   ],
+   "trich_ngan": "one HTML file drawing every frame from a single seek(t) function, rendered with Playwright + ffmpeg",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "FFmpeg (ghép, trộn tiếng, chuẩn hoá âm lượng)",
+   "mo_ta": "Dùng cho: ghép chuỗi PNG thành MP4; trộn nhiều khung con thành nhoè chuyển động bằng bộ lọc tmix; trộn nhạc, giọng, hiệu ứng tiếng; chuẩn hoá âm lượng -14 hoặc -16 LUFS (loudnorm); mã hoá all-intra (-g 1) để clip nhúng trong trang tua đúng khung; H.264 yuv420p; chỉnh theo chuẩn YouTube rồi kiểm (signalz-jp-918002). Một prompt cho Python sinh video 9:16 rồi render bằng ffmpeg (kloss-xyz-941143).",
+   "so_prompt": 31,
+   "slug_vi_du": [
+    "kloss-xyz-941143",
+    "twoclipping-496100",
+    "signalz-jp-918002",
+    "okazaky-084783",
+    "xelandre-687413"
+   ],
+   "trich_ngan": "",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Python và numpy",
+   "mo_ta": "Python không dựng hình mà làm ba việc: (1) phân tích bài hát bằng numpy để ra lưới nhịp; (2) tổng hợp nhạc nền và hiệu ứng tiếng (kick, snare, bass, synth) bằng mã; (3) viết trọn dây chuyền khi không dùng Remotion hay HyperFrames, ví dụ Python + ffmpeg + Real-ESRGAN + Depth Anything V2 + bộ ghép lớp 2.5D tự viết, 4K, 3 tiến trình chạy song song vì RAM 16GB (zhu185178-255661). Cũng dùng để tạo MIDI rồi cho FluidSynth chơi (wangyinrec-532344).",
+   "so_prompt": 22,
+   "slug_vi_du": [
+    "morse-369333",
+    "oab10don-457273",
+    "zhu185178-255661",
+    "wangyinrec-532344",
+    "tankazunori0914-156748"
+   ],
+   "trich_ngan": "BGM：Pythonでその場で合成（外部の音源なし）",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Three.js, WebGPU, WebGL và shader (dựng cảnh 3D trong trình duyệt)",
+   "mo_ta": "Dựng cảnh 3D hoặc raymarcher bằng mã rồi render từng khung. Ví dụ: cảnh 3 phút 47 giây Trung Địa thu nhỏ, 24 mốc thủ tục (mdaman010-610173); Mandelbox bằng một fragment shader WebGL2, vừa là trình phát trực tiếp vừa là nguồn render offline 1080p60, 16 mẫu mỗi điểm ảnh (xanares-738984); 9 ảnh tĩnh có chiều sâu rồi chuyển máy quay trong Three.js, không dùng AI tạo video (mochi-agi-421448); khoảng 190.000 viên gạch instanced (tanabe-fragm-322001); WebGPU và WGSL thuần, không engine (theparuchh-013286, spacyapps-157886). Nhãn tech_tags của dữ liệu: threejs 59, shader 49.",
+   "so_prompt": 52,
+   "slug_vi_du": [
+    "mdaman010-610173",
+    "xanares-738984",
+    "mochi-agi-421448",
+    "tanabe-fragm-322001",
+    "theparuchh-013286"
+   ],
+   "trich_ngan": "frame-by-frame rendering for a 3:47 cinematic journey",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Canvas 2D, SVG, GSAP, CSS (tự vẽ bằng mã, không dựng sẵn)",
+   "mo_ta": "Theo nhãn tech_tags của dữ liệu: canvas 126 prompt, svg 96, gsap 40, css 30 (nhãn gán theo bản video, không nhất thiết prompt có nêu). Canvas 2D là mặc định khi prompt cấm thư viện (kopert0x-098349); GSAP chỉ thật sự được prompt gọi tên trong hoạt cảnh game \"highlight\" (op7418-814408) và lịch sử Sphere (retropunkai-277590).",
+   "so_prompt": 186,
+   "slug_vi_du": [
+    "kopert0x-098349",
+    "op7418-814408",
+    "retropunkai-277590",
+    "majidmanzarpour-927543",
+    "obydulme-052905"
+   ],
+   "trich_ngan": "Canvas 2D only, no libraries, no external assets",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Blender chạy bằng Python",
+   "mo_ta": "Sáu prompt dùng Blender, đều qua script. Blender cài như module Python trên Linux đám mây, dựng sân khấu, ánh sáng, pháo giấy, máy quay bằng mã, render Cycles, hậu kỳ glow/flash/sắc sai rồi ra MP4 (oab10don-457273); cảnh đất sét dừng hình \"animated on twos\", làm bằng Blender rồi làm lại bằng Three.js (wikiwayne-080350, wikiwayne-486055); previs xe đuổi nhau trên núi (tonysurix-596746); nhân vật từ Blender, bầu trời từ GPT image, nhạc từ Google Flow (rafiroutes-596199); studio ảo một prompt (myonisto-923578). Hai prompt khác ghi \"No Blender\" (thebuggeddev-482912, nathanwilbanks-981110).",
+   "so_prompt": 6,
+   "slug_vi_du": [
+    "oab10don-457273",
+    "wikiwayne-486055",
+    "tonysurix-596746",
+    "rafiroutes-596199",
+    "myonisto-923578"
+   ],
+   "trich_ngan": "",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Quay màn hình (ghi lại trang tương tác hoặc game đang chạy)",
+   "mo_ta": "Chỉ năm prompt dùng quay màn hình làm sản phẩm: demo trình duyệt tương tác (stefanostraus-971191, nybobs-680050, timguignard-623571); Opus chơi game bằng nhiều nhân vật rồi cắt ghép đoạn hay (rehan-shei-839416); quay replay thật của người chơi hạng cao rồi chồng chữ \"ギリギリ\" theo nhịp (mappletour-334921). Ba prompt khác nhấn mạnh KHÔNG quay màn hình (ligayabeebe-323995, nathanwilbanks-981110, yanliudesign-839698).",
+   "so_prompt": 5,
+   "slug_vi_du": [
+    "stefanostraus-971191",
+    "nybobs-680050",
+    "timguignard-623571",
+    "rehan-shei-839416",
+    "mappletour-334921"
+   ],
+   "trich_ngan": "Nothing was screen-recorded. All 7,867 frames were drawn by code",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Sinh ảnh bằng AI chỉ để làm tư liệu hình (Codex, GPT Image)",
+   "mo_ta": "Sáu prompt dùng công cụ sinh ảnh cho tư liệu, còn chuyển động vẫn bằng mã: 9 ảnh tĩnh từ Codex rồi Three.js đẩy chiều sâu cho máy quay đi qua (mochi-agi-421448); sinh lại ảnh chân dung độ phân giải thấp từ landing page (ponzponz15-145882); GPT Image 2.5 vẽ phông và nhân vật nền xanh #00FF00 để tự tách nền, vì yêu cầu nền trong suốt sẽ cho ô vuông giả (zhu185178-255661); Codex vẽ theo tài liệu yêu cầu do Opus viết (wangyinrec-532344); gpt-image-2.5 cho giấy cắt dán (so-ainsight-225926); bầu trời từ GPT imgen (rafiroutes-596199).",
+   "so_prompt": 6,
+   "slug_vi_du": [
+    "mochi-agi-421448",
+    "ponzponz15-145882",
+    "zhu185178-255661",
+    "wangyinrec-532344",
+    "so-ainsight-225926"
+   ],
+   "trich_ngan": "",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Skill của Claude Code",
+   "mo_ta": "Mười prompt nhắc skill: skill Remotion (proanaliteg-458642, saxxyweb3-690124), skill HyperFrames (majin-appsheet-693327 chỉ cài skill rồi trả lời \"おまかせ\"; vince-builds-355650), HeyGen và Remotion dùng như skill (rishit30g-568278), skill tự đóng gói về quyết định UX (moguzbulbul-215591). Hai prompt dặn ngược lại: không dùng ký ức hay skill cũ để ép ra phong cách mới (nolkeeg-635633, mileson07-065690).",
+   "so_prompt": 10,
+   "slug_vi_du": [
+    "proanaliteg-458642",
+    "majin-appsheet-693327",
+    "rishit30g-568278",
+    "moguzbulbul-215591",
+    "nolkeeg-635633"
+   ],
+   "trich_ngan": "Please do not reference any previous memories or skills.",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Nền tảng điều phối và giàn đỡ quanh Claude",
+   "mo_ta": "Một số bài đăng nêu thêm lớp quản lý quanh Claude: @bot điều phối và một tài liệu Notion làm bảng làm việc (wustep-884086); DesignLoop (vince-builds-355650); agnt.gg (nathanwilbanks-981110); \"My Custom Harness\" (pranavclickks-254816); Claude desktop app, max effort (kingokings-992769). Dữ liệu quá ngắn để biết chi tiết.",
+   "so_prompt": 5,
+   "slug_vi_du": [
+    "wustep-884086",
+    "vince-builds-355650",
+    "nathanwilbanks-981110",
+    "pranavclickks-254816",
+    "kingokings-992769"
+   ],
+   "trich_ngan": "",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "After Effects, Premiere chỉ xuất hiện để phủ định",
+   "mo_ta": "Các công cụ dựng truyền thống gần như chỉ được nhắc để nói \"không dùng\": \"No After Effects. No editor.\" (piyushaaryan2-196586), \"I never opened a video editor\" (l3d1c-632524). Chỉ một prompt nói sẽ mở After Effects để so (t4k1ra-cg-110846).",
+   "so_prompt": 9,
+   "slug_vi_du": [
+    "piyushaaryan2-196586",
+    "l3d1c-632524",
+    "riyadbkhsh-300736",
+    "zakisbuilding-495680",
+    "sonali-sahu-09-350200"
+   ],
+   "trich_ngan": "No After Effects. No designer.",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Công cụ gần như vắng: Manim, Lottie, Motion Canvas; hiếm: Unity, Raylib, HeyGen, Yoga-layout",
+   "mo_ta": "Manim chỉ một prompt (linearuncle-971663: khái niệm đạo hàm, lồng tiếng bằng edge-tts). Lottie và Motion Canvas không prompt nào nhắc. Hiếm: Unity CLI (rehan-shei-839416), Raylib-cs (nolit64-347627), HeyGen (rishit30g-568278). Một bài tiếng Ả Rập dùng Chrome headless + Canvas API + Yoga-layout + Pretext + Floating UI để dàn chữ cho video kiểu Vox, kèm PDF và ảnh (x7mdnet-157811).",
+   "so_prompt": 5,
+   "slug_vi_du": [
+    "linearuncle-971663",
+    "rehan-shei-839416",
+    "nolit64-347627",
+    "rishit30g-568278",
+    "x7mdnet-157811"
+   ],
+   "trich_ngan": "",
+   "lo_quet": "b"
+  }
+ ],
+ "ky_thuat_hinh": [
+  {
+   "ten": "Một hình duy nhất biến qua nhiều trạng thái giao diện, không cắt cảnh",
+   "mo_ta": "Mẫu 'Dribbble-level UI motion' bị nhân bản gần nguyên văn qua 7-8 người: cùng một hình chữ nhật bo góc đổi kích thước, bán kính, màu; nội dung đổi qua mờ ngắn 12 px; con trỏ nhấn/kéo thật; camera zoom để mỗi trạng thái lấp khung; khung cuối bằng khung đầu để lặp; nút bấm, vòng tải, dấu tick, đảo động (dynamic island), trình phát, thanh trượt, công tắc, thanh tab, biểu đồ tự vẽ, bảng lệnh, thông báo. 120 BPM, 7 phách, mỗi phách có một việc.",
+   "so_prompt": 8,
+   "slug_vi_du": [
+    "0xnicc0-516612",
+    "annacher-433425",
+    "demonugc-525162",
+    "flxrnc-251921",
+    "diamai-157697"
+   ],
+   "trich_ngan": "One shape, never cut: every state is the same element morphing",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Lò xo giải tích (closed-form spring) thay cho ease",
+   "mo_ta": "Ease-in/out bị thay bằng lò xo có công thức đóng: 1 - (1 + wt)e^(-wt) với w từ 12 tới 40, nên không bao giờ vượt đích (heyiamnick-119558). Thông số nêu bằng số: hình damping 0,72 settle 0,35 s; camera damping 1,0 settle 0,6 s (flxrnc-251921). Mỗi lần giá trị đổi đích thêm một lò xo để vẫn là hàm thuần của thời gian (0xnicc0-516612). Hai mép thanh tab/núm công tắc đi theo hai lò xo khác nhau nên mép dẫn đầu giãn ra (annacher-433425). Khoảng 13 prompt nhắc cấm hoặc hạn chế easing nảy và vượt đích.",
+   "so_prompt": 14,
+   "slug_vi_du": [
+    "heyiamnick-119558",
+    "flxrnc-251921",
+    "0xnicc0-516612",
+    "annacher-433425",
+    "brainextends-606193"
+   ],
+   "trich_ngan": "Use closed-form spring step responses.",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Nhoè chuyển động bằng khung phụ (subframe)",
+   "mo_ta": "Mỗi khung xuất ra gồm 3-5 khung phụ trộn lại; 4 khung phụ trộn bằng ffmpeg tmix ở 60 fps là mẫu hay gặp. Chữ và hình đứng yên giữ sắc nét, chỉ phần chuyển động nhoè (brainextends-606193).",
+   "so_prompt": 10,
+   "slug_vi_du": [
+    "annacher-433425",
+    "brainextends-606193",
+    "demonugc-525162",
+    "diamai-157697",
+    "flxrnc-251921"
+   ],
+   "trich_ngan": "4 subframes per frame, blended with ffmpeg tmix",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Chữ động (kinetic typography)",
+   "mo_ta": "Chữ ra theo từng từ hoặc từng chữ cái từ đường mặt nạ; chữ lớn là nét gạch chéo (hatching) cắt theo hình chữ kèm đường viền kép (heyiamnick-119558); phông Anton cho chữ động, Caveat viết tay bằng stroke-dashoffset (ik-builds-585923). Dặn: chữ cũ phải rời trước khi chữ mới vào cùng chỗ; chữ trong hình đang biến hình cần clip và thời gian vào/ra riêng; không đặt chữ lên hình rối nếu không có nền đỡ.",
+   "so_prompt": 22,
+   "slug_vi_du": [
+    "0xnicc0-516612",
+    "heyiamnick-119558",
+    "ik-builds-585923",
+    "brainextends-606193",
+    "aschapmann-724497"
+   ],
+   "trich_ngan": "kinetic typography word by word, spring easing",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Chữ có vai vật lý: mỗi từ là một hiện tượng của trường",
+   "mo_ta": "Họ prompt gdgtify (4 bản, ba đề tài: BUILD THE FLOOR hai bản, THERE IS NO LAST PRIME, ESCAPE THE ORBIT) biến lời nói thành quy tắc hình thức; ở bản BUILD THE FLOOR: WAIT là tấm đẩy, chữ nghiêng tránh ra; WAITING là đường sức võng dưới tải; ROOM là điểm không; FLOOR là trường dẹt thành mặt phẳng. 'Vai này phải nảy ra từ chính hình chữ phản ứng với trường, không phải từ minh hoạ.' Hạt bụi sắt xác định theo băm id và thời gian; dừng tuyệt đối tối thiểu 400 ms trước đoạn kết. 1080x1080, 20,00 giây, 60 fps, một file HTML, phải hiểu được khi tắt tiếng; lời nguyên văn khoá cứng.",
+   "so_prompt": 4,
+   "slug_vi_du": [
+    "gdgtify-130294",
+    "gdgtify-929495",
+    "gdgtify-393073",
+    "gdgtify-989608"
+   ],
+   "trich_ngan": "These roles must emerge from the actual letterforms",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Chuyển cảnh bằng vật thể mang theo (match cut, shared element)",
+   "mo_ta": "Vật đứng trước khung hình là chính chuyển cảnh; một vật giữ danh tính xuyên các cảnh; vật mang theo phải đáp đúng cùng điểm ảnh ở hai phía của chỗ cắt; chỉ cắt khi kích thước, hướng, chủ thể khớp (everestchris6-399895). 'Thẻ này thành thẻ sau, đường biểu đồ thành đường nối, biên lai thành bút toán' (daniel-haida-636937). Cấm cross-fade toàn khung.",
+   "so_prompt": 17,
+   "slug_vi_du": [
+    "everestchris6-399895",
+    "daniel-haida-636937",
+    "0xnicc0-516612",
+    "brainextends-606193",
+    "annacher-433425"
+   ],
+   "trich_ngan": "the thing in the front of the shot becomes the transition",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Vòng lặp: khung cuối bằng khung đầu",
+   "mo_ta": "Yêu cầu 'last frame = first frame' kèm kiểm tra điểm nối: đặt khung 0 cạnh khung 720, nếu lệch một điểm ảnh thì có chuyển động không tuần hoàn (0xkarmi-129839); con trỏ phải dừng đúng vị trí và tốc độ ban đầu. Dùng cho nền livestream lofi 10 giờ (drishtantk-356656), quảng cáo loop 1080x1080, 1 giây móc câu (ishaaqahamed-107563).",
+   "so_prompt": 23,
+   "slug_vi_du": [
+    "0xkarmi-129839",
+    "0xnicc0-516612",
+    "flxrnc-251921",
+    "ishaaqahamed-107563",
+    "drishtantk-356656"
+   ],
+   "trich_ngan": "Last frame = first frame.",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Zoom xuyên thang đo (từ mét xuống nguyên tử, hoặc ra vũ trụ)",
+   "mo_ta": "Một cú máy liên tục không cắt, có thước đo bên phải cập nhật tỷ lệ. Ví dụ: bàn làm việc, thùng máy, tản nhiệt, CPU, lõi silicon, dây đồng, cổng transistor, một nguyên tử silicon nối bốn nguyên tử bên cạnh, thước từ khoảng 1 m xuống khoảng 2 nm (acoramaa-053577); trung tâm dữ liệu, máy chủ, card đồ hoạ, chip, transistor (ai-ba-reza-113363, btc5887899-288258); điện thoại tới nguyên tử, 20 giây (irinatoxi-962937); kính hiển vi 1x tới 1.000.000x (curieuxexplorer-408141); từ Cabo da Roca tới vũ trụ quan sát được, khoảng 3 giờ, 662.769 token xuất (kgonia7-746268); zoom vô tận 300.000x (aidinzeo-708182).",
+   "so_prompt": 9,
+   "slug_vi_du": [
+    "acoramaa-053577",
+    "irinatoxi-962937",
+    "curieuxexplorer-408141",
+    "kgonia7-746268",
+    "aidinzeo-708182"
+   ],
+   "trich_ngan": "from about a metre down to about 2 nanometres",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Hình nổ và cắt dọc để nhìn bên trong, có nhãn và rê chuột",
+   "mo_ta": "Mẫu prompt aichrislee lặp 6 lần (tim, ống kính, đồng hồ cơ, động cơ phản lực, V8, Saturn V): 'Build me X in interactive 3D in one HTML file with Three.js. Make it look real ... and inside it the parts you never get to see ... Add an Explode button: every part slides apart with its name on a label; press again, snaps back; hover a part, it lights up with one line on what it does. No images. Do not ask me any questions.' Ống kính cắt dọc cho thấy tia sáng màu bẻ cong hội tụ trên cảm biến (aichrislee-408244). Động cơ phản lực bóc từng tầng kèm lời giải thích hút, nén, đốt, thổi (0xspikez-483865).",
+   "so_prompt": 8,
+   "slug_vi_du": [
+    "aichrislee-378670",
+    "aichrislee-408244",
+    "aichrislee-938609",
+    "0xspikez-483865",
+    "aichrislee-479847"
+   ],
+   "trich_ngan": "every part slides apart with its name on a label",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Mô phỏng thật thay vì vẽ giống",
+   "mo_ta": "Yêu cầu hiện tượng phải được tính, không được vẽ: bước ngẫu nhiên phải là bước ngẫu nhiên thật, số liệu thật (nhiệt độ lõi, quãng đường, thời gian), nói thẳng độ bất định (astrothewizard-618782); mọi ảnh võng mạc là tính ra chứ không vẽ (cagrimbakirci-842869); photon qua Sao Thuỷ và Sao Kim theo thời gian ánh sáng thật, tiếng click phát từ cùng dữ liệu nảy (apoorvjain25-945542); 108.000 hạt cát, nước, dầu, lửa, dung nham ở 60 fps (cyrilxbt-149036); hộp cát kiến tạo mảng, sóng P và S, địa chấn kế chạy trực tiếp (egeberkina-949521); con bò bằng vật lý (atif-0075-639088).",
+   "so_prompt": 18,
+   "slug_vi_du": [
+    "astrothewizard-618782",
+    "cagrimbakirci-842869",
+    "apoorvjain25-945542",
+    "cyrilxbt-149036",
+    "egeberkina-949521"
+   ],
+   "trich_ngan": "the random walk should be an actual random walk",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Hình sinh bằng toán và shader, không ảnh, không model 3D",
+   "mo_ta": "Mọi đại dương, núi, đèn thành phố là toán sinh ngay trong trình duyệt, kèm thanh kéo mực nước biển và vị trí mặt trời (0xsolty-735200). Cả bức tranh là một shader WebGL2 tính từng điểm ảnh, có quỹ đạo mặt trời mặt trăng tính theo vĩ độ (demitiyageekzen-818523). Ảnh kính màu sinh một lần rồi mọi tia sáng, bóng sàn đều tính từ đúng ảnh đó (agioyaz-986461). Bình dung nham WebGL, kim loại xước, sáp lên, kéo giãn, đứt (juancarlos17626-382690). 48 là số prompt có ràng buộc kiểu 'không ảnh, không thư viện, không model'.",
+   "so_prompt": 48,
+   "slug_vi_du": [
+    "0xsolty-735200",
+    "demitiyageekzen-818523",
+    "agioyaz-986461",
+    "juancarlos17626-382690",
+    "abhinavflac-251740"
+   ],
+   "trich_ngan": "no libraries, no images, no 3d models",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Tái dựng công trình hoặc địa điểm từ bản vẽ và tư liệu có nguồn",
+   "mo_ta": "Đọc PDF mặt bằng 5 trang, dựng lại từng tầng, đánh dấu 15 chỗ kích thước in không khớp tường vẽ thay vì đoán, 500+ món nội thất, khoảng 37.000 dòng JS, 185 test đơn vị, 56 test trình duyệt, quay xác định, tác tử con phân việc, hai ngày (aayush4soni-644283). Market Street 1906: file nguồn ghi từng toà nhà kèm nguồn và mức tin cậy trước khi dựng (alexalbert-274839). Chùa 5 tầng 28,5 m 343 bậc từng mối nối (dan-proggg-274533); sân vận động từ bản vẽ cũ (builtbysketch-114092); 14 bản vẽ + 5 tính toán kỹ thuật + xem 3D + xuất CAD (ajthemongol-318512).",
+   "so_prompt": 7,
+   "slug_vi_du": [
+    "aayush4soni-644283",
+    "alexalbert-274839",
+    "dan-proggg-274533",
+    "builtbysketch-114092",
+    "ajthemongol-318512"
+   ],
+   "trich_ngan": "flagged it (15 places) instead of quietly guessing",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Phong cách vẽ tay: bút chì, bút sáp, giấy, cắt dán",
+   "mo_ta": "heyiamnick-119558 mô tả kỹ ba chế độ vẽ: PAPER = nét bút chì lấy mẫu lại và đẩy lệch bởi sóng sin đổi pha 8 lần/giây, vẽ hai lượt (đủ bề rộng ở độ đục 90%, nửa bề rộng ở 40% với nhiều rung hơn), đục vân giấy khỏi nét, nhân lên nền giấy có lưới xanh; BLUEPRINT = nét trắng 3-4 px, cạnh khuất nét đứt; HOLOGRAM = đường quét ngang bước 8 px, độ dày theo độ sáng, không quầng. 0xcodez-474136 bút sáp có vân hạt, viền rung; jrayon-054015 phân dạng làm bằng giấy bìa kèm hậu kỳ điện ảnh.",
+   "so_prompt": 14,
+   "slug_vi_du": [
+    "heyiamnick-119558",
+    "0xcodez-474136",
+    "jrayon-054015",
+    "groundcontrol-230877",
+    "anjmaxx-459455"
+   ],
+   "trich_ngan": "Lines are pencil: resampled and pushed off true by slow sine waves",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Hạt, ánh sáng, bloom, khúc xạ",
+   "mo_ta": "Hai trường phái đối nghịch. Showreel tự do và cảnh 3D dùng hạt, glow, bloom, tia sáng thể tích, khúc xạ (động cơ phát sáng, tia qua kính màu, mắt ma thuật). Mẫu UI motion cao cấp cấm hết: hạt, quầng, lens flare, rung camera, gradient trên UI. Hiểu để chọn đúng cho phong cách.",
+   "so_prompt": 27,
+   "slug_vi_du": [
+    "acoramaa-248467",
+    "agioyaz-397647",
+    "aichrislee-479847",
+    "brainextends-606193",
+    "0xnicc0-516612"
+   ],
+   "trich_ngan": "Banned: crossfades, gradients on UI, particles, glows",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Pixel art và chiptune",
+   "mo_ta": "Pixel 16-bit 'như hoạt hình tay của studio 16-bit, không phải vector thu nhỏ', 1920x1080, 60 fps, 16 giây, tự viết chiptune (gkxspace-923139); game pixel (0xpai-eth-635565, agentgamesbot-355554); hoạt hình pixel Trung thu Hàn Quốc (hoyoyoda-543147); MV hạt cườm ủi (hahazwei-425483).",
+   "so_prompt": 11,
+   "slug_vi_du": [
+    "gkxspace-923139",
+    "0xpai-eth-635565",
+    "agentgamesbot-355554",
+    "hoyoyoda-543147",
+    "hahazwei-425483"
+   ],
+   "trich_ngan": "not scaled-down vector graphics",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Nhân vật và linh vật có đặc tả kích thước",
+   "mo_ta": "Linh vật là hộp: thân 76x54, tay 24x16, chân 11x33, mắt 8x14, vẽ khoảng 250 px, chạy sáu bước mỗi giây và nghiêng 7 độ (heyiamnick-119558). Mèo đóng phim đầu tay do linh vật Claude đạo diễn (flxrnc-619627); người que trong biểu tượng pin điện thoại (byaiden-vu-755862); gấu đen Đài Loan từ ảnh đính kèm (eric-khun-667455); ba người que giống ba lãnh đạo ngành công nghệ nhưng 'vì lý do pháp lý không phải họ' (jasondainter-028222).",
+   "so_prompt": 8,
+   "slug_vi_du": [
+    "heyiamnick-119558",
+    "flxrnc-619627",
+    "byaiden-vu-755862",
+    "eric-khun-667455",
+    "andriyfernandes-807308"
+   ],
+   "trich_ngan": "four straight legs (11 x 33), two tall rounded-rectangle eyes",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Biểu đồ tự vẽ và HUD số liệu",
+   "mo_ta": "Biểu đồ ROAS tự vẽ kèm chú giải khi rê chuột (annacher-433425); đồng hồ 0-100 chạy thời gian thật 3,4 giây, xi-lanh nháy đúng thứ tự nổ (dys-hay-749645); dữ liệu khối Bitcoin làm hoạt hình (bradmillscan-839974); dữ liệu nóng Nhật 2026 kéo từ mạng (groundcontrol-230877); bản đồ mã nguồn SQLite, vòng đời một truy vấn (deedydas-407965); điểm Nemo, độ cao quỹ đạo và nghĩa địa tàu vũ trụ (haribuilds-007643).",
+   "so_prompt": 15,
+   "slug_vi_du": [
+    "annacher-433425",
+    "dys-hay-749645",
+    "bradmillscan-839974",
+    "groundcontrol-230877",
+    "deedydas-407965"
+   ],
+   "trich_ngan": "the 0–100 timer runs in real time: 3.4 s",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Chuyển động camera",
+   "mo_ta": "Đẩy, kéo, lia mất 1,5-3 giây trên đường ease nhẹ, chậm bằng nửa mặc định, kèm nhoè và hạt phim nhẹ, con trỏ macOS quá cỡ, một camera liên tục trên một màn hình Mac không cắt (jake11moran-414633). Camera bắt đầu đúng nhịp và lắng chậm hơn hình (flxrnc-251921). Góc 35-55 độ, ánh sáng như chụp sản phẩm (everestchris6-399895). Khoá chính diện như bàn vẽ kỹ thuật, vật xoay camera không động (heyiamnick-119558).",
+   "so_prompt": 40,
+   "slug_vi_du": [
+    "jake11moran-414633",
+    "flxrnc-251921",
+    "everestchris6-399895",
+    "heyiamnick-119558",
+    "abyssalld-602690"
+   ],
+   "trich_ngan": "aim for half the speed you'd default to",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Hạt phim, CRT, lệch màu, glitch",
+   "mo_ta": "Ít gặp. Hạt phim nhẹ cuối khâu hoàn thiện (jake11moran-414633), hạt phim và CRT cho phim phóng sản phẩm kiểu retro (johnsavage-ai-427263), lệch sắc 'chừng mực' trên nét bút chì (groundcontrol-230877). Mẫu UI motion và heyiamnick-119558 cấm RGB split.",
+   "so_prompt": 6,
+   "slug_vi_du": [
+    "jake11moran-414633",
+    "johnsavage-ai-427263",
+    "groundcontrol-230877",
+    "daniel-haida-636937",
+    "heyiamnick-119558"
+   ],
+   "trich_ngan": "add film grain and CRT effect",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Con trỏ chuột là nguồn gây ra mọi thay đổi",
+   "mo_ta": "Con trỏ nhấn và kéo thật trước mỗi lần đổi trạng thái; đầu mũi con trỏ khoá vào vật đang kéo; nhắm vào vị trí đích sẽ ở khi đáp; tốc độ dưới 65 px/khung; trả lại vị trí cũ để vòng lặp không giật (flxrnc-251921, 0xnicc0-516612, diamai-157697). Claude tìm ảnh Mona Lisa, vẽ lại bằng chuột và cọ trong JS Paint trên Chrome, rồi làm video quay lại từng thao tác chuột (ehsanik-162993).",
+   "so_prompt": 19,
+   "slug_vi_du": [
+    "flxrnc-251921",
+    "0xnicc0-516612",
+    "diamai-157697",
+    "ehsanik-162993",
+    "bilimfili1-459762"
+   ],
+   "trich_ngan": "Keep cursor speed under 65 px/frame.",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Kính màu: ánh sáng chiếu lên sàn tính từ cùng một hoạ tiết",
+   "mo_ta": "Prompt 37 giây 1080x1920 30 fps bằng three.js: cửa sổ kính màu vòm nhọn cao 15 m rộng 10 m, nắng 45 độ rọi hoạ tiết lên sàn đá; từng ô kính có màu, vệt, bọt; bóng sàn phản ánh chính xác lỗ nào đã mở. Mốc theo giây (0-3, 3-11, 11-14, 14-19, 19-26, 26-33, 33-37), danh sách từ trên khối, chữ nguyên văn, nhạc từng đoạn. Mức chuẩn nêu bằng công trình thật: Chartres hoặc Sainte-Chapelle. Bản tiếng Nhật cùng nội dung (agioyaz-986461). Cuối prompt dặn tự dựng từng cảnh để kiểm chữ đọc được, hình thánh đọc ra được, chuyển động không đột ngột.",
+   "so_prompt": 2,
+   "slug_vi_du": [
+    "agioyaz-397647",
+    "agioyaz-986461"
+   ],
+   "trich_ngan": "Aim for the level of Chartres or Sainte-Chapelle",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Nhịp cắt và độ dài mỗi ý",
+   "mo_ta": "Con số cụ thể: mỗi phách có một việc (0xnicc0-516612); ý mới mỗi 1,5-2 giây (ik-builds-585923); 12-15 bố cục trên 30 giây, mỗi bố cục 1,4-3,5 giây (everestchris6-399895); mỗi tính năng ở trên màn hình ít nhất 2,5 giây (bilimfili1-459762); mỗi trạng thái chiếm 50% khung (flxrnc-251921); 'một cảnh một ý, ba khoảnh khắc phi thường hơn mười hoạt hình tầm thường' (daniel-haida-636937). Cảnh nào cũng phải đọc kịp.",
+   "so_prompt": 14,
+   "slug_vi_du": [
+    "0xnicc0-516612",
+    "ik-builds-585923",
+    "everestchris6-399895",
+    "bilimfili1-459762",
+    "daniel-haida-636937"
+   ],
+   "trich_ngan": "something happens on every beat",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Trang tương tác kéo, xoay, thanh trượt (không xuất video)",
+   "mo_ta": "Nhiều prompt đòi sản phẩm là trang chạy được: kéo để xoay, cuộn để zoom, thanh trượt, nút Explode, rê chuột hiện giải thích. Không phải video nhưng là nguồn ý cho cảnh khoa học có thể quay lại: tim, ống kính, đồng hồ, động cơ (aichrislee), hành tinh (0xsolty-735200), mạng lưới hiệu ứng mạng (drake5112-661428).",
+   "so_prompt": 32,
+   "slug_vi_du": [
+    "0xsolty-735200",
+    "adomicael-707503",
+    "aichrislee-378670",
+    "drake5112-661428",
+    "0xspikez-483865"
+   ],
+   "trich_ngan": "drag it and it spins. raise the sea level",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Chữ lời bài hát và phụ đề chạy theo nhịp",
+   "mo_ta": "Claude tự canh thời gian lời bài hát từng ký tự cho bài hát từ Suno, rồi Remotion + Three.js dựng 3D (aijipusi75693-284735); chữ lời nhúng ngay trong bố cục: lúc lớn lúc như phụ đề, nhân vật bên phải chữ bên trái (anabology-491441); phụ đề karaoke dưới đáy MV hạt cườm (hahazwei-425483). Phụ đề burn-in vì phần lớn xem khi tắt tiếng (astrothewizard-618782); phụ đề song ngữ Trung-Anh (chang-200908, grace-sunnyy-486816).",
+   "so_prompt": 10,
+   "slug_vi_du": [
+    "aijipusi75693-284735",
+    "anabology-491441",
+    "hahazwei-425483",
+    "astrothewizard-618782",
+    "chang-200908"
+   ],
+   "trich_ngan": "Burned-in captions, since most people watch on X with the sound off",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Bản đồ",
+   "mo_ta": "Bản đồ chỉ làm nền ở vài prompt: Minecraft trong phố thật (0xverdao-776363), Middle-earth thu nhỏ từ dữ liệu địa hình GIS với 24 địa danh (earthwalkerx17-912577), bản đồ mã nguồn (deedydas-407965), bản đồ sống 'mọi thứ' (heymrzak-349060). Với video lịch sử, bản đồ chỉ vẽ sơ đồ, đối chiếu niên đại trước khi giao (dotey-927166).",
+   "so_prompt": 6,
+   "slug_vi_du": [
+    "0xverdao-776363",
+    "earthwalkerx17-912577",
+    "deedydas-407965",
+    "heymrzak-349060",
+    "dotey-927166"
+   ],
+   "trich_ngan": "地图只画示意",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Độ sâu trường ảnh và parallax",
+   "mo_ta": "Rất hiếm so với phổ biến của chuyển động. Phòng thí nghiệm ống kính tương tác chỉnh vòng lấy nét, dời mặt phẳng nét, thấy hiệu ứng độ sâu trường ảnh thời gian thực (chudry223-081860); 'độ sâu trường ảnh có kiểm soát nếu làm được' (daniel-haida-636937); giọt mưa 3D thật trên màn hình tạo cảm giác chiều sâu (dan-riverbendai-163640).",
+   "so_prompt": 7,
+   "slug_vi_du": [
+    "chudry223-081860",
+    "daniel-haida-636937",
+    "dan-riverbendai-163640",
+    "brainextends-606193",
+    "heyiamnick-119558"
+   ],
+   "trich_ngan": "controlled depth of field if achievable",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Phong cách anime, Pixar, cel shading",
+   "mo_ta": "Biến hình 3 phương tiện thành robot kiểu anime, mô hình hoá, đổ bóng, nét viền, nhạc, tiếng, tất cả trong một file Python khoảng 1.000 dòng (allforbigfire-029657); phim phóng Claude đấu ChatGPT kiểu anime (ishuagra02-922825); Pixar-level (anilraok-009118), nhưng anabology-491441 cảnh báo 'đừng bám Pixar, là slop'.",
+   "so_prompt": 7,
+   "slug_vi_du": [
+    "allforbigfire-029657",
+    "ishuagra02-922825",
+    "anilraok-009118",
+    "anabology-491441",
+    "kadaliao-048854"
+   ],
+   "trich_ngan": "I wouldn't fit too heavily to Pixar",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Voxel và isometric",
+   "mo_ta": "Hiếm: thế giới voxel 3D có capybara trong bồn nước nóng trên thuyền (filicroval-168898), Minecraft voxel có bóng đổ mềm, che khuất môi trường (ambient occlusion), phản chiếu nước (dreyk0o0-165270).",
+   "so_prompt": 2,
+   "slug_vi_du": [
+    "filicroval-168898",
+    "dreyk0o0-165270"
+   ],
+   "trich_ngan": "make a 3D voxel world of a capybara",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Mọi khung là hàm thuần của thời gian: seek(t)",
+   "mo_ta": "Kỹ thuật nền của cả dây chuyền Playwright. Toàn bộ hình được tính trong một hàm seek(t) (hoặc draw(t)); cấm CSS transition, cấm timer, cấm Math.random (dùng hàm băm có hạt giống), không giữ trạng thái giữa hai khung. Hệ quả: render khung nào cũng được, theo thứ tự nào cũng được, tách chạy song song, chạy lại ra đúng kết quả; Claude có thể chụp thử một khung mỗi nhịp để kiểm trước khi render cả phim. Prompt gọi cách này bằng \"pure function of time\".",
+   "so_prompt": 23,
+   "slug_vi_du": [
+    "koushikde-937635",
+    "morse-369333",
+    "notdwd-998633",
+    "parkerrex-701462",
+    "techhalla-498547"
+   ],
+   "trich_ngan": "every frame a pure function of time so my renderer can screenshot it",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Lò xo dạng công thức đóng, cộng một lò xo cho mỗi lần đổi đích",
+   "mo_ta": "Chuyển động dùng đáp ứng bậc thang của lò xo viết thẳng thành công thức, nên vẫn là hàm của thời gian. Giá trị đổi đích nhiều lần thì cộng một lò xo cho mỗi lần đổi. Mép trái và mép phải của thanh chỉ tab, hoặc núm công tắc, đi trên hai lò xo khác nhau để mép dẫn đầu giãn ra trước mép sau. Quá đà (overshoot) chỉ rất nhỏ; cấm easing nảy.",
+   "so_prompt": 12,
+   "slug_vi_du": [
+    "morse-369333",
+    "okapi-fukugyo-166351",
+    "techhalla-498547",
+    "yankis0x-174321",
+    "verbove-268381"
+   ],
+   "trich_ngan": "Springs are closed-form step responses.",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Nhoè chuyển động thật bằng nhiều khung con (subframe)",
+   "mo_ta": "Mỗi khung đầu ra được chụp 3, 4, 6 hoặc 8 khung con (ví dụ tại t trừ, t, t cộng 1/240 giây), rồi FFmpeg trộn bằng tmix. Prompt viết rõ: 4 khung con bị bóng mờ ở cú quét nhanh nên dùng 8 (twoclipping-551116). Bộ đếm phải đọc thời gian của khung, không phải của khung con, nếu không chữ số bị nhoè.",
+   "so_prompt": 19,
+   "slug_vi_du": [
+    "raphaelaubryy-687877",
+    "twoclipping-551116",
+    "yankis0x-174321",
+    "techhalla-498547",
+    "okapi-fukugyo-166351"
+   ],
+   "trich_ngan": "Render with Playwright: 4 subframes per frame, blended with ffmpeg tmix",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Một cú máy liền: cảnh sau mọc từ cảnh trước, không cắt",
+   "mo_ta": "Nhóm prompt có cấu trúc đòi \"one continuous take\": không crossfade, không blur-in, không cắt cứng; mỗi cảnh sinh ra từ cảnh trước. Một hình duy nhất biến hình qua các trạng thái UI rồi quay lại khung đầu để lặp. Mỗi lần biến hình 0,8 giây theo cubic-bezier(.45,0,.15,1), zoom máy quay đi theo cùng đường cong (rossaxbt-312793). Khung cuối bằng khung đầu, kể cả vị trí và tốc độ con trỏ.",
+   "so_prompt": 17,
+   "slug_vi_du": [
+    "morse-369333",
+    "rossaxbt-312793",
+    "twoclipping-747965",
+    "thesethian-384517",
+    "xanares-738984"
+   ],
+   "trich_ngan": "Nothing ever cuts: every scene grows out of the last",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Chuyển cảnh bằng loang màu (flood), màn mống mắt 6 lá, goo, mặt nạ chạy qua nét chữ",
+   "mo_ta": "Cách nối cảnh thay cho cắt: một vật loang màu phủ cả khung rồi co lại thành vật tiếp theo (flood phải quá mép và mất khoảng 0,3 giây, nếu không nửa màn đổi trong một khung); màn mống mắt 6 lá quanh khẩu độ lục giác (twoclipping-496100); goo = làm mờ rồi ngưỡng alpha; chữ trồi lên qua một đường mặt nạ; từ mới hiện qua một mặt nạ lấy từ nét chữ của từ cũ (techhalla-498547).",
+   "so_prompt": 12,
+   "slug_vi_du": [
+    "twoclipping-496100",
+    "twoclipping-747965",
+    "techhalla-498547",
+    "ultimaxbt-549714",
+    "thejohnnyhuy-282154"
+   ],
+   "trich_ngan": "",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Kính lỏng (liquid glass) bằng SVG feImage và feDisplacementMap",
+   "mo_ta": "Mỗi phần tử kính giữ bản sao cảnh phía sau, lọc bằng bản đồ dịch chuyển (trường khoảng cách hình chữ nhật bo góc) qua ba feDisplacementMap ở ba tỉ lệ hơi khác nhau để viền có sắc sai, thêm đèn viền. Chữ kính dựng từ trường khoảng cách vẽ trên canvas. Ghi chú lỗi: backdrop-filter: url() đọc sai bản đồ dịch chuyển trong Chromium, nên phải sao chép cảnh thay vì dùng nó. Một prompt khác cấm hẳn glassmorphism (techhalla-498547).",
+   "so_prompt": 4,
+   "slug_vi_du": [
+    "twoclipping-496100",
+    "twoclipping-747965",
+    "thejohnnyhuy-282154",
+    "techhalla-498547"
+   ],
+   "trich_ngan": "backdrop-filter: url() misreads displacement maps in Chromium",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Con trỏ chuột thật điều khiển giao diện (bấm, kéo, gõ, rê)",
+   "mo_ta": "Con trỏ macOS thật làm mọi thay đổi: bấm, kéo, bấm giữ, gõ phím có nhịp gõ tự nhiên. Kéo là thao tác trực tiếp: khi giữ thì giá trị tính từ vị trí con trỏ, thả ra thì lò xo bật về từ vị trí đó; kéo quá mức tối đa thì thanh giãn như cao su. Con trỏ phóng to theo máy quay.",
+   "so_prompt": 20,
+   "slug_vi_du": [
+    "morse-369333",
+    "rossaxbt-312793",
+    "twoclipping-402193",
+    "notdwd-998633",
+    "ultimaxbt-549714"
+   ],
+   "trich_ngan": "A cursor drives every change with real clicks and drags.",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Chữ động theo từng ký tự, chữ trồi qua đường mặt nạ, phụ đề gõ theo giọng",
+   "mo_ta": "Chữ không hiện bằng mờ dần mà từng chữ trồi lên qua một đường mặt nạ (nothing pops in); mỗi ký tự có lò xo riêng (y, độ mờ, blur), so le theo nốt 1/16 ở 120 BPM tức 125 ms (techhalla-498547); phụ đề sáng từng từ theo mốc thời gian của giọng (notdwd-998633); phụ đề gõ theo giọng sau con trỏ khối (twoclipping-041659); phụ đề đo bằng font thật rồi co lại để vừa vùng an toàn 9:16 (l3d1c-632524).",
+   "so_prompt": 27,
+   "slug_vi_du": [
+    "techhalla-498547",
+    "notdwd-998633",
+    "twoclipping-041659",
+    "l3d1c-632524",
+    "tarunyadav9761-053244"
+   ],
+   "trich_ngan": "letters rise through a mask line one by one",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Hạt (particle): vừa là kỹ thuật bắt buộc, vừa bị cấm",
+   "mo_ta": "27 prompt nhắc hạt. Trong prompt kiểu \"showreel\" hạt là kỹ thuật nên đưa vào (lukasersil-726495: \"kinetic typography ... fluid simulations, particles\"). Nhưng 16 prompt có cấu trúc lại ghi hạt vào danh sách cấm (\"particle bursts\"). Cách dùng khác: tái dựng video thành hạt từ bản đồ độ sâu (pluvio9yte-662953); hệ hạt Canvas 2D tự viết với trọng lực, lực cản, vòng đời, trộn cộng, ba kiểu bay hút vào, đường cong, quay quanh (op7418-814408).",
+   "so_prompt": 27,
+   "slug_vi_du": [
+    "lukasersil-726495",
+    "pluvio9yte-662953",
+    "op7418-814408",
+    "morse-369333",
+    "majidmanzarpour-927543"
+   ],
+   "trich_ngan": "Banned: bouncy easing, particle bursts, glows",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Nét vẽ hiện dần, hoạt hình vẽ tay (whiteboard, bút lông, bút chì)",
+   "mo_ta": "Đường nét tự vẽ ra: một nét liền vẽ cả câu chuyện, đi qua từng vật rồi ảnh tô đầy (paripune-657175); whiteboard vẽ tay giải thích chủ đề vật lý thống kê rồi bản MP4 có lời (tak3sh8-441895); mực marker trắng đen một nét một nét, đỏ chỉ nhấn điểm chính (nft-chen-068069); tranh mực Tề Bạch Thạch trên WebGL có sợi giấy, đầu bút khô, cú tản chạy khi chạm nước (youwareai-259061); bản dựng nét chì rồi lên màu, điểm vàng cho điện Kỳ Niên (shunshu32385143-944719).",
+   "so_prompt": 20,
+   "slug_vi_du": [
+    "paripune-657175",
+    "tak3sh8-441895",
+    "nft-chen-068069",
+    "youwareai-259061",
+    "shunshu32385143-944719"
+   ],
+   "trich_ngan": "One unbroken line draws the whole story.",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Phong cách thủ công: cắt giấy, collage, đất sét dừng hình, sáp màu, riso, halftone, mực tàu",
+   "mo_ta": "Hình giống đồ thủ công nhưng toàn bằng mã. Ví dụ: sáp màu và màu nước 2 phút (kopert0x-098349); phim 6,5 phút 9.363 khung với cảnh giấy xé, phấn trên giấy đen, giấy lụa dưới nước, cát trên bàn sáng, sách pop-up (superalesha-970412); rối bóng giấy cắt (x4b47x-034026); đất sét \"animated on twos\" (wikiwayne-486055); Risograph (rneayan-441493); halftone kiểu xerox (leowenai-125931); thảo mộc bản thảo Phục Hưng (wangyinrec-532344).",
+   "so_prompt": 21,
+   "slug_vi_du": [
+    "kopert0x-098349",
+    "superalesha-970412",
+    "x4b47x-034026",
+    "wikiwayne-486055",
+    "rneayan-441493"
+   ],
+   "trich_ngan": "",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Pixel art (canvas phân giải thấp, phóng theo số nguyên)",
+   "mo_ta": "Vẽ vào canvas ngoài màn hình ở độ phân giải cố định (ví dụ 128x96), rồi phóng lên theo hệ số nguyên lớn nhất, image-rendering: pixelated, bảng màu cố định khoảng 24 màu, chỉ toạ độ nguyên, chạy 60Hz nhưng tư thế lượng tử về nhịp 8 đến 12 khung/giây (majidmanzarpour-927543, zacxbt-944604). Biến thể: vật thể pixel 16x16 mỗi ô một màu, dựng khối 3D có đùn và vát (twoclipping-041659); lịch sử nhân loại và 30 năm tới bằng pixel (xodud-rkd-160324).",
+   "so_prompt": 15,
+   "slug_vi_du": [
+    "majidmanzarpour-927543",
+    "zacxbt-944604",
+    "twoclipping-041659",
+    "xodud-rkd-160324",
+    "pluginplay-472343"
+   ],
+   "trich_ngan": "All drawing snaps to integer coordinates on the logical canvas.",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Cảnh 3D thủ tục, không dùng mô hình hay ảnh ngoài",
+   "mo_ta": "Vật thể 3D sinh hoàn toàn bằng mã: voi (thusatharan-640926), biệt thự hoàng hôn (thusatharan-433543), xe F1 và đội 8 người thay lốp, âm thanh tổng hợp (rubenssoto-ai-802657), đại bác 1857 bằng WebGPU và TSL kèm bản vẽ kỹ thuật chiếu trực giao thời gian thực (thebuggeddev-482912), gà rán (llama3dstudio-918962), cả thế giới thu nhỏ (mdaman010-610173). Khuôn câu: \"everything procedural, no imported 3D models\".",
+   "so_prompt": 12,
+   "slug_vi_du": [
+    "thusatharan-640926",
+    "rubenssoto-ai-802657",
+    "thebuggeddev-482912",
+    "llama3dstudio-918962",
+    "mdaman010-610173"
+   ],
+   "trich_ngan": "Everything should be procedural, with no imported 3D models.",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Mô phỏng vật lý: chất lưu, thân cứng, thân mềm, âm thanh vật lý",
+   "mo_ta": "Mô phỏng thật chứ không giả hình: lửa là chất lưu 3D trên GPU, màu theo vật đen, khói là thể tích, 96fps ở 1080p, tự chấm hình 40 lần (nathanwilbanks-981110); núi lửa Krakatoa bằng Navier-Stokes WebGL2 (pagustafsson-566609); 110.000 vật cứng bằng thuật toán AVBD trên WebGPU (nybobs-680050); xúc xắc kẹo dẻo vật mềm bằng WebGPU thô (spacyapps-157886); domino 1,8 m với Rapier (techartist-697078); 8.144 viên bi, mỗi tiếng lách cách khớp một va chạm mô phỏng (rneayan-417829).",
+   "so_prompt": 16,
+   "slug_vi_du": [
+    "nathanwilbanks-981110",
+    "pagustafsson-566609",
+    "nybobs-680050",
+    "techartist-697078",
+    "rneayan-417829"
+   ],
+   "trich_ngan": "Nothing faked. The fire is actual simulated gas that burns",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Shader, raymarching, chất lượng path-trace",
+   "mo_ta": "Fragment shader raymarch với bóng mềm, che sáng môi trường, phản chiếu bóng, sương có tia sáng, độ sâu trường ảnh, nhoè chuyển động, bloom; Mandelbox thêm một cấp fractal mỗi cú kick; dựng 37 giây 1080p60 offline (xanares-738984). Khác: bể cá với khúc xạ và caustic, dùng để so GLSL giữa các model (nicolamanzini-156628); đồng hồ cơ WebGPU tự tháo khi cuộn trang (theparuchh-013286); WGSL thuần (spacyapps-157886).",
+   "so_prompt": 9,
+   "slug_vi_du": [
+    "xanares-738984",
+    "nicolamanzini-156628",
+    "theparuchh-013286",
+    "spacyapps-157886",
+    "techartist-786274"
+   ],
+   "trich_ngan": "path-traced quality. Soft shadows, ambient occlusion, glossy reflections, fog with light shafts",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Độ sâu trường ảnh, bokeh, halation, hạt nhiễu phim, sắc sai viền, vignette",
+   "mo_ta": "Hậu kỳ giả phim bằng mã: hạt mới mỗi khung, halation ở mép sáng, vignette khoảng 0,65 ở góc, viền sắc sai 1 px kẹp ở mép (notdwd-998633, dựng bằng numpy sau khi chụp); bokeh tròn tự viết với độ mở đóng dần (tanabe-fragm-322001); bokeh và chuyển tiêu cự cho cảnh 4K 2.39:1 (zhu185178-255661); hạt phim và vignette trên mọi thứ (twoclipping-041659).",
+   "so_prompt": 11,
+   "slug_vi_du": [
+    "notdwd-998633",
+    "tanabe-fragm-322001",
+    "zhu185178-255661",
+    "twoclipping-041659",
+    "twoclipping-551116"
+   ],
+   "trich_ngan": "fresh grain every frame, halation on bright edges, soft vignette",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Glitch, tách RGB, lệch in (misregistration)",
+   "mo_ta": "Tám prompt nhắc glitch. Dùng có kiểm soát: lệch in magenta và xanh 2 đến 4 px chỉ ở khung nhấn mạnh (techhalla-498547); glitch 1 đến 2 khung, chỉ đặt trên cú cắt thật, luôn kèm tiếng click (notdwd-998633). Dùng dày đặc trong MV: dải ngang lệch, tách RGB đúng khoảnh khắc nhịp rơi, hồi lại trước nhịp sau (pound75423-464968). Ở nhóm \"high-end minimal\" thì cấm RGB split (raphaelaubryy-687877).",
+   "so_prompt": 8,
+   "slug_vi_du": [
+    "techhalla-498547",
+    "notdwd-998633",
+    "pound75423-464968",
+    "raphaelaubryy-687877",
+    "twoclipping-041659"
+   ],
+   "trich_ngan": "Glitch = 1-2 frames, only on a real cut, always with a click.",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Máy quay luôn chuyển động (đẩy chậm, tay cầm, whip pan, bay liên tục)",
+   "mo_ta": "Máy quay không đứng yên: đẩy chậm 1,03 đến 1,07 ở mọi cảnh và nổi tay cầm nhẹ (twoclipping-551116, twoclipping-041659); không bao giờ đóng băng, mọi đoạn giữ đều có đẩy chậm (notdwd-766641); chỉ punch-in 1,0 đến 1,08 và smash-pan ngang theo nhịp, không trôi ngẫu nhiên (techhalla-498547); máy quay là một phép biến đổi khoá theo [thời gian, zoom, x, y], zoom nội suy trong không gian log (ultimaxbt-549714); một cú bay liền từ Trái Đất đến Sao Hoả rồi về Mặt Trời (thesethian-384517).",
+   "so_prompt": 26,
+   "slug_vi_du": [
+    "twoclipping-551116",
+    "notdwd-766641",
+    "techhalla-498547",
+    "ultimaxbt-549714",
+    "thesethian-384517"
+   ],
+   "trich_ngan": "nothing ever freezes (slow push on every hold)",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Khung 2.5D: ghép lớp theo độ sâu, thị sai từ bản đồ độ sâu",
+   "mo_ta": "Ảnh phẳng được ước lượng độ sâu (Depth Anything V2) rồi ghép lớp theo khoảng cách thật, máy quay lỗ kim theo tiêu cự thật, thị sai từng điểm ảnh, mưa 3D, ánh sáng thể tích; nhân vật biến dạng lưới để thở và bay tóc, tư thế đổi \"một nhịp hai khung\" (zhu185178-255661). Tương tự: tái dựng video thành hạt có độ sâu, lấy bản đồ độ sâu và vùng chủ thể làm đầu vào (pluvio9yte-662953); ảnh tĩnh đẩy chiều sâu để chuyển máy (mochi-agi-421448).",
+   "so_prompt": 4,
+   "slug_vi_du": [
+    "zhu185178-255661",
+    "pluvio9yte-662953",
+    "mochi-agi-421448",
+    "tanabe-fragm-706979"
+   ],
+   "trich_ngan": "",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Tái dựng video thành hạt hoặc ký tự theo bản đồ độ sâu và vùng chủ thể",
+   "mo_ta": "Một quy trình 6 bước do một tác giả chia sẻ (pluvio9yte-662953): chọn tư liệu (chủ thể trọn vẹn, nền sạch, có khoảnh khắc hành động rõ); tách mỗi khung thành màu, độ sâu, vùng chủ thể; chọn \"hạt\" (chấm, vuông, chữ, nét) và 4 đến 6 kiểu, mỗi kiểu là ba luật (đặt ở đâu, to bao nhiêu, màu gì) cộng công tắc phẳng hay đẩy vào 3D; tìm nhịp (một ô đúng số nguyên khung, dò điểm đánh bằng tín hiệu tiếng to và hình chuyển động); lập bảng xếp (mỗi ô một kiểu, màu, máy quay); phản hồi ba bậc nhẹ, vừa, nặng, nặng chỉ một hai lần.",
+   "so_prompt": 1,
+   "slug_vi_du": [
+    "pluvio9yte-662953"
+   ],
+   "trich_ngan": "原则是弱而短。只动一部分粒子，几帧内结束",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Đồ thị tự vẽ, bộ đếm chạy, số liệu thật",
+   "mo_ta": "Đường đồ thị tự vẽ theo đáp ứng lò xo, vượt đích rồi lắng cạnh nhãn \"+22%\" (rossaxbt-707651); đồ thị tự vẽ kèm chú giải khi rê chuột (morse-369333); bộ đếm tuyến tính trên đồng hồ toàn phim nên vẫn chạy khi cắt cảnh, số dùng chữ số bằng độ rộng (notdwd-998633); 8.144 viên bi, 1 bi bằng 1 triệu người, dữ liệu dân số 2024 (rneayan-417829); đường pipeline tăng đến 48.200 USD (twoclipping-747965).",
+   "so_prompt": 17,
+   "slug_vi_du": [
+    "rossaxbt-707651",
+    "morse-369333",
+    "notdwd-998633",
+    "rneayan-417829",
+    "twoclipping-747965"
+   ],
+   "trich_ngan": "Counters: linear on the film's global clock, so they keep running through cutaways.",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Bản đồ, quả địa cầu, tuyến đường, dữ liệu địa lý",
+   "mo_ta": "Bản đồ cổ trên giấy da, tuyến Trường An đến Đôn Hoàng một nét đỏ rồi đóng dấu (nft-chen-068069); xe buýt Portland một ngày thứ Ba thường, zoom từng khu, chậm tốc độ khi zoom sâu (milos-gis-317580); 605 biển quảng cáo của Quảng trường Thời đại dựng từ dữ liệu thật của New York (riyadbkhsh-300736); bản đồ hành tinh thật làm texture (thesethian-384517); quả cầu đầy người dùng (verbove-268381).",
+   "so_prompt": 5,
+   "slug_vi_du": [
+    "nft-chen-068069",
+    "milos-gis-317580",
+    "riyadbkhsh-300736",
+    "thesethian-384517",
+    "verbove-268381"
+   ],
+   "trich_ngan": "",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Dạng \"tháo ra xem\": cắt, nổ, X-ray, đổi thời gian",
+   "mo_ta": "Giải thích bằng mô hình 3D tương tác tháo được: động cơ Raptor 3 cắt mở, theo dõi oxy và methane qua hai bơm, tăng ga để thấy kim cương xung kích (konstantinsaifo-501736); lò phản ứng nhiệt hạch kéo plasma từ 15 triệu đến 150 triệu độ (konstantinsaifo-587629); nhà xây qua 5 giai đoạn có X-ray, nổ lớp, mặt cắt (mrkindey-267498, techartist-021472); động cơ pit-tông so với nam châm, làm chậm 1/10 (stefanostraus-971191); đồng hồ cơ tự tháo (theparuchh-013286).",
+   "so_prompt": 9,
+   "slug_vi_du": [
+    "konstantinsaifo-501736",
+    "konstantinsaifo-587629",
+    "mrkindey-267498",
+    "stefanostraus-971191",
+    "theparuchh-013286"
+   ],
+   "trich_ngan": "Cut it open, follow the oxygen and the methane through both turbopumps",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Viền hoạt hình (toon outline) bằng hậu kỳ pháp tuyến và độ sâu",
+   "mo_ta": "Vật 3D tô nhiều bậc (MeshToonMaterial 3 đến 4 bậc), 3 đèn (chính, trời, viền theo cấp). Viền vẽ bằng hậu kỳ: render bản đồ pháp tuyến và độ sâu rồi shader kẻ nét; viền ngoài dày, viền nối chi tiết mỏng, đồng đều; siêu lấy mẫu 1,5 lần. Ghi chú lỗi: không dùng cách phóng to mặt sau màu đen vì nét không đều và gãy ở góc; ngưỡng độ sâu phải nới, mối nối dựa chủ yếu vào pháp tuyến (op7418-814408). Không dùng CSS 3D lật vật lớn, lật 3D để trong WebGL.",
+   "so_prompt": 3,
+   "slug_vi_du": [
+    "op7418-814408",
+    "op7418-818226",
+    "op7418-021491"
+   ],
+   "trich_ngan": "不要用「放大一圈的黑色背面」那种描边",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Lát gạch hoặc mảnh gương hàng nghìn viên tạo hình",
+   "mo_ta": "Prompt tanabe-fragm-322001: khoảng 190.000 viên gạch riêng (576x324), khoảng 12 chất liệu (men gốm, đá phiến, xà cừ, sứ trắng, đất nung, kính) gán theo độ sáng và độ bão hòa, một mặt trời gắt, khoảng 25 giây giống clip làm gạch, giây cuối mới lộ ra là quảng cáo; viên làm chữ ban đầu dùng màu nền, tô từ ngoài vào trong để giữa chừng không lộ hình chữ. Nischalsharma-587738 và zeezomb-726206: phim vuông 80 giây WebGL2 thuần, tường khảm kính và vàng lá, các mảnh nâng, lật, bay, rồi khớp lại; \"đàn mảnh\" là hình người, cá.",
+   "so_prompt": 3,
+   "slug_vi_du": [
+    "tanabe-fragm-322001",
+    "nischalsharma-587738",
+    "zeezomb-726206"
+   ],
+   "trich_ngan": "",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Video lời bài hát và MV theo bài hát đính kèm",
+   "mo_ta": "Bảy prompt làm MV hoặc lời hát: chữ đồng bộ chính xác với giọng (kurahu-capten-054506, samaote-124569); \"1 dòng lời = 1 cảnh\" sau khi tách nhạc và căn lời bằng whisper (okazaky-084783); MV sáng tạo đủ cả bài, dùng bộ khởi tạo hoạt hình có sẵn, không remix hay cắt bài (thewevr-681887); MV glitch psychedelic từ bài và ảnh nhân vật, mỗi nhịp một cú cắt, nhân vật không dùng lại tư thế ở hai nhịp liền nhau (pound75423-464968); \"Đây là bài hát, sẽ đăng lên X, làm video liên quan\" rồi dán lời và nói \"làm hết\" (yanivm79-158103).",
+   "so_prompt": 7,
+   "slug_vi_du": [
+    "kurahu-capten-054506",
+    "okazaky-084783",
+    "thewevr-681887",
+    "pound75423-464968",
+    "yanivm79-158103"
+   ],
+   "trich_ngan": "Sync the lyrics perfectly with the song.",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Vòng lặp liền mạch (khung cuối bằng khung đầu)",
+   "mo_ta": "Yêu cầu loopable xuất hiện trong 26 prompt: khung đầu và khung cuối giống hệt kể cả vị trí và vận tốc con trỏ (techhalla-498547, thegrootdev-966114); xuất đoạn [0, thời lượng) không lặp khung cuối; mẫu quay được không xoay một nấc mỗi nhịp mà xoay liên tục để cuối khung trùng mẫu đầu (twoclipping-551116); vòng đất sét 96 khung (wikiwayne-486055).",
+   "so_prompt": 26,
+   "slug_vi_du": [
+    "techhalla-498547",
+    "thegrootdev-966114",
+    "twoclipping-551116",
+    "wikiwayne-486055",
+    "milos-gis-317580"
+   ],
+   "trich_ngan": "last frame == first frame",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Danh mục 15 mẫu video giải thích ngắn trong một prompt",
+   "mo_ta": "Một prompt tiếng Trung (nft-chen-068069) liệt kê 15 mini-brief, mỗi cái một dòng gồm thời lượng 10 đến 12 giây, hình thức và chủ đề đặt trong 【】: rối bóng giấy cắt (Tào Xung cân voi), hoạt cảnh đẳng cự 2.5D (phân loại bưu kiện), so tỉ lệ Trái Đất, Sao Mộc, Mặt Trời, whiteboard vẽ tay, chữ Hán WebGL biến hình (chữ Hoả), nổ lớp điện thoại, pixel 16 bit, sách tranh khoa học cá vàng, kiểu 3Blue1Brown (diện tích hình tròn), bản đồ cổ, infographic kiểu Kurzgesagt, MG phẳng (mưa), kinetic type 120 BPM (phương pháp Feynman), truyện tranh manga, dòng thời gian ngang. Danh mục dùng ngay cho xưởng video khoa học.",
+   "so_prompt": 1,
+   "slug_vi_du": [
+    "nft-chen-068069"
+   ],
+   "trich_ngan": "做一支 10 秒 3Blue1Brown 式数学可视化，讲【圆面积】。",
+   "lo_quet": "b"
+  }
+ ],
+ "am_thanh": [
+  {
+   "ten": "Đồng bộ hình theo nhịp: BPM, lưới phách, phách đầu, mọi cú click đặt đúng đỉnh đo được",
+   "mo_ta": "Mẫu cụ thể nhất: 120 BPM, 24 phách, mỗi phách một việc (0xnicc0-516612); 120 BPM, 60 phách, 15 ô nhịp dài 2 giây, chuyển động bắt đầu sớm 0,05 giây để đáp đúng phách (heyiamnick-119558); 128 BPM, 8 ô nhịp, mỗi cảnh một ô nhịp 1,875 giây (ai9app-989009). Đo bài bằng numpy: tìm BPM, thời điểm phách, drop, cắt 30 giây từ phách đầu tiên; nếu bài hết sớm chọn đoạn khác (diamai-157697). Khoảng 22 prompt dùng từ BPM/lưới phách/đúng phách, 47 prompt nhắc đồng bộ nói chung.",
+   "so_prompt": 22,
+   "slug_vi_du": [
+    "0xnicc0-516612",
+    "heyiamnick-119558",
+    "ai9app-989009",
+    "diamai-157697",
+    "annacher-433425"
+   ],
+   "trich_ngan": "Find the beat grid of the track, start on a downbeat",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Âm thanh và hình sinh từ cùng một dữ liệu",
+   "mo_ta": "Kỹ thuật nổi bật: một Node script tổng hợp nhạc đọc đúng dữ liệu nảy của photon nên mỗi lần nảy thấy là một tiếng click nghe (apoorvjain25-945542); nhạc đọc cùng file phách với hình nên mỗi tin nhắn trả lời hiện ra trùng một blip (apoorvjain25-309680); một dòng thời gian điều khiển cả hai: chân mèo nhấn đúng phím đang vang, đèn, camera, tâm trạng theo nhạc (0xcodez-474136); máy chơi nhạc, mỗi nốt đến từ một va chạm thấy được (kamstudiolabs-440893); xi-lanh nháy theo thứ tự nổ thật, âm V8 tổng hợp (dys-hay-749645).",
+   "so_prompt": 6,
+   "slug_vi_du": [
+    "apoorvjain25-945542",
+    "apoorvjain25-309680",
+    "0xcodez-474136",
+    "kamstudiolabs-440893",
+    "dys-hay-749645"
+   ],
+   "trich_ngan": "every bounce you see is a click you hear",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Python và numpy tổng hợp nhạc và tiếng UI",
+   "mo_ta": "Nhạc từng nốt từ sóng sin và nhiễu (daniel-haida-636937), 'tổng hợp tiếng UI bằng numpy và đặt từng tiếng theo đỉnh đo được trên lưới phách' (annacher-433425), chỉ dùng thư viện chuẩn Python (dengent-412996). Kết quả đi kèm cue sheet nói nhạc và hiệu ứng nhấn ở đâu (daniel-haida-636937).",
+   "so_prompt": 10,
+   "slug_vi_du": [
+    "daniel-haida-636937",
+    "annacher-433425",
+    "dengent-412996",
+    "apoorvjain25-309680",
+    "colecornelll-047465"
+   ],
+   "trich_ngan": "Synthesize UI sounds with numpy and place each one by its measured peak",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Web Audio tổng hợp ngay trong trình duyệt",
+   "mo_ta": "Piano tổng hợp có hoà âm, tiếng búa, vang, không file âm thanh (0xcodez-474136); đàn tranh bằng mô hình dây rung Karplus-Strong có nhấn trượt, thêm sáo, nước, côn trùng, vang (demitiyageekzen-818523); tiếng click ngắn khi công tắc đổi, chỉ bắt đầu sau cú nhấp đầu tiên của người dùng (godsboy7777-150194); 30+ âm từ toán thuần (curieuxexplorer-772215); tiếng gõ phím tổng hợp bằng mã (btcup99-311469).",
+   "so_prompt": 14,
+   "slug_vi_du": [
+    "0xcodez-474136",
+    "demitiyageekzen-818523",
+    "godsboy7777-150194",
+    "curieuxexplorer-772215",
+    "btcup99-311469"
+   ],
+   "trich_ngan": "Synthesize the piano in Web Audio with harmonics, hammer noise and reverb",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Giọng đọc và TTS",
+   "mo_ta": "Công cụ nêu tên: ElevenLabs (5 prompt: anabology-491441, apoorvjain25-309680, ayumi-t820-871023, chang-200908, georgejimenez98-431559), OpenAI text-to-speech (henritoivar-445215), Gemini TTS (deedydas-407965, inoue-aix-234322), TTS cục bộ của Microsoft miễn phí (henrygsing-050247), FrankenTTS (eleanorina-653042), mô hình mã nguồn mở do Claude tự tải về (itsahmedharoon-544194), OpenRouter (kadaliao-048854, garmdotcom-987439), endpoint Fal AI. Video 7 phút giải thích SQLite có tiếng đọc, bản đồ mã nguồn, vòng đời truy vấn, trừu tượng cốt lõi và một vết thực thi (deedydas-407965).",
+   "so_prompt": 22,
+   "slug_vi_du": [
+    "deedydas-407965",
+    "henrygsing-050247",
+    "henritoivar-445215",
+    "eleanorina-653042",
+    "astrothewizard-618782"
+   ],
+   "trich_ngan": "voiced with the highest-quality text-to-speech model you can access",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Nhạc có sẵn hoặc do công cụ ngoài tạo",
+   "mo_ta": "Suno: bài từ Suno rồi Claude canh lời (aijipusi75693-284735); xin prompt để tự tạo bài bằng Suno (deifosv-786581); Lyria 3.5 cho nền (kaiyu-ai-762929); nhạc miễn phí bản quyền khoảng 120 BPM như Mixkit (0xnicc0-516612 và các bản chép); bản nhạc tracker S3M cho demoscene (gandamu-ml-220530); Treblo (ivysparkleai-543294); 'ưu tiên nhạc thư viện sạch hơn nhạc sinh, không nêu tên hãng trong prompt nhạc, hiệu ứng tiếng loại CC0 hoặc sinh bằng mã và ghi nguồn' (everestchris6-399895). Cảnh đổi theo từng bản nhạc cổ điển (gorden-sun-797351).",
+   "so_prompt": 18,
+   "slug_vi_du": [
+    "aijipusi75693-284735",
+    "kaiyu-ai-762929",
+    "0xnicc0-516612",
+    "gandamu-ml-220530",
+    "everestchris6-399895"
+   ],
+   "trich_ngan": "prefer clean library music and sound effects over generated ones",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Hiệu ứng tiếng theo hành động: ít mà đúng",
+   "mo_ta": "'Một tiếng whoosh ngắn mềm cho mỗi lần đổi cảnh thật, click và pop nhỏ chỉ cho hành động thật trên màn hình; thử boom, hiss và độ dài trước; mỗi hiệu ứng đặt cao hơn nhạc một chút trong dải tần riêng; luôn xuất bản chỉ có nhạc' (everestchris6-399895). 'Một tiếng nhẹ cho mỗi phần tử hiện ra và im lặng ngoài ra' (aschapmann-724497). 'Mỗi hành động lớn một nhịp hoặc tiếng nhỏ' (cipherwrk-451155).",
+   "so_prompt": 41,
+   "slug_vi_du": [
+    "everestchris6-399895",
+    "aschapmann-724497",
+    "cipherwrk-451155",
+    "ik-builds-585923",
+    "andriyfernandes-807308"
+   ],
+   "trich_ngan": "one soft sound effect for every element that appears and silence otherwise",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Phối âm và chuẩn âm lượng",
+   "mo_ta": "Chuẩn hoá loudnorm -14 LUFS (0xnicc0-516612); -14 LUFS, -2 dBTP, đo lại sau khi mã hoá AAC (ik-builds-585923); nhạc hạ xuống dưới giọng đọc, chuẩn âm lượng phát trực tuyến, kiểm số liệu (astrothewizard-618782); hiệu ứng không bao giờ to hơn nhạc, không méo, ổn định cho web (everestchris6-399895).",
+   "so_prompt": 4,
+   "slug_vi_du": [
+    "0xnicc0-516612",
+    "ik-builds-585923",
+    "astrothewizard-618782",
+    "everestchris6-399895"
+   ],
+   "trich_ngan": "music ducks under the voice, mastered to streaming loudness",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Phim im lặng hoặc phải xem hiểu được khi tắt tiếng",
+   "mo_ta": "Một nhóm nhỏ đặt điều kiện hình tự đứng được: 12 giây đầu hoàn toàn không tiếng rồi bi rơi mở máy (adrianduta96-992248); 'phải hiểu khi tắt tiếng' (everestchris6-399895, howdevelop-733090, gdgtify-130294); phụ đề burn-in vì đa số xem tắt tiếng (astrothewizard-618782); phim câm 45 giây 'âm thanh kể một nửa câu chuyện' (kamstudiolabs-877996); không âm thanh (jake11moran-414633, ivanainai-190629).",
+   "so_prompt": 10,
+   "slug_vi_du": [
+    "adrianduta96-992248",
+    "everestchris6-399895",
+    "howdevelop-733090",
+    "kamstudiolabs-877996",
+    "astrothewizard-618782"
+   ],
+   "trich_ngan": "The story must also work muted",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Âm thanh phản ứng và chế độ trực tiếp theo bài hát",
+   "mo_ta": "Mắt cơ khí 72 tấm, mống mắt 9 lá: mỗi nhịp kick lật các tấm, bass đẩy thấu kính, treble thắp lõi, 'Opus nghe bài trước, tìm nhịp, đoạn nghỉ và drop' (acoramaa-248467); vòng phản ứng âm thanh đồng bộ lưới phách 128 BPM (buildfastwithai-844291). Dùng khi muốn hình sinh từ tín hiệu âm.",
+   "so_prompt": 2,
+   "slug_vi_du": [
+    "acoramaa-248467",
+    "buildfastwithai-844291"
+   ],
+   "trich_ngan": "Opus 5.5 listened to the track first, found the tempo",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Nhạc và tiếng tổng hợp hoàn toàn bằng mã (không mẫu, không file âm thanh)",
+   "mo_ta": "Khoảng 28 prompt đòi âm thanh tự sinh, thường kèm \"no samples, no audio files, no VST instruments\". Ví dụ: bản piano Am-F-C-G tổng hợp bằng Web Audio, bắt đầu một nốt ngập ngừng rồi thành hợp âm; tay robot nhấn đúng phím đang vang, mỗi nốt bật một cửa sổ thành phố (kopert0x-098349); 15 giây ở 128 BPM, mỗi trạng thái đổi nằm trên nhịp (koushikde-937635); soundtrack 2 phút, cắt hình theo nhạc (linke1427832-343079); 15 giây tự tổng hợp, mọi cú cắt rơi đúng nhịp (prasenx-693512).",
+   "so_prompt": 24,
+   "slug_vi_du": [
+    "kopert0x-098349",
+    "koushikde-937635",
+    "linke1427832-343079",
+    "prasenx-693512",
+    "ulyssexbt-205279"
+   ],
+   "trich_ngan": "compose the soundtrack yourself, fully synthesized in code. no samples",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Web Audio API tổng hợp thời gian thực",
+   "mo_ta": "Sáu prompt: hiệu ứng và nhạc phát khi bấm nút, khớp từng chuyển động, viết bằng Web Audio, không dùng file (tanabe-fragm-706979: nhịp và tiếng tổng hợp khớp 120 BPM; op7418-814408: nhảy, đáp, tiếng tích luỹ tăng cao độ); video ngang bằng Canvas với nhạc Web Audio (oxpsats-182908); hoạt cảnh giải thích 25 giây có soundtrack Web Audio (woojinrad-455731).",
+   "so_prompt": 6,
+   "slug_vi_du": [
+    "tanabe-fragm-706979",
+    "op7418-814408",
+    "oxpsats-182908",
+    "woojinrad-455731",
+    "kopert0x-098349"
+   ],
+   "trich_ngan": "",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Python và numpy dựng nhạc rồi chỉnh hình theo nhạc",
+   "mo_ta": "Nhạc nền tạo bằng numpy (kick, snare, bass, synth), kèm phân tích để hình khớp: bóc nhịp khung hông của người nhảy, suy ra nhịp thật khoảng 137 BPM, kéo giãn thời gian điệu nhảy từng nhịp để mỗi cú nhún trùng cú kick sai số ±0,5 khung; cắt, đèn, zoom, chất liệu đổi đều ở đầu nhịp (oab10don-457273). Khác: kể về công cụ tổng hợp thủ tục cho nhạc nền và SFX (tarunyadav9761-053244); soundtrack Python mọi cú đập khớp hoạt hình (teleboost-app-521507); nhạc 16 giây và 30 giây dựng tại chỗ (tankazunori0914-156748, leowenai-125931).",
+   "so_prompt": 5,
+   "slug_vi_du": [
+    "oab10don-457273",
+    "tarunyadav9761-053244",
+    "teleboost-app-521507",
+    "tankazunori0914-156748",
+    "leowenai-125931"
+   ],
+   "trich_ngan": "全拍で沈み込みがキックと±0.5フレームで一致",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Nhạc có sẵn miễn phí bản quyền (Mixkit) kèm phân tích nhịp",
+   "mo_ta": "Khuôn của nhóm prompt có cấu trúc: yêu cầu người dùng đưa bài khoảng 120 BPM miễn phí thương mại (Mixkit), hoặc đặt bài mặc định (\"Cat Walk\" 129,6 BPM, hạ nhịp ở 29,7 giây; \"Head Bang\" ở nhịp 110). 18 prompt nhắc royalty-free, 17 nhắc Mixkit. Bài phải có \"drop\" rõ; video bắt đầu 8 hoặc 12 nhịp trước drop để cảnh quan trọng rơi đúng drop.",
+   "so_prompt": 20,
+   "slug_vi_du": [
+    "morse-369333",
+    "notdwd-998633",
+    "raphaelaubryy-687877",
+    "twoclipping-551116",
+    "ultimaxbt-549714"
+   ],
+   "trich_ngan": "a royalty-free song with a clear drop (e.g. Mixkit, free for commercial use)",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Hiệu ứng tiếng (SFX) tải về, đặt theo đỉnh đo được thay vì đầu file; chuẩn hoá -14 LUFS",
+   "mo_ta": "Mỗi sự kiện (gõ phím, bật gửi, tung nguyên liệu, drop, vút thẻ, bấm, nhạc thành công) dùng một SFX tải về từ Mixkit, đặt sao cho đỉnh biên độ đo được, không phải đầu file, trùng khung hành động; SFX nhỏ hơn nhạc; chuẩn hoá -14 LUFS (twoclipping-496100, twoclipping-551116, ultimaxbt-549714). Có prompt cấm tổng hợp: \"a downloaded SFX for every event, never synthesized\" (twoclipping-496100). Nhóm khác chọn -16 LUFS (tanabe-fragm-322001, zhu185178-255661).",
+   "so_prompt": 17,
+   "slug_vi_du": [
+    "twoclipping-496100",
+    "twoclipping-551116",
+    "ultimaxbt-549714",
+    "tanabe-fragm-322001",
+    "zhu185178-255661"
+   ],
+   "trich_ngan": "Place each sound effect so its measured peak, not its file start, lands on the event.",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "ElevenLabs: giọng đọc, hiệu ứng tiếng, nhạc",
+   "mo_ta": "Chín prompt: lồng tiếng và nhạc cho quảng cáo Remotion (l3d1c-632524); nhạc và 159 hiệu ứng tiếng đồng bộ nhịp (piyushaaryan2-196586); hai giọng đối thoại một lượt bằng ElevenLabs v4, chỉ dẫn diễn xuất bằng tiếng Anh như [whispering], [laughs softly], stability hạ từ 0,5 xuống 0,3, chọn một trong ba giọng nữ, giọng nữ thì thầm đến hết (mochi-agi-421448); giọng người dẫn chỉ dùng giọng dựng sẵn, dùng endpoint /with-timestamps để chữ sáng từng từ (notdwd-998633); hiệu ứng tiếng đặt từng viên gạch, cảnh báo tiêu hao tín dụng trước khi sinh (tanabe-fragm-322001).",
+   "so_prompt": 9,
+   "slug_vi_du": [
+    "l3d1c-632524",
+    "piyushaaryan2-196586",
+    "mochi-agi-421448",
+    "notdwd-998633",
+    "tanabe-fragm-322001"
+   ],
+   "trich_ngan": "stability 0.5 → 0.3",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Gemini TTS, Kokoro, edge-tts, HeyGen: giọng đọc khác",
+   "mo_ta": "Gemini TTS: giọng đọc 52 giây, Claude tự điều khiển cài đặt giọng và nhập kịch bản, rồi chia âm thanh thành 32 cụm, tự đồng bộ để chữ hiện đúng lúc nói (tetsu-tetsu333-576886); video 15 giây tiếng Nhật, giấy cắt dán, chủ đề Claude Code là gì (so-ainsight-225926); video Ả Rập dùng gemini 3.8 tts flash (yarhmm-341449); signalz-jp-918002, washow-cfo-175311. edge-tts: video đạo hàm bằng Manim (linearuncle-971663). Kokoro: giọng nam Trung Quốc (zhu185178-255661). HeyGen: kỹ năng lồng tiếng (rishit30g-568278).",
+   "so_prompt": 8,
+   "slug_vi_du": [
+    "tetsu-tetsu333-576886",
+    "so-ainsight-225926",
+    "yarhmm-341449",
+    "linearuncle-971663",
+    "zhu185178-255661"
+   ],
+   "trich_ngan": "",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Nhạc AI sinh sẵn: Lyria, Suno, Google Flow, ElevenLabs",
+   "mo_ta": "Bảy prompt nhờ mô hình nhạc: Lyria để sinh BGM (majin-appsheet-693327) và Lyria 3 Pro (ponzponz15-145882); Suno sinh bài rồi tách stem bằng Demucs và chép lời bằng mlx_whisper (okazaky-084783); Google Flow cho BGM (rafiroutes-596199); Gemini tạo nhạc (seantiffonnet-675262); ElevenLabs tạo nhạc (piyushaaryan2-196586); signalz-jp-918002 dùng ElevenLabs cho BGM.",
+   "so_prompt": 7,
+   "slug_vi_du": [
+    "majin-appsheet-693327",
+    "ponzponz15-145882",
+    "okazaky-084783",
+    "rafiroutes-596199",
+    "seantiffonnet-675262"
+   ],
+   "trich_ngan": "",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Phân tích số khi AI không nghe được: lưới nhịp, onset, FFT, đỉnh biên độ",
+   "mo_ta": "Prompt dặn phân tích bài bằng số: numpy tìm tempo, lưới nhịp, năng lượng từng ô nhạc, drop; hiệu chỉnh lưới theo cú kick thật (raphaelaubryy-687877); JSON bản đồ nhịp gồm hit, break, onset kick, snare, hat; kick làm đèn đập, hi-hat thêm chi tiết bề mặt (xanares-738984); FFT trên chính bản trộn, các thanh equalizer là bản nhạc thật (ulyssexbt-205279). Một bài đăng nói thẳng: Claude không nghe được nhưng phân tích dạng sóng bằng số và khớp hiệu ứng tại khoảnh khắc đóng dấu, đáp xuống (majin-appsheet-693327).",
+   "so_prompt": 20,
+   "slug_vi_du": [
+    "raphaelaubryy-687877",
+    "xanares-738984",
+    "ulyssexbt-205279",
+    "majin-appsheet-693327",
+    "yankis0x-174321"
+   ],
+   "trich_ngan": "Claude自身は音が聴けないのに、波形を数値で解析して音ハメしてる",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Mốc thời gian từng từ để chữ và hình khớp với giọng",
+   "mo_ta": "Căn chữ theo từng từ: whisper nhanh (faster-whisper) lấy mốc từng từ, từng đoạn ngắn (twoclipping-041659); ElevenLabs /with-timestamps (notdwd-998633); tách giọng bằng Demucs, chép lời mlx_whisper, căn với lời chính thức để mỗi dòng lời là một cảnh (okazaky-084783); chia giọng thành 32 cụm đồng bộ phụ đề (tetsu-tetsu333-576886); phụ đề động theo từng từ (tarunyadav9761-053244).",
+   "so_prompt": 5,
+   "slug_vi_du": [
+    "twoclipping-041659",
+    "notdwd-998633",
+    "okazaky-084783",
+    "tetsu-tetsu333-576886",
+    "tarunyadav9761-053244"
+   ],
+   "trich_ngan": "measure them with faster-whisper word timestamps",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Hạ nhạc khi có giọng, kéo nhạc theo giọng",
+   "mo_ta": "Giọng dẫn hơn nhạc 10 đến 15 dB, hạ nhạc -18 dB lúc đang nói, cú nhấn đặt đúng khung hành động, chuẩn -14 LUFS, và hình không được dừng khi người dẫn ngừng nói (notdwd-998633); nhạc nền tự hạ âm lượng dưới giọng (tetsu-tetsu333-576886).",
+   "so_prompt": 2,
+   "slug_vi_du": [
+    "notdwd-998633",
+    "tetsu-tetsu333-576886"
+   ],
+   "trich_ngan": "narrator 10-15dB over the music, duck -18dB while speaking",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Âm sinh từ vật lý hoặc từ chính hình",
+   "mo_ta": "Tiếng sinh ra từ mô phỏng, không từ thư viện: tiếng nổ lách tách và gầm của lửa lấy từ độ sáng của lửa trong từng khung (nathanwilbanks-981110); mỗi tiếng \"clink\" của 8.144 viên bi khớp một va chạm mô phỏng (rneayan-417829); dây, sáo, trống, chuông, bong bóng nước phát từ mô hình vật lý viết bằng mã (rakhsh-tech-544921); nhạc thuật toán, 13 lần sửa (saltyaom-620933).",
+   "so_prompt": 4,
+   "slug_vi_du": [
+    "nathanwilbanks-981110",
+    "rneayan-417829",
+    "rakhsh-tech-544921",
+    "saltyaom-620933"
+   ],
+   "trich_ngan": "The crackle and roar come from how brightly the fire burns in each frame.",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Nhạc soạn bằng MIDI rồi cho synth mã nguồn mở hoặc thư viện mẫu chơi",
+   "mo_ta": "Python viết bản MIDI có tiến trình hợp âm và hai giai điệu: sáo ghi chủ đề Claude, celesta ghi chủ đề kiểu GPT; đoạn tên bay lộn xộn dùng đàn harpsichord với bước đi ngẫu nhiên, mỗi ô nhịp dày và chói hơn, rồi một hợp âm đồng tâm chói đập xuống; FluidSynth chơi bằng soundfont miễn phí; ffmpeg chuẩn hoá, tắt dần, ghép hình (wangyinrec-532344). Khác: tìm mẫu piano Steinway trong thư viện Logic của người dùng, soạn nhạc bằng Python xoay quanh nhịp gõ cửa \"ngắn ngắn dài\" (superalesha-970412); Steinway và dây của Logic hoặc GarageBand render theo bản nhạc, hiệu ứng thật Mixkit (zhu185178-255661).",
+   "so_prompt": 3,
+   "slug_vi_du": [
+    "wangyinrec-532344",
+    "superalesha-970412",
+    "zhu185178-255661"
+   ],
+   "trich_ngan": "",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Bài hát đính kèm làm bản gốc (không remix, không rút gọn)",
+   "mo_ta": "Nhóm làm MV từ bản thu có sẵn: dùng đúng bản gốc làm soundtrack liên tục, đo độ dài, tìm đoạn và điểm nhấn bằng công cụ phân tích cục bộ rồi ghi vào một dòng thời gian chung (thewevr-681887); phân tích BPM, nhịp đầu, đầu mỗi ô nhịp, mức năng lượng từng đoạn, hiệu ứng mạnh theo đoạn 40% / 70% / 100% (pound75423-464968); thẻ track 15 giây 1080p60, -14 LUFS AAC 192 kbps (tkz-aiart-864352); mp3 làm nguồn nhạc và bản đồ nhịp (xanares-738984); lyric video (kurahu-capten-054506, samaote-124569).",
+   "so_prompt": 8,
+   "slug_vi_du": [
+    "thewevr-681887",
+    "pound75423-464968",
+    "tkz-aiart-864352",
+    "xanares-738984",
+    "samaote-124569"
+   ],
+   "trich_ngan": "Use the supplied recording as the continuous master soundtrack.",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Nêu số BPM cụ thể làm lưới thời gian (120 BPM nổi trội)",
+   "mo_ta": "31 prompt nêu BPM: 120 BPM chiếm 23 prompt; còn 110 (rossaxbt-312793), 128 (koushikde-937635), 130 (ultimaxbt-549714), 129,6 (twoclipping-551116), 137 phát hiện (oab10don-457273), 140 (rames-jusso-776559: \"rusko/skream style UK dubstep\"). Lưới nhịp là nguồn cho toàn bộ bảng thời gian: \"120 BPM, 7 bars, something happens on every beat\", \"54 beats\", \"10 bars at 120 BPM, 2 seconds each\".",
+   "so_prompt": 31,
+   "slug_vi_du": [
+    "morse-369333",
+    "okapi-fukugyo-166351",
+    "raphaelaubryy-687877",
+    "rossaxbt-312793",
+    "rames-jusso-776559"
+   ],
+   "trich_ngan": "120 BPM, 7 bars, something happens on every beat",
+   "lo_quet": "b"
+  }
+ ],
+ "quy_trinh": [
+  {
+   "ten": "Nghiên cứu sản phẩm, trang web, mã nguồn trước khi viết video",
+   "mo_ta": "Prompt dặn đọc trang đích và mã nguồn để lấy câu chuyện thật, chữ, màu, phông, tệp logo (dò logo thành SVG để vẫn sắc nét) (aschapmann-724497); 'vào các trang trước để hiểu sản phẩm rồi tự viết nội dung' (ann-nnng-852885); đọc YouTube mẫu, hướng dẫn thương hiệu, bài blog, mã nguồn (andrewmichaelsa-385936); 'xem kho thật, không bịa màn hình, không bịa số liệu ngụ ý dữ liệu khách thật' (daniel-haida-636937). Khoảng 40 prompt đưa URL.",
+   "so_prompt": 26,
+   "slug_vi_du": [
+    "aschapmann-724497",
+    "ann-nnng-852885",
+    "andrewmichaelsa-385936",
+    "daniel-haida-636937",
+    "ajith-io-208546"
+   ],
+   "trich_ngan": "visit the pages first to learn about the product",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Storyboard trước, khoá thời gian, rồi mới dựng",
+   "mo_ta": "Bảng một dòng mỗi bố cục: thời gian, trên màn hình có gì, khoảnh khắc này để làm gì, ra đi bằng cách nào, vật nào mang sang cảnh sau (everestchris6-399895). 'Chỉ bằng danh sách trạng thái trên lưới phách trước khi viết mã' (annacher-433425). henrygsing-050247: STORYBOARD.md ghi thời gian, hình, chữ, chuyển cảnh, rồi Remotion dựng từng cảnh; Claude đưa phương án và chờ xác nhận. archiveexplorer-560622: 9 nhịp (đau, đóng khung lại, tên, cách chạy, phản đối, phạm vi, cơ chế bằng số, ưu đãi, kêu gọi), mỗi nhịp 3 tiêu đề gửi cho 'Jev' chọn (không rõ là người hay tác tử), dựng khung dây trước (hộp, chữ viền, đường dẫn, không màu), một ảnh tĩnh mỗi nhịp để khoá thời gian, rồi mặc 'da' từ DESIGN.md không dịch bố cục, xuất màn chia: bản cuối bên trái, khung dây bên phải.",
+   "so_prompt": 13,
+   "slug_vi_du": [
+    "everestchris6-399895",
+    "annacher-433425",
+    "henrygsing-050247",
+    "archiveexplorer-560622",
+    "flxrnc-251921"
+   ],
+   "trich_ngan": "Show me the state list on the beat grid before writing any code.",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Dựng thử ngắn và xem mỗi nhịp một ảnh trước khi render đầy đủ",
+   "mo_ta": "'Render thử 5 giây trước, xác nhận chạy rồi mới dựng thật' (everestchris6-399895); 'render một ảnh tĩnh mỗi phách trước, sửa chỗ chật, lệch lưới, khó đọc' (0xnicc0-516612); 'kiểm 5 khung quanh mỗi phách rồi sửa' (flxrnc-251921); 'danh sách khung cách nhau 0,25 giây, tự xem và sửa' (egawa-ai-design-092323); 10 khung ở mốc 0,0, 1,0, 2,5 ... 14,8 giây, nhìn từng ảnh (daniel-haida-636937).",
+   "so_prompt": 10,
+   "slug_vi_du": [
+    "everestchris6-399895",
+    "0xnicc0-516612",
+    "flxrnc-251921",
+    "egawa-ai-design-092323",
+    "daniel-haida-636937"
+   ],
+   "trich_ngan": "render a 5 second test first and confirm it works",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Vòng tự kiểm bằng ảnh chụp, đếm lỗi, kiểm điểm nối",
+   "mo_ta": "0xkarmi-129839: smoke test chạy một vòng không xem, đếm sáu loại lỗi từ lỗi script tới chữ đè chữ, sáu cổng có/không trước khi người xem; kiểm điểm nối khung 0 với khung 720. fleyta88-443662: bước timeline GSAP từng khung bằng Playwright, so ảnh để bắt vượt đích, vá mã cho tới khi qua mà không viết lại hết. Khoảng 16 prompt dặn tự xem, sửa chữ cắt, đè, chuyển cảnh yếu.",
+   "so_prompt": 16,
+   "slug_vi_du": [
+    "0xkarmi-129839",
+    "fleyta88-443662",
+    "daniel-haida-636937",
+    "howdevelop-733090",
+    "egawa-ai-design-092323"
+   ],
+   "trich_ngan": "The seam check puts frame 0 against frame 720.",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Người phản biện độc lập chưa từng thấy quá trình dựng",
+   "mo_ta": "everestchris6-399895: người dựng không tự chấm. Sau storyboard, mỗi thành phần và mỗi bản render đầy đủ gửi cho một người phản biện mới; người này lập contact sheet cách 0,2 giây cùng khung dày quanh mỗi chuyển cảnh, đo thời gian đứng hình và độ ồn, trả danh sách xếp hạng có mốc thời gian, kết bằng 'giao' hoặc 'thêm một lượt'. Lượt sau do người mới kiểm từng mục cũ là đã sửa, sửa một phần hay còn nguyên, và tìm lỗi mới. Có sổ ghi từng vòng: tìm ra gì, đổi gì, số trước và sau. Thanh chất lượng đo được: tối đa khoảng 1 giây đứng hình mỗi 30 giây, không còn đứng quá nửa giây, khung đầu là bố cục hoàn chỉnh, tương phản chữ tối thiểu 4,5:1, hiểu được khi tắt tiếng. anabology-491441 và anjmaxx-459455 dặn xem cả video nhiều lần, chụp từng đoạn.",
+   "so_prompt": 9,
+   "slug_vi_du": [
+    "everestchris6-399895",
+    "anabology-491441",
+    "anjmaxx-459455",
+    "astrothewizard-618782",
+    "daniel-haida-636937"
+   ],
+   "trich_ngan": "the builder never judges its own work",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Giao việc song song cho nhiều tác tử",
+   "mo_ta": "Hiếm và chưa rõ cách làm: everestchris6-399895 chạy nhiều người dựng song song cho các đoạn riêng sau khi phần chung đã xong (màu, phông, mô hình 3D chung, vị trí điểm ảnh mọi chuyển giao); aayush4soni-644283 chia việc cho tác tử con trong hai ngày; alex-vainshtein-195332 'một nhà phát triển + 3 tác tử AI' làm game. imryven-495965 cấu hình lại Claude Code với tác tử con khám phá, làm, nghiên cứu (không phải video).",
+   "so_prompt": 5,
+   "slug_vi_du": [
+    "everestchris6-399895",
+    "aayush4soni-644283",
+    "alex-vainshtein-195332",
+    "archiveexplorer-560622",
+    "imryven-495965"
+   ],
+   "trich_ngan": "run several builders in parallel on separate sections",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Giao rồi để tự chạy, không hỏi lại",
+   "mo_ta": "Câu chốt 'Do not ask me any questions. Just build it' lặp ở mọi prompt aichrislee. 'Tôi vắng và sẽ không trả lời, tự quyết và tiếp tục tới khi video qua mọi kiểm tra' (everestchris6-399895). 'Làm tự chủ tới khi xong, nói tôi lựa chọn nào ở cuối' (astrothewizard-618782). Cuối prompt hay có yêu cầu giao bản mã nguồn để dựng lại.",
+   "so_prompt": 11,
+   "slug_vi_du": [
+    "aichrislee-378670",
+    "aichrislee-961335",
+    "everestchris6-399895",
+    "astrothewizard-618782",
+    "aichrislee-476025"
+   ],
+   "trich_ngan": "I'm away and won't answer questions. make the calls yourself",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Phân tích video tham chiếu bằng số liệu trước khi lên kế hoạch",
+   "mo_ta": "everestchris6-399895: duyệt số trên mọi khung (đổi bao nhiêu so khung trước, độ sáng, chi tiết cạnh) để tìm mọi chỗ cắt và đoạn nhanh; một contact sheet tổng và một sheet dày một giây 16-20 khung/giây quanh mỗi chuyển cảnh; ghi chú mỗi video: khoảnh khắc then chốt, cách làm, cách dùng; chỉ để học, không chép cảnh, logo, bố cục, nhạc. ajith-io-615243: tải video rồi dùng cùng phong cách hình ảnh. abderrahmen-g-899031: lấy cảm hứng, không chép, từ video mẫu của chính Claude trong thư mục.",
+   "so_prompt": 11,
+   "slug_vi_du": [
+    "everestchris6-399895",
+    "ajith-io-615243",
+    "abderrahmen-g-899031",
+    "anabology-491441",
+    "aayush4soni-644283"
+   ],
+   "trich_ngan": "references are for study only. never copy their footage",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Khoá nguồn sự thật và độ chính xác khoa học",
+   "mo_ta": "'File dữ kiện là nguồn duy nhất cho mọi số, tên, khẳng định trên màn hình' (everestchris6-399895); 'mọi số và nhãn lấy từ bản ghi' (bilimfili1-459762); 'sự kiện phải chính xác và có nguồn, ưu tiên bài báo gốc, tổ chức có thẩm quyền, giáo trình, không dùng tài khoản marketing thứ cấp' (cryptoxorz-359201); 'trung thực về độ bất định của ước lượng' (astrothewizard-618782); 'không gọi là bản v1 ổn định, không trình bày tính năng dự kiến như đã có' (howdevelop-733090); 'đối chiếu niên đại trước khi giao' (dotey-927166). Rất hợp xưởng video khoa học.",
+   "so_prompt": 8,
+   "slug_vi_du": [
+    "everestchris6-399895",
+    "bilimfili1-459762",
+    "cryptoxorz-359201",
+    "astrothewizard-618782",
+    "howdevelop-733090"
+   ],
+   "trich_ngan": "facts must be accurate and sourced",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Quy trình ba giai đoạn: thu thập, hệ thống hoá, làm video giảng",
+   "mo_ta": "king1818888-642123 giao: giai đoạn 1 tìm YouTube (đọc phụ đề), X, Reddit; giai đoạn 2 chỉnh thành quy trình rõ; giai đoạn 3 làm phim hoạt hình dạy 2-4 phút chia 5-7 đoạn (mở đầu, các bước, mẹo, kết). Cùng kiểu: video về những người đã nhận Nobel năm nay với tiêu chuẩn 'YouTuber hàng đầu' (kewai386772-262769); loạt giải thích kho mã nguồn có tiếng đọc 7 phút (deedydas-407965). Lưu ý: prompt king1818888-642123 bị cắt giữa chừng trong dữ liệu.",
+   "so_prompt": 4,
+   "slug_vi_du": [
+    "king1818888-642123",
+    "kewai386772-262769",
+    "deedydas-407965",
+    "astrothewizard-618782"
+   ],
+   "trich_ngan": "第一阶段：资料收集",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Chỉnh qua nhiều lượt phản hồi bằng lời thường",
+   "mo_ta": "Lượt hai hay là lời chê cụ thể (xem nhóm cách viết). Số vòng ghi nhận: 1 prompt + 2 vòng góp ý (daniel-haida-636937), khoảng 4 lần sửa (francoxavier33-341663), nhiều lượt ghi chú sau storyboard và mỗi nhịp một ảnh (fr-sorrentino-871017), duyệt từng khung bằng contact sheet rồi nhờ đổi bằng lời thường (chapi13-131449), bản đầu yếu tới khi bị phản biện (apoorvjain25-150112).",
+   "so_prompt": 6,
+   "slug_vi_du": [
+    "daniel-haida-636937",
+    "francoxavier33-341663",
+    "fr-sorrentino-871017",
+    "chapi13-131449",
+    "apoorvjain25-150112"
+   ],
+   "trich_ngan": "1 prompt and 2 rounds of feedback",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Thời gian, token và chi phí được ghi lại",
+   "mo_ta": "Ước lượng thật: 10 phút 33 giây (falcong-j-277506), 14 phút một tin nhắn (arthurkatcher-604161), 20 phút = 20% hạn mức 5 giờ gói Max (javi-llofriu-059888), khoảng 23 phút nghĩ + 90 giây render (genelab-999-088672), 1 giờ 45 phút (cboyack-407181), 1 giờ 37 phút ở effort cao nhất cho Minecraft (dreyk0o0-165270), khoảng 3 giờ 662.769 token xuất, ước chi phí API khoảng 54,52 USD gồm 25,12 USD đọc cache (kgonia7-746268), 2 ngày cho nhà 3D 37.000 dòng (aayush4soni-644283).",
+   "so_prompt": 27,
+   "slug_vi_du": [
+    "falcong-j-277506",
+    "genelab-999-088672",
+    "kgonia7-746268",
+    "dreyk0o0-165270",
+    "aayush4soni-644283"
+   ],
+   "trich_ngan": "Output tokens: 662,769",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Hỏi đầu vào trước (khối <inputs> \"Ask me for\"), kèm giá trị mặc định nếu bỏ qua",
+   "mo_ta": "Khuôn của 21 prompt có cấu trúc: AI phải hỏi người dùng danh sách đầu vào (tên thương hiệu, logo, 8 đến 12 trạng thái UI, bài hát, ảnh, clip, câu hỏi và câu trả lời một dòng, màu nhấn), rồi mới viết mã. Chín prompt có thêm mặc định \"If I skip any, use these defaults\" để chạy được khi người dùng không trả lời (rossaxbt-312793, twoclipping-551116, ultimaxbt-549714). Khối <start> chốt thứ tự: hỏi đầu vào, đưa bản đồ nhịp và 4 đến 8 ảnh tĩnh, rồi mới dựng.",
+   "so_prompt": 21,
+   "slug_vi_du": [
+    "morse-369333",
+    "rossaxbt-312793",
+    "twoclipping-551116",
+    "ultimaxbt-549714",
+    "verbove-268381"
+   ],
+   "trich_ngan": "Ask me for the inputs, then show me the beat map and 6 stills",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Đưa kế hoạch, bảng phân cảnh hoặc ảnh tĩnh để duyệt trước khi dựng đầy đủ",
+   "mo_ta": "Chặn người dùng duyệt sớm: \"Show me the direction plan before making it\" (kurahu-capten-054506); \"Show me 5 stills first, critique them like a harsh motion director, fix the 3 worst problems, then render\" (notdwd-766641); đưa kịch bản từng giây bằng tiếng Nhật rồi chờ OK (tanabe-fragm-322001); đưa storyboard rồi mới render ra MP4 (woojinrad-455731); liệt kê phân cảnh và khoảng trống tư liệu trước khi xem trước (qianqiongge-246969); 3 khung phong cách, mẫu 10 giây, nhạc thử 30 giây, đợi chọn (thinkszyg-886066).",
+   "so_prompt": 18,
+   "slug_vi_du": [
+    "kurahu-capten-054506",
+    "notdwd-766641",
+    "tanabe-fragm-322001",
+    "woojinrad-455731",
+    "thinkszyg-886066"
+   ],
+   "trich_ngan": "Show me 5 stills first, critique them like a harsh motion director",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Tự kiểm bằng ảnh tĩnh ghép (contact sheet) hoặc một khung mỗi nhịp, trước khi render đầy đủ",
+   "mo_ta": "Kiểm trước khi tốn tài nguyên render: ghép khoảng 20 ảnh tĩnh thành một tờ để xem cả bản dựng, kiểm chồng chữ và lỗi chính tả (l3d1c-632524, niirajrshah-163739); tờ 16 khung (okazaky-084783); một khung mỗi nhịp rồi sửa chỗ lệch lưới, chật, khó đọc (yankis0x-174321, twoclipping-402193); thăm dò từ 20 khung trở lên (raphaelaubryy-687877); quét tìm cú nhảy một khung bằng cách so chênh lệch khung, ngưỡng gấp 3 lần khung lân cận (twoclipping-496100); so chuyển động với video tham chiếu (số cú nhảy mỗi giây, tỉ lệ khung đứng yên) (twoclipping-551116).",
+   "so_prompt": 17,
+   "slug_vi_du": [
+    "l3d1c-632524",
+    "okazaky-084783",
+    "yankis0x-174321",
+    "raphaelaubryy-687877",
+    "twoclipping-496100"
+   ],
+   "trich_ngan": "Render one frame per beat before the full render.",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Tự phê bình lặp vòng sau khi dựng",
+   "mo_ta": "Claude được dặn nhìn kết quả và chấm: render một khung, nhờ mô hình thị giác bắt lỗi như giám sát VFX, sửa, lặp khoảng 40 lần, bắt được ngọn lửa tắt liên tục, vòng ring trên nền, than hồng trông như snack phô mai (nathanwilbanks-981110); chấm 1 đến 10 một khung cho mỗi nhịp và sửa điểm thấp nhất trước mặt người dùng (ulyssexbt-205279); nhìn ảnh render tự sửa chữ cắt và chồng chữ (tetsu-tetsu333-576886); \"Check it for overlaps and spelling\" (niirajrshah-163739); phiên bản dài: báo cáo tự kiểm cuối (thinkszyg-886066).",
+   "so_prompt": 7,
+   "slug_vi_du": [
+    "nathanwilbanks-981110",
+    "ulyssexbt-205279",
+    "tetsu-tetsu333-576886",
+    "niirajrshah-163739",
+    "thinkszyg-886066"
+   ],
+   "trich_ngan": "it grades itself - one still per beat, scored 1-10, fixes the lowest on camera",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Nhiều tác tử song song hoặc nhiều vòng nhiều vai",
+   "mo_ta": "Năm prompt chia việc: 4 tác tử con Opus viết chương trình cảnh song song, sau khi bài hát đã tách thành \"1 dòng lời = 1 cảnh\" (okazaky-084783); mỗi tác tử chỉ sửa file của chương mình, mỗi đoạn xuất liên hệ và ảnh từng khung ở chỗ nối (thinkszyg-886066); 3 vòng, mỗi vòng 3 tác tử: hai người xem mỗi người chọn 9 đến 10 lỗi xếp P0, P1, P2, một người sửa, sao lưu trước mỗi vòng, hoàn lại nếu không sửa được; 5 giờ 28 phút, 90 USD theo giá API (voxyz-ai-345550); tác tử Opus xhigh tìm mốc thời gian cần hoạt cảnh, Opus medium dựng, Opus xhigh chấm một lần, chỉ bản \"rất tệ\" mới sửa, không làm lại hàng loạt (stokebuilder-356793); @bot điều phối (wustep-884086).",
+   "so_prompt": 5,
+   "slug_vi_du": [
+    "okazaky-084783",
+    "thinkszyg-886066",
+    "voxyz-ai-345550",
+    "stokebuilder-356793",
+    "wustep-884086"
+   ],
+   "trich_ngan": "Only cues the judge considers egregiously bad go back for a fix. No blanket redo loops.",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Đọc repo, tài liệu hoặc website thật rồi mới thiết kế",
+   "mo_ta": "Bước mở đầu để video đúng sản phẩm: đọc mã nguồn để biết sản phẩm làm gì, chọn điều đáng khoe (kingokings-992769); \"Before designing anything, read it so the video shows the real product: the actual screens, in the order a real …\" (thegreatola-738411); xem tài liệu và UX sản phẩm (nilou-salehi-458567); đọc repo và dùng thương hiệu hiện có (screeendev-981790, ryan-morr-666741); quét mọi thành phần của trang, lấy logo và chi tiết thương hiệu (utsavchopra30-560359); kiểm website, App Store, trình sửa, luồng xuất, bảng giá trước khi viết chiến lược (redpersongpt-284430).",
+   "so_prompt": 15,
+   "slug_vi_du": [
+    "kingokings-992769",
+    "thegreatola-738411",
+    "nilou-salehi-458567",
+    "screeendev-981790",
+    "utsavchopra30-560359"
+   ],
+   "trich_ngan": "Before designing anything, read it so the video shows the real product",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Chụp màn hình thật của sản phẩm bằng tác tử, rồi dùng làm tư liệu",
+   "mo_ta": "Claude tự đăng nhập công cụ, thao tác, chụp 38 ảnh (PC, di động, cắt từng phần), viết bản đặc tả chức năng gồm cả cụm từ không được nói, rồi dựng Remotion và nhìn ảnh render để sửa chữ cắt, chồng chữ; BGM tự soạn bằng mã, tự hạ dưới giọng; video 52 giây (tetsu-tetsu333-576886); Chrome headless chụp ảnh rồi FFmpeg chuẩn YouTube và kiểm, tải lên bằng YouTube Data API (signalz-jp-918002); dựng và chạy app macOS gốc để chụp Retina 2x (tarunyadav9761-053244); chụp trang và phần của website trong khung trình duyệt và điện thoại (wani-shola-459278); chụp trực tiếp và quay màn hình sản phẩm (redpersongpt-284430).",
+   "so_prompt": 9,
+   "slug_vi_du": [
+    "tetsu-tetsu333-576886",
+    "signalz-jp-918002",
+    "tarunyadav9761-053244",
+    "wani-shola-459278",
+    "redpersongpt-284430"
+   ],
+   "trich_ngan": "",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Phân tích video tham chiếu rồi làm lại",
+   "mo_ta": "Đưa một video tham chiếu và nhờ làm bản mới: \"Gave Claude Opus 5.5 one reference video\" ra phim ra mắt đầy đủ (sonali-sahu-09-350200); đưa các bản demo hay nhất rồi hỏi tại sao của họ hơn của mình, sau đó mới làm và còn làm tiếp 10 quảng cáo (tycenjm-098014); \"Study how this site works and use Remotion\" (lester-tyy-480587); tái dựng và phân tích một demo mã nguồn, đọc file khoá, STYLE.md, DEMO.md, CREDITS, đọc MP4 gốc, giữ nhãn fan-film không chính thức (leo114119-936422).",
+   "so_prompt": 4,
+   "slug_vi_du": [
+    "sonali-sahu-09-350200",
+    "tycenjm-098014",
+    "lester-tyy-480587",
+    "leo114119-936422"
+   ],
+   "trich_ngan": "Gave Claude Opus 5.5 one reference video.",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Chỉ dùng sự thật và tư liệu đã cung cấp; dừng nếu thiếu",
+   "mo_ta": "Rào chống bịa: chữ trên màn hình chỉ lấy từ bảng văn bản người dùng đưa (thinkszyg-886066); \"Copy must be verbatim or faithful to what's said. Never invent facts, numbers or quotes\" (stokebuilder-356793); chỉ dùng ảnh trong thư mục assets, không tải tư liệu lạ, không bổ sung số liệu bán hàng, thiếu tư liệu thì dừng và nói, không dùng giả (qianqiongge-246969); chỉ dùng sự kiện và con số có trên website (wani-shola-459278); dùng chữ nguyên văn của landing page, vẽ lại logo bằng SVG (ponzponz15-145882); \"Do not invent features that do not exist\" (redpersongpt-284430).",
+   "so_prompt": 20,
+   "slug_vi_du": [
+    "thinkszyg-886066",
+    "stokebuilder-356793",
+    "qianqiongge-246969",
+    "wani-shola-459278",
+    "ponzponz15-145882"
+   ],
+   "trich_ngan": "Never invent facts, numbers or quotes.",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Làm mẫu nhỏ trước, sửa đoạn nào dựng lại đoạn đó, cố định mọi ngẫu nhiên",
+   "mo_ta": "Quy tắc làm việc từ một tác giả (pluvio9yte-662953): xong mỗi khâu thì render vài khung xem trước khi đi tiếp, chỉ render cả phim ở cuối; tham số chưa chắc thì cho AI xuất một dãy 5 đến 6 bậc đặt cạnh nhau để chọn; chỉnh đoạn nào dựng lại đoạn đó; bắt AI tự mở ảnh render xem rồi mới báo; mọi ngẫu nhiên đều cố định để cùng cài đặt cho cùng kết quả. Cùng tinh thần: 3 khung phong cách, mẫu 10 giây, nhạc thử 30 giây (thinkszyg-886066).",
+   "so_prompt": 2,
+   "slug_vi_du": [
+    "pluvio9yte-662953",
+    "thinkszyg-886066"
+   ],
+   "trich_ngan": "先小样后全片：每做完一个环节，先渲染几帧看效果",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Bảng thời gian đặt riêng, đổi nhịp chỉ sửa một chỗ",
+   "mo_ta": "Lịch cảnh nằm trong một bảng độc lập (pluvio9yte-662953: \"做一张时间表，写明每一格用哪种样式、什么配色、镜头在哪。这张表单独存放\"); một phần tử biến hình qua mọi trạng thái từ bảng thời điểm theo nhịp, nên chỉnh lại nhịp là sửa một chỗ (twoclipping-747965); STORYBOARD.md có cảnh theo giờ phủ trọn bản thu, và CLAUDE.md lưu bản tóm tắt dự án cùng hướng dẫn render lại (thewevr-681887).",
+   "so_prompt": 3,
+   "slug_vi_du": [
+    "pluvio9yte-662953",
+    "twoclipping-747965",
+    "thewevr-681887"
+   ],
+   "trich_ngan": "Save the project brief and rerender instructions in CLAUDE.md.",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Dây chuyền từ bài hát đến video 8 bước",
+   "mo_ta": "Một prompt viết trọn dây chuyền (okazaky-084783): (1) Suno sinh bài, lấy lời từ metadata nhúng; (2) Demucs tách stem vocal, drum, bass, other; (3) mlx_whisper chép giọng, căn với lời chính thức, \"1 dòng lời = 1 cảnh\"; (4) viết storyboard: hiển thị gì bằng 3D, máy quay, từ chính cho mỗi dòng; (5) 4 tác tử con Opus viết chương trình cảnh song song; (6) xuất tờ liên hệ 16 khung kiểm hình; (7) render Chrome headless 1080x1920 60fps; (8) chuẩn hoá -14 LUFS. Phong cách khắc, chỉ đen, trắng ngà, cam.",
+   "so_prompt": 1,
+   "slug_vi_du": [
+    "okazaky-084783"
+   ],
+   "trich_ngan": "1 lyric line = 1 scene",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Cách làm video giải thích: đọc nguồn thật rồi dựng",
+   "mo_ta": "Tiêu biểu cho video khoa học: tìm bài báo thật để đọc, đổi cảnh liên tục, móc mở \"tạo khoảng trống tò mò\" về ứng dụng thực tế (michaelraspuzzi-740595); lời nhờ Claude đọc bài báo rồi dựng hoạt cảnh theo phong cách bài đăng, giao cho kỹ sư công ty (mablesjoseph-735781); lần một dựng whiteboard, lần hai dựng MP4 có lời (tak3sh8-441895); đọc tài liệu để dựng video marketing thuật lại cách sản phẩm chạy (nilou-salehi-458567); giải thích Git cho người chưa biết gì, có tiếng Trung, được dùng mọi công cụ và lên mạng tra (yunn260414-016888); đọc bài viết, chọn 3 ý chính, mỗi ý một chú thích lấy từ văn bản, nhân vật gốc đơn giản (woojinrad-455731).",
+   "so_prompt": 6,
+   "slug_vi_du": [
+    "michaelraspuzzi-740595",
+    "mablesjoseph-735781",
+    "tak3sh8-441895",
+    "yunn260414-016888",
+    "woojinrad-455731"
+   ],
+   "trich_ngan": "make sure hook creates a curiosity gap for real world application on why this matters.",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Chỉnh nhiều lượt khi chê, và ghi lại thời gian, chi phí",
+   "mo_ta": "Lời chê ở lượt sau là nguồn cải tiến chính: \"My part was saying what felt wrong\" (l3d1c-632524); \"make it less like a powerpoint\" (leowenai-125931); \"I would not hire you or pay you ... too fast and bumpy\", đòi chọn nhạc miễn phí trên mạng (sachaarbonel-673648); 13 lần sửa, mọi thứ vẫn là mã (saltyaom-620933). Thời gian và chi phí tác giả nêu: khoảng 11 phút gồm render 1 phút 36 giây (tankazunori0914-156748); 30 phút (seantiffonnet-675262); 40 phút ở mức nỗ lực cao (rishit30g-568278); 145 nghìn token (ninjaswebcom-684126); 5 giờ 28 phút, 90 USD (voxyz-ai-345550); 8 giờ 15 phút (vince-builds-355650); khoảng 400 USD cho 33 bản (wustep-884086); chưa tới 15 phút mà không làm nhích đồng hồ dùng trên gói Max (stefanostraus-971191).",
+   "so_prompt": 13,
+   "slug_vi_du": [
+    "l3d1c-632524",
+    "sachaarbonel-673648",
+    "saltyaom-620933",
+    "voxyz-ai-345550",
+    "wustep-884086"
+   ],
+   "trich_ngan": "My part was saying what felt wrong.",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Xuất nhiều bản từ cùng một mã (tỉ lệ, độ dài), và giao nộp có kiểm",
+   "mo_ta": "Cùng một mã xuất 30s, 15s, 6s ở 16:9 và 9:16, mỗi bản là một danh sách cảnh (l3d1c-632524); xuất mọi tỉ lệ (1:1, 16:9, 9:16) song song, H.264 yuv420p (verbove-268381); hai bản ngang và dọc, thêm nhạc nền miễn phí (palashbagchi11-389221); giao dự án sửa được, lệnh khởi chạy và render, MP4 và ảnh tĩnh ở giây 1, 5, 10, 14 (qianqiongge-246969); giao bản mẹ 4K và bản chia sẻ 1080p (zhu185178-255661); giao cả thư mục từng hoạt cảnh riêng (stokebuilder-356793).",
+   "so_prompt": 8,
+   "slug_vi_du": [
+    "l3d1c-632524",
+    "verbove-268381",
+    "qianqiongge-246969",
+    "zhu185178-255661",
+    "stokebuilder-356793"
+   ],
+   "trich_ngan": "",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Giao toàn quyền sáng tạo, cho AI tự chọn công cụ",
+   "mo_ta": "Prompt không nêu công cụ hay phong cách, chỉ yêu cầu gây ấn tượng và cho phép tự cài, tự tra: \"You pick the design style, the look, subject etc.\" (nolkeeg-635633); \"dùng bất kỳ công cụ nào, cài trong devshell, xong chỉ giữ file video thành phẩm, dọn hết còn lại\" (rebutonepress-688099: 5 phút, có âm thanh và phụ đề); \"Proceed as if you were starting with zero of my tools\" (reflex-cloud-304046); \"make a funny video about anything\" (nemtudo-614053); \"Build me something when people see it, they will say Wow\" (miaai-lab-774895).",
+   "so_prompt": 12,
+   "slug_vi_du": [
+    "nolkeeg-635633",
+    "rebutonepress-688099",
+    "reflex-cloud-304046",
+    "nemtudo-614053",
+    "miaai-lab-774895"
+   ],
+   "trich_ngan": "You pick the design style, the look, subject etc.",
+   "lo_quet": "b"
+  }
+ ],
+ "cach_viet_prompt": [
+  {
+   "ten": "Mẫu chung chung 'video chuyển động N giây cho thấy bạn là nhà thiết kế giỏi cỡ nào, như showreel, hết sức'",
+   "mo_ta": "Họ prompt lặp nhiều nhất (khoảng 26 bản gần giống, 33 nhắc showreel/résumé, 31 nhắc 'go all out'). Chung chung, không nói khung, nhịp, phông, công cụ: 'make a dynamic 15-second motion graphics video that shows what an incredible motion designer you are'. Dùng làm phép thử năng lực model hơn là brief; thường thêm URL sản phẩm. Thời lượng hay gặp: 15 giây (30 prompt), 30 giây (22), 20 giây (15), 60 giây (10).",
+   "so_prompt": 26,
+   "slug_vi_du": [
+    "0xfemyn-137833",
+    "1littlecoder-914649",
+    "ajith-io-208546",
+    "aiaircle34052-950750",
+    "ghinaiya-nirmal-308943"
+   ],
+   "trich_ngan": "make a dynamic 15-second motion graphics video",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Biến thể cụ thể của showreel: thông số, nhịp, 'mỗi chuyển động đáp đúng phách'",
+   "mo_ta": "ai9app-989009 thêm 1920x1080, 60 fps, đúng 15 giây, 128 BPM, 8 ô nhịp, mỗi cảnh một ô nhịp 1,875 giây, mọi chuyển động đáp đúng phách, mọi khung và mọi tiếng sinh từ mã. aichrislee-961335: 'mỗi giây có chuyển động, chữ to, màu đậm, camera thật, không mờ chuyển chậm; 16:9 1920x1080 30 fps; một file HTML mỗi khung là hàm thuần của thời gian; render bằng Playwright, ghép bằng ffmpeg'.",
+   "so_prompt": 6,
+   "slug_vi_du": [
+    "ai9app-989009",
+    "aichrislee-961335",
+    "ishaaqahamed-107563",
+    "advait-jayant-712107",
+    "diamai-157697"
+   ],
+   "trich_ngan": "something moves every second, big type, bold color, real camera moves",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Mẫu có thẻ XML: inputs, direction, structure, build, gotchas, start",
+   "mo_ta": "Khuôn cho kết quả tốt nhất và đã được nhân bản qua 7-8 người: <inputs> (hỏi lại người dùng 3 thứ: tên, màu nhấn, nhạc), <direction> (phong cách, mục cấm), <structure> (BPM, số phách, từng phách có gì), <build> (7 bước kỹ thuật đánh số), <gotchas> (lỗi đã biết), và câu cuối 'Show me the state list/storyboard before writing any code'. Cụ thể tới mức công thức lò xo, số px, thời gian settle.",
+   "so_prompt": 12,
+   "slug_vi_du": [
+    "0xnicc0-516612",
+    "annacher-433425",
+    "flxrnc-251921",
+    "brainextends-606193",
+    "heyiamnick-119558"
+   ],
+   "trich_ngan": "<gotchas> No will-change on anything the camera scales.",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Danh sách cấm ('Banned: ...')",
+   "mo_ta": "Nêu cái không được làm thay vì mô tả đẹp: 'Banned: crossfades, gradients on UI, particles, glows, bouncy easing, dead beats, anything that feels like a template' (0xnicc0-516612); 'không chrome (thanh tua, timecode, fps), không thuật ngữ hoạt hình trên màn hình (squash, stagger), không số liệu bịa (%, bội số, tên khách)' (ik-builds-585923); 'không cyberpunk, crypto, neon, game, tím AI chung chung, gradient cầu vồng' (daniel-haida-636937); 'không hình AI chung chung, tên lửa, gradient tím' (charumitradubey-328233).",
+   "so_prompt": 20,
+   "slug_vi_du": [
+    "0xnicc0-516612",
+    "ik-builds-585923",
+    "daniel-haida-636937",
+    "charumitradubey-328233",
+    "howdevelop-733090"
+   ],
+   "trich_ngan": "Banned: crossfades, gradients on UI, particles, glows, bouncy easing",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Bảng thời gian theo giây, mỗi dòng có hành động nhìn thấy và chữ trên màn hình",
+   "mo_ta": "Cụ thể: howdevelop-733090 chia 15 giây thành sáu mốc (0:00-0:02 móc câu... 0:11,5-0:15 lộ diện), mỗi mốc nêu chữ chính xác và việc nhìn thấy; brainextends-606193 mỗi 0,6-1,5 giây một dòng; agioyaz-397647 từng khoảng 3-11, 11-14, 14-19 giây với ánh sáng, từ trên khối, nhạc; flxrnc-251921 lưới 0,5 giây (0,0 linh vật nghỉ, 1,0 bóp thành nút phát...).",
+   "so_prompt": 15,
+   "slug_vi_du": [
+    "howdevelop-733090",
+    "brainextends-606193",
+    "agioyaz-397647",
+    "flxrnc-251921",
+    "ik-builds-585923"
+   ],
+   "trich_ngan": "Exact 15-second sequence",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Chốt thông số kỹ thuật: độ phân giải, fps, thời lượng, tỉ lệ",
+   "mo_ta": "Khoảng 72 prompt nêu thời lượng hoặc kích thước; 60 fps (25 prompt), 30 fps (4); vuông 1080x1080 hoặc 1440x1440 (15); dọc 9:16 (16). Phông và màu nêu thẳng: Geist, Inter, Plus Jakarta Sans, JetBrains Mono, Anton, Caveat, Mincho Nhật; màu bằng mã hex (7 prompt, ví dụ nền #102820, giấy #F4E9D5, nhấn #F2B544). Một ghi chú an toàn: 'giữ nội dung quan trọng trong vùng giữa 9:16' (howdevelop-733090); 'tránh vùng giao diện TikTok/Instagram' (bilimfili1-459762).",
+   "so_prompt": 72,
+   "slug_vi_du": [
+    "gdgtify-130294",
+    "daniel-haida-636937",
+    "howdevelop-733090",
+    "bilimfili1-459762",
+    "annacher-433425"
+   ],
+   "trich_ngan": "Background #102820.",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Ràng buộc 'chỉ mã, không ảnh, không thư viện, không tài sản ngoài'",
+   "mo_ta": "Ràng buộc đóng khung mẫu: 'every frame and every sound written in code, no image or video models' (advait-jayant-712107); 'Canvas 2D only, no libraries, no external assets' (0xcodez-474136); 'không tạo ảnh hay giọng nói bằng tệp, chỉ mã' (akakuma0219-658335); 'vẽ mọi thứ bằng mã, không tư liệu' (aidinzeo-708182). Khoảng 39 prompt có ràng buộc loại này.",
+   "so_prompt": 39,
+   "slug_vi_du": [
+    "advait-jayant-712107",
+    "0xcodez-474136",
+    "akakuma0219-658335",
+    "aidinzeo-708182",
+    "0xverdao-776363"
+   ],
+   "trich_ngan": "every frame and every sound written in code, no image or video models",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Gán vai chuyên gia",
+   "mo_ta": "Chung chung: 'Adopt the role of an expert motion designer' (alex-prompter-997524), 'Pretend you are a world-class motion designer' (0xvalure-331584, 0xvalure-354245). Cụ thể: khối <role> mô tả cách làm việc (dựng video bằng mã với gsap và three.js, mọi quyết định được so với tác phẩm tốt nhất trong tham chiếu, chưa xong khi chưa đứng cạnh chúng được) (everestchris6-399895); 'bạn là nhà hoạt hình pixel và nhà thiết kế cảm giác chơi, cũng viết chiptune' (gkxspace-923139).",
+   "so_prompt": 11,
+   "slug_vi_du": [
+    "alex-prompter-997524",
+    "0xvalure-331584",
+    "everestchris6-399895",
+    "gkxspace-923139",
+    "abderrahmen-g-899031"
+   ],
+   "trich_ngan": "the video isn't finished until it holds up next to them",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Khoá lời nguyên văn, khoá nguồn dữ kiện",
+   "mo_ta": "'ORIGINAL SPEECH — EXACT WORDS, EXACT ORDER', 'LOCKED COPY', 'EXACT DISPLAY TEXT' và 'dấu [...] trong ngoặc là phần bỏ có chủ ý; phần ghi nguồn tách riêng; không thêm khẩu hiệu' (gdgtify, 4 bản). Cùng ý với 'file dữ kiện là nguồn duy nhất' (everestchris6-399895) và 'không dùng chữ sinh trong ảnh, dùng chữ thật có thể sửa' (howdevelop-733090). Rất hợp video khoa học nơi chữ không được bịa.",
+   "so_prompt": 6,
+   "slug_vi_du": [
+    "gdgtify-130294",
+    "gdgtify-393073",
+    "gdgtify-989608",
+    "everestchris6-399895",
+    "howdevelop-733090"
+   ],
+   "trich_ngan": "EXACT DISPLAY TEXT",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Giao tự chủ và đòi sản phẩm 'dám đứng tên'",
+   "mo_ta": "Câu mẫu: 'Don't stop to ask me questions; make the calls yourself and tell me what you decided at the end' kèm 'Don't hand me a first draft. Hand me something you'd put your name on. Also give me the source code' (astrothewizard-618782); 'Do not ask me any questions. Just build it and give me the MP4' (aichrislee-961335); 'tôi vắng, tự quyết' (everestchris6-399895).",
+   "so_prompt": 11,
+   "slug_vi_du": [
+    "astrothewizard-618782",
+    "aichrislee-961335",
+    "everestchris6-399895",
+    "aichrislee-378670",
+    "daniel-haida-636937"
+   ],
+   "trich_ngan": "Hand me something you'd put your name on.",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Prompt rất ngắn (không quá 140 ký tự)",
+   "mo_ta": "104 trong 351 prompt (khoảng 30%), phần lớn là câu cuối bài đăng hoặc lượt trả lời: 'Remotion / Opus 5.5', 'make a similar version but with a crypto reference', 'make a video that could go viral.', 'make an animation to explain why celld earns its place.' Không đủ để học kỹ thuật. Vài prompt ngắn nhưng chặn chặt: 'Create a pelican looping SVG animation. Deliver a single self-contained file named index.html' (godsboy7777-005594).",
+   "so_prompt": 104,
+   "slug_vi_du": [
+    "0xevinho-436195",
+    "0xrapzz-433554",
+    "kantamk-176511",
+    "0xnfrith-068999",
+    "godsboy7777-005594"
+   ],
+   "trich_ngan": "make a video that could go viral.",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Mẫu có chỗ trống để điền và khối 'Ask me for'",
+   "mo_ta": "Chỗ trống [PRODUCT], {{PRODUCT}}, [BRAND NAME], [Topic] để người dùng điền (ik-builds-585923, humzaakhalid-011081, cryptoxorz-359201, alex-prompter-997524). Khối <inputs> 'Ask me for: ...' làm AI hỏi ngược người dùng ba thứ (tên một từ, màu nhấn, nhạc ~120 BPM; hoặc 8-12 trạng thái giao diện, đen trắng hay một màu nhấn) rồi mới làm (0xnicc0-516612, demonugc-525162). Prompt chạy trong ngữ cảnh ứng dụng thật nên dùng lại thành phần, thương hiệu của app (imthatcarlos-133592).",
+   "so_prompt": 10,
+   "slug_vi_du": [
+    "ik-builds-585923",
+    "humzaakhalid-011081",
+    "cryptoxorz-359201",
+    "0xnicc0-516612",
+    "imthatcarlos-133592"
+   ],
+   "trich_ngan": "Ask me for: a one-word product name for the wordmark",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Lời chê cụ thể ở lượt sau",
+   "mo_ta": "elkrispis-872980: 'Đây là tệ. Thêm chuyển động. Dùng thành phần, không dùng bản ghi. Dùng nền gần đen của app. Chữ động. Có chỗ quá nhanh, có chỗ quá chậm. Chỉ nhịp chính mới đúng phách. Làm cho đọc được.' apoorvjain25-150112: bản đầu yếu tới khi bị phản biện, cần nhiều lượt. anabology-491441 và anjmaxx-459455 dặn trước 'đừng làm ra thứ như GPT slop, tôi ấn tượng hơn nếu có phong cách mạch lạc'. Lời chê chỉ vào mục kỹ thuật cụ thể (nhịp, thành phần, độ đọc được) cho kết quả sửa nhanh hơn lời chê chung.",
+   "so_prompt": 4,
+   "slug_vi_du": [
+    "elkrispis-872980",
+    "apoorvjain25-150112",
+    "anabology-491441",
+    "anjmaxx-459455",
+    "georgejimenez98-427173"
+   ],
+   "trich_ngan": "This is horrible. More movement. Use components, not a recording.",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Bắt đầu từ thương hiệu và UI thật, không dùng thành phần chung",
+   "mo_ta": "'Analyze [trang] and build a product promo from our own UI, not generic components' (annacher-152174, annacher-433425); 'dùng thành phần thật của sản phẩm' (fractadev-861266); 'dùng ảnh chụp, logo, tài sản thật; tách thành thành phần để animate' (ho-ba-761062); đọc DESIGN.md (archiveexplorer-560622); 38 prompt nhắc logo/brand/ảnh chụp/kho mã.",
+   "so_prompt": 38,
+   "slug_vi_du": [
+    "annacher-152174",
+    "fractadev-861266",
+    "ho-ba-761062",
+    "archiveexplorer-560622",
+    "daniel-haida-636937"
+   ],
+   "trich_ngan": "build a product promo from our own UI, not generic components",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Tiêu chuẩn chất lượng nêu bằng số hoặc bằng 'từ chối kết quả nếu giống ...'",
+   "mo_ta": "Số đo: tối đa 1 giây đứng hình mỗi 30 giây, tương phản chữ 4,5:1, khung đầu hoàn chỉnh (everestchris6-399895). Từ chối: 'reject your own result if it feels like a SaaS template, PowerPoint animation, website screen recording, generic Remotion demo' và 'ba khoảnh khắc phi thường hơn mười hoạt hình tính năng tầm thường' (daniel-haida-636937). Mức chuẩn bằng công trình thật: Chartres hoặc Sainte-Chapelle (agioyaz-397647).",
+   "so_prompt": 4,
+   "slug_vi_du": [
+    "everestchris6-399895",
+    "daniel-haida-636937",
+    "agioyaz-397647",
+    "ik-builds-585923"
+   ],
+   "trich_ngan": "3 extraordinary visual moments",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Lời cổ vũ và 'nghĩ thật sâu' (chung chung)",
+   "mo_ta": "'Think very deeply and come up with the best design that you can. World-class' (dhanrajdc-602284); 'go crazy' (heyiammallik-293397); 'make no mistakes', 'tiêu hết hạn mức, đẩy token mạnh nhưng tiết kiệm' (anabology-491441); 'Pixar-level quality' (anilraok-009118). Khoảng 17 prompt. Khó kiểm được ảnh hưởng, cũng không kèm ràng buộc đo được.",
+   "so_prompt": 17,
+   "slug_vi_du": [
+    "dhanrajdc-602284",
+    "heyiammallik-293397",
+    "anabology-491441",
+    "anilraok-009118",
+    "airobertdaily-416945"
+   ],
+   "trich_ngan": "Think very deeply and come up with the best design that you can.",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Cổng 'cho tôi xem trước rồi mới viết mã'",
+   "mo_ta": "Chốt kế hoạch trước dựng: 'First show me the storyboard. Then write the code. After the first render, check 5 frames around every beat' (flxrnc-251921); 'Show me the state list on the beat grid before writing any code' (annacher-433425); 'Plan it first, show me a preview before coding everything' (jrayon-054015); Claude đưa phương án rồi chờ xác nhận (henrygsing-050247). Chặn dựng sai hướng, rẻ hơn sửa video đã render.",
+   "so_prompt": 6,
+   "slug_vi_du": [
+    "flxrnc-251921",
+    "annacher-433425",
+    "jrayon-054015",
+    "henrygsing-050247",
+    "demonugc-525162"
+   ],
+   "trich_ngan": "First show me the storyboard. Then write the code.",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Tip chạy lại: effort tối đa, thời gian dài, hỏi 'chỗ nào kém thật nhất?'",
+   "mo_ta": "dreyk0o0-165270 (Minecraft, 1 giờ 37 phút): đặt effort tối đa; cho đủ thời gian; xong hỏi 'What looks least realistic? Fix it.'; yêu cầu 'test it, fix every bug, then keep improving the visuals'. genelab-999-088672: effort xhigh, một lần 'continue' khi mất kết nối API. humzaakhalid-537875: Max effort, kèm cả hướng dẫn đầy đủ.",
+   "so_prompt": 3,
+   "slug_vi_du": [
+    "dreyk0o0-165270",
+    "genelab-999-088672",
+    "humzaakhalid-537875"
+   ],
+   "trich_ngan": "What looks least realistic? Fix it.",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Prompt có bối cảnh dài, đời thường, tiếng nói tự nhiên (kiểu nói miệng)",
+   "mo_ta": "anabology-491441 viết gần 9.600 ký tự như dặn một đồng nghiệp: nguồn tham chiếu, kho kỹ năng, kho API, ngân sách hạn mức, ý thẩm mỹ (K-pop, internet brutalism), quy trình kiểm lặp, 'make no mistakes'. Đối lập với prompt có cấu trúc: dài nhưng tản mạn, khó tái dùng, kết quả khó dự đoán; không có số đo cụ thể ngoài hạn mức. Một số prompt bị cắt giữa chừng trong dữ liệu (king1818888-642123, johnmckeownn-511049).",
+   "so_prompt": 3,
+   "slug_vi_du": [
+    "anabology-491441",
+    "anjmaxx-459455",
+    "doubleunplussed-181894"
+   ],
+   "trich_ngan": "make no mistakes.",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "[CHUNG CHUNG] Mẫu \"chứng tỏ bạn là nhà thiết kế chuyển động\": thời lượng + chủ đề + \"go all out\"",
+   "mo_ta": "Khuôn lặp lại gần như nguyên văn: \"make a dynamic 15-second motion graphics video that shows what an incredible motion designer you are, like it's your showreel …\" Chỉ nêu thời lượng, chủ đề (thương hiệu, résumé, sản phẩm) và mức nỗ lực; mọi quyết định hình, nhạc, nhịp để model tự chọn. Kết quả phụ thuộc hoàn toàn vào model; không có bước kiểm hay tiêu chí đạt. 25 prompt dùng biến thể này.",
+   "so_prompt": 25,
+   "slug_vi_du": [
+    "manuelogomigo-052364",
+    "melvynx-638493",
+    "miskinho-956105",
+    "prasad-pilla-496049",
+    "zheke-622583"
+   ],
+   "trich_ngan": "make a dynamic 15-second motion graphics video that shows what an incredible motion designer you are",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "[CHUNG CHUNG] Mẫu \"SaaS product launch\" dán nguyên văn",
+   "mo_ta": "\"I want you to create a highly professional SaaS product launch video. Go and find some SaaS ... get actual …\" Có 6 bản dán gần như giống hệt (leanzubrezki-766171, moritzkremb-466494, pbteja1998-651644, sdinesh91-159008, techtactician-144474, techyoutbe-588678) và 4 bản \"modern slick and punchy video for a startup\" (lepadev-475414, meetarno-782464, q970270495-497923, zigapoto-942208). Không có thông số kỹ thuật; chỉ bản zigapoto-942208 thêm \"just javascript, playwright and ffmpeg\".",
+   "so_prompt": 10,
+   "slug_vi_du": [
+    "leanzubrezki-766171",
+    "moritzkremb-466494",
+    "techtactician-144474",
+    "lepadev-475414",
+    "zigapoto-942208"
+   ],
+   "trich_ngan": "highly professional SaaS product launch video",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "[CHUNG CHUNG] Một dòng ngắn dưới 160 ký tự",
+   "mo_ta": "106/352 prompt dưới 160 ký tự (một phần là lời đăng, không phải prompt thật): tên sản phẩm, thời lượng và một tính từ (\"make a presentation video for Brieform, 30 seconds long\"; \"make a funny video. it can be about anything. length: 10 to 30s\"; \"Go all out.\"). Chung chung nhưng vẫn ra video vì model tự chọn công cụ; hiếm khi nhắc nhạc hay khung hình.",
+   "so_prompt": 106,
+   "slug_vi_du": [
+    "majorbaguette-834228",
+    "nemtudo-614053",
+    "sudo-kiran-696074",
+    "wozu-co-893062",
+    "vahidf24-121886"
+   ],
+   "trich_ngan": "make the most impressive demo video for (company name)",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "[CỤ THỂ, KẾT QUẢ TỐT] Spec nhiều khối: <inputs> <direction> <structure> <build> <gotchas> <start>",
+   "mo_ta": "Mẫu cụ thể nhất. 22 prompt có ít nhất một khối; trong đó 21 prompt có <inputs>; 19 có <direction> (phong cách, bảng màu hex, font, quy tắc chuyển động, \"Banned:\"); 18 có <structure> (cảnh theo nhịp, theo bar hoặc beat); 15 có <build> (7 đến 10 bước kỹ thuật: seek(t), lò xo, tmix, phân tích nhịp, đặt SFX theo đỉnh, kiểm trước); 13 có <gotchas> (lỗi đã gặp và cách tránh); 12 có <start> (hỏi gì, rồi cho xem gì trước khi render). Tách rõ ý muốn (direction), thứ tự (structure), cách làm (build), lỗi đã biết (gotchas).",
+   "so_prompt": 22,
+   "slug_vi_du": [
+    "twoclipping-496100",
+    "twoclipping-551116",
+    "twoclipping-747965",
+    "notdwd-998633",
+    "raphaelaubryy-687877"
+   ],
+   "trich_ngan": "Ask me for the inputs, then show me the beat map and 6 stills",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "[CỤ THỂ] Nêu số cứng: thời lượng, fps, khung hình, màu hex, font, thời gian từng cảnh",
+   "mo_ta": "\"1440x1440 at 60fps\", \"22-second square loop\", \"#f3f3f0 to #e3e3de\", \"Archivo 900 extra-condensed for names, Geist for labels\", \"Beat 8, the drop\". Ví dụ rất cụ thể: bảng màu chỉ 4 màu hex và ba hệ chữ có độ giãn chữ (display -40 đến -80, mono +20), lịch 20,00 giây theo từng khoảng (techhalla-498547); dựng đúng 450 khung 1080x1920 30fps (qianqiongge-246969); 4K 2.39:1 24fps, 8 cảnh theo giây (zhu185178-255661). 41 prompt nêu fps, 41 nêu độ phân giải hoặc tỉ lệ.",
+   "so_prompt": 49,
+   "slug_vi_du": [
+    "techhalla-498547",
+    "qianqiongge-246969",
+    "zhu185178-255661",
+    "rossaxbt-312793",
+    "ultimaxbt-549714"
+   ],
+   "trich_ngan": "DURATION: exactly 20.00 seconds. LOOPABLE: frame 0 == frame last",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "[CỤ THỂ] Danh sách cấm (\"Banned:\") để tránh vẻ AI",
+   "mo_ta": "18 prompt có mục Banned hoặc 禁止, phần lớn là các thứ \"dễ ra hình máy làm\": easing nảy, hạt nổ, quầng sáng (glow), gradient trên UI, icon nét không đều, thời gian chết, \"anything that looks like a template\". Biến thể: cấm giữ dài hơn 1 giây, cấm zoom vào rồi zoom ra liền, cấm nền gradient viết trong mã, cấm stock footage và dashboard, cấm góc khung và chữ ở góc (\"typical AI made giveaways\", souravbhar871-477361). Lời chê \"glorified PowerPoint\" cũng xuất hiện (nolkeeg-635633).",
+   "so_prompt": 18,
+   "slug_vi_du": [
+    "morse-369333",
+    "raphaelaubryy-687877",
+    "rossaxbt-312793",
+    "techhalla-498547",
+    "souravbhar871-477361"
+   ],
+   "trich_ngan": "Banned: bouncy easing, particle bursts, glows, gradients on UI chrome",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "[CỤ THỂ] Cấu trúc theo nhịp: bar, beat, \"something happens on every beat\"",
+   "mo_ta": "Kịch bản đặt vào lưới nhạc thay vì giây: \"120 BPM, 7 bars, something happens on every beat\", \"54 beats\", \"10 bars at 120 BPM, 2 seconds each\", \"Beats 0-8\", \"Beat 8, the drop\". Mỗi dòng cảnh gắn một nhịp hoặc ô nhịp; cú đập quan trọng đặt đúng drop. 14 prompt dùng cách đếm này.",
+   "so_prompt": 14,
+   "slug_vi_du": [
+    "morse-369333",
+    "twoclipping-496100",
+    "twoclipping-551116",
+    "raphaelaubryy-687877",
+    "thejohnnyhuy-282154"
+   ],
+   "trich_ngan": "120 BPM, 7 bars, something happens on every beat",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "[CỤ THỂ] Quy tắc chuyển động có số",
+   "mo_ta": "Thay vì \"mượt\", prompt cho số: \"Each morph takes 0.8s on cubic-bezier(.45,0,.15,1)\", \"arrive fast, land soft (cover 12-19% of the remaining distance per frame)\", \"stagger 2-4 frames\", \"blur only on fast moves\", \"slow push 1.03-1.07 on every scene\", \"hold longer than 1s\" bị cấm. Người đọc kiểm được bằng mắt hoặc bằng quét khung.",
+   "so_prompt": 7,
+   "slug_vi_du": [
+    "rossaxbt-312793",
+    "notdwd-766641",
+    "twoclipping-551116",
+    "techhalla-498547",
+    "ultimaxbt-549714"
+   ],
+   "trich_ngan": "arrive fast, land soft (cover 12-19% of the remaining distance per frame)",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "[CỤ THỂ] Ràng buộc một file HTML, không thư viện, không tài sản ngoài",
+   "mo_ta": "\"Single self-contained index.html\", \"Canvas 2D only, no libraries, no external assets\", \"no libraries and no image, font or audio files\", \"No external assets, libraries, or network requests\". Có 52 prompt dùng câu cấm dạng này. Giúp kết quả tái chạy được, chia sẻ được, không phụ thuộc mạng; ép model tự vẽ và tự tổng hợp tiếng.",
+   "so_prompt": 52,
+   "slug_vi_du": [
+    "kopert0x-098349",
+    "nischalsharma-587738",
+    "majidmanzarpour-927543",
+    "parkerrex-701462",
+    "theparuchh-013286"
+   ],
+   "trich_ngan": "Rules: Canvas 2D only, no libraries, no external assets.",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "[CỤ THỂ] Kể cả chuỗi cảnh bằng mũi tên, mỗi cảnh một động tác",
+   "mo_ta": "Một chuỗi cảnh \"→\" liệt kê từng cảnh với động tác cụ thể và thứ tự (koushikde-937635: tờ résumé rơi xuống, các dòng gõ vào, máy quay đẩy vào chấm cam, năm thanh kỹ năng đầy theo năm đường cong...); notdwd-766641: ô nhắc gõ \"make a launch video\" với nhịp gõ thật, nhấn enter, dải phim 12 khung dập từng khung ở 120 BPM, một quả bóng cam với co dãn tại tiếp xúc; okapi-fukugyo-166351 viết chuỗi 13 trạng thái giao diện. Người đọc hình dung được từng nhịp.",
+   "so_prompt": 11,
+   "slug_vi_du": [
+    "koushikde-937635",
+    "notdwd-766641",
+    "okapi-fukugyo-166351",
+    "tanabe-fragm-322001",
+    "techhalla-498547"
+   ],
+   "trich_ngan": "a paper résumé slams onto a dark page and its rows type in",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "[CỤ THỂ] Vai trò + quy trình bắt buộc + \"hợp cách\"",
+   "mo_ta": "\"あなたは一流のモーションデザイナー\" (tanabe-fragm-706979) nêu quy trình bắt buộc theo thứ tự: một câu chốt ý tưởng; 3 đến 4 màu, tối đa 2 font kèm lý do; bảng phân cảnh mỗi 0,5 giây (thời gian, việc xảy ra, kỹ thuật, mục đích); hiện thực; tự chấm theo \"đường hợp cách\" (không đều tốc độ, chồng chuyển động giữa cảnh, 0,3 đến 0,5 giây gồng trước điểm nhấn, tạm dừng lúc nào cũng thành một bức đẹp, tránh fade-in tràn lan và cầu vồng). Cuối cùng giao file hoàn chỉnh kèm bảng phân cảnh, giải thích tối đa 3 dòng. Mẫu \"You are a world-class motion designer\" khác thì chung chung hơn (subraiz24-994209, reflex-cloud-304046).",
+   "so_prompt": 26,
+   "slug_vi_du": [
+    "tanabe-fragm-706979",
+    "subraiz24-994209",
+    "reflex-cloud-304046",
+    "techhalla-498547",
+    "shengtang135754-900065"
+   ],
+   "trich_ngan": "どの瞬間で一時停止しても、1枚の絵として美しく成立する",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "[CỤ THỂ] Đòi \"thật\": media thật, giao diện thật, dữ liệu thật, không placeholder",
+   "mo_ta": "\"Real footage only, never placeholder cards\", \"Real UI. Real data. No placeholders.\", \"a counter ticks EVERY frame up to today's scale\" (notdwd-998633: tư liệu lưu trữ thật, trang web năm 2000 thật, không stock, không màn hình sản phẩm giả). Ảnh chụp 2x Retina thật, danh sách thành phần thật (sportyblocks-320796: 87 thành phần). Đối lập với mẫu SaaS chung chung.",
+   "so_prompt": 14,
+   "slug_vi_du": [
+    "notdwd-998633",
+    "raphaelaubryy-687877",
+    "verbove-268381",
+    "sportyblocks-320796",
+    "thegreatola-738411"
+   ],
+   "trich_ngan": "Real UI. Real data. No placeholders.",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "[CỤ THỂ] Tham chiếu phong cách bằng tên người, hãng, tác phẩm, kèm quy tắc hình",
+   "mo_ta": "Tên làm chuẩn kèm mô tả cụ thể: \"Dribbble-level UI motion\", \"Apple-keynote launch film ... iOS 26 liquid glass\", \"a16z x Content Rewards brand film\", \"3Blue1Brown 式数学可视化 ... 深色底\", \"Kurzgesagt 式信息图\". Khi chỉ nêu tên mà không nêu quy tắc (\"YC videos and claude social videos\", kmasiff-549880) thì chung chung. Mục phong cách tham chiếu có số lần cụ thể.",
+   "so_prompt": 7,
+   "slug_vi_du": [
+    "morse-369333",
+    "thejohnnyhuy-282154",
+    "notdwd-998633",
+    "nft-chen-068069",
+    "kmasiff-549880"
+   ],
+   "trich_ngan": "Dribbble-level UI motion. One shape, never cut",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "[CỤ THỂ] Mẫu có biến điền sẵn trong ngoặc ([PRODUCT NAME], 【...】, <website url>)",
+   "mo_ta": "23 prompt còn chỗ điền trong ngoặc: \"[PRODUCT NAME]\", \"[Artist Name]\", \"<website url>\", \"(product url)\", \"[LIST]\", \"[等级阶梯...]\". Phần lớn là mẫu để người dùng tự điền, nên khi học cần tách mẫu hữu ích khỏi mẫu trống: mẫu ra tay (op7418-814408: năm giai đoạn bắt buộc, lỗi đã gặp ghi thẳng như \"không dùng CSS 3D để lật vật lớn\"), mẫu 15 mini-brief (nft-chen-068069).",
+   "so_prompt": 23,
+   "slug_vi_du": [
+    "op7418-814408",
+    "nft-chen-068069",
+    "thegreatola-738411",
+    "shengtang135754-900065",
+    "kisalay-921896"
+   ],
+   "trich_ngan": "Product Name: [Product Name] Product Features: [Short Description]",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "[ĐẶC BIỆT] Nhờ AI tự viết prompt rồi áp dụng; phim về chính prompt của nó",
+   "mo_ta": "Hai lượt: \"create a motion design prompt for an ad for our site\" rồi \"Prompt 2: now apply it\" (l3d1c-752011); ba bước: nghĩ cấu trúc, tra kỹ thuật và skill, rồi mới dựng (typingmusou-160705); \"Make a film about its own prompt. 15 seconds. 0 keyframes. 0 samples\" kèm bốn bước (ulyssexbt-205279). Cũng có kiểu \"ask AI để mở rộng ý\": giải thích concept, chọn ý, nhờ AI sinh prompt có chỉ dẫn công nghệ (techartist-786274).",
+   "so_prompt": 4,
+   "slug_vi_du": [
+    "l3d1c-752011",
+    "typingmusou-160705",
+    "ulyssexbt-205279",
+    "techartist-786274"
+   ],
+   "trich_ngan": "create a motion design prompt for an ad for our site",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "[ĐẶC BIỆT] Bảo AI diễn tả chính nó (personify, \"what it feels like to be you\")",
+   "mo_ta": "18 prompt yêu cầu AI nói về chính nó: \"personify yourself in the video as introducing opus 5.5\" (mtvneo-148436, mtvneo-819281), \"make a 30s video about what it feels like to be you\" (suryarajendhran-730437), \"who are you as Opus 5.5 ... Avoid the frames and texts on the corners\" (souravbhar871-477361), \"express what it's like to be a very creative LLM used by me every day\" (kloss-xyz-941143). Không đo được chất lượng, hữu ích để lấy bản tự giới thiệu.",
+   "so_prompt": 18,
+   "slug_vi_du": [
+    "mtvneo-148436",
+    "suryarajendhran-730437",
+    "souravbhar871-477361",
+    "kloss-xyz-941143",
+    "madhav-xo-524440"
+   ],
+   "trich_ngan": "make a 30s video about what it feels like to be you",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "[ĐẶC BIỆT] Lượt sau nêu lỗi bằng lời chê cụ thể",
+   "mo_ta": "Kết quả tốt đến từ lượt sau chứ không từ prompt đầu: \"It is better, but can you choose a royalty-free song online? You are clearly not a good song maker. ... …\" (sachaarbonel-673648); \"make it less like a powerpoint\" (leowenai-125931); \"My part was saying what felt wrong\" (l3d1c-632524); \"Took 13 revisions\" (saltyaom-620933); \"I want you to destroy GPT 6 ... astra just wants to give me a stupid glorified powerpoint\" (nolkeeg-635633).",
+   "so_prompt": 5,
+   "slug_vi_du": [
+    "sachaarbonel-673648",
+    "leowenai-125931",
+    "l3d1c-632524",
+    "saltyaom-620933",
+    "nolkeeg-635633"
+   ],
+   "trich_ngan": "You are clearly not a good song maker.",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "[ĐẶC BIỆT] Prompt rất dài mô tả sản phẩm thật theo giai đoạn (chiến lược quảng cáo)",
+   "mo_ta": "redpersongpt-284430 (8.290 ký tự): vai chuyên gia chiến lược sáng tạo, 5 giai đoạn (hiểu sản phẩm thật, tìm góc quảng cáo, chiến lược, 12 ý tưởng quảng cáo mỗi ý có kịch bản và danh sách cảnh, dùng sản phẩm thật). Cụ thể về quy trình nhưng yêu cầu quá rộng so với một video; đây là hệ thống quảng cáo hơn là một prompt dựng.",
+   "so_prompt": 1,
+   "slug_vi_du": [
+    "redpersongpt-284430"
+   ],
+   "trich_ngan": "Do not invent features that do not exist.",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "[ĐẶC BIỆT] Chủ đề cho video là mô tả đối tượng thật, thêm một điều kiện thử thách",
+   "mo_ta": "Điều kiện bất thường: \"You fail if the video does not get at least 100 likes on twitter\" (syntheticbeef-389075); \"Must have a clear winner between the two\" (xanderwow-a-597063: Dario đấu Sam, hài, trừu tượng); \"Do not reference any previous memories or skills\" (nolkeeg-635633); \"Make it emotional\" (marklaunches-041046). Điều kiện chung chung, model khó kiểm được.",
+   "so_prompt": 4,
+   "slug_vi_du": [
+    "syntheticbeef-389075",
+    "xanderwow-a-597063",
+    "marklaunches-041046"
+   ],
+   "trich_ngan": "You fail if the video does not get at least 100 likes on twitter.",
+   "lo_quet": "b"
+  }
+ ],
+ "phong_cach_tham_chieu": [
+  {
+   "ten": "Apple (phim ra mắt sản phẩm, quảng cáo 1984)",
+   "mo_ta": "Apple làm chuẩn hoặc mục kể: quảng cáo Apple 1984 cho Opus 5.5 'tránh chữ ở viền và khung' (1littlecoder-378066); tiến hoá Apple từ Steve Jobs 1976 tới 2026 (airobertdaily-416945); phim sản phẩm kiểu Apple 60 giây cho Kirocast, hai bản 16:9 và 9:16 chung dòng thời gian (gabzofar-852359); video 30 giây 'kiểu Apple' cho app (gautam-mer1-530003); 'Apple-quality' cho mô phỏng động đất (egeberkina-949521); Apple × fintech cao cấp × biên tập × Stripe tiết chế (daniel-haida-636937).",
+   "so_prompt": 6,
+   "slug_vi_du": [
+    "1littlecoder-378066",
+    "airobertdaily-416945",
+    "gabzofar-852359",
+    "gautam-mer1-530003",
+    "daniel-haida-636937"
+   ],
+   "trich_ngan": "Apple product launch film × premium fintech × editorial motion design",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Dribbble-level UI motion",
+   "mo_ta": "Cụm trong họ 'một hình biến qua nhiều trạng thái': nền xám ấm sáng, thành phần đen trắng, một phông UI (Geist), một màu nhấn, lò xo với vượt đích rất nhẹ, camera zoom cho mỗi trạng thái lấp khung, khung cuối là khung đầu. Phông Geist được nêu trong khoảng 10 prompt.",
+   "so_prompt": 5,
+   "slug_vi_du": [
+    "0xnicc0-516612",
+    "annacher-152174",
+    "annacher-433425",
+    "demonugc-525162",
+    "hicallmechai-878304"
+   ],
+   "trich_ngan": "Dribbble-level UI motion.",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "3Blue1Brown (Manim), The Pudding, giải thích dữ liệu",
+   "mo_ta": "eleanorina-653042: xây FrankenManim bản mới nhất rồi làm video kiểu 3b1b về Hoeffding's D với FrankenTTS; astrothewizard-618782 nêu The Pudding và 3Blue1Brown như mức chuẩn 'giải thích dựa trên dữ liệu, mã dựng, một ý hình thức mạnh mỗi cảnh, hệ thiết kế mạch lạc'.",
+   "so_prompt": 2,
+   "slug_vi_du": [
+    "eleanorina-653042",
+    "astrothewizard-618782"
+   ],
+   "trich_ngan": "data-driven explainers like The Pudding or 3Blue1Brown",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Kurzgesagt × mở đầu Pixar",
+   "mo_ta": "henrygsing-050247: bài giảng kèm 'yêu cầu đạo diễn' theo Kurzgesagt × mở đầu Pixar; Claude viết STORYBOARD.md, Remotion dựng từng cảnh, TTS Microsoft chạy cục bộ miễn phí.",
+   "so_prompt": 1,
+   "slug_vi_du": [
+    "henrygsing-050247"
+   ],
+   "trich_ngan": "Kurzgesagt × 皮克斯开场",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Pixar và hoạt hình 3D",
+   "mo_ta": "Pixar xuất hiện ở 4 prompt: 'Pixar-level quality' (anilraok-009118); Claude đấu ChatGPT kiểu Pixar chỉ bằng mã, nội dung dựa trên meme AI (kadaliao-048854); mở đầu Pixar (henrygsing-050247); và lời cảnh báo 'đừng bám Pixar, là slop' (anabology-491441).",
+   "so_prompt": 4,
+   "slug_vi_du": [
+    "anilraok-009118",
+    "kadaliao-048854",
+    "henrygsing-050247",
+    "anabology-491441"
+   ],
+   "trich_ngan": "I wouldn't fit too heavily to Pixar",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Wes Anderson (The Grand Budapest Hotel)",
+   "mo_ta": "Duy nhất một prompt: bốn mùa trôi qua cửa sổ toa tàu, toa ấm cúng, tách cà phê trên bàn, kiểu Grand Budapest Hotel (itsolelehmann-762215). Prompt ngắn nhưng phong cách có tên nên kết quả được định hướng nhiều.",
+   "so_prompt": 1,
+   "slug_vi_du": [
+    "itsolelehmann-762215"
+   ],
+   "trich_ngan": "Grand Budapest Hotel style",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Tiêu đề phim Netflix, Emmy; nhạc Oppenheimer; Peter Gabriel; Adult Swim; BBC",
+   "mo_ta": "Mỗi người một lần: tiêu đề phim kinh dị Netflix 'như thể thắng Emmy về thiết kế tiêu đề chính' (abhinayguptha-259981); nhạc Oppenheimer làm cảm hứng, tự soạn (ajith-io-562538); video âm nhạc kiểu 'Sledgehammer' và 'Big Time' của Peter Gabriel với nhân vật hiện đại, tự tạo bài hát (davidshulmanfl-842921); hoạt hình người lớn Adult Swim với hình học thiêng, Mandelbrot, cymatics (generussai-904308); giọng BBC, phụ đề tiếng Anh (howlemont-503897).",
+   "so_prompt": 5,
+   "slug_vi_du": [
+    "abhinayguptha-259981",
+    "ajith-io-562538",
+    "davidshulmanfl-842921",
+    "generussai-904308",
+    "howlemont-503897"
+   ],
+   "trich_ngan": "Make it feel like it won an Emmy for main title design.",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "K-pop, internet brutalism, meme mạng",
+   "mo_ta": "anabology-491441 và anjmaxx-459455: lấy K-pop làm mỏ neo (cách họ chỉ hướng chú ý và quản tâm lý bằng mẫu hình ảnh), thêm 'internet brutalism' và meme (Shinji, Navier-Stokes), cốt lõi là móc hình ảnh mạnh, chữ lớn ở đầu; khuyên đừng bám K-pop quá.",
+   "so_prompt": 2,
+   "slug_vi_du": [
+    "anabology-491441",
+    "anjmaxx-459455"
+   ],
+   "trich_ngan": "K-pop is a good anchor point visually",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Phong cách trò chơi và demoscene",
+   "mo_ta": "Zelda BotW/TotK với cel shading, gió trong cỏ, trời vẽ tay (anduraio-570761); Minecraft (0xverdao-776363, dreyk0o0-165270, kepochnik-237752); intro Pokémon Fire Red và Leaf Green (fanfulladev-063524); Super Mario Bros Wonder (janeloic-905802); Tron (0xrathi-511319); Hearthstone (aisongman-461057); GTA (alex-vainshtein-195332); máy bi Wintergatan (godsboy7777-150194); Another World (gandamu-ml-124280); demoscene 1990 (gandamu-ml-220530).",
+   "so_prompt": 14,
+   "slug_vi_du": [
+    "anduraio-570761",
+    "fanfulladev-063524",
+    "janeloic-905802",
+    "godsboy7777-150194",
+    "gandamu-ml-220530"
+   ],
+   "trich_ngan": "The Legend of Zelda: BotW / TotK energy.",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Văn hoá và nghệ thuật truyền thống làm hệ thiết kế",
+   "mo_ta": "dotey-927166 'Trung Hoa văn minh sử': hai phong cách xen kẽ (bạch miêu trên giấy tuyên, vàng bùn trên nền huyền); mỗi quyển một màu chủ và một bộ hoạ tiết tiến hoá (đồ gốm màu, thao thiết, vân khí, cỏ cuộn, dây cuốn, hồi văn); con dấu đỏ số quyển, thước thời gian kiểu cuộn, nhạc ngũ cung từ sáo xương, chuông đồng tới dàn nhạc, BPM nhanh dần theo niên đại. Khác: gấu đen Đài Loan Trung thu (eric-khun-667455), Mincho tông xanh đậm vàng (egawa-ai-design-092323), pixel Chuseok Hàn (hoyoyoda-543147).",
+   "so_prompt": 4,
+   "slug_vi_du": [
+    "dotey-927166",
+    "eric-khun-667455",
+    "egawa-ai-design-092323",
+    "hoyoyoda-543147"
+   ],
+   "trich_ngan": "宣纸白描和玄底泥金两种画风交替",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Chuẩn bằng công trình hoặc nhân vật có thật",
+   "mo_ta": "Mức đạt nêu theo công trình: Chartres hoặc Sainte-Chapelle cho kính màu (agioyaz-397647); bài phát biểu Rice của JFK làm văn bản gốc cho phim chữ 20 giây (gdgtify-989608); bài diễn văn 'Build the Floor' tự soạn nhưng 'không gán cho người thật' (gdgtify-130294); nhạc Oppenheimer; Sledgehammer. Cách này cho model một thước đo ngoài 'đẹp', nhưng cần tránh sao chép.",
+   "so_prompt": 3,
+   "slug_vi_du": [
+    "agioyaz-397647",
+    "gdgtify-989608",
+    "gdgtify-130294"
+   ],
+   "trich_ngan": "never copy an existing window",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Tham chiếu bằng video hoặc kho mã đính kèm",
+   "mo_ta": "Phong cách lấy từ video đính kèm: 'download it' (ajith-io-615243); video mẫu video-examples/ của chính Claude (abderrahmen-g-899031); repo JavaScript PDoomVideo làm gốc (anabology-491441, doubleunplussed-181894); bài đăng gốc + mp4 Blender. Kết hợp với phân tích khung bằng số (everestchris6-399895) là cách chuẩn hơn.",
+   "so_prompt": 6,
+   "slug_vi_du": [
+    "ajith-io-615243",
+    "abderrahmen-g-899031",
+    "anabology-491441",
+    "doubleunplussed-181894",
+    "everestchris6-399895"
+   ],
+   "trich_ngan": "Take reference from the given video (download it)",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Thương hiệu thật làm phong cách: Spotify, Audi, Taxtello",
+   "mo_ta": "Phim giả Spotify 18 giây 60 fps trong sân khấu bo tròn gần đen, nền xanh ngọc, phông Geist/Inter (brainextends-606193); Audi RS 6 15 giây, âm V8 tổng hợp (dys-hay-749645); Taxtello vàng và kim loại tối, Plus Jakarta Sans và JetBrains Mono, 'quý như phụ gia chứ không phải lũ vàng' (daniel-haida-636937). Phong cách luôn là bộ token thiết kế cụ thể, không phải tính từ.",
+   "so_prompt": 3,
+   "slug_vi_du": [
+    "brainextends-606193",
+    "dys-hay-749645",
+    "daniel-haida-636937"
+   ],
+   "trich_ngan": "Make Taxtello look expensive.",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Tên phong cách ít xuất hiện: Pentagram, Wes Anderson, Kurzgesagt",
+   "mo_ta": "Trong 351 prompt: Pentagram 0 lần, Kurzgesagt 1 lần, Wes Anderson 1 lần (qua Grand Budapest), 3Blue1Brown 2 lần, Apple 6 lần. Phong cách tên riêng hiếm hơn nhiều so với yêu cầu chung chung như 'cinematic', 'premium', 'Apple-style'.",
+   "so_prompt": 0,
+   "slug_vi_du": [],
+   "trich_ngan": "",
+   "lo_quet": "a"
+  },
+  {
+   "ten": "Apple keynote, iOS 26 liquid glass, Dynamic Island, macOS, Screen Studio",
+   "mo_ta": "Phong cách tham chiếu nhiều nhất trong nhóm cấu trúc: \"Apple-keynote launch film\", kính lỏng iOS 26, Dynamic Island kéo giãn như chất lỏng, con trỏ macOS thật, zoom kiểu Screen Studio (camera zoom để mỗi khoảnh khắc lấp đầy khung, con trỏ phóng theo).",
+   "so_prompt": 15,
+   "slug_vi_du": [
+    "thejohnnyhuy-282154",
+    "twoclipping-496100",
+    "twoclipping-747965",
+    "rossaxbt-312793",
+    "ultimaxbt-549714"
+   ],
+   "trich_ngan": "An Apple-keynote launch film, 2D only, one continuous take.",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Dribbble-level UI motion (một hình biến hình thành mọi thành phần UI)",
+   "mo_ta": "Một hình duy nhất, không cắt, biến thành nút, loader, dấu check, Dynamic Island, trình phát nhạc, thanh âm lượng, công tắc, tab, đồ thị, ⌘K, toast, rồi trở về nút để lặp; nền xám ấm, thành phần đen trắng, font Geist. Tám prompt nêu thẳng \"Dribbble\"; có nhiều bản copy và biến thể (Pokédex, dark-mode, cam đơn) từ cùng một mẫu.",
+   "so_prompt": 8,
+   "slug_vi_du": [
+    "morse-369333",
+    "nezbuilds-294391",
+    "okapi-fukugyo-166351",
+    "thegrootdev-966114",
+    "noah-z-zhang-765393"
+   ],
+   "trich_ngan": "Dribbble-level UI motion. One shape, never cut",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Phim thương hiệu kiểu a16z x Content Rewards (tư liệu lưu trữ thật, một vật chủ đạo)",
+   "mo_ta": "notdwd-998633: phim 55 giây bán một cảm giác và một ý, không bán tính năng; tư liệu lưu trữ công cộng (Prelinger), trang web năm 2000 từ Wayback Machine; một vật chủ đạo là nút 3D khắc logo, vật duy nhất có màu bão hoà; mọi thứ khác trắng, bạc, kem, đen lưu trữ; phụ đề trắng sáng từng từ; kết cấu phim: hạt, halation, vignette, đen nâng ấm. Cấm stock, dashboard, UI chat, tour tính năng, đồ thị gợn.",
+   "so_prompt": 1,
+   "slug_vi_du": [
+    "notdwd-998633"
+   ],
+   "trich_ngan": "It sells one feeling and one idea, never features.",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Poster đường phố và kinetic identity (bảng màu cấm lan, ba hệ chữ)",
+   "mo_ta": "techhalla-498547: bumper nhận diện 20 giây \"like the best designer in the room made a street-poster that moves\"; chỉ nền đen, magenta, xanh acid, trắng; Archivo Black, Syne ExtraBold, IBM Plex Mono; lệch in magenta/xanh 2-4 px chỉ ở khung nhấn; cấm neon tím xanh, glassmorphism, sáo ngữ AI (não, robot, mạng nơ-ron, lấp lánh). Hiểu như phong cách \"kinetic type + ngôn ngữ in\".",
+   "so_prompt": 1,
+   "slug_vi_du": [
+    "techhalla-498547"
+   ],
+   "trich_ngan": "if this is weak, you don't get hired",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Kurzgesagt, 3Blue1Brown, Vox (video giải thích)",
+   "mo_ta": "Ba tham chiếu giải thích khoa học: 3Blue1Brown cho vòng tròn cắt thành 8, 16, 32 phần rồi xếp thành hình chữ nhật, công thức hiện từng hạng, nền tối (nft-chen-068069) và cho máy hơi nước (testlandblog-617500, tiếng Đức); Kurzgesagt cho giấy gấp đôi, chữ số lớn, camera zoom đều (nft-chen-068069); \"Vox-vibe video\" từ PDF và ảnh (x7mdnet-157811). Ít hơn mong đợi: chỉ 3 prompt trong 352.",
+   "so_prompt": 3,
+   "slug_vi_du": [
+    "nft-chen-068069",
+    "testlandblog-617500",
+    "x7mdnet-157811"
+   ],
+   "trich_ngan": "做一支 10 秒 Kurzgesagt 式信息图，讲【纸对折厚度】。",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "NextCore, thảo mộc giấy máy chữ, halftone manga (YouTube và X)",
+   "mo_ta": "NextCore (kênh YouTube nước ngoài, tiếng Nhật: thuần chữ và mã, cứ vài giây đổi phong cách mô tả) làm chuẩn video tâm lý học (nakazakifam-831964); hai bài X của Voxyz và Donald Jewkes: giấy, nhãn băng máy chữ, nét tay; halftone, in manga và pixel, dữ liệu chữ động; phải đọc thương hiệu LegalQuants để giữ than, trắng, đen, Arial (stokebuilder-356793).",
+   "so_prompt": 3,
+   "slug_vi_du": [
+    "nakazakifam-831964",
+    "stokebuilder-356793",
+    "x7mdnet-157811"
+   ],
+   "trich_ngan": "",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Phim hoạt hình và danh hoạ làm chuẩn: Ghibli, Norstein, Tề Bạch Thạch, Van Gogh, Dalí, Phục Hưng",
+   "mo_ta": "Cảnh Porco Rosso (cuộc không chiến hoàng hôn) làm lại bằng web 3D, \"just breathe\" (nft-chen-350878); \"Hedgehog in the Fog\" của Yuri Norstein, không chép mà dựng câu chuyện mới, 6,5 phút (superalesha-970412); tranh mực Tề Bạch Thạch trên WebGL (youwareai-259061); Starry Night và thị trấn của nó cho game tìm mèo (mandelduck-768972); \"Dalí gặp generative AI\" (lalulu-create-091362); bản thảo nhà tự nhiên Phục Hưng (wangyinrec-532344).",
+   "so_prompt": 6,
+   "slug_vi_du": [
+    "nft-chen-350878",
+    "superalesha-970412",
+    "youwareai-259061",
+    "mandelduck-768972",
+    "wangyinrec-532344"
+   ],
+   "trich_ngan": "",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Phim, game và anime nổi tiếng làm chuẩn",
+   "mo_ta": "Zelda Breath of the Wild (truenyl-447745), Star Wars thập niên 80 trộn hoạt hình thập niên 90 (ryzoft-887481), Cuphead (taylorbereiter-189192), Magicka, MapleStory, Romance of the Three Kingdoms III, Ignition 1997 (niegramotny-197521), Black Clover (lribes4-742305), Pokémon (thegrootdev-966114), Evangelion title card cho lyric video (kurahu-capten-054506), Thomas Hardy với nhân vật giấy cắt trên trạm không gian (nofollowers2023-974928), Metallica ở Sphere (retropunkai-277590). Nhóm game và anime là nhóm \"interactive\", ít liên quan video.",
+   "so_prompt": 15,
+   "slug_vi_du": [
+    "truenyl-447745",
+    "ryzoft-887481",
+    "taylorbereiter-189192",
+    "kurahu-capten-054506",
+    "nofollowers2023-974928"
+   ],
+   "trich_ngan": "Use an Evangelion title card style.",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Showreel của nhà thiết kế chuyển động / video xin việc (tự tham chiếu)",
+   "mo_ta": "29 prompt dùng \"showreel\" (kể cả ショーリール tiếng Nhật) hoặc \"like it's your showreel for a résumé\" làm khung phong cách: nhanh, tự tin, mỗi 1,5 đến 2 giây một kỹ thuật khác (chữ động, biến hình, mặt nạ, thị sai, hạt, số đếm). Không có tham chiếu ngoài; chuẩn đo là \"ấn tượng như video xin việc\" (tanabe-fragm-706979, lukasersil-726495, threeaus-886343: \"not an AI trailer\").",
+   "so_prompt": 29,
+   "slug_vi_du": [
+    "lukasersil-726495",
+    "threeaus-886343",
+    "tanabe-fragm-706979",
+    "samuel-spitz-503053",
+    "subraiz24-994209"
+   ],
+   "trich_ngan": "Looks like a refined product-studio showreel, not an AI trailer.",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Brainrot, sảng (psychedelic), VJ, trance, dubstep, oscilloscope",
+   "mo_ta": "Phong cách sốc thị giác: video \"brain rot\" 9:16 bằng Python và ffmpeg (kloss-xyz-941143); \"brainrot video about the terminal. i can't escape it\" (supremebeme-306746); sảng, hypnotic 20 giây (monokern-832979); MV glitch psychedelic với kaleidoscope 8 đến 12 cánh (pound75423-464968); VJ psychedelic pop punk với nhạc trance cyber punk techno tự soạn, 30 giây (yama-kiyo-134910); \"140 BPM rusko/skream style UK dubstep\" (rames-jusso-776559); oscilloscope (rneayan-406275).",
+   "so_prompt": 7,
+   "slug_vi_du": [
+    "kloss-xyz-941143",
+    "supremebeme-306746",
+    "monokern-832979",
+    "pound75423-464968",
+    "yama-kiyo-134910"
+   ],
+   "trich_ngan": "140 BPM rusko/skream style UK dubstep",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Risograph, truyện tranh, manga, halftone, in kiểu xerox, mực sumi",
+   "mo_ta": "Risograph (rneayan-441493), \"fun motion graphic, comic book style, 10s\" (madpencil-753990), truyện tranh manga đen trắng chấm điểm kèm một màu đỏ (nft-chen-068069), halftone xerox với máy quay và chuyển cảnh (leowenai-125931), mực sumi-e 90 giây \"UNFINISHED\" (pradeepxkapoor-641956, prompt bị cắt giữa câu).",
+   "so_prompt": 5,
+   "slug_vi_du": [
+    "rneayan-441493",
+    "madpencil-753990",
+    "nft-chen-068069",
+    "leowenai-125931",
+    "pradeepxkapoor-641956"
+   ],
+   "trich_ngan": "fun motion graphic, comic book style, 10s",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Pixel art 16-bit và retro",
+   "mo_ta": "15 prompt gắn pixel: phép màu pháp sư 128x96 (majidmanzarpour-927543), \"pixel art boomerang render of the history of LLMs ... 15 seconds max\" (pluginplay-472343), pelican đạp xe qua cầu (sadalbert10-856416), game Skerry Light (mozetech-471882), \"pixel motion video of all human progress, then 30 years into the future\" (xodud-rkd-160324), pixel 3D cho phim mở đầu Binance (sciencedegens-843325), Latentown pixel rồi thành 3D (sanjay-khadka07-620029).",
+   "so_prompt": 15,
+   "slug_vi_du": [
+    "majidmanzarpour-927543",
+    "pluginplay-472343",
+    "sadalbert10-856416",
+    "xodud-rkd-160324",
+    "sciencedegens-843325"
+   ],
+   "trich_ngan": "pixel art boomerang render of the history of LLMs",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Tên các model khác được nêu để so sánh (GPT Astra, GPT-6, Sol-6)",
+   "mo_ta": "Bốn prompt dùng đối thủ làm thước: \"destroy GPT 6 ... astra just wants to give me a stupid glorified powerpoint\" (nolkeeg-635633); chạy cùng prompt với GPT Sol-6, kết quả \"shockingly poor\" (mozetech-471882); chạy lại cảnh 3D đã làm bằng GPT-6 Astra, hơn ở tuân thủ chỉ dẫn và gu thẩm mỹ (truenyl-447745); \"If Astra already blew our minds... Opus 5.5 is a monster\" (techhalla-498547).",
+   "so_prompt": 4,
+   "slug_vi_du": [
+    "nolkeeg-635633",
+    "mozetech-471882",
+    "truenyl-447745",
+    "techhalla-498547"
+   ],
+   "trich_ngan": "I want you to destroy GPT 6 when it comes to motion graphics video",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Gu minimal cao cấp / editorial / sạch (chỉ một màu nhấn, nhiều khoảng trống)",
+   "mo_ta": "\"High-end minimal. One idea per shot, lots of empty space, one accent color, one clean sans (Geist or Inter) with …\" (raphaelaubryy-687877, twoclipping-000267); \"エディトリアル風\" (signalz-jp-918002); \"Warm off-white, black type, one orange accent only. A single orange circle ... is the through-line\" (threeaus-886343); \"off-white, ink and one orange only\" (notdwd-766641); phim sang trọng kiểu poster op-art cobalt, kem, hồng, cam (twoclipping-551116).",
+   "so_prompt": 7,
+   "slug_vi_du": [
+    "raphaelaubryy-687877",
+    "threeaus-886343",
+    "notdwd-766641",
+    "signalz-jp-918002",
+    "twoclipping-551116"
+   ],
+   "trich_ngan": "High-end minimal. One idea per shot, lots of empty space, one accent color",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Đặt nghệ danh làm nguồn cảm hứng: YC, Claude social videos, @Voxyz, hãng và thương hiệu",
+   "mo_ta": "\"inspiration is yc videos and claude social videos\" (kmasiff-549880); \"Notion video team\" làm chuẩn trailer ra mắt tính năng (wustep-884086); \"NextCore\" (nakazakifam-831964); \"pen\" thiết kế thật (sachaarbonel-673648: \"You have access to the designs in pen\"); \"Prelinger\" tư liệu lưu trữ (notdwd-998633, twoclipping-041659, twoclipping-551116).",
+   "so_prompt": 7,
+   "slug_vi_du": [
+    "kmasiff-549880",
+    "wustep-884086",
+    "nakazakifam-831964",
+    "sachaarbonel-673648",
+    "notdwd-998633"
+   ],
+   "trich_ngan": "inspiration is yc videos and claude social videos",
+   "lo_quet": "b"
+  },
+  {
+   "ten": "Phong cách \"phim tư liệu / trailer hoành tráng\"",
+   "mo_ta": "\"cinematic 2-minute video on the history of AI ... epic and emotional, like a documentary trailer\" (linke1427832-343079); \"cinematic explainer\" cho P(doom) (ldataengineer-823010); Trung Địa thu nhỏ 3 phút 47 giây (mdaman010-610173); \"Show me the next 30 years. One shot, no cuts\" (thesethian-384517); \"demoscene tech demo ... a statement for a new AI demoscene\" (xanares-738984).",
+   "so_prompt": 5,
+   "slug_vi_du": [
+    "linke1427832-343079",
+    "ldataengineer-823010",
+    "mdaman010-610173",
+    "thesethian-384517",
+    "xanares-738984"
+   ],
+   "trich_ngan": "Make it epic and emotional, like a documentary trailer.",
+   "lo_quet": "b"
+  }
+ ]
+}

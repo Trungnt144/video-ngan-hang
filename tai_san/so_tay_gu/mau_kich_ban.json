@@ -1,0 +1,2230 @@
+{
+ "_ghi_chu": "NGUỒN SỰ THẬT cho mẫu kịch bản và tổ hợp đề xuất của loạt video thuật ngữ ngân hàng (lập 29/10/2026 theo lệnh Trung qua phiên điều phối; bản 1.1 cùng ngày thêm sáu mẫu MK-11…MK-16 theo lệnh Trung và chuyển 13 video sang mẫu mới, giữ nguyên tổ hợp năm trục). Phiên dựng đọc mục xep_video theo mã N; tổ hợp là đề xuất, phiên dựng chạy lại scripts/goi_y_to_hop_dung.py khi muốn đổi. Sửa file này rồi chạy python3 scripts/sinh_mau_kich_ban.py để kiểm và sinh lại bản đọc mau_kich_ban.md cùng trang HTML.",
+ "phien_ban": "1.1",
+ "cap_nhat": "2026-10-29",
+ "trang_html": "san_pham/2026.10.29.bang_phan_loai_mau_kich_ban/2026.10.29.bang_phan_loai_mau_kich_ban_v1.html",
+ "it_chu": {
+  "_ghi_chu": "Trung chốt 29/10/2026: giữ phụ đề cứng ở đáy khung, chỉ giảm chữ TRONG hình. Quy tắc C1–C4 đếm được bằng máy: python3 scripts/dem_chu_trong_hinh.py; C5–C8 soát bằng mắt trên ảnh lưới.",
+  "dai_phu_de_y": [
+   900,
+   1080
+  ],
+  "quy_tac": [
+   {
+    "ma": "C1",
+    "noi_dung": "Giữ phụ đề cứng ở dải y 900–1080 (kho phu_de_chay_chu). Hình và chữ của cảnh không đặt xuống dưới y 900.",
+    "kiem": "máy: chữ đọc được trong dải 900–1080 không tính vào C2, C3"
+   },
+   {
+    "ma": "C2",
+    "noi_dung": "Mỗi khung, ngoài dải phụ đề, tối đa 12 từ, đếm theo tiếng (chữ cách nhau bởi dấu cách: \"tiền gửi\" là 2), tính cả tiêu đề, nhãn, đơn vị; một con số tính một từ. Không tính nhãn bắt buộc \"ví dụ giả định\". Khung trích văn bản pháp luật được tới 20 từ, tối đa một cảnh mỗi video.",
+    "kiem": "máy: tổng số tiếng ≤ 12"
+   },
+   {
+    "ma": "C3",
+    "noi_dung": "Một dòng chữ liền tối đa 6 tiếng. Câu dài hơn là lời đọc, để giọng nói.",
+    "kiem": "máy: mỗi dòng Vision đọc được ≤ 6 tiếng"
+   },
+   {
+    "ma": "C4",
+    "noi_dung": "Không chép lời đọc lên hình: không dòng chữ nào trên hình trùng nguyên văn 6 tiếng liên tiếp của lời đọc. Tên thuật ngữ (thường dưới 6 tiếng) được phép; tên dài hơn thì thêm vào --bo-qua.",
+    "kiem": "máy khi có --loi <file lời đọc>"
+   },
+   {
+    "ma": "C5",
+    "noi_dung": "Một ý một cảnh: mỗi cảnh một hình chính chuyển động chiếm từ 40% vùng hình (y 0–900). Không có cảnh chỉ toàn chữ, trừ tối đa một cảnh mượn CL-11 dài ≤ 5 giây, ≤ 4 từ.",
+    "kiem": "mắt, trên ảnh lưới"
+   },
+   {
+    "ma": "C6",
+    "noi_dung": "Nhãn thay bằng biểu tượng hoặc số khi được: nhãn dài hơn 3 từ phải xét đổi sang biểu tượng của bo_bieu_tuong_co_ban hoặc số.",
+    "kiem": "mắt"
+   },
+   {
+    "ma": "C7",
+    "noi_dung": "Tiêu đề chương tối đa 5 từ, hoặc bỏ hẳn và dùng thanh chương dạng số \"3/12\" (TP-CH17).",
+    "kiem": "máy gián tiếp qua C3"
+   },
+   {
+    "ma": "C8",
+    "noi_dung": "Khung không đứng yên quá 2 giây: luôn có một chuyển động nhỏ (TP-CD09) hoặc một bước biến đổi theo câu đọc.",
+    "kiem": "mắt, xem bản nháp"
+   }
+  ],
+  "so_do_mau": "Đo thử trên bản nháp N86 tiền gửi và CASA (29/10/2026, một khung mỗi 15 giây): trung bình 37,6 tiếng mỗi khung ngoài phụ đề, cao nhất 66; cả 16 khung phạm quy tắc C2. Video mới phải xuống dưới 12.",
+  "lenh_kiem": "python3 scripts/dem_chu_trong_hinh.py <video.mp4 | thư mục ảnh> [--moi 2] [--loi <file lời đọc .txt hoặc .md>]"
+ },
+ "luat_da_dang": {
+  "hai_video_lien_nhau_khac_chat_lieu": true,
+  "khac_3_video_truoc_it_nhat_hai_truc": true,
+  "truc_tinh": [
+   "cl",
+   "ct",
+   "bc",
+   "mau",
+   "nh"
+  ],
+  "nhac_khong_lap_trong": 6,
+  "hang_phien": {
+   "_ghi_chu": "Thứ tự chạy thật theo kế hoạch chạy đêm 29/10/2026 (san_pham/2026.10.28.loat_thuat_ngu_ngan_hang/tai_nguyen/kich_ban/2026.10.29.ke_hoach_chay_dem_29_10.md mục 2). Script kiểm hai video liền nhau trong cùng hàng khác chất liệu.",
+   "A nh-cho-vay": [
+    "N129",
+    "N135",
+    "N127",
+    "N94",
+    "N93",
+    "N92",
+    "N84",
+    "N85"
+   ],
+   "B nh-tai-san-bd": [
+    "N109",
+    "N112",
+    "N95",
+    "N107",
+    "N113"
+   ],
+   "C nh-no-xau": [
+    "N117",
+    "N126",
+    "N101",
+    "N102",
+    "N103",
+    "N114",
+    "N132",
+    "N131",
+    "N115"
+   ],
+   "D nh-tien-gui": [
+    "N75",
+    "N78",
+    "N83",
+    "N77",
+    "N76",
+    "N88",
+    "N91",
+    "N90",
+    "N89"
+   ],
+   "E kho-hinh-chung": [
+    "N120",
+    "N133",
+    "N118",
+    "N119",
+    "N106",
+    "N121",
+    "N123"
+   ],
+   "F pha-may-html": [
+    "N128",
+    "N125",
+    "N130",
+    "N124",
+    "N104",
+    "N111",
+    "N110"
+   ]
+  },
+  "nhac_re_thap": {
+   "max10_duoi": 4,
+   "max16_duoi": 6,
+   "luon_loai": [
+    "NH02",
+    "NH25"
+   ]
+  },
+  "lich_su_lo_truoc": [
+   {
+    "ma": "N74",
+    "cl": "CL-16",
+    "ct": "CT1",
+    "bc": "BC-09",
+    "mau": "MAU-26",
+    "nh": "NH26"
+   },
+   {
+    "ma": "N73",
+    "cl": "CL-09",
+    "ct": "CT1",
+    "bc": "BC-09",
+    "mau": "MAU-16",
+    "nh": "NH16"
+   },
+   {
+    "ma": "N79",
+    "cl": "CL-05",
+    "ct": "CT1",
+    "bc": "BC-07",
+    "mau": "MAU-09",
+    "nh": "NH09"
+   },
+   {
+    "ma": "N80",
+    "cl": "CL-09",
+    "ct": "CT1",
+    "bc": "BC-09",
+    "mau": "MAU-23",
+    "nh": "NH12"
+   },
+   {
+    "ma": "N105",
+    "cl": "CL-14",
+    "ct": "CT1",
+    "bc": "BC-07",
+    "mau": "MAU-21",
+    "nh": "NH00"
+   },
+   {
+    "ma": "N134",
+    "cl": "CL-15",
+    "ct": "CT1",
+    "bc": "BC-09",
+    "mau": "MAU-30",
+    "nh": "NH30"
+   },
+   {
+    "ma": "N116",
+    "cl": "CL-16",
+    "ct": "CT1",
+    "bc": "BC-10",
+    "mau": "MAU-26",
+    "nh": "NH12"
+   }
+  ],
+  "nhac_cach_toi_thieu": 3,
+  "_ghi_chu_nhac": "Trung chốt 29/10/2026: không tải thêm nhạc; dùng lại bài cũ rè thấp (max10 < 4, max16 < 6, không cờ có lời, không NH02, NH25); mỗi bài cách nhau ít nhất 3 video trong loạt (lỗi nếu vi phạm); bảng nhắm cách 6 video (nhắc nếu gần hơn); video mẫu MK-03 (giảng công thức) dùng bài tiết tấu vừa.",
+  "mau_ngan_hang": {
+   "_ghi_chu": "Trung chốt 29/10/2026 (bảng chọn): mỗi ngân hàng Việt Nam một bộ màu lấy từ website của ngân hàng (MAU-32 trở đi, nguồn tai_san/so_tay_gu/mau_ngan_hang_nguon.json), ưu tiên cho cả 45 video còn lại, được dùng cả màu MB; không làm ngân hàng nước ngoài. Chỉ dùng màu: tên, logo ngân hàng vẫn không lên hình. Bộ màu là màu chung của cả video: ở video so sánh nhóm ngân hàng không gán màu một ngân hàng cho riêng một nhóm (phiên điều phối thêm 29/10/2026). Xếp bằng python3 scripts/tao_bang_mau_ngan_hang.py --xep.",
+   "video_so_sanh_chi_mau_chung": [
+    "N89",
+    "N103",
+    "N104",
+    "N111",
+    "N114",
+    "N121",
+    "N123",
+    "N124",
+    "N131",
+    "N132"
+   ],
+   "khong_dung_mau_mb": [],
+   "_ghi_chu_mb": "Trung chốt 29/10/2026 (bảng chọn): video chủ đề rủi ro dùng màu ngân hàng bình thường, kể cả MB; bỏ đề xuất tránh màu MB ở N106, N113, N115, N117, N124, N126.",
+   "chi_dung": [
+    "MAU-36",
+    "MAU-35",
+    "MAU-32",
+    "MAU-33",
+    "MAU-37",
+    "MAU-34",
+    "MAU-38",
+    "MAU-42",
+    "MAU-39",
+    "MAU-40"
+   ],
+   "_ghi_chu_chi_dung": "Trung chốt 29/10/2026: các video lần này chỉ dùng màu của 10 ngân hàng MB, VietinBank, Vietcombank, BIDV, Techcombank, Agribank, VPBank, LPBank, ACB, TPBank (MAU-36, 35, 32, 33, 37, 34, 38, 42, 39, 40); không tên, logo. Xếp lại 29/10/2026 chiều bằng tìm kiếm có quay lui (không lặp trong 4 video liền nhau, màu nhấn khác nhóm sắc với video liền trước, khác video liền trước trong cùng hàng phiên); không chạy lại tao_bang_mau_ngan_hang.py --xep vì lệnh đó xếp theo cả 38 ngân hàng."
+  }
+ },
+ "mau_kich_ban": [
+  {
+   "ma": "MK-01",
+   "ten": "Giải nghĩa một khái niệm",
+   "dau_hieu": "Tên video có dạng \"X là gì\", \"vì sao có X\"; một thuật ngữ đơn, người xem nghe nhiều nhưng không giải thích lại được.",
+   "dan_chuong": [
+    "Mở: câu hỏi ngại hoặc tình huống đời thường có số (1 chương)",
+    "So sánh với vật quen: một vật chính trên bàn biến trạng thái (2 chương)",
+    "Đặt tên thuật ngữ, định nghĩa một câu do giọng đọc nói, hình chỉ hiện tên (1 chương)",
+    "Cách dùng thật trong nghề: ví dụ số nhỏ (2–3 chương)",
+    "Chỗ hay nhầm: một hình đúng, một hình sai đặt cạnh (1–2 chương)",
+    "Giới hạn hoặc ngoại lệ (1 chương)",
+    "Tóm lại: vật chính trở về trạng thái đầu, đã đủ nhãn biểu tượng (1 chương)"
+   ],
+   "kb": [
+    "KB-02",
+    "KB-05"
+   ],
+   "chat_lieu": [
+    "CL-09",
+    "CL-15",
+    "CL-13",
+    "CL-16"
+   ],
+   "bo_cuc": [
+    "BC-08",
+    "BC-09",
+    "BC-05",
+    "BC-11"
+   ],
+   "muc_chi_tiet": [
+    "CT1",
+    "CT2"
+   ],
+   "mau": [
+    "MAU-37",
+    "MAU-36",
+    "MAU-35"
+   ],
+   "nhac": {
+    "nhom": [
+     "TAP",
+     "VUI"
+    ],
+    "tiet_tau": "vừa",
+    "bpm": "95–115",
+    "goi_y": [
+     "NH00",
+     "NH16",
+     "NH10",
+     "NH05"
+    ]
+   },
+   "nhip_cat": "Một cảnh 6–10 giây; giữ một vật chính suốt chương, đổi trạng thái thay vì cắt; chuyển chương bằng vật mang theo.",
+   "thu_phap": [
+    "TP-CC01",
+    "TP-CD07",
+    "TP-CD04",
+    "TP-CC02",
+    "TP-SL18",
+    "TP-CD09",
+    "TP-CD03",
+    "TP-SL04"
+   ],
+   "kho_hinh": [
+    "khuon_canh_mo_dau_cau_hoi",
+    "bo_bieu_tuong_co_ban",
+    "khach_hang_ca_nhan",
+    "toa_nha_ngan_hang",
+    "binh_chua_muc_nuoc",
+    "khuon_canh_ket_tom_lai"
+   ],
+   "loi_hay_gap": [
+    "Đưa nguyên câu định nghĩa lên hình thành đoạn chữ: giọng đã đọc, hình chỉ hiện tên thuật ngữ.",
+    "Mở bằng định nghĩa: người xem chưa có lý do để nghe.",
+    "Mỗi chương một vật mới: người xem phải làm quen lại từ đầu; giữ một vật chính."
+   ],
+   "anh_mau": [
+    {
+     "tep": "n81_han_muc_cl09.jpg",
+     "chu_thich": "N81 hạn mức tín dụng, CL-09 bàn thao tác"
+    },
+    {
+     "tep": "kho_khuon_canh_mo_dau_cau_hoi.jpg",
+     "chu_thich": "Kho chung: khuôn cảnh mở đầu câu hỏi"
+    }
+   ]
+  },
+  {
+   "ma": "MK-02",
+   "ten": "So sánh hai, ba thứ hay nhầm",
+   "dau_hieu": "Tên video có \"A và B\", \"các loại\", \"khác gì\"; hai thứ trở lên cùng mục đích, khác điều kiện.",
+   "dan_chuong": [
+    "Mở: một người phải chọn giữa hai thứ, hai con số kết quả khác nhau (1 chương)",
+    "Đặt hai thứ cạnh nhau, chung một trục (1 chương)",
+    "Tiêu chí 1, 2, 3: mỗi tiêu chí một chương, hai nửa khung đổi cùng lúc (3–5 chương)",
+    "Trường hợp dễ chọn sai (1–2 chương)",
+    "Khi nào dùng cái nào: hai biểu tượng tình huống (1 chương)",
+    "Bảng chốt: tối đa 3 hàng biểu tượng, không câu chữ (1 chương)"
+   ],
+   "kb": [
+    "KB-07",
+    "KB-02"
+   ],
+   "chat_lieu": [
+    "CL-05",
+    "CL-06",
+    "CL-10",
+    "CL-16",
+    "CL-12"
+   ],
+   "bo_cuc": [
+    "BC-07",
+    "BC-13",
+    "BC-10",
+    "BC-09"
+   ],
+   "muc_chi_tiet": [
+    "CT1",
+    "CT2"
+   ],
+   "mau": [
+    "MAU-32",
+    "MAU-40",
+    "MAU-37",
+    "MAU-36"
+   ],
+   "nhac": {
+    "nhom": [
+     "TAP"
+    ],
+    "tiet_tau": "vừa đến nhanh",
+    "bpm": "103–123",
+    "goi_y": [
+     "NH30",
+     "NH06",
+     "NH31",
+     "NH08"
+    ]
+   },
+   "nhip_cat": "Chương 12–20 giây; hai nửa khung đổi đồng thời theo từng tiêu chí, cắt khi sang tiêu chí mới; mốc ngắt bằng đổi nền.",
+   "thu_phap": [
+    "TP-SL09",
+    "TP-SL08",
+    "TP-SL12",
+    "TP-SL01",
+    "TP-CC02",
+    "TP-CD03",
+    "TP-CC10",
+    "TP-SL16"
+   ],
+   "kho_hinh": [
+    "khuon_so_sanh_hai_cot",
+    "thanh_ngang_chia_doan",
+    "truc_thoi_gian",
+    "bieu_do_cot_lich_tra_no",
+    "khuon_canh_ket_tom_lai"
+   ],
+   "loi_hay_gap": [
+    "Bảng so sánh nhiều hàng chữ (lỗi của N86): tối đa 3 hàng, mỗi ô một biểu tượng hoặc một số.",
+    "Hai nửa khung khác màu nền: mắt phải đổi tông liên tục; giữ một nền, phân biệt bằng một màu nhấn mỗi bên.",
+    "So sánh xong không chốt khi nào dùng cái nào."
+   ],
+   "anh_mau": [
+    {
+     "tep": "n79_tra_goc_cl05.jpg",
+     "chu_thich": "N79 trả gốc trả lãi, CL-05 ba cột lịch trả nợ"
+    },
+    {
+     "tep": "n72_ngan_dai_han_cl10.jpg",
+     "chu_thich": "N72 vay ngắn hạn, dài hạn, CL-10 nét vẽ tay"
+    }
+   ]
+  },
+  {
+   "ma": "MK-03",
+   "ten": "Tính tiền từng bước",
+   "dau_hieu": "Có công thức hoặc tỷ lệ (LTV, NIM, LDR, dự phòng, chiết khấu); video trả lời được bằng một con số cụ thể.",
+   "dan_chuong": [
+    "Mở: câu hỏi có số, ba đáp án đoán thử (1 chương)",
+    "Thử số lần 1, lần 2 bằng vật chính (2 chương)",
+    "Vấp chỗ bế tắc: hai cách tính cho hai đáp số (1 chương)",
+    "Đặt tên khái niệm, công thức dạng biểu tượng (1 chương)",
+    "Ví dụ hoàn chỉnh, từng bước một thẻ (3–4 chương)",
+    "Chỗ hay tính sai (1–2 chương)",
+    "Ngưỡng quy định và ý nghĩa với người vay (1 chương)",
+    "Tóm lại: một con số lớn và một dòng giải nghĩa (1 chương)"
+   ],
+   "kb": [
+    "KB-08",
+    "KB-01"
+   ],
+   "chat_lieu": [
+    "CL-14",
+    "CL-05",
+    "CL-09",
+    "CL-10"
+   ],
+   "bo_cuc": [
+    "BC-08",
+    "BC-10",
+    "BC-06",
+    "BC-13"
+   ],
+   "muc_chi_tiet": [
+    "CT1"
+   ],
+   "mau": [
+    "MAU-34",
+    "MAU-37",
+    "MAU-33",
+    "MAU-42"
+   ],
+   "nhac": {
+    "nhom": [
+     "TAP"
+    ],
+    "tiet_tau": "vừa (Trung chuộng nhịp vừa cho video giảng công thức)",
+    "bpm": "96–112",
+    "goi_y": [
+     "NH00",
+     "NH16",
+     "NH12",
+     "NH10"
+    ]
+   },
+   "nhip_cat": "Bàn thao tác cố định; mỗi bước tính 5–8 giây, số chạy tới đích theo lò xo; không cắt trong một phép tính, cắt khi sang ví dụ mới.",
+   "thu_phap": [
+    "TP-SL03",
+    "TP-SL17",
+    "TP-SL14",
+    "TP-SL01",
+    "TP-SL04",
+    "TP-CD01",
+    "TP-SL07",
+    "TP-SL06"
+   ],
+   "kho_hinh": [
+    "khuon_vi_du_tinh_tien_tung_buoc",
+    "nhan_gia_dinh",
+    "xap_tien_dong_xu",
+    "binh_chua_muc_nuoc",
+    "can_dong_ho_ty_le",
+    "bieu_do_duong_lai_suat"
+   ],
+   "loi_hay_gap": [
+    "Viết cả phép tính thành câu chữ: công thức dùng biểu tượng và số, toán tử tô màu nhấn.",
+    "Một khung nhiều phép tính: một bước một thẻ, bước cũ thu nhỏ sang lề.",
+    "Số trên hình chưa có nguồn kiểm chứng (quy tắc cứng 3); số giả định phải có nhãn \"ví dụ giả định\"."
+   ],
+   "anh_mau": [
+    {
+     "tep": "n100_du_phong_cl14.jpg",
+     "chu_thich": "N100 trích lập dự phòng, CL-14 cân dự phòng"
+    },
+    {
+     "tep": "kho_khuon_vi_du_tinh_tien_tung_buoc.jpg",
+     "chu_thich": "Kho chung: khuôn ví dụ tính tiền từng bước"
+    }
+   ]
+  },
+  {
+   "ma": "MK-04",
+   "ten": "Quy trình các bước",
+   "dau_hieu": "Tên video là một việc có trình tự: giải ngân, định giá, xử lý tài sản, mở L/C; trả lời câu \"làm thế nào, mất bao lâu\".",
+   "dan_chuong": [
+    "Mở: cho xem kết quả cuối trước (tiền đã tới tay, tài sản đã bán) (1 chương)",
+    "Bản đồ toàn trình: các trạm hiện lần lượt, chưa mở (1 chương)",
+    "Bước 1 … n: mỗi bước một chương, nhân vật hoặc hồ sơ đi qua trạm (4–7 chương)",
+    "Chỗ hay tắc và vì sao (1–2 chương)",
+    "Thời gian và giấy tờ cần có: biểu tượng, không danh sách chữ (1 chương)",
+    "Tóm lại: đi lại toàn trình nhanh trong 8 giây (1 chương)"
+   ],
+   "kb": [
+    "KB-05"
+   ],
+   "chat_lieu": [
+    "CL-15",
+    "CL-13",
+    "CL-09",
+    "CL-16"
+   ],
+   "bo_cuc": [
+    "BC-09",
+    "BC-05",
+    "BC-08"
+   ],
+   "muc_chi_tiet": [
+    "CT1",
+    "CT2"
+   ],
+   "mau": [
+    "MAU-39",
+    "MAU-36",
+    "MAU-38"
+   ],
+   "nhac": {
+    "nhom": [
+     "TAP",
+     "VUI"
+    ],
+    "tiet_tau": "vừa đến nhanh",
+    "bpm": "96–123",
+    "goi_y": [
+     "NH10",
+     "NH31",
+     "NH11",
+     "NH23"
+    ]
+   },
+   "nhip_cat": "Mỗi bước 10–18 giây; một vật mang theo (hồ sơ, xấp tiền) đi xuyên các trạm làm chuyển cảnh; thanh bước ở chân vùng hình.",
+   "thu_phap": [
+    "TP-SL17",
+    "TP-CC02",
+    "TP-CD08",
+    "TP-CD07",
+    "TP-CC09",
+    "TP-3D03",
+    "TP-CC08",
+    "TP-SL05"
+   ],
+   "kho_hinh": [
+    "khuon_luong_cac_buoc",
+    "truc_thoi_gian",
+    "hop_dong_giay_to",
+    "khach_hang_ca_nhan",
+    "doanh_nghiep_nha_xuong",
+    "khuon_trich_van_ban_phap_luat"
+   ],
+   "loi_hay_gap": [
+    "Liệt kê bước bằng chữ dài: mỗi trạm một biểu tượng và một số thứ tự, tên bước do giọng đọc.",
+    "Không có vật mang theo: các bước rời nhau, người xem mất mạch.",
+    "Trích điều luật nguyên đoạn: tối đa một cảnh trích, dùng khuôn trích văn bản pháp luật."
+   ],
+   "anh_mau": [
+    {
+     "tep": "n80_an_han_cl09.jpg",
+     "chu_thich": "N80 ân hạn, CL-09 dải thời gian"
+    },
+    {
+     "tep": "kho_khuon_luong_cac_buoc.jpg",
+     "chu_thich": "Kho chung: khuôn luồng các bước"
+    }
+   ]
+  },
+  {
+   "ma": "MK-05",
+   "ten": "Cơ chế bên trong một hệ thống, dòng tiền",
+   "dau_hieu": "Đối tượng là hệ thống hoặc mạng lưới không nhìn thấy: CITAD, NAPAS, SWIFT, hệ thống core, dòng vốn nội bộ; trả lời câu \"tiền đi đường nào\".",
+   "dan_chuong": [
+    "Mở: một lệnh chuyển tiền bấm trên điện thoại, phóng vào bên trong (1 chương)",
+    "Toàn cảnh hệ thống: các nút sáng lần lượt (1 chương)",
+    "Đi theo một đồng tiền qua từng nút (3–5 chương)",
+    "Khi nhiều lệnh cùng lúc: hàng đợi, bù trừ (1–2 chương)",
+    "Chỗ hệ thống dừng hoặc chậm (1 chương)",
+    "Phóng ra: người dùng thấy gì (1 chương)"
+   ],
+   "kb": [
+    "KB-05",
+    "KB-07"
+   ],
+   "chat_lieu": [
+    "CL-12",
+    "CL-13",
+    "CL-07",
+    "CL-14"
+   ],
+   "bo_cuc": [
+    "BC-05",
+    "BC-11",
+    "BC-09"
+   ],
+   "muc_chi_tiet": [
+    "CT1",
+    "CT2"
+   ],
+   "mau": [
+    "MAU-39",
+    "MAU-32",
+    "MAU-38"
+   ],
+   "nhac": {
+    "nhom": [
+     "TAP",
+     "HOI"
+    ],
+    "tiet_tau": "nhanh hoặc vừa",
+    "bpm": "99–123",
+    "goi_y": [
+     "NH31",
+     "NH11",
+     "NH06",
+     "NH50"
+    ]
+   },
+   "nhip_cat": "Máy quay bay liền mạch theo đồng tiền, 4–8 giây mỗi nút; gần như không cắt; phóng xuyên thang đo ở đầu và cuối.",
+   "thu_phap": [
+    "TP-3D07",
+    "TP-SL15",
+    "TP-3D03",
+    "TP-CC04",
+    "TP-CC03",
+    "TP-3D06",
+    "TP-CC11",
+    "TP-3D02"
+   ],
+   "kho_hinh": [
+    "thu_vien_3d_ngan_hang",
+    "may_chu_he_thong_trung_tam",
+    "toa_nha_ngan_hang",
+    "xap_tien_dong_xu",
+    "man_hinh_ung_dung",
+    "ngan_hang_nha_nuoc"
+   ],
+   "loi_hay_gap": [
+    "Gắn tên đầy đủ cho mọi nút: dùng biểu tượng và chữ viết tắt đã đọc lên (CITAD, NAPAS).",
+    "Hạt chạy quá nhiều màu: khoá màu theo chức năng, tối đa 3 màu.",
+    "Dùng tên, logo ngân hàng thật cho các nút: cấm, dùng ngân hàng A, B, C."
+   ],
+   "anh_mau": [
+    {
+     "tep": "n86_casa_cl13.jpg",
+     "chu_thich": "N86 tiền gửi và CASA, CL-13 sa bàn"
+    },
+    {
+     "tep": "kho_thu_vien_3d_ngan_hang.jpg",
+     "chu_thich": "Kho chung: thư viện 3D ngân hàng"
+    }
+   ]
+  },
+  {
+   "ma": "MK-06",
+   "ten": "Ngược dòng niềm tin sai",
+   "dau_hieu": "Chủ đề có một câu nói phổ biến đúng một nửa (\"đáo hạn là cứu cánh\", \"chuyển khoản là tới ngay\", \"hết room là ngân hàng hết tiền\").",
+   "dan_chuong": [
+    "Mở: câu niềm tin, tối đa 8 từ trên hình (1 chương)",
+    "Công nhận phần đúng (1–2 chương)",
+    "Dữ kiện làm lung lay, mỗi dữ kiện một hình (2–4 chương)",
+    "Cơ chế thật (2–3 chương)",
+    "Cách nghĩ đầy đủ hơn (1 chương)",
+    "Điều người xem nên làm (1 chương)"
+   ],
+   "kb": [
+    "KB-03"
+   ],
+   "chat_lieu": [
+    "CL-10",
+    "CL-15",
+    "CL-14",
+    "CL-09"
+   ],
+   "bo_cuc": [
+    "BC-13",
+    "BC-09",
+    "BC-11",
+    "BC-08"
+   ],
+   "muc_chi_tiet": [
+    "CT1"
+   ],
+   "mau": [
+    "MAU-40",
+    "MAU-42",
+    "MAU-34"
+   ],
+   "nhac": {
+    "nhom": [
+     "TRAM",
+     "HOI"
+    ],
+    "tiet_tau": "chậm đến vừa",
+    "bpm": "81–123",
+    "goi_y": [
+     "NH67",
+     "NH08",
+     "NH54"
+    ]
+   },
+   "nhip_cat": "Nhịp chậm đầu video, có khoảng dừng có chủ đích trước câu lật; sau câu lật tăng nhịp 6–8 giây một cảnh.",
+   "thu_phap": [
+    "TP-CH07",
+    "TP-CH08",
+    "TP-CC13",
+    "TP-CD09",
+    "TP-CC10",
+    "TP-SL05",
+    "TP-HK08",
+    "TP-CC01"
+   ],
+   "kho_hinh": [
+    "khuon_canh_mo_dau_cau_hoi",
+    "net_tay_but_chi",
+    "khuon_trich_van_ban_phap_luat",
+    "khuon_canh_ket_tom_lai",
+    "bo_bieu_tuong_co_ban"
+   ],
+   "loi_hay_gap": [
+    "Câu niềm tin dài hai dòng: tối đa 8 từ, gạch ngang đúng một cụm.",
+    "Đỏ nhấn dùng nhiều lần: chỉ dùng ở chỗ niềm tin sụp.",
+    "Chê người tin: kịch bản KB-03 phải soát thêm theo 13_ban_quyen_va_bao_mat.md."
+   ],
+   "anh_mau": [
+    {
+     "tep": "n98_tin_chap_cl10.jpg",
+     "chu_thich": "N98 tín chấp, CL-10 nét vẽ tay"
+    },
+    {
+     "tep": "n108_cic_cl16.jpg",
+     "chu_thich": "N108 CIC, KB-03 trên CL-16"
+    }
+   ]
+  },
+  {
+   "ma": "MK-07",
+   "ten": "Kể chuyện nghề có nhân vật",
+   "dau_hieu": "Chủ đề về con người trong ngân hàng: vị trí, kỹ năng, lộ trình, rủi ro nghề; người xem tự đặt mình vào nhân vật.",
+   "dan_chuong": [
+    "Mở: nhân vật trong một khoảnh khắc khó (1 chương)",
+    "Một ngày làm việc: các cảnh nối nhau như phim (2–3 chương)",
+    "Từng vai hoặc từng nấc: mỗi chương một bối cảnh (3–5 chương)",
+    "Khó khăn thật, có số (1–2 chương)",
+    "Điều giúp nhân vật vượt qua (1–2 chương)",
+    "Kết: nhân vật ở bối cảnh mới, khung cuối giống khung đầu (1 chương)"
+   ],
+   "kb": [
+    "KB-02",
+    "KB-05",
+    "KB-06"
+   ],
+   "chat_lieu": [
+    "CL-15",
+    "CL-13",
+    "CL-10"
+   ],
+   "bo_cuc": [
+    "BC-09",
+    "BC-11",
+    "BC-05"
+   ],
+   "muc_chi_tiet": [
+    "CT1",
+    "CT2"
+   ],
+   "mau": [
+    "MAU-40",
+    "MAU-38",
+    "MAU-42"
+   ],
+   "nhac": {
+    "nhom": [
+     "VUI",
+     "TAP"
+    ],
+    "tiet_tau": "vừa",
+    "bpm": "96–117",
+    "goi_y": [
+     "NH10",
+     "NH07",
+     "NH23",
+     "NH05"
+    ]
+   },
+   "nhip_cat": "Mỗi cảnh một khung cảnh nhiều lớp 8–15 giây; máy quay trượt ngang có parallax; cắt theo hành động của nhân vật.",
+   "thu_phap": [
+    "TP-CD08",
+    "TP-CD11",
+    "TP-CD10",
+    "TP-CC02",
+    "TP-CD07",
+    "TP-CC13",
+    "TP-3D16",
+    "TP-CC12"
+   ],
+   "kho_hinh": [
+    "khach_hang_ca_nhan",
+    "toa_nha_ngan_hang",
+    "doanh_nghiep_nha_xuong",
+    "nha_o",
+    "hop_dong_giay_to",
+    "man_hinh_ung_dung"
+   ],
+   "loi_hay_gap": [
+    "Bóng thoại thay lời đọc: bóng thoại tối đa 6 từ, chỉ cho câu đắt nhất.",
+    "Nhân vật đứng yên giữa khung: phải có hành động (đi, cầm, đưa, ký).",
+    "Nhắc tên ngân hàng thật hoặc tài liệu nội bộ MB: cấm."
+   ],
+   "anh_mau": [
+    {
+     "tep": "n134_muc_dich_cl15.jpg",
+     "chu_thich": "N134 mục đích sử dụng vốn, CL-15 giấy cắt"
+    },
+    {
+     "tep": "kho_khach_hang_ca_nhan.jpg",
+     "chu_thich": "Kho chung: nhân vật khách hàng cá nhân"
+    }
+   ]
+  },
+  {
+   "ma": "MK-08",
+   "ten": "Tổng hợp, danh sách cần lưu ý",
+   "dau_hieu": "Video gom nhiều mục ngang hàng: các điều kiện Incoterms, kiến thức cần có, những điều cần lưu ý khi vay; hoặc video tổng hợp cuối loạt.",
+   "dan_chuong": [
+    "Mở: hậu quả của việc quên một mục (1 chương)",
+    "Bản đồ các mục: biểu tượng hiện lệch nhịp (1 chương)",
+    "Mục 1 … n: mỗi mục một hình động, không câu chữ (5–9 chương)",
+    "Mục hay quên nhất (1 chương)",
+    "Trang tóm tắt cuối: lưới biểu tượng, mỗi ô trỏ tới video chi tiết (1 chương)"
+   ],
+   "kb": [
+    "KB-02",
+    "KB-07"
+   ],
+   "chat_lieu": [
+    "CL-16",
+    "CL-13",
+    "CL-09",
+    "CL-06"
+   ],
+   "bo_cuc": [
+    "BC-10",
+    "BC-05",
+    "BC-08"
+   ],
+   "muc_chi_tiet": [
+    "CT1",
+    "CT2"
+   ],
+   "mau": [
+    "MAU-35",
+    "MAU-37",
+    "MAU-42"
+   ],
+   "nhac": {
+    "nhom": [
+     "TAP",
+     "VUI"
+    ],
+    "tiet_tau": "vừa",
+    "bpm": "103–112",
+    "goi_y": [
+     "NH00",
+     "NH15",
+     "NH16"
+    ]
+   },
+   "nhip_cat": "Mỗi mục 15–25 giây; thẻ mới nổi lên, thẻ cũ lùi thành ô nhỏ trong lưới; nhịp đều để người xem đếm được.",
+   "thu_phap": [
+    "TP-SL17",
+    "TP-SL16",
+    "TP-CD03",
+    "TP-CC09",
+    "TP-SL20",
+    "TP-3D10",
+    "TP-CC02",
+    "TP-CD06"
+   ],
+   "kho_hinh": [
+    "khuon_checklist_dieu_can_luu_y",
+    "khuon_canh_ket_tom_lai",
+    "bo_bieu_tuong_co_ban",
+    "khuon_luong_cac_buoc"
+   ],
+   "loi_hay_gap": [
+    "Danh sách chữ dài trên một khung: một mục một khung, ô lưới chỉ có biểu tượng và số.",
+    "Mục nào cũng dài như nhau: mục quan trọng được thời lượng gấp đôi.",
+    "Quên trỏ sang video chi tiết của loạt."
+   ],
+   "anh_mau": [
+    {
+     "tep": "kho_khuon_checklist_dieu_can_luu_y.jpg",
+     "chu_thich": "Kho chung: khuôn danh sách điều cần lưu ý"
+    },
+    {
+     "tep": "n116_the_tin_dung_cl16.jpg",
+     "chu_thich": "N116 thẻ tín dụng, CL-16 thẻ nổi"
+    }
+   ]
+  },
+  {
+   "ma": "MK-09",
+   "ten": "Quan hệ nhiều bên, chứng từ đi lại",
+   "dau_hieu": "Giao dịch có ba bên trở lên và giấy tờ chuyển giữa các bên: bảo lãnh, L/C, bao thanh toán, chiết khấu, LOI, cho vay bên liên quan.",
+   "dan_chuong": [
+    "Mở: người bán và người mua không tin nhau, có số tiền cụ thể (1 chương)",
+    "Đặt các bên lên khung, mỗi bên một biểu tượng cố định chỗ (1 chương)",
+    "Bộ chứng từ hoặc lời cam kết đi từ bên này sang bên kia, từng chặng (3–5 chương)",
+    "Khi một bên không làm đúng: tiền đi đường nào (1–2 chương)",
+    "Rủi ro còn lại và ai chịu (1 chương)",
+    "Tóm lại: toàn bộ đường đi trong một hình (1 chương)"
+   ],
+   "kb": [
+    "KB-02",
+    "KB-05"
+   ],
+   "chat_lieu": [
+    "CL-15",
+    "CL-13",
+    "CL-06",
+    "CL-09",
+    "CL-16"
+   ],
+   "bo_cuc": [
+    "BC-09",
+    "BC-05",
+    "BC-07",
+    "BC-11"
+   ],
+   "muc_chi_tiet": [
+    "CT1",
+    "CT2"
+   ],
+   "mau": [
+    "MAU-36",
+    "MAU-40",
+    "MAU-35"
+   ],
+   "nhac": {
+    "nhom": [
+     "TAP",
+     "VUI"
+    ],
+    "tiet_tau": "nhanh hoặc vừa",
+    "bpm": "108–123",
+    "goi_y": [
+     "NH06",
+     "NH07",
+     "NH30"
+    ]
+   },
+   "nhip_cat": "Các bên đứng yên chỗ suốt video; chỉ chứng từ và tiền di chuyển, mỗi chặng 6–10 giây; cảnh trước bàn giao vật cho cảnh sau.",
+   "thu_phap": [
+    "TP-CC02",
+    "TP-SL15",
+    "TP-SL11",
+    "TP-CD08",
+    "TP-3D03",
+    "TP-SL05",
+    "TP-CD05",
+    "TP-CC09"
+   ],
+   "kho_hinh": [
+    "khuon_quan_he_ba_ben",
+    "bo_chung_tu_hoa_don",
+    "tau_container_hang_hoa",
+    "ban_do_the_gioi_tuyen_thuong_mai",
+    "doanh_nghiep_nha_xuong",
+    "toa_nha_ngan_hang"
+   ],
+   "loi_hay_gap": [
+    "Các bên đổi chỗ giữa các chương: người xem mất phương hướng; giữ chỗ cố định.",
+    "Ghi tên đầy đủ từng bên (\"ngân hàng phát hành\", \"ngân hàng thông báo\"): dùng biểu tượng ngân hàng A, B và giọng đọc tên.",
+    "Mũi tên chéo nhau: tối đa 3 mũi tên trên khung cùng lúc."
+   ],
+   "anh_mau": [
+    {
+     "tep": "n97_the_chap_cl09.jpg",
+     "chu_thich": "N97 thế chấp và cầm cố, CL-09 vật ở với ai"
+    },
+    {
+     "tep": "n116_the_tin_dung_cl16.jpg",
+     "chu_thich": "N116 thẻ tín dụng: ba bên chủ thẻ, cửa hàng, ngân hàng"
+    }
+   ]
+  },
+  {
+   "ma": "MK-10",
+   "ten": "Chính sách và tác động dây chuyền",
+   "dau_hieu": "Chủ đề do Ngân hàng Nhà nước hoặc thị trường quyết định: dự trữ bắt buộc, lãi suất liên ngân hàng, room tín dụng, hedging, ngân hàng và bất động sản.",
+   "dan_chuong": [
+    "Mở: một con số chính sách vừa đổi và câu hỏi \"việc đó tới tay tôi thế nào\" (1 chương)",
+    "Công cụ chính sách là gì: một cái van hoặc cái núm (1–2 chương)",
+    "Vặn núm: mô phỏng dòng tiền đổi theo từng nấc (2–3 chương)",
+    "Kênh truyền dẫn tới ngân hàng, doanh nghiệp, người vay (2–3 chương)",
+    "Độ trễ và giới hạn (1 chương)",
+    "Tóm lại: một đồng hồ đo ba vùng (1 chương)"
+   ],
+   "kb": [
+    "KB-05",
+    "KB-01",
+    "KB-02",
+    "KB-08"
+   ],
+   "chat_lieu": [
+    "CL-14",
+    "CL-12",
+    "CL-05",
+    "CL-13",
+    "CL-06"
+   ],
+   "bo_cuc": [
+    "BC-05",
+    "BC-08",
+    "BC-11",
+    "BC-07"
+   ],
+   "muc_chi_tiet": [
+    "CT1",
+    "CT2"
+   ],
+   "mau": [
+    "MAU-38",
+    "MAU-39",
+    "MAU-36",
+    "MAU-33"
+   ],
+   "nhac": {
+    "nhom": [
+     "HOI",
+     "TRAM",
+     "TAP"
+    ],
+    "tiet_tau": "vừa",
+    "bpm": "81–144",
+    "goi_y": [
+     "NH50",
+     "NH54",
+     "NH08",
+     "NH12"
+    ]
+   },
+   "nhip_cat": "Mô phỏng chạy liên tục, mỗi nấc chính sách 6–10 giây; máy quay đứng yên để người xem thấy thay đổi; cắt khi chuyển kênh truyền dẫn.",
+   "thu_phap": [
+    "TP-SL14",
+    "TP-SL07",
+    "TP-3D14",
+    "TP-SL02",
+    "TP-CC04",
+    "TP-SL06",
+    "TP-3D07",
+    "TP-CD01"
+   ],
+   "kho_hinh": [
+    "ngan_hang_nha_nuoc",
+    "bieu_do_duong_lai_suat",
+    "can_dong_ho_ty_le",
+    "thanh_ngang_chia_doan",
+    "toa_nha_ngan_hang",
+    "khuon_so_sanh_nhom_ngan_hang_an_danh"
+   ],
+   "loi_hay_gap": [
+    "Đưa số liệu vĩ mô một nguồn lên hình: phải có hai nguồn (quy tắc cứng 3).",
+    "Mô phỏng chạy theo hoạt hoạ tay, không theo tính toán: số trên hình lệch số đọc.",
+    "Nhận định chính sách: chỉ mô tả cơ chế, không khuyến nghị đầu tư."
+   ],
+   "anh_mau": [
+    {
+     "tep": "n105_tha_noi_cl14.jpg",
+     "chu_thich": "N105 lãi suất thả nổi, CL-14 MAU-21"
+    },
+    {
+     "tep": "kho_bieu_do_duong_lai_suat.jpg",
+     "chu_thich": "Kho chung: biểu đồ đường lãi suất"
+    }
+   ]
+  },
+  {
+   "ma": "MK-11",
+   "ten": "Chuyện ra đời theo dòng thời gian",
+   "dau_hieu": "Thuật ngữ ra đời sau một sự cố có thật và được sửa qua nhiều đời: Basel, SWIFT, Incoterms, thư tín dụng, bảo hiểm tiền gửi, trung tâm thông tin tín dụng.",
+   "dan_chuong": [
+    "Mở: sự cố của một năm cụ thể, không nêu tên ngân hàng (1 chương)",
+    "Thế giới trước khi có X: làm thế nào, vướng ở đâu (1–2 chương)",
+    "Sự cố làm lộ chỗ thiếu (1–2 chương)",
+    "X ra đời, bản đầu tiên làm gì (1 chương)",
+    "Các lần sửa: tối đa 3 mốc, mỗi mốc một thay đổi trên cùng một hình (2–3 chương)",
+    "X ở Việt Nam hôm nay (1–2 chương)",
+    "Tóm lại: dòng thời gian thu gọn còn 5 điểm sáng (1 chương)"
+   ],
+   "kb": [
+    "KB-09",
+    "KB-05"
+   ],
+   "chat_lieu": [
+    "CL-15",
+    "CL-10",
+    "CL-12",
+    "CL-06"
+   ],
+   "bo_cuc": [
+    "BC-09",
+    "BC-11",
+    "BC-13",
+    "BC-05"
+   ],
+   "muc_chi_tiet": [
+    "CT1",
+    "CT2"
+   ],
+   "mau": [
+    "MAU-36",
+    "MAU-33",
+    "MAU-35"
+   ],
+   "nhac": {
+    "nhom": [
+     "TRAM",
+     "TAP"
+    ],
+    "tiet_tau": "chậm đến vừa",
+    "bpm": "89–123",
+    "goi_y": [
+     "NH67",
+     "NH16",
+     "NH08",
+     "NH11"
+    ]
+   },
+   "nhip_cat": "Mỗi mốc năm 12–20 giây; bộ đếm năm chạy giữa hai mốc làm chuyển cảnh; cùng một vật chính đổi trạng thái qua các đời, không thay vật.",
+   "thu_phap": [
+    "TP-SL03",
+    "TP-CC09",
+    "TP-CD08",
+    "TP-HK07",
+    "TP-CC13",
+    "TP-SL11",
+    "TP-CC01",
+    "TP-CD07"
+   ],
+   "kho_hinh": [
+    "truc_thoi_gian",
+    "ban_do_the_gioi_tuyen_thuong_mai",
+    "toa_nha_ngan_hang",
+    "khuon_trich_van_ban_phap_luat",
+    "net_tay_but_chi"
+   ],
+   "loi_hay_gap": [
+    "Kể quá nhiều năm: tối đa 5 mốc trên hình, năm là số, không kèm câu.",
+    "Năm và sự kiện chỉ có một nguồn: không đưa lên hình (quy tắc cứng 3).",
+    "Phần lịch sử dài hơn phần hôm nay: lịch sử tối đa một nửa thời lượng."
+   ],
+   "anh_mau": [
+    {
+     "tep": "kho_truc_thoi_gian.jpg",
+     "chu_thich": "Kho chung: trục thời gian"
+    },
+    {
+     "tep": "n72_ngan_dai_han_cl10.jpg",
+     "chu_thich": "N72 vay ngắn hạn, dài hạn, CL-10 trục vẽ tay"
+    }
+   ]
+  },
+  {
+   "ma": "MK-12",
+   "ten": "Câu đố ba tình huống",
+   "dau_hieu": "Thuật ngữ có quy tắc phân loại rõ, người xem tự áp được sau một lần nghe: ai chịu rủi ro theo Incoterms, FOB hay CIF, nhóm nợ, ngân hàng nhận hay từ chối một hồ sơ.",
+   "dan_chuong": [
+    "Mở: quy tắc trong một câu đọc, rồi ngay câu đố 1 (1 chương)",
+    "Đồng hồ đếm 3 giây, lật đáp án, giải thích vì sao (2 chương)",
+    "Câu đố 2 khó hơn, đổi một chi tiết (2 chương)",
+    "Câu đố 3 có bẫy, chỗ ai cũng đoán sai (2 chương)",
+    "Rút ra quy tắc chung bằng một hình (1–2 chương)",
+    "Câu đố cuối để người xem trả lời ở phần bình luận (1 chương)"
+   ],
+   "kb": [
+    "KB-08",
+    "KB-02",
+    "KB-07"
+   ],
+   "chat_lieu": [
+    "CL-16",
+    "CL-09",
+    "CL-14",
+    "CL-06",
+    "CL-10"
+   ],
+   "bo_cuc": [
+    "BC-10",
+    "BC-08",
+    "BC-05",
+    "BC-13"
+   ],
+   "muc_chi_tiet": [
+    "CT1",
+    "CT2"
+   ],
+   "mau": [
+    "MAU-42",
+    "MAU-34",
+    "MAU-40"
+   ],
+   "nhac": {
+    "nhom": [
+     "VUI",
+     "TAP"
+    ],
+    "tiet_tau": "vừa đến nhanh",
+    "bpm": "108–161",
+    "goi_y": [
+     "NH07",
+     "NH23",
+     "NH06",
+     "NH05"
+    ]
+   },
+   "nhip_cat": "Nhịp ba đoạn lặp lại: đặt câu đố 6–8 giây, chờ đúng 3 giây có đồng hồ, lật đáp án 10–15 giây. Nhạc hạ khi đồng hồ chạy.",
+   "thu_phap": [
+    "TP-SL07",
+    "TP-CD06",
+    "TP-SL05",
+    "TP-CC10",
+    "TP-CD03",
+    "TP-CC08",
+    "TP-CD01",
+    "TP-AT05"
+   ],
+   "kho_hinh": [
+    "khuon_canh_mo_dau_cau_hoi",
+    "bo_bieu_tuong_co_ban",
+    "khuon_canh_ket_tom_lai",
+    "man_hinh_ung_dung",
+    "tau_container_hang_hoa"
+   ],
+   "loi_hay_gap": [
+    "Đáp án viết thành câu: dùng ba ô biểu tượng A, B, C, giọng đọc nói nội dung.",
+    "Chờ quá 3 giây: người xem bỏ đi; đồng hồ đúng 3 giây.",
+    "Câu đố cần kiến thức chưa giảng: quy tắc phải nói trước câu đố 1."
+   ],
+   "anh_mau": [
+    {
+     "tep": "n116_the_tin_dung_cl16.jpg",
+     "chu_thich": "N116 thẻ tín dụng, CL-16 thẻ nổi"
+    },
+    {
+     "tep": "n81_han_muc_cl09.jpg",
+     "chu_thich": "N81 hạn mức, CL-09 bàn thao tác"
+    }
+   ]
+  },
+  {
+   "ma": "MK-13",
+   "ten": "Nếu không có X",
+   "dau_hieu": "X là một cơ chế bảo vệ hoặc hạ tầng mà người xem coi là hiển nhiên: sổ đăng ký giao dịch bảo đảm, Ngân hàng Nhà nước, trung tâm thông tin tín dụng, dự trữ bắt buộc, bảo lãnh, phòng ngừa rủi ro.",
+   "dan_chuong": [
+    "Mở: cùng một cảnh quen thuộc, rút X ra khỏi hình (1 chương)",
+    "Hậu quả 1, 2, 3 tăng dần, mỗi hậu quả một thay đổi trên cùng cảnh (3 chương)",
+    "Đặt X trở lại: từng hậu quả bị chặn thế nào (2–3 chương)",
+    "Cái giá của X: thủ tục, chi phí, độ chậm (1 chương)",
+    "Tóm lại: hai nửa khung có X và không có X (1 chương)"
+   ],
+   "kb": [
+    "KB-09",
+    "KB-06",
+    "KB-05"
+   ],
+   "chat_lieu": [
+    "CL-13",
+    "CL-14",
+    "CL-15",
+    "CL-12",
+    "CL-16"
+   ],
+   "bo_cuc": [
+    "BC-05",
+    "BC-11",
+    "BC-09",
+    "BC-08"
+   ],
+   "muc_chi_tiet": [
+    "CT1",
+    "CT2"
+   ],
+   "mau": [
+    "MAU-42",
+    "MAU-34",
+    "MAU-32"
+   ],
+   "nhac": {
+    "nhom": [
+     "HOI",
+     "TRAM",
+     "TAP"
+    ],
+    "tiet_tau": "vừa",
+    "bpm": "81–123",
+    "goi_y": [
+     "NH50",
+     "NH54",
+     "NH08",
+     "NH31"
+    ]
+   },
+   "nhip_cat": "Một cảnh xuyên suốt, không cắt sang cảnh khác; mỗi hậu quả 8–12 giây; điểm ngắt giữa phần không có X và có X bằng đổi nền.",
+   "thu_phap": [
+    "TP-CC13",
+    "TP-CC01",
+    "TP-3D06",
+    "TP-HK14",
+    "TP-SL14",
+    "TP-CC10",
+    "TP-CD09",
+    "TP-3D03"
+   ],
+   "kho_hinh": [
+    "toa_nha_ngan_hang",
+    "khach_hang_ca_nhan",
+    "nha_o",
+    "thu_vien_3d_ngan_hang",
+    "khuon_so_sanh_hai_cot",
+    "ngan_hang_nha_nuoc"
+   ],
+   "loi_hay_gap": [
+    "Phóng đại hậu quả không có nguồn: số trên hình là số giả định có nhãn.",
+    "Giọng doạ: chỉ mô tả cơ chế, không kết luận \"rất nguy hiểm\".",
+    "Bỏ qua cái giá của X: người xem nghĩ X không có mặt trái."
+   ],
+   "anh_mau": [
+    {
+     "tep": "n96_tsbd_cl13.jpg",
+     "chu_thich": "N96 tài sản bảo đảm, CL-13 sa bàn"
+    },
+    {
+     "tep": "kho_khuon_so_sanh_hai_cot.jpg",
+     "chu_thich": "Kho chung: khuôn so sánh hai cột"
+    }
+   ]
+  },
+  {
+   "ma": "MK-14",
+   "ten": "Mổ xẻ một tờ giấy",
+   "dau_hieu": "Thuật ngữ gắn với một văn bản người xem sẽ cầm hoặc ký: thư tín dụng, thư cam kết bồi hoàn, thư bảo lãnh, hợp đồng tín dụng, khế ước, báo cáo tín dụng, vận đơn.",
+   "dan_chuong": [
+    "Mở: cả tờ giấy mờ, câu hỏi \"ô nào quyết định tiền của bạn\" (1 chương)",
+    "Bản đồ tờ giấy: 4–6 vùng tô màu, đánh số (1 chương)",
+    "Phóng vào từng vùng, mỗi vùng một chương, đổi vùng thì hệ quả đổi (4–6 chương)",
+    "Ô hay bị bỏ qua (1–2 chương)",
+    "Phụ lục, mặt sau, giấy đi kèm (1 chương)",
+    "Tóm lại: tờ giấy thu nhỏ, các vùng đã đánh số sáng lần lượt (1 chương)"
+   ],
+   "kb": [
+    "KB-02",
+    "KB-05"
+   ],
+   "chat_lieu": [
+    "CL-16",
+    "CL-09",
+    "CL-10",
+    "CL-15"
+   ],
+   "bo_cuc": [
+    "BC-09",
+    "BC-10",
+    "BC-08"
+   ],
+   "muc_chi_tiet": [
+    "CT1"
+   ],
+   "mau": [
+    "MAU-33",
+    "MAU-38",
+    "MAU-37"
+   ],
+   "nhac": {
+    "nhom": [
+     "TAP"
+    ],
+    "tiet_tau": "vừa",
+    "bpm": "103–144",
+    "goi_y": [
+     "NH00",
+     "NH16",
+     "NH12"
+    ]
+   },
+   "nhip_cat": "Máy quay ảo đẩy liên tục trên một tờ giấy, mỗi vùng 10–15 giây; chuyển vùng bằng lùi ra toàn tờ 1 giây rồi phóng vào vùng kế.",
+   "thu_phap": [
+    "TP-CD07",
+    "TP-SL18",
+    "TP-CH08",
+    "TP-HK13",
+    "TP-CC03",
+    "TP-CD05",
+    "TP-3D10",
+    "TP-CC02"
+   ],
+   "kho_hinh": [
+    "hop_dong_giay_to",
+    "khuon_trich_van_ban_phap_luat",
+    "bo_chung_tu_hoa_don",
+    "bao_cao_tin_dung_mo_phong",
+    "nhan_gia_dinh"
+   ],
+   "loi_hay_gap": [
+    "Chữ trên tờ giấy đọc được hết (phạm C2): chữ nền là vạch xám giả, chỉ vùng đang phóng có tối đa 6 tiếng.",
+    "Dùng mẫu giấy tờ thật có tên, logo ngân hàng: cấm, tự dựng mẫu giả lập.",
+    "Tờ giấy đứng yên: phải có máy quay đẩy hoặc con trỏ chỉ."
+   ],
+   "anh_mau": [
+    {
+     "tep": "n74_hop_dong_cl16.jpg",
+     "chu_thich": "N74 hợp đồng tín dụng, CL-16 thẻ giấy tờ"
+    },
+    {
+     "tep": "n108_cic_cl16.jpg",
+     "chu_thich": "N108 CIC, báo cáo tín dụng mô phỏng"
+    }
+   ]
+  },
+  {
+   "ma": "MK-15",
+   "ten": "Hai phía bàn đối đáp",
+   "dau_hieu": "Chủ đề có hai góc nhìn đều có lý, thường là người vay và ngân hàng, hoặc người mới và người làm lâu năm: đáo hạn, room tín dụng, khẩu vị, cơ cấu nợ, lộ trình nghề.",
+   "dan_chuong": [
+    "Mở: hai nhân vật hai phía bàn, câu hỏi gắt của một bên (1 chương)",
+    "Lượt 1: bên hỏi nêu điều khó chịu, bên kia nêu lý do (2 chương)",
+    "Lượt 2, 3: mỗi lượt một hình chứng minh đặt giữa bàn (3–4 chương)",
+    "Chỗ hai bên hiểu sai về nhau (1 chương)",
+    "Điểm gặp nhau: cách làm có lợi cho cả hai (1–2 chương)",
+    "Kết: hai nhân vật cùng nhìn một hình (1 chương)"
+   ],
+   "kb": [
+    "KB-07",
+    "KB-03",
+    "KB-02"
+   ],
+   "chat_lieu": [
+    "CL-15",
+    "CL-10",
+    "CL-13"
+   ],
+   "bo_cuc": [
+    "BC-09",
+    "BC-11",
+    "BC-13",
+    "BC-05"
+   ],
+   "muc_chi_tiet": [
+    "CT1",
+    "CT2"
+   ],
+   "mau": [
+    "MAU-35",
+    "MAU-42",
+    "MAU-37"
+   ],
+   "nhac": {
+    "nhom": [
+     "TAP",
+     "VUI",
+     "TRAM"
+    ],
+    "tiet_tau": "vừa",
+    "bpm": "89–112",
+    "goi_y": [
+     "NH10",
+     "NH16",
+     "NH05",
+     "NH67"
+    ]
+   },
+   "nhip_cat": "Hai bên cố định chỗ; mỗi lượt 15–25 giây, máy quay trượt nhẹ sang bên đang được nói tới; hình chứng minh giữa bàn đổi theo lượt.",
+   "thu_phap": [
+    "TP-CD11",
+    "TP-CD08",
+    "TP-CC02",
+    "TP-CD10",
+    "TP-SL08",
+    "TP-CC12",
+    "TP-CD09",
+    "TP-CH06"
+   ],
+   "kho_hinh": [
+    "khach_hang_ca_nhan",
+    "toa_nha_ngan_hang",
+    "hop_dong_giay_to",
+    "doanh_nghiep_nha_xuong",
+    "khuon_so_sanh_hai_cot"
+   ],
+   "loi_hay_gap": [
+    "Hai nhân vật đọc bằng hai giọng: chỉ có một giọng VieNeu, giọng dẫn thuật lại, bóng thoại tối đa 6 tiếng.",
+    "Phía ngân hàng luôn đúng: phải công nhận phần đúng của người vay.",
+    "Hai nhân vật đứng yên nói: mỗi lượt phải có hình đặt giữa bàn."
+   ],
+   "anh_mau": [
+    {
+     "tep": "n134_muc_dich_cl15.jpg",
+     "chu_thich": "N134 mục đích sử dụng vốn, CL-15 nhân vật và bóng thoại"
+    },
+    {
+     "tep": "n98_tin_chap_cl10.jpg",
+     "chu_thich": "N98 tín chấp, CL-10 nét vẽ tay"
+    }
+   ]
+  },
+  {
+   "ma": "MK-16",
+   "ten": "Lần ngược từ kết cục",
+   "dau_hieu": "Chủ đề về hậu quả và rủi ro: cho vay bên liên quan, rủi ro nghề cán bộ tín dụng, sai mục đích vốn, tài sản bị xử lý, chứng từ giả.",
+   "dan_chuong": [
+    "Mở bằng kết cục: một ngày cụ thể, số tiền giả định, không tên người, không tên doanh nghiệp (1 chương)",
+    "Lùi 6 tháng: dấu hiệu thứ nhất, lúc đó trông bình thường (1–2 chương)",
+    "Lùi 1 năm: dấu hiệu thứ hai, nặng hơn (1–2 chương)",
+    "Về ngày ký: quyết định gốc (1–2 chương)",
+    "Nấc nặng nhất: quy định bị vượt, trích văn bản tối đa một cảnh (1 chương)",
+    "Quay về hiện tại: ba dấu hiệu đặt cạnh nhau trên trục ngày (1 chương)"
+   ],
+   "kb": [
+    "KB-06",
+    "KB-03"
+   ],
+   "chat_lieu": [
+    "CL-15",
+    "CL-14",
+    "CL-10",
+    "CL-13",
+    "CL-16"
+   ],
+   "bo_cuc": [
+    "BC-11",
+    "BC-09",
+    "BC-05",
+    "BC-10"
+   ],
+   "muc_chi_tiet": [
+    "CT1",
+    "CT2"
+   ],
+   "mau": [
+    "MAU-32",
+    "MAU-34",
+    "MAU-38"
+   ],
+   "nhac": {
+    "nhom": [
+     "HOI",
+     "TRAM"
+    ],
+    "tiet_tau": "chậm đến vừa",
+    "bpm": "81–123",
+    "goi_y": [
+     "NH54",
+     "NH50",
+     "NH67",
+     "NH08"
+    ]
+   },
+   "nhip_cat": "Đồng hồ ngày quay lùi giữa các mốc 2–3 giây làm chuyển cảnh; mỗi mốc 20–30 giây; dừng có chủ đích trước nấc nặng nhất.",
+   "thu_phap": [
+    "TP-SL03",
+    "TP-CC13",
+    "TP-HK07",
+    "TP-CD09",
+    "TP-SL05",
+    "TP-CC10",
+    "TP-CH07",
+    "TP-HK01"
+   ],
+   "kho_hinh": [
+    "truc_thoi_gian",
+    "khach_hang_ca_nhan",
+    "doanh_nghiep_nha_xuong",
+    "hop_dong_giay_to",
+    "khuon_trich_van_ban_phap_luat"
+   ],
+   "loi_hay_gap": [
+    "Tình huống trông như vụ thật: ghi nhãn \"tình huống giả định\", không tên người, doanh nghiệp, ngân hàng.",
+    "Lùi quá nhiều mốc: tối đa 3 mốc, có đồng hồ ngày.",
+    "Đổ lỗi cho một cá nhân: chỉ ra cơ chế, không kết tội."
+   ],
+   "anh_mau": [
+    {
+     "tep": "kho_truc_thoi_gian.jpg",
+     "chu_thich": "Kho chung: trục thời gian"
+    },
+    {
+     "tep": "n80_an_han_cl09.jpg",
+     "chu_thich": "N80 ân hạn, dải thời gian 84 tháng"
+    }
+   ]
+  }
+ ],
+ "xep_video": [
+  {
+   "ma": "N129",
+   "ten": "Giải ngân khoản vay cá nhân",
+   "lo": "3",
+   "mau_kich_ban": "MK-04",
+   "kb": "KB-05",
+   "cl": "CL-15",
+   "ct": "CT1",
+   "bc": "BC-09",
+   "mau": "MAU-39",
+   "nh": "NH10",
+   "mo_dau": "kết quả trước: tiền đã vào tài khoản người bán nhà",
+   "hinh_chinh": "nhân vật người vay cầm bộ hồ sơ đi qua bốn trạm, tiền đi thẳng tới người bán"
+  },
+  {
+   "ma": "N135",
+   "ten": "Giải ngân khoản vay doanh nghiệp",
+   "lo": "3",
+   "mau_kich_ban": "MK-04",
+   "kb": "KB-05",
+   "cl": "CL-13",
+   "ct": "CT2",
+   "bc": "BC-05",
+   "mau": "MAU-36",
+   "nh": "NH31",
+   "mo_dau": "so sánh với N129: cùng hợp đồng, tiền không qua tay doanh nghiệp",
+   "hinh_chinh": "sa bàn nhà xưởng, nhà cung cấp, ngân hàng; dòng tiền chạy theo từng lần giải ngân"
+  },
+  {
+   "ma": "N117",
+   "ten": "Đáo hạn khoản vay",
+   "lo": "3",
+   "mau_kich_ban": "MK-15",
+   "kb": "KB-03",
+   "cl": "CL-10",
+   "ct": "CT1",
+   "bc": "BC-13",
+   "mau": "MAU-35",
+   "nh": "NH67",
+   "mo_dau": "người vay hỏi: khoản cũ đến hạn, sao không gia hạn luôn?",
+   "hinh_chinh": "hai nhân vật vẽ tay hai phía bàn, giữa bàn là trục thời gian khoản cũ khép lại, khoản mới mở ra"
+  },
+  {
+   "ma": "N126",
+   "ten": "Cơ cấu lại thời hạn trả nợ",
+   "lo": "3",
+   "mau_kich_ban": "MK-02",
+   "kb": "KB-02",
+   "cl": "CL-05",
+   "ct": "CT1",
+   "bc": "BC-07",
+   "mau": "MAU-32",
+   "nh": "NH16",
+   "mo_dau": "câu hỏi: \"trả chậm mà vẫn giữ nhóm nợ 1?\"",
+   "hinh_chinh": "hai nửa khung: lịch trả nợ cũ và lịch đã giãn, thang nhóm nợ bên cạnh đứng yên"
+  },
+  {
+   "ma": "N127",
+   "ten": "Cho vay bù đắp",
+   "lo": "3",
+   "mau_kich_ban": "MK-01",
+   "kb": "KB-02",
+   "cl": "CL-09",
+   "ct": "CT1",
+   "bc": "BC-08",
+   "mau": "MAU-37",
+   "nh": "NH05",
+   "mo_dau": "tình huống có số: doanh nghiệp đã tự trả 3 tỷ cho máy móc",
+   "hinh_chinh": "bình chứa vốn tự có đã vơi được ngân hàng rót đầy lại"
+  },
+  {
+   "ma": "N109",
+   "ten": "Cho vay và cho thuê tài chính",
+   "lo": "3",
+   "mau_kich_ban": "MK-02",
+   "kb": "KB-07",
+   "cl": "CL-06",
+   "ct": "CT2",
+   "bc": "BC-07",
+   "mau": "MAU-40",
+   "nh": "NH08",
+   "mo_dau": "hai doanh nghiệp cùng cần một máy, hai con đường",
+   "hinh_chinh": "hai nửa khung: một máy đất sét, giấy sở hữu nằm ở doanh nghiệp hoặc ở công ty cho thuê"
+  },
+  {
+   "ma": "N112",
+   "ten": "Định giá tài sản bảo đảm",
+   "lo": "4",
+   "mau_kich_ban": "MK-03",
+   "kb": "KB-01",
+   "cl": "CL-14",
+   "ct": "CT1",
+   "bc": "BC-08",
+   "mau": "MAU-34",
+   "nh": "NH00",
+   "mo_dau": "con số bất ngờ: nhà giá 5 tỷ chỉ được tính 3,5 tỷ",
+   "hinh_chinh": "bàn thao tác: giá thị trường đi qua ba bộ lọc, mỗi bộ lọc trừ một phần"
+  },
+  {
+   "ma": "N95",
+   "ten": "Tỷ lệ cho vay trên giá trị tài sản (LTV)",
+   "lo": "4",
+   "mau_kich_ban": "MK-03",
+   "kb": "KB-08",
+   "cl": "CL-05",
+   "ct": "CT1",
+   "bc": "BC-10",
+   "mau": "MAU-33",
+   "nh": "NH12",
+   "mo_dau": "câu hỏi có số: nhà 5 tỷ vay được tối đa bao nhiêu",
+   "hinh_chinh": "thanh giá trị tài sản và thanh khoản vay chạy cạnh nhau, tỷ lệ đếm số"
+  },
+  {
+   "ma": "N107",
+   "ten": "Đăng ký giao dịch bảo đảm",
+   "lo": "4",
+   "mau_kich_ban": "MK-13",
+   "kb": "KB-09",
+   "cl": "CL-16",
+   "ct": "CT1",
+   "bc": "BC-09",
+   "mau": "MAU-42",
+   "nh": "NH50",
+   "mo_dau": "rút sổ đăng ký chung ra: một ngôi nhà được thế chấp ở hai nơi",
+   "hinh_chinh": "thẻ tra cứu đăng ký giả lập biến mất, hai chủ nợ cùng cầm giấy tờ một ngôi nhà; đặt sổ lại thì dấu thời gian xếp thứ tự"
+  },
+  {
+   "ma": "N113",
+   "ten": "Xử lý tài sản bảo đảm",
+   "lo": "4",
+   "mau_kich_ban": "MK-04",
+   "kb": "KB-05",
+   "cl": "CL-13",
+   "ct": "CT2",
+   "bc": "BC-05",
+   "mau": "MAU-38",
+   "nh": "NH11",
+   "mo_dau": "kết quả trước: tài sản đã bán, tiền chia ra ba phần",
+   "hinh_chinh": "sa bàn tài sản đi qua các trạm thông báo, thu giữ, đấu giá, chia tiền"
+  },
+  {
+   "ma": "N75",
+   "ten": "Bảo lãnh ngân hàng",
+   "lo": "5.1",
+   "mau_kich_ban": "MK-09",
+   "kb": "KB-02",
+   "cl": "CL-15",
+   "ct": "CT1",
+   "bc": "BC-11",
+   "mau": "MAU-36",
+   "nh": "NH07",
+   "mo_dau": "chủ đầu tư không tin nhà thầu mới",
+   "hinh_chinh": "ba nhân vật giấy cắt, lời cam kết của ngân hàng đi từ tay này sang tay kia"
+  },
+  {
+   "ma": "N78",
+   "ten": "Thư tín dụng (L/C)",
+   "lo": "5.1",
+   "mau_kich_ban": "MK-09",
+   "kb": "KB-05",
+   "cl": "CL-13",
+   "ct": "CT2",
+   "bc": "BC-05",
+   "mau": "MAU-40",
+   "nh": "NH06",
+   "mo_dau": "người bán ở xa, hàng đã lên tàu, tiền chưa về",
+   "hinh_chinh": "sa bàn hai bờ biển, bộ chứng từ và tiền đi ngược chiều nhau qua hai ngân hàng"
+  },
+  {
+   "ma": "N83",
+   "ten": "Các loại thư tín dụng",
+   "lo": "5.1",
+   "mau_kich_ban": "MK-14",
+   "kb": "KB-02",
+   "cl": "CL-16",
+   "ct": "CT1",
+   "bc": "BC-10",
+   "mau": "MAU-33",
+   "nh": "NH15",
+   "mo_dau": "một tờ L/C có sáu ô quyết định người bán có được trả tiền",
+   "hinh_chinh": "thẻ tờ L/C giả lập, chữ nền là vạch xám, máy quay phóng vào từng ô; ô đổi thì loại L/C đổi theo"
+  },
+  {
+   "ma": "N77",
+   "ten": "Chiết khấu bộ chứng từ",
+   "lo": "5.1",
+   "mau_kich_ban": "MK-03",
+   "kb": "KB-08",
+   "cl": "CL-14",
+   "ct": "CT1",
+   "bc": "BC-10",
+   "mau": "MAU-37",
+   "nh": "NH54",
+   "mo_dau": "con số: nhận 980 triệu hôm nay thay vì 1 tỷ sau 90 ngày",
+   "hinh_chinh": "đồng hồ đếm ngày lùi, số tiền nhận trước lớn dần khi ngày về gần"
+  },
+  {
+   "ma": "N76",
+   "ten": "Bao thanh toán",
+   "lo": "5.1",
+   "mau_kich_ban": "MK-09",
+   "kb": "KB-02",
+   "cl": "CL-09",
+   "ct": "CT1",
+   "bc": "BC-09",
+   "mau": "MAU-35",
+   "nh": "NH10",
+   "mo_dau": "người bán hàng trả chậm hết tiền mua nguyên liệu",
+   "hinh_chinh": "tờ hoá đơn phẳng trượt từ người bán sang ngân hàng, tiền trượt ngược lại"
+  },
+  {
+   "ma": "N92",
+   "ten": "Chuyển tiền bằng điện và nhờ thu D/P",
+   "lo": "5.2",
+   "mau_kich_ban": "MK-02",
+   "kb": "KB-07",
+   "cl": "CL-05",
+   "ct": "CT1",
+   "bc": "BC-07",
+   "mau": "MAU-32",
+   "nh": "NH08",
+   "mo_dau": "hai lô hàng giống nhau, hai cách trả tiền",
+   "hinh_chinh": "hai dải thời gian song song: tiền đi trước hàng và hàng đi trước tiền"
+  },
+  {
+   "ma": "N94",
+   "ten": "Incoterms",
+   "lo": "5.2",
+   "mau_kich_ban": "MK-12",
+   "kb": "KB-08",
+   "cl": "CL-06",
+   "ct": "CT2",
+   "bc": "BC-05",
+   "mau": "MAU-42",
+   "nh": "NH31",
+   "mo_dau": "câu đố 1: thùng hàng rơi lúc cẩu lên tàu, ai chịu?",
+   "hinh_chinh": "tàu, cảng, xe tải đất sét; người xem đoán 3 giây rồi vạch chuyển rủi ro trượt tới đáp án"
+  },
+  {
+   "ma": "N93",
+   "ten": "FOB và CIF",
+   "lo": "5.2",
+   "mau_kich_ban": "MK-12",
+   "kb": "KB-07",
+   "cl": "CL-10",
+   "ct": "CT1",
+   "bc": "BC-13",
+   "mau": "MAU-34",
+   "nh": "NH00",
+   "mo_dau": "hai báo giá cùng lô hàng chênh 6%: đoán vì sao",
+   "hinh_chinh": "đường đi của hàng vẽ tay, ba câu đố về điểm chuyển rủi ro, đáp án khoanh tròn"
+  },
+  {
+   "ma": "N84",
+   "ten": "Thư cam kết bồi hoàn (LOI)",
+   "lo": "5.2",
+   "mau_kich_ban": "MK-14",
+   "kb": "KB-02",
+   "cl": "CL-15",
+   "ct": "CT1",
+   "bc": "BC-09",
+   "mau": "MAU-38",
+   "nh": "NH05",
+   "mo_dau": "lá thư một trang giúp lấy hàng khi chưa có vận đơn gốc",
+   "hinh_chinh": "lá thư giấy cắt trên bàn thuyền trưởng, phóng vào từng đoạn: ai cam kết, cam kết gì, bồi hoàn tới đâu"
+  },
+  {
+   "ma": "N85",
+   "ten": "Cho vay chuyển khẩu",
+   "lo": "5.2",
+   "mau_kich_ban": "MK-05",
+   "kb": "KB-05",
+   "cl": "CL-12",
+   "ct": "CT1",
+   "bc": "BC-11",
+   "mau": "MAU-39",
+   "nh": "NH50",
+   "mo_dau": "hàng đi từ nước A sang nước C, không qua Việt Nam",
+   "hinh_chinh": "bản đồ chấm: hàng đi một đường, tiền đi một đường khác, hai dòng hạt"
+  },
+  {
+   "ma": "N88",
+   "ten": "CITAD và NAPAS",
+   "lo": "6",
+   "mau_kich_ban": "MK-05",
+   "kb": "KB-07",
+   "cl": "CL-13",
+   "ct": "CT2",
+   "bc": "BC-05",
+   "mau": "MAU-32",
+   "nh": "NH30",
+   "mo_dau": "chuyển 50 triệu lúc 23 giờ: tiền đi đường nào",
+   "hinh_chinh": "sa bàn hai đường ống tiền giữa các ngân hàng A, B, C, một ống lớn chậm, một ống nhỏ nhanh"
+  },
+  {
+   "ma": "N91",
+   "ten": "SWIFT",
+   "lo": "6",
+   "mau_kich_ban": "MK-11",
+   "kb": "KB-09",
+   "cl": "CL-12",
+   "ct": "CT1",
+   "bc": "BC-09",
+   "mau": "MAU-36",
+   "nh": "NH11",
+   "mo_dau": "trước khi có SWIFT, lệnh chuyển tiền quốc tế đi bằng điện tín gõ tay",
+   "hinh_chinh": "bản đồ chấm, các nút sáng dần theo năm, điện tín gõ tay đổi thành gói tin chuẩn"
+  },
+  {
+   "ma": "N90",
+   "ten": "Giờ chốt chuyển tiền",
+   "lo": "6",
+   "mau_kich_ban": "MK-06",
+   "kb": "KB-03",
+   "cl": "CL-14",
+   "ct": "CT1",
+   "bc": "BC-08",
+   "mau": "MAU-40",
+   "nh": "NH67",
+   "mo_dau": "niềm tin: \"chuyển khoản là tới ngay\"",
+   "hinh_chinh": "hàng đợi lệnh mô phỏng, đồng hồ chốt đóng cửa, lệnh sau giờ chốt dồn sang ngày sau"
+  },
+  {
+   "ma": "N89",
+   "ten": "Hệ thống core ngân hàng",
+   "lo": "6",
+   "mau_kich_ban": "MK-05",
+   "kb": "KB-05",
+   "cl": "CL-07",
+   "ct": "CT2",
+   "bc": "BC-05",
+   "mau": "MAU-38",
+   "nh": "NH06",
+   "mo_dau": "bấm chuyển tiền: 2 giây đó có gì xảy ra",
+   "hinh_chinh": "máy chủ 3D xuyên thấu, mỗi phân hệ một màu sáng lên khi lệnh đi qua"
+  },
+  {
+   "ma": "N101",
+   "ten": "Chi phí vốn của ngân hàng",
+   "lo": "7",
+   "mau_kich_ban": "MK-03",
+   "kb": "KB-08",
+   "cl": "CL-09",
+   "ct": "CT1",
+   "bc": "BC-08",
+   "mau": "MAU-34",
+   "nh": "NH16",
+   "mo_dau": "câu hỏi có số: ngân hàng trả bao nhiêu cho mỗi 100 đồng nó cho vay",
+   "hinh_chinh": "bình chứa vốn được rót từ ba vòi giá khác nhau, mực nước cho ra giá vốn bình quân"
+  },
+  {
+   "ma": "N102",
+   "ten": "Định giá điều chuyển vốn nội bộ (FTP)",
+   "lo": "7",
+   "mau_kich_ban": "MK-05",
+   "kb": "KB-05",
+   "cl": "CL-13",
+   "ct": "CT2",
+   "bc": "BC-05",
+   "mau": "MAU-39",
+   "nh": "NH12",
+   "mo_dau": "hai chi nhánh cùng huy động, chỉ một chi nhánh lời",
+   "hinh_chinh": "sa bàn toà nhà ngân hàng, trung tâm vốn ở giữa mua bán vốn với các phòng"
+  },
+  {
+   "ma": "N103",
+   "ten": "Biên lãi thuần (NIM)",
+   "lo": "7",
+   "mau_kich_ban": "MK-03",
+   "kb": "KB-01",
+   "cl": "CL-05",
+   "ct": "CT1",
+   "bc": "BC-06",
+   "mau": "MAU-42",
+   "nh": "NH00",
+   "mo_dau": "con số trần: 3,5%",
+   "hinh_chinh": "đồ thị hai đường lãi cho vay và lãi huy động, khoảng giữa tô màu thành NIM"
+  },
+  {
+   "ma": "N114",
+   "ten": "Tỷ lệ CASA",
+   "lo": "7",
+   "mau_kich_ban": "MK-03",
+   "kb": "KB-08",
+   "cl": "CL-14",
+   "ct": "CT1",
+   "bc": "BC-10",
+   "mau": "MAU-35",
+   "nh": "NH10",
+   "mo_dau": "hai nhóm ngân hàng cùng 100 đồng tiền gửi, giá vốn khác nhau",
+   "hinh_chinh": "bể chứa hai vòi: vòi tiền không kỳ hạn rẻ, vòi có kỳ hạn đắt, tỷ lệ đếm số"
+  },
+  {
+   "ma": "N132",
+   "ten": "Basel và an toàn vốn",
+   "lo": "7",
+   "mau_kich_ban": "MK-11",
+   "kb": "KB-09",
+   "cl": "CL-15",
+   "ct": "CT1",
+   "bc": "BC-11",
+   "mau": "MAU-33",
+   "nh": "NH07",
+   "mo_dau": "năm 1974, một ngân hàng nhỏ ở Đức đóng cửa giữa ngày, tiền đã chuyển không về",
+   "hinh_chinh": "dòng thời gian giấy cắt từ 1974 tới nay, toà nhà ngân hàng thêm một lớp đệm vốn sau mỗi mốc Basel"
+  },
+  {
+   "ma": "N131",
+   "ten": "Tỷ lệ cho vay trên huy động (LDR)",
+   "lo": "7",
+   "mau_kich_ban": "MK-03",
+   "kb": "KB-08",
+   "cl": "CL-10",
+   "ct": "CT1",
+   "bc": "BC-13",
+   "mau": "MAU-37",
+   "nh": "NH05",
+   "mo_dau": "câu hỏi có số: 100 đồng gửi vào, cho vay ra được bao nhiêu",
+   "hinh_chinh": "bảng trắng vẽ tay: cột huy động, cột cho vay, vạch trần tỷ lệ"
+  },
+  {
+   "ma": "N115",
+   "ten": "Cho vay bên liên quan",
+   "lo": "7",
+   "mau_kich_ban": "MK-16",
+   "kb": "KB-06",
+   "cl": "CL-16",
+   "ct": "CT1",
+   "bc": "BC-09",
+   "mau": "MAU-32",
+   "nh": "NH30",
+   "mo_dau": "kết cục: khoản vay sạch trên giấy thành nợ xấu, ba công ty cùng một chủ",
+   "hinh_chinh": "thẻ sơ đồ quan hệ lần ngược theo đồng hồ ngày (hôm nay, 6 tháng trước, ngày ký); mỗi mốc lộ thêm một đường nối"
+  },
+  {
+   "ma": "N120",
+   "ten": "Vai trò Ngân hàng Nhà nước",
+   "lo": "8",
+   "mau_kich_ban": "MK-13",
+   "kb": "KB-09",
+   "cl": "CL-13",
+   "ct": "CT2",
+   "bc": "BC-05",
+   "mau": "MAU-34",
+   "nh": "NH23",
+   "mo_dau": "một ngày không có Ngân hàng Nhà nước: ngân hàng thiếu tiền cuối ngày hỏi ai",
+   "hinh_chinh": "sa bàn các ngân hàng A, B, C; bỏ toà nhà ở giữa thì dòng tiền rối, đặt lại thì bốn núm điều chỉnh trở về"
+  },
+  {
+   "ma": "N133",
+   "ten": "Dự trữ bắt buộc",
+   "lo": "8",
+   "mau_kich_ban": "MK-10",
+   "kb": "KB-08",
+   "cl": "CL-14",
+   "ct": "CT1",
+   "bc": "BC-08",
+   "mau": "MAU-38",
+   "nh": "NH12",
+   "mo_dau": "con số: 100 đồng gửi vào, vì sao không cho vay hết",
+   "hinh_chinh": "van giữ lại một phần dòng chảy, vặn tỷ lệ thì lượng cho vay đổi theo mô phỏng"
+  },
+  {
+   "ma": "N118",
+   "ten": "Lãi suất liên ngân hàng",
+   "lo": "8",
+   "mau_kich_ban": "MK-10",
+   "kb": "KB-05",
+   "cl": "CL-12",
+   "ct": "CT1",
+   "bc": "BC-11",
+   "mau": "MAU-39",
+   "nh": "NH50",
+   "mo_dau": "cuối ngày ngân hàng A thừa tiền, B thiếu tiền",
+   "hinh_chinh": "hạt vốn chảy qua đêm từ nút thừa sang nút thiếu, giá chảy hiện bằng độ sáng"
+  },
+  {
+   "ma": "N119",
+   "ten": "Phòng ngừa rủi ro (hedging)",
+   "lo": "8",
+   "mau_kich_ban": "MK-10",
+   "kb": "KB-02",
+   "cl": "CL-05",
+   "ct": "CT1",
+   "bc": "BC-07",
+   "mau": "MAU-36",
+   "nh": "NH08",
+   "mo_dau": "doanh nghiệp nhập khẩu sợ tỷ giá tăng",
+   "hinh_chinh": "hai đường lãi lỗ ngược chiều, đường tổng nằm phẳng"
+  },
+  {
+   "ma": "N106",
+   "ten": "Room tín dụng",
+   "lo": "8",
+   "mau_kich_ban": "MK-06",
+   "kb": "KB-03",
+   "cl": "CL-09",
+   "ct": "CT1",
+   "bc": "BC-08",
+   "mau": "MAU-42",
+   "nh": "NH67",
+   "mo_dau": "niềm tin: \"hết room là ngân hàng hết tiền\"",
+   "hinh_chinh": "bình chứa có vạch trần, tiền còn trong bình nhưng không rót được qua vạch"
+  },
+  {
+   "ma": "N121",
+   "ten": "Ngân hàng nhà nước nắm cổ phần và ngân hàng cổ phần",
+   "lo": "8",
+   "mau_kich_ban": "MK-02",
+   "kb": "KB-07",
+   "cl": "CL-16",
+   "ct": "CT1",
+   "bc": "BC-10",
+   "mau": "MAU-37",
+   "nh": "NH06",
+   "mo_dau": "hai nhóm ngân hàng ẩn danh, cổ đông khác nhau",
+   "hinh_chinh": "hai thẻ cơ cấu cổ đông dạng vòng theo nhóm, khối nhà nước nổi rõ"
+  },
+  {
+   "ma": "N123",
+   "ten": "Ngân hàng và bất động sản",
+   "lo": "8",
+   "mau_kich_ban": "MK-10",
+   "kb": "KB-05",
+   "cl": "CL-06",
+   "ct": "CT2",
+   "bc": "BC-07",
+   "mau": "MAU-33",
+   "nh": "NH11",
+   "mo_dau": "giá nhà tăng, khoản vay tăng, vòng lặp bắt đầu",
+   "hinh_chinh": "khu nhà đất sét bên trái, ngân hàng bên phải, dòng vay và tài sản bảo đảm quay vòng"
+  },
+  {
+   "ma": "N128",
+   "ten": "Các vị trí trong ngân hàng",
+   "lo": "9",
+   "mau_kich_ban": "MK-07",
+   "kb": "KB-02",
+   "cl": "CL-15",
+   "ct": "CT1",
+   "bc": "BC-09",
+   "mau": "MAU-40",
+   "nh": "NH10",
+   "mo_dau": "một hồ sơ vay đi qua bao nhiêu người",
+   "hinh_chinh": "toà nhà giấy cắt cắt ngang, máy quay trượt qua từng phòng có nhân vật"
+  },
+  {
+   "ma": "N125",
+   "ten": "Kiến thức cần có của cán bộ tín dụng",
+   "lo": "9",
+   "mau_kich_ban": "MK-08",
+   "kb": "KB-02",
+   "cl": "CL-13",
+   "ct": "CT2",
+   "bc": "BC-05",
+   "mau": "MAU-35",
+   "nh": "NH31",
+   "mo_dau": "bàn làm việc trống, từng món đồ nghề hiện lên",
+   "hinh_chinh": "sa bàn bàn làm việc, mỗi kiến thức là một vật, xuất hiện lần lượt"
+  },
+  {
+   "ma": "N130",
+   "ten": "Lộ trình thăng tiến",
+   "lo": "9",
+   "mau_kich_ban": "MK-15",
+   "kb": "KB-02",
+   "cl": "CL-10",
+   "ct": "CT1",
+   "bc": "BC-09",
+   "mau": "MAU-36",
+   "nh": "NH07",
+   "mo_dau": "nhân viên mới hỏi trưởng phòng: mấy năm để ngồi ghế này?",
+   "hinh_chinh": "hai nhân vật que vẽ tay, con đường các nấc vẽ dần giữa hai người theo từng câu hỏi"
+  },
+  {
+   "ma": "N124",
+   "ten": "Rủi ro nghề cán bộ tín dụng",
+   "lo": "9",
+   "mau_kich_ban": "MK-16",
+   "kb": "KB-06",
+   "cl": "CL-15",
+   "ct": "CT1",
+   "bc": "BC-11",
+   "mau": "MAU-36",
+   "nh": "NH54",
+   "mo_dau": "kết cục: cán bộ tín dụng nhận quyết định kỷ luật dù khoản vay đúng quy trình",
+   "hinh_chinh": "nhân vật giấy cắt, đồng hồ ngày quay lùi qua ba mốc, bối cảnh sáng dần khi lùi về ngày ký"
+  },
+  {
+   "ma": "N104",
+   "ten": "Thẩm định tập trung và phân tán",
+   "lo": "9",
+   "mau_kich_ban": "MK-02",
+   "kb": "KB-07",
+   "cl": "CL-12",
+   "ct": "CT1",
+   "bc": "BC-09",
+   "mau": "MAU-36",
+   "nh": "NH15",
+   "mo_dau": "cùng một hồ sơ, hai cách duyệt, hai thời gian chờ",
+   "hinh_chinh": "hạt hồ sơ chảy về một trung tâm sáng hoặc tản về nhiều nút nhỏ"
+  },
+  {
+   "ma": "N111",
+   "ten": "Khẩu vị tín dụng",
+   "lo": "9",
+   "mau_kich_ban": "MK-12",
+   "kb": "KB-08",
+   "cl": "CL-09",
+   "ct": "CT1",
+   "bc": "BC-08",
+   "mau": "MAU-36",
+   "nh": "NH16",
+   "mo_dau": "ba hồ sơ vay: đoán ngân hàng nhận hồ sơ nào",
+   "hinh_chinh": "khay ba hồ sơ (ngành, tài sản, dòng tiền), đáp án lật bằng con dấu nhận hoặc trả lại"
+  },
+  {
+   "ma": "N110",
+   "ten": "Khi đi vay cần lưu ý những gì",
+   "lo": "cuối",
+   "mau_kich_ban": "MK-08",
+   "kb": "KB-02",
+   "cl": "CL-16",
+   "ct": "CT1",
+   "bc": "BC-10",
+   "mau": "MAU-36",
+   "nh": "NH00",
+   "mo_dau": "hậu quả: một điều khoản bỏ sót, lãi tăng gấp đôi",
+   "hinh_chinh": "lưới thẻ biểu tượng, mỗi thẻ trỏ tới một video chi tiết của loạt"
+  }
+ ],
+ "_ghi_chu_mb_phien_f": "Trung chốt 30/10/2026: từ nay mọi video phiên F (Nghề ngân hàng: N130, N124, N104, N111, N110 và video giao thêm) dùng bộ màu MB (MAU-36), bỏ giới hạn 4–5 video mỗi bảng màu cho phiên này. Vẫn cấm tên, logo MB; video so sánh chỉ dùng màu MB làm màu nền chung, không tô riêng một nhóm."
+}

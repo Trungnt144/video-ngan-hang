@@ -1,0 +1,488 @@
+[
+ {
+  "chuong": 1,
+  "cau": "Nhà máy điện nào cũng có thứ quay.",
+  "whisper": "Nhà máy điện nào cũng có thứ quay.",
+  "cer": 0.0,
+  "lan": 1,
+  "bd": 0.0,
+  "kt": 1.92
+ },
+ {
+  "chuong": 1,
+  "cau": "Tua-bin, cánh quạt, trục máy phát.",
+  "whisper": "Tua pin, cánh quạt, trục máy phát.",
+  "cer": 0.032,
+  "lan": 1,
+  "bd": 2.17,
+  "kt": 4.57
+ },
+ {
+  "chuong": 1,
+  "cau": "Tấm pin mặt trời thì không.",
+  "whisper": "Tấm pin mặt trời thì không",
+  "cer": 0.0,
+  "lan": 1,
+  "bd": 4.82,
+  "kt": 6.26
+ },
+ {
+  "chuong": 1,
+  "cau": "Không quay, không đốt, không tiếng động.",
+  "whisper": "Không quay, không đốt, không tiếng động.",
+  "cer": 0.0,
+  "lan": 1,
+  "bd": 6.51,
+  "kt": 8.75
+ },
+ {
+  "chuong": 1,
+  "cau": "Nắng chiếu vào, điện chạy ra.",
+  "whisper": "Nắng chiếu vào, điện chạy ra.",
+  "cer": 0.0,
+  "lan": 1,
+  "bd": 9.0,
+  "kt": 11.08
+ },
+ {
+  "chuong": 1,
+  "cau": "Toàn bộ việc đó diễn ra trong một lát xi-li-côn.",
+  "whisper": "Toàn bộ việc đó diễn ra trong một lát silicon.",
+  "cer": 0.0,
+  "lan": 1,
+  "bd": 11.33,
+  "kt": 14.13
+ },
+ {
+  "chuong": 1,
+  "cau": "Đi từng lớp một để xem.",
+  "whisper": "đi từng lớp 1 để xem.",
+  "cer": 0.136,
+  "lan": 3,
+  "bd": 14.38,
+  "kt": 15.82
+ },
+ {
+  "chuong": 2,
+  "cau": "Ngoài cùng là khung nhôm.",
+  "whisper": "Ngoài cùng là khung nhôm.",
+  "cer": 0.0,
+  "lan": 1,
+  "bd": 0.0,
+  "kt": 1.36
+ },
+ {
+  "chuong": 2,
+  "cau": "Mặt trước là kính cường lực.",
+  "whisper": "Mặt trước là kính cường lực.",
+  "cer": 0.0,
+  "lan": 1,
+  "bd": 1.61,
+  "kt": 3.13
+ },
+ {
+  "chuong": 2,
+  "cau": "Mặt sau là một tấm phim nhựa mỏng.",
+  "whisper": "Mặt sau là một tấm phim nhựa mỏng.",
+  "cer": 0.0,
+  "lan": 1,
+  "bd": 3.38,
+  "kt": 5.46
+ },
+ {
+  "chuong": 2,
+  "cau": "Kẹp giữa, một lớp nhựa trong bao kín các ô pin xếp cạnh nhau.",
+  "whisper": "kẹp giữa, một lớp nhựa trong bao kín các ô pin xếp cạnh nhau.",
+  "cer": 0.0,
+  "lan": 1,
+  "bd": 5.71,
+  "kt": 9.23
+ },
+ {
+  "chuong": 2,
+  "cau": "Trên mỗi ô có những vạch bạc mảnh.",
+  "whisper": "Trên mỗi ô có những vạch bạc mảnh.",
+  "cer": 0.0,
+  "lan": 1,
+  "bd": 9.48,
+  "kt": 11.4
+ },
+ {
+  "chuong": 2,
+  "cau": "Đó là đường dẫn, gom điện từ khắp mặt ô.",
+  "whisper": "Đó là đường dẫn gom điện từ khắp mặt ô.",
+  "cer": 0.0,
+  "lan": 1,
+  "bd": 11.65,
+  "kt": 14.13
+ },
+ {
+  "chuong": 2,
+  "cau": "Màu xanh của ô đến từ một lớp phủ rất mỏng, giúp giữ ánh sáng lại thay vì hắt ra ngoài.",
+  "whisper": "Màu xanh của ô đến từ một lớp phủ rất mỏng, giúp giữ ánh sáng lại thay vì hắt ra ngoài.",
+  "cer": 0.0,
+  "lan": 1,
+  "bd": 14.38,
+  "kt": 19.02
+ },
+ {
+  "chuong": 2,
+  "cau": "Lớp đó gọi là lớp chống phản xạ.",
+  "whisper": "Lớp đó gọi là lớp chống phản xạ.",
+  "cer": 0.0,
+  "lan": 1,
+  "bd": 19.27,
+  "kt": 21.51
+ },
+ {
+  "chuong": 3,
+  "cau": "Bên dưới là xi-li-côn.",
+  "whisper": "Bên dưới là silicon.",
+  "cer": 0.0,
+  "lan": 1,
+  "bd": 0.0,
+  "kt": 1.68
+ },
+ {
+  "chuong": 3,
+  "cau": "Trong xi-li-côn, ê-léc-trôn bị giữ chặt trong liên kết giữa các nguyên tử.",
+  "whisper": "Trong silicon, electron bị giữ chặt trong liên kết giữa các nguyên tử.",
+  "cer": 0.0,
+  "lan": 1,
+  "bd": 1.93,
+  "kt": 6.25
+ },
+ {
+  "chuong": 3,
+  "cau": "Một lớp được pha thêm phốt pho, nên dư ê-léc-trôn.",
+  "whisper": "Một lớp được pha thêm phút pho, nên giữ electron.",
+  "cer": 0.083,
+  "lan": 1,
+  "bd": 6.5,
+  "kt": 9.78
+ },
+ {
+  "chuong": 3,
+  "cau": "Lớp kia pha bo, nên thiếu ê-léc-trôn, để lại những chỗ trống.",
+  "whisper": "Lớp kia pha bò nên thiếu electron, để lại những chỗ trống.",
+  "cer": 0.017,
+  "lan": 1,
+  "bd": 10.03,
+  "kt": 13.95
+ },
+ {
+  "chuong": 3,
+  "cau": "Chỗ trống đó gọi là lỗ trống.",
+  "whisper": "chỗ trong đó gọi là lỗ trống.",
+  "cer": 0.036,
+  "lan": 1,
+  "bd": 14.2,
+  "kt": 16.04
+ },
+ {
+  "chuong": 3,
+  "cau": "Lớp dư là lớp en.",
+  "whisper": "Lớp dư là lớp n.",
+  "cer": 0.0,
+  "lan": 1,
+  "bd": 16.29,
+  "kt": 17.81
+ },
+ {
+  "chuong": 3,
+  "cau": "Lớp thiếu là lớp pê.",
+  "whisper": "Lớp thiếu là lớp P.",
+  "cer": 0.0,
+  "lan": 3,
+  "bd": 18.06,
+  "kt": 19.42
+ },
+ {
+  "chuong": 3,
+  "cau": "Chỗ hai lớp ghép sát nhau gọi là mối nối pê en.",
+  "whisper": "Chỗ hai lớp ghép sát nhau gọi là mối nối PN.",
+  "cer": 0.0,
+  "lan": 1,
+  "bd": 19.67,
+  "kt": 22.47
+ },
+ {
+  "chuong": 4,
+  "cau": "Tại mối nối, ê-léc-trôn dư tràn từ lớp en sang lớp pê.",
+  "whisper": "tại mối nối electron dư tràn từ lớp N sang lớp B.",
+  "cer": 0.038,
+  "lan": 1,
+  "bd": 0.0,
+  "kt": 3.12
+ },
+ {
+  "chuong": 4,
+  "cau": "Lỗ trống tràn theo chiều ngược lại.",
+  "whisper": "Lỗ trúng tràn theo chiều ngược lại.",
+  "cer": 0.029,
+  "lan": 1,
+  "bd": 3.37,
+  "kt": 5.37
+ },
+ {
+  "chuong": 4,
+  "cau": "Chúng để lại hai dải i-on mang điện trái dấu, đứng yên hai bên.",
+  "whisper": "Chúng để lại hai giải y ơn mang điện trái dấu, đứng yên hai bên.",
+  "cer": 0.066,
+  "lan": 1,
+  "bd": 5.62,
+  "kt": 9.22
+ },
+ {
+  "chuong": 4,
+  "cau": "Hai dải i-on đó tạo ra một điện trường, hướng từ lớp en sang lớp pê.",
+  "whisper": "Hai giải ion đó tạo ra một điện trường hướng từ lớp N sang lớp P.",
+  "cer": 0.045,
+  "lan": 1,
+  "bd": 9.47,
+  "kt": 13.31
+ },
+ {
+  "chuong": 4,
+  "cau": "Điện trường này có sẵn, trước khi có tia nắng nào.",
+  "whisper": "Điện trường này có sẵn trước khi có tiên nắng nào?",
+  "cer": 0.042,
+  "lan": 1,
+  "bd": 13.56,
+  "kt": 16.36
+ },
+ {
+  "chuong": 5,
+  "cau": "Ánh sáng gồm các hạt phô-tôn, mỗi hạt mang một phần năng lượng.",
+  "whisper": "Ánh sáng gồm các hạt phô tôn, mỗi hạt mang một phần năng lượng.",
+  "cer": 0.0,
+  "lan": 1,
+  "bd": 0.0,
+  "kt": 3.6
+ },
+ {
+  "chuong": 5,
+  "cau": "Phô-tôn đi vào xi-li-côn.",
+  "whisper": "Photon đi vào silicon.",
+  "cer": 0.0,
+  "lan": 1,
+  "bd": 3.85,
+  "kt": 5.61
+ },
+ {
+  "chuong": 5,
+  "cau": "Đủ mạnh thì nó bật một ê-léc-trôn khỏi liên kết.",
+  "whisper": "Đủ mạnh thì nó bật một electron khỏi liên kết.",
+  "cer": 0.0,
+  "lan": 1,
+  "bd": 5.86,
+  "kt": 8.74
+ },
+ {
+  "chuong": 5,
+  "cau": "Mỗi lần như vậy sinh ra một cặp: một ê-léc-trôn tự do và một lỗ trống.",
+  "whisper": "Mỗi lần như vậy sinh ra một cặp, một electron tự do và một lỗ trống.",
+  "cer": 0.0,
+  "lan": 1,
+  "bd": 8.99,
+  "kt": 13.31
+ },
+ {
+  "chuong": 5,
+  "cau": "Ngưỡng đủ mạnh với xi-li-côn là một phẩy mười hai ê-léc-trôn vôn.",
+  "whisper": "Ngưỡng đủ mạnh với silicon là 1,12 electron volt.",
+  "cer": 0.25,
+  "lan": 3,
+  "bd": 13.56,
+  "kt": 17.08
+ },
+ {
+  "chuong": 5,
+  "cau": "Ngưỡng này gọi là độ rộng vùng cấm.",
+  "whisper": "Ngưỡng này gọi là độ rộng vùng cấm.",
+  "cer": 0.0,
+  "lan": 1,
+  "bd": 17.33,
+  "kt": 19.41
+ },
+ {
+  "chuong": 6,
+  "cau": "Nghe thì gọn.",
+  "whisper": "Nghe thì gọn.",
+  "cer": 0.0,
+  "lan": 1,
+  "bd": 0.0,
+  "kt": 0.96
+ },
+ {
+  "chuong": 6,
+  "cau": "Thực tế chỉ một phần năng lượng ánh sáng thành điện.",
+  "whisper": "Thực tế chỉ một phần năng lượng ánh sáng thanh điện.",
+  "cer": 0.02,
+  "lan": 1,
+  "bd": 1.21,
+  "kt": 3.53
+ },
+ {
+  "chuong": 6,
+  "cau": "Một phần bị hắt ra ở mặt trước, dù đã có lớp chống phản xạ.",
+  "whisper": "Một phần bị hắt ra ở mặt trước, dù đã có lớp chống phản sạn.",
+  "cer": 0.035,
+  "lan": 1,
+  "bd": 3.78,
+  "kt": 7.38
+ },
+ {
+  "chuong": 6,
+  "cau": "Một phần bị vạch bạc che mất.",
+  "whisper": "Một phần bị vạch bạc chê mất",
+  "cer": 0.036,
+  "lan": 1,
+  "bd": 7.63,
+  "kt": 9.47
+ },
+ {
+  "chuong": 6,
+  "cau": "Phô-tôn yếu hơn ngưỡng đi xuyên qua, như đi qua kính trong.",
+  "whisper": "Phô tôn yếu hơn ngưỡng đi xuyên qua, như đi qua kính trong.",
+  "cer": 0.0,
+  "lan": 1,
+  "bd": 9.72,
+  "kt": 13.16
+ },
+ {
+  "chuong": 6,
+  "cau": "Phô-tôn mạnh hơn ngưỡng chỉ bật được một ê-léc-trôn, phần năng lượng dư thành nhiệt.",
+  "whisper": "Phô tôn mạnh hơn ngưỡng chỉ bật được một electron, phần năng lượng giữ thành nhiệt.",
+  "cer": 0.037,
+  "lan": 1,
+  "bd": 13.41,
+  "kt": 17.49
+ },
+ {
+  "chuong": 6,
+  "cau": "Và pin càng nóng, điện áp càng giảm.",
+  "whisper": "và pin càng nóng điện áp càng giảm.",
+  "cer": 0.0,
+  "lan": 1,
+  "bd": 17.74,
+  "kt": 19.82
+ },
+ {
+  "chuong": 7,
+  "cau": "Còn những cặp đã sinh ra thì điện trường lo nốt.",
+  "whisper": "Còn những cặp đã sinh ra thì điện trường lo nốt.",
+  "cer": 0.0,
+  "lan": 1,
+  "bd": 0.0,
+  "kt": 2.72
+ },
+ {
+  "chuong": 7,
+  "cau": "Nó đẩy ê-léc-trôn về lớp en, đẩy lỗ trống về lớp pê.",
+  "whisper": "Nó đầy electron về lớp N, đầy lỗ trống về lớp P.",
+  "cer": 0.04,
+  "lan": 1,
+  "bd": 2.97,
+  "kt": 6.49
+ },
+ {
+  "chuong": 7,
+  "cau": "Ê-léc-trôn dồn ở mặt trước, theo vạch bạc ra dây dẫn.",
+  "whisper": "Electron rồn ở mặt trước, theo vạch bạc ra di dẫn.",
+  "cer": 0.059,
+  "lan": 1,
+  "bd": 6.74,
+  "kt": 10.1
+ },
+ {
+  "chuong": 7,
+  "cau": "Đi một vòng qua bóng đèn.",
+  "whisper": "Đi một vòng qua bóng đèn.",
+  "cer": 0.0,
+  "lan": 1,
+  "bd": 10.35,
+  "kt": 11.95
+ },
+ {
+  "chuong": 7,
+  "cau": "Về mặt sau, gặp lại lỗ trống ở lớp pê.",
+  "whisper": "Về mặt sau, gặp lại lỗ trống ở lớp B.",
+  "cer": 0.056,
+  "lan": 1,
+  "bd": 12.2,
+  "kt": 14.76
+ },
+ {
+  "chuong": 7,
+  "cau": "Dòng ê-léc-trôn chạy vòng đó chính là dòng điện.",
+  "whisper": "Dòng electron chạy vòng đó chính là dòng điện.",
+  "cer": 0.0,
+  "lan": 1,
+  "bd": 15.01,
+  "kt": 17.89
+ },
+ {
+  "chuong": 8,
+  "cau": "Gói lại thành ba nhịp.",
+  "whisper": "gói lại thành 3 nhịp.",
+  "cer": 0.095,
+  "lan": 1,
+  "bd": 0.0,
+  "kt": 1.44
+ },
+ {
+  "chuong": 8,
+  "cau": "Phô-tôn vượt ngưỡng vùng cấm, bật ê-léc-trôn.",
+  "whisper": "Phô tôn vượt ngưỡng vùng cấm, bật electron.",
+  "cer": 0.0,
+  "lan": 1,
+  "bd": 1.69,
+  "kt": 4.49
+ },
+ {
+  "chuong": 8,
+  "cau": "Điện trường của mối nối pê en tách ê-léc-trôn và lỗ trống.",
+  "whisper": "Điện trường của mối nối PN tách electron và lỗ trống.",
+  "cer": 0.0,
+  "lan": 1,
+  "bd": 4.74,
+  "kt": 8.18
+ },
+ {
+  "chuong": 8,
+  "cau": "Dây dẫn đưa ê-léc-trôn đi một vòng qua bóng đèn.",
+  "whisper": "Giấy dẫn đưa electron đi một vòng qua bóng đèn.",
+  "cer": 0.064,
+  "lan": 1,
+  "bd": 8.43,
+  "kt": 11.31
+ },
+ {
+  "chuong": 8,
+  "cau": "Không có gì quay.",
+  "whisper": "Không có gì quay.",
+  "cer": 0.0,
+  "lan": 1,
+  "bd": 11.56,
+  "kt": 12.76
+ },
+ {
+  "chuong": 8,
+  "cau": "Chỉ có ánh sáng và xi-li-côn.",
+  "whisper": "chỉ có ánh sáng và silicon.",
+  "cer": 0.0,
+  "lan": 1,
+  "bd": 13.01,
+  "kt": 14.85
+ },
+ {
+  "chuong": 8,
+  "cau": "Lần tới nhìn một mái nhà lợp pin, bạn sẽ biết dưới lớp kính xanh đang diễn ra ba nhịp ấy.",
+  "whisper": "Lần tới nhìn một mái nhà lập pin, bạn sẽ biết dưới lớp kính xanh đang diễn ra 3 nhịp ấy.",
+  "cer": 0.034,
+  "lan": 1,
+  "bd": 15.1,
+  "kt": 19.98
+ }
+]

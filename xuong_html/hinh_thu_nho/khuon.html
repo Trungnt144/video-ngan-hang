@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Khuôn hình thu nhỏ L1–L5</title>
+<!--
+  Khuôn hình thu nhỏ của kênh Chuyện nghề Điện (Trung chốt 27/10/2026, bảng phong cách tai_san/so_tay_gu/bang_phong_cach_hinh_thu_nho.md mục 0).
+  Dựng mọi hình từ một file kê khai JSON (cách viết: README.md cùng thư mục). Không sửa trang này cho từng video; chỉ viết kê khai.
+  Nạp kê khai: lệnh xuat.mjs gán window.__KE trước khi trang chạy; xem tay trong trình duyệt thì mở khuon.html?ke=<đường dẫn kê khai>
+  (Chromium cần --allow-file-access-from-files). Thêm &luoi=1 để phủ lưới toạ độ 80 điểm ảnh, dùng khi đặt mũi tên, vòng phóng.
+  Đường dẫn ảnh trong kê khai tính từ gốc thư mục Media (ví dụ tai_san/anh_that/px_....jpg), hoặc đường dẫn tuyệt đối.
+  Mỗi hình là một khung 1280×720; xuat.mjs chụp ở hệ số 3 (3840×2160) khi mọi ảnh trong hình đủ độ phân giải, nếu không thì hệ số 1,5.
+  Kênh: kê khai ghi "kenh": "ngan_hang" thì dùng nhãn kênh Chuyện nghề Ngân hàng (logo đồng xu chữ "đ" và tên kênh) và bố cục NH
+  (bảng phong cách mục 0b, Trung chốt 30/10/2026); không ghi là kênh Chuyện nghề Điện, dựng như cũ.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Nunito:wght@700;800;900&family=JetBrains+Mono:ital,wght@0,500;0,700;1,500&display=block" rel="stylesheet">
+<style>
+  /* phông của loạt thuật ngữ ngân hàng (Be Vietnam Pro, OFL): bản ExtraBold trong kho hình chung, bản Black cài trên máy */
+  @font-face { font-family: 'BVPK'; src: local('Be Vietnam Pro Black'), local('BeVietnamPro-Black'); font-weight: 900; }
+  @font-face { font-family: 'BVPK'; src: url('../../tai_san/kho_hinh_chung/chung/phong/BeVietnamPro-ExtraBold.ttf'); font-weight: 800; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #222; display: flex; flex-direction: column; gap: 24px; padding: 24px; }
+  .tn { width: 1280px; height: 720px; position: relative; overflow: hidden; background: #0a0a0c; flex: none;
+    --t1: #fff36b; --t2: #ffb11b; --t3: #ff7a00; --vien: #3a1200; }
+  .tn[data-mau="bang"] { --t1: #ffffff; --t2: #a6f1ff; --t3: #2ec5ff; --vien: #04263b; }
+  .tn[data-mau="hong"] { --t1: #ffe6f2; --t2: #ff86c0; --t3: #ff2f87; --vien: #3b0022; }
+  img.nen { position: absolute; left: 0; top: 0; width: 1280px; height: 720px; object-fit: cover; display: block; }
+  .lop { position: absolute; inset: 0; }
+
+  /* nhãn kênh: tên kênh trên dải tối mờ + tia sét trên nền tròn vàng, cố định góc phải trên (góc phải dưới để YouTube đặt thời lượng).
+     Trung chốt 28/10/2026 thêm tên kênh (thay quy tắc "không viết tên kênh" ngày 27/10) */
+  .kenh { position: absolute; right: 26px; top: 22px; height: 72px; display: flex; align-items: center; z-index: 5; }
+  .kenh .ten { height: 60px; margin-right: -30px; padding: 0 46px 0 24px; border-radius: 30px; background: rgba(8,10,14,.72);
+    box-shadow: 0 6px 18px rgba(0,0,0,.4); display: flex; align-items: center;
+    font: 900 32px/1 'Nunito', sans-serif; color: #fff; letter-spacing: .01em; white-space: nowrap; }
+  .set { position: relative; flex: none; width: 72px; height: 72px; border-radius: 50%; background: #ffd23f;
+    box-shadow: 0 0 0 4px rgba(0,0,0,.55), 0 6px 18px rgba(0,0,0,.45); display: grid; place-items: center; }
+  .set::before { content: ""; width: 29px; height: 43px; background: #111;
+    clip-path: polygon(60% 0, 0 58%, 45% 58%, 30% 100%, 100% 40%, 55% 40%); }
+
+  /* chữ kiểu thời sự (L1, L3, L5): Anton in hoa, viền tối dày, dòng 2 tô màu chuyển; L1 và L5 nghiêng */
+  .ts { position: absolute; left: 40px; top: 405px; transform: skewX(-7deg); transform-origin: left bottom; isolation: isolate; }
+  .ts.thang { left: 44px; transform: none; }
+  /* ba lớp mỗi dòng: chữ thật trong suốt giữ chỗ; ::before viền tối và bóng (phía sau); ::after phần tô màu (phía trước).
+     Viền của mọi dòng nằm chung một lớp dưới mọi phần tô (.dong không tạo lớp riêng): nếu không, viền dòng 2 đè mất dấu nặng
+     dưới chân dòng 1 (lỗi thấy ở "ĐIỆN MẶT", 28/10/2026) */
+  .ts .dong { position: relative; display: block; width: max-content; font: 400 116px/1.2 'Anton', sans-serif;
+    text-transform: uppercase; letter-spacing: .005em; color: transparent; }
+  /* nới vùng tô 0,35em trên và dưới: dấu tiếng Việt (mũ, ngã, nặng) nằm ngoài hộp dòng, không nới thì không được tô */
+  .ts .dong::before, .ts .dong::after { content: attr(data-chu); position: absolute; left: 0; top: -.35em; padding: .35em 0; }
+  .ts .dong::before { z-index: -1; color: var(--vien); -webkit-text-stroke: 17px var(--vien);
+    text-shadow: 0 9px 0 var(--vien), 0 12px 30px rgba(0,0,0,.6); }
+  .ts .dong::after { color: transparent; background: #fff; -webkit-background-clip: text; background-clip: text; }
+  .ts .dong.nhan::after { background: linear-gradient(180deg, var(--t1) 10%, var(--t2) 55%, var(--t3) 95%); -webkit-background-clip: text; background-clip: text; }
+
+  /* chữ kiểu thư thái (L2): Nunito tròn đậm, trắng, bóng mềm; dòng phụ và nhãn góc bằng chữ máy đánh */
+  .tt { position: absolute; left: 0; right: 0; text-align: center; color: #fff; }
+  .tt .lon { font: 900 124px/1 'Nunito', sans-serif; letter-spacing: -.01em; text-shadow: 0 3px 14px rgba(0,0,0,.45), 0 1px 2px rgba(0,0,0,.4); }
+  .tt .phu { margin-top: 16px; font: 500 40px/1.2 'JetBrains Mono', monospace; letter-spacing: .02em; text-shadow: 0 2px 10px rgba(0,0,0,.6); }
+  .the-may { position: absolute; left: 30px; top: 26px; font: italic 500 34px/1 'JetBrains Mono', monospace; color: #fff; text-shadow: 0 2px 8px rgba(0,0,0,.6); }
+  .dia-danh { font-style: normal; font-weight: 700; background: rgba(0,0,0,.45); padding: 8px 12px; border-radius: 6px; }
+
+  /* con số lớn (L4) */
+  .so { position: absolute; left: 40px; font: 400 240px/1 'Anton', sans-serif; letter-spacing: -.01em; color: transparent;
+    background: linear-gradient(180deg, var(--t1) 8%, var(--t2) 55%, var(--t3) 95%); -webkit-background-clip: text; background-clip: text;
+    filter: drop-shadow(0 6px 0 rgba(0,0,0,.5)); }
+  .don-vi { position: absolute; left: 48px; font: 900 62px/1.1 'Nunito', sans-serif; color: #fff; }
+  .chu-may { position: absolute; left: 50px; font: 500 34px/1.3 'JetBrains Mono', monospace; color: rgba(255,255,255,.82); }
+
+  /* vòng phóng to (L5) và nhãn đỏ */
+  .vong { position: absolute; border-radius: 50%; overflow: hidden; border: 9px solid #fff; box-shadow: 0 10px 30px rgba(0,0,0,.55); }
+  .vong img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  /* nhãn dưới vòng nhỏ (khi "vong" là mảng): chữ Nunito đậm trên dải tối, căn giữa theo tâm vòng */
+  .nhan-vong { position: absolute; transform: translateX(-50%); padding: 4px 16px; border-radius: 22px; background: rgba(8,10,14,.82);
+    font: 900 27px/1.15 'Nunito', sans-serif; color: #fff; white-space: nowrap; box-shadow: 0 4px 12px rgba(0,0,0,.4); }
+  .chip { position: absolute; font: 400 54px/1 'Anton', sans-serif; text-transform: uppercase; color: #fff; background: #e3262f;
+    padding: 10px 16px 8px; border-radius: 8px; transform: skewX(-7deg); box-shadow: 0 6px 16px rgba(0,0,0,.45); }
+  /* ảnh ghép chồng lên nền (người, vật đã tách nền bằng tach_nen.swift) và nhãn số lớn; Trung yêu cầu 28/10/2026 */
+  /* bóng đổ đặt ở lớp bọc: nếu đặt trên ảnh thì phần làm mờ mép ("mo") cắt cụt bóng thành đường thẳng ở mép khung ảnh */
+  .phu-boc { position: absolute; inset: 0; filter: drop-shadow(0 12px 26px rgba(0,0,0,.55)); }
+  /* chỉ ảnh ghép; dòng chữ phụ của L2 cũng mang lớp "phu" (.tt .phu) nên không được viết .phu trơn */
+  img.phu { position: absolute; display: block; }
+  .nhan-so { position: absolute; font: 400 92px/1 'Anton', sans-serif; color: #111; background: #ffd23f; padding: 12px 20px 8px;
+    border-radius: 10px; transform: skewX(-7deg); box-shadow: 0 0 0 5px #111, 0 10px 24px rgba(0,0,0,.5); white-space: nowrap; }
+  svg.de { position: absolute; inset: 0; width: 1280px; height: 720px; overflow: visible; }
+  /* bóng thoại cho nhân vật ("bong_thoai"), Trung yêu cầu 28/10/2026: nền trắng viền đen, chữ Nunito 900, đuôi chỉ về miệng nhân vật */
+  .bong { position: absolute; background: #fff; color: #111; font: 900 46px/1.1 'Nunito', sans-serif; padding: 16px 28px 18px;
+    border-radius: 34px; border: 5px solid #111; box-shadow: 0 10px 24px rgba(0,0,0,.45); white-space: nowrap; }
+  .bong .duoi, .bong .duoi-vien { position: absolute; top: 100%; width: 54px; height: 50px; }
+  .bong .duoi-vien { background: #111; margin-top: 0; clip-path: polygon(0 0, 100% 0, var(--mui) 100%); }
+  .bong .duoi { background: #fff; margin-top: -6px; transform: scale(.78); transform-origin: 50% 0; clip-path: polygon(0 0, 100% 0, var(--mui) 100%); }
+
+  /* kênh Chuyện nghề Ngân hàng (bảng phong cách mục 0b, Trung chốt 30/10/2026): nhãn kênh là logo đồng xu chữ "đ" trong vòng tròn
+     và tên kênh trên dải xanh ngọc đậm (màu ảnh đại diện kênh); góc đặt theo "nhan_kenh": tren_phai (mặc định), tren_trai, duoi_trai */
+  .kenh-nh { position: absolute; height: 84px; display: flex; align-items: center; z-index: 5; }
+  .kenh-nh.tren_phai { right: 24px; top: 20px; flex-direction: row-reverse; }
+  .kenh-nh.tren_trai { left: 24px; top: 20px; }
+  .kenh-nh.duoi_trai { left: 24px; bottom: 20px; }
+  .kenh-nh img { position: relative; z-index: 1; flex: none; width: 84px; height: 84px; border-radius: 50%; object-fit: cover;
+    box-shadow: 0 0 0 4px #fff, 0 6px 16px rgba(0,0,0,.3); }
+  .kenh-nh .ten { height: 60px; display: flex; align-items: center; background: #0d4d47; color: #fff; white-space: nowrap;
+    font: 800 31px/1 'BVPK', sans-serif; letter-spacing: .005em; box-shadow: 0 6px 16px rgba(0,0,0,.25); }
+  .kenh-nh.tren_phai .ten { margin-right: -34px; padding: 0 50px 0 26px; border-radius: 30px; }
+  .kenh-nh.tren_trai .ten, .kenh-nh.duoi_trai .ten { margin-left: -34px; padding: 0 26px 0 50px; border-radius: 30px; }
+  /* bố cục NH: nền phẳng màu của video, hình vẽ lấy từ chính video, khối chữ hai dòng Be Vietnam Pro không viền */
+  .khoi-nh { position: absolute; z-index: 4; }
+  /* mỗi dòng rộng đúng bằng chữ, để kiểm góc dưới phải và đo tương phản trên đúng vùng chữ; căn giữa, căn phải bằng lề tự động */
+  .khoi-nh .chu-nh { width: fit-content; }
+  .khoi-nh.giua .chu-nh { margin-left: auto; margin-right: auto; }
+  .khoi-nh.phai .chu-nh { margin-left: auto; }
+  .khoi-nh .d1 { font: 900 128px/1.1 'BVPK', sans-serif; letter-spacing: -.012em; white-space: nowrap; }
+  .khoi-nh .d2 { margin-top: 6px; font: 800 80px/1.15 'BVPK', sans-serif; letter-spacing: -.005em; white-space: nowrap; }
+
+  /* bìa dọc 1080×1920 cho Reels, Shorts, TikTok (xuat.mjs --doc, Trung chốt 30/10/2026): khung 720×1280 chụp hệ số 1,5.
+     Nhãn kênh và chữ đặt giữa khung, trong dải 4:5 (y 190–1090) mà bảng tin và lưới Trang còn giữ khi cắt bìa,
+     và trên vùng chú thích, nút của Reels (khoảng 300 điểm ảnh dưới cùng). Khối chữ nằm trong dải 16:9 giữa khung (y 437–843): Reel đăng
+     bằng video ngang thì bảng tin chỉ hiện dải đó của bìa (thấy khi thay bìa Reel inverter 30/10/2026) */
+  .tn.doc { width: 720px; height: 1280px; }
+  .tn.doc img.nen { width: 720px; height: 1280px; }
+  .tn.doc svg.de { width: 720px; height: 1280px; }
+  .tn.doc .kenh { right: auto; left: 50%; top: 205px; transform: translateX(-50%); }
+  .tn.doc .ts { left: 50%; top: 500px; transform: translateX(-50%) skewX(-7deg); transform-origin: center bottom; }
+  .tn.doc .ts .dong { margin: 0 auto; }
+  .tn.doc .tt { top: 500px; left: 40px; right: 40px; }
+  .tn.doc .tt .lon { font-size: 96px; line-height: 1.05; }
+
+  /* lưới toạ độ khi xem tay (?luoi=1) */
+  .luoi { position: absolute; inset: 0; pointer-events: none;
+    background-image: linear-gradient(rgba(255,255,255,.35) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.35) 1px, transparent 1px);
+    background-size: 80px 80px; }
+  .luoi b { position: absolute; font: 700 14px/1 monospace; color: #ff0; text-shadow: 0 0 3px #000; }
+  .nhan-id { position: absolute; left: 6px; bottom: 6px; font: 700 18px/1 monospace; color: #0f0; background: #000; padding: 3px 6px; }
+</style>
+</head>
+<body>
+<script>
+const NHAN_KENH_DIEN = '<div class="kenh"><span class="ten">Chuyện nghề Điện</span><div class="set"></div></div>';
+// kênh của kê khai: "dien" (mặc định) hoặc "ngan_hang"; nhãn kênh Ngân hàng cần ảnh logo nhúng ở kho hình chung (nạp trước khi dựng)
+let KENH = 'dien', NHAN_KENH = NHAN_KENH_DIEN;
+const LOGO_NH = '../../tai_san/kho_hinh_chung/chung/logo/logo_kenh_ngan_hang_anh.js';
+const nhanKenhNH = (goc) => `<div class="kenh-nh ${goc || 'tren_phai'}"><img src="${window.KHO.ANH_LOGO.ngan_hang}"><span class="ten">Chuyện nghề Ngân hàng</span></div>`;
+// ---------- nạp kê khai ----------
+const GOC = '../../';                       // khuôn nằm ở xuong_html/hinh_thu_nho/, ảnh tính từ gốc Media
+const thamSo = new URLSearchParams(location.search);
+function napKeKhai() {
+  if (window.__KE) return window.__KE;
+  const duong = thamSo.get('ke');
+  if (!duong) throw new Error('Thiếu kê khai: gán window.__KE hoặc mở khuon.html?ke=<đường dẫn>');
+  const x = new XMLHttpRequest();
+  x.open('GET', duong.startsWith('/') ? 'file://' + duong : GOC + duong, false);
+  x.send();
+  return JSON.parse(x.responseText);
+}
+const anh = (p) => (p.startsWith('/') ? 'file://' + p : GOC + p);
+const esc = (t) => String(t ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+// ---------- từng bố cục ----------
+// Lọc ảnh và lớp tối mặc định theo bố cục (lấy đúng từ mẫu v3 Trung duyệt); kê khai ghi "loc" hoặc "lop" để thay.
+const MAC_DINH = {
+  L1: { loc: 'contrast(1.15) saturate(1.25)', lop: 'radial-gradient(ellipse 75% 70% at 55% 40%,rgba(0,0,0,0) 45%,rgba(0,0,0,.6) 100%),linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,.55) 100%)', vung: '30,400,840,300' },
+  L2: { loc: 'saturate(1.05)', lop: '', vung: null },
+  L3: { loc: 'contrast(1.08) saturate(1.15)', lop: 'linear-gradient(180deg,rgba(0,0,0,0) 42%,rgba(0,0,0,.78) 100%)', vung: '30,400,840,300' },
+  L4: { loc: '', lop: '', vung: '560,0,720,720' },
+  L5: { loc: 'contrast(1.08) saturate(1.15)', lop: 'linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(0,0,0,.58) 100%)', vung: '30,400,840,300' },
+};
+
+// "dai_anh": dải nhiều ảnh dọc cạnh nhau, đường ngăn trắng nghiêng (Trung yêu cầu 28/10/2026, video kể nhiều thứ theo thứ tự).
+// Mỗi ô { anh, vi_tri, phong, nhan }; nhãn đặt ở độ cao "nhan_y" (mặc định 120, dưới nhãn kênh). Màu chữ nên ghi "mau" vì khuôn chỉ đo ô đầu.
+function daiAnh(h, md) {
+  const ds = h.dai_anh, n = ds.length, w = 1280 / n, s = 44, ny = h.nhan_y ?? 120;
+  const o = ds.map((d, i) => {
+    const l = Math.round(i * w - s / 2), r = Math.round(w + s);
+    const cp = `polygon(${i ? s + 'px' : '0'} 0,100% 0,${i < n - 1 ? `calc(100% - ${s}px)` : '100%'} 100%,0 100%)`;
+    const tf = d.phong && d.phong !== 1 ? `transform:scale(${d.phong});transform-origin:${d.vi_tri || '50% 50%'};` : '';
+    return `<div class="lop" style="left:${l}px;width:${r}px;overflow:hidden;clip-path:${cp}">` +
+      `<img class="nen" src="${anh(d.anh)}" style="width:${r}px;object-position:${d.vi_tri || '50% 50%'};${tf}filter:${d.loc ?? md.loc}"></div>`;
+  }).join('');
+  const vach = ds.slice(1).map((_, i) => { const x = (i + 1) * w; return `<line x1="${x + s / 2}" y1="-10" x2="${x - s / 2}" y2="730" stroke="#fff" stroke-width="8"/>`; }).join('');
+  const nhan = ds.map((d, i) => d.nhan ? `<div class="nhan-vong" style="left:${Math.round(i * w + w / 2 + s / 2 - s * (ny + 20) / 720)}px;top:${ny}px">${esc(d.nhan)}</div>` : '').join('');
+  return o + `<svg class="de" viewBox="0 0 1280 720">${vach}</svg>` + nhan;
+}
+function nen(h, md) {
+  if (h.dai_anh) return daiAnh(h, md);
+  const tf = h.phong && h.phong !== 1 ? `transform:scale(${h.phong});transform-origin:${h.goc_phong || '50% 50%'};` : '';
+  if (!h.chia) return `<img class="nen" src="${anh(h.anh)}" style="object-position:${h.vi_tri || '50% 50%'};${tf}filter:${h.loc ?? md.loc}">`;
+  // chia đôi khung (Trung yêu cầu 28/10/2026, video so sánh hai thứ): "anh" nửa trái, "chia.anh" nửa phải, đường chéo trắng ở giữa.
+  // Mỗi ảnh một hộp rộng 700 nên ảnh dọc vẫn giữ được mặt người.
+  const c = h.chia;
+  return `<img class="nen" src="${anh(h.anh)}" style="width:700px;object-position:${h.vi_tri || '50% 50%'};${tf}filter:${h.loc ?? md.loc}">` +
+    `<div class="lop" style="left:580px;width:700px;overflow:hidden;clip-path:polygon(17.1% 0,100% 0,100% 100%,0 100%)">` +
+    `<img class="nen" src="${anh(c.anh)}" style="width:700px;object-position:${c.vi_tri || '50% 50%'};${c.phong ? `transform:scale(${c.phong});transform-origin:${c.goc_phong || '50% 50%'};` : ''}filter:${c.loc ?? md.loc}"></div>` +
+    `<svg class="de" viewBox="0 0 1280 720"><line x1="700" y1="-10" x2="578" y2="730" stroke="#fff" stroke-width="10"/></svg>`;
+}
+function khoiChu(h, thang) {
+  return `<div class="ts${thang ? ' thang' : ''}"><span class="dong" data-chu="${esc(h.dong1)}">${esc(h.dong1)}</span>` +
+    `<span class="dong nhan" data-chu="${esc(h.dong2)}">${esc(h.dong2)}</span></div>`;
+}
+function muiTen(h) {
+  if (!h.mui_ten) return '';
+  const to = h.mui_ten.day === 'to', id = 'mt_' + h.id;
+  return `<svg class="de" viewBox="0 0 1280 720"><defs><marker id="${id}" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="${to ? 2.6 : 3.2}" markerHeight="${to ? 2.6 : 3.2}" orient="auto">` +
+    `<path d="M0,0 L10,5 L0,10 z" fill="#e3262f" stroke="#fff" stroke-width="${to ? 1 : 1.2}"/></marker></defs>` +
+    `<path d="${h.mui_ten.d}" stroke="#fff" stroke-width="${to ? 34 : 22}" fill="none" stroke-linecap="round"/>` +
+    `<path d="${h.mui_ten.d}" stroke="#e3262f" stroke-width="${to ? 24 : 14}" fill="none" stroke-linecap="round" marker-end="url(#${id})"/></svg>`;
+}
+const chip = (h) => (h.chip ? `<div class="chip" style="left:${h.chip.x}px;top:${h.chip.y}px">${esc(h.chip.chu)}</div>` : '');
+
+// "vong" là một vòng, hoặc mảng nhiều vòng nhỏ; mỗi vòng có thể có "noi": [x, y] (một đường thẳng từ điểm đó tới mép vòng)
+// và "nhan" (nhãn chữ dưới vòng). "diem" (hai tiếp tuyến) chỉ dùng cho vòng đơn.
+function vong(h) {
+  // mảng vòng: vẽ mọi đường nối trước rồi mới tới các vòng, để đường nối nằm dưới vòng, không cắt ngang vòng khác
+  if (Array.isArray(h.vong)) { const ps = h.vong.map((v) => vongMot(v, null)); return ps.map((p) => p[0]).join('') + ps.map((p) => p[1]).join(''); }
+  return vongMot(h.vong, h.diem).join('');
+}
+function vongMot(v, diem) {
+  if (!v) return ['', ''];
+  const r = v.d / 2 + 9, cx = v.x + v.d / 2, cy = v.y + v.d / 2;
+  let noi = '', nhan = '';
+  if (v.noi) {
+    const [px, py] = v.noi, a = Math.atan2(cy - py, cx - px), ex = Math.round(cx - r * Math.cos(a)), ey = Math.round(cy - r * Math.sin(a));
+    noi = `<svg class="de" viewBox="0 0 1280 720"><line x1="${px}" y1="${py}" x2="${ex}" y2="${ey}" stroke="#fff" stroke-width="5" stroke-dasharray="14 9"/>` +
+      `<circle cx="${px}" cy="${py}" r="9" fill="#fff"/></svg>`;
+  }
+  if (v.nhan) nhan = `<div class="nhan-vong" style="left:${cx}px;top:${v.y + v.d + 4}px">${esc(v.nhan)}</div>`;
+  return [noi, vongDon(v, diem, r, cx, cy) + nhan];
+}
+function vongDon(v, diem, r, cx, cy) {
+  const h = { diem };
+  let duong = '';
+  if (h.diem) {
+    // hai tiếp tuyến từ điểm được phóng tới mép vòng
+    const [px, py] = h.diem, d = Math.hypot(cx - px, cy - py), a = Math.atan2(cy - py, cx - px), b = Math.asin(Math.min(1, r / d)), L = Math.sqrt(Math.max(0, d * d - r * r));
+    const t = [-1, 1].map((k) => [px + L * Math.cos(a + k * b), py + L * Math.sin(a + k * b)].map(Math.round));
+    duong = `<svg class="de" viewBox="0 0 1280 720">${t.map(([x, y]) => `<line x1="${px}" y1="${py}" x2="${x}" y2="${y}" stroke="#fff" stroke-width="5"/>`).join('')}` +
+      `<circle cx="${px}" cy="${py}" r="22" fill="none" stroke="#fff" stroke-width="6"/></svg>`;
+  }
+  const tf = v.phong && v.phong !== 1 ? `;transform:scale(${v.phong})` : '';
+  return duong + `<div class="vong" style="left:${v.x}px;top:${v.y}px;width:${v.d}px;height:${v.d}px"><img src="${anh(v.anh)}" style="object-position:${v.vi_tri || '50% 50%'}${tf}"></div>`;
+}
+
+// "phu_anh": ảnh ghép chồng lên nền, dưới chữ; "nhan": nhãn số lớn nền vàng. Dùng được với mọi bố cục.
+const phuAnh = (h) => [].concat(h.phu_anh || []).map((p) =>
+  // "bong": độ đậm bóng đổ quanh ảnh ghép, 0–1 nhân với mức mặc định (0 là không bóng); bỏ trống giữ mặc định
+  `<div class="phu-boc"${p.bong != null ? ` style="filter:${p.bong > 0 ? `drop-shadow(0 12px 26px rgba(0,0,0,${(0.55 * p.bong).toFixed(2)}))` : 'none'}"` : ''}><img class="phu" src="${anh(p.anh)}" style="left:${p.x}px;top:${p.y}px;width:${p.w}px${p.lat ? ';transform:scaleX(-1)' : ''}` +
+  // "mo": làm mờ dần hai mép trái phải (phần trăm bề rộng), che viền thẳng khi ảnh gốc cắt ngang người ở mép khung
+  (p.mo ? `;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 ${p.mo}%,#000 ${100 - p.mo}%,transparent 100%)` : '') + '"></div>').join('');
+const nhanSo = (h) => [].concat(h.nhan || []).map((n) =>
+  `<div class="nhan-so" data-chu="${esc(n.chu)}" style="left:${n.x}px;top:${n.y}px${n.co ? `;font-size:${n.co}px` : ''}">${esc(n.chu)}</div>`).join('');
+
+// "bong_thoai": {"chu", "x", "y", "duoi"}: góc trái trên của bóng; "duoi" = vị trí chân đuôi theo phần trăm bề rộng bóng (mặc định 30),
+// "mui" = mũi đuôi lệch trái (0) hay phải (100) so với chân đuôi (mặc định 20, chỉ xuống trái)
+const bongThoai = (h) => [].concat(h.bong_thoai || []).map((b) =>
+  `<div class="bong" data-chu="${esc(b.chu)}" style="left:${b.x}px;top:${b.y}px${b.co ? `;font-size:${b.co}px` : ''}">${esc(b.chu)}` +
+  `<div class="duoi-vien" style="left:${b.duoi ?? 30}%;--mui:${b.mui ?? 20}%"></div><div class="duoi" style="left:${b.duoi ?? 30}%;--mui:${b.mui ?? 20}%"></div></div>`).join('');
+
+// Chữ nhấn trong dòng 2 (thêm 01/11/2026, Trung yêu cầu tô màu riêng chữ "chú ý"): "nhan_manh" là cụm chữ (hoặc mảng cụm) nằm trong "dong2",
+// "mau_nhan" là màu của cụm đó; phần còn lại giữ "mau2". Dấu "\n" trong "dong2" chia dòng 2 thành nhiều hàng cùng cỡ chữ (như "dong1"), dùng khi câu dài mà không muốn thu nhỏ dưới 76px. Không có "nhan_manh" thì vẽ như cũ.
+function nhanManhNH(t, h) {
+  const ds = [].concat(h.nhan_manh || []).filter((c) => c && String(t).includes(c));
+  if (!ds.length) return esc(t);
+  const re = new RegExp('(' + ds.map((c) => c.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|') + ')', 'g');
+  return String(t).split(re).map((ph) => ds.includes(ph) ? `<span style="color:${h.mau_nhan || '#ffd23f'}">${esc(ph)}</span>` : esc(ph)).join('');
+}
+
+// Bố cục NH của kênh Ngân hàng (bảng phong cách mục 0b quy tắc 6, bố cục linh hoạt): nền phẳng "nen" (màu nền của video),
+// "anh" (không bắt buộc) là hình vẽ chụp từ trang dựng của video bằng lay_hinh.mjs, đặt bằng "hop" [x, y, w, h] (mặc định cả khung)
+// và "vi_tri" như object-position; thêm hình vẽ khác qua "phu_anh". Chữ: "dong1", "dong2", hộp "chu" {x, y, w, canh: trai|giua|phai},
+// cỡ "co1", "co2" (điểm ảnh trên khung 1280×720), màu "mau1", "mau2"; "the_chu" {nen, bo} vẽ thẻ nền sau khối chữ.
+function dungNH(h) {
+  const c = Object.assign({ x: 60, y: 120, w: 1160, canh: 'trai' }, h.chu || {});
+  const [hx, hy, hw, hh] = h.hop || [0, 0, 1280, 720];
+  const anhNH = h.anh ? `<img class="nen" src="${anh(h.anh)}" style="left:${hx}px;top:${hy}px;width:${hw}px;height:${hh}px;object-fit:${h.vua || 'contain'};object-position:${h.vi_tri || '50% 50%'};${h.loc ? 'filter:' + h.loc : ''}">` : '';
+  const the = h.the_chu ? `background:${h.the_chu.nen};border-radius:${h.the_chu.bo ?? 22}px;padding:22px 34px 26px;` : '';
+  const khoi = `<div class="khoi-nh ${c.canh}" style="left:${c.x}px;top:${c.y}px;width:${c.w}px;text-align:${{ trai: 'left', giua: 'center', phai: 'right' }[c.canh]};${the}">` +
+    // thuật ngữ dài: "dong1" có dấu xuống dòng "\n" thì dòng 1 chia thành hai hàng chữ cùng cỡ
+    String(h.dong1).split('\n').map((t) => `<div class="d1 chu-nh" data-chu="${esc(t)}" style="font-size:${h.co1 || 128}px;color:${h.mau1 || '#1d1b26'}">${esc(t)}</div>`).join('') +
+    (h.dong2 ? String(h.dong2).split('\n').map((t) => `<div class="d2 chu-nh" data-chu="${esc(t)}" style="font-size:${h.co2 || 80}px;color:${h.mau2 || h.mau1 || '#1d1b26'}">${nhanManhNH(t, h)}</div>`).join('') : '') + '</div>';
+  return anhNH + phuAnh(h) + NHAN_KENH + khoi;
+}
+
+function dung(h) {
+  if (h.bo_cuc === 'NH') {
+    if (KENH !== 'ngan_hang') throw new Error(`${h.id}: bố cục NH chỉ dùng cho kê khai "kenh": "ngan_hang"`);
+    NHAN_KENH = nhanKenhNH(h.nhan_kenh);
+    const sec = document.createElement('section');
+    sec.className = 'tn'; sec.id = h.id; sec.dataset.boCuc = 'NH'; sec.dataset.mau = 'nh';
+    sec.style.background = h.nen || '#f4f1ec';
+    sec.innerHTML = dungNH(h);
+    return sec;
+  }
+  if (KENH === 'ngan_hang') NHAN_KENH = nhanKenhNH(h.nhan_kenh);
+  const md = MAC_DINH[h.bo_cuc];
+  if (!md) throw new Error(`${h.id}: bố cục "${h.bo_cuc}" không có (chỉ L1–L5, NH)`);
+  const lop = h.lop ?? md.lop;
+  let trong = '', vung = h.vung || md.vung;
+  switch (h.bo_cuc) {
+    case 'L1':
+      trong = nen(h, md) + (lop ? `<div class="lop" style="background:${lop}"></div>` : '') + muiTen(h) + chip(h) +
+        (h.dia_danh ? `<div class="the-may dia-danh">📍 ${esc(h.dia_danh)}</div>` : '') + NHAN_KENH + khoiChu(h, false);
+      break;
+    case 'L2': {
+      const y = h.doc ?? 330;
+      vung = vung || `80,${y - 20},1120,240`;
+      const lop2 = lop || `radial-gradient(ellipse 62% 32% at 50% ${((y + 90) / 720 * 100).toFixed(0)}%,rgba(0,0,0,.36) 0%,rgba(0,0,0,0) 100%),linear-gradient(180deg,rgba(0,0,0,.25) 0%,rgba(0,0,0,0) 28%)`;
+      trong = nen(h, md) + `<div class="lop" style="background:${lop2}"></div>` + (h.the_may ? `<div class="the-may">${esc(h.the_may)}</div>` : '') +
+        NHAN_KENH + `<div class="tt" style="top:${y}px"><div class="lon">${esc(h.chu_lon)}</div>` + (h.chu_phu ? `<div class="phu">${esc(h.chu_phu)}</div>` : '') + '</div>';
+      break;
+    }
+    case 'L3':
+      // "vong" dùng được ở L3 (bỏ "diem" thì không vẽ đường nối): vòng mặt người phản ứng ghép từ ảnh thật thứ hai
+      trong = nen(h, md) + `<div class="lop" style="background:${lop}"></div>` + vong(h) + NHAN_KENH + khoiChu(h, true);
+      break;
+    case 'L4': {
+      // nửa phải ảnh cắt chéo; nửa trái nền tối, số tô màu, đơn vị, ghi nguồn
+      const co = h.co_so ?? 240, top = h.so_tren ? 150 : 110, ghi = [].concat(h.ghi_chu || []).map(esc).join('<br>');
+      trong = `<img class="nen" src="${anh(h.anh)}" style="left:560px;width:720px;object-position:${h.vi_tri || '50% 50%'};${h.loc ? 'filter:' + h.loc + ';' : ''}clip-path:polygon(30% 0,100% 0,100% 100%,0 100%)">` +
+        NHAN_KENH +
+        (h.so_tren ? `<div class="don-vi" style="top:80px;font-size:54px;color:rgba(255,255,255,.85)">${esc(h.so_tren)}</div>` : '') +
+        `<div class="so" style="top:${top}px;font-size:${co}px">${esc(h.so)}</div>` +
+        `<div class="don-vi" style="top:${top + co * 1.25}px">${esc(h.don_vi)}</div>` +
+        (ghi ? `<div class="chu-may" style="top:${top + co * 1.25 + 90}px">${ghi}</div>` : '');
+      break;
+    }
+    case 'L5':
+      trong = nen(h, md) + `<div class="lop" style="background:${lop}"></div>` + vong(h) + chip(h) + NHAN_KENH + khoiChu(h, false);
+      break;
+  }
+  if (h.phu_anh || h.nhan || h.bong_thoai) trong = trong.replace(NHAN_KENH, phuAnh(h) + nhanSo(h) + bongThoai(h) + NHAN_KENH);
+  const sec = document.createElement('section');
+  sec.className = 'tn'; sec.id = h.id; sec.dataset.boCuc = h.bo_cuc;
+  if (h.bo_cuc === 'L4') sec.style.background = h.nen || '#0d1626';
+  if (vung) sec.dataset.vung = vung;
+  if (h.mau && h.mau !== 'tu_dong') sec.dataset.mau = h.mau;
+  sec.innerHTML = trong;
+  return sec;
+}
+
+// ---------- chọn màu chữ theo màu tương phản với ảnh (Trung chốt 27/10/2026) ----------
+// ---------- bìa dọc (xuat.mjs --doc hoặc khuon.html?doc=1) ----------
+// Dựng lại hình đã chọn của bản ngang trên khung 720×1280 từ chính kê khai: "chia" thành nửa trên, nửa dưới; "dai_anh" thành các cột dọc;
+// "vong" (một vòng, hoặc vòng đầu của mảng) đặt giữa phía trên chữ. Toạ độ của mũi tên, chip, ảnh ghép, nhãn số, bóng thoại tính trên
+// khung ngang nên bị bỏ (soát ghi cảnh báo). Muốn chỉnh riêng cho bản dọc thì ghi "doc": { ... } trong hình, các trường trong đó
+// thay trường cùng tên (ví dụ "doc": {"vi_tri": "30% 50%", "chia": {...}}).
+const DOC = window.__DOC || thamSo.get('doc');
+const LOP_DOC = 'linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,0) 24%,rgba(0,0,0,0) 42%,rgba(0,0,0,.5) 62%,rgba(0,0,0,.12) 88%)';
+const BO_DOC = ['mui_ten', 'chip', 'phu_anh', 'nhan', 'bong_thoai', 'dia_danh'];
+function nenDoc(h, md) {
+  const loc = (x) => `filter:${x.loc ?? md.loc ?? ''};`;
+  const tf = (x) => (x.phong && x.phong !== 1 ? `transform:scale(${x.phong});transform-origin:${x.goc_phong || x.vi_tri || '50% 50%'};` : '');
+  if (h.dai_anh) {
+    const ds = h.dai_anh, n = ds.length, w = 720 / n, s = 30;
+    const o = ds.map((d, i) => {
+      const l = Math.round(i * w - s / 2), r = Math.round(w + s);
+      const cp = `polygon(${i ? s + 'px' : '0'} 0,100% 0,${i < n - 1 ? `calc(100% - ${s}px)` : '100%'} 100%,0 100%)`;
+      return `<div class="lop" style="left:${l}px;width:${r}px;overflow:hidden;clip-path:${cp}">` +
+        `<img class="nen" src="${anh(d.anh)}" style="width:${r}px;object-position:${d.vi_tri || '50% 50%'};${tf(d)}${loc(d)}"></div>`;
+    }).join('');
+    const vach = ds.slice(1).map((_, i) => { const x = (i + 1) * w; return `<line x1="${x + s / 2}" y1="-10" x2="${x - s / 2}" y2="1290" stroke="#fff" stroke-width="7"/>`; }).join('');
+    const nhan = ds.map((d, i) => d.nhan ? `<div class="nhan-vong" style="left:${Math.round(i * w + w / 2)}px;top:${h.nhan_y_doc ?? 310}px;font-size:22px">${esc(d.nhan)}</div>` : '').join('');
+    return o + `<svg class="de" viewBox="0 0 720 1280">${vach}</svg>` + nhan;
+  }
+  if (!h.chia) return `<img class="nen" src="${anh(h.anh)}" style="object-position:${h.vi_tri || '50% 50%'};${tf(h)}${loc(h)}">`;
+  // chia: "anh" nửa trên, "chia.anh" nửa dưới, đường ngăn trắng nghiêng từ (0, 680) lên (720, 600)
+  const c = h.chia;
+  return `<img class="nen" src="${anh(h.anh)}" style="height:700px;object-position:${h.vi_tri || '50% 50%'};${tf(h)}${loc(h)}">` +
+    `<div class="lop" style="top:580px;height:700px;overflow:hidden;clip-path:polygon(0 14.3%,100% 2.9%,100% 100%,0 100%)">` +
+    `<img class="nen" src="${anh(c.anh)}" style="height:700px;object-position:${c.vi_tri || '50% 50%'};${tf(c)}${loc(c)}"></div>` +
+    `<svg class="de" viewBox="0 0 720 1280"><line x1="-10" y1="681" x2="730" y2="599" stroke="#fff" stroke-width="9"/></svg>`;
+}
+function dungDoc(h0) {
+  if (KENH === 'ngan_hang' || h0.bo_cuc === 'NH') throw new Error(`${h0.id}: bìa dọc chưa làm cho kênh Ngân hàng`);
+  const h = Object.assign({}, h0, h0.doc || {}), md = MAC_DINH[h.bo_cuc];
+  if (!md) throw new Error(`${h.id}: bố cục "${h.bo_cuc}" không có (chỉ L1–L5)`);
+  const v = Array.isArray(h.vong) ? h.vong[0] : h.vong;
+  let trong = nenDoc(h, md) + `<div class="lop" style="background:${h.lop_doc || LOP_DOC}"></div>`;
+  if (v && h.bo_cuc !== 'L4') {
+    const d = v.d_doc || 220, x = (720 - d) / 2, y = 288;
+    trong += vongDon({ ...v, x, y, d }, null, 0, 0, 0) + (v.nhan ? `<div class="nhan-vong" style="left:360px;top:${y + d + 6}px">${esc(v.nhan)}</div>` : '');
+  }
+  trong += NHAN_KENH;
+  if (h.bo_cuc === 'L2') trong += `<div class="tt"><div class="lon">${esc(h.chu_lon)}</div>` + (h.chu_phu ? `<div class="phu">${esc(h.chu_phu)}</div>` : '') + '</div>';
+  else if (h.bo_cuc === 'L4') trong += `<div class="so" style="left:0;right:0;text-align:center;top:470px;font-size:${Math.min(h.co_so ?? 240, 220)}px">${esc(h.so)}</div>` +
+    `<div class="don-vi" style="left:0;right:0;text-align:center;top:760px">${esc(h.don_vi)}</div>`;
+  else trong += khoiChu(h, h.bo_cuc === 'L3');
+  const sec = document.createElement('section');
+  sec.className = 'tn doc'; sec.id = h.id; sec.dataset.boCuc = h.bo_cuc;
+  if (h.bo_cuc === 'L4') sec.style.background = h.nen || '#0d1626';
+  sec.dataset.vung = '40,500,640,300';
+  if (h.mau && h.mau !== 'tu_dong') sec.dataset.mau = h.mau;
+  sec.innerHTML = trong;
+  const ts = sec.querySelector('.ts');
+  if (ts && v) ts.style.top = '565px';
+  return sec;
+}
+function soatDoc(sec, h) {
+  const canh = [], bo = BO_DOC.filter((k) => h[k] && !(h.doc && k in h.doc));
+  if (bo.length) canh.push(`bỏ ${bo.join(', ')} (toạ độ của khung ngang)`);
+  if (Array.isArray(h.vong) && h.vong.length > 1) canh.push(`chỉ giữ vòng đầu trong ${h.vong.length} vòng`);
+  const ts = sec.querySelector('.ts');
+  if (ts) {
+    const rong = Math.max(...[...ts.children].map((e) => e.offsetWidth));
+    // 600 chứ không phải 640: chữ nghiêng 7 độ nên rộng thêm khoảng 0,12 lần chiều cao khối chữ so với bề rộng đo được
+    if (rong > 600) {
+      const co = Math.max(72, Math.floor(116 * 600 / rong));
+      ts.querySelectorAll('.dong').forEach((e) => (e.style.fontSize = co + 'px'));
+      if (co === 72) canh.push('chữ dài, đã thu cỡ chữ còn 72px (mức thấp nhất, nên rút ngắn chữ hoặc ghi "doc": {"dong1", "dong2"} ngắn hơn)');
+    }
+  }
+  const s = sec.getBoundingClientRect();
+  for (const e of sec.querySelectorAll('.ts .dong, .tt .lon, .tt .phu, .so, .don-vi, .kenh')) {
+    const r = e.getBoundingClientRect(), tren = r.top - s.top, duoi = r.bottom - s.top, chu = !e.classList.contains('kenh');
+    // chữ: trong dải 16:9 giữa khung (y 437–843); nhãn kênh: trong dải 4:5 (y 190–1090)
+    const [a, b] = chu ? [437, 843] : [190, 1090];
+    if (tren < a || duoi > b || r.left - s.left < 20 || r.right - s.left > 700)
+      canh.push(`"${(e.dataset.chu || e.textContent).trim().slice(0, 24)}" ra ngoài vùng an toàn (y ${a}–${b}, x 20–700)`);
+  }
+  for (const img of sec.querySelectorAll('img')) if (!img.naturalWidth) canh.push(`không nạp được ảnh ${img.getAttribute('src')}`);
+  sec.dataset.goc = 'fhd';
+  sec.dataset.canh = canh.join(' | ');
+}
+
+function hsl(r, g, b) {
+  r /= 255; g /= 255; b /= 255;
+  const mx = Math.max(r, g, b), mn = Math.min(r, g, b), d = mx - mn, l = (mx + mn) / 2;
+  if (!d) return [0, 0, l];
+  const s = d / (1 - Math.abs(2 * l - 1));
+  const h = mx === r ? ((g - b) / d) % 6 : mx === g ? (b - r) / d + 2 : (r - g) / d + 4;
+  return [(h * 60 + 360) % 360, s, l];
+}
+// ảnh xám (bão hoà < 0,18) hoặc lạnh -> chữ lửa (vàng-cam); ấm (< 75° hoặc ≥ 330°) -> chữ băng (trắng-xanh lơ); xanh lá (75–140°) -> chữ hồng
+function chonMau(h, s) { if (s < 0.18) return 'lua'; if (h < 75 || h >= 330) return 'bang'; if (h < 140) return 'hong'; return 'lua'; }
+function doMau(sec) {
+  if (sec.dataset.mau || !sec.dataset.vung) return;
+  const img = sec.querySelector('img.nen'), cs = getComputedStyle(img);
+  const bw = img.clientWidth, bh = img.clientHeight, bx = img.offsetLeft, by = img.offsetTop;
+  const [px, py] = cs.objectPosition.split(' ').map((v) => parseFloat(v) / 100);
+  const k = Math.max(bw / img.naturalWidth, bh / img.naturalHeight);
+  const ox = bx + (bw - img.naturalWidth * k) * px, oy = by + (bh - img.naturalHeight * k) * py;
+  const [x, y, w, hh] = sec.dataset.vung.split(',').map(Number);
+  const c = document.createElement('canvas'); c.width = 48; c.height = 27;
+  const g = c.getContext('2d');
+  g.drawImage(img, (x - ox) / k, (y - oy) / k, w / k, hh / k, 0, 0, 48, 27);
+  const d = g.getImageData(0, 0, 48, 27).data;
+  let sx = 0, sy = 0, ss = 0, n = 0;
+  for (let i = 0; i < d.length; i += 4) {
+    const [hu, s] = hsl(d[i], d[i + 1], d[i + 2]);
+    sx += Math.cos(hu * Math.PI / 180) * s; sy += Math.sin(hu * Math.PI / 180) * s; ss += s; n++;
+  }
+  const hue = (Math.atan2(sy, sx) * 180 / Math.PI + 360) % 360, sat = ss / n;
+  sec.dataset.mau = chonMau(hue, sat);
+  sec.dataset.sac = `${Math.round(hue)}°/${sat.toFixed(2)}`;
+}
+
+// ---------- tự soát ----------
+const demTu = (...t) => t.filter(Boolean).join(' ').trim().split(/\s+/).filter((w) => /[\p{L}\p{N}]/u.test(w)).length;
+// Luật giãn cách kênh Ngân hàng (Trung yêu cầu 30/10/2026 sau lượt mẫu: chữ sát logo và sát hình trông như lỗi).
+// Đo trên mép thật của nét chữ, kể cả dấu tiếng Việt (dấu sắc, ngã trên chữ in hoa; dấu nặng, chân g dưới dòng),
+// không đo trên hộp dòng của trình duyệt. Khoảng tính bằng điểm ảnh trên khung 1280×720.
+const KHOANG_NH = { nhan: 36, dong: 22, hinh: 44, nhanHinh: 28, le: 44 };
+const _do = document.createElement('canvas').getContext('2d');
+// mép nét của một dòng chữ (một dòng, white-space nowrap): đường chân chữ tính từ line-height và số đo phông
+function mucChu(e, s) {
+  const cs = getComputedStyle(e), r = e.getBoundingClientRect();
+  _do.font = `${cs.fontWeight} ${cs.fontSize} BVPK`;
+  const m = _do.measureText(e.dataset.chu), L = parseFloat(cs.lineHeight);
+  const chan = r.top - s.top + (L - m.fontBoundingBoxAscent - m.fontBoundingBoxDescent) / 2 + m.fontBoundingBoxAscent;
+  return { tren: chan - m.actualBoundingBoxAscent, duoi: chan + m.actualBoundingBoxDescent, trai: r.left - s.left, phai: r.left - s.left + e.scrollWidth };
+}
+// mép nét của hình vẽ: vùng ảnh thật sự hiện (object-fit), rồi bỏ phần nền trùng màu góc ảnh (hình chụp từ video có nền phẳng)
+function mucHinh(img, s) {
+  const r = img.getBoundingClientRect(), cs = getComputedStyle(img), nw = img.naturalWidth, nh = img.naturalHeight;
+  if (!nw) return null;
+  const k = (cs.objectFit === 'cover' ? Math.max : Math.min)(r.width / nw, r.height / nh);
+  const [px, py] = cs.objectPosition.split(' ').map((v) => parseFloat(v) / 100);
+  const cw = nw * k, ch = nh * k, x0 = r.left - s.left + (r.width - cw) * px, y0 = r.top - s.top + (r.height - ch) * py;
+  const W = 240, H = Math.max(1, Math.round(240 * nh / nw)), c = document.createElement('canvas'); c.width = W; c.height = H;
+  const g = c.getContext('2d'); g.drawImage(img, 0, 0, W, H);
+  const d = g.getImageData(0, 0, W, H).data, n0 = [d[0], d[1], d[2]];
+  let a = W, b = H, cc = -1, dd = -1;
+  for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) {
+    const i = (y * W + x) * 4;
+    if (Math.abs(d[i] - n0[0]) + Math.abs(d[i + 1] - n0[1]) + Math.abs(d[i + 2] - n0[2]) > 24) { a = Math.min(a, x); cc = Math.max(cc, x); b = Math.min(b, y); dd = Math.max(dd, y); }
+  }
+  if (cc < 0) return null;
+  // cover cắt bớt ảnh: giới hạn trong hộp hiển thị
+  const tren = Math.max(r.top - s.top, y0 + b * ch / H), duoi = Math.min(r.bottom - s.top, y0 + (dd + 1) * ch / H);
+  const trai = Math.max(r.left - s.left, x0 + a * cw / W), phai = Math.min(r.right - s.left, x0 + (cc + 1) * cw / W);
+  return { tren, duoi, trai, phai };
+}
+const giaoNgang = (p, q) => p && q && p.trai < q.phai && q.trai < p.phai;
+function xepNH(sec, h, khoi, dong, canh) {
+  const s = sec.getBoundingClientRect(), K = Object.assign({}, KHOANG_NH, h.khoang || {});
+  const nhanEl = sec.querySelector('.kenh-nh'), rn = nhanEl?.getBoundingClientRect();
+  const nhan = rn && { tren: rn.top - s.top, duoi: rn.bottom - s.top, trai: rn.left - s.left, phai: rn.right - s.left };
+  // "chu_duoi": dòng cuối nằm sát mép dưới nên không được lấn góc dưới phải (YouTube đè thời lượng): thu riêng dòng đó cho vừa x ≤ 1050
+  if (h.xep === 'chu_duoi') {
+    const e = dong.at(-1), lim = 1050 - parseFloat(khoi.style.left);
+    if (e.scrollWidth > lim) {
+      const co = Math.floor(parseFloat(getComputedStyle(e).fontSize) * lim / e.scrollWidth);
+      e.style.fontSize = co + 'px';
+      canh.push(co < 76 ? `LỖI: dòng "${e.dataset.chu.slice(0, 20)}" phải thu còn ${co}px để tránh góc thời lượng, phải rút ngắn` : `dòng "${e.dataset.chu.slice(0, 20)}" thu còn ${co}px để tránh góc thời lượng`);
+    }
+  }
+  // 1. khoảng giữa hai dòng: đặt đúng K.dong từ chân nét dòng 1 tới đỉnh nét dòng 2
+  for (let i = 1; i < dong.length; i++) {
+    const m1 = mucChu(dong[i - 1], s), m2 = mucChu(dong[i], s);
+    dong[i].style.marginTop = (parseFloat(getComputedStyle(dong[i]).marginTop) + K.dong - (m2.tren - m1.duoi)) + 'px';
+  }
+  // 2. chữ dưới nhãn kênh (khi cùng phía): đỉnh nét dòng 1 cách chân nhãn ít nhất K.nhan; chữ đặt ở trên cùng thì cách mép K.le
+  let m1 = mucChu(dong[0], s);
+  const tren = giaoNgang(nhan, m1) && nhan.tren < 360 ? nhan.duoi + K.nhan : K.le;
+  if (h.xep === 'chu_duoi') {
+    // "chu_duoi": chân nét dòng cuối cách mép dưới K.le (dòng cuối nên ngắn để không lấn góc dưới phải)
+    const mc = mucChu(dong.at(-1), s);
+    khoi.style.top = (parseFloat(khoi.style.top) + (720 - K.le - mc.duoi)) + 'px';
+  } else if (h.xep === 'chu_tren' || m1.tren < tren) {
+    const doi = tren - m1.tren;
+    khoi.style.top = (parseFloat(khoi.style.top) + doi) + 'px';
+    if (h.xep !== 'chu_tren' && doi > 1) canh.push(`chữ sát nhãn kênh, đã dời xuống ${Math.round(doi)}px`);
+  }
+  const mc = dong.map((e) => mucChu(e, s));
+  const chu = { tren: mc[0].tren, duoi: mc.at(-1).duoi, trai: Math.min(...mc.map((m) => m.trai)), phai: Math.max(...mc.map((m) => m.phai)) };
+  // 3. "xep": "chu_tren": hình vẽ lấp phần dưới khối chữ, cách chân chữ K.hinh, lề K.le; giữ trọn hình (contain), căn giữa
+  const img = sec.querySelector('img.nen');
+  if (img && h.xep === 'chu_duoi') {
+    // hình vẽ lấp phần giữa nhãn kênh và khối chữ
+    const y = Math.round(nhan && nhan.tren < 360 ? nhan.duoi + K.nhanHinh : K.le), y2 = Math.round(chu.tren - K.hinh);
+    Object.assign(img.style, { left: K.le + 'px', top: y + 'px', width: (1280 - 2 * K.le) + 'px', height: (y2 - y) + 'px', objectFit: 'contain', objectPosition: h.vi_tri || '50% 50%' });
+  }
+  if (img && h.xep === 'chu_tren') {
+    const y = Math.round(chu.duoi + K.hinh), duoi = h.le_duoi ?? 36;
+    Object.assign(img.style, { left: K.le + 'px', top: y + 'px', width: (1280 - 2 * K.le) + 'px', height: (720 - y - duoi) + 'px', objectFit: 'contain', objectPosition: h.vi_tri || '50% 100%' });
+  }
+  // "the_hinh": true: hình vẽ thành thẻ bo góc (hộp ảnh thu đúng vùng ảnh hiện), dùng khi vùng cắt có nền chuyển màu khác nền phẳng
+  if (img && h.the_hinh && img.naturalWidth) {
+    const w = img.offsetWidth, hh = img.offsetHeight, k = Math.min(w / img.naturalWidth, hh / img.naturalHeight);
+    const cw = Math.round(img.naturalWidth * k), ch = Math.round(img.naturalHeight * k);
+    const [px, py] = getComputedStyle(img).objectPosition.split(' ').map((v) => parseFloat(v) / 100);
+    Object.assign(img.style, { left: (img.offsetLeft + (w - cw) * px) + 'px', top: (img.offsetTop + (hh - ch) * py) + 'px', width: cw + 'px', height: ch + 'px',
+      objectFit: 'fill', borderRadius: '18px', boxShadow: '0 10px 30px rgba(0,0,0,.18)' });
+  }
+  // 4. kiểm: chữ với hình, nhãn với hình, lề ngoài; tỉ lệ chiều cao chữ và hình
+  const hinh = img && mucHinh(img, s);
+  if (hinh && giaoNgang(chu, hinh)) {
+    const kc = Math.min(Math.abs(hinh.tren - chu.duoi), Math.abs(chu.tren - hinh.duoi));
+    const chong = hinh.tren < chu.duoi && chu.tren < hinh.duoi;
+    if (chong || kc < K.hinh - 0.5) canh.push(chong ? 'chữ đè lên hình vẽ' : `chữ cách hình vẽ ${Math.round(kc)}px (tối thiểu ${K.hinh})`);
+  }
+  if (hinh && nhan && giaoNgang(nhan, hinh) && hinh.tren < nhan.duoi + K.nhanHinh && hinh.duoi > nhan.tren) canh.push(`hình vẽ cách nhãn kênh dưới ${K.nhanHinh}px`);
+  if (chu.trai < K.le - 1 || chu.phai > 1280 - K.le + 1 || chu.duoi > 720 - K.le + 8) canh.push(`chữ sát mép khung (lề tối thiểu ${K.le}px)`);
+  const tlChu = (chu.duoi - chu.tren) / 720, tlHinh = hinh ? (hinh.duoi - hinh.tren) / 720 : 0;
+  sec.dataset.tiLe = `chữ ${Math.round(tlChu * 100)}% · hình ${Math.round(tlHinh * 100)}% chiều cao`;
+  if (hinh && h.xep && tlHinh < 0.25) canh.push(`hình vẽ chỉ cao ${Math.round(tlHinh * 100)}% khung (nên từ 25%): rút ngắn chữ hoặc cắt hình vẽ gọn hơn`);
+}
+
+function soatNH(sec, h, canh) {
+  // dòng nào dài hơn hộp "chu" thì thu cỡ riêng dòng đó, tối đa còn 80%
+  const khoi = sec.querySelector('.khoi-nh'), dong = [...khoi.querySelectorAll('.chu-nh')];
+  const cho = (h.chu?.w ?? 1160) - (h.the_chu ? 68 : 0);
+  for (const e of dong) {
+    const rong = e.scrollWidth;
+    if (rong <= cho) continue;
+    // "thu_min": mức thu nhỏ nhất cho phép (mặc định 0,8); thuật ngữ dài giữ một hàng thì đặt thấp hơn, khuôn vẫn chặn dưới 76px
+    const k = Math.max(h.thu_min ?? 0.8, cho / rong);
+    e.style.fontSize = Math.floor(parseFloat(getComputedStyle(e).fontSize) * k) + 'px';
+    canh.push(`dòng "${e.dataset.chu.slice(0, 20)}" dài hơn hộp chữ, đã thu cỡ còn ${Math.round(k * 100)}%`);
+    if (e.scrollWidth > cho + 1) canh.push(`LỖI: dòng "${e.dataset.chu.slice(0, 20)}" vẫn tràn khỏi hộp chữ sau khi thu cỡ tối đa, phải rút ngắn`);
+  }
+  // mục 0b quy tắc 2: hai dòng, cả câu 4–8 từ; chữ phải đọc được ở cỡ điện thoại 168×94 (cỡ chữ quy về đó tối thiểu 10 điểm ảnh)
+  const tu = demTu(h.dong1, h.dong2);
+  if (tu < 4 || tu > 8) canh.push(`chữ có ${tu} từ, quy tắc kênh Ngân hàng 4–8 từ`);
+  for (const e of dong) {
+    // 76 điểm ảnh trên khung 1280 là 10 điểm ảnh ở cỡ 168×94
+    const co = parseFloat(getComputedStyle(e).fontSize);
+    if (co < 76) canh.push(`dòng "${e.dataset.chu.slice(0, 20)}" cỡ ${Math.round(co)}px, ở cỡ điện thoại chỉ còn ${(co * 168 / 1280).toFixed(1)}px (tối thiểu 76px, tức 10px ở cỡ điện thoại)`);
+  }
+  sec.dataset.coChu = dong.map((e) => Math.round(parseFloat(getComputedStyle(e).fontSize))).join('/');
+  xepNH(sec, h, khoi, dong, canh);
+  // hộp từng dòng (toạ độ khung 1280×720) để xuat.mjs đo tương phản chữ với nền
+  const s = sec.getBoundingClientRect();
+  sec.dataset.dongChu = JSON.stringify(dong.map((e) => { const r = e.getBoundingClientRect(); return { chu: e.dataset.chu, mau: getComputedStyle(e).color, hop: [r.left - s.left, r.top - s.top, r.width, r.height].map(Math.round) }; }));
+}
+
+function soat(sec, h) {
+  const canh = [];
+  if (h.bo_cuc === 'NH') soatNH(sec, h, canh);
+  const ts = sec.querySelector('.ts');
+  if (ts) {
+    // khối chữ không được rộng quá 900 điểm ảnh: thu cỡ chữ, tối đa còn 80%
+    const rong = Math.max(...[...ts.children].map((e) => e.offsetWidth));
+    if (rong > 900) {
+      const co = Math.max(93, Math.floor(116 * 900 / rong));
+      ts.querySelectorAll('.dong').forEach((e) => (e.style.fontSize = co + 'px'));
+      canh.push(`chữ dài, đã thu cỡ chữ còn ${co}px` + (co === 93 ? ' (mức thấp nhất, nên rút ngắn chữ)' : ''));
+    }
+    // tối đa 7 từ, dòng tô màu tối đa 4 từ (Trung chốt 28/10/2026, thay quy tắc 5 từ; cong_thuc_hinh_thu_nho.md mục 1.1)
+    if (demTu(h.dong1, h.dong2) > 7) canh.push(`chữ có ${demTu(h.dong1, h.dong2)} từ, quy tắc tối đa 7 từ`);
+    if (demTu(h.dong2) > 4) canh.push(`dòng tô màu có ${demTu(h.dong2)} từ, quy tắc tối đa 4 từ`);
+  }
+  if (h.bo_cuc === 'L2' && demTu(h.chu_lon) > 7) canh.push(`chữ lớn có ${demTu(h.chu_lon)} từ, quy tắc tối đa 7 từ`);
+  // vùng góc dưới phải 220×110: YouTube đè nhãn thời lượng
+  for (const e of sec.querySelectorAll('.ts .dong, .tt .lon, .tt .phu, .so, .don-vi, .chu-may, .chip, .nhan-so, .vong, .nhan-vong, .chu-nh, .kenh-nh')) {
+    const r = e.getBoundingClientRect(), s = sec.getBoundingClientRect();
+    const x2 = r.right - s.left, y2 = r.bottom - s.top;
+    if (x2 > 1060 && y2 > 610 && r.left - s.left < 1280 && r.top - s.top < 720) canh.push(`"${(e.dataset.chu || e.textContent).trim().slice(0, 24)}" lấn vào góc dưới phải (nhãn thời lượng)`);
+  }
+  // ảnh đủ độ phân giải cho bản gốc 3840×2160 không (không phóng to ảnh nhỏ)
+  let du4k = true;
+  for (const img of sec.querySelectorAll('img')) {
+    if (!img.naturalWidth) { canh.push(`không nạp được ảnh ${img.getAttribute('src')}`); du4k = false; continue; }
+    const r = img.getBoundingClientRect();
+    // object-fit: contain (hình vẽ của bố cục NH) thu theo chiều chật hơn; cover và ảnh ghép thu theo chiều rộng hơn
+    const vua = getComputedStyle(img).objectFit === 'contain' ? Math.min : Math.max;
+    const k = vua(img.clientWidth / img.naturalWidth, img.clientHeight / img.naturalHeight) * (r.width / img.clientWidth);
+    if (k * 3 > 1.02) du4k = false;
+  }
+  sec.dataset.goc = du4k ? '4k' : 'fhd';
+  if (!du4k) canh.push('ảnh không đủ 3840 điểm ảnh cho vùng nó chiếm: bản gốc xuất 1920×1080');
+  sec.dataset.canh = canh.join(' | ');
+}
+
+function phuLuoi(sec) {
+  const l = document.createElement('div'); l.className = 'luoi';
+  for (let x = 0; x < 1280; x += 160) for (let y = 0; y < 720; y += 160) l.insertAdjacentHTML('beforeend', `<b style="left:${x + 2}px;top:${y + 2}px">${x},${y}</b>`);
+  sec.appendChild(l);
+  sec.insertAdjacentHTML('beforeend', `<div class="nhan-id">${sec.id} · ${sec.dataset.mau || ''} · ${sec.dataset.goc}</div>`);
+}
+
+(async () => {
+  try {
+    const ke = napKeKhai();
+    KENH = ke.kenh || 'dien';
+    if (!['dien', 'ngan_hang'].includes(KENH)) throw new Error(`"kenh": "${KENH}" không có (dien, ngan_hang)`);
+    if (KENH === 'ngan_hang') await new Promise((ok, loi) => { const sc = document.createElement('script'); sc.src = LOGO_NH; sc.onload = ok; sc.onerror = () => loi(new Error('không nạp được logo kênh ' + LOGO_NH)); document.head.appendChild(sc); });
+    const ds = ke.hinh.filter((h) => !thamSo.get('chi') || thamSo.get('chi').split(',').includes(h.id));
+    const secs = ds.map((h) => { const s = DOC ? dungDoc(h) : dung(h); document.body.appendChild(s); return [s, h]; });
+    await document.fonts.ready;
+    await Promise.all([...document.images].map((i) => i.decode().catch(() => {})));
+    for (const [s, h] of secs) { doMau(s); (DOC ? soatDoc : soat)(s, h); if (thamSo.get('luoi')) phuLuoi(s); }
+    document.body.dataset.xong = '1';
+  } catch (e) {
+    document.body.dataset.xong = 'loi: ' + e.message;
+    document.body.insertAdjacentHTML('afterbegin', `<pre style="color:#f66;font:16px monospace">${esc(e.message)}</pre>`);
+  }
+})();
+</script>
+</body>
+</html>

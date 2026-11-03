@@ -1,0 +1,652 @@
+{
+  "version": 1,
+  "historyId": "a20f3661-394c-4f60-8fce-7f645ed68a08",
+  "currentRevision": "02680304-984f-4c1d-952b-c1da7f432e5e",
+  "pendingChanges": false,
+  "files": {
+    "AGENTS.md": {
+      "hash": "1b36171117cb7c18f4100a0db6a3782ff2e096115995733200445cc2e80a4060",
+      "content": "/Users/macbooktrungnt/.cache/hyperframes/history/a20f3661-394c-4f60-8fce-7f645ed68a08/blobs/1b/1b36171117cb7c18f4100a0db6a3782ff2e096115995733200445cc2e80a4060"
+    },
+    "CLAUDE.md": {
+      "hash": "1b36171117cb7c18f4100a0db6a3782ff2e096115995733200445cc2e80a4060",
+      "content": "/Users/macbooktrungnt/.cache/hyperframes/history/a20f3661-394c-4f60-8fce-7f645ed68a08/blobs/1b/1b36171117cb7c18f4100a0db6a3782ff2e096115995733200445cc2e80a4060"
+    },
+    "assets/du_lieu_video.json": {
+      "hash": "225204c72e0595b256389bff68008e5036fadbf9b916af4c1938aac91c349817",
+      "content": "/Users/macbooktrungnt/.cache/hyperframes/history/a20f3661-394c-4f60-8fce-7f645ed68a08/blobs/22/225204c72e0595b256389bff68008e5036fadbf9b916af4c1938aac91c349817"
+    },
+    "compositions/canh-01.html": {
+      "hash": "356f6fe13c9eaf27c07b27faf78925c7ead7e87d422b611b60303a9cc0c40dee",
+      "content": "/Users/macbooktrungnt/.cache/hyperframes/history/a20f3661-394c-4f60-8fce-7f645ed68a08/blobs/35/356f6fe13c9eaf27c07b27faf78925c7ead7e87d422b611b60303a9cc0c40dee"
+    },
+    "compositions/canh-02.html": {
+      "hash": "bf6a96455674a77d2c7c2688bf453676f3d3885220da934bc150dc38e156d286",
+      "content": "/Users/macbooktrungnt/.cache/hyperframes/history/a20f3661-394c-4f60-8fce-7f645ed68a08/blobs/bf/bf6a96455674a77d2c7c2688bf453676f3d3885220da934bc150dc38e156d286"
+    },
+    "compositions/canh-03.html": {
+      "hash": "5425128df90cf41a07d0962a672e1d08da710aa90e1724d478e0f830c663685b",
+      "content": "/Users/macbooktrungnt/.cache/hyperframes/history/a20f3661-394c-4f60-8fce-7f645ed68a08/blobs/54/5425128df90cf41a07d0962a672e1d08da710aa90e1724d478e0f830c663685b"
+    },
+    "compositions/canh-04.html": {
+      "hash": "3e93de9bf0c482570bc7224abe3735257d69b099daa1f595647575c6200d3c9e",
+      "content": "/Users/macbooktrungnt/.cache/hyperframes/history/a20f3661-394c-4f60-8fce-7f645ed68a08/blobs/3e/3e93de9bf0c482570bc7224abe3735257d69b099daa1f595647575c6200d3c9e"
+    },
+    "compositions/canh-05.html": {
+      "hash": "4d0a37ef3d738e8229cef76a54f9009a79e610b9968eca88518289d57ccec654",
+      "content": "/Users/macbooktrungnt/.cache/hyperframes/history/a20f3661-394c-4f60-8fce-7f645ed68a08/blobs/4d/4d0a37ef3d738e8229cef76a54f9009a79e610b9968eca88518289d57ccec654"
+    },
+    "compositions/canh-06.html": {
+      "hash": "48eabd8821d6b9f4bdd666574d5672e0b35b1b08350e43a0f7d2d772f522f5b4",
+      "content": "/Users/macbooktrungnt/.cache/hyperframes/history/a20f3661-394c-4f60-8fce-7f645ed68a08/blobs/48/48eabd8821d6b9f4bdd666574d5672e0b35b1b08350e43a0f7d2d772f522f5b4"
+    },
+    "compositions/canh-07.html": {
+      "hash": "61b70d26b505111e91304534e20404d5abcbaf3bd940a467d4898fffc5141a73",
+      "content": "/Users/macbooktrungnt/.cache/hyperframes/history/a20f3661-394c-4f60-8fce-7f645ed68a08/blobs/61/61b70d26b505111e91304534e20404d5abcbaf3bd940a467d4898fffc5141a73"
+    },
+    "compositions/canh-08.html": {
+      "hash": "e0e3c93cad3f91d5cd14aedacaf8f24c960dbdbdac75dbf19bbee8d4200ca94c",
+      "content": "/Users/macbooktrungnt/.cache/hyperframes/history/a20f3661-394c-4f60-8fce-7f645ed68a08/blobs/e0/e0e3c93cad3f91d5cd14aedacaf8f24c960dbdbdac75dbf19bbee8d4200ca94c"
+    },
+    "compositions/canh-09.html": {
+      "hash": "6c8191676737271bd1a9be9a129c884c12f3b0a6680314bfd23cfe4b7a95ef1f",
+      "content": "/Users/macbooktrungnt/.cache/hyperframes/history/a20f3661-394c-4f60-8fce-7f645ed68a08/blobs/6c/6c8191676737271bd1a9be9a129c884c12f3b0a6680314bfd23cfe4b7a95ef1f"
+    },
+    "compositions/canh-10.html": {
+      "hash": "82309b3654f617714eb2289720bd3f346be4762d9841a6fba8e4c801defad7b7",
+      "content": "/Users/macbooktrungnt/.cache/hyperframes/history/a20f3661-394c-4f60-8fce-7f645ed68a08/blobs/82/82309b3654f617714eb2289720bd3f346be4762d9841a6fba8e4c801defad7b7"
+    },
+    "compositions/canh-11.html": {
+      "hash": "f615289c9c23ed879fca8dcdcb384064905eabd2ea2259c03f3c8f149eca8ebc",
+      "content": "/Users/macbooktrungnt/.cache/hyperframes/history/a20f3661-394c-4f60-8fce-7f645ed68a08/blobs/f6/f615289c9c23ed879fca8dcdcb384064905eabd2ea2259c03f3c8f149eca8ebc"
+    },
+    "compositions/canh-12.html": {
+      "hash": "8602442799ebd3abc8d8f929f44bd7c22d0cab8a2394ee3196ea8b7afed4336e",
+      "content": "/Users/macbooktrungnt/.cache/hyperframes/history/a20f3661-394c-4f60-8fce-7f645ed68a08/blobs/86/8602442799ebd3abc8d8f929f44bd7c22d0cab8a2394ee3196ea8b7afed4336e"
+    },
+    "compositions/canh-13.html": {
+      "hash": "1482c54ab920bcfe41192f83e70edffc9feb9864ec40c3a16614c287c2f0fb68",
+      "content": "/Users/macbooktrungnt/.cache/hyperframes/history/a20f3661-394c-4f60-8fce-7f645ed68a08/blobs/14/1482c54ab920bcfe41192f83e70edffc9feb9864ec40c3a16614c287c2f0fb68"
+    },
+    "compositions/canh-14.html": {
+      "hash": "c3fbc6b9ef484d057efb3b6caa5e966116987bab585817cb95a51f5e1abcfe9e",
+      "content": "/Users/macbooktrungnt/.cache/hyperframes/history/a20f3661-394c-4f60-8fce-7f645ed68a08/blobs/c3/c3fbc6b9ef484d057efb3b6caa5e966116987bab585817cb95a51f5e1abcfe9e"
+    },
+    "compositions/nen.html": {
+      "hash": "4ba2c3895eaf30f4aaa26c576f21e458abbf5c2639eeafb359e3dadfa11538a1",
+      "content": "/Users/macbooktrungnt/.cache/hyperframes/history/a20f3661-394c-4f60-8fce-7f645ed68a08/blobs/4b/4ba2c3895eaf30f4aaa26c576f21e458abbf5c2639eeafb359e3dadfa11538a1"
+    },
+    "compositions/phu-de.html": {
+      "hash": "f73f62b1b6341211269272c10c9ef6eb0925a391ca8b40f65831e46bfd47862f",
+      "content": "/Users/macbooktrungnt/.cache/hyperframes/history/a20f3661-394c-4f60-8fce-7f645ed68a08/blobs/f7/f73f62b1b6341211269272c10c9ef6eb0925a391ca8b40f65831e46bfd47862f"
+    },
+    "hyperframes.json": {
+      "hash": "53dbce1e19aa713cbb12ee0bc4d206143b45ab15e6ffbfcaa8f69572d4d24d50",
+      "content": "/Users/macbooktrungnt/.cache/hyperframes/history/a20f3661-394c-4f60-8fce-7f645ed68a08/blobs/53/53dbce1e19aa713cbb12ee0bc4d206143b45ab15e6ffbfcaa8f69572d4d24d50"
+    },
+    "index.html": {
+      "hash": "6c3092a3df836ff8929626f6843e68961f4dbeb81ce144fbc449433a1a485d6d",
+      "content": "/Users/macbooktrungnt/.cache/hyperframes/history/a20f3661-394c-4f60-8fce-7f645ed68a08/blobs/6c/6c3092a3df836ff8929626f6843e68961f4dbeb81ce144fbc449433a1a485d6d"
+    },
+    "meta.json": {
+      "hash": "9a74f3cd68f3b9ac11554d11725edd1acecaa2f693f97589eb9c88e4d65028e7",
+      "content": "/Users/macbooktrungnt/.cache/hyperframes/history/a20f3661-394c-4f60-8fce-7f645ed68a08/blobs/9a/9a74f3cd68f3b9ac11554d11725edd1acecaa2f693f97589eb9c88e4d65028e7"
+    },
+    "package.json": {
+      "hash": "763007e8f59ce785643648430e6150f2f66043fa1dd82eda5fb0e377c26eb5cc",
+      "content": "/Users/macbooktrungnt/.cache/hyperframes/history/a20f3661-394c-4f60-8fce-7f645ed68a08/blobs/76/763007e8f59ce785643648430e6150f2f66043fa1dd82eda5fb0e377c26eb5cc"
+    },
+    "tao_trang.mjs": {
+      "hash": "8b774db0bad9a5cb42303ecb0249c0661076b1cfa043294c11d0feae6ee01b6d",
+      "content": "/Users/macbooktrungnt/.cache/hyperframes/history/a20f3661-394c-4f60-8fce-7f645ed68a08/blobs/8b/8b774db0bad9a5cb42303ecb0249c0661076b1cfa043294c11d0feae6ee01b6d"
+    },
+    "assets/giong_doc.mp3": {
+      "hash": "cc58d4b1cb09976f9a9792630c93f4ddeae1a95bf3280415c8b271b1ca935797",
+      "content": "/Users/macbooktrungnt/.cache/hyperframes/history/a20f3661-394c-4f60-8fce-7f645ed68a08/blobs/cc/cc58d4b1cb09976f9a9792630c93f4ddeae1a95bf3280415c8b271b1ca935797"
+    }
+  },
+  "revisions": {
+    "effe3dd8-6893-4585-b924-52dd66ee5cdc": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1793019787549,
+      "endedAt": 1793019787659,
+      "files": {
+        "compositions/canh-05.html": {
+          "before": "/Users/macbooktrungnt/.cache/hyperframes/history/a20f3661-394c-4f60-8fce-7f645ed68a08/blobs/04/04e2e7e22fc291fffa613295fbe34b66f25e5345073d0f5274d5c8f7e3032d08",
+          "after": "/Users/macbooktrungnt/.cache/hyperframes/history/a20f3661-394c-4f60-8fce-7f645ed68a08/blobs/16/16d2ee5b0136a1c260b61cbb4f5b28e26a1a832232bb4d5399758999b9ac871e"
+        },
+        "tao_trang.mjs": {
+          "before": "/Users/macbooktrungnt/.cache/hyperframes/history/a20f3661-394c-4f60-8fce-7f645ed68a08/blobs/ff/ff870554cc00323b25a05817e7202897de56bec4f2a7ff8fc4d8c128edf04306",
+          "after": "/Users/macbooktrungnt/.cache/hyperframes/history/a20f3661-394c-4f60-8fce-7f645ed68a08/blobs/94/9421fa6fd74e19db35c69b688e61cd70ab48adc7b2ae2d6952774026ef07011f"
+        }
+      }
+    },
+    "c1abae26-dbc3-44f8-a493-2b2b35b38059": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1793019826779,
+      "endedAt": 1793019826792,
+      "files": {
+        "compositions/canh-05.html": {
+          "before": "/Users/macbooktrungnt/.cache/hyperframes/history/a20f3661-394c-4f60-8fce-7f645ed68a08/blobs/16/16d2ee5b0136a1c260b61cbb4f5b28e26a1a832232bb4d5399758999b9ac871e",
+          "after": "/Users/macbooktrungnt/.cache/hyperframes/history/a20f3661-394c-4f60-8fce-7f645ed68a08/blobs/4d/4d0a37ef3d738e8229cef76a54f9009a79e610b9968eca88518289d57ccec654"
+        },
+        "tao_trang.mjs": {
+          "before": "/Users/macbooktrungnt/.cache/hyperframes/history/a20f3661-394c-4f60-8fce-7f645ed68a08/blobs/94/9421fa6fd74e19db35c69b688e61cd70ab48adc7b2ae2d6952774026ef07011f",
+          "after": "/Users/macbooktrungnt/.cache/hyperframes/history/a20f3661-394c-4f60-8fce-7f645ed68a08/blobs/65/655feb2aaa22e21f501dfc5950ef77cbb69aa0e90e75780faae263205ad87309"
+        }
+      }
+    },
+    "02680304-984f-4c1d-952b-c1da7f432e5e": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1793019890348,
+      "endedAt": 1793019890357,
+      "files": {
+        "compositions/canh-01.html": {
+          "before": "/Users/macbooktrungnt/.cache/hyperframes/history/a20f3661-394c-4f60-8fce-7f645ed68a08/blobs/6c/6c16544cc2f8aa74e6b32b30a177bc9d62588b1aaf95d87741087a452d83ff35",
+          "after": "/Users/macbooktrungnt/.cache/hyperframes/history/a20f3661-394c-4f60-8fce-7f645ed68a08/blobs/35/356f6fe13c9eaf27c07b27faf78925c7ead7e87d422b611b60303a9cc0c40dee"
+        },
+        "tao_trang.mjs": {
+          "before": "/Users/macbooktrungnt/.cache/hyperframes/history/a20f3661-394c-4f60-8fce-7f645ed68a08/blobs/65/655feb2aaa22e21f501dfc5950ef77cbb69aa0e90e75780faae263205ad87309",
+          "after": "/Users/macbooktrungnt/.cache/hyperframes/history/a20f3661-394c-4f60-8fce-7f645ed68a08/blobs/8b/8b774db0bad9a5cb42303ecb0249c0661076b1cfa043294c11d0feae6ee01b6d"
+        }
+      }
+    }
+  },
+  "checks": {
+    "latest": {
+      "revision": "02680304-984f-4c1d-952b-c1da7f432e5e",
+      "id": "e9751b4e-6da9-4ecc-901b-65fbcb1e3678"
+    },
+    "revisions": {
+      "effe3dd8-6893-4585-b924-52dd66ee5cdc": [
+        {
+          "id": "be1fca18-8cfd-4375-9dc1-7234c3ac4af9",
+          "scope": "project",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 3000,
+              "contrast": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto"
+            }
+          },
+          "createdAt": 1793019792628,
+          "contentHash": "93a72808e282f397a2fb4ae24f195d773504858ad75e840806bb117ee5ac0c67",
+          "revision": "effe3dd8-6893-4585-b924-52dd66ee5cdc",
+          "inputFingerprint": "d26eb8a0ea6dbf29e6ad2cb9b76ed4f5783d48201811aeb47f895f7f671da428",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "8eeb255a-84d7-47c1-baf9-b0ef77ec72b8"
+        }
+      ],
+      "02680304-984f-4c1d-952b-c1da7f432e5e": [
+        {
+          "id": "e9751b4e-6da9-4ecc-901b-65fbcb1e3678",
+          "scope": "project",
+          "report": "/Users/macbooktrungnt/Documents/VideoNganHang/xuong_thu_hyperframes/model_nho/.hyperframes/artifacts/checks/e9751b4e-6da9-4ecc-901b-65fbcb1e3678.json",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 3000,
+              "contrast": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto"
+            }
+          },
+          "createdAt": 1793019895219,
+          "contentHash": "f119cf455ae7f846c78c3cc2a176017c419f52c3d4c2b779bd8af4e84fc7ffe2",
+          "revision": "02680304-984f-4c1d-952b-c1da7f432e5e",
+          "inputFingerprint": "88d00193f7a77b7d07605a4075eb40b3c62c317ee086e87bd568cf4fa072fede",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ]
+    },
+    "unversioned": [
+      {
+        "id": "a47775f6-015b-4b31-82b2-794989d1c892",
+        "scope": "project",
+        "report": "/Users/macbooktrungnt/Documents/VideoNganHang/xuong_thu_hyperframes/model_nho/.hyperframes/artifacts/checks/a47775f6-015b-4b31-82b2-794989d1c892.json",
+        "metadata": {
+          "ok": true,
+          "browserSkipped": false,
+          "options": {
+            "samples": 9,
+            "atTransitions": false,
+            "maxIssues": 80,
+            "collapseStatic": true,
+            "tolerance": 2,
+            "timeout": 3000,
+            "contrast": true,
+            "strict": false,
+            "snapshots": false,
+            "browserGpuMode": "auto"
+          }
+        },
+        "createdAt": 1793019754392,
+        "contentHash": "93a72808e282f397a2fb4ae24f195d773504858ad75e840806bb117ee5ac0c67",
+        "revision": null,
+        "inputFingerprint": "5baefd4333253ca40b8d097020ad28e5cdf24f2b5ca9311fbf9ebf4e30505e36",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      }
+    ]
+  },
+  "snapshots": {
+    "latest": {
+      "revision": null,
+      "id": "04bb3214-f6cb-46f3-a873-de4e7126f861-0"
+    },
+    "revisions": {
+      "effe3dd8-6893-4585-b924-52dd66ee5cdc": [
+        {
+          "scope": "full",
+          "id": "e357c18a-a45a-4e84-a0db-b75186b212a9-0",
+          "time": 25,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793019794915,
+          "contentHash": "5675719bf87416531640d615807da61ebc7102a49d7273e1d8ed626e283f53ff",
+          "revision": "effe3dd8-6893-4585-b924-52dd66ee5cdc",
+          "inputFingerprint": "d26eb8a0ea6dbf29e6ad2cb9b76ed4f5783d48201811aeb47f895f7f671da428",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "8eeb255a-84d7-47c1-baf9-b0ef77ec72b8"
+        },
+        {
+          "scope": "full",
+          "id": "e357c18a-a45a-4e84-a0db-b75186b212a9-1",
+          "time": 32.5,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793019794916,
+          "contentHash": "bd3e191c2554018138a65168d7170541275708c7deadd070b7a98cc22818c961",
+          "revision": "effe3dd8-6893-4585-b924-52dd66ee5cdc",
+          "inputFingerprint": "d26eb8a0ea6dbf29e6ad2cb9b76ed4f5783d48201811aeb47f895f7f671da428",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "8eeb255a-84d7-47c1-baf9-b0ef77ec72b8"
+        },
+        {
+          "scope": "full",
+          "id": "e357c18a-a45a-4e84-a0db-b75186b212a9-2",
+          "time": 72.758,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793019794916,
+          "contentHash": "71bbb34041174a0c0578128fdbf0151a9658cfe3a5cc8077dee7da3e1ccaebec",
+          "revision": "effe3dd8-6893-4585-b924-52dd66ee5cdc",
+          "inputFingerprint": "d26eb8a0ea6dbf29e6ad2cb9b76ed4f5783d48201811aeb47f895f7f671da428",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "8eeb255a-84d7-47c1-baf9-b0ef77ec72b8"
+        }
+      ]
+    },
+    "unversioned": [
+      {
+        "scope": "full",
+        "id": "04bb3214-f6cb-46f3-a873-de4e7126f861-0",
+        "image": "/Users/macbooktrungnt/Documents/VideoNganHang/xuong_thu_hyperframes/model_nho/.hyperframes/artifacts/snapshots/f5037e7d-3fb1-40a3-aef7-b62f9507fb18/frame-00-at-1.8s.png",
+        "time": 1.8,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1793019767619,
+        "contentHash": "ae4dd03d3e5e40fe2538dae643f5e61f629dc459ac6bd65ca946f4fc278d3224",
+        "revision": null,
+        "inputFingerprint": "5baefd4333253ca40b8d097020ad28e5cdf24f2b5ca9311fbf9ebf4e30505e36",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "04bb3214-f6cb-46f3-a873-de4e7126f861-1",
+        "image": "/Users/macbooktrungnt/Documents/VideoNganHang/xuong_thu_hyperframes/model_nho/.hyperframes/artifacts/snapshots/f5037e7d-3fb1-40a3-aef7-b62f9507fb18/frame-01-at-4.5s.png",
+        "time": 4.5,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1793019767619,
+        "contentHash": "a23198ad4e016c63cbbd5c3f951a7e9d82b0be685860a3649620918a21dbf8b2",
+        "revision": null,
+        "inputFingerprint": "5baefd4333253ca40b8d097020ad28e5cdf24f2b5ca9311fbf9ebf4e30505e36",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "04bb3214-f6cb-46f3-a873-de4e7126f861-2",
+        "image": "/Users/macbooktrungnt/Documents/VideoNganHang/xuong_thu_hyperframes/model_nho/.hyperframes/artifacts/snapshots/f5037e7d-3fb1-40a3-aef7-b62f9507fb18/frame-02-at-12s.png",
+        "time": 12,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1793019767619,
+        "contentHash": "30a5f58f367f330b0744d0a3e4ff0d2474c3bdb50b747266e428a427546de56a",
+        "revision": null,
+        "inputFingerprint": "5baefd4333253ca40b8d097020ad28e5cdf24f2b5ca9311fbf9ebf4e30505e36",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "04bb3214-f6cb-46f3-a873-de4e7126f861-3",
+        "image": "/Users/macbooktrungnt/Documents/VideoNganHang/xuong_thu_hyperframes/model_nho/.hyperframes/artifacts/snapshots/f5037e7d-3fb1-40a3-aef7-b62f9507fb18/frame-03-at-21.5s.png",
+        "time": 21.5,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1793019767619,
+        "contentHash": "e62697c3d861b1176237cba579d9f72f779477f4bd03b3431a8b38999cdb44e7",
+        "revision": null,
+        "inputFingerprint": "5baefd4333253ca40b8d097020ad28e5cdf24f2b5ca9311fbf9ebf4e30505e36",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "04bb3214-f6cb-46f3-a873-de4e7126f861-4",
+        "image": "/Users/macbooktrungnt/Documents/VideoNganHang/xuong_thu_hyperframes/model_nho/.hyperframes/artifacts/snapshots/f5037e7d-3fb1-40a3-aef7-b62f9507fb18/frame-04-at-32.5s.png",
+        "time": 32.5,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1793019767619,
+        "contentHash": "1fd5ba75bbbff3ad698c79ad57a50d77fa1700c8252d8ded7affedee81622100",
+        "revision": null,
+        "inputFingerprint": "5baefd4333253ca40b8d097020ad28e5cdf24f2b5ca9311fbf9ebf4e30505e36",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "04bb3214-f6cb-46f3-a873-de4e7126f861-5",
+        "image": "/Users/macbooktrungnt/Documents/VideoNganHang/xuong_thu_hyperframes/model_nho/.hyperframes/artifacts/snapshots/f5037e7d-3fb1-40a3-aef7-b62f9507fb18/frame-05-at-37s.png",
+        "time": 37,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1793019767619,
+        "contentHash": "e05d5b794b0d9cff14b2d19ef54e0d252919f64ef7b2043386908510a1a79101",
+        "revision": null,
+        "inputFingerprint": "5baefd4333253ca40b8d097020ad28e5cdf24f2b5ca9311fbf9ebf4e30505e36",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "04bb3214-f6cb-46f3-a873-de4e7126f861-6",
+        "image": "/Users/macbooktrungnt/Documents/VideoNganHang/xuong_thu_hyperframes/model_nho/.hyperframes/artifacts/snapshots/f5037e7d-3fb1-40a3-aef7-b62f9507fb18/frame-06-at-40.5s.png",
+        "time": 40.5,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1793019767619,
+        "contentHash": "2189c9046f4529287c71186548e005f6e5f610b2ddbc2473f27bfb2c34868e7f",
+        "revision": null,
+        "inputFingerprint": "5baefd4333253ca40b8d097020ad28e5cdf24f2b5ca9311fbf9ebf4e30505e36",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "04bb3214-f6cb-46f3-a873-de4e7126f861-7",
+        "image": "/Users/macbooktrungnt/Documents/VideoNganHang/xuong_thu_hyperframes/model_nho/.hyperframes/artifacts/snapshots/f5037e7d-3fb1-40a3-aef7-b62f9507fb18/frame-07-at-44s.png",
+        "time": 44,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1793019767619,
+        "contentHash": "a33ea3c05039770b66279417c2160eaf0bc277bb4ef6f904eeed5a6c5ce3bf97",
+        "revision": null,
+        "inputFingerprint": "5baefd4333253ca40b8d097020ad28e5cdf24f2b5ca9311fbf9ebf4e30505e36",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "04bb3214-f6cb-46f3-a873-de4e7126f861-8",
+        "image": "/Users/macbooktrungnt/Documents/VideoNganHang/xuong_thu_hyperframes/model_nho/.hyperframes/artifacts/snapshots/f5037e7d-3fb1-40a3-aef7-b62f9507fb18/frame-08-at-49s.png",
+        "time": 49,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1793019767619,
+        "contentHash": "826308a4a7146e393c35233d6078deb0d336af43cea881ab742ecb0351b0628f",
+        "revision": null,
+        "inputFingerprint": "5baefd4333253ca40b8d097020ad28e5cdf24f2b5ca9311fbf9ebf4e30505e36",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "04bb3214-f6cb-46f3-a873-de4e7126f861-9",
+        "image": "/Users/macbooktrungnt/Documents/VideoNganHang/xuong_thu_hyperframes/model_nho/.hyperframes/artifacts/snapshots/f5037e7d-3fb1-40a3-aef7-b62f9507fb18/frame-09-at-54s.png",
+        "time": 54,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1793019767619,
+        "contentHash": "5ce277161d645e8190b1bd0ec73c7c3bedbb99db9b771d1399e869e3ef236653",
+        "revision": null,
+        "inputFingerprint": "5baefd4333253ca40b8d097020ad28e5cdf24f2b5ca9311fbf9ebf4e30505e36",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "04bb3214-f6cb-46f3-a873-de4e7126f861-10",
+        "image": "/Users/macbooktrungnt/Documents/VideoNganHang/xuong_thu_hyperframes/model_nho/.hyperframes/artifacts/snapshots/f5037e7d-3fb1-40a3-aef7-b62f9507fb18/frame-10-at-59s.png",
+        "time": 59,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1793019767619,
+        "contentHash": "f48536465d6ae7df4e3769f959e38fb2a1ebf045f0e83d89a786d5de5c16c062",
+        "revision": null,
+        "inputFingerprint": "5baefd4333253ca40b8d097020ad28e5cdf24f2b5ca9311fbf9ebf4e30505e36",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "04bb3214-f6cb-46f3-a873-de4e7126f861-11",
+        "image": "/Users/macbooktrungnt/Documents/VideoNganHang/xuong_thu_hyperframes/model_nho/.hyperframes/artifacts/snapshots/f5037e7d-3fb1-40a3-aef7-b62f9507fb18/frame-11-at-67s.png",
+        "time": 67,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1793019767619,
+        "contentHash": "8f82e4e70c8a96522775998f1016f1b507d413e24e0276bb17f0683517cdad5c",
+        "revision": null,
+        "inputFingerprint": "5baefd4333253ca40b8d097020ad28e5cdf24f2b5ca9311fbf9ebf4e30505e36",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "04bb3214-f6cb-46f3-a873-de4e7126f861-12",
+        "image": "/Users/macbooktrungnt/Documents/VideoNganHang/xuong_thu_hyperframes/model_nho/.hyperframes/artifacts/snapshots/f5037e7d-3fb1-40a3-aef7-b62f9507fb18/frame-12-at-72s.png",
+        "time": 72,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1793019767619,
+        "contentHash": "cc473fa1034a5080f63ca2d4568e02ad9bd8712c32b22877415fe933c2dfcc47",
+        "revision": null,
+        "inputFingerprint": "5baefd4333253ca40b8d097020ad28e5cdf24f2b5ca9311fbf9ebf4e30505e36",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "04bb3214-f6cb-46f3-a873-de4e7126f861-13",
+        "image": "/Users/macbooktrungnt/Documents/VideoNganHang/xuong_thu_hyperframes/model_nho/.hyperframes/artifacts/snapshots/f5037e7d-3fb1-40a3-aef7-b62f9507fb18/frame-13-at-74.5s.png",
+        "time": 74.5,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1793019767619,
+        "contentHash": "4576ef3d82cfa1ff41d2ccbc70aca7f8fd8c98ddc93bbe2f83b7d8d235a4d254",
+        "revision": null,
+        "inputFingerprint": "5baefd4333253ca40b8d097020ad28e5cdf24f2b5ca9311fbf9ebf4e30505e36",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "04bb3214-f6cb-46f3-a873-de4e7126f861-14",
+        "image": "/Users/macbooktrungnt/Documents/VideoNganHang/xuong_thu_hyperframes/model_nho/.hyperframes/artifacts/snapshots/f5037e7d-3fb1-40a3-aef7-b62f9507fb18/frame-14-at-72.758s.png",
+        "time": 72.758,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1793019767619,
+        "contentHash": "71bbb34041174a0c0578128fdbf0151a9658cfe3a5cc8077dee7da3e1ccaebec",
+        "revision": null,
+        "inputFingerprint": "5baefd4333253ca40b8d097020ad28e5cdf24f2b5ca9311fbf9ebf4e30505e36",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      }
+    ]
+  },
+  "renders": {
+    "latest": {
+      "id": "459b74e9-6f6e-4a59-a4e6-e6bfb2270410",
+      "completedAt": 1793019927900,
+      "output": "/Users/macbooktrungnt/Documents/VideoNganHang/xuong_thu_hyperframes/renders/model_nho_hyperframes.mp4",
+      "status": "completed",
+      "revision": "02680304-984f-4c1d-952b-c1da7f432e5e"
+    },
+    "retainedRevisions": [
+      "02680304-984f-4c1d-952b-c1da7f432e5e",
+      "c1abae26-dbc3-44f8-a493-2b2b35b38059"
+    ]
+  },
+  "pendingArtifactCleanup": []
+}

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Thử Canvas: 3.000 hạt</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #060b1a; overflow: hidden; }
+  canvas { display: block; width: 100vw; height: 100vh; }
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<script>
+// Trang thử 1: Canvas 2D, 3.000 hạt, dài 10 giây. Hạt tích luỹ vị trí theo dt giữa hai khung
+// và khởi tạo bằng Math.random, để kiểm tra xuất khung theo thời gian ảo có xác định không.
+const DURATION = 10000;
+const cv = document.getElementById('c');
+const W = cv.width = 1920, H = cv.height = 1080;
+const ctx = cv.getContext('2d');
+const N = 3000;
+const px = new Float32Array(N), py = new Float32Array(N), vx = new Float32Array(N), vy = new Float32Array(N), hue = new Float32Array(N);
+for (let i = 0; i < N; i++) {
+  px[i] = Math.random() * W; py[i] = Math.random() * H;
+  vx[i] = (Math.random() - 0.5) * 160; vy[i] = (Math.random() - 0.5) * 160;
+  hue[i] = 190 + Math.random() * 60;
+}
+const ease = t => t < 0 ? 0 : t > 1 ? 1 : t * t * (3 - 2 * t);
+let last = null, frameNo = 0;
+
+function draw(ts) {
+  if (last === null) last = ts;
+  const dt = Math.min(0.05, (ts - last) / 1000); last = ts; frameNo++;
+  const t = ts / DURATION;                       // 0..1
+  // điểm hút chạy theo đường Lissajous
+  const ax = W / 2 + Math.cos(ts / 1300) * 620, ay = H / 2 + Math.sin(ts / 900) * 300;
+
+  ctx.globalCompositeOperation = 'source-over';
+  const g = ctx.createLinearGradient(0, 0, 0, H);
+  g.addColorStop(0, '#060b1a'); g.addColorStop(1, '#0d1f3f');
+  ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+
+  ctx.globalCompositeOperation = 'lighter';
+  for (let i = 0; i < N; i++) {
+    const dx = ax - px[i], dy = ay - py[i];
+    vx[i] += dx * 0.9 * dt; vy[i] += dy * 0.9 * dt;
+    vx[i] *= (1 - 1.2 * dt); vy[i] *= (1 - 1.2 * dt);
+    px[i] += vx[i] * dt; py[i] += vy[i] * dt;
+    if (px[i] < 0) px[i] += W; else if (px[i] > W) px[i] -= W;
+    if (py[i] < 0) py[i] += H; else if (py[i] > H) py[i] -= H;
+    const sp = Math.min(1, Math.hypot(vx[i], vy[i]) / 400);
+    ctx.fillStyle = `hsla(${hue[i] - sp * 80}, 90%, ${45 + sp * 25}%, 0.8)`;
+    ctx.beginPath(); ctx.arc(px[i], py[i], 2.2 + sp * 1.5, 0, 6.2832); ctx.fill();
+  }
+  ctx.globalCompositeOperation = 'source-over';
+
+  // chữ tiếng Việt: hiện dần trong 0,4–1,6 giây
+  const a = ease((ts - 400) / 1200);
+  ctx.save();
+  ctx.globalAlpha = a;
+  ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  ctx.font = '700 96px "Be Vietnam Pro", sans-serif';
+  ctx.shadowColor = 'rgba(0,0,0,.6)'; ctx.shadowBlur = 24;
+  ctx.fillStyle = '#ffffff';
+  ctx.fillText('Điện áp tăng, dòng điện giảm', W / 2, H / 2 - 40 + (1 - a) * 40);
+  ctx.restore();
+
+  // đồ thị U tăng, I giảm theo thời gian
+  const gx = 360, gy = 760, gw = 1200, gh = 220;
+  ctx.strokeStyle = 'rgba(255,255,255,.25)'; ctx.lineWidth = 2;
+  ctx.strokeRect(gx, gy, gw, gh);
+  const upto = Math.max(0, Math.min(1, t));
+  ctx.lineWidth = 6;
+  ctx.strokeStyle = '#ffd166'; ctx.beginPath();
+  for (let k = 0; k <= 200 * upto; k++) { const u = k / 200; const y = gy + gh - ease(u) * gh; k ? ctx.lineTo(gx + u * gw, y) : ctx.moveTo(gx + u * gw, y); }
+  ctx.stroke();
+  ctx.strokeStyle = '#ef476f'; ctx.beginPath();
+  for (let k = 0; k <= 200 * upto; k++) { const u = k / 200; const y = gy + ease(u) * gh; k ? ctx.lineTo(gx + u * gw, y) : ctx.moveTo(gx + u * gw, y); }
+  ctx.stroke();
+  ctx.font = '600 34px "Be Vietnam Pro", sans-serif'; ctx.textAlign = 'left';
+  ctx.fillStyle = '#ffd166'; ctx.fillText('U (V) tăng', gx + 10, gy - 22);
+  ctx.fillStyle = '#ef476f'; ctx.fillText('I (A) giảm', gx + 330, gy - 22);
+
+  // bộ đếm thời gian để kiểm chứng khung hình
+  ctx.fillStyle = '#9fb3d9'; ctx.font = '500 30px "Be Vietnam Pro", sans-serif';
+  ctx.fillText(`t = ${(ts / 1000).toFixed(3)} s   khung ${frameNo}`, 40, H - 40);
+}
+function loop(ts) { draw(ts); if (ts < DURATION + 500) requestAnimationFrame(loop); }
+requestAnimationFrame(loop);
+</script>
+</body>
+</html>

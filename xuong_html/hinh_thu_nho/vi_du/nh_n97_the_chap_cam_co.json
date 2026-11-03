@@ -1,0 +1,59 @@
+{
+  "kenh": "ngan_hang",
+  "video": "2026.10.28.Phân biệt giữa cầm cố và thế chấp - không phải ai cũng biết",
+  "chu_de": "the_chap_cam_co",
+  "phien_ban": 1,
+  "thoi_luong": "4:07",
+  "nguon_hinh": {
+    "ma": "node lay_hinh.mjs ../n97_the_chap_cam_co/trang.html 30 khung/n97/n97_ma_t30.png --an '#hud' --an_chu --he_so 2 --cat 60,300,1800,540",
+    "mp4": "ffmpeg -ss 30 -i san_pham/2026.10.28.Phân biệt giữa cầm cố và thế chấp - không phải ai cũng biết/Phân biệt giữa cầm cố và thế chấp - không phải ai cũng biết.mp4 -frames:v 1 -vf crop=1800:540:60:300 khung/n97/n97_mp4_t30.png"
+  },
+  "hinh": [
+    {
+      "id": "A",
+      "bo_cuc": "NH",
+      "nen": "#F4F1EA",
+      "nhan_kenh": "tren_trai",
+      "anh": "xuong_html/hinh_thu_nho/khung/n97/n97_ma_t30.png",
+      "vi_tri": "50% 100%",
+      "chu": {
+        "x": 60,
+        "y": 0,
+        "w": 1160
+      },
+      "dong1": "CẦM CỐ ≠ THẾ CHẤP",
+      "co1": 128,
+      "mau1": "#2B2B2B",
+      "dong2": "khác nhau ở đâu?",
+      "co2": 84,
+      "mau2": "#0B6E66",
+      "xep": "chu_tren"
+    },
+    {
+      "id": "B",
+      "bo_cuc": "NH",
+      "nen": "#F4F1EA",
+      "nhan_kenh": "tren_phai",
+      "anh": "xuong_html/hinh_thu_nho/khung/n97/n97_mp4_t30.png",
+      "hop": [
+        0,
+        100,
+        1280,
+        380
+      ],
+      "vi_tri": "50% 50%",
+      "chu": {
+        "x": 60,
+        "y": 474,
+        "w": 1160
+      },
+      "dong1": "CẦM CỐ - THẾ CHẤP",
+      "co1": 108,
+      "mau1": "#2B2B2B",
+      "dong2": "Phân biệt cho đúng",
+      "co2": 76,
+      "mau2": "#8A4F1D"
+    }
+  ],
+  "chon": "A"
+}

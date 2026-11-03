@@ -1,0 +1,10 @@
+{
+  "name": "chup_khung",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Xuất MP4 từ trang HTML có hoạt ảnh: chụp khung theo thời gian ảo (xuat_mp4.mjs) hoặc quay thời gian thực (quay_thoi_gian_thuc.mjs)",
+  "type": "module",
+  "dependencies": {
+    "playwright-core": "1.62.0"
+  }
+}

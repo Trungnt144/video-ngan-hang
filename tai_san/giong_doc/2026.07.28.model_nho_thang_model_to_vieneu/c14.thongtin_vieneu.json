@@ -1,0 +1,24 @@
+{
+ "ten_file": "c14.wav",
+ "giong": "Hải Đăng",
+ "phien_ban_goi": {
+  "vieneu": "3.8.3",
+  "onnxruntime": "1.22.1",
+  "mlx-whisper": "0.4.3"
+ },
+ "mo_hinh_nghe_lai": "mlx-community/whisper-large-v3-turbo",
+ "nguong_sai_ky_tu": 0.1,
+ "khoang_nghi_cau_giay": 0.25,
+ "so_ky_tu": 41,
+ "thoi_luong_giay": 2.4,
+ "nguon_van_ban": "/Users/macbooktrungnt/Documents/VideoNganHang/kich_ban/2026.07.28.model_nho_thang_model_to.chuong.json",
+ "tung_cau": [
+  {
+   "cau": "Việc này cần biết rộng, hay cần giỏi sâu?",
+   "whisper": "Việc này cần biết rộng hay cần giỏi sâu.",
+   "ty_le_sai": 0.0,
+   "so_lan_doc": 1,
+   "lan_duoc_giu": 1
+  }
+ ]
+}

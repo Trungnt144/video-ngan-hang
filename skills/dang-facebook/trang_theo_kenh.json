@@ -1,0 +1,32 @@
+{
+  "_ghi_chu": "Kênh của Media → Trang Facebook để đăng Reels. Mã kênh trùng mã chiến dịch ở scripts/bang_video/chien_dich.json. ten_trang là tên Trang đúng như facebook-cli list-pages in ra (facebook-cli chọn Trang theo tên hoặc mã). Sau khi Trung chạy facebook-cli login: chạy python3 -I skills/dang-facebook/scripts/chay_lo.py --trang để xem tên và mã Trang đã nối, rồi điền id_trang. Trang chưa tạo thì để da_co_trang false, script từ chối đăng lên kênh đó.",
+  "kenh": {
+    "dien": {
+      "ten_kenh": "Chuyện nghề Điện",
+      "ten_trang": "Chuyện nghề Điện",
+      "id_trang": null,
+      "da_co_trang": true,
+      "dia_chi": "https://www.facebook.com/chuyennghedien1",
+      "so_trang": "61596085044064"
+    },
+    "bank": {
+      "ten_kenh": "Chuyện nghề Ngân hàng",
+      "ten_trang": "Chuyện nghề Ngân hàng",
+      "id_trang": null,
+      "da_co_trang": true,
+      "dia_chi": "https://www.facebook.com/chuyennghenganhang",
+      "so_trang": "61595777890962"
+    },
+    "kinh_te": {
+      "ten_kenh": "Chuyện vĩ mô",
+      "ten_trang": "Chuyện vĩ mô",
+      "id_trang": null,
+      "da_co_trang": false
+    }
+  },
+  "nhan_ai": {
+    "len_lich_khi_can_nhan": false,
+    "_ghi_chu": "Graph API và facebook-cli 0.4.0 không có trường khai nhãn AI cho Reels Trang (kiểm 29/10/2026: lệnh create-reel chỉ gửi description, video_state, giờ đăng). Video có nhãn AI bật trong facebook.md vì vậy chỉ được tải lên ở chế độ nháp; Trung bật nhãn AI và đặt giờ đăng trong Meta Business Suite. Lần đăng thử đầu kiểm thêm: Reel đã lên lịch qua API có mở ra sửa, bật nhãn AI trước giờ đăng được không. Được thì đổi len_lich_khi_can_nhan thành true và ghi ngày kiểm vào SKILL.md."
+  },
+  "_ghi_chu_dia_chi": "dia_chi và so_trang đọc trên Chrome 29/10/2026 sau khi Trung đặt tên Trang; id_trang vẫn điền sau khi nối facebook-cli."
+}

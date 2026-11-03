@@ -1,0 +1,864 @@
+{
+  "ok": true,
+  "strict": false,
+  "browserSkipped": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 1,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "timeline_track_too_dense",
+        "severity": "warning",
+        "message": "Track 0 has 68 timed elements in this HTML file. Smaller sub-compositions keep timelines easier to read, iterate on, and diff.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "/Users/macbooktrungnt/Documents/VideoNganHang/xuong_thu_hyperframes/model_nho/compositions/phu-de.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move coherent scene groups into smaller .html files and mount them from the parent with data-composition-src so the timeline stays easier to inspect, revise, and validate."
+      }
+    ],
+    "filesScanned": 17
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 20,
+    "findings": [
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 5.604,
+        "selector": "#c02-dau > span:nth-of-type(1)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 133.19,
+          "top": 190,
+          "right": 213.8,
+          "bottom": 230,
+          "width": 80.61,
+          "height": 40
+        },
+        "containerSelector": "#c03-dau > span:nth-of-type(1)",
+        "text": "02 / 14",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/canh-02.html",
+        "bbox": {
+          "x": 133.19,
+          "y": 190,
+          "width": 80.61,
+          "height": 40
+        },
+        "firstSeen": 5.604,
+        "lastSeen": 5.604,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          5.604
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 5.604,
+        "selector": "#c02-dau > span:nth-of-type(1) > b:nth-of-type(1)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 84,
+          "top": 190,
+          "right": 133.19,
+          "bottom": 230,
+          "width": 49.19,
+          "height": 40
+        },
+        "containerSelector": "#c03-dau > span:nth-of-type(1) > b:nth-of-type(1)",
+        "text": "02",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/canh-02.html",
+        "bbox": {
+          "x": 84,
+          "y": 190,
+          "width": 49.19,
+          "height": 40
+        },
+        "firstSeen": 5.604,
+        "lastSeen": 5.604,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          5.604
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 5.604,
+        "selector": "#c02-dau > span:nth-of-type(2)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 566.75,
+          "top": 190,
+          "right": 996,
+          "bottom": 230,
+          "width": 429.25,
+          "height": 40
+        },
+        "containerSelector": "#c03-dau > span:nth-of-type(2)",
+        "text": "AI · BẢO MẬT · 07/2026",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/canh-02.html",
+        "bbox": {
+          "x": 566.75,
+          "y": 190,
+          "width": 429.25,
+          "height": 40
+        },
+        "firstSeen": 5.604,
+        "lastSeen": 5.604,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          5.604
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 38.366,
+        "selector": "#c06-dau > span:nth-of-type(1)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 134.38,
+          "top": 190,
+          "right": 214.98,
+          "bottom": 230,
+          "width": 80.6,
+          "height": 40
+        },
+        "containerSelector": "#c07-dau > span:nth-of-type(1)",
+        "text": "06 / 14",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/canh-06.html",
+        "bbox": {
+          "x": 134.38,
+          "y": 190,
+          "width": 80.6,
+          "height": 40
+        },
+        "firstSeen": 38.366,
+        "lastSeen": 38.366,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          38.366
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 38.366,
+        "selector": "#c06-dau > span:nth-of-type(1) > b:nth-of-type(1)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 84,
+          "top": 190,
+          "right": 134.38,
+          "bottom": 230,
+          "width": 50.38,
+          "height": 40
+        },
+        "containerSelector": "#c07-dau > span:nth-of-type(1) > b:nth-of-type(1)",
+        "text": "06",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/canh-06.html",
+        "bbox": {
+          "x": 84,
+          "y": 190,
+          "width": 50.38,
+          "height": 40
+        },
+        "firstSeen": 38.366,
+        "lastSeen": 38.366,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          38.366
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 38.366,
+        "selector": "#c06-dau > span:nth-of-type(2)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 566.75,
+          "top": 190,
+          "right": 996,
+          "bottom": 230,
+          "width": 429.25,
+          "height": 40
+        },
+        "containerSelector": "#c07-dau > span:nth-of-type(2)",
+        "text": "AI · BẢO MẬT · 07/2026",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/canh-06.html",
+        "bbox": {
+          "x": 566.75,
+          "y": 190,
+          "width": 429.25,
+          "height": 40
+        },
+        "firstSeen": 38.366,
+        "lastSeen": 38.366,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          38.366
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 38.366,
+        "selector": "#c06-td-5",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 84,
+          "top": 806.11,
+          "right": 263.59,
+          "bottom": 910.11,
+          "width": 179.59,
+          "height": 104
+        },
+        "containerSelector": "#c07-than > div:nth-of-type(2)",
+        "text": "nửa.",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/canh-06.html",
+        "bbox": {
+          "x": 84,
+          "y": 806.11,
+          "width": 179.59,
+          "height": 104
+        },
+        "firstSeen": 38.366,
+        "lastSeen": 38.366,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          38.366
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 38.366,
+        "selector": "#c06-than > div:nth-of-type(4)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 84,
+          "top": 962.22,
+          "right": 572.42,
+          "bottom": 1002.22,
+          "width": 488.42,
+          "height": 40
+        },
+        "containerSelector": "#c07-than > div:nth-of-type(3) > small:nth-of-type(1)",
+        "text": "Model nhỏ + model lớn ghép lại",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/canh-06.html",
+        "bbox": {
+          "x": 84,
+          "y": 962.22,
+          "width": 488.42,
+          "height": 40
+        },
+        "firstSeen": 38.366,
+        "lastSeen": 38.366,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          38.366
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 45.263,
+        "selector": "#c08-dau > span:nth-of-type(1)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 133.52,
+          "top": 190,
+          "right": 214.13,
+          "bottom": 230,
+          "width": 80.61,
+          "height": 40
+        },
+        "containerSelector": "#c09-dau > span:nth-of-type(1)",
+        "text": "08 / 14",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/canh-08.html",
+        "bbox": {
+          "x": 133.52,
+          "y": 190,
+          "width": 80.61,
+          "height": 40
+        },
+        "firstSeen": 45.263,
+        "lastSeen": 45.263,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          45.263
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 45.263,
+        "selector": "#c08-dau > span:nth-of-type(1) > b:nth-of-type(1)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 84,
+          "top": 190,
+          "right": 133.52,
+          "bottom": 230,
+          "width": 49.52,
+          "height": 40
+        },
+        "containerSelector": "#c09-dau > span:nth-of-type(1) > b:nth-of-type(1)",
+        "text": "08",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/canh-08.html",
+        "bbox": {
+          "x": 84,
+          "y": 190,
+          "width": 49.52,
+          "height": 40
+        },
+        "firstSeen": 45.263,
+        "lastSeen": 45.263,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          45.263
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 45.263,
+        "selector": "#c08-dau > span:nth-of-type(2)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 566.75,
+          "top": 190,
+          "right": 996,
+          "bottom": 230,
+          "width": 429.25,
+          "height": 40
+        },
+        "containerSelector": "#c09-dau > span:nth-of-type(2)",
+        "text": "AI · BẢO MẬT · 07/2026",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/canh-08.html",
+        "bbox": {
+          "x": 566.75,
+          "y": 190,
+          "width": 429.25,
+          "height": 40
+        },
+        "firstSeen": 45.263,
+        "lastSeen": 45.263,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          45.263
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 55.178,
+        "selector": "#c10-dau > span:nth-of-type(1)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 126.06,
+          "top": 190,
+          "right": 206.67,
+          "bottom": 230,
+          "width": 80.61,
+          "height": 40
+        },
+        "containerSelector": "#c11-dau > span:nth-of-type(1)",
+        "text": "10 / 14",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/canh-10.html",
+        "bbox": {
+          "x": 126.06,
+          "y": 190,
+          "width": 80.61,
+          "height": 40
+        },
+        "firstSeen": 55.178,
+        "lastSeen": 55.178,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          55.178
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 55.178,
+        "selector": "#c10-dau > span:nth-of-type(1) > b:nth-of-type(1)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 84,
+          "top": 190,
+          "right": 126.06,
+          "bottom": 230,
+          "width": 42.06,
+          "height": 40
+        },
+        "containerSelector": "#c11-dau > span:nth-of-type(1) > b:nth-of-type(1)",
+        "text": "10",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/canh-10.html",
+        "bbox": {
+          "x": 84,
+          "y": 190,
+          "width": 42.06,
+          "height": 40
+        },
+        "firstSeen": 55.178,
+        "lastSeen": 55.178,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          55.178
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 55.178,
+        "selector": "#c10-dau > span:nth-of-type(2)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 566.75,
+          "top": 190,
+          "right": 996,
+          "bottom": 230,
+          "width": 429.25,
+          "height": 40
+        },
+        "containerSelector": "#c11-dau > span:nth-of-type(2)",
+        "text": "AI · BẢO MẬT · 07/2026",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/canh-10.html",
+        "bbox": {
+          "x": 566.75,
+          "y": 190,
+          "width": 429.25,
+          "height": 40
+        },
+        "firstSeen": 55.178,
+        "lastSeen": 55.178,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          55.178
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 60.782,
+        "selector": "#c11-dau > span:nth-of-type(1)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 117.67,
+          "top": 190,
+          "right": 198.28,
+          "bottom": 230,
+          "width": 80.61,
+          "height": 40
+        },
+        "containerSelector": "#c12-dau > span:nth-of-type(1)",
+        "text": "11 / 14",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/canh-11.html",
+        "bbox": {
+          "x": 117.67,
+          "y": 190,
+          "width": 80.61,
+          "height": 40
+        },
+        "firstSeen": 60.782,
+        "lastSeen": 60.782,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          60.782
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 60.782,
+        "selector": "#c11-dau > span:nth-of-type(1) > b:nth-of-type(1)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 84,
+          "top": 190,
+          "right": 117.67,
+          "bottom": 230,
+          "width": 33.67,
+          "height": 40
+        },
+        "containerSelector": "#c12-dau > span:nth-of-type(1) > b:nth-of-type(1)",
+        "text": "11",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/canh-11.html",
+        "bbox": {
+          "x": 84,
+          "y": 190,
+          "width": 33.67,
+          "height": 40
+        },
+        "firstSeen": 60.782,
+        "lastSeen": 60.782,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          60.782
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 60.782,
+        "selector": "#c11-dau > span:nth-of-type(2)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 566.75,
+          "top": 190,
+          "right": 996,
+          "bottom": 230,
+          "width": 429.25,
+          "height": 40
+        },
+        "containerSelector": "#c12-dau > span:nth-of-type(2)",
+        "text": "AI · BẢO MẬT · 07/2026",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/canh-11.html",
+        "bbox": {
+          "x": 566.75,
+          "y": 190,
+          "width": 429.25,
+          "height": 40
+        },
+        "firstSeen": 60.782,
+        "lastSeen": 60.782,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          60.782
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 69.835,
+        "selector": "#c12-dau > span:nth-of-type(1)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 124.81,
+          "top": 190,
+          "right": 205.42,
+          "bottom": 230,
+          "width": 80.61,
+          "height": 40
+        },
+        "containerSelector": "#c13-dau > span:nth-of-type(1)",
+        "text": "12 / 14",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/canh-12.html",
+        "bbox": {
+          "x": 124.81,
+          "y": 190,
+          "width": 80.61,
+          "height": 40
+        },
+        "firstSeen": 69.835,
+        "lastSeen": 69.835,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          69.835
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 69.835,
+        "selector": "#c12-dau > span:nth-of-type(1) > b:nth-of-type(1)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 84,
+          "top": 190,
+          "right": 124.81,
+          "bottom": 230,
+          "width": 40.81,
+          "height": 40
+        },
+        "containerSelector": "#c13-dau > span:nth-of-type(1) > b:nth-of-type(1)",
+        "text": "12",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/canh-12.html",
+        "bbox": {
+          "x": 84,
+          "y": 190,
+          "width": 40.81,
+          "height": 40
+        },
+        "firstSeen": 69.835,
+        "lastSeen": 69.835,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          69.835
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 69.835,
+        "selector": "#c12-dau > span:nth-of-type(2)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 566.75,
+          "top": 190,
+          "right": 996,
+          "bottom": 230,
+          "width": 429.25,
+          "height": 40
+        },
+        "containerSelector": "#c13-dau > span:nth-of-type(2)",
+        "text": "AI · BẢO MẬT · 07/2026",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/canh-12.html",
+        "bbox": {
+          "x": 566.75,
+          "y": 190,
+          "width": 429.25,
+          "height": 40
+        },
+        "firstSeen": 69.835,
+        "lastSeen": 69.835,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          69.835
+        ]
+      }
+    ],
+    "duration": 75.008,
+    "samples": [
+      4.167,
+      12.501,
+      20.836,
+      29.17,
+      37.504,
+      45.838,
+      54.172,
+      62.507,
+      70.841
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 20,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": true,
+    "samples": [
+      4.167,
+      20.836,
+      37.504,
+      54.172,
+      70.841
+    ],
+    "checked": 81,
+    "passed": 81
+  },
+  "craft": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 5,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"Đúng — và cũng vì đúng lâu quá, chúng ta quên hỏi lại.\" (12 words) is on screen 2.39 s (±0.01 s), under its 3.07 s floor: hold it about 0.5 s + 0.3 s a word (4.10 s here) before it leaves or changes; see references/motion.md.",
+        "text": "Đúng — và cũng vì đúng lâu quá, chúng ta quên hỏi lại.",
+        "selector": "#c02-td",
+        "dataAttributes": {},
+        "sourceFile": "compositions/canh-02.html",
+        "bbox": {
+          "x": 177.52,
+          "y": 653.17,
+          "width": 417,
+          "height": 113.18000000000006
+        },
+        "time": 3.139,
+        "words": 12,
+        "seconds": 2.395,
+        "floorSeconds": 3.075
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"Suốt mấy năm qua, model càng lớn thì càng làm được nhiều ...\" (51 words) is on screen 10.67 s (±0.01 s), under its 11.85 s floor: hold it about 0.5 s + 0.3 s a word (15.80 s here) before it leaves or changes; see references/motion.md.",
+        "text": "Suốt mấy năm qua, model càng lớn thì càng làm được nhiều thứ hơn, và gần như lần nâng cấp nào cũng chứng minh điều đó. Nên khi gặp một bài toán khó, phản xạ đầu tiên của tất cả chúng ta là với tay lấy model to nhất trong tầm.",
+        "selector": "#c03-doan",
+        "dataAttributes": {},
+        "sourceFile": "compositions/canh-03.html",
+        "bbox": {
+          "x": 128,
+          "y": 766.89,
+          "width": 86.31,
+          "height": 48
+        },
+        "time": 6.504,
+        "words": 51,
+        "seconds": 10.667,
+        "floorSeconds": 11.85
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "The film's last line \"/ 14 14\" (2 words) is on screen 1.87 s (±0.01 s), under the 2.00 s a closing line needs: hold it about 0.5 s + 0.3 s a word and at least 2 s before the film ends; see references/motion.md.",
+        "text": "/ 14 14",
+        "selector": "#c14-dau > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/canh-14.html",
+        "bbox": {
+          "x": 84,
+          "y": 190,
+          "width": 123.13999999999999,
+          "height": 40
+        },
+        "time": 73.138,
+        "words": 2,
+        "seconds": 1.874,
+        "floorSeconds": 2
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "The film's last line \"AI · BẢO MẬT · 07/2026\" (5 words) is on screen 1.87 s (±0.01 s), under the 2.00 s a closing line needs: hold it about 0.5 s + 0.3 s a word and at least 2 s before the film ends; see references/motion.md.",
+        "text": "AI · BẢO MẬT · 07/2026",
+        "selector": "#c14-dau > span:nth-of-type(2)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/canh-14.html",
+        "bbox": {
+          "x": 566.75,
+          "y": 190,
+          "width": 429.25,
+          "height": 40
+        },
+        "time": 73.138,
+        "words": 5,
+        "seconds": 1.874,
+        "floorSeconds": 2
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "The film's last line \"Việc này cần biết rộng, hay cần giỏi sâu?\" (9 words) is on screen 1.61 s (±0.01 s), under the 2.40 s a closing line needs: hold it about 0.5 s + 0.3 s a word and at least 2 s before the film ends; see references/motion.md.",
+        "text": "Việc này cần biết rộng, hay cần giỏi sâu?",
+        "selector": "#c14-td",
+        "dataAttributes": {},
+        "sourceFile": "compositions/canh-14.html",
+        "bbox": {
+          "x": 279.38,
+          "y": 681.57,
+          "width": 521.25,
+          "height": 113.94999999999993
+        },
+        "time": 73.403,
+        "words": 9,
+        "seconds": 1.608,
+        "floorSeconds": 2.4
+      }
+    ],
+    "enabled": true,
+    "step": 0.125,
+    "samples": 599
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  }
+}

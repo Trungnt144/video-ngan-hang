@@ -1,0 +1,49 @@
+<template>
+<style>
+
+@font-face{font-family:"Be Vietnam Pro";font-weight:300;font-style:normal;src:local("Be Vietnam Pro Light"),local("BeVietnamPro-Light");}
+@font-face{font-family:"Be Vietnam Pro";font-weight:400;font-style:normal;src:local("Be Vietnam Pro Regular"),local("BeVietnamPro-Regular");}
+@font-face{font-family:"Be Vietnam Pro";font-weight:500;font-style:normal;src:local("Be Vietnam Pro Medium"),local("BeVietnamPro-Medium");}
+@font-face{font-family:"Be Vietnam Pro";font-weight:600;font-style:normal;src:local("Be Vietnam Pro SemiBold"),local("BeVietnamPro-SemiBold");}
+@font-face{font-family:"Be Vietnam Pro";font-weight:700;font-style:normal;src:local("Be Vietnam Pro Bold"),local("BeVietnamPro-Bold");}
+@font-face{font-family:"Be Vietnam Pro";font-weight:800;font-style:normal;src:local("Be Vietnam Pro ExtraBold"),local("BeVietnamPro-ExtraBold");}
+#root{position:absolute;inset:0;font-family:"Be Vietnam Pro","Helvetica Neue",Arial,sans-serif;color:#FFFFFF;}
+.vo{position:absolute;inset:0;}
+.dau{position:absolute;left:84px;right:84px;top:190px;display:flex;justify-content:space-between;font-size:32px;font-weight:600;letter-spacing:0.08em;color:#8A8A8E;}
+.dau b{color:#FFFFFF;font-weight:800;}
+.than{position:absolute;left:84px;right:84px;}
+.icon{width:84px;height:84px;border:2px solid #3a3a3e;border-radius:18px;display:flex;align-items:center;justify-content:center;margin-bottom:28px;}
+.kicker{font-size:32px;font-weight:700;letter-spacing:0.1em;color:#FF443D;margin-bottom:22px;}
+.td{font-size:64px;font-weight:800;line-height:1.2;letter-spacing:-0.01em;}
+.td-lon{font-size:82px;font-weight:800;line-height:1.16;letter-spacing:-0.015em;}
+.doan{font-size:38px;font-weight:400;line-height:1.55;color:#8A8A8E;margin-top:36px;}
+.w{display:inline-block;}
+
+#c14-than{top:380px;height:900px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;}
+      #c14-than .icon{margin-left:auto;margin-right:auto;}
+      .cham{display:flex;gap:22px;margin-top:56px}.cham span{width:22px;height:22px;border-radius:50%;background:#FF443D;display:block}
+</style>
+<div id="root" data-composition-id="canh-14" data-width="1080" data-height="1920">
+  <div id="c14-vo" class="vo">
+    <div id="c14-dau" class="dau"><span><b>14</b> / 14</span><span>AI · BẢO MẬT · 07/2026</span></div>
+    <div id="c14-than" class="than giua"><div id="c14-td" class="td-lon"><span id="c14-td-0" class="w">Việc</span> <span id="c14-td-1" class="w">này</span> <span id="c14-td-2" class="w">cần</span> <span id="c14-hl1" class="w" style="color:#FF443D">biết rộng,</span> <span id="c14-td-5" class="w">hay</span> <span id="c14-td-6" class="w">cần</span> <span id="c14-hl2" class="w" style="color:#F0C73C">giỏi sâu?</span></div>
+      
+      
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  const tl = gsap.timeline({ paused: true });
+  
+  // tl.fromTo("#c14-icon",{opacity:0,scale:0.6},{opacity:1,scale:1,duration:0.4,ease:"back.out(2)"},0.15);
+  // tl.fromTo("#c14-kicker",{opacity:0,y:16},{opacity:1,y:0,duration:0.35,ease:"power3.out"},0.22999999999999998);
+  tl.fromTo("#c14-td .w",{opacity:0,y:34},{opacity:1,y:0,duration:0.45,ease:"power3.out",stagger:0.05},0.3);tl.fromTo("#c14-hl1",{scale:1},{scale:1.08,duration:0.3,yoyo:true,repeat:1,ease:"sine.inOut"},0.1);
+      tl.fromTo("#c14-hl2",{scale:1},{scale:1.08,duration:0.3,yoyo:true,repeat:1,ease:"sine.inOut"},0.1);
+  tl.fromTo("#c14-vo",{opacity:0},{opacity:1,duration:0.25,ease:"none"},0);
+  tl.fromTo("#c14-than",{y:0},{y:-18,duration:2,ease:"none"},0);
+  
+  window.__timelines["canh-14"] = tl;
+})();
+</script>
+</template>

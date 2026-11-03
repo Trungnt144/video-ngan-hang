@@ -1,0 +1,16 @@
+{
+ "doc": "Thiết bị đó là in vơ tơ, còn gọi là bộ nghịch lưu. Với nhà ở, thường dùng in vơ tơ chuỗi.",
+ "giay": 5.21,
+ "cau": [
+  {
+   "cau": "Thiết bị đó là in vơ tơ, còn gọi là bộ nghịch lưu.",
+   "bd": 0.0,
+   "kt": 2.72
+  },
+  {
+   "cau": "Với nhà ở, thường dùng in vơ tơ chuỗi.",
+   "bd": 2.97,
+   "kt": 5.21
+  }
+ ]
+}

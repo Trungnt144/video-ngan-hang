@@ -1,0 +1,492 @@
+[
+{
+"nen_tang": "youtube",
+"ma": "YT tieu de 100 (Help)",
+"url": "https://support.google.com/youtube/answer/57407?hl=en",
+"trich": "Video titles have a character limit of 100 characters",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "youtube",
+"ma": "YT mo ta 5000 (Help)",
+"url": "https://support.google.com/youtube/answer/57407?hl=en",
+"trich": "Video descriptions have a character limit of 5,000 characters",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "youtube",
+"ma": "YT the vai tro nho",
+"url": "https://support.google.com/youtube/answer/57407?hl=en",
+"trich": "tags play a minimal role in your video's discovery",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "youtube",
+"ma": "YT tai 15 video",
+"url": "https://support.google.com/youtube/answer/57407?hl=en",
+"trich": "You can upload up to 15 videos at a time",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "youtube",
+"ma": "YT gioi han dang moi ngay",
+"url": "https://support.google.com/youtube/answer/57407?hl=en",
+"trich": "There's a limit to how many videos a channel can upload each day",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "youtube",
+"ma": "YT tieu de API 100",
+"url": "https://developers.google.com/youtube/v3/docs/videos",
+"trich": "maximum length of 100 characters and may contain all valid UTF-8 characters except",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "youtube",
+"ma": "YT mo ta API 5000 byte",
+"url": "https://developers.google.com/youtube/v3/docs/videos",
+"trich": "maximum length of 5000 bytes",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "youtube",
+"ma": "YT the API 500",
+"url": "https://developers.google.com/youtube/v3/docs/videos",
+"trich": "The property value has a maximum length of 500 characters",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "youtube",
+"ma": "YT the API dau phay",
+"url": "https://developers.google.com/youtube/v3/docs/videos",
+"trich": "commas between items in the list count toward the limit",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "youtube",
+"ma": "YT the API Foo Baz",
+"url": "https://developers.google.com/youtube/v3/docs/videos",
+"trich": "the tag Foo Baz contains nine characters",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "youtube",
+"ma": "YT containsSyntheticMedia",
+"url": "https://developers.google.com/youtube/v3/docs/videos",
+"trich": "containsSyntheticMedia",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "youtube",
+"ma": "YT hashtag 60",
+"url": "https://support.google.com/youtube/answer/6390658?hl=en",
+"trich": "more than 60 hashtags, we'll ignore each hashtag",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "youtube",
+"ma": "YT hashtag over-tagging",
+"url": "https://support.google.com/youtube/answer/6390658?hl=en",
+"trich": "Over-tagging may result in the removal of your video",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "youtube",
+"ma": "YT hashtag 3 tren tieu de",
+"url": "https://support.google.com/youtube/answer/6390658?hl=en",
+"trich": "up to three hashtags that are considered most engaging will appear by your video title",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "youtube",
+"ma": "YT hashtag khong dau cach",
+"url": "https://support.google.com/youtube/answer/6390658?hl=en",
+"trich": "Hashtags don't contain any spaces",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "youtube",
+"ma": "YT hashtag sai chu de",
+"url": "https://support.google.com/youtube/answer/6390658?hl=en",
+"trich": "Misleading or unrelated hashtags may result in the removal of your video",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "youtube",
+"ma": "YT chuong 00:00",
+"url": "https://support.google.com/youtube/answer/9884579?hl=en",
+"trich": "first timestamp you list starts with 00:00",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "youtube",
+"ma": "YT chuong 3 moc",
+"url": "https://support.google.com/youtube/answer/9884579?hl=en",
+"trich": "at least three timestamps listed in ascending order",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "youtube",
+"ma": "YT chuong 10 giay",
+"url": "https://support.google.com/youtube/answer/9884579?hl=en",
+"trich": "The minimum length for video chapters is 10 seconds",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "youtube",
+"ma": "YT vai dong dau mo ta",
+"url": "https://support.google.com/youtube/answer/12948449?hl=en",
+"trich": "first few lines of your description",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "youtube",
+"ma": "YT clickbait",
+"url": "https://support.google.com/youtube/answer/2801973?hl=en",
+"trich": "maliciously misleading titles, thumbnails, descriptions, or imagery",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "youtube",
+"ma": "YT 3 gay 90 ngay",
+"url": "https://support.google.com/youtube/answer/2801973?hl=en",
+"trich": "If you get 3 strikes within 90 days, your channel may be terminated",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "youtube",
+"ma": "YT khoa rieng tu khong gay",
+"url": "https://support.google.com/youtube/answer/7300965?hl=en",
+"trich": "There is no strike applied to your account when this happens",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "youtube",
+"ma": "YT insert 1 don vi",
+"url": "https://developers.google.com/youtube/v3/docs/videos/insert",
+"trich": "quota cost of 1 unit in the Video Uploads quota bucket",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "youtube",
+"ma": "YT han muc mac dinh",
+"url": "https://developers.google.com/youtube/v3/determine_quota_cost",
+"trich": "default quota allocation of 100 search.list calls, 100 videos.insert calls, and 10,000 units per day",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "youtube",
+"ma": "YT han muc 0h PT",
+"url": "https://developers.google.com/youtube/v3/determine_quota_cost",
+"trich": "Daily quotas reset at midnight Pacific Time",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "youtube",
+"ma": "YT 1600 cu",
+"url": "https://developers.google.com/youtube/v3/revision_history",
+"trich": "from approximately 1600 units to approximately 100 units",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "youtube",
+"ma": "YT khoa rieng tu 2020",
+"url": "https://developers.google.com/youtube/v3/revision_history",
+"trich": "from unverified API projects created after 28 July 2020 will be restricted to private viewing mode",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "youtube",
+"ma": "YT insert khong khoa (mau thuan)",
+"url": "https://developers.google.com/youtube/v3/docs/videos/insert",
+"trich": "not restricted to private viewing mode",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "youtube",
+"ma": "YT refresh token 7 ngay",
+"url": "https://developers.google.com/identity/protocols/oauth2",
+"trich": "refresh token expiring in 7 days",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "youtube",
+"ma": "YT Shorts 3 phut",
+"url": "https://support.google.com/youtube/answer/12779649?hl=en",
+"trich": "Up to 3 minutes",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "youtube",
+"ma": "YT Shorts khong Premiere",
+"url": "https://support.google.com/youtube/answer/9080341?hl=en",
+"trich": "Shorts aren't supported for Premieres",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "youtube",
+"ma": "YT nhan AI trang",
+"url": "https://support.google.com/youtube/answer/14328491?hl=en",
+"trich": "AI use",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "tiktok",
+"ma": "TT API title 2200",
+"url": "https://developers.tiktok.com/doc/content-posting-api-reference-direct-post",
+"trich": "The maximum length is 2200 in UTF-16 runes",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "tiktok",
+"ma": "TT API 6 yeu cau/phut",
+"url": "https://developers.tiktok.com/doc/content-posting-api-reference-direct-post",
+"trich": "Each user access_token is limited to 6 requests per minute",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "tiktok",
+"ma": "TT API is_aigc",
+"url": "https://developers.tiktok.com/doc/content-posting-api-reference-direct-post",
+"trich": "is_aigc",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "tiktok",
+"ma": "TT anh title 90",
+"url": "https://developers.tiktok.com/doc/content-posting-api-reference-photo-post",
+"trich": "The maximum length for photo posts is 90 in UTF-16 runes",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "tiktok",
+"ma": "TT anh mo ta 4000",
+"url": "https://developers.tiktok.com/doc/content-posting-api-reference-photo-post",
+"trich": "The maximum length for photo posts is 4000 in UTF-16 runes",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "tiktok",
+"ma": "TT 15 bai/ngay",
+"url": "https://developers.tiktok.com/doc/content-sharing-guidelines",
+"trich": "typically around 15 posts per day",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "tiktok",
+"ma": "TT chua audit 5 nguoi",
+"url": "https://developers.tiktok.com/doc/content-sharing-guidelines",
+"trich": "Unaudited API Clients can allow up to 5 users to post in a 24 hour window",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "tiktok",
+"ma": "TT chua audit SELF_ONLY",
+"url": "https://developers.tiktok.com/doc/content-sharing-guidelines",
+"trich": "Unaudited API Clients can only post contents in SELF_ONLY viewership",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "tiktok",
+"ma": "TT khong nhan cong cu tai len noi bo",
+"url": "https://developers.tiktok.com/doc/content-sharing-guidelines",
+"trich": "A utility tool to help upload contents to the account(s) you or your team manages",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "tiktok",
+"ma": "TT 5 bai cho hop thu",
+"url": "https://developers.tiktok.com/doc/content-posting-api-reference-upload-video",
+"trich": "There may be at most 5 pending shares within any 24-hour period",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "tiktok",
+"ma": "TT 2-3 hashtag",
+"url": "https://www.tiktok.com/creator-academy/en/article/elements-of-tiktok-video",
+"trich": "use 2 to 3 relevant hashtags on each video",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "tiktok",
+"ma": "TT lich 30 ngay (Academy)",
+"url": "https://www.tiktok.com/creator-academy/en/article/tool-web-creation-intro",
+"trich": "schedule your posts up to 30 days in advance",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "tiktok",
+"ma": "TT nhan AI khong anh huong (Academy)",
+"url": "https://www.tiktok.com/creator-academy/en/article/ai-generated-content-label",
+"trich": "Applying the label will not have an impact on organic engagement",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "tiktok",
+"ma": "TT go AI khong nhan (Academy)",
+"url": "https://www.tiktok.com/creator-academy/en/article/ai-generated-content-label",
+"trich": "TikTok may take down AI-generated content that's not labeled",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "tiktok",
+"ma": "TT tim kiem mo ta loi noi chu",
+"url": "https://www.tiktok.com/creator-academy/en/article/Getting-discovered-with-Search",
+"trich": "voiceovers, captions, and on-screen text",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "tiktok",
+"ma": "TT nhoi hashtag phan tac dung",
+"url": "https://www.tiktok.com/creator-academy/en/article/Getting-discovered-with-Search",
+"trich": "can actually work against you",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "tiktok",
+"ma": "TT newsroom captions",
+"url": "https://newsroom.tiktok.com/en-us/how-tiktok-recommends-videos-for-you",
+"trich": "captions, sounds, and hashtags",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "facebook",
+"ma": "FB 5 hashtag perform best",
+"url": "https://creators.facebook.com/blog/combating-unoriginal-content",
+"trich": "no more than five hashtags perform best",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "facebook",
+"ma": "FB hashtag mot tu",
+"url": "https://www.facebook.com/help/587836257914341",
+"trich": "A hashtag must be written as a single word, without any spaces",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "facebook",
+"ma": "FB hashtag dau cau",
+"url": "https://www.facebook.com/help/587836257914341",
+"trich": "won't work",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "facebook",
+"ma": "FB Reels 3-90 giay",
+"url": "https://developers.facebook.com/docs/video-api/guides/reels-publishing/",
+"trich": "Reels duration must be between 3 and 90 seconds",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "facebook",
+"ma": "FB Reels 540x960",
+"url": "https://developers.facebook.com/docs/video-api/guides/reels-publishing/",
+"trich": "Minimum resolution is 540 x 960 pixels",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "facebook",
+"ma": "FB Reels ty le",
+"url": "https://developers.facebook.com/docs/video-api/guides/reels-publishing/",
+"trich": "Aspect ratios for videos need to be between 16x9 and 9x16",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "facebook",
+"ma": "FB Reels 30 bai/24h",
+"url": "https://developers.facebook.com/docs/video-api/guides/reels-publishing/",
+"trich": "limited to 30 API-published posts within a 24-hour moving period",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "facebook",
+"ma": "FB rate limit 4800",
+"url": "https://developers.facebook.com/docs/graph-api/overview/rate-limiting/",
+"trich": "4800 * Number of Engaged Users",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "facebook",
+"ma": "FB API lich 10 phut-6 thang",
+"url": "https://developers.facebook.com/docs/graph-api/reference/page/videos/",
+"trich": "between 10 mins and 6 months from the time of publishing the video",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "facebook",
+"ma": "FB is_ai_generated",
+"url": "https://developers.facebook.com/docs/graph-api/reference/page/video_reels/",
+"trich": "is_ai_generated",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "facebook",
+"ma": "FB MBS lich 29 ngay",
+"url": "https://www.facebook.com/business/help/1252240869631062",
+"trich": "between 20 minutes and 29 days away",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "facebook",
+"ma": "FB 90 ngay demonetisation",
+"url": "https://en-gb.facebook.com/business/help/3382366608650437",
+"trich": "carries a 90-day demonetisation penalty",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "facebook",
+"ma": "FB video deu la Reels",
+"url": "https://www.facebook.com/help/166707406722029",
+"trich": "Reels",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "facebook",
+"ma": "FB Add tags",
+"url": "https://www.facebook.com/help/569371393126980",
+"trich": "tags",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "facebook",
+"ma": "FB engagement bait",
+"url": "https://transparency.meta.com/en-gb/features/approach-to-ranking/types-of-content-we-demote/",
+"trich": "engagement bait",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "facebook",
+"ma": "FB nhan AI bat buoc",
+"url": "https://transparency.meta.com/en-gb/policies/community-standards/misinformation/",
+"trich": "may apply penalties",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "facebook",
+"ma": "FB hinh mo watermark",
+"url": "https://www.facebook.com/business/help/1708053352711643",
+"trich": "watermark",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "facebook",
+"ma": "FB search ngon ngu",
+"url": "https://transparency.meta.com/en-gb/features/explaining-ranking/fb-search/",
+"trich": "Predicted post language",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "facebook",
+"ma": "FB App Review vai tro",
+"url": "https://developers.facebook.com/docs/resp-plat-initiatives/individual-processes/app-review/",
+"trich": "App Review",
+"ngay_doc": "2026-10-27"
+},
+{
+"nen_tang": "facebook",
+"ma": "FB Muse video coming soon",
+"url": "https://ai.meta.com/blog/introducing-muse-image-muse-video-msl/",
+"trich": "We plan to extend Content Seal to video soon",
+"ngay_doc": "2026-10-27"
+}
+]

@@ -1,0 +1,1116 @@
+{
+  "ten": "Model nhỏ thắng model to",
+  "file_tieng": "giong_doc.mp3",
+  "giong": "vieneu",
+  "thoi_luong_giay": 75.00833333333333,
+  "dinh_danh": "AI · BẢO MẬT · 07/2026",
+  "bo_mau": "D-01",
+  "canh": [
+    {
+      "so": 1,
+      "loai": "mo_dau",
+      "bieu_tuong": "nao",
+      "kicker": "ĐIỀU AI CŨNG TIN",
+      "tieu_de": "Muốn AI làm việc khó, phải dùng model mạnh nhất.",
+      "loi_doc": [
+        "Muốn AI làm được việc khó, phải dùng model mạnh nhất."
+      ]
+    },
+    {
+      "so": 2,
+      "loai": "mo_dau",
+      "tieu_de": "Đúng — và cũng vì đúng lâu quá, chúng ta quên hỏi lại.",
+      "loi_doc": [
+        "Đúng, và cũng vì đúng lâu quá, chúng ta quên hỏi lại."
+      ]
+    },
+    {
+      "so": 3,
+      "loai": "giai_thich",
+      "bieu_tuong": "bieu_do",
+      "kicker": "VÌ SAO AI CŨNG TIN",
+      "tieu_de": "Cách nghĩ này không tự nhiên mà có",
+      "doan": "Suốt mấy năm qua, model càng lớn thì càng làm được nhiều thứ hơn, và gần như lần nâng cấp nào cũng chứng minh điều đó. Nên khi gặp một bài toán khó, phản xạ đầu tiên của tất cả chúng ta là với tay lấy model to nhất trong tầm.",
+      "loi_doc": [
+        "Cách nghĩ này không tự nhiên mà có. Suốt mấy năm qua, model càng lớn thì càng làm được nhiều thứ hơn, và gần như lần nâng cấp nào cũng chứng minh điều đó. Nên khi gặp một bài toán khó, phản xạ đầu tiên của tất cả chúng ta là với tay lấy model to nhất trong tầm."
+      ]
+    },
+    {
+      "so": 4,
+      "loai": "so_do",
+      "kicker": "HAI KIỂU MẠNH KHÁC NHAU",
+      "tieu_de": "Không phải mọi \"mạnh\" đều giống nhau",
+      "so_do": {
+        "nut": [
+          {
+            "id": "a",
+            "nhan": "01",
+            "tieu_de": "BIẾT RỘNG",
+            "phu": "trả lời nhiều loại câu hỏi",
+            "x": 0.26,
+            "y": 0.42
+          },
+          {
+            "id": "b",
+            "nhan": "02",
+            "tieu_de": "GIỎI SÂU",
+            "phu": "chuyên sâu một việc",
+            "x": 0.74,
+            "y": 0.42,
+            "nhan_manh": true
+          }
+        ],
+        "noi": []
+      },
+      "loi_doc": [
+        "Chỗ cần nói rõ: mạnh ở đây nghĩa là biết rộng, trả lời được nhiều loại câu hỏi khác nhau. Nó không đồng nghĩa với giỏi sâu một việc."
+      ]
+    },
+    {
+      "so": 5,
+      "loai": "chuoi",
+      "bieu_tuong": "khien",
+      "kicker": "MICROSOFT LÀM NGƯỢC LẠI",
+      "tieu_de": "Một tiến trình hai tầng",
+      "chuoi": {
+        "mat_xich": [
+          {
+            "nhan": "Mã nguồn",
+            "phu": "cần dò lỗi"
+          },
+          {
+            "nhan": "Model nhỏ",
+            "phu": "gánh 9/10"
+          },
+          {
+            "nhan": "Model lớn",
+            "phu": "1/10 khó nhất",
+            "nhan_manh": true
+          }
+        ]
+      },
+      "loi_doc": [
+        "Microsoft vừa làm ngược lại. Thay vì dồn hết cho một model lớn, họ dựng một model nhỏ chuyên đúng một việc, dò lỗ hổng bảo mật trong mã nguồn, rồi để nó gánh chín phần mười khối lượng. Model lớn chỉ được gọi vào một phần mười khó nhất."
+      ]
+    },
+    {
+      "so": 6,
+      "loai": "diem_nhan",
+      "bieu_tuong": "xac_nhan",
+      "kicker": "KẾT QUẢ",
+      "tieu_de": "Gần 96%. Chi phí một nửa.",
+      "so_lieu": [
+        {
+          "nhan": "Model nhỏ + model lớn ghép lại",
+          "gia_tri": 96,
+          "don_vi": "%",
+          "ty_le": 1,
+          "nhan_manh": true
+        }
+      ],
+      "loi_doc": [
+        "Kết quả: gần chín mươi sáu phần trăm trên bài kiểm tra khó nhất ngành. Chi phí bằng một nửa."
+      ]
+    },
+    {
+      "so": 7,
+      "loai": "diem_nhan",
+      "tieu_de": "Model to hơn, đứng một mình",
+      "so_lieu": [
+        {
+          "nhan": "Model lớn đứng một mình",
+          "gia_tri": 86,
+          "don_vi": "%",
+          "ty_le": 0.9
+        }
+      ],
+      "loi_doc": [
+        "Model to hơn, đứng một mình, chỉ đạt tám mươi ba đến tám mươi sáu phần trăm."
+      ]
+    },
+    {
+      "so": 8,
+      "loai": "giai_thich",
+      "kicker": "NHƯNG BÊN KIA CŨNG CÓ LÝ",
+      "tieu_de": "Ba điều phải nói cho công bằng",
+      "loi_doc": [
+        "Bên bảo vệ cách nghĩ cũ vẫn có lý, và có lý ở chỗ quan trọng."
+      ]
+    },
+    {
+      "so": 9,
+      "loai": "giai_thich",
+      "bieu_tuong": "can_bang",
+      "kicker": "MỘT",
+      "tieu_de": "Model lớn không hề bị loại",
+      "doan": "Nó vẫn ngồi đó gánh phần khó nhất, và bỏ nó ra thì con số kia sập ngay.",
+      "loi_doc": [
+        "Thứ nhất, model lớn không hề bị loại. Nó vẫn ngồi đó gánh phần khó nhất, và bỏ nó ra thì con số kia sập ngay."
+      ]
+    },
+    {
+      "so": 10,
+      "loai": "giai_thich",
+      "bieu_tuong": "canh_bao",
+      "bieu_tuong_nhan_manh": true,
+      "kicker": "HAI",
+      "tieu_de": "Kết quả do chính bên làm ra công bố",
+      "doan": "Chưa có bên thứ ba độc lập kiểm chứng lại.",
+      "loi_doc": [
+        "Thứ hai, đây là kết quả do chính bên làm ra công bố, chưa có bên thứ ba độc lập kiểm chứng lại."
+      ]
+    },
+    {
+      "so": 11,
+      "loai": "giai_thich",
+      "bieu_tuong": "muc_tieu",
+      "kicker": "BA",
+      "tieu_de": "Mới đúng ở một lĩnh vực đủ hẹp",
+      "doan": "Ngoài phạm vi đó, chưa ai chứng minh được gì.",
+      "loi_doc": [
+        "Thứ ba, việc này chỉ mới đúng ở một lĩnh vực đủ hẹp để huấn luyện chuyên sâu. Ngoài phạm vi đó, chưa ai chứng minh được gì."
+      ]
+    },
+    {
+      "so": 12,
+      "loai": "he_qua",
+      "bieu_tuong": "tien",
+      "kicker": "CÁI GIÁ CỦA PHẢN XẠ CŨ",
+      "tieu_de": "Không nằm ở chỗ làm sai",
+      "doan": "Nó nằm ở chỗ trả tiền gấp đôi cho một kết quả kém hơn, mà không bao giờ biết là mình đã trả thừa, vì không có gì để so.",
+      "loi_doc": [
+        "Nhưng nếu vẫn giữ nguyên phản xạ cũ, cái giá không nằm ở chỗ làm sai. Nó nằm ở chỗ trả tiền gấp đôi cho một kết quả kém hơn, mà không bao giờ biết là mình đã trả thừa, vì không có gì để so."
+      ]
+    },
+    {
+      "so": 13,
+      "loai": "ket_luan",
+      "bieu_tuong": "hoi",
+      "kicker": "HỎI THÊM MỘT CÂU",
+      "tieu_de": "Nên lần tới, hỏi thêm một câu:",
+      "loi_doc": [
+        "Nên lần tới trước khi với tay lấy model mạnh nhất, hỏi thêm một câu:"
+      ]
+    },
+    {
+      "so": 14,
+      "loai": "ket_luan",
+      "tieu_de": "Việc này cần biết rộng, hay cần giỏi sâu?",
+      "loi_doc": [
+        "Việc này cần biết rộng, hay cần giỏi sâu?"
+      ]
+    }
+  ],
+  "moc_canh": [
+    {
+      "so": 1,
+      "bat_dau": 0,
+      "ket_thuc": 2.7333333333333334
+    },
+    {
+      "so": 2,
+      "bat_dau": 2.7333333333333334,
+      "ket_thuc": 5.4
+    },
+    {
+      "so": 3,
+      "bat_dau": 5.4,
+      "ket_thuc": 17.01666666666667
+    },
+    {
+      "so": 4,
+      "bat_dau": 17.01666666666667,
+      "ket_thuc": 22.958333333333336
+    },
+    {
+      "so": 5,
+      "bat_dau": 22.958333333333336,
+      "ket_thuc": 33.575
+    },
+    {
+      "so": 6,
+      "bat_dau": 33.575,
+      "ket_thuc": 38.18333333333334
+    },
+    {
+      "so": 7,
+      "bat_dau": 38.18333333333334,
+      "ket_thuc": 41.85
+    },
+    {
+      "so": 8,
+      "bat_dau": 41.85,
+      "ket_thuc": 45.11666666666667
+    },
+    {
+      "so": 9,
+      "bat_dau": 45.11666666666667,
+      "ket_thuc": 50.59166666666667
+    },
+    {
+      "so": 10,
+      "bat_dau": 50.59166666666667,
+      "ket_thuc": 54.99166666666667
+    },
+    {
+      "so": 11,
+      "bat_dau": 54.99166666666667,
+      "ket_thuc": 60.6
+    },
+    {
+      "so": 12,
+      "bat_dau": 60.6,
+      "ket_thuc": 69.675
+    },
+    {
+      "so": 13,
+      "bat_dau": 69.675,
+      "ket_thuc": 73.00833333333333
+    },
+    {
+      "so": 14,
+      "bat_dau": 73.00833333333333,
+      "ket_thuc": 75.00833333333333
+    }
+  ],
+  "phu_de_theo": "cau",
+  "phu_de": [
+    {
+      "tu": [
+        "Muốn",
+        "AI",
+        "làm",
+        "được",
+        "việc",
+        "khó,"
+      ],
+      "moc_tu": [],
+      "bat_dau": 0,
+      "ket_thuc": 1.1395348837209303
+    },
+    {
+      "tu": [
+        "phải",
+        "dùng",
+        "model",
+        "mạnh",
+        "nhất."
+      ],
+      "moc_tu": [],
+      "bat_dau": 1.1395348837209303,
+      "ket_thuc": 2.3333333333333335
+    },
+    {
+      "tu": [
+        "Đúng,",
+        "và",
+        "cũng",
+        "vì",
+        "đúng",
+        "lâu"
+      ],
+      "moc_tu": [],
+      "bat_dau": 2.7333333333333334,
+      "ket_thuc": 3.8126984126984125
+    },
+    {
+      "tu": [
+        "quá,",
+        "chúng",
+        "ta",
+        "quên",
+        "hỏi",
+        "lại."
+      ],
+      "moc_tu": [],
+      "bat_dau": 3.8126984126984125,
+      "ket_thuc": 5
+    },
+    {
+      "tu": [
+        "Cách",
+        "nghĩ",
+        "này",
+        "không"
+      ],
+      "moc_tu": [],
+      "bat_dau": 5.4,
+      "ket_thuc": 6.314285714285714
+    },
+    {
+      "tu": [
+        "tự",
+        "nhiên",
+        "mà",
+        "có."
+      ],
+      "moc_tu": [],
+      "bat_dau": 6.314285714285714,
+      "ket_thuc": 7
+    },
+    {
+      "tu": [
+        "Suốt",
+        "mấy",
+        "năm",
+        "qua,",
+        "model"
+      ],
+      "moc_tu": [],
+      "bat_dau": 7.208333333333334,
+      "ket_thuc": 8.175358422939068
+    },
+    {
+      "tu": [
+        "càng",
+        "lớn",
+        "thì",
+        "càng",
+        "làm"
+      ],
+      "moc_tu": [],
+      "bat_dau": 8.175358422939068,
+      "ket_thuc": 9.040591397849463
+    },
+    {
+      "tu": [
+        "được",
+        "nhiều",
+        "thứ",
+        "hơn,",
+        "và",
+        "gần"
+      ],
+      "moc_tu": [],
+      "bat_dau": 9.040591397849463,
+      "ket_thuc": 10.109408602150538
+    },
+    {
+      "tu": [
+        "như",
+        "lần",
+        "nâng",
+        "cấp",
+        "nào"
+      ],
+      "moc_tu": [],
+      "bat_dau": 10.109408602150538,
+      "ket_thuc": 10.923745519713261
+    },
+    {
+      "tu": [
+        "cũng",
+        "chứng",
+        "minh",
+        "điều",
+        "đó."
+      ],
+      "moc_tu": [],
+      "bat_dau": 10.923745519713261,
+      "ket_thuc": 11.941666666666666
+    },
+    {
+      "tu": [
+        "Nên",
+        "khi",
+        "gặp",
+        "một",
+        "bài"
+      ],
+      "moc_tu": [],
+      "bat_dau": 12.15,
+      "ket_thuc": 12.967073170731707
+    },
+    {
+      "tu": [
+        "toán",
+        "khó,",
+        "phản",
+        "xạ",
+        "đầu"
+      ],
+      "moc_tu": [],
+      "bat_dau": 12.967073170731707,
+      "ket_thuc": 13.89308943089431
+    },
+    {
+      "tu": [
+        "tiên",
+        "của",
+        "tất",
+        "cả",
+        "chúng"
+      ],
+      "moc_tu": [],
+      "bat_dau": 13.89308943089431,
+      "ket_thuc": 14.819105691056912
+    },
+    {
+      "tu": [
+        "ta",
+        "là",
+        "với",
+        "tay",
+        "lấy"
+      ],
+      "moc_tu": [],
+      "bat_dau": 14.819105691056912,
+      "ket_thuc": 15.527235772357724
+    },
+    {
+      "tu": [
+        "model",
+        "to",
+        "nhất",
+        "trong",
+        "tầm."
+      ],
+      "moc_tu": [],
+      "bat_dau": 15.527235772357724,
+      "ket_thuc": 16.616666666666667
+    },
+    {
+      "tu": [
+        "Chỗ",
+        "cần",
+        "nói",
+        "rõ:",
+        "mạnh"
+      ],
+      "moc_tu": [],
+      "bat_dau": 17.01666666666667,
+      "ket_thuc": 17.854761904761908
+    },
+    {
+      "tu": [
+        "ở",
+        "đây",
+        "nghĩa",
+        "là",
+        "biết"
+      ],
+      "moc_tu": [],
+      "bat_dau": 17.854761904761908,
+      "ket_thuc": 18.640476190476193
+    },
+    {
+      "tu": [
+        "rộng,",
+        "trả",
+        "lời",
+        "được",
+        "nhiều"
+      ],
+      "moc_tu": [],
+      "bat_dau": 18.640476190476193,
+      "ket_thuc": 19.68809523809524
+    },
+    {
+      "tu": [
+        "loại",
+        "câu",
+        "hỏi",
+        "khác",
+        "nhau."
+      ],
+      "moc_tu": [],
+      "bat_dau": 19.68809523809524,
+      "ket_thuc": 20.683333333333337
+    },
+    {
+      "tu": [
+        "Nó",
+        "không",
+        "đồng",
+        "nghĩa",
+        "với"
+      ],
+      "moc_tu": [],
+      "bat_dau": 20.89166666666667,
+      "ket_thuc": 21.82303921568628
+    },
+    {
+      "tu": [
+        "giỏi",
+        "sâu",
+        "một",
+        "việc."
+      ],
+      "moc_tu": [],
+      "bat_dau": 21.82303921568628,
+      "ket_thuc": 22.558333333333337
+    },
+    {
+      "tu": [
+        "Microsoft",
+        "vừa",
+        "làm",
+        "ngược",
+        "lại."
+      ],
+      "moc_tu": [],
+      "bat_dau": 22.958333333333336,
+      "ket_thuc": 24.425000000000004
+    },
+    {
+      "tu": [
+        "Thay",
+        "vì",
+        "dồn",
+        "hết",
+        "cho",
+        "một"
+      ],
+      "moc_tu": [],
+      "bat_dau": 24.633333333333336,
+      "ket_thuc": 25.577595628415303
+    },
+    {
+      "tu": [
+        "model",
+        "lớn,",
+        "họ",
+        "dựng",
+        "một"
+      ],
+      "moc_tu": [],
+      "bat_dau": 25.577595628415303,
+      "ket_thuc": 26.521857923497272
+    },
+    {
+      "tu": [
+        "model",
+        "nhỏ",
+        "chuyên",
+        "đúng",
+        "một",
+        "việc,"
+      ],
+      "moc_tu": [],
+      "bat_dau": 26.521857923497272,
+      "ket_thuc": 27.885792349726778
+    },
+    {
+      "tu": [
+        "dò",
+        "lỗ",
+        "hổng",
+        "bảo",
+        "mật",
+        "trong"
+      ],
+      "moc_tu": [],
+      "bat_dau": 27.885792349726778,
+      "ket_thuc": 28.88251366120219
+    },
+    {
+      "tu": [
+        "mã",
+        "nguồn,",
+        "rồi",
+        "để",
+        "nó"
+      ],
+      "moc_tu": [],
+      "bat_dau": 28.88251366120219,
+      "ket_thuc": 29.669398907103826
+    },
+    {
+      "tu": [
+        "gánh",
+        "chín",
+        "phần",
+        "mười",
+        "khối",
+        "lượng."
+      ],
+      "moc_tu": [],
+      "bat_dau": 29.669398907103826,
+      "ket_thuc": 31.033333333333335
+    },
+    {
+      "tu": [
+        "Model",
+        "lớn",
+        "chỉ",
+        "được",
+        "gọi",
+        "vào"
+      ],
+      "moc_tu": [],
+      "bat_dau": 31.241666666666667,
+      "ket_thuc": 32.25666666666667
+    },
+    {
+      "tu": [
+        "một",
+        "phần",
+        "mười",
+        "khó",
+        "nhất."
+      ],
+      "moc_tu": [],
+      "bat_dau": 32.25666666666667,
+      "ket_thuc": 33.175000000000004
+    },
+    {
+      "tu": [
+        "Kết",
+        "quả:",
+        "gần",
+        "chín",
+        "mươi"
+      ],
+      "moc_tu": [],
+      "bat_dau": 33.575,
+      "ket_thuc": 34.53928571428572
+    },
+    {
+      "tu": [
+        "sáu",
+        "phần",
+        "trăm",
+        "trên",
+        "bài"
+      ],
+      "moc_tu": [],
+      "bat_dau": 34.53928571428572,
+      "ket_thuc": 35.50357142857143
+    },
+    {
+      "tu": [
+        "kiểm",
+        "tra",
+        "khó",
+        "nhất",
+        "ngành."
+      ],
+      "moc_tu": [],
+      "bat_dau": 35.50357142857143,
+      "ket_thuc": 36.575
+    },
+    {
+      "tu": [
+        "Chi",
+        "phí",
+        "bằng",
+        "một",
+        "nửa."
+      ],
+      "moc_tu": [],
+      "bat_dau": 36.78333333333334,
+      "ket_thuc": 37.78333333333334
+    },
+    {
+      "tu": [
+        "Model",
+        "to",
+        "hơn,",
+        "đứng",
+        "một",
+        "mình,"
+      ],
+      "moc_tu": [],
+      "bat_dau": 38.18333333333334,
+      "ket_thuc": 39.43555555555556
+    },
+    {
+      "tu": [
+        "chỉ",
+        "đạt",
+        "tám",
+        "mươi",
+        "ba"
+      ],
+      "moc_tu": [],
+      "bat_dau": 39.43555555555556,
+      "ket_thuc": 40.25222222222222
+    },
+    {
+      "tu": [
+        "đến",
+        "tám",
+        "mươi",
+        "sáu",
+        "phần",
+        "trăm."
+      ],
+      "moc_tu": [],
+      "bat_dau": 40.25222222222222,
+      "ket_thuc": 41.45
+    },
+    {
+      "tu": [
+        "Bên",
+        "bảo",
+        "vệ",
+        "cách",
+        "nghĩ"
+      ],
+      "moc_tu": [],
+      "bat_dau": 41.85,
+      "ket_thuc": 42.847101449275364
+    },
+    {
+      "tu": [
+        "cũ",
+        "vẫn",
+        "có",
+        "lý,",
+        "và",
+        "có"
+      ],
+      "moc_tu": [],
+      "bat_dau": 42.847101449275364,
+      "ket_thuc": 43.719565217391306
+    },
+    {
+      "tu": [
+        "lý",
+        "ở",
+        "chỗ",
+        "quan",
+        "trọng."
+      ],
+      "moc_tu": [],
+      "bat_dau": 43.719565217391306,
+      "ket_thuc": 44.71666666666667
+    },
+    {
+      "tu": [
+        "Thứ",
+        "nhất,",
+        "model",
+        "lớn"
+      ],
+      "moc_tu": [],
+      "bat_dau": 45.11666666666667,
+      "ket_thuc": 46.00555555555555
+    },
+    {
+      "tu": [
+        "không",
+        "hề",
+        "bị",
+        "loại."
+      ],
+      "moc_tu": [],
+      "bat_dau": 46.00555555555555,
+      "ket_thuc": 46.78333333333333
+    },
+    {
+      "tu": [
+        "Nó",
+        "vẫn",
+        "ngồi",
+        "đó",
+        "gánh",
+        "phần"
+      ],
+      "moc_tu": [],
+      "bat_dau": 46.99166666666667,
+      "ket_thuc": 48.117592592592594
+    },
+    {
+      "tu": [
+        "khó",
+        "nhất,",
+        "và",
+        "bỏ",
+        "nó",
+        "ra"
+      ],
+      "moc_tu": [],
+      "bat_dau": 48.117592592592594,
+      "ket_thuc": 49.06574074074074
+    },
+    {
+      "tu": [
+        "thì",
+        "con",
+        "số",
+        "kia",
+        "sập",
+        "ngay."
+      ],
+      "moc_tu": [],
+      "bat_dau": 49.06574074074074,
+      "ket_thuc": 50.19166666666667
+    },
+    {
+      "tu": [
+        "Thứ",
+        "hai,",
+        "đây",
+        "là",
+        "kết",
+        "quả"
+      ],
+      "moc_tu": [],
+      "bat_dau": 50.59166666666667,
+      "ket_thuc": 51.57796803652968
+    },
+    {
+      "tu": [
+        "do",
+        "chính",
+        "bên",
+        "làm",
+        "ra",
+        "công"
+      ],
+      "moc_tu": [],
+      "bat_dau": 51.57796803652968,
+      "ket_thuc": 52.61906392694064
+    },
+    {
+      "tu": [
+        "bố,",
+        "chưa",
+        "có",
+        "bên",
+        "thứ"
+      ],
+      "moc_tu": [],
+      "bat_dau": 52.61906392694064,
+      "ket_thuc": 53.440981735159816
+    },
+    {
+      "tu": [
+        "ba",
+        "độc",
+        "lập",
+        "kiểm",
+        "chứng",
+        "lại."
+      ],
+      "moc_tu": [],
+      "bat_dau": 53.440981735159816,
+      "ket_thuc": 54.59166666666667
+    },
+    {
+      "tu": [
+        "Thứ",
+        "ba,",
+        "việc",
+        "này",
+        "chỉ",
+        "mới"
+      ],
+      "moc_tu": [],
+      "bat_dau": 54.99166666666667,
+      "ket_thuc": 56.02611111111111
+    },
+    {
+      "tu": [
+        "đúng",
+        "ở",
+        "một",
+        "lĩnh",
+        "vực",
+        "đủ"
+      ],
+      "moc_tu": [],
+      "bat_dau": 56.02611111111111,
+      "ket_thuc": 56.95166666666667
+    },
+    {
+      "tu": [
+        "hẹp",
+        "để",
+        "huấn",
+        "luyện",
+        "chuyên",
+        "sâu."
+      ],
+      "moc_tu": [],
+      "bat_dau": 56.95166666666667,
+      "ket_thuc": 58.25833333333333
+    },
+    {
+      "tu": [
+        "Ngoài",
+        "phạm",
+        "vi",
+        "đó,",
+        "chưa"
+      ],
+      "moc_tu": [],
+      "bat_dau": 58.46666666666667,
+      "ket_thuc": 59.333333333333336
+    },
+    {
+      "tu": [
+        "ai",
+        "chứng",
+        "minh",
+        "được",
+        "gì."
+      ],
+      "moc_tu": [],
+      "bat_dau": 59.333333333333336,
+      "ket_thuc": 60.2
+    },
+    {
+      "tu": [
+        "Nhưng",
+        "nếu",
+        "vẫn",
+        "giữ",
+        "nguyên"
+      ],
+      "moc_tu": [],
+      "bat_dau": 60.6,
+      "ket_thuc": 61.760493827160495
+    },
+    {
+      "tu": [
+        "phản",
+        "xạ",
+        "cũ,",
+        "cái",
+        "giá",
+        "không"
+      ],
+      "moc_tu": [],
+      "bat_dau": 61.760493827160495,
+      "ket_thuc": 62.92098765432099
+    },
+    {
+      "tu": [
+        "nằm",
+        "ở",
+        "chỗ",
+        "làm",
+        "sai."
+      ],
+      "moc_tu": [],
+      "bat_dau": 62.92098765432099,
+      "ket_thuc": 63.733333333333334
+    },
+    {
+      "tu": [
+        "Nó",
+        "nằm",
+        "ở",
+        "chỗ",
+        "trả",
+        "tiền"
+      ],
+      "moc_tu": [],
+      "bat_dau": 63.94166666666667,
+      "ket_thuc": 64.88981481481481
+    },
+    {
+      "tu": [
+        "gấp",
+        "đôi",
+        "cho",
+        "một",
+        "kết",
+        "quả"
+      ],
+      "moc_tu": [],
+      "bat_dau": 64.88981481481481,
+      "ket_thuc": 65.95648148148149
+    },
+    {
+      "tu": [
+        "kém",
+        "hơn,",
+        "mà",
+        "không",
+        "bao",
+        "giờ"
+      ],
+      "moc_tu": [],
+      "bat_dau": 65.95648148148149,
+      "ket_thuc": 67.14166666666667
+    },
+    {
+      "tu": [
+        "biết",
+        "là",
+        "mình",
+        "đã",
+        "trả",
+        "thừa,"
+      ],
+      "moc_tu": [],
+      "bat_dau": 67.14166666666667,
+      "ket_thuc": 68.32685185185186
+    },
+    {
+      "tu": [
+        "vì",
+        "không",
+        "có",
+        "gì",
+        "để",
+        "so."
+      ],
+      "moc_tu": [],
+      "bat_dau": 68.32685185185186,
+      "ket_thuc": 69.275
+    },
+    {
+      "tu": [
+        "Nên",
+        "lần",
+        "tới",
+        "trước",
+        "khi"
+      ],
+      "moc_tu": [],
+      "bat_dau": 69.675,
+      "ket_thuc": 70.59845679012345
+    },
+    {
+      "tu": [
+        "với",
+        "tay",
+        "lấy",
+        "model",
+        "mạnh"
+      ],
+      "moc_tu": [],
+      "bat_dau": 70.59845679012345,
+      "ket_thuc": 71.57623456790124
+    },
+    {
+      "tu": [
+        "nhất,",
+        "hỏi",
+        "thêm",
+        "một",
+        "câu:"
+      ],
+      "moc_tu": [],
+      "bat_dau": 71.57623456790124,
+      "ket_thuc": 72.60833333333333
+    },
+    {
+      "tu": [
+        "Việc",
+        "này",
+        "cần",
+        "biết",
+        "rộng,"
+      ],
+      "moc_tu": [],
+      "bat_dau": 73.00833333333333,
+      "ket_thuc": 74.15984848484848
+    },
+    {
+      "tu": [
+        "hay",
+        "cần",
+        "giỏi",
+        "sâu?"
+      ],
+      "moc_tu": [],
+      "bat_dau": 74.15984848484848,
+      "ket_thuc": 75.00833333333333
+    }
+  ]
+}

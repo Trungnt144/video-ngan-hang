@@ -1,0 +1,197 @@
+{
+  "tieu_de": "Hình thu nhỏ kênh Chuyện nghề Ngân hàng · đợt 2 lô 1",
+  "gioi_thieu": [
+    "8 video đầu bảng tiêu đề (san_pham/2026.10.30.duyet_tieu_de_ngan_hang/) chưa có hình, mỗi video 2 phương án. Chữ theo đề xuất của phiên chữ đăng: dòng 1 đúng thuật ngữ đầu tiêu đề. Tiêu đề Trung chưa duyệt; đổi tiêu đề thì em làm lại hình.",
+    "Thuật ngữ dài (CHỨNG CHỈ TIỀN GỬI, HẠN MỨC TÍN DỤNG, HẠN MỨC QUAY VÒNG, NGÂN HÀNG NHÀ NƯỚC) ở cỡ 128 không vừa khung. Em dựng hai cách để Trung chọn một quy tắc chung: xuống hai hàng chữ lớn đặt cạnh hình, hoặc giữ một hàng và thu cỡ chữ (còn 95–115 điểm ảnh).",
+    "Ba video hạn mức quay vòng, lãi 13 tháng, nhóm nợ dựng bằng Remotion: mã dựng không có công tắc ẩn chữ nên hình cắt từ mp4 bản nháp, đặt thành thẻ bo góc, còn chữ nhỏ của biểu đồ. Lãi 13 tháng tránh khung có số lãi suất giả định in to."
+  ],
+  "nhom": [
+    {
+      "ten": "1. Lô 1: 8 video, mỗi video hai phương án",
+      "kieu": "day_du",
+      "hinh": [
+        {
+          "anh": "../xem_truoc/chung_chi_tien_gui/A.png",
+          "nhan": "Chứng chỉ tiền gửi là gì? Khác gì sổ tiết kiệm, hợp đồng tiền gửi · phương án A",
+          "thoi_luong": "4:06",
+          "ghi": [
+            "Chữ: CHỨNG CHỈ / TIỀN GỬI // khác sổ tiết kiệm?. Bố cục chữ cạnh hình. Hình dựng lại từ mã của video.",
+            "Thuật ngữ dài xuống hai hàng, cột chữ hẹp nên dòng 2 bị thu còn 74–75 điểm ảnh (dưới mức tối thiểu 76)."
+          ]
+        },
+        {
+          "anh": "../xem_truoc/chung_chi_tien_gui/B.png",
+          "nhan": "Chứng chỉ tiền gửi là gì? Khác gì sổ tiết kiệm, hợp đồng tiền gửi · phương án B",
+          "thoi_luong": "4:06",
+          "ghi": [
+            "Chữ: CHỨNG CHỈ TIỀN GỬI // khác sổ tiết kiệm?. Bố cục hình trên, chữ dưới. Hình dựng lại từ mã của video.",
+            "Thuật ngữ dài giữ một hàng, khuôn thu cỡ chữ cho vừa khung."
+          ]
+        },
+        {
+          "anh": "../xem_truoc/cic_la_gi/A.png",
+          "nhan": "CIC - Trung tâm Thông tin tín dụng là gì? Nợ xấu có bị cấm vay? · phương án A",
+          "thoi_luong": "4:01",
+          "ghi": [
+            "Chữ: CIC // có cấm vay thật không?. Bố cục chữ trên, hình dưới. Hình dựng lại từ mã của video."
+          ]
+        },
+        {
+          "anh": "../xem_truoc/cic_la_gi/B.png",
+          "nhan": "CIC - Trung tâm Thông tin tín dụng là gì? Nợ xấu có bị cấm vay? · phương án B",
+          "thoi_luong": "4:01",
+          "ghi": [
+            "Chữ: CIC // có cấm vay thật không?. Bố cục hình trên, chữ dưới. Hình dựng lại từ mã của video."
+          ]
+        },
+        {
+          "anh": "../xem_truoc/han_muc_tin_dung/A.png",
+          "nhan": "Hạn mức tín dụng là gì? Có hạn mức chưa chắc rút được tiền · phương án A",
+          "thoi_luong": "5:04",
+          "ghi": [
+            "Chữ: HẠN MỨC / TÍN DỤNG // chưa phải tiền vay. Bố cục chữ cạnh hình. Hình dựng lại từ mã của video.",
+            "Thuật ngữ dài xuống hai hàng, cột chữ hẹp nên dòng 2 bị thu còn 74–75 điểm ảnh (dưới mức tối thiểu 76)."
+          ]
+        },
+        {
+          "anh": "../xem_truoc/han_muc_tin_dung/B.png",
+          "nhan": "Hạn mức tín dụng là gì? Có hạn mức chưa chắc rút được tiền · phương án B",
+          "thoi_luong": "5:04",
+          "ghi": [
+            "Chữ: HẠN MỨC TÍN DỤNG // chưa phải tiền vay. Bố cục hình trên, chữ dưới. Hình dựng lại từ mã của video.",
+            "Thuật ngữ dài giữ một hàng, khuôn thu cỡ chữ cho vừa khung."
+          ]
+        },
+        {
+          "anh": "../xem_truoc/tai_san_bao_dam/A.png",
+          "nhan": "Tài sản bảo đảm là gì? Điều cần hỏi rõ khi vay ngân hàng · phương án A",
+          "thoi_luong": "4:08",
+          "ghi": [
+            "Chữ: TÀI SẢN BẢO ĐẢM // để làm gì?. Bố cục chữ trên, hình dưới. Hình dựng lại từ mã của video."
+          ]
+        },
+        {
+          "anh": "../xem_truoc/tai_san_bao_dam/B.png",
+          "nhan": "Tài sản bảo đảm là gì? Điều cần hỏi rõ khi vay ngân hàng · phương án B",
+          "thoi_luong": "4:08",
+          "ghi": [
+            "Chữ: TÀI SẢN BẢO ĐẢM // để làm gì?. Bố cục hình trên, chữ dưới. Hình dựng lại từ mã của video."
+          ]
+        },
+        {
+          "anh": "../xem_truoc/tien_gui_co_ky_han_va_casa/A.png",
+          "nhan": "CASA - Tiền gửi không kỳ hạn khác tiền gửi có kỳ hạn thế nào? · phương án A",
+          "thoi_luong": "3:58",
+          "ghi": [
+            "Chữ: CASA // khác gì gửi có kỳ hạn?. Bố cục chữ trên, hình dưới. Hình dựng lại từ mã của video."
+          ]
+        },
+        {
+          "anh": "../xem_truoc/tien_gui_co_ky_han_va_casa/B.png",
+          "nhan": "CASA - Tiền gửi không kỳ hạn khác tiền gửi có kỳ hạn thế nào? · phương án B",
+          "thoi_luong": "3:58",
+          "ghi": [
+            "Chữ: CASA // khác gì gửi có kỳ hạn?. Bố cục hình trên, chữ dưới. Hình dựng lại từ mã của video."
+          ]
+        },
+        {
+          "anh": "../xem_truoc/han_muc_quay_vong/A.png",
+          "nhan": "Phân biệt hạn mức quay vòng và hạn mức không quay vòng · phương án A",
+          "thoi_luong": "5:07",
+          "ghi": [
+            "Chữ: HẠN MỨC QUAY VÒNG // khác không quay vòng?. Bố cục chữ trên, hình dưới. Hình cắt từ mp4 bản nháp (video Remotion).",
+            "Thuật ngữ dài giữ một hàng, khuôn thu cỡ chữ cho vừa khung."
+          ]
+        },
+        {
+          "anh": "../xem_truoc/han_muc_quay_vong/B.png",
+          "nhan": "Phân biệt hạn mức quay vòng và hạn mức không quay vòng · phương án B",
+          "thoi_luong": "5:07",
+          "ghi": [
+            "Chữ: HẠN MỨC QUAY VÒNG // khác không quay vòng?. Bố cục hình trên, chữ dưới. Hình cắt từ mp4 bản nháp (video Remotion).",
+            "Thuật ngữ dài giữ một hàng, khuôn thu cỡ chữ cho vừa khung."
+          ]
+        },
+        {
+          "anh": "../xem_truoc/lai_13_thang/A.png",
+          "nhan": "Tại sao tiền gửi 13 tháng lại khác biệt nhiều so với gửi 12 tháng · phương án A",
+          "thoi_luong": "4:08",
+          "ghi": [
+            "Chữ: GỬI 13 THÁNG // khác gì 12 tháng?. Bố cục chữ trên, hình dưới. Hình cắt từ mp4 bản nháp (video Remotion)."
+          ]
+        },
+        {
+          "anh": "../xem_truoc/lai_13_thang/B.png",
+          "nhan": "Tại sao tiền gửi 13 tháng lại khác biệt nhiều so với gửi 12 tháng · phương án B",
+          "thoi_luong": "4:08",
+          "ghi": [
+            "Chữ: GỬI 13 THÁNG // khác gì 12 tháng?. Bố cục hình trên, chữ dưới. Hình cắt từ mp4 bản nháp (video Remotion)."
+          ]
+        },
+        {
+          "anh": "../xem_truoc/no_nhom_1_den_5/A.png",
+          "nhan": "Nhóm nợ là gì, phân biệt nợ nhóm 1, nợ nhóm 2 ... nợ xấu · phương án A",
+          "thoi_luong": "4:08",
+          "ghi": [
+            "Chữ: NHÓM NỢ // từ nhóm 1 đến nợ xấu. Bố cục chữ trên, hình dưới. Hình cắt từ mp4 bản nháp (video Remotion)."
+          ]
+        },
+        {
+          "anh": "../xem_truoc/no_nhom_1_den_5/B.png",
+          "nhan": "Nhóm nợ là gì, phân biệt nợ nhóm 1, nợ nhóm 2 ... nợ xấu · phương án B",
+          "thoi_luong": "4:08",
+          "ghi": [
+            "Chữ: NHÓM NỢ // từ nhóm 1 đến nợ xấu. Bố cục hình trên, chữ dưới. Hình cắt từ mp4 bản nháp (video Remotion)."
+          ]
+        }
+      ]
+    },
+    {
+      "ten": "2. Ba hình đã xuất lệch dòng 1 với tiêu đề mới",
+      "mo_ta": "Phiên chữ đăng báo lệch. N120 và N126 là chữ Trung vừa chọn, nên em chưa sửa: hình đang dùng đặt cạnh bản theo tiêu đề mới để Trung quyết giữ chữ hình (khi đó tiêu đề phải đổi theo) hay đổi hình theo tiêu đề.",
+      "kieu": "nho",
+      "hinh": [
+        {
+          "anh": "../xem_truoc/ngan_hang_nha_nuoc/A.png",
+          "nhan": "Ngân hàng Nhà nước là gì? Ngày ngân hàng thiếu tiền, ai cho vay? · Hình đang dùng (Trung chọn chữ SBV)",
+          "thoi_luong": "4:24"
+        },
+        {
+          "anh": "../xem_truoc/ngan_hang_nha_nuoc/T1.png",
+          "nhan": "Ngân hàng Nhà nước là gì? Ngày ngân hàng thiếu tiền, ai cho vay? · Theo tiêu đề mới, thuật ngữ xuống hai hàng, chữ cạnh hình",
+          "thoi_luong": "4:24"
+        },
+        {
+          "anh": "../xem_truoc/ngan_hang_nha_nuoc/T2.png",
+          "nhan": "Ngân hàng Nhà nước là gì? Ngày ngân hàng thiếu tiền, ai cho vay? · Theo tiêu đề mới, thuật ngữ một hàng thu nhỏ (cỡ 95)",
+          "thoi_luong": "4:24"
+        },
+        {
+          "anh": "../xem_truoc/ty_le_cho_vay_tren_gia_tri_tai_san/A.png",
+          "nhan": "LTV - Tỷ lệ cho vay trên giá trị tài sản là gì? · Hình đang dùng (TỶ LỆ LTV)",
+          "thoi_luong": "5:05"
+        },
+        {
+          "anh": "../xem_truoc/ty_le_cho_vay_tren_gia_tri_tai_san/T.png",
+          "nhan": "LTV - Tỷ lệ cho vay trên giá trị tài sản là gì? · Theo tiêu đề mới (dòng 1 LTV)",
+          "thoi_luong": "5:05"
+        },
+        {
+          "anh": "../xem_truoc/co_cau_lai_thoi_han_tra_no/A.png",
+          "nhan": "Cơ cấu lại thời hạn trả nợ: giãn nợ có giữ được nhóm nợ 1 không? · Hình đang dùng (Trung chọn GIÃN NỢ / và cơ cấu nợ)",
+          "thoi_luong": "5:10"
+        },
+        {
+          "anh": "../xem_truoc/co_cau_lai_thoi_han_tra_no/T.png",
+          "nhan": "Cơ cấu lại thời hạn trả nợ: giãn nợ có giữ được nhóm nợ 1 không? · Theo tiêu đề mới: CƠ CẤU LẠI NỢ / giữ được nhóm 1? (dòng 2 đề xuất 'giãn nợ giữ nhóm 1?' dài 9 từ nên em rút lại)",
+          "thoi_luong": "5:10"
+        }
+      ]
+    }
+  ],
+  "cau_hoi": [
+    "Lô 1: mỗi video chọn A hay B.",
+    "Thuật ngữ dài: xuống hai hàng chữ cạnh hình, hay một hàng thu nhỏ.",
+    "N120, N95, N126: giữ hình đang dùng hay đổi theo tiêu đề mới."
+  ]
+}

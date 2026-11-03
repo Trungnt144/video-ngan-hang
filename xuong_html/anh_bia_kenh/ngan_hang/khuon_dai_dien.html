@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Ảnh đại diện kênh Ngân hàng</title>
+<!--
+  Ảnh đại diện kênh "Chuyện nghề Ngân hàng" (29/10/2026): hình phẳng nhiều màu, tông xanh ngọc + vàng chanh (Trung chốt qua bảng chọn).
+  Khổ 800×800; YouTube, Facebook cắt hình tròn nên mọi thứ nằm trong vòng tròn nội tiếp. Ba mẫu chọn bằng ?mau=A|B|C:
+    A  toà ngân hàng cách điệu (mái tam giác, bốn cột, bậc thềm)
+    B  bong bóng lời nói chứa đồng xu ký hiệu ₫ ("chuyện" + "tiền")
+    C  chữ NH tròn đậm, chấm đồng xu
+-->
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@900&display=block" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --ngoc: #13c2b0; --ngoc-dam: #0a8f86; --ngoc-toi: #054a4a; --chanh: #dcf542; --chanh-nhat: #f4ffb0; }
+  body { background: #fff; }
+  #dd { position: relative; width: 800px; height: 800px; overflow: hidden;
+    background: radial-gradient(circle at 35% 28%, #4fe3cf 0%, var(--ngoc) 38%, var(--ngoc-dam) 78%, #077a74 100%); }
+  svg { position: absolute; inset: 0; width: 800px; height: 800px; }
+</style>
+</head>
+<body>
+<div id="dd"><svg id="hinh" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg"></svg></div>
+<script>
+  const mau = new URLSearchParams(location.search).get('mau') || 'A';
+  // tia sáng lấp lánh nhỏ dùng chung: ngôi sao bốn cánh
+  const sao = (x, y, r, mau = '#fff') => `<path d="M${x} ${y - r} Q${x + r * .18} ${y - r * .18} ${x + r} ${y} Q${x + r * .18} ${y + r * .18} ${x} ${y + r} Q${x - r * .18} ${y + r * .18} ${x - r} ${y} Q${x - r * .18} ${y - r * .18} ${x} ${y - r}Z" fill="${mau}"/>`;
+  const vien = 'stroke="#054a4a" stroke-width="22" stroke-linejoin="round" paint-order="stroke"';
+  const HINH = {
+    A: `
+      <circle cx="400" cy="415" r="270" fill="#0b6f6a" opacity=".35"/>
+      <g ${vien}>
+        <path d="M400 150 L640 300 L160 300 Z" fill="var(--chanh)"/>
+        <rect x="190" y="300" width="420" height="44" rx="10" fill="#fff"/>
+        <rect x="222" y="360" width="62" height="200" rx="14" fill="#fff"/>
+        <rect x="324" y="360" width="62" height="200" rx="14" fill="#fff"/>
+        <rect x="414" y="360" width="62" height="200" rx="14" fill="#fff"/>
+        <rect x="516" y="360" width="62" height="200" rx="14" fill="#fff"/>
+        <rect x="180" y="575" width="440" height="40" rx="10" fill="var(--chanh)"/>
+        <rect x="150" y="625" width="500" height="42" rx="12" fill="#fff"/>
+      </g>
+      <circle cx="400" cy="246" r="30" fill="#054a4a"/><text x="400" y="263" font-family="Nunito" font-weight="900" font-size="48" text-anchor="middle" fill="var(--chanh)">₫</text>
+      ${sao(640, 170, 46, 'var(--chanh-nhat)')}${sao(170, 470, 26)}${sao(660, 470, 22, 'var(--chanh)')}`,
+    B: `
+      <g ${vien}>
+        <path d="M400 135 C560 135 670 235 670 370 C670 505 560 600 400 600 C370 600 342 597 316 591 L210 665 L232 560 C170 515 130 448 130 370 C130 235 240 135 400 135 Z" fill="#fff"/>
+        <circle cx="400" cy="368" r="160" fill="var(--chanh)"/>
+      </g>
+      <circle cx="400" cy="368" r="126" fill="none" stroke="#054a4a" stroke-width="10" stroke-dasharray="2 22" stroke-linecap="round"/>
+      <text x="400" y="440" font-family="Nunito" font-weight="900" font-size="210" text-anchor="middle" fill="#054a4a">₫</text>
+      ${sao(645, 165, 48, 'var(--chanh-nhat)')}${sao(140, 200, 24)}${sao(690, 560, 26, 'var(--chanh)')}`,
+    C: `
+      <text x="404" y="520" font-family="Nunito" font-weight="900" font-size="330" text-anchor="middle" letter-spacing="-12" fill="#054a4a" opacity=".55" transform="translate(10 16)">NH</text>
+      <text x="404" y="520" font-family="Nunito" font-weight="900" font-size="330" text-anchor="middle" letter-spacing="-12" fill="var(--chanh)" stroke="#054a4a" stroke-width="18" stroke-linejoin="round" paint-order="stroke">NH</text>
+      <g ${vien}><circle cx="610" cy="235" r="78" fill="#fff"/></g>
+      <text x="610" y="268" font-family="Nunito" font-weight="900" font-size="96" text-anchor="middle" fill="#054a4a">₫</text>
+      <rect x="230" y="575" width="350" height="34" rx="17" fill="#fff" stroke="#054a4a" stroke-width="14" paint-order="stroke"/>
+      ${sao(190, 220, 40, 'var(--chanh-nhat)')}${sao(640, 600, 24)}`,
+  };
+  document.getElementById('hinh').innerHTML = HINH[mau];
+  document.fonts.ready.then(() => { document.body.dataset.xong = '1'; });
+</script>
+</body>
+</html>

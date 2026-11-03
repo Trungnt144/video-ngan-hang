@@ -1,0 +1,6 @@
+{
+ "_ghi_chu": "Bộ từ khoá cho soi.py --nhom, mỗi nhóm ứng với một kênh, dùng với soi.py --nhom (00_tam_nhin_va_muc_tieu.md). Sửa tay được. Giữ câu người xem hay gõ, 2-5 từ.",
+ "dien": ["điện mặt trời mái nhà", "điện gió", "tua bin gió", "nhà máy điện", "điện hạt nhân", "lưới điện", "pin lưu trữ năng lượng", "máy biến áp hoạt động", "inverter là gì", "giá điện tăng"],
+ "ngan_hang": ["lãi suất ngân hàng", "vay ngân hàng", "gửi tiết kiệm", "nợ xấu ngân hàng", "thẻ tín dụng", "ngân hàng nhà nước"],
+ "vi_mo": ["kinh tế việt nam", "lạm phát", "giá vàng", "tỷ giá đô la", "bất động sản 2026", "đường sắt cao tốc", "đầu tư công"]
+}

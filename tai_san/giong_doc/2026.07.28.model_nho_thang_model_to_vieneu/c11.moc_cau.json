@@ -1,0 +1,16 @@
+{
+ "doc": "Thứ ba, việc này chỉ mới đúng ở một lĩnh vực đủ hẹp để huấn luyện chuyên sâu. Ngoài phạm vi đó, chưa ai chứng minh được gì.",
+ "giay": 6.25,
+ "cau": [
+  {
+   "cau": "Thứ ba, việc này chỉ mới đúng ở một lĩnh vực đủ hẹp để huấn luyện chuyên sâu.",
+   "bd": 0.0,
+   "kt": 3.92
+  },
+  {
+   "cau": "Ngoài phạm vi đó, chưa ai chứng minh được gì.",
+   "bd": 4.17,
+   "kt": 6.25
+  }
+ ]
+}

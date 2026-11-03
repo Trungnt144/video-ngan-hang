@@ -1,0 +1,4284 @@
+{
+  "_ghi_chu": "NGUỒN SỰ THẬT của hệ trục dựng (Trung chốt 27/10/2026, thay cho mã D gộp ở video mới). Sửa ở file này rồi chạy: python3 scripts/goi_y_to_hop_dung.py --xuat-md. File he_truc_dung.md sinh ra từ đây, không sửa tay. Nhạc nền không còn liệt kê ở đây: script đọc thẳng tai_san/nhac_nen/so_nhac.json (78 bài, sinh bằng scripts/lap_so_nhac.py), lọc theo nhac_loc và nhóm nhạc hợp, tránh của từng tông màu. Mỗi lựa chọn có d_nguon = thẻ D cũ mà nó tách ra; script dùng trường này để tra Bảng 3 (KB × D) ở 00_muc_luc.md và để đọc dòng Biến tấu của video cũ khi tính độ đa dạng. Bản 2.0 (27/10/2026): thêm giá trị học từ repo awesome-opus5-5-videos (CL-09…CL-16, BC-08…BC-13, MAU-20…MAU-31, đều trạng thái nháp, đánh dấu gia_tri_moi) và khoá cach_lam (LM-01…LM-07). Trung chốt 27/10/2026: giá trị mới CHƯA CHẤM ĐIỂM. Tổ hợp chứa ít nhất một giá trị gia_tri_moi không vào bảng xếp hạng, không bị trừ điểm nào; script in ở mục riêng \"Lựa chọn mới, chưa chấm điểm\" để Claude đánh giá theo nội dung và tính chất từng video, đọc hai trường goi_y_dung_khi và khong_hop_khi của chất liệu. Luật loại trừ cứng (sai khổ, sai danh sách đi kèm, bảng trắng cần nền sáng) vẫn áp. Mỗi chất liệu có trường cach_lam: danh sách mã LM làm được, mỗi mã kèm mức muc = san (đã có mã dựng sẵn cho đúng chất liệu này) hoặc cong_cu (công cụ chung có, chưa có mã riêng, phải viết hoặc dựng thêm) hoặc chua (chưa có cả công cụ). Trường ma_dung của chất liệu bằng co khi và chỉ khi có ít nhất một cách làm ở mức san; luật trừ 2 điểm \"chưa có mã dựng\" áp cho chất liệu cũ và đọc trường ma_dung. Trạng thái duyet của thẻ D lấy từ Bảng 2 (D-01, D-07, D-08, D-09, D-09b, D-10, D-11 đã duyệt từ 27/10/2026). Màu của giá trị mới đo bằng máy từ khung hình mẫu (độ lệch khoảng 3 mức trên thang 255; nét mảnh đo nhạt hơn màu thật chừng 10–20 mức). Cách dùng và quy trình: 04_he_truc_dung.md và 05_cach_lam.md.",
+  "phien_ban": "2.0",
+  "cap_nhat": "2026-10-27",
+  "loai_chu_de": {
+    "may_moc": "Máy móc, thiết bị có cấu tạo bên trong",
+    "hien_tuong": "Hiện tượng vận hành hoặc vật lý khó nhìn thấy (che gió, nghẽn lưới, dòng điện)",
+    "dinh_luong": "Khái niệm định lượng giải thích bằng con số, đồ thị, công thức",
+    "so_lieu_danh_sach": "Tổng hợp số liệu, danh sách, xếp hạng, điểm tin",
+    "san_pham_giao_dien": "Sản phẩm, ứng dụng có giao diện để mô phỏng",
+    "cong_cu_thao_tac": "Công cụ có bước cài đặt, thao tác cụ thể",
+    "so_sanh": "So sánh nhiều phương án",
+    "vach_tran": "Vạch trần nhiều lớp sự thật",
+    "co_che_quy_trinh": "Cơ chế, quy trình nhiều bước không gắn vật thể"
+  },
+  "linh_vuc": {
+    "tai_chinh": "Tài chính, ngân hàng",
+    "cong_nghe": "Công nghệ, AI, phần mềm",
+    "dien_tu": "Điện tử, viễn thông",
+    "nang_luong": "Năng lượng, điện",
+    "co_khi": "Cơ khí, động cơ, nhà máy",
+    "y_te": "Y tế, cơ thể",
+    "xay_dung_cang": "Xây dựng, cảng, tàu biển",
+    "tieu_dung": "Tiêu dùng, gia dụng, đồ chơi",
+    "thien_van_vat_ly": "Thiên văn, vật lý hạt, quang học"
+  },
+  "chat_lieu": [
+    {
+      "ma": "CL-01",
+      "ten": "2D chữ và khối",
+      "mo_ta": "Chữ trắng rất đậm, khối hình học, số đếm tăng kèm thanh chạy; 7 khối cảnh dựng sẵn",
+      "kho": [
+        "doc"
+      ],
+      "muc_chi_tiet": [
+        "CT1"
+      ],
+      "d_nguon": [
+        "D-01",
+        "D-06"
+      ],
+      "ma_dung": "co",
+      "ma_dung_o": "xuong/src/video-ngan/ (7 khối cảnh, chỉ có bộ màu D-01)",
+      "mau_co_san": [
+        "MAU-01"
+      ],
+      "nhip_phu_de": "Khoảng 7 giây một màn; phụ đề đổi cụm 0,4–0,6 giây theo mốc từng từ lấy bằng Whisper từ giọng VieNeu (`scripts/moc_tung_tu.py`); chưa có mốc từng từ thì dùng cụm chữ trắng theo câu",
+      "thoi_gian": {
+        "CT1": "Nhanh: 84 giây video render 62 giây (26/10/2026); có chuyển động liên tục thì chậm hơn khoảng 19%"
+      },
+      "vi_du": "Bản nháp 'model nhỏ thắng model to' (chưa có video dọc thành phẩm)",
+      "khong_hop": "Nội dung cần ấm áp kể chuyện con người; vật thể cần nhìn bên trong",
+      "chu_de": {
+        "so_lieu_danh_sach": 2,
+        "so_sanh": 2,
+        "vach_tran": 1,
+        "dinh_luong": 1,
+        "co_che_quy_trinh": 1
+      },
+      "tiet_tau_nhac_hop": [
+        "VUA",
+        "NHANH"
+      ],
+      "cach_lam": [
+        {
+          "ma": "LM-01",
+          "muc": "san",
+          "ghi_chu": "7 khối cảnh trong xuong/src/video-ngan/, chỉ bộ màu MAU-01"
+        },
+        {
+          "ma": "LM-04",
+          "muc": "cong_cu",
+          "ghi_chu": "bản thử 'model nhỏ thắng model to' 75 giây dọc (26/10/2026), chưa là thành phẩm"
+        },
+        {
+          "ma": "LM-03",
+          "muc": "cong_cu",
+          "ghi_chu": "viết trang HTML mới; chưa thử cho khối chữ và số dọc"
+        }
+      ]
+    },
+    {
+      "ma": "CL-02",
+      "ten": "2D thẻ kính mờ",
+      "mo_ta": "Thẻ kính mờ mô phỏng giao diện giữ 8–13 giây, chi tiết bên trong tiết lộ dần, chuyển cảnh mờ sang nét",
+      "kho": [
+        "doc"
+      ],
+      "muc_chi_tiet": [
+        "CT1"
+      ],
+      "d_nguon": [
+        "D-02",
+        "D-04"
+      ],
+      "ma_dung": "chua",
+      "ma_dung_o": "Chưa có, phải dựng thêm trong xuong/",
+      "nhip_phu_de": "Hai tầng: thẻ lớn 8–13 giây, phụ đề 1,5–2,5 giây một cụm",
+      "thoi_gian": {
+        "CT1": "Chưa đo (chưa có mã dựng)"
+      },
+      "vi_du": "Chưa có video",
+      "khong_hop": "Nội dung không có sản phẩm hay giao diện để mô phỏng",
+      "chu_de": {
+        "san_pham_giao_dien": 2,
+        "vach_tran": 2,
+        "so_lieu_danh_sach": 1
+      },
+      "tiet_tau_nhac_hop": [
+        "VUA"
+      ],
+      "cach_lam": [
+        {
+          "ma": "LM-01",
+          "muc": "cong_cu",
+          "ghi_chu": "phải dựng khối thẻ kính mờ trong xuong/"
+        },
+        {
+          "ma": "LM-03",
+          "muc": "cong_cu",
+          "ghi_chu": "viết trang HTML mới có thẻ mờ nét và chuyển cảnh mờ"
+        }
+      ]
+    },
+    {
+      "ma": "CL-03",
+      "ten": "2D nét viền ăn khớp lời",
+      "mo_ta": "Hình chỉ có nét viền mảnh; mỗi cụm phụ đề ứng với đúng một chi tiết đổi trên hình",
+      "kho": [
+        "doc"
+      ],
+      "muc_chi_tiet": [
+        "CT1"
+      ],
+      "d_nguon": [
+        "D-03"
+      ],
+      "ma_dung": "chua",
+      "ma_dung_o": "Chưa có, phải dựng thêm trong xuong/",
+      "nhip_phu_de": "Cảnh lớn 10–12 giây, cụm phụ đề 2–2,5 giây, mỗi cụm một bước đổi hình",
+      "thoi_gian": {
+        "CT1": "Chưa đo (chưa có mã dựng)"
+      },
+      "vi_du": "Chưa có video",
+      "khong_hop": "Nội dung cần trọng lượng, nghiêm trọng; số liệu lớn cần làm nổi",
+      "chu_de": {
+        "co_che_quy_trinh": 2,
+        "cong_cu_thao_tac": 1,
+        "san_pham_giao_dien": 1
+      },
+      "tiet_tau_nhac_hop": [
+        "VUA"
+      ],
+      "cach_lam": [
+        {
+          "ma": "LM-01",
+          "muc": "cong_cu",
+          "ghi_chu": "phải dựng khối nét viền ăn khớp lời trong xuong/"
+        },
+        {
+          "ma": "LM-03",
+          "muc": "cong_cu",
+          "ghi_chu": "viết trang HTML mới, nét vẽ theo đồng hồ ảo"
+        }
+      ]
+    },
+    {
+      "ma": "CL-04",
+      "ten": "2D ảnh chụp màn hình và sơ đồ",
+      "mo_ta": "Ghép ảnh chụp màn hình thật với sơ đồ vector; số liệu đếm tăng; chuyển cảnh vòng tròn khép dần",
+      "kho": [
+        "doc"
+      ],
+      "muc_chi_tiet": [
+        "CT1"
+      ],
+      "d_nguon": [
+        "D-05"
+      ],
+      "ma_dung": "chua",
+      "ma_dung_o": "Chưa có, phải dựng thêm trong xuong/",
+      "nhip_phu_de": "Khối lớn 5–20 giây, chữ và số bên trong đổi 1,5–2,5 giây một lần",
+      "thoi_gian": {
+        "CT1": "Chưa đo (chưa có mã dựng)"
+      },
+      "vi_du": "Chưa có video",
+      "khong_hop": "Nội dung cần một chất liệu hình thuần nhất",
+      "chu_de": {
+        "cong_cu_thao_tac": 2,
+        "san_pham_giao_dien": 1
+      },
+      "tiet_tau_nhac_hop": [
+        "VUA",
+        "NHANH"
+      ],
+      "cach_lam": [
+        {
+          "ma": "LM-01",
+          "muc": "cong_cu",
+          "ghi_chu": "phải dựng khối ảnh chụp màn hình và sơ đồ trong xuong/"
+        },
+        {
+          "ma": "LM-03",
+          "muc": "cong_cu",
+          "ghi_chu": "viết trang HTML mới, ghép ảnh chụp với SVG"
+        }
+      ]
+    },
+    {
+      "ma": "CL-05",
+      "ten": "Đồ thị SVG",
+      "mo_ta": "Đồ thị nét mảnh tự vẽ ra, điểm trượt, bảng số điền từng ô đúng lúc đọc, công thức biến đổi tại chỗ",
+      "kho": [
+        "ngang"
+      ],
+      "muc_chi_tiet": [
+        "CT1"
+      ],
+      "d_nguon": [
+        "D-10"
+      ],
+      "ma_dung": "co",
+      "ma_dung_o": "xuong_dai/dien_ap/, kw_kwh/, p50_p90/, ton_that/",
+      "nhip_phu_de": "Gần như không cắt: mỗi câu đọc một bước biến đổi hình; phụ đề chạy theo từng từ (`10_video_ngang_thuyet_minh.md` mục 19)",
+      "thoi_gian": {
+        "CT1": "Nhanh (chỉ hình vẽ bằng mã, không 3D); chưa ghi số đo"
+      },
+      "vi_du": "Video điện áp, dòng điện, điện trở (xuong_dai/dien_ap/)",
+      "khong_hop": "Máy móc, vật thể cần nhìn bên trong; sản phẩm có giao diện",
+      "chu_de": {
+        "dinh_luong": 2,
+        "so_sanh": 1,
+        "so_lieu_danh_sach": 1,
+        "hien_tuong": 1
+      },
+      "tiet_tau_nhac_hop": [
+        "CHAM",
+        "VUA"
+      ],
+      "trang_thai": "duyet",
+      "cach_lam": [
+        {
+          "ma": "LM-02",
+          "muc": "san",
+          "ghi_chu": "xuong_dai/dien_ap/, kw_kwh/, p50_p90/, ton_that/"
+        },
+        {
+          "ma": "LM-03",
+          "muc": "cong_cu",
+          "ghi_chu": "đã thử một phần trong video Lịch sử AI 27/10/2026; SVG + GSAP đã đo 0,97 giây máy mỗi giây video"
+        }
+      ]
+    },
+    {
+      "ma": "CL-06",
+      "ten": "3D đất sét và bản vẽ",
+      "mo_ta": "Mô hình 3D một màu trắng xám như đất sét, máy quay lượn chậm, mặt cắt và tách lớp; xen màn bản vẽ lưới ô cho công thức",
+      "kho": [
+        "ngang"
+      ],
+      "muc_chi_tiet": [
+        "CT2",
+        "CT3"
+      ],
+      "d_nguon": [
+        "D-07"
+      ],
+      "ma_dung": "co",
+      "ma_dung_o": "xuong_dai/pin_mat_troi/ (bản 3D, Three.js)",
+      "nhip_phu_de": "Rất chậm: một cảnh 3D giữ 10–30 giây; gần như không chữ trên hình",
+      "thoi_gian": {
+        "CT2": "Trung bình; chưa ghi số đo",
+        "CT3": "Chậm; chưa dựng thật ở mức này"
+      },
+      "vi_du": "Video pin mặt trời bản 3D (25/10/2026)",
+      "khong_hop": "Tài chính trừu tượng không có vật thể; tin nóng",
+      "chu_de": {
+        "hien_tuong": 2,
+        "may_moc": 1,
+        "co_che_quy_trinh": 1
+      },
+      "tiet_tau_nhac_hop": [
+        "CHAM",
+        "VUA"
+      ],
+      "trang_thai": "duyet",
+      "cach_lam": [
+        {
+          "ma": "LM-02",
+          "muc": "san",
+          "ghi_chu": "xuong_dai/pin_mat_troi/ (bản 3D, Three.js)"
+        },
+        {
+          "ma": "LM-03",
+          "muc": "cong_cu",
+          "ghi_chu": "Three.js đơn giản đã đo 1,39 giây máy mỗi giây video; chưa dựng cảnh đất sét bằng cách này"
+        }
+      ]
+    },
+    {
+      "ma": "CL-07",
+      "ten": "3D xuyên thấu",
+      "mo_ta": "Mô hình 3D (Three.js) vỏ trắng chuyển xuyên thấu như phim X-quang, mỗi bộ phận một màu, nhãn có đường dẫn bám bộ phận",
+      "kho": [
+        "ngang"
+      ],
+      "muc_chi_tiet": [
+        "CT2",
+        "CT3"
+      ],
+      "d_nguon": [
+        "D-09",
+        "D-09b"
+      ],
+      "ma_dung": "co",
+      "ma_dung_o": "xuong_dai/may_bien_ap/ (khung mã dùng lại cho mọi video D-09b), xuong_dai/bang_mau_d09b/ (bảng màu)",
+      "mau_co_san": [
+        "MAU-09",
+        "MAU-10",
+        "MAU-11",
+        "MAU-12",
+        "MAU-13",
+        "MAU-14",
+        "MAU-15",
+        "MAU-16",
+        "MAU-17"
+      ],
+      "nhip_phu_de": "Máy quay bay liên tục, 3–5 giây một góc máy; giọng tăng tốc 1,2 lần; phụ đề theo câu hoặc theo từng từ",
+      "thoi_gian": {
+        "CT2": "Xong trong một buổi (thẻ D-09)",
+        "CT3": "Video 2 phút có thể mất trọn một ngày (`10_video_ngang_thuyet_minh.md` mục 1)"
+      },
+      "vi_du": "CT3: máy biến áp, inverter, hộp số, BESS; CT2: buồng máy tua-bin",
+      "khong_hop": "Nội dung cần nhìn như thật; tông trầm nghiêm trọng",
+      "chu_de": {
+        "may_moc": 2,
+        "hien_tuong": 1,
+        "co_che_quy_trinh": 1
+      },
+      "tiet_tau_nhac_hop": [
+        "VUA",
+        "NHANH"
+      ],
+      "trang_thai": "duyet",
+      "cach_lam": [
+        {
+          "ma": "LM-02",
+          "muc": "san",
+          "ghi_chu": "xuong_dai/may_bien_ap/ (khung mã dùng lại cho mọi video D-09b), bang_mau_d09b/"
+        }
+      ]
+    },
+    {
+      "ma": "CL-08",
+      "ten": "3D tả thực Blender",
+      "mo_ta": "Vật liệu thật kết xuất bằng Blender Cycles từ mô hình tải về, máy quay bay liền mạch, có độ sâu trường ảnh",
+      "kho": [
+        "ngang"
+      ],
+      "muc_chi_tiet": [
+        "CT2",
+        "CT3"
+      ],
+      "d_nguon": [
+        "D-08",
+        "D-11"
+      ],
+      "ma_dung": "co",
+      "ma_dung_o": "xuong_dai/tuabin_gio/, xuong_dai/d11_lrv/ (skill dung-hoat-canh-3d-blender)",
+      "nhip_phu_de": "Trung vị 4,7 giây giữa hai lần cắt, có đoạn bay liền tới 69 giây; nhãn chữ ghép trong Remotion",
+      "thoi_gian": {
+        "CT2": "Nhiều giờ máy chạy (thẻ D-08)",
+        "CT3": "Cycles 6–14 giây mỗi khung ở 960×540 (thẻ D-11); cần mô hình chi tiết có giấy phép rõ"
+      },
+      "vi_du": "Video tua-bin gió (D-08); cảnh thử buồng máy D-11",
+      "khong_hop": "Cần video trong vài giờ; hiện tượng vô hình chiếm phần lớn video; chưa có mô hình tải về",
+      "chu_de": {
+        "may_moc": 2
+      },
+      "tiet_tau_nhac_hop": [
+        "CHAM",
+        "VUA"
+      ],
+      "trang_thai": "duyet",
+      "cach_lam": [
+        {
+          "ma": "LM-05",
+          "muc": "san",
+          "ghi_chu": "xuong_dai/tuabin_gio/, xuong_dai/d11_lrv/ (skill dung-hoat-canh-3d-blender)"
+        }
+      ]
+    },
+    {
+      "ma": "CL-09",
+      "ten": "2D minh hoạ phẳng có vật thể",
+      "mo_ta": "Vật thể vẽ phẳng bằng SVG đặt giữa khung (ví dụ ly, chai, thiết bị) được lấp hoặc biến đổi dần theo từng bước; thẻ số đo cỡ lớn chạy từ 0 tới đủ lượng; thanh bước ở chân khung",
+      "kho": [
+        "ngang"
+      ],
+      "muc_chi_tiet": [
+        "CT1"
+      ],
+      "d_nguon": [
+        "D-03"
+      ],
+      "ma_dung": "co",
+      "ma_dung_o": "LM-03: công cụ xuong_html/cong_cu/, đã chạy thử trọn một video bàn thao tác công thức cocktail 27/10/2026 (trang mau1_cocktail.html, chưa lưu vào kho); LM-02: phải dựng bàn thao tác trong xuong_dai/",
+      "nhip_phu_de": "Một cảnh cố định, mỗi bước khoảng 5 giây; 5–6 chấm bước ở chân khung (bước đang làm tô màu, bước xong có dấu tích); phụ đề chân khung theo câu (mẫu ror-fly-880547, sarut0bisasuke-069973)",
+      "thoi_gian": {
+        "CT1": "LM-03: 1,2–1,5 giây máy mỗi giây video ở 30 khung/giây; bản chạy thử cocktail 27/10/2026: 30 giây video xuất 36,4 giây máy (1,21), nguồn nhật ký mau1_cocktail.time.txt. LM-02: chưa đo, phải dựng"
+      },
+      "vi_du": "Bản chạy thử bàn thao tác công thức cocktail 27/10/2026 (30 giây, chưa là thành phẩm của Media)",
+      "khong_hop": "Nội dung không có vật thể cụ thể để vẽ phẳng; vật thể cần nhìn bên trong như máy móc",
+      "chu_de": {
+        "cong_cu_thao_tac": 2,
+        "co_che_quy_trinh": 2,
+        "dinh_luong": 1
+      },
+      "tiet_tau_nhac_hop": [
+        "VUA",
+        "NHANH"
+      ],
+      "cach_lam": [
+        {
+          "ma": "LM-03",
+          "muc": "san",
+          "ghi_chu": "bản chạy thử cocktail 27/10/2026 (1,21 giây máy mỗi giây video)"
+        },
+        {
+          "ma": "LM-02",
+          "muc": "cong_cu",
+          "ghi_chu": "phải dựng bàn thao tác trong dự án Remotion ngang"
+        },
+        {
+          "ma": "LM-04",
+          "muc": "cong_cu",
+          "ghi_chu": "GSAP + SVG, chưa thử bàn thao tác"
+        }
+      ],
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "hop_media": 2.7,
+      "mau_nguon": [
+        "ror-fly-880547",
+        "sarut0bisasuke-069973",
+        "alex-prompter-997524"
+      ],
+      "goi_y_dung_khi": "Chủ đề có vật thể cụ thể thao tác từng bước (công thức, cài đặt, quy trình), mỗi bước có số đo hoặc lượng; bản chạy thử cocktail 27/10/2026, mẫu nguồn hợp Media 2,7/3.",
+      "khong_hop_khi": "Khái niệm trừu tượng không có vật thể để vẽ phẳng; vật thể cần nhìn bên trong như máy móc (xem CL-07, CL-13)."
+    },
+    {
+      "ma": "CL-10",
+      "ten": "2D nét vẽ tay",
+      "mo_ta": "Nền bảng trắng hoặc giấy sổ; nét bút hiện dần theo đường bút đúng lúc lời đọc; tiêu đề viết tay ở góc; có thể có hình cây bút đang vẽ",
+      "kho": [
+        "ngang"
+      ],
+      "muc_chi_tiet": [
+        "CT1"
+      ],
+      "d_nguon": [
+        "D-10"
+      ],
+      "ma_dung": "chua",
+      "ma_dung_o": "Chưa có trang mẫu riêng. LM-03 có công cụ chung (xuong_html/cong_cu/), viết trang mới; LM-04 xuong_thu_hyperframes/",
+      "nhip_phu_de": "Nhịp chậm đều; mỗi cảnh một tiêu đề viết tay ở góc trái trên, nội dung vẽ dần bên dưới theo lời; phụ đề một câu ở dải chân khung; có khoảng nghỉ trang trống giữa cảnh (mẫu tak3sh8-441895, groundcontrol-230877)",
+      "thoi_gian": {
+        "CT1": "LM-03: 1,2–1,5 giây máy mỗi giây video ở 30 khung/giây (số đo LM-03 27/10/2026); chưa đo trang nét vẽ tay thật"
+      },
+      "vi_du": "Chưa có video; mẫu nguồn tak3sh8-441895 (bảng trắng), groundcontrol-230877 (giấy kem, bút chì)",
+      "khong_hop": "Nội dung cần trọng lượng, nghiêm trọng; nội dung dày chữ (nét viết tay đọc chậm); nền tối",
+      "chu_de": {
+        "dinh_luong": 2,
+        "co_che_quy_trinh": 1,
+        "so_lieu_danh_sach": 1
+      },
+      "tiet_tau_nhac_hop": [
+        "CHAM",
+        "VUA"
+      ],
+      "cach_lam": [
+        {
+          "ma": "LM-03",
+          "muc": "cong_cu",
+          "ghi_chu": "viết trang mới; nét hiện dần theo đồng hồ ảo"
+        },
+        {
+          "ma": "LM-04",
+          "muc": "cong_cu",
+          "ghi_chu": "GSAP vẽ nét, chưa thử"
+        }
+      ],
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "hop_media": 3.0,
+      "mau_nguon": [
+        "tak3sh8-441895",
+        "groundcontrol-230877"
+      ],
+      "goi_y_dung_khi": "Khái niệm định lượng hoặc cơ chế cần vẽ dần theo lời đọc (công thức, đồ thị, sơ đồ nút); video dài, nhịp chậm đều (mẫu 3–5 phút); hợp Media 3,0/3.",
+      "khong_hop_khi": "Nội dung cần trọng lượng, nghiêm trọng; số liệu lớn cần nổi; nội dung dày chữ (nét viết tay đọc chậm); nền tối (nét vẽ tay chỉ đọc được trên nền sáng, đã thành luật loại trừ)."
+    },
+    {
+      "ma": "CL-11",
+      "ten": "Chữ động khổng lồ",
+      "mo_ta": "Mỗi nhịp 1–2,5 giây một ý; chữ không chân rất đậm chiếm gần hết khung; nền đổi màu theo từng ý; vài từ khoá đổi màu nhấn",
+      "kho": [
+        "doc",
+        "ngang"
+      ],
+      "muc_chi_tiet": [
+        "CT1"
+      ],
+      "d_nguon": [
+        "D-01"
+      ],
+      "ma_dung": "chua",
+      "ma_dung_o": "Chưa có trang mẫu riêng. LM-03 có công cụ chung (xuong_html/cong_cu/); LM-04 xuong_thu_hyperframes/",
+      "nhip_phu_de": "Một ý mỗi nhịp 1,5–2,5 giây, cắt dứt khoát; thường không có phụ đề riêng vì chữ trên hình là lời (mẫu souravbhar871-477361 1,5 giây, 0xfemyn-137833 2,5 giây)",
+      "thoi_gian": {
+        "CT1": "LM-03: 1,2–1,5 giây máy mỗi giây video ở 30 khung/giây; xuất 60 khung/giây có nhoè chuyển động nặng gấp khoảng 8 lần (mẫu lịch sử AI 27/10/2026)"
+      },
+      "vi_du": "Chưa có video; mẫu nguồn 0xfemyn-137833, souravbhar871-477361, chrisjdimarco-808196, zheke-622583",
+      "khong_hop": "Nội dung cần hình minh hoạ vật thể hoặc cơ chế; ý dài hơn hai câu",
+      "chu_de": {
+        "vach_tran": 2,
+        "so_lieu_danh_sach": 1,
+        "san_pham_giao_dien": 1,
+        "so_sanh": 1
+      },
+      "tiet_tau_nhac_hop": [
+        "NHANH",
+        "VUA"
+      ],
+      "cach_lam": [
+        {
+          "ma": "LM-03",
+          "muc": "cong_cu",
+          "ghi_chu": "viết trang mới; chữ co giãn, cắt lát theo đồng hồ ảo"
+        },
+        {
+          "ma": "LM-04",
+          "muc": "cong_cu",
+          "ghi_chu": "GSAP, chưa thử chữ khổng lồ"
+        }
+      ],
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "hop_media": 2.75,
+      "mau_nguon": [
+        "0xfemyn-137833",
+        "souravbhar871-477361",
+        "chrisjdimarco-808196",
+        "zheke-622583"
+      ],
+      "goi_y_dung_khi": "Ý ngắn mỗi nhịp 1–2,5 giây: vạch trần, số liệu ngắn, quảng cáo; video 10–60 giây; hợp Media 2,75/3.",
+      "khong_hop_khi": "Nội dung cần hình minh hoạ vật thể hoặc cơ chế; ý dài hơn hai câu; xuất 60 khung/giây có nhoè nặng gấp khoảng 8 lần xuất 30 khung/giây."
+    },
+    {
+      "ma": "CL-12",
+      "ten": "Hạt và ánh sáng",
+      "mo_ta": "Hạt (hàng nghìn tới hàng chục nghìn điểm), quầng sáng và hình sinh bằng toán hoặc shader (chương trình nhỏ chạy trên card đồ hoạ để tính màu từng điểm ảnh); nền tối; con số hoặc chữ hình thành từ hạt tụ lại",
+      "kho": [
+        "ngang"
+      ],
+      "muc_chi_tiet": [
+        "CT1",
+        "CT2"
+      ],
+      "d_nguon": [
+        "D-01",
+        "D-05"
+      ],
+      "ma_dung": "chua",
+      "ma_dung_o": "Chưa có trang mẫu riêng. LM-03 có công cụ chung (xuong_html/cong_cu/), đã đo trang Canvas 3.000 hạt; đám hạt và vòng hạt có trong mẫu lịch sử AI 27/10/2026 nhưng chưa tách thành mã dùng lại",
+      "nhip_phu_de": "Nhịp chậm, mỗi con số hoặc mỗi hình một cảnh; chữ tụ từ hạt; thanh tiến trình mảnh chạy suốt chân khung; ít chữ thuyết minh (mẫu nolkeeg-635633 45 giây)",
+      "thoi_gian": {
+        "CT1": "LM-03: Canvas 3.000 hạt 0,96 giây máy mỗi giây video ở 30 khung/giây; hạt hàng chục nghìn điểm, 60 khung/giây, có nhoè chuyển động: khoảng 23 phút máy cho 60 giây video và file 134 MB do lớp hạt nhiễu (mẫu lịch sử AI 27/10/2026)",
+        "CT2": "Cảnh dựng từ điểm bằng Three.js: ước, chưa đo"
+      },
+      "vi_du": "Chưa có video; mẫu nguồn nolkeeg-635633, miaai-lab-774895, michaelzsguo-782312, ishuagra02-678129",
+      "khong_hop": "Cần số liệu chính xác đọc kỹ; cần video gấp (hạt nặng máy); nội dung không có hiện tượng để diễn tả bằng ánh sáng",
+      "chu_de": {
+        "hien_tuong": 2,
+        "so_lieu_danh_sach": 1,
+        "dinh_luong": 1
+      },
+      "tiet_tau_nhac_hop": [
+        "CHAM",
+        "VUA"
+      ],
+      "cach_lam": [
+        {
+          "ma": "LM-03",
+          "muc": "cong_cu",
+          "ghi_chu": "đã thử một phần trong video Lịch sử AI 27/10/2026 (đám hạt, vòng hạt); nặng khi hạt nhiều và xuất 60 khung/giây có nhoè"
+        }
+      ],
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "hop_media": 1.75,
+      "mau_nguon": [
+        "nolkeeg-635633",
+        "miaai-lab-774895",
+        "michaelzsguo-782312",
+        "ishuagra02-678129"
+      ],
+      "goi_y_dung_khi": "Hiện tượng vật lý hoặc thiên văn diễn tả bằng hạt và ánh sáng; một con số lớn mỗi cảnh (mẫu nolkeeg-635633, một giây trong vũ trụ).",
+      "khong_hop_khi": "Cần video gấp: hạt hàng chục nghìn điểm xuất 60 khung/giây có nhoè tốn khoảng 23 phút máy cho 60 giây (mẫu lịch sử AI 27/10/2026); cần số liệu chính xác đọc kỹ; nội dung không có hiện tượng để diễn tả bằng ánh sáng; hợp Media 1,75/3."
+    },
+    {
+      "ma": "CL-13",
+      "ten": "3D sa bàn bằng mã",
+      "mo_ta": "Mô hình 3D dựng bằng Three.js từ khối đơn giản kiểu đồ chơi hoặc phép chiếu đẳng cự (không có điểm tụ), ánh sáng mềm, màu theo chức năng (điện, nhiệt, nước); tiêu đề và thẻ phủ lên",
+      "kho": [
+        "doc",
+        "ngang"
+      ],
+      "muc_chi_tiet": [
+        "CT2",
+        "CT3"
+      ],
+      "d_nguon": [
+        "D-07",
+        "D-11"
+      ],
+      "ma_dung": "chua",
+      "ma_dung_o": "Chưa có trang mẫu riêng. LM-03 có công cụ chung (xuong_html/cong_cu/, Three.js đã đo, bàn cờ Three.js trong video Lịch sử AI 27/10/2026); LM-02 có Three.js trong Remotion (xuong_dai/pin_mat_troi/) nhưng chưa có sa bàn",
+      "nhip_phu_de": "Máy quay đứng yên hoặc quỹ đạo chậm; mỗi cảnh 6–15 giây; đồ vật xuất hiện lần lượt trên sa bàn; tiêu đề và thẻ đổi theo cảnh (mẫu felipemoller-936736 30 giây, mdaman010-111079 cảnh 10–15 giây)",
+      "thoi_gian": {
+        "CT2": "LM-03: Three.js đơn giản 1,39 giây máy mỗi giây video (KET_QUA_DO 27/10/2026); sa bàn đủ vật thể và ánh sáng mềm: ước, chưa đo",
+        "CT3": "Ước, chưa đo; mẫu mdaman010-111079 độ khó 5, tải máy vừa; chưa dựng thật ở mức này"
+      },
+      "vi_du": "Chưa có video; mẫu nguồn felipemoller-936736 (đẳng cự, dọc), mdaman010-111079 (trung tâm dữ liệu AI, ngang)",
+      "khong_hop": "Máy móc cần chi tiết kỹ thuật đúng số răng, bu-lông (dùng CL-07); cần xuất gấp ở mức chi tiết kỹ thuật",
+      "chu_de": {
+        "may_moc": 2,
+        "co_che_quy_trinh": 1,
+        "san_pham_giao_dien": 1
+      },
+      "tiet_tau_nhac_hop": [
+        "CHAM",
+        "VUA"
+      ],
+      "cach_lam": [
+        {
+          "ma": "LM-03",
+          "muc": "cong_cu",
+          "ghi_chu": "đã thử một phần trong video Lịch sử AI 27/10/2026 (bàn cờ Three.js); đã đo hộp đơn giản"
+        },
+        {
+          "ma": "LM-02",
+          "muc": "cong_cu",
+          "ghi_chu": "Three.js trong Remotion, phải dựng sa bàn"
+        }
+      ],
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "hop_media": 3.0,
+      "mau_nguon": [
+        "felipemoller-936736",
+        "mdaman010-111079"
+      ],
+      "goi_y_dung_khi": "Chủ đề máy móc, hạ tầng có nhiều phần vận hành theo chức năng (điện, nhiệt, nước; mẫu mdaman010-111079); lĩnh vực tài chính cá nhân, ứng dụng (mẫu felipemoller-936736, dọc); hợp Media 3,0/3.",
+      "khong_hop_khi": "Máy móc cần chi tiết kỹ thuật đúng số răng, bu-lông (xem CL-07); mức CT3 trong khung dọc BC-12 (khung hẹp, mỗi bộ phận quá nhỏ; ước 27/10/2026, chưa dựng thử); cần xuất gấp ở mức chi tiết kỹ thuật."
+    },
+    {
+      "ma": "CL-14",
+      "ten": "Mô phỏng và bề mặt toán",
+      "mo_ta": "Vật chuyển động theo tính toán thật mỗi khung (quả bóng lăn theo độ dốc, bước ngẫu nhiên, hạt va chạm) hoặc bề mặt hàm số 3D tô màu theo độ cao; bộ đếm bước và đồ thị nhỏ vẽ dần dưới hình",
+      "kho": [
+        "doc",
+        "ngang"
+      ],
+      "muc_chi_tiet": [
+        "CT1",
+        "CT2"
+      ],
+      "d_nguon": [
+        "D-07",
+        "D-10"
+      ],
+      "ma_dung": "chua",
+      "ma_dung_o": "Chưa có trang mẫu riêng. LM-03 có công cụ chung (xuong_html/cong_cu/, Canvas và Three.js đã đo); LM-02 xuong_dai/",
+      "nhip_phu_de": "Cảnh 6–10 giây; chữ và công thức hiện dần theo lời; bộ đếm bước (Step n of N), giá trị và đồ thị nhỏ vẽ dần dưới hình (mẫu anirockshady-032809, astrothewizard-618782)",
+      "thoi_gian": {
+        "CT1": "LM-03: 1,2–1,5 giây máy mỗi giây video ở 30 khung/giây; mô phỏng tính mỗi khung với vài nghìn phần tử: ước, chưa đo",
+        "CT2": "Bề mặt hàm số 3D bằng Three.js: ước, chưa đo; Three.js đơn giản đã đo 1,39 giây máy mỗi giây video (27/10/2026)"
+      },
+      "vi_du": "Chưa có video; mẫu nguồn anirockshady-032809 (gradient descent, dọc), astrothewizard-618782 (bước ngẫu nhiên của photon, ngang)",
+      "khong_hop": "Nội dung không có công thức hay mô hình tính được; cần cảm giác tả thực",
+      "chu_de": {
+        "dinh_luong": 2,
+        "hien_tuong": 2,
+        "co_che_quy_trinh": 1
+      },
+      "tiet_tau_nhac_hop": [
+        "CHAM",
+        "VUA"
+      ],
+      "cach_lam": [
+        {
+          "ma": "LM-03",
+          "muc": "cong_cu",
+          "ghi_chu": "viết trang mới; mô phỏng và bề mặt tính theo đồng hồ ảo"
+        },
+        {
+          "ma": "LM-02",
+          "muc": "cong_cu",
+          "ghi_chu": "mô phỏng trong Remotion, phải dựng"
+        }
+      ],
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "hop_media": 3.0,
+      "mau_nguon": [
+        "anirockshady-032809",
+        "astrothewizard-618782"
+      ],
+      "goi_y_dung_khi": "Khái niệm định lượng có công thức hoặc mô hình tính được (tối ưu, gradient, bước ngẫu nhiên, va chạm hạt); lĩnh vực tài chính định lượng (bề mặt tối ưu, bước ngẫu nhiên; ước 27/10/2026, chưa kiểm bằng video thật); hợp Media 3,0/3.",
+      "khong_hop_khi": "Nội dung không có công thức hay mô hình tính được; cần cảm giác tả thực."
+    },
+    {
+      "ma": "CL-15",
+      "ten": "Minh hoạ kể chuyện có nhân vật, giấy cắt",
+      "mo_ta": "Nhân vật phẳng và cảnh nhiều lớp giấy cắt có chiều sâu (parallax: các lớp trượt với tốc độ khác nhau); kể bằng cảnh, ít chữ. Hợp Media thấp, ghi để đủ",
+      "kho": [
+        "ngang"
+      ],
+      "muc_chi_tiet": [
+        "CT1"
+      ],
+      "d_nguon": [
+        "D-03"
+      ],
+      "ma_dung": "chua",
+      "ma_dung_o": "Chưa có trang mẫu riêng. LM-03 có công cụ chung (xuong_html/cong_cu/); LM-06 làm clip AI chưa thử",
+      "nhip_phu_de": "Nhịp chậm theo lời kể hoặc không lời; mỗi cảnh một diorama (khung cảnh nhiều lớp); máy quay trượt ngang có parallax; chữ ít (mẫu songkeys-384673 108 giây, daniel-mac8-306214 mỗi cảnh một ý)",
+      "thoi_gian": {
+        "CT1": "LM-03: 1,2–1,5 giây máy mỗi giây video ở 30 khung/giây; nhiều lớp parallax và ánh sáng toả mềm nặng hơn: ước, chưa đo"
+      },
+      "vi_du": "Chưa có video; mẫu nguồn daniel-mac8-306214, songkeys-384673, triglyceee-161719",
+      "khong_hop": "Video khoa học hoặc tài chính nghiêm túc (hợp Media thấp, 1,7/3 trên bản chấm 100 mục); cần số liệu chính xác dày",
+      "chu_de": {
+        "co_che_quy_trinh": 1,
+        "so_lieu_danh_sach": 1
+      },
+      "tiet_tau_nhac_hop": [
+        "CHAM"
+      ],
+      "cach_lam": [
+        {
+          "ma": "LM-03",
+          "muc": "cong_cu",
+          "ghi_chu": "viết trang mới; lớp giấy trượt có parallax (mẫu songkeys-384673 vẽ bằng Canvas); `05_cach_lam.md` chưa liệt kê chất liệu này ở LM-03"
+        },
+        {
+          "ma": "LM-06",
+          "muc": "cong_cu",
+          "ghi_chu": "clip AI làm cảnh nền; chưa thử (theo `05_cach_lam.md` mục LM-06)"
+        }
+      ],
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "hop_media": 1.7,
+      "mau_nguon": [
+        "daniel-mac8-306214",
+        "songkeys-384673",
+        "triglyceee-161719"
+      ],
+      "goi_y_dung_khi": "Kể chuyện văn minh, lịch sử, nghề nghiệp bằng cảnh, ít chữ; video dài, nhịp chậm.",
+      "khong_hop_khi": "Video khoa học, kỹ thuật hoặc tài chính nghiêm túc (hợp Media thấp, 1,7/3 trên bản chấm 100 mục 27/10/2026); cần số liệu chính xác dày."
+    },
+    {
+      "ma": "CL-16",
+      "ten": "Giao diện và thẻ nổi",
+      "mo_ta": "Thẻ giao diện có bóng nổi trên nền, con trỏ chuột chỉ vào chi tiết, ảnh chụp sản phẩm; nguồn từ nhóm quảng cáo phần mềm. Gần CL-04 (2D ảnh chụp màn hình và sơ đồ), hợp Media thấp",
+      "kho": [
+        "doc",
+        "ngang"
+      ],
+      "muc_chi_tiet": [
+        "CT1"
+      ],
+      "d_nguon": [
+        "D-02",
+        "D-05"
+      ],
+      "ma_dung": "chua",
+      "ma_dung_o": "Chưa có trang mẫu riêng. LM-03 có công cụ chung (xuong_html/cong_cu/, SVG + GSAP đã đo); LM-04 xuong_thu_hyperframes/",
+      "nhip_phu_de": "Thẻ giao diện nổi lên mỗi 3–6 giây; con trỏ chuột chỉ vào chi tiết; tiêu đề hai dòng; phụ đề ít (mẫu sachaarbonel-673648, gautam-mer1-530003)",
+      "thoi_gian": {
+        "CT1": "LM-03: 1,2–1,5 giây máy mỗi giây video ở 30 khung/giây (SVG + GSAP 0,97, KET_QUA_DO 27/10/2026)"
+      },
+      "vi_du": "Chưa có video; mẫu nguồn nhóm quảng cáo phần mềm (31 mẫu), ví dụ sachaarbonel-673648, gautam-mer1-530003, brainextends-606193",
+      "khong_hop": "Nội dung không có sản phẩm hay giao diện; video khoa học (hợp Media thấp, 1,45/3 trên 31 mẫu)",
+      "chu_de": {
+        "san_pham_giao_dien": 2,
+        "cong_cu_thao_tac": 2,
+        "so_lieu_danh_sach": 1
+      },
+      "tiet_tau_nhac_hop": [
+        "NHANH",
+        "VUA"
+      ],
+      "cach_lam": [
+        {
+          "ma": "LM-03",
+          "muc": "cong_cu",
+          "ghi_chu": "viết trang mới; thẻ có bóng và con trỏ theo đồng hồ ảo"
+        },
+        {
+          "ma": "LM-04",
+          "muc": "cong_cu",
+          "ghi_chu": "GSAP, chưa thử thẻ giao diện"
+        }
+      ],
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "hop_media": 1.45,
+      "mau_nguon": [
+        "sachaarbonel-673648",
+        "gautam-mer1-530003",
+        "brainextends-606193"
+      ],
+      "goi_y_dung_khi": "Giới thiệu sản phẩm, ứng dụng có giao diện; mô phỏng thao tác công cụ.",
+      "khong_hop_khi": "Video khoa học (hợp Media thấp, 1,45/3 trên 31 mẫu quảng cáo phần mềm); nội dung không có sản phẩm hay giao diện."
+    }
+  ],
+  "muc_chi_tiet": [
+    {
+      "ma": "CT1",
+      "ten": "Sơ đồ",
+      "mo_ta": "Biểu tượng, khối phẳng, chữ, đồ thị; không có mô hình 3D",
+      "d_nguon": [
+        "D-01",
+        "D-02",
+        "D-03",
+        "D-04",
+        "D-05",
+        "D-06",
+        "D-10"
+      ]
+    },
+    {
+      "ma": "CT2",
+      "ten": "Mô hình rút gọn",
+      "mo_ta": "Mô hình 3D chỉ có bộ phận chính, hình khối đơn giản",
+      "d_nguon": [
+        "D-07",
+        "D-08",
+        "D-09"
+      ]
+    },
+    {
+      "ma": "CT3",
+      "ten": "Chi tiết kỹ thuật",
+      "mo_ta": "Đủ bộ phận, bánh răng đúng số răng và ăn khớp đúng pha, đủ bu-lông và chi tiết lặp",
+      "d_nguon": [
+        "D-09b",
+        "D-11"
+      ]
+    }
+  ],
+  "bo_cuc": [
+    {
+      "ma": "BC-01",
+      "ten": "Chữ và số toàn khung",
+      "mo_ta": "Khung đánh số kiểu bản tin, khối chữ và số chiếm cả khung",
+      "kho": [
+        "doc"
+      ],
+      "chat_lieu": [
+        "CL-01",
+        "CL-03",
+        "CL-11"
+      ],
+      "d_nguon": [
+        "D-01"
+      ],
+      "chu_de": {
+        "so_lieu_danh_sach": 2,
+        "dinh_luong": 1
+      },
+      "trang_thai": "duyet"
+    },
+    {
+      "ma": "BC-02",
+      "ten": "Thẻ giữa khung",
+      "mo_ta": "Một thẻ hoặc khung mô phỏng giữa khung, phụ đề bên dưới",
+      "kho": [
+        "doc"
+      ],
+      "chat_lieu": [
+        "CL-02",
+        "CL-03",
+        "CL-16"
+      ],
+      "d_nguon": [
+        "D-02",
+        "D-03",
+        "D-04"
+      ],
+      "chu_de": {
+        "san_pham_giao_dien": 2,
+        "vach_tran": 1,
+        "co_che_quy_trinh": 1
+      }
+    },
+    {
+      "ma": "BC-03",
+      "ten": "Ảnh chụp kèm sơ đồ",
+      "mo_ta": "Ảnh chụp màn hình và sơ đồ đặt cạnh nhau, dấu kênh cố định",
+      "kho": [
+        "doc"
+      ],
+      "chat_lieu": [
+        "CL-04",
+        "CL-16"
+      ],
+      "d_nguon": [
+        "D-05"
+      ],
+      "chu_de": {
+        "cong_cu_thao_tac": 2
+      }
+    },
+    {
+      "ma": "BC-04",
+      "ten": "Chỉ nửa trên",
+      "mo_ta": "Nội dung dồn lên nửa trên khung, nửa dưới bỏ trống; chữ in hoa",
+      "kho": [
+        "doc"
+      ],
+      "chat_lieu": [
+        "CL-01",
+        "CL-03"
+      ],
+      "d_nguon": [
+        "D-06"
+      ],
+      "chu_de": {
+        "so_sanh": 2
+      }
+    },
+    {
+      "ma": "BC-05",
+      "ten": "Vật thể giữa khung, nhãn bên",
+      "mo_ta": "Vật thể 3D chiếm phần lớn khung, nhãn có đường dẫn bám bộ phận",
+      "kho": [
+        "ngang"
+      ],
+      "chat_lieu": [
+        "CL-06",
+        "CL-07",
+        "CL-08",
+        "CL-13",
+        "CL-14"
+      ],
+      "d_nguon": [
+        "D-07",
+        "D-08",
+        "D-09",
+        "D-09b",
+        "D-11"
+      ],
+      "chu_de": {
+        "may_moc": 2,
+        "hien_tuong": 1
+      },
+      "trang_thai": "duyet"
+    },
+    {
+      "ma": "BC-06",
+      "ten": "Đồ thị và bảng số toàn khung",
+      "mo_ta": "Hệ trục, đồ thị, bảng số chiếm cả khung như bảng đen",
+      "kho": [
+        "ngang"
+      ],
+      "chat_lieu": [
+        "CL-05"
+      ],
+      "d_nguon": [
+        "D-10"
+      ],
+      "chu_de": {
+        "dinh_luong": 2,
+        "so_lieu_danh_sach": 1
+      },
+      "trang_thai": "duyet"
+    },
+    {
+      "ma": "BC-07",
+      "ten": "Chia đôi khung",
+      "mo_ta": "Hai nửa khung đặt hai thứ cạnh nhau để so sánh",
+      "kho": [
+        "ngang"
+      ],
+      "chat_lieu": [
+        "CL-05",
+        "CL-06",
+        "CL-07"
+      ],
+      "d_nguon": [
+        "D-10"
+      ],
+      "chu_de": {
+        "so_sanh": 2,
+        "dinh_luong": 1
+      },
+      "trang_thai": "duyet"
+    },
+    {
+      "ma": "BC-08",
+      "ten": "Bàn thao tác",
+      "mo_ta": "Vật thể giữa khung, danh sách bước một bên, thẻ số đo bên kia, thanh bước ở chân khung",
+      "kho": [
+        "ngang"
+      ],
+      "chat_lieu": [
+        "CL-09",
+        "CL-14"
+      ],
+      "d_nguon": [
+        "D-03"
+      ],
+      "chu_de": {
+        "cong_cu_thao_tac": 2,
+        "co_che_quy_trinh": 2,
+        "dinh_luong": 1
+      },
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "mau_nguon": [
+        "ror-fly-880547",
+        "sarut0bisasuke-069973"
+      ]
+    },
+    {
+      "ma": "BC-09",
+      "ten": "Khung chương hồi",
+      "mo_ta": "Nhãn chương và thước tiến độ ở góc trên, tiêu đề lớn ở góc trái dưới, phụ đề ở chân khung",
+      "kho": [
+        "ngang"
+      ],
+      "chat_lieu": [
+        "CL-09",
+        "CL-10",
+        "CL-12",
+        "CL-15",
+        "CL-16"
+      ],
+      "d_nguon": [
+        "D-10"
+      ],
+      "chu_de": {
+        "hien_tuong": 1,
+        "so_lieu_danh_sach": 1,
+        "co_che_quy_trinh": 1
+      },
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "mau_nguon": [
+        "kloss-xyz-067876",
+        "groundcontrol-230877",
+        "nolkeeg-635633"
+      ]
+    },
+    {
+      "ma": "BC-10",
+      "ten": "Tiêu đề hai dòng và một biểu đồ",
+      "mo_ta": "Tiêu đề hai dòng (dòng hai màu nhấn), nhãn mục kiểu \"03 / 08\" phía trên, một biểu đồ hoặc thẻ dưới tiêu đề",
+      "kho": [
+        "doc",
+        "ngang"
+      ],
+      "chat_lieu": [
+        "CL-16",
+        "CL-05",
+        "CL-09",
+        "CL-14"
+      ],
+      "d_nguon": [
+        "D-01",
+        "D-10"
+      ],
+      "chu_de": {
+        "so_lieu_danh_sach": 2,
+        "san_pham_giao_dien": 1
+      },
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "mau_nguon": [
+        "rammanq-034553",
+        "felipemoller-936736",
+        "alex-prompter-997524"
+      ]
+    },
+    {
+      "ma": "BC-11",
+      "ten": "Một ý toàn khung ngang",
+      "mo_ta": "Chữ khổng lồ chiếm gần hết khung, một ý mỗi nhịp; bản dọc dùng BC-01 kèm CL-11",
+      "kho": [
+        "ngang"
+      ],
+      "chat_lieu": [
+        "CL-11",
+        "CL-12",
+        "CL-15"
+      ],
+      "d_nguon": [
+        "D-01"
+      ],
+      "chu_de": {
+        "vach_tran": 2,
+        "so_lieu_danh_sach": 1
+      },
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "mau_nguon": [
+        "0xfemyn-137833",
+        "souravbhar871-477361",
+        "chrisjdimarco-808196"
+      ]
+    },
+    {
+      "ma": "BC-12",
+      "ten": "Sa bàn giữa khung dọc",
+      "mo_ta": "Sa bàn 3D hoặc bề mặt toán ở giữa khung, tiêu đề phía trên, thẻ nhỏ ở phía dưới",
+      "kho": [
+        "doc"
+      ],
+      "chat_lieu": [
+        "CL-13",
+        "CL-14"
+      ],
+      "d_nguon": [
+        "D-11"
+      ],
+      "chu_de": {
+        "may_moc": 2,
+        "co_che_quy_trinh": 1
+      },
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "mau_nguon": [
+        "felipemoller-936736",
+        "anirockshady-032809"
+      ]
+    },
+    {
+      "ma": "BC-13",
+      "ten": "Bảng trắng toàn khung",
+      "mo_ta": "Bảng trắng chiếm toàn khung, tiêu đề viết tay ở góc trái trên, phụ đề ở dải chân khung",
+      "kho": [
+        "ngang"
+      ],
+      "chat_lieu": [
+        "CL-10",
+        "CL-05"
+      ],
+      "d_nguon": [
+        "D-10"
+      ],
+      "chu_de": {
+        "dinh_luong": 2,
+        "co_che_quy_trinh": 1
+      },
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "mau_nguon": [
+        "tak3sh8-441895",
+        "groundcontrol-230877"
+      ]
+    },
+    {
+      "ma": "BC-14",
+      "ten": "Ba tầng dọc",
+      "mo_ta": "Nền một màu (lấy màu nền của video ngang); tiêu đề hai dòng in hoa (vàng viền đen, đỏ viền trắng) đứng yên ở y 330–560; hình ngang rộng 900 điểm ảnh ở giữa (x 90–990, từ y 660); phụ đề 87 điểm ảnh có viền, từng chữ nảy lên khi được đọc, ngay dưới hình; chừa trống trên 320, dưới 420 và mỗi bên 90 điểm ảnh (ứng dụng Facebook cắt khoảng 60 điểm ảnh mỗi bên, đo 02/11/2026). Ghép từ video ngang YouTube đã xong bằng scripts/ghep_ba_tang.py, không dựng lại cảnh",
+      "kho": [
+        "doc"
+      ],
+      "chat_lieu": [
+        "CL-01",
+        "CL-02",
+        "CL-03"
+      ],
+      "d_nguon": [],
+      "chu_de": {
+        "so_sanh": 1,
+        "co_che_quy_trinh": 1,
+        "so_lieu_danh_sach": 1
+      },
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "mau_nguon": [
+        "fb-reel-1140993218265826 (Người Có EQ, 02/11/2026; ghi nhận ở tai_san/so_tay_gu/mau_tham_khao/mau_fb_2026_11_02_ba_tang/ghi_nhan.md)"
+      ]
+    }
+  ],
+  "mau": [
+    {
+      "ma": "MAU-01",
+      "ten": "Đêm & đỏ",
+      "nen": "toi",
+      "mo_ta": "Nền đen, chữ trắng, nhấn đỏ cam #FF443D, nhấn phụ vàng",
+      "chat_lieu": [
+        "CL-01",
+        "CL-02",
+        "CL-03",
+        "CL-04",
+        "CL-11",
+        "CL-12"
+      ],
+      "d_nguon": [
+        "D-01"
+      ],
+      "trang_thai": "duyet",
+      "linh_vuc": [
+        "tai_chinh",
+        "cong_nghe"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "TRAM",
+        "HOI"
+      ],
+      "nhom_nhac_tranh": [
+        "VUI",
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-02",
+      "ten": "Đêm & kính",
+      "nen": "toi",
+      "mo_ta": "Nền gần đen có sao, bốn màu nhấn xoay vòng theo ngữ cảnh",
+      "chat_lieu": [
+        "CL-01",
+        "CL-02",
+        "CL-03",
+        "CL-04"
+      ],
+      "d_nguon": [
+        "D-02"
+      ],
+      "trang_thai": "nhap",
+      "linh_vuc": [
+        "cong_nghe"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "VUI"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-03",
+      "ten": "Trắng & cam",
+      "nen": "sang",
+      "mo_ta": "Nền trắng, nét đen than, nhấn cam, nút xanh ngọc",
+      "chat_lieu": [
+        "CL-01",
+        "CL-03",
+        "CL-04",
+        "CL-09",
+        "CL-11",
+        "CL-15",
+        "CL-16"
+      ],
+      "d_nguon": [
+        "D-03"
+      ],
+      "trang_thai": "nhap",
+      "linh_vuc": [
+        "cong_nghe"
+      ],
+      "nhom_nhac_hop": [
+        "VUI",
+        "TAP"
+      ],
+      "nhom_nhac_tranh": [
+        "TRAM",
+        "BUON",
+        "HOI"
+      ]
+    },
+    {
+      "ma": "MAU-04",
+      "ten": "Đêm, màu theo cảm xúc",
+      "nen": "toi",
+      "mo_ta": "Nền đen; màu nhấn đổi từ trung tính sang cảnh báo theo mạch nội dung",
+      "chat_lieu": [
+        "CL-01",
+        "CL-02",
+        "CL-03",
+        "CL-04"
+      ],
+      "d_nguon": [
+        "D-04"
+      ],
+      "trang_thai": "nhap",
+      "linh_vuc": [
+        "tai_chinh"
+      ],
+      "nhom_nhac_hop": [
+        "HOI",
+        "TRAM"
+      ],
+      "nhom_nhac_tranh": [
+        "VUI"
+      ]
+    },
+    {
+      "ma": "MAU-05",
+      "ten": "Đêm & tím than",
+      "nen": "toi",
+      "mo_ta": "Nền đen phủ quầng tím chàm cố định; cam vàng cho số liệu, đỏ cho cảnh báo",
+      "chat_lieu": [
+        "CL-01",
+        "CL-02",
+        "CL-03",
+        "CL-04",
+        "CL-12"
+      ],
+      "d_nguon": [
+        "D-05"
+      ],
+      "trang_thai": "nhap",
+      "linh_vuc": [
+        "cong_nghe"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "HOI"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-06",
+      "ten": "Đêm, bốn màu theo khái niệm",
+      "nen": "toi",
+      "mo_ta": "Nền đen; xanh ngọc = phương án tối ưu, đỏ hồng = truyền thống, vàng ô liu = trung tính",
+      "chat_lieu": [
+        "CL-01",
+        "CL-03"
+      ],
+      "d_nguon": [
+        "D-06"
+      ],
+      "trang_thai": "nhap",
+      "linh_vuc": [
+        "cong_nghe",
+        "tai_chinh"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "TRAM"
+      ],
+      "nhom_nhac_tranh": [
+        "VUI",
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-07",
+      "ten": "Ô liu & đất sét",
+      "nen": "sang",
+      "mo_ta": "Nền ô liu #4a5048, mô hình trắng xám, bộ phận điện xanh dương, màn bản vẽ nền xanh",
+      "chat_lieu": [
+        "CL-06"
+      ],
+      "d_nguon": [
+        "D-07"
+      ],
+      "trang_thai": "duyet",
+      "linh_vuc": [
+        "nang_luong",
+        "co_khi"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "TRAM"
+      ],
+      "nhom_nhac_tranh": [
+        "HOI",
+        "HUNG"
+      ]
+    },
+    {
+      "ma": "MAU-08",
+      "ten": "Tả thực ngoài trời",
+      "nen": "sang",
+      "mo_ta": "Màu thật của vật liệu, trời xanh, đồng cỏ; ánh sáng từ ảnh môi trường ngoài trời",
+      "chat_lieu": [
+        "CL-08"
+      ],
+      "d_nguon": [
+        "D-08"
+      ],
+      "trang_thai": "duyet",
+      "linh_vuc": [
+        "nang_luong",
+        "co_khi"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "HUNG",
+        "VUI"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON",
+        "HOI"
+      ]
+    },
+    {
+      "ma": "MAU-09",
+      "ten": "Kem & ngọc",
+      "nen": "sang",
+      "mo_ta": "Nền kem #F4F1EA, vàng nắng, xanh ngọc, đồng, nhấn cam san hô (bảng M0 cũ)",
+      "chat_lieu": [
+        "CL-05",
+        "CL-07",
+        "CL-09"
+      ],
+      "d_nguon": [
+        "D-09",
+        "D-09b"
+      ],
+      "m_nguon": "M0",
+      "trang_thai": "duyet",
+      "linh_vuc": [
+        "nang_luong",
+        "co_khi",
+        "dien_tu"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "VUI"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON",
+        "TRAM",
+        "HOI"
+      ]
+    },
+    {
+      "ma": "MAU-10",
+      "ten": "Trời trong",
+      "nen": "sang",
+      "mo_ta": "Nền xanh trời nhạt, xanh cô-ban, nhấn đỏ hồng (bảng M1 cũ)",
+      "chat_lieu": [
+        "CL-05",
+        "CL-07"
+      ],
+      "d_nguon": [
+        "D-09",
+        "D-09b"
+      ],
+      "m_nguon": "M1",
+      "trang_thai": "nhap",
+      "linh_vuc": [
+        "dien_tu",
+        "cong_nghe"
+      ],
+      "nhom_nhac_hop": [
+        "VUI",
+        "TAP"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON",
+        "TRAM"
+      ]
+    },
+    {
+      "ma": "MAU-11",
+      "ten": "Lá non",
+      "nen": "sang",
+      "mo_ta": "Nền xanh lá rất nhạt, nhấn cam đỏ (bảng M2 cũ)",
+      "chat_lieu": [
+        "CL-05",
+        "CL-07"
+      ],
+      "d_nguon": [
+        "D-09",
+        "D-09b"
+      ],
+      "m_nguon": "M2",
+      "trang_thai": "nhap",
+      "linh_vuc": [
+        "nang_luong"
+      ],
+      "nhom_nhac_hop": [
+        "VUI",
+        "TAP"
+      ],
+      "nhom_nhac_tranh": [
+        "HOI",
+        "TRAM"
+      ]
+    },
+    {
+      "ma": "MAU-12",
+      "ten": "Đào & oải hương",
+      "nen": "sang",
+      "mo_ta": "Nền hồng đào nhạt, tím oải hương, nhấn hồng đậm (bảng M3 cũ)",
+      "chat_lieu": [
+        "CL-05",
+        "CL-07"
+      ],
+      "d_nguon": [
+        "D-09",
+        "D-09b"
+      ],
+      "m_nguon": "M3",
+      "trang_thai": "nhap",
+      "linh_vuc": [
+        "y_te",
+        "tieu_dung"
+      ],
+      "nhom_nhac_hop": [
+        "VUI",
+        "TAP"
+      ],
+      "nhom_nhac_tranh": [
+        "HOI",
+        "TRAM"
+      ]
+    },
+    {
+      "ma": "MAU-13",
+      "ten": "Biển cát",
+      "nen": "sang",
+      "mo_ta": "Nền cát, xanh biển, đỏ gạch (bảng M4 cũ)",
+      "chat_lieu": [
+        "CL-05",
+        "CL-07"
+      ],
+      "d_nguon": [
+        "D-09",
+        "D-09b"
+      ],
+      "m_nguon": "M4",
+      "trang_thai": "nhap",
+      "linh_vuc": [
+        "xay_dung_cang"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "TRAM",
+        "HUNG"
+      ],
+      "nhom_nhac_tranh": [
+        "HOI"
+      ]
+    },
+    {
+      "ma": "MAU-14",
+      "ten": "Kẹo pop",
+      "nen": "sang",
+      "mo_ta": "Nền tím rất nhạt, vàng, hồng, xanh điện (bảng M5 cũ)",
+      "chat_lieu": [
+        "CL-05",
+        "CL-07"
+      ],
+      "d_nguon": [
+        "D-09",
+        "D-09b"
+      ],
+      "m_nguon": "M5",
+      "trang_thai": "nhap",
+      "linh_vuc": [
+        "tieu_dung"
+      ],
+      "nhom_nhac_hop": [
+        "VUI"
+      ],
+      "nhom_nhac_tranh": [
+        "TRAM",
+        "BUON",
+        "HOI"
+      ]
+    },
+    {
+      "ma": "MAU-15",
+      "ten": "Đêm xanh neon",
+      "nen": "toi",
+      "mo_ta": "Nền xanh đêm, xanh lơ sáng, nhấn hồng neon (bảng M6 cũ)",
+      "chat_lieu": [
+        "CL-05",
+        "CL-07"
+      ],
+      "d_nguon": [
+        "D-09",
+        "D-09b"
+      ],
+      "m_nguon": "M6",
+      "trang_thai": "nhap",
+      "linh_vuc": [
+        "dien_tu",
+        "cong_nghe"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "HOI",
+        "TRAM"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-16",
+      "ten": "Than chì & chanh",
+      "nen": "toi",
+      "mo_ta": "Nền than chì, vàng chanh, nhấn hồng đỏ (bảng M7 cũ)",
+      "chat_lieu": [
+        "CL-05",
+        "CL-07"
+      ],
+      "d_nguon": [
+        "D-09",
+        "D-09b"
+      ],
+      "m_nguon": "M7",
+      "trang_thai": "nhap",
+      "linh_vuc": [
+        "co_khi"
+      ],
+      "nhom_nhac_hop": [
+        "HUNG",
+        "TRAM",
+        "HOI"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-17",
+      "ten": "Tím đêm",
+      "nen": "toi",
+      "mo_ta": "Nền tím than, vàng, bạc hà, nhấn hồng (bảng M8 cũ)",
+      "chat_lieu": [
+        "CL-05",
+        "CL-07"
+      ],
+      "d_nguon": [
+        "D-09",
+        "D-09b"
+      ],
+      "m_nguon": "M8",
+      "trang_thai": "nhap",
+      "linh_vuc": [
+        "thien_van_vat_ly"
+      ],
+      "nhom_nhac_hop": [
+        "TRAM",
+        "HOI",
+        "TAP"
+      ],
+      "nhom_nhac_tranh": [
+        "VUI"
+      ]
+    },
+    {
+      "ma": "MAU-18",
+      "ten": "Bảng đen",
+      "nen": "toi",
+      "mo_ta": "Nền đen sáng dần xuống dưới, nét trắng xám; xanh lá = đang tính, xanh dương = lý thuyết, đỏ hồng = sai số",
+      "chat_lieu": [
+        "CL-05",
+        "CL-14"
+      ],
+      "d_nguon": [
+        "D-10"
+      ],
+      "trang_thai": "duyet",
+      "linh_vuc": [
+        "tai_chinh",
+        "nang_luong"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "TRAM"
+      ],
+      "nhom_nhac_tranh": [
+        "HOI",
+        "HUNG"
+      ]
+    },
+    {
+      "ma": "MAU-19",
+      "ten": "Phòng chụp & viền sáng",
+      "nen": "sang",
+      "mo_ta": "Nền xám ngả xanh như phòng chụp sản phẩm, viền phát sáng xanh ngọc ôm bộ phận, mũi tên đỏ",
+      "chat_lieu": [
+        "CL-08"
+      ],
+      "d_nguon": [
+        "D-11"
+      ],
+      "trang_thai": "duyet",
+      "linh_vuc": [
+        "co_khi",
+        "nang_luong",
+        "dien_tu"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "TRAM",
+        "HUNG"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-20",
+      "ten": "Đen & cam",
+      "nen": "toi",
+      "mo_ta": "Nền đen gần thuần #090909, chữ trắng ngả kem #ECE9E2, nhấn cam #FC7B33 (phụ #E9732D); nhãn nhỏ đơn cách ở góc, thanh tiến độ cam mảnh",
+      "chat_lieu": [
+        "CL-01",
+        "CL-05",
+        "CL-11",
+        "CL-12",
+        "CL-14"
+      ],
+      "d_nguon": [
+        "D-01"
+      ],
+      "hex": {
+        "nen": "#090909",
+        "chu": "#ECE9E2",
+        "nhan": [
+          "#FC7B33"
+        ],
+        "phu": [
+          "#E9732D"
+        ]
+      },
+      "mau_nguon": "kloss-xyz-067876",
+      "do_tu": "đo bằng máy từ khung hình mẫu 27/10/2026 (7 khung)",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "linh_vuc": [
+        "cong_nghe"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "TRAM",
+        "HOI"
+      ],
+      "nhom_nhac_tranh": [
+        "VUI",
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-21",
+      "ten": "Navy & vàng bài giảng",
+      "nen": "toi",
+      "mo_ta": "Nền navy rất đậm #0C111E, chữ trắng #FEFFFF; tiêu đề và nhấn vàng #F8DB78, nhãn đồ thị xanh lơ #58C3DB, đường tiếp tuyến cam #FB8836, đồ thị đạo hàm xanh lá #8AB877",
+      "chat_lieu": [
+        "CL-05",
+        "CL-14"
+      ],
+      "d_nguon": [
+        "D-10"
+      ],
+      "hex": {
+        "nen": "#0C111E",
+        "chu": "#FEFFFF",
+        "nhan": [
+          "#F8DB78",
+          "#58C3DB"
+        ],
+        "phu": [
+          "#FB8836",
+          "#8AB877"
+        ]
+      },
+      "mau_nguon": "linearuncle-971663",
+      "do_tu": "đo bằng máy từ khung hình mẫu 27/10/2026 (7 khung)",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "linh_vuc": [
+        "thien_van_vat_ly",
+        "tai_chinh"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "TRAM"
+      ],
+      "nhom_nhac_tranh": [
+        "HOI",
+        "HUNG"
+      ]
+    },
+    {
+      "ma": "MAU-22",
+      "ten": "Báo tài chính sáng",
+      "nen": "sang",
+      "mo_ta": "Nền trắng xám xanh #ECF0F5, chữ đen xanh #0B1017, nhấn xanh dương #2C84C1 (phụ #59A7DB); một mục đảo nền sang đen xanh #0B1017 chữ trắng",
+      "chat_lieu": [
+        "CL-04",
+        "CL-05",
+        "CL-16"
+      ],
+      "d_nguon": [
+        "D-03"
+      ],
+      "hex": {
+        "nen": "#ECF0F5",
+        "chu": "#0B1017",
+        "nhan": [
+          "#2C84C1"
+        ],
+        "phu": [
+          "#59A7DB"
+        ]
+      },
+      "mau_nguon": "rammanq-034553",
+      "do_tu": "đo bằng máy từ khung hình mẫu 27/10/2026 (7 khung)",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "linh_vuc": [
+        "tai_chinh",
+        "cong_nghe"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "VUI"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON",
+        "HOI"
+      ]
+    },
+    {
+      "ma": "MAU-23",
+      "ten": "Giấy kem & bút chì",
+      "nen": "sang",
+      "mo_ta": "Nền giấy kem #E6D9C4 (có vân, tối dần ở mép, vùng ám #D3CAB5), nét và chữ than chì #211D18, nhấn đỏ #C34A34, xanh chàm xám #798695 cho con dấu (ít điểm ảnh, kém chắc); dấu căn lề ở bốn góc",
+      "chat_lieu": [
+        "CL-09",
+        "CL-10",
+        "CL-15"
+      ],
+      "d_nguon": [
+        "D-07"
+      ],
+      "hex": {
+        "nen": "#E6D9C4",
+        "chu": "#211D18",
+        "nhan": [
+          "#C34A34"
+        ],
+        "phu": [
+          "#798695"
+        ]
+      },
+      "mau_nguon": "groundcontrol-230877",
+      "do_tu": "đo bằng máy từ khung hình mẫu 27/10/2026 (7 khung)",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "linh_vuc": [
+        "thien_van_vat_ly",
+        "tieu_dung"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "TRAM"
+      ],
+      "nhom_nhac_tranh": [
+        "HUNG",
+        "HOI"
+      ]
+    },
+    {
+      "ma": "MAU-24",
+      "ten": "Bảng trắng & bút dạ",
+      "nen": "sang",
+      "mo_ta": "Nền bảng trắng ngà #FAFBF6, viền khung và chữ xám xanh đậm #2D363C, nhấn đỏ #B42235 (đường nối), xanh dương #2B4B93 (công thức), xanh lá #397858 (đồ thị)",
+      "chat_lieu": [
+        "CL-05",
+        "CL-10"
+      ],
+      "d_nguon": [
+        "D-10"
+      ],
+      "hex": {
+        "nen": "#FAFBF6",
+        "chu": "#2D363C",
+        "nhan": [
+          "#B42235",
+          "#2B4B93"
+        ],
+        "phu": [
+          "#397858"
+        ]
+      },
+      "mau_nguon": "tak3sh8-441895",
+      "do_tu": "đo bằng máy từ khung hình mẫu 27/10/2026 (7 khung)",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "linh_vuc": [
+        "cong_nghe",
+        "thien_van_vat_ly"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "TRAM"
+      ],
+      "nhom_nhac_tranh": [
+        "HOI",
+        "HUNG",
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-25",
+      "ten": "Kem, đen & đỏ tạp chí",
+      "nen": "toi",
+      "mo_ta": "Hai nền xen nhau: đen #0A0A11 với chữ trắng kem #EAE5DC, và kem giấy #E8E4DB với chữ đen #080A0E; một nhấn đỏ #D73428 cho từ khoá (có một cảnh phủ mảng đỏ #D73428)",
+      "chat_lieu": [
+        "CL-01",
+        "CL-11"
+      ],
+      "d_nguon": [
+        "D-01",
+        "D-03"
+      ],
+      "hex": {
+        "nen": "#0A0A11",
+        "chu": "#EAE5DC",
+        "nhan": [
+          "#D73428"
+        ],
+        "phu": [
+          "#E8E4DB"
+        ]
+      },
+      "mau_nguon": "chrisjdimarco-808196",
+      "do_tu": "đo bằng máy từ khung hình mẫu 27/10/2026 (7 khung)",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "linh_vuc": [
+        "tai_chinh"
+      ],
+      "nhom_nhac_hop": [
+        "TRAM",
+        "HOI",
+        "TAP"
+      ],
+      "nhom_nhac_tranh": [
+        "VUI",
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-26",
+      "ten": "Tím nhạt đồ chơi",
+      "nen": "sang",
+      "mo_ta": "Nền trắng tím nhạt #F4F3FB, nền ca rô #EEEBF5, chữ đen #13121B, nhấn tím #694CFE (đậm #4723E4); khối đồ chơi pastel: be cam #EED3AE, tím nhạt #A698D8, xanh lá nhạt #C6ECA7",
+      "chat_lieu": [
+        "CL-13",
+        "CL-16"
+      ],
+      "d_nguon": [
+        "D-11"
+      ],
+      "hex": {
+        "nen": "#F4F3FB",
+        "chu": "#13121B",
+        "nhan": [
+          "#694CFE"
+        ],
+        "phu": [
+          "#EED3AE",
+          "#A698D8",
+          "#C6ECA7"
+        ]
+      },
+      "mau_nguon": "felipemoller-936736",
+      "do_tu": "đo bằng máy từ khung hình mẫu 27/10/2026 (7 khung)",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "linh_vuc": [
+        "tieu_dung",
+        "tai_chinh"
+      ],
+      "nhom_nhac_hop": [
+        "VUI",
+        "TAP"
+      ],
+      "nhom_nhac_tranh": [
+        "TRAM",
+        "BUON",
+        "HOI"
+      ]
+    },
+    {
+      "ma": "MAU-27",
+      "ten": "Vũ trụ đen & cam",
+      "nen": "toi",
+      "mo_ta": "Nền đen thuần #000000, số lớn trắng kem #F2EDE5, nhấn cam đỏ #C06246 cho thanh tiến trình mảnh (sáng nhất #D7684F), quầng địa cầu cam nâu #A3744B; nhãn góc đơn cách",
+      "chat_lieu": [
+        "CL-11",
+        "CL-12",
+        "CL-14"
+      ],
+      "d_nguon": [
+        "D-01"
+      ],
+      "hex": {
+        "nen": "#000000",
+        "chu": "#F2EDE5",
+        "nhan": [
+          "#C06246"
+        ],
+        "phu": [
+          "#D7684F",
+          "#A3744B"
+        ]
+      },
+      "mau_nguon": "nolkeeg-635633",
+      "do_tu": "đo bằng máy từ khung hình mẫu 27/10/2026 (7 khung; màu cam đỏ lấy trung vị 946 điểm ảnh của nét mảnh)",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "linh_vuc": [
+        "thien_van_vat_ly"
+      ],
+      "nhom_nhac_hop": [
+        "TRAM",
+        "HOI",
+        "TAP"
+      ],
+      "nhom_nhac_tranh": [
+        "VUI",
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-28",
+      "ten": "Trắng & tím công nghệ",
+      "nen": "sang",
+      "mo_ta": "Nền trắng #FDFDFD, chữ navy đậm #09233D, nhấn tím chàm #6657FC (nét mảnh đo #6E58B9); thẻ pastel: tím nhạt #C8C4FB, hồng đào #FDDAC8, xanh nhạt #D3E4FD",
+      "chat_lieu": [
+        "CL-04",
+        "CL-16"
+      ],
+      "d_nguon": [
+        "D-03"
+      ],
+      "hex": {
+        "nen": "#FDFDFD",
+        "chu": "#09233D",
+        "nhan": [
+          "#6657FC"
+        ],
+        "phu": [
+          "#C8C4FB",
+          "#FDDAC8",
+          "#D3E4FD"
+        ]
+      },
+      "mau_nguon": "deedydas-252537",
+      "do_tu": "đo bằng máy từ khung hình mẫu 27/10/2026 (7 khung)",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "linh_vuc": [
+        "cong_nghe",
+        "tai_chinh"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "VUI"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON",
+        "HOI"
+      ]
+    },
+    {
+      "ma": "MAU-29",
+      "ten": "Trắng xám & màu chức năng",
+      "nen": "sang",
+      "mo_ta": "Nền xám nhạt xanh #D6DBDE (vùng sáng #ECEDED), mô hình trắng xám, chữ xám than #242D32; màu theo chức năng: điện cam nâu #A47B57, khay cáp vàng nhạt #E6D498, nhiệt đỏ hồng #B8736A, làm mát xanh ngọc #65B5AD; bảng chú giải ở góc trên phải",
+      "chat_lieu": [
+        "CL-07",
+        "CL-13"
+      ],
+      "d_nguon": [
+        "D-11"
+      ],
+      "hex": {
+        "nen": "#D6DBDE",
+        "chu": "#242D32",
+        "nhan": [
+          "#A47B57",
+          "#B8736A",
+          "#65B5AD"
+        ],
+        "phu": [
+          "#E6D498",
+          "#ECEDED"
+        ]
+      },
+      "mau_nguon": "mdaman010-111079",
+      "do_tu": "đo bằng máy từ khung hình mẫu 27/10/2026 (7 khung; màu chức năng ít điểm ảnh, kém chắc)",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "linh_vuc": [
+        "cong_nghe",
+        "dien_tu",
+        "nang_luong"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "TRAM"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-30",
+      "ten": "Đất nung & kem",
+      "nen": "toi",
+      "mo_ta": "Ba nền xoay theo ý: đen ấm #191812, kem #EFEDE0, cam đất nung #C45A3C; chữ trắng kem hoặc đen; chữ nhấn có bóng đổ lệch hai lớp đỏ #A74131 và đen",
+      "chat_lieu": [
+        "CL-11",
+        "CL-15"
+      ],
+      "d_nguon": [
+        "D-01"
+      ],
+      "hex": {
+        "nen": "#191812",
+        "chu": "#EFEDE0",
+        "nhan": [
+          "#C45A3C"
+        ],
+        "phu": [
+          "#A74131"
+        ]
+      },
+      "mau_nguon": "souravbhar871-477361",
+      "do_tu": "đo bằng máy từ khung hình mẫu 27/10/2026 (7 khung)",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "linh_vuc": [
+        "tieu_dung"
+      ],
+      "nhom_nhac_hop": [
+        "VUI",
+        "TAP",
+        "HUNG"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-31",
+      "ten": "Navy & cam bàn thao tác",
+      "nen": "toi",
+      "mo_ta": "Nền navy tím rất đậm #0C0B19 (nền chuyển dần lên #1A1636), chữ trắng #FFFFFF, nhãn bước cam vàng #FFB347, chữ nhấn xanh nhạt #BFE6FF, chất lỏng chuyển #FFD36B → #FF8A3D → #E8445A, đỏ #C8102E; thẻ trắng độ đục 6% viền trắng 14%",
+      "chat_lieu": [
+        "CL-05",
+        "CL-09",
+        "CL-14"
+      ],
+      "d_nguon": [
+        "D-10"
+      ],
+      "hex": {
+        "nen": "#0C0B19",
+        "chu": "#FFFFFF",
+        "nhan": [
+          "#FFB347",
+          "#BFE6FF"
+        ],
+        "phu": [
+          "#FF8A3D",
+          "#E8445A",
+          "#C8102E"
+        ]
+      },
+      "mau_nguon": "bản chạy thử cocktail 27/10/2026",
+      "do_tu": "đọc mã nguồn trang chạy thử, nền đối chiếu đo bằng máy từ 5 khung xuất (#0A0B19)",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "linh_vuc": [
+        "tieu_dung",
+        "cong_nghe"
+      ],
+      "nhom_nhac_hop": [
+        "VUI",
+        "TAP"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON",
+        "HOI"
+      ]
+    },
+    {
+      "ma": "MAU-32",
+      "ten": "Màu Vietcombank",
+      "nen": "toi",
+      "mo_ta": "Màu thương hiệu Vietcombank: nền #031D13, chữ #FFFFFF, nhấn #A1C038 (gốc #074C31), nhấn phụ #5E8B79. Chỉ dùng màu, không tên, logo.",
+      "chat_lieu": [
+        "CL-05",
+        "CL-06",
+        "CL-07",
+        "CL-09",
+        "CL-12",
+        "CL-13",
+        "CL-14",
+        "CL-15",
+        "CL-16"
+      ],
+      "d_nguon": [],
+      "hex": {
+        "nen": "#031D13",
+        "chu": "#FFFFFF",
+        "nhan": [
+          "#A1C038"
+        ],
+        "phu": [
+          "#5E8B79",
+          "#063D27"
+        ]
+      },
+      "mau_nguon": "https://www.vietcombank.com.vn/vi-VN",
+      "do_tu": "lấy từ website ngân hàng 29/10/2026 (CSS pre-optimized-min.css của VCB-Sites: biến --vcb-primary-txt-color/--vcb-primary-icon-color #074C31 (280 lần), --vcb-btn-primary-bg #A1C038 (84 lần), #065C44); tin cậy cao",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "ngan_hang": "Vietcombank",
+      "linh_vuc": [
+        "tai_chinh"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "TRAM",
+        "HOI"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-33",
+      "ten": "Màu BIDV",
+      "nen": "sang",
+      "mo_ta": "Màu thương hiệu BIDV: nền #F0F5F5, chữ #333333, nhấn #075652 (gốc #075652), nhấn phụ #B28013. Chỉ dùng màu, không tên, logo.",
+      "chat_lieu": [
+        "CL-05",
+        "CL-06",
+        "CL-07",
+        "CL-09",
+        "CL-10",
+        "CL-13",
+        "CL-14",
+        "CL-15",
+        "CL-16"
+      ],
+      "d_nguon": [],
+      "hex": {
+        "nen": "#F0F5F5",
+        "chu": "#333333",
+        "nhan": [
+          "#075652"
+        ],
+        "phu": [
+          "#B28013",
+          "#C8DAD9"
+        ]
+      },
+      "mau_nguon": "https://bidv.com.vn/",
+      "do_tu": "lấy từ website ngân hàng 29/10/2026 (Trang chủ không có file CSS ngoài; màu lấy bằng đếm điểm ảnh logo logopc.png (xanh ngọc đậm #075652 1065 điểm, vàng #FFB71B 257 điểm). Bài chính thức bidv.com.v); tin cậy vua",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "ngan_hang": "BIDV",
+      "linh_vuc": [
+        "tai_chinh"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "VUI"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-34",
+      "ten": "Màu Agribank",
+      "nen": "sang",
+      "mo_ta": "Màu thương hiệu Agribank: nền #FAF0F3, chữ #393939, nhấn #AF0B35 (gốc #AF0B35), nhấn phụ #00422B. Chỉ dùng màu, không tên, logo.",
+      "chat_lieu": [
+        "CL-05",
+        "CL-06",
+        "CL-07",
+        "CL-09",
+        "CL-10",
+        "CL-13",
+        "CL-14",
+        "CL-15",
+        "CL-16"
+      ],
+      "d_nguon": [],
+      "hex": {
+        "nen": "#FAF0F3",
+        "chu": "#393939",
+        "nhan": [
+          "#AF0B35"
+        ],
+        "phu": [
+          "#00422B",
+          "#EDC9D3"
+        ]
+      },
+      "mau_nguon": "https://www.agribank.com.vn/",
+      "do_tu": "lấy từ website ngân hàng 29/10/2026 (Màu đỏ #AF0B35: 16 lần trong CSS chủ đề AGBank3 và là màu chiếm nhiều nhất trong logo PNG (172 điểm ảnh); xanh lục đậm #00422B: 140 điểm ảnh logo và 2 lần trong); tin cậy cao",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "ngan_hang": "Agribank",
+      "linh_vuc": [
+        "tai_chinh"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "VUI"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-35",
+      "ten": "Màu VietinBank",
+      "nen": "sang",
+      "mo_ta": "Màu thương hiệu VietinBank: nền #F0F5F9, chữ #001420, nhấn #005993 (gốc #005993), nhấn phụ #DA2127. Chỉ dùng màu, không tên, logo.",
+      "chat_lieu": [
+        "CL-05",
+        "CL-06",
+        "CL-07",
+        "CL-09",
+        "CL-10",
+        "CL-13",
+        "CL-14",
+        "CL-15",
+        "CL-16"
+      ],
+      "d_nguon": [],
+      "hex": {
+        "nen": "#F0F5F9",
+        "chu": "#001420",
+        "nhan": [
+          "#005993"
+        ],
+        "phu": [
+          "#DA2127",
+          "#C7DAE7"
+        ]
+      },
+      "mau_nguon": "https://www.vietinbank.vn/",
+      "do_tu": "lấy từ website ngân hàng 29/10/2026 (CSS Next.js /_next/static/css/ab763b3259f0215c.css: #005993 15 lần (màu menu đang chọn text-base-nav-active, chữ gradient) và 3 lần trong HTML; #DA2127 là nền đ); tin cậy vua",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "ngan_hang": "VietinBank",
+      "linh_vuc": [
+        "tai_chinh"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "VUI"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-36",
+      "ten": "Màu MB",
+      "nen": "toi",
+      "mo_ta": "Màu thương hiệu MB: nền #080B50, chữ #FFFFFF, nhấn #EB2D4B (gốc #141ED2), nhấn phụ #666DE2. Chỉ dùng màu, không tên, logo.",
+      "chat_lieu": [
+        "CL-05",
+        "CL-06",
+        "CL-07",
+        "CL-09",
+        "CL-12",
+        "CL-13",
+        "CL-14",
+        "CL-15",
+        "CL-16"
+      ],
+      "d_nguon": [],
+      "hex": {
+        "nen": "#080B50",
+        "chu": "#FFFFFF",
+        "nhan": [
+          "#EB2D4B"
+        ],
+        "phu": [
+          "#666DE2",
+          "#1018A8"
+        ]
+      },
+      "mau_nguon": "https://commons.wikimedia.org/wiki/File:Logo_MB_new.png",
+      "do_tu": "lấy từ website ngân hàng 29/10/2026 (Trang mbbank.com.vn chặn máy đọc (403), không vượt chặn. Đếm điểm ảnh logo MB mới trên Wikimedia Commons (File:Logo MB new.png, 1331×598): #141ED2 123.777 điểm,); tin cậy vua",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "ngan_hang": "MB",
+      "linh_vuc": [
+        "tai_chinh"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "TRAM",
+        "HOI"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-37",
+      "ten": "Màu Techcombank",
+      "nen": "sang",
+      "mo_ta": "Màu thương hiệu Techcombank: nền #FEF1F2, chữ #333333, nhấn #ED1C24 (gốc #ED1C24), nhấn phụ #A08B56. Chỉ dùng màu, không tên, logo.",
+      "chat_lieu": [
+        "CL-05",
+        "CL-06",
+        "CL-07",
+        "CL-09",
+        "CL-10",
+        "CL-13",
+        "CL-14",
+        "CL-15",
+        "CL-16"
+      ],
+      "d_nguon": [],
+      "hex": {
+        "nen": "#FEF1F2",
+        "chu": "#333333",
+        "nhan": [
+          "#ED1C24"
+        ],
+        "phu": [
+          "#A08B56",
+          "#FBCDCF"
+        ]
+      },
+      "mau_nguon": "http://techcombank.com/",
+      "do_tu": "lấy từ website ngân hàng 29/10/2026 (CSS clientlib-site: biến --primary-red #ed1b24 và --accent #ed1c24; #ED1C24 44 lần và #ED1B24 40 lần trong CSS, 3 lần trong HTML. Biến --primary-gold #D6B973 (k); tin cậy cao",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "ngan_hang": "Techcombank",
+      "linh_vuc": [
+        "tai_chinh"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "VUI"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-38",
+      "ten": "Màu VPBank",
+      "nen": "sang",
+      "mo_ta": "Màu thương hiệu VPBank: nền #F0FBF4, chữ #2E3A5B, nhấn #00A547 (gốc #00B74F), nhấn phụ #1D4289. Chỉ dùng màu, không tên, logo.",
+      "chat_lieu": [
+        "CL-05",
+        "CL-06",
+        "CL-07",
+        "CL-09",
+        "CL-10",
+        "CL-13",
+        "CL-14",
+        "CL-15",
+        "CL-16"
+      ],
+      "d_nguon": [],
+      "hex": {
+        "nen": "#F0FBF4",
+        "chu": "#2E3A5B",
+        "nhan": [
+          "#00A547"
+        ],
+        "phu": [
+          "#1D4289",
+          "#C7EFD8"
+        ]
+      },
+      "mau_nguon": "http://vpbank.com.vn/",
+      "do_tu": "lấy từ website ngân hàng 29/10/2026 (CSS /_next/static/css/0585c590787ef907.css: biến --color-vpbank #00B74F (13 lần), --color-vpbank-dark #1D4289 (6 lần CSS, 2 lần trong HTML), --color-text-black ); tin cậy cao",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "ngan_hang": "VPBank",
+      "linh_vuc": [
+        "tai_chinh"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "VUI"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-39",
+      "ten": "Màu ACB",
+      "nen": "toi",
+      "mo_ta": "Màu thương hiệu ACB: nền #001540, chữ #FFFFFF, nhấn #00AFFF (gốc #0038A8), nhấn phụ #597EC6. Chỉ dùng màu, không tên, logo.",
+      "chat_lieu": [
+        "CL-05",
+        "CL-06",
+        "CL-07",
+        "CL-09",
+        "CL-12",
+        "CL-13",
+        "CL-14",
+        "CL-15",
+        "CL-16"
+      ],
+      "d_nguon": [],
+      "hex": {
+        "nen": "#001540",
+        "chu": "#FFFFFF",
+        "nhan": [
+          "#00AFFF"
+        ],
+        "phu": [
+          "#597EC6",
+          "#002D86"
+        ]
+      },
+      "mau_nguon": "https://acb.com.vn/",
+      "do_tu": "lấy từ website ngân hàng 29/10/2026 (Logo SVG https://acb.com.vn/images/logo.svg: fill #0038A8 (3 phần tử) và #00AFFF (1 phần tử). CSS /_next/static/css/8ac418ce117bb6a8.css có biến --cl2 #0038A8, ); tin cậy cao",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "ngan_hang": "ACB",
+      "linh_vuc": [
+        "tai_chinh"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "TRAM",
+        "HOI"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-40",
+      "ten": "Màu TPBank",
+      "nen": "sang",
+      "mo_ta": "Màu thương hiệu TPBank: nền #F6F2F8, chữ #343441, nhấn #652D89 (gốc #652D89), nhấn phụ #DB6C20. Chỉ dùng màu, không tên, logo.",
+      "chat_lieu": [
+        "CL-05",
+        "CL-06",
+        "CL-07",
+        "CL-09",
+        "CL-10",
+        "CL-13",
+        "CL-14",
+        "CL-15",
+        "CL-16"
+      ],
+      "d_nguon": [],
+      "hex": {
+        "nen": "#F6F2F8",
+        "chu": "#343441",
+        "nhan": [
+          "#652D89"
+        ],
+        "phu": [
+          "#DB6C20",
+          "#DDD1E5"
+        ]
+      },
+      "mau_nguon": "https://tpb.vn/",
+      "do_tu": "lấy từ website ngân hàng 29/10/2026 (CSS chủ đề TPBThemev1 (index.css, main.css, stylesheet.css, customcss.css): tím #652D89 94 lần, #7B35BA 90 lần, cam #ED7523 26 lần; trong HTML tím #642E8A 38 lầ); tin cậy cao",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "ngan_hang": "TPBank",
+      "linh_vuc": [
+        "tai_chinh"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "VUI"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-41",
+      "ten": "Màu Sacombank",
+      "nen": "sang",
+      "mo_ta": "Màu thương hiệu Sacombank: nền #F0F5F9, chữ #2E3337, nhấn #0058A0 (gốc #0058A0), nhấn phụ #2A81D0. Chỉ dùng màu, không tên, logo.",
+      "chat_lieu": [
+        "CL-05",
+        "CL-06",
+        "CL-07",
+        "CL-09",
+        "CL-10",
+        "CL-13",
+        "CL-14",
+        "CL-15",
+        "CL-16"
+      ],
+      "d_nguon": [],
+      "hex": {
+        "nen": "#F0F5F9",
+        "chu": "#2E3337",
+        "nhan": [
+          "#0058A0"
+        ],
+        "phu": [
+          "#2A81D0",
+          "#C7DAEA"
+        ]
+      },
+      "mau_nguon": "https://www.sacombank.com.vn/ca-nhan.html",
+      "do_tu": "lấy từ website ngân hàng 29/10/2026 (CSS clientlib-site: xanh #0058A0 62 lần (cũng trong gradient chủ đạo cùng #00467F, #2672AD, #2999BC), #2A81D0 415 lần (màu liên kết, xanh giao diện), 1 lần tron); tin cậy vua",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "ngan_hang": "Sacombank",
+      "linh_vuc": [
+        "tai_chinh"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "VUI"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-42",
+      "ten": "Màu LPBank",
+      "nen": "sang",
+      "mo_ta": "Màu thương hiệu LPBank: nền #F6F3F1, chữ #28140C, nhấn #6D371A (gốc #6D371A), nhấn phụ #C17A16. Chỉ dùng màu, không tên, logo.",
+      "chat_lieu": [
+        "CL-05",
+        "CL-06",
+        "CL-07",
+        "CL-09",
+        "CL-10",
+        "CL-13",
+        "CL-14",
+        "CL-15",
+        "CL-16"
+      ],
+      "d_nguon": [],
+      "hex": {
+        "nen": "#F6F3F1",
+        "chu": "#28140C",
+        "nhan": [
+          "#6D371A"
+        ],
+        "phu": [
+          "#C17A16",
+          "#DFD3CD"
+        ]
+      },
+      "mau_nguon": "https://lpbank.com.vn/ca-nhan",
+      "do_tu": "lấy từ website ngân hàng 29/10/2026 (Logo.png lấy mẫu pixel ~#683018 (nâu); main.css+custom.css+styles.css: #6D371A xuất hiện 187 lần (nhiều nhất), biến --color-primary: #F99D1C (139 lần), --color-); tin cậy vua",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "ngan_hang": "LPBank",
+      "linh_vuc": [
+        "tai_chinh"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "VUI"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-43",
+      "ten": "Màu SeABank",
+      "nen": "sang",
+      "mo_ta": "Màu thương hiệu SeABank: nền #FDF1F2, chữ #2F0607, nhấn #D71920 (gốc #D71920), nhấn phụ #9E1E1F. Chỉ dùng màu, không tên, logo.",
+      "chat_lieu": [
+        "CL-05",
+        "CL-06",
+        "CL-07",
+        "CL-09",
+        "CL-10",
+        "CL-13",
+        "CL-14",
+        "CL-15",
+        "CL-16"
+      ],
+      "d_nguon": [],
+      "hex": {
+        "nen": "#FDF1F2",
+        "chu": "#2F0607",
+        "nhan": [
+          "#D71920"
+        ],
+        "phu": [
+          "#9E1E1F",
+          "#F6CCCE"
+        ]
+      },
+      "mau_nguon": "https://www.seabank.com.vn/",
+      "do_tu": "lấy từ website ngân hàng 29/10/2026 (CSS _next/static/css/48f3766e498587a0.css: biến --primary #d71920 (40 lần), --adm-color-primary #d71920, --primary-gradient linear-gradient(95deg,#d71920,#9e1e1); tin cậy cao",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "ngan_hang": "SeABank",
+      "linh_vuc": [
+        "tai_chinh"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "VUI"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-44",
+      "ten": "Màu HDBank",
+      "nen": "sang",
+      "mo_ta": "Màu thương hiệu HDBank: nền #FEF0F2, chữ #350007, nhấn #F00020 (gốc #F00020), nhấn phụ #9F862A. Chỉ dùng màu, không tên, logo.",
+      "chat_lieu": [
+        "CL-05",
+        "CL-06",
+        "CL-07",
+        "CL-09",
+        "CL-10",
+        "CL-13",
+        "CL-14",
+        "CL-15",
+        "CL-16"
+      ],
+      "d_nguon": [],
+      "hex": {
+        "nen": "#FEF0F2",
+        "chu": "#350007",
+        "nhan": [
+          "#F00020"
+        ],
+        "phu": [
+          "#9F862A",
+          "#FCC7CE"
+        ]
+      },
+      "mau_nguon": "https://hdbank.com.vn/",
+      "do_tu": "lấy từ website ngân hàng 29/10/2026 (CSS _next/static/css/a46954afa4ca502f.css: biến --hdbank-primary #f00020 (108 lần), --hdbank-primary-dark #cf001b, #BE1128 41 lần, vàng #FFD643 33 lần; logo (se); tin cậy cao",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "ngan_hang": "HDBank",
+      "linh_vuc": [
+        "tai_chinh"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "VUI"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-45",
+      "ten": "Màu VIB",
+      "nen": "sang",
+      "mo_ta": "Màu thương hiệu VIB: nền #F0F6FA, chữ #001627, nhấn #0066B3 (gốc #0066B3), nhấn phụ #B1820D. Chỉ dùng màu, không tên, logo.",
+      "chat_lieu": [
+        "CL-05",
+        "CL-06",
+        "CL-07",
+        "CL-09",
+        "CL-10",
+        "CL-13",
+        "CL-14",
+        "CL-15",
+        "CL-16"
+      ],
+      "d_nguon": [],
+      "hex": {
+        "nen": "#F0F6FA",
+        "chu": "#001627",
+        "nhan": [
+          "#0066B3"
+        ],
+        "phu": [
+          "#B1820D",
+          "#C7DDEE"
+        ]
+      },
+      "mau_nguon": "https://www.vib.com.vn/",
+      "do_tu": "lấy từ website ngân hàng 29/10/2026 (Trang vib.com.vn chặn bot (trang thách thức, curl chỉ ra 1870 byte). Lấy từ bản lưu web.archive.org ngày 14/01/2024 của vib.com.vn: static/theme/css/style_all_o); tin cậy vua",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "ngan_hang": "VIB",
+      "linh_vuc": [
+        "tai_chinh"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "VUI"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-46",
+      "ten": "Màu SHB",
+      "nen": "sang",
+      "mo_ta": "Màu thương hiệu SHB: nền #FEF8F2, chữ #361D07, nhấn #DC751D (gốc #F58220), nhấn phụ #2E2A78. Chỉ dùng màu, không tên, logo.",
+      "chat_lieu": [
+        "CL-05",
+        "CL-06",
+        "CL-07",
+        "CL-09",
+        "CL-10",
+        "CL-13",
+        "CL-14",
+        "CL-15",
+        "CL-16"
+      ],
+      "d_nguon": [],
+      "hex": {
+        "nen": "#FEF8F2",
+        "chu": "#361D07",
+        "nhan": [
+          "#DC751D"
+        ],
+        "phu": [
+          "#2E2A78",
+          "#FDE4CE"
+        ]
+      },
+      "mau_nguon": "https://www.shb.com.vn/",
+      "do_tu": "lấy từ website ngân hàng 29/10/2026 (Trang shb.com.vn trả 403 (Cloudflare/xác minh bảo mật). Lấy từ bản lưu web.archive.org ngày 16/10/2026 của shb.com.vn: themes/shb/style.css: #F58220 xuất hiện 4); tin cậy vua",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "ngan_hang": "SHB",
+      "linh_vuc": [
+        "tai_chinh"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "VUI"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-47",
+      "ten": "Màu OCB",
+      "nen": "sang",
+      "mo_ta": "Màu thương hiệu OCB: nền #F0F8F4, chữ #001F0F, nhấn #008C44 (gốc #008C44), nhấn phụ #C18014. Chỉ dùng màu, không tên, logo.",
+      "chat_lieu": [
+        "CL-05",
+        "CL-06",
+        "CL-07",
+        "CL-09",
+        "CL-10",
+        "CL-13",
+        "CL-14",
+        "CL-15",
+        "CL-16"
+      ],
+      "d_nguon": [],
+      "hex": {
+        "nen": "#F0F8F4",
+        "chu": "#001F0F",
+        "nhan": [
+          "#008C44"
+        ],
+        "phu": [
+          "#C18014",
+          "#C7E6D6"
+        ]
+      },
+      "mau_nguon": "https://www.ocb.com.vn/",
+      "do_tu": "lấy từ website ngân hàng 29/10/2026 (CSS styles-FURF7FBL.css: biến --primary #008C44 (12 lần trong trang+css), --secondary #E39717; #00401F xanh lá đậm 2 lần.); tin cậy cao",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "ngan_hang": "OCB",
+      "linh_vuc": [
+        "tai_chinh"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "VUI"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-48",
+      "ten": "Màu MSB",
+      "nen": "sang",
+      "mo_ta": "Màu thương hiệu MSB: nền #FEF1F2, chữ #091E42, nhấn #EC1C24 (gốc #EC1C24), nhấn phụ #EE5E0C. Chỉ dùng màu, không tên, logo.",
+      "chat_lieu": [
+        "CL-05",
+        "CL-06",
+        "CL-07",
+        "CL-09",
+        "CL-10",
+        "CL-13",
+        "CL-14",
+        "CL-15",
+        "CL-16"
+      ],
+      "d_nguon": [],
+      "hex": {
+        "nen": "#FEF1F2",
+        "chu": "#091E42",
+        "nhan": [
+          "#EC1C24"
+        ],
+        "phu": [
+          "#EE5E0C",
+          "#FBCDCF"
+        ]
+      },
+      "mau_nguon": "https://www.msb.com.vn/",
+      "do_tu": "lấy từ website ngân hàng 29/10/2026 (logo_black.svg: các fill đỏ #EC1C24, #E81B23, #DB1820, #9D0B0F; child-style01.css/style: cam #F4600C 66 lần, #FF6A00 7, #ED1C24 6, vàng #FFB81C 6; chữ #091E42 1); tin cậy vua",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "ngan_hang": "MSB",
+      "linh_vuc": [
+        "tai_chinh"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "VUI"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-49",
+      "ten": "Màu Eximbank",
+      "nen": "sang",
+      "mo_ta": "Màu thương hiệu Eximbank: nền #F0F5F9, chữ #001421, nhấn #005D98 (gốc #005D98), nhấn phụ #2496C6. Chỉ dùng màu, không tên, logo.",
+      "chat_lieu": [
+        "CL-05",
+        "CL-06",
+        "CL-07",
+        "CL-09",
+        "CL-10",
+        "CL-13",
+        "CL-14",
+        "CL-15",
+        "CL-16"
+      ],
+      "d_nguon": [],
+      "hex": {
+        "nen": "#F0F5F9",
+        "chu": "#001421",
+        "nhan": [
+          "#005D98"
+        ],
+        "phu": [
+          "#2496C6",
+          "#C7DBE8"
+        ]
+      },
+      "mau_nguon": "https://eximbank.com.vn/",
+      "do_tu": "lấy từ website ngân hàng 29/10/2026 (logo.svg: fill #005D98 (13 lần), #003863 (5), xanh nhạt #29ABE2/#179EDA; CSS _next/static/css/11781d9cd33c3c1f.css: #1381BE 20 lần, #00538D 17, #1B96D5 13, #003); tin cậy cao",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "ngan_hang": "Eximbank",
+      "linh_vuc": [
+        "tai_chinh"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "VUI"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-50",
+      "ten": "Màu Nam A Bank",
+      "nen": "sang",
+      "mo_ta": "Màu thương hiệu Nam A Bank: nền #F0F7FB, chữ #021929, nhấn #0772BA (gốc #0772BA), nhấn phụ #9F8A00. Chỉ dùng màu, không tên, logo.",
+      "chat_lieu": [
+        "CL-05",
+        "CL-06",
+        "CL-07",
+        "CL-09",
+        "CL-10",
+        "CL-13",
+        "CL-14",
+        "CL-15",
+        "CL-16"
+      ],
+      "d_nguon": [],
+      "hex": {
+        "nen": "#F0F7FB",
+        "chu": "#021929",
+        "nhan": [
+          "#0772BA"
+        ],
+        "phu": [
+          "#9F8A00",
+          "#C8E0F0"
+        ]
+      },
+      "mau_nguon": "https://www.namabank.com.vn/",
+      "do_tu": "lấy từ website ngân hàng 29/10/2026 (global.min.css, main.min.css, main2.min.css: #0772BA 248 lần, vàng #FFDD00 90 lần, #005690 58 lần; logo.png lấy mẫu pixel ~#0070B8 (xanh dương) khớp. theme-colo); tin cậy cao",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "ngan_hang": "Nam A Bank",
+      "linh_vuc": [
+        "tai_chinh"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "VUI"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-51",
+      "ten": "Màu Bac A Bank",
+      "nen": "sang",
+      "mo_ta": "Màu thương hiệu Bac A Bank: nền #FCF8F1, chữ #2C1E04, nhấn #BE8311 (gốc #C88A12), nhấn phụ #B58500. Chỉ dùng màu, không tên, logo.",
+      "chat_lieu": [
+        "CL-05",
+        "CL-06",
+        "CL-07",
+        "CL-09",
+        "CL-10",
+        "CL-13",
+        "CL-14",
+        "CL-15",
+        "CL-16"
+      ],
+      "d_nguon": [],
+      "hex": {
+        "nen": "#FCF8F1",
+        "chu": "#2C1E04",
+        "nhan": [
+          "#BE8311"
+        ],
+        "phu": [
+          "#B58500",
+          "#F3E5CB"
+        ]
+      },
+      "mau_nguon": "https://www.baca-bank.vn/",
+      "do_tu": "lấy từ website ngân hàng 29/10/2026 (babank.css: #C88A12 80 lần, #EAAB00 20 lần (vàng đồng/vàng nghệ); logoBAB.png lấy mẫu ~#B88830 (vàng đồng) khớp. Các màu #337AB7, #3C763D... là mặc định Bootstr); tin cậy vua",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "ngan_hang": "Bac A Bank",
+      "linh_vuc": [
+        "tai_chinh"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "VUI"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-52",
+      "ten": "Màu ABBANK",
+      "nen": "sang",
+      "mo_ta": "Màu thương hiệu ABBANK: nền #FEF7F2, chữ #361B07, nhấn #E2701E (gốc #F47920), nhấn phụ #00A193. Chỉ dùng màu, không tên, logo.",
+      "chat_lieu": [
+        "CL-05",
+        "CL-06",
+        "CL-07",
+        "CL-09",
+        "CL-10",
+        "CL-13",
+        "CL-14",
+        "CL-15",
+        "CL-16"
+      ],
+      "d_nguon": [],
+      "hex": {
+        "nen": "#FEF7F2",
+        "chu": "#361B07",
+        "nhan": [
+          "#E2701E"
+        ],
+        "phu": [
+          "#00A193",
+          "#FDE2CE"
+        ]
+      },
+      "mau_nguon": "https://www.abbank.vn/",
+      "do_tu": "lấy từ website ngân hàng 29/10/2026 (curl + trình duyệt: /frontend/css/index.css, #F47920 xuất hiện 33 lần (cam, nhiều nhất), #00AE9F 18 lần (xanh ngọc), #FF9315 11 lần; màu tính toán trên trang: #); tin cậy cao",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "ngan_hang": "ABBANK",
+      "linh_vuc": [
+        "tai_chinh"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "VUI"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-53",
+      "ten": "Màu PVcomBank",
+      "nen": "sang",
+      "mo_ta": "Màu thương hiệu PVcomBank: nền #F0F7FB, chữ #0D2240, nhấn #0772BA (gốc #0772BA), nhấn phụ #AC8605. Chỉ dùng màu, không tên, logo.",
+      "chat_lieu": [
+        "CL-05",
+        "CL-06",
+        "CL-07",
+        "CL-09",
+        "CL-10",
+        "CL-13",
+        "CL-14",
+        "CL-15",
+        "CL-16"
+      ],
+      "d_nguon": [],
+      "hex": {
+        "nen": "#F0F7FB",
+        "chu": "#0D2240",
+        "nhan": [
+          "#0772BA"
+        ],
+        "phu": [
+          "#AC8605",
+          "#C8E0F0"
+        ]
+      },
+      "mau_nguon": "https://www.pvcombank.com.vn/",
+      "do_tu": "lấy từ website ngân hàng 29/10/2026 (curl + trình duyệt: /ddl/styles.css khai báo --color-primary:#ffc708 (vàng), --color-secondary:#0772ba (xanh), --color-li-bl:#0d2240 (xanh đậm). Màu tính toán t); tin cậy cao",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "ngan_hang": "PVcomBank",
+      "linh_vuc": [
+        "tai_chinh"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "VUI"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-54",
+      "ten": "Màu Kienlongbank",
+      "nen": "sang",
+      "mo_ta": "Màu thương hiệu Kienlongbank: nền #FEF4F2, chữ #1E2452, nhấn #EF4D23 (gốc #EF4D23), nhấn phụ #2794CB. Chỉ dùng màu, không tên, logo.",
+      "chat_lieu": [
+        "CL-05",
+        "CL-06",
+        "CL-07",
+        "CL-09",
+        "CL-10",
+        "CL-13",
+        "CL-14",
+        "CL-15",
+        "CL-16"
+      ],
+      "d_nguon": [],
+      "hex": {
+        "nen": "#FEF4F2",
+        "chu": "#1E2452",
+        "nhan": [
+          "#EF4D23"
+        ],
+        "phu": [
+          "#2794CB",
+          "#FBD8CF"
+        ]
+      },
+      "mau_nguon": "https://kienlongbank.com/",
+      "do_tu": "lấy từ website ngân hàng 29/10/2026 (curl + trình duyệt: logo PNG 2026 (logo-kienlongbank-klb-dinh-vi-thuong-hieu-10-1.png) lấy mẫu điểm ảnh: cam ~#E85A20 chiếm nhiều nhất, xanh dương ~#2898D0 (giá); tin cậy vua",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "ngan_hang": "Kienlongbank",
+      "linh_vuc": [
+        "tai_chinh"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "VUI"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-55",
+      "ten": "Màu NCB",
+      "nen": "sang",
+      "mo_ta": "Màu thương hiệu NCB: nền #F0F4F9, chữ #001121, nhấn #004E96 (gốc #004E96), nhấn phụ #A1874D. Chỉ dùng màu, không tên, logo.",
+      "chat_lieu": [
+        "CL-05",
+        "CL-06",
+        "CL-07",
+        "CL-09",
+        "CL-10",
+        "CL-13",
+        "CL-14",
+        "CL-15",
+        "CL-16"
+      ],
+      "d_nguon": [],
+      "hex": {
+        "nen": "#F0F4F9",
+        "chu": "#001121",
+        "nhan": [
+          "#004E96"
+        ],
+        "phu": [
+          "#A1874D",
+          "#C7D8E8"
+        ]
+      },
+      "mau_nguon": "https://www.ncb-bank.vn/",
+      "do_tu": "lấy từ website ngân hàng 29/10/2026 (curl bị Cloudflare 403; đọc bằng trình duyệt: màu tính toán #004E96 309 phần tử, #104885 147, #0E4A88 133; CSS: #609ADC 103, #00457C 61, #004E96 53, vàng đồng #); tin cậy vua",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "ngan_hang": "NCB",
+      "linh_vuc": [
+        "tai_chinh"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "VUI"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-56",
+      "ten": "Màu VietABank",
+      "nen": "sang",
+      "mo_ta": "Màu thương hiệu VietABank: nền #F1F4F8, chữ #060F1D, nhấn #1B4486 (gốc #1B4486), nhấn phụ #EC2028. Chỉ dùng màu, không tên, logo.",
+      "chat_lieu": [
+        "CL-05",
+        "CL-06",
+        "CL-07",
+        "CL-09",
+        "CL-10",
+        "CL-13",
+        "CL-14",
+        "CL-15",
+        "CL-16"
+      ],
+      "d_nguon": [],
+      "hex": {
+        "nen": "#F1F4F8",
+        "chu": "#060F1D",
+        "nhan": [
+          "#1B4486"
+        ],
+        "phu": [
+          "#EC2028",
+          "#CDD6E4"
+        ]
+      },
+      "mau_nguon": "https://www.vietabank.com.vn/",
+      "do_tu": "lấy từ website ngân hàng 29/10/2026 (curl: thẻ meta theme-color = #1b4486; /Content/theme_btq/css/style.css: #1B4486 116 lần, #3864AF 38, #EC2028 29 (đỏ); header.css: #1B4486 18, #EC2028 18. Chưa s); tin cậy cao",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "ngan_hang": "VietABank",
+      "linh_vuc": [
+        "tai_chinh"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "VUI"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-57",
+      "ten": "Màu BVBank",
+      "nen": "toi",
+      "mo_ta": "Màu thương hiệu BVBank: nền #071633, chữ #FFFFFF, nhấn #13C0F7 (gốc #123985), nhấn phụ #657EB0. Chỉ dùng màu, không tên, logo.",
+      "chat_lieu": [
+        "CL-05",
+        "CL-06",
+        "CL-07",
+        "CL-09",
+        "CL-12",
+        "CL-13",
+        "CL-14",
+        "CL-15",
+        "CL-16"
+      ],
+      "d_nguon": [],
+      "hex": {
+        "nen": "#071633",
+        "chu": "#FFFFFF",
+        "nhan": [
+          "#13C0F7"
+        ],
+        "phu": [
+          "#657EB0",
+          "#0E2E6A"
+        ]
+      },
+      "mau_nguon": "https://www.bvbank.net.vn/",
+      "do_tu": "lấy từ website ngân hàng 29/10/2026 (curl bị chặn (thử thách F5); đọc bằng trình duyệt: wp-content/themes/bvb CSS có #123985 111 lần, --swiper-theme-color:#123985; màu tính toán #123985 trên 894 ph); tin cậy vua",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "ngan_hang": "BVBank",
+      "linh_vuc": [
+        "tai_chinh"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "TRAM",
+        "HOI"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-58",
+      "ten": "Màu Saigonbank",
+      "nen": "sang",
+      "mo_ta": "Màu thương hiệu Saigonbank: nền #F0F6FA, chữ #001627, nhấn #0165B3 (gốc #0165B3), nhấn phụ #6290B5. Chỉ dùng màu, không tên, logo.",
+      "chat_lieu": [
+        "CL-05",
+        "CL-06",
+        "CL-07",
+        "CL-09",
+        "CL-10",
+        "CL-13",
+        "CL-14",
+        "CL-15",
+        "CL-16"
+      ],
+      "d_nguon": [],
+      "hex": {
+        "nen": "#F0F6FA",
+        "chu": "#001627",
+        "nhan": [
+          "#0165B3"
+        ],
+        "phu": [
+          "#6290B5",
+          "#C7DDEE"
+        ]
+      },
+      "mau_nguon": "https://www.saigonbank.com.vn/",
+      "do_tu": "lấy từ website ngân hàng 29/10/2026 (Website chặn bot (Imperva Incapsula) cả curl lẫn trình duyệt, không vượt. Lấy từ logo SaigonBank trên Wikimedia Commons (nguồn ghi là saigonbank.com.vn, đăng 23); tin cậy thap",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "ngan_hang": "Saigonbank",
+      "linh_vuc": [
+        "tai_chinh"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "VUI"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-59",
+      "ten": "Màu PGBank",
+      "nen": "toi",
+      "mo_ta": "Màu thương hiệu PGBank: nền #10142C, chữ #FFFFFF, nhấn #33BBEC (gốc #293474), nhấn phụ #747BA5. Chỉ dùng màu, không tên, logo.",
+      "chat_lieu": [
+        "CL-05",
+        "CL-06",
+        "CL-07",
+        "CL-09",
+        "CL-12",
+        "CL-13",
+        "CL-14",
+        "CL-15",
+        "CL-16"
+      ],
+      "d_nguon": [],
+      "hex": {
+        "nen": "#10142C",
+        "chu": "#FFFFFF",
+        "nhan": [
+          "#33BBEC"
+        ],
+        "phu": [
+          "#747BA5",
+          "#212A5D"
+        ]
+      },
+      "mau_nguon": "https://www.pgbank.com.vn/",
+      "do_tu": "lấy từ website ngân hàng 29/10/2026 (curl bị chặn; đọc bằng trình duyệt (trang nay mang tên Ngân hàng TMCP Thịnh vượng và Phát triển - PGBank). Logo /_nuxt/img/PGBankLogo.23998e8.png lấy mẫu điểm ả); tin cậy cao",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "ngan_hang": "PGBank",
+      "linh_vuc": [
+        "tai_chinh"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "TRAM",
+        "HOI"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-60",
+      "ten": "Màu BAOVIET Bank",
+      "nen": "sang",
+      "mo_ta": "Màu thương hiệu BAOVIET Bank: nền #F0F7FB, chữ #001B2A, nhấn #0079C1 (gốc #0079C1), nhấn phụ #B2860A. Chỉ dùng màu, không tên, logo.",
+      "chat_lieu": [
+        "CL-05",
+        "CL-06",
+        "CL-07",
+        "CL-09",
+        "CL-10",
+        "CL-13",
+        "CL-14",
+        "CL-15",
+        "CL-16"
+      ],
+      "d_nguon": [],
+      "hex": {
+        "nen": "#F0F7FB",
+        "chu": "#001B2A",
+        "nhan": [
+          "#0079C1"
+        ],
+        "phu": [
+          "#B2860A",
+          "#C7E2F1"
+        ]
+      },
+      "mau_nguon": "https://www.baovietbank.vn/",
+      "do_tu": "lấy từ website ngân hàng 29/10/2026 (curl + trình duyệt: /assets/css/bvb-style.min.css có #0079C1 25 lần, vàng đồng #BB8D0B 14 lần; header.css #0079C1, #005BAA; màu tính toán trên trang #0079C1 298); tin cậy cao",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "ngan_hang": "BAOVIET Bank",
+      "linh_vuc": [
+        "tai_chinh"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "VUI"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-61",
+      "ten": "Màu Vietbank",
+      "nen": "sang",
+      "mo_ta": "Màu thương hiệu Vietbank: nền #F0F6FB, chữ #001929, nhấn #0071BB (gốc #0071BB), nhấn phụ #AF8600. Chỉ dùng màu, không tên, logo.",
+      "chat_lieu": [
+        "CL-05",
+        "CL-06",
+        "CL-07",
+        "CL-09",
+        "CL-10",
+        "CL-13",
+        "CL-14",
+        "CL-15",
+        "CL-16"
+      ],
+      "d_nguon": [],
+      "hex": {
+        "nen": "#F0F6FB",
+        "chu": "#001929",
+        "nhan": [
+          "#0071BB"
+        ],
+        "phu": [
+          "#AF8600",
+          "#C7E0F0"
+        ]
+      },
+      "mau_nguon": "https://www.vietbank.com.vn/",
+      "do_tu": "lấy từ website ngân hàng 29/10/2026 (curl + trình duyệt: /css/site.min.css có #0071BB 64 lần, #005489 41, #FABF00 23 (vàng), #FFD658 20; màu tính toán #005489 41 phần tử. Logo /img/logo.png lấy mẫu); tin cậy vua",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "ngan_hang": "Vietbank",
+      "linh_vuc": [
+        "tai_chinh"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "VUI"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-62",
+      "ten": "Màu SCB",
+      "nen": "toi",
+      "mo_ta": "Màu thương hiệu SCB: nền #090E41, chữ #FFFFFF, nhấn #EB0029 (gốc #1825AA), nhấn phụ #6971C8. Chỉ dùng màu, không tên, logo.",
+      "chat_lieu": [
+        "CL-05",
+        "CL-06",
+        "CL-07",
+        "CL-09",
+        "CL-12",
+        "CL-13",
+        "CL-14",
+        "CL-15",
+        "CL-16"
+      ],
+      "d_nguon": [],
+      "hex": {
+        "nen": "#090E41",
+        "chu": "#FFFFFF",
+        "nhan": [
+          "#EB0029"
+        ],
+        "phu": [
+          "#6971C8",
+          "#131E88"
+        ]
+      },
+      "mau_nguon": "https://www.scb.com.vn/",
+      "do_tu": "lấy từ website ngân hàng 29/10/2026 (Logo svg https://www.scb.com.vn/images/logo.svg: fill #1825AA (xanh, nền logo) và #EB0029 (đỏ, biểu tượng tròn); ảnh logo_scb_2022_.jpg nền xanh ~#1724A9, biểu ); tin cậy cao",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "ngan_hang": "SCB",
+      "linh_vuc": [
+        "tai_chinh"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "TRAM",
+        "HOI"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-63",
+      "ten": "Màu Vikki Bank",
+      "nen": "sang",
+      "mo_ta": "Màu thương hiệu Vikki Bank: nền #F0F0FF, chữ #000038, nhấn #0000FF (gốc #0000FF), nhấn phụ #D21686. Chỉ dùng màu, không tên, logo.",
+      "chat_lieu": [
+        "CL-05",
+        "CL-06",
+        "CL-07",
+        "CL-09",
+        "CL-10",
+        "CL-13",
+        "CL-14",
+        "CL-15",
+        "CL-16"
+      ],
+      "d_nguon": [],
+      "hex": {
+        "nen": "#F0F0FF",
+        "chu": "#000038",
+        "nhan": [
+          "#0000FF"
+        ],
+        "phu": [
+          "#D21686",
+          "#C7C7FF"
+        ]
+      },
+      "mau_nguon": "https://vikkibank.vn/",
+      "do_tu": "lấy từ website ngân hàng 29/10/2026 (Logo vikki-digital-bank-logo-c-1.png (nền trong suốt, chữ Vikki chuyển màu xanh -> tím hồng -> cam; lấy mẫu điểm ảnh 0200FE, D21686, FAA518; chữ 'Digital Bank' ); tin cậy cao",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "ngan_hang": "Vikki Bank",
+      "linh_vuc": [
+        "tai_chinh"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "VUI"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-64",
+      "ten": "Màu MBV",
+      "nen": "sang",
+      "mo_ta": "Màu thương hiệu MBV: nền #FBF1F2, chữ #374151, nhấn #B71D1F (gốc #B71D1F), nhấn phụ #B61D22. Chỉ dùng màu, không tên, logo.",
+      "chat_lieu": [
+        "CL-05",
+        "CL-06",
+        "CL-07",
+        "CL-09",
+        "CL-10",
+        "CL-13",
+        "CL-14",
+        "CL-15",
+        "CL-16"
+      ],
+      "d_nguon": [],
+      "hex": {
+        "nen": "#FBF1F2",
+        "chu": "#374151",
+        "nhan": [
+          "#B71D1F"
+        ],
+        "phu": [
+          "#B61D22",
+          "#EFCDCE"
+        ]
+      },
+      "mau_nguon": "https://www.mbv.com.vn/",
+      "do_tu": "lấy từ website ngân hàng 29/10/2026 (Apple-touch-icon /favicon/apple-touch-icon.png (logo MBV chữ đỏ, mẫu điểm ảnh B71D1F); CSS /_next/static/css/60fb83067192c450.css: #B61D22 xuất hiện 13 lần là m); tin cậy vua",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "ngan_hang": "MBV",
+      "linh_vuc": [
+        "tai_chinh"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "VUI"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-65",
+      "ten": "Màu VCBNeo",
+      "nen": "sang",
+      "mo_ta": "Màu thương hiệu VCBNeo: nền #F0F5F3, chữ #00120B, nhấn #005130 (gốc #005130), nhấn phụ #6C9831. Chỉ dùng màu, không tên, logo.",
+      "chat_lieu": [
+        "CL-05",
+        "CL-06",
+        "CL-07",
+        "CL-09",
+        "CL-10",
+        "CL-13",
+        "CL-14",
+        "CL-15",
+        "CL-16"
+      ],
+      "d_nguon": [],
+      "hex": {
+        "nen": "#F0F5F3",
+        "chu": "#00120B",
+        "nhan": [
+          "#005130"
+        ],
+        "phu": [
+          "#6C9831",
+          "#C7D9D1"
+        ]
+      },
+      "mau_nguon": "https://www.vcbneo.com.vn/",
+      "do_tu": "lấy từ website ngân hàng 29/10/2026 (Logo https://www.vcbneo.com.vn/img/logo.jpg: chữ VCB xanh lục đậm (005130, ~1300 điểm ảnh), chữ Neo và biểu tượng xanh lá (8BC43F, ~1400 điểm ảnh); icon iconvcb); tin cậy cao",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "ngan_hang": "VCBNeo",
+      "linh_vuc": [
+        "tai_chinh"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "VUI"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-66",
+      "ten": "Màu GPBank",
+      "nen": "sang",
+      "mo_ta": "Màu thương hiệu GPBank: nền #FFF9F1, chữ #2E3A5B, nhấn #CC7A18 (gốc #F7941D), nhấn phụ #EF4130. Chỉ dùng màu, không tên, logo.",
+      "chat_lieu": [
+        "CL-05",
+        "CL-06",
+        "CL-07",
+        "CL-09",
+        "CL-10",
+        "CL-13",
+        "CL-14",
+        "CL-15",
+        "CL-16"
+      ],
+      "d_nguon": [],
+      "hex": {
+        "nen": "#FFF9F1",
+        "chu": "#2E3A5B",
+        "nhan": [
+          "#CC7A18"
+        ],
+        "phu": [
+          "#EF4130",
+          "#FDE7CD"
+        ]
+      },
+      "mau_nguon": "https://www.gpbank.com.vn/",
+      "do_tu": "lấy từ website ngân hàng 29/10/2026 (Logo svg https://www.gpbank.com.vn/-/media/logo/logo-final.svg: chữ GPBank chuyển màu cam F7941D -> đỏ cam EF4130 (stop-color), lá xanh 8DC63F/3A9948. CSS /_nex); tin cậy cao",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "ngan_hang": "GPBank",
+      "linh_vuc": [
+        "tai_chinh"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "VUI"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-67",
+      "ten": "Màu Co-opBank",
+      "nen": "sang",
+      "mo_ta": "Màu thương hiệu Co-opBank: nền #F0F4F9, chữ #0F172A, nhấn #004AA1 (gốc #004AA1), nhấn phụ #E50019. Chỉ dùng màu, không tên, logo.",
+      "chat_lieu": [
+        "CL-05",
+        "CL-06",
+        "CL-07",
+        "CL-09",
+        "CL-10",
+        "CL-13",
+        "CL-14",
+        "CL-15",
+        "CL-16"
+      ],
+      "d_nguon": [],
+      "hex": {
+        "nen": "#F0F4F9",
+        "chu": "#0F172A",
+        "nhan": [
+          "#004AA1"
+        ],
+        "phu": [
+          "#E50019",
+          "#C7D7EA"
+        ]
+      },
+      "mau_nguon": "https://www.co-opbank.vn/",
+      "do_tu": "lấy từ website ngân hàng 29/10/2026 (Logo https://www.co-opbank.vn/wp-content/uploads/2026/06/Logo-1-3.svg (ảnh nhúng: biểu tượng bông lúa vòng cung đỏ, mẫu điểm ảnh E50019) và favicon (EC1C24). Gi); tin cậy vua",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "ngan_hang": "Co-opBank",
+      "linh_vuc": [
+        "tai_chinh"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "VUI"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-68",
+      "ten": "Màu Ngân hàng Chính sách xã hội",
+      "nen": "sang",
+      "mo_ta": "Màu thương hiệu Ngân hàng Chính sách xã hội: nền #FEF0F8, chữ #34001F, nhấn #EC008C (gốc #EC008C), nhấn phụ #016D3E. Chỉ dùng màu, không tên, logo.",
+      "chat_lieu": [
+        "CL-05",
+        "CL-06",
+        "CL-07",
+        "CL-09",
+        "CL-10",
+        "CL-13",
+        "CL-14",
+        "CL-15",
+        "CL-16"
+      ],
+      "d_nguon": [],
+      "hex": {
+        "nen": "#FEF0F8",
+        "chu": "#34001F",
+        "nhan": [
+          "#EC008C"
+        ],
+        "phu": [
+          "#016D3E",
+          "#FBC7E6"
+        ]
+      },
+      "mau_nguon": "https://vbsp.org.vn/",
+      "do_tu": "lấy từ website ngân hàng 29/10/2026 (Logo https://vbsp.org.vn/wp-content/themes/vbsp/images/logo.png (giọt/ngọn lửa hồng, mẫu điểm ảnh EC008C, ~1300 điểm ảnh). Giao diện theme vbsp/style.css lại dù); tin cậy vua",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "ngan_hang": "Ngân hàng Chính sách xã hội",
+      "linh_vuc": [
+        "tai_chinh"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "VUI"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON"
+      ]
+    },
+    {
+      "ma": "MAU-69",
+      "ten": "Màu Ngân hàng Phát triển Việt Nam",
+      "nen": "toi",
+      "mo_ta": "Màu thương hiệu Ngân hàng Phát triển Việt Nam: nền #15112D, chữ #FFFFFF, nhấn #EE1D23 (gốc #382C76), nhấn phụ #7E76A6. Chỉ dùng màu, không tên, logo.",
+      "chat_lieu": [
+        "CL-05",
+        "CL-06",
+        "CL-07",
+        "CL-09",
+        "CL-12",
+        "CL-13",
+        "CL-14",
+        "CL-15",
+        "CL-16"
+      ],
+      "d_nguon": [],
+      "hex": {
+        "nen": "#15112D",
+        "chu": "#FFFFFF",
+        "nhan": [
+          "#EE1D23"
+        ],
+        "phu": [
+          "#7E76A6",
+          "#2D235E"
+        ]
+      },
+      "mau_nguon": "https://vdb.gov.vn/",
+      "do_tu": "lấy từ website ngân hàng 29/10/2026 (Ảnh /Admin/Images/banner.png (logo VDB: biểu tượng đỏ EE1D23, chữ và dải đầu trang tím chàm 382C76, ~24.000 điểm ảnh); logo_bn.jpg là khẩu hiệu chữ đỏ ~DA0000. ); tin cậy vua",
+      "trang_thai": "nhap",
+      "gia_tri_moi": true,
+      "ngan_hang": "Ngân hàng Phát triển Việt Nam",
+      "linh_vuc": [
+        "tai_chinh"
+      ],
+      "nhom_nhac_hop": [
+        "TAP",
+        "TRAM",
+        "HOI"
+      ],
+      "nhom_nhac_tranh": [
+        "BUON"
+      ]
+    }
+  ],
+  "ma_tran_mau_nhac": {
+    "_ghi_chu": "Chép từ phụ lục d09b_bien_the_mau_nhac.md (26/10/2026), chấm theo số đo, chưa nghe bằng tai. H hợp, C cân nhắc, K không nên (loại). Ô H, C ghi đè nhóm nhạc hợp, tránh của màu; ô K loại. Cặp ngoài ma trận dùng nhom_nhac_hop và nhom_nhac_tranh.",
+    "cot": [
+      "NH01",
+      "NH02",
+      "NH03",
+      "NH04",
+      "NH05",
+      "NH06",
+      "NH07",
+      "NH08",
+      "NH09",
+      "NH10"
+    ],
+    "MAU-10": [
+      "H",
+      "H",
+      "H",
+      "H",
+      "H",
+      "H",
+      "H",
+      "C",
+      "H",
+      "H"
+    ],
+    "MAU-11": [
+      "H",
+      "H",
+      "C",
+      "H",
+      "H",
+      "C",
+      "H",
+      "K",
+      "H",
+      "H"
+    ],
+    "MAU-12": [
+      "H",
+      "H",
+      "C",
+      "H",
+      "H",
+      "C",
+      "H",
+      "K",
+      "H",
+      "H"
+    ],
+    "MAU-13": [
+      "H",
+      "H",
+      "C",
+      "C",
+      "H",
+      "C",
+      "C",
+      "K",
+      "H",
+      "H"
+    ],
+    "MAU-14": [
+      "H",
+      "C",
+      "H",
+      "H",
+      "C",
+      "H",
+      "H",
+      "H",
+      "H",
+      "H"
+    ],
+    "MAU-15": [
+      "C",
+      "H",
+      "H",
+      "H",
+      "H",
+      "H",
+      "H",
+      "H",
+      "C",
+      "K"
+    ],
+    "MAU-16": [
+      "C",
+      "C",
+      "H",
+      "C",
+      "C",
+      "H",
+      "C",
+      "H",
+      "C",
+      "K"
+    ],
+    "MAU-17": [
+      "C",
+      "H",
+      "H",
+      "H",
+      "H",
+      "H",
+      "H",
+      "C",
+      "C",
+      "K"
+    ]
+  },
+  "luat_loai_tru": [
+    {
+      "dieu_kien": {
+        "bo_cuc": "BC-07",
+        "chat_lieu": [
+          "CL-06",
+          "CL-07"
+        ],
+        "muc_chi_tiet": "CT3"
+      },
+      "ly_do": "Chia đôi khung với hai mô hình 3D chi tiết kỹ thuật thì mỗi nửa quá nhỏ để thấy chi tiết"
+    },
+    {
+      "dieu_kien": {
+        "bo_cuc": "BC-13",
+        "mau_nen": "toi"
+      },
+      "ly_do": "Bảng trắng toàn khung cần nền sáng; nền tối làm mất hình bảng trắng"
+    },
+    {
+      "dieu_kien": {
+        "chat_lieu": "CL-10",
+        "mau_nen": "toi"
+      },
+      "ly_do": "Nét vẽ tay trên giấy hoặc bảng trắng chỉ đọc được trên nền sáng"
+    }
+  ],
+  "luat_cong_diem": [
+    {
+      "dieu_kien": {
+        "chat_lieu": "CL-07",
+        "muc_chi_tiet": "CT3",
+        "chu_de": "may_moc"
+      },
+      "diem": 1.5,
+      "ly_do": "Trung chốt 26/10/2026: D-09b là đề xuất đầu tiên cho video máy móc"
+    },
+    {
+      "dieu_kien": {
+        "mau_nen": "toi",
+        "chat_lieu": "CL-07"
+      },
+      "diem": -1,
+      "ly_do": "Thẻ D-09b chỉ cho nền tối khi Trung chọn rõ (phụ lục D-09b)"
+    },
+    {
+      "dieu_kien": {
+        "gap": true,
+        "muc_chi_tiet": "CT3"
+      },
+      "diem": -2,
+      "ly_do": "Cần video gấp mà mức chi tiết kỹ thuật tốn trọn ngày máy chạy"
+    },
+    {
+      "dieu_kien": {
+        "gap": true,
+        "chat_lieu": "CL-08"
+      },
+      "diem": -2,
+      "ly_do": "Cần video gấp mà Blender Cycles mất nhiều giờ kết xuất"
+    }
+  ],
+  "nhac_nguon": "tai_san/nhac_nen/so_nhac.json",
+  "nhom_nhac": {
+    "VUI": "tươi vui",
+    "TAP": "tập trung, nhẹ",
+    "TRAM": "trầm, nghiêm",
+    "BUON": "buồn",
+    "HOI": "hồi hộp",
+    "HUNG": "hùng tráng"
+  },
+  "nhac_loc": {
+    "_ghi_chu": "Trung chốt 27/10/2026. Cờ nghi_re của sổ nhạc báo nhầm nhiều (51/78 bài) nên chỉ loại bài rè nặng theo ngưỡng dưới (mốc NH02 Your Breath 7,9 / 14,5 dB, đã nghe thấy rè); bài có cờ nghi_re dưới ngưỡng bị trừ điểm và ghi nghe lại. Loại mọi bài có cờ co_the_co_loi (máy đoán có giọng hát, đè lên giọng đọc).",
+    "re_tren_10khz_db": 7,
+    "re_tren_16khz_db": 12,
+    "luon_loai": [
+      "NH02",
+      "NH25"
+    ],
+    "_luon_loai_ghi_chu": "NH25 Knobs: Trung nghe bản nháp N108 ngày 29/10/2026, đoạn đầu rè, đau tai; chuyển file ra _luu_tru/nhac_nen_da_bo_2026.10.29/.",
+    "loai_giong_hat": true
+  },
+  "nhom_nhac_theo_kb": {
+    "_ghi_chu": "Nhóm nhạc hợp với giọng của từng lối viết, cộng 0,5 điểm. Ước lượng ngày 27/10/2026, chưa kiểm bằng video thật.",
+    "KB-01": [
+      "TAP"
+    ],
+    "KB-02": [
+      "VUI",
+      "TAP"
+    ],
+    "KB-03": [
+      "TRAM",
+      "HOI"
+    ],
+    "KB-04": [
+      "VUI",
+      "TAP"
+    ],
+    "KB-05": [
+      "TAP"
+    ],
+    "KB-06": [
+      "HOI",
+      "TRAM"
+    ],
+    "KB-07": [
+      "TAP",
+      "HUNG"
+    ],
+    "KB-08": [
+      "TAP"
+    ],
+    "KB-09": [
+      "VUI",
+      "HUNG"
+    ]
+  },
+  "nguon_mau": {
+    "repo": "https://github.com/yihui-dev/awesome-opus5-5-videos",
+    "link_prompt": "https://github.com/yihui-dev/awesome-opus5-5-videos/blob/main/prompts/<slug>.md",
+    "link_video_goc": "https://media.skillry.dev/opus-5-5/<slug>/original.mp4",
+    "link_video_lam_lai": "https://media.skillry.dev/opus-5-5/<slug>/remake.mp4",
+    "ghi_chu": "Trường mau_nguon của mỗi giá trị mới liệt kê slug mẫu; thay <slug> bằng giá trị đó để có liên kết. Chỉ lưu liên kết: không tải video và không chép prompt dài của tác giả vào kho (bản quyền thuộc tác giả). Trường hop_media là điểm hợp Media trung bình 0–3 của các mẫu trong bản chấm 100 mục ngày 27/10/2026 (dữ liệu chấm nằm ở tai_san/hoc_tu_repo/)."
+  },
+  "cach_lam": [
+    {
+      "ma": "LM-01",
+      "ten": "Remotion khối cảnh dọc",
+      "cho": "xuong/ (src/video-ngan/, 7 khối cảnh)",
+      "trang_thai": "co",
+      "kho": [
+        "doc"
+      ],
+      "kho_da_chay": [
+        "doc"
+      ],
+      "ghi_chu": "Remotion (khung dựng video bằng mã React). Bảy khối cảnh dựng sẵn cho video dọc giai đoạn 1; mã dựng chỉ có bộ màu MAU-01; phụ đề chạy theo từng từ dùng mốc từng từ lấy bằng Whisper từ giọng VieNeu (`scripts/moc_tung_tu.py`).",
+      "thoi_gian_may": {
+        "min": 0.44,
+        "max": 1.39,
+        "uoc": false,
+        "don_vi": "giây máy mỗi giây video",
+        "ghi": "75 giây video khoảng 33 giây máy khi máy rảnh (0,44); máy bận 87 giây (khối cũ, 1,16) đến 98–104 giây (khối có chuyển động liên tục, 1,31–1,39); lần thử khác 83,7 giây video 62 giây máy (0,74).",
+        "nguon": "`05_cach_lam.md` mục LM-01; bản chỉ đạo thiết kế Media 27/10/2026; đo 26/10/2026"
+      },
+      "chi_phi_dung_moi": "Dựng thêm khối cảnh Remotion cho chất liệu mới: chưa đo."
+    },
+    {
+      "ma": "LM-02",
+      "ten": "Remotion dự án ngang",
+      "cho": "xuong_dai/<tên>/",
+      "trang_thai": "co",
+      "kho": [
+        "ngang"
+      ],
+      "kho_da_chay": [
+        "ngang"
+      ],
+      "ghi_chu": "Video ngang có thuyết minh; mỗi video một dự án Remotion; Three.js chạy trong Remotion (xuong_dai/pin_mat_troi 3D, xuong_dai/may_bien_ap).",
+      "thoi_gian_may": {
+        "min": 2.8,
+        "max": 2.8,
+        "uoc": false,
+        "don_vi": "giây máy mỗi giây video (video 3D)",
+        "ghi": "Máy biến áp: 3.197 khung (106,6 giây) kết xuất 5 phút 2 giây; pin mặt trời 3D: 4.538 khung (2 phút 31) trong 7 phút; cả hai khoảng 2,8 giây máy mỗi giây video. Chuỗi video ngang chạy đêm: một lượt kết xuất 4–8 phút với 4 luồng. Cảnh 2D thuần SVG chưa ghi riêng.",
+        "nguon": "`05_cach_lam.md` mục LM-02 (đo 26/10/2026); `10_video_ngang_thuyet_minh.md` mục 23 điểm 9 (đo 27/10/2026)"
+      },
+      "chi_phi_dung_moi": "Dựng cảnh mới trong dự án ngang: chưa đo riêng; video 3D chi tiết kỹ thuật 2 phút có thể mất trọn một ngày (`10_video_ngang_thuyet_minh.md` mục 1)."
+    },
+    {
+      "ma": "LM-03",
+      "ten": "HTML một trang, chụp khung theo đồng hồ ảo",
+      "cho": "xuong_html/<tên>/; công cụ xuong_html/cong_cu/: xuat_mp4.mjs, xuat_nhoe.sh; skill dung-video-html",
+      "trang_thai": "co",
+      "kho": [
+        "doc",
+        "ngang"
+      ],
+      "kho_da_chay": [
+        "ngang"
+      ],
+      "ghi_chu": "Opus viết một trang HTML trong đó mọi giá trị là hàm của thời gian (seek(t): tính trạng thái của trang tại giây t); xuat_mp4.mjs chụp từng khung theo đồng hồ ảo rồi ghép bằng FFmpeg; xuat_nhoe.sh xuất 60 khung/giây có nhoè chuyển động; giọng và nhạc ghép bằng FFmpeg. Chạy thử trên khổ ngang 1920×1080; khổ dọc làm được nhưng chưa chạy.",
+      "thoi_gian_may": {
+        "min": 1.2,
+        "max": 1.5,
+        "uoc": false,
+        "don_vi": "giây máy mỗi giây video ở 30 khung/giây",
+        "ghi": "Xuất 30 khung/giây: 1,2–1,5 giây máy mỗi giây video. Xuất 60 khung/giây có nhoè chuyển động nặng gấp khoảng 8 lần: mẫu lịch sử AI 60 giây mất 23,3 phút máy và file 134 MB do lớp hạt nhiễu. Công cụ đo trên trang 10 giây 1920×1080 (Apple M5): Canvas 3.000 hạt 0,96, SVG + GSAP 0,97, Three.js đơn giản 1,39 giây máy mỗi giây video.",
+        "nguon": "bản chỉ đạo thiết kế Media 27/10/2026; xuong_html/cong_cu/KET_QUA_DO.md ngày 27/10/2026"
+      },
+      "chi_phi_dung_moi": "Viết trang mới: một lượt cho video 30 giây khoảng 150 nghìn token, 12 phút Opus, còn 1–2 lỗi nhìn thấy. Có cách sửa (khung đích, GSAP + Three.js, 3 vòng xem và sửa): mẫu lịch sử AI 60 giây tốn 218.774 token, 31 phút Opus, 1.324 dòng (27/10/2026). Đưa quá nhiều ảnh đích thì tác tử con đẩy ảnh khỏi ngữ cảnh: gộp thành 1–2 ảnh ghép."
+    },
+    {
+      "ma": "LM-04",
+      "ten": "HyperFrames",
+      "cho": "xuong_thu_hyperframes/",
+      "trang_thai": "co",
+      "kho": [
+        "doc",
+        "ngang"
+      ],
+      "kho_da_chay": [
+        "doc"
+      ],
+      "ghi_chu": "HTML + GSAP theo khuôn của HeyGen, giấy phép Apache-2.0, có bước kiểm chữ đè. Mới chạy thử một video dọc 1080×1920 75 giây (26/10/2026); khổ ngang làm được nhưng chưa chạy.",
+      "thoi_gian_may": {
+        "min": 0.44,
+        "max": 0.63,
+        "uoc": false,
+        "don_vi": "giây máy mỗi giây video",
+        "ghi": "75 giây video render 33,6 giây (công cụ tự báo) đến 47,2 giây (thời gian thật, lần 1); lần 2 32,7 giây.",
+        "nguon": "xuong_thu_hyperframes/NHAT_KY_DO.md, đo 26/10/2026"
+      },
+      "chi_phi_dung_moi": "Dựng từ đầu một video 75 giây: 154 nghìn token, 7 phút 24 giây (26/10/2026)."
+    },
+    {
+      "ma": "LM-05",
+      "ten": "Blender Cycles và ghép Remotion",
+      "cho": "skill dung-hoat-canh-3d-blender; xuong_dai/tuabin_gio/, xuong_dai/d11_lrv/",
+      "trang_thai": "co",
+      "kho": [
+        "ngang"
+      ],
+      "kho_da_chay": [
+        "ngang"
+      ],
+      "ghi_chu": "3D tả thực: Blender Cycles kết xuất chuỗi ảnh nền trong suốt, Remotion ghép nhãn chữ và giọng. Cần mô hình tải về có giấy phép rõ.",
+      "thoi_gian_may": {
+        "min": 78,
+        "max": 390,
+        "uoc": true,
+        "don_vi": "giây máy mỗi giây video ở 30 khung/giây, quy đổi từ giây máy mỗi khung",
+        "ghi": "Tua-bin gió 1920×1080 (EEVEE, 48 mẫu): 2.540 khung trong 109,7 phút, 1,2–4,8 giây mỗi khung (trung bình 2,6); Remotion ghép 4.708 khung trong 7 phút 20. Cảnh buồng máy D-11, Cycles 960×540 24 mẫu: 412 khung trong 89 phút, 13,0 giây mỗi khung (7,6–100). Quy đổi ở 30 khung/giây: khoảng 78–390 giây máy mỗi giây video (ước). Bản Cycles 1920×1080 ước 40–55 giây mỗi khung, chưa chạy.",
+        "nguon": "`05_cach_lam.md` mục LM-05; `tai_san/nhat_ky_video_ngang.md` (số đo tua-bin gió và D-11, từ module 14 cũ), đo 26–27/10/2026"
+      },
+      "chi_phi_dung_moi": "Dựng cảnh Blender mới: nhiều giờ máy chạy (thẻ D-08, D-11), chưa đo riêng."
+    },
+    {
+      "ma": "LM-06",
+      "ten": "Clip AI ghép Remotion",
+      "cho": "Flow (làm tay); skill giao-muse-video",
+      "trang_thai": "mot_phan",
+      "kho": [
+        "doc",
+        "ngang"
+      ],
+      "kho_da_chay": [],
+      "ghi_chu": "Cảnh quay tả thực do AI sinh: Muse của Meta (Claude giao qua web muse.ai, skill giao-muse-video) hoặc Flow của Google (Trung tạo tay, Veo 3.1); ghép nhãn chữ và giọng trong Remotion theo LM-01 hoặc LM-02. Clip 720p phóng lên 1080p lúc dựng. Không có mã chất liệu riêng: clip là nguyên liệu xen vào mọi chất liệu khác.",
+      "thoi_gian_may": {
+        "min": null,
+        "max": null,
+        "uoc": true,
+        "don_vi": "không tính bằng giây máy",
+        "ghi": "Muse: chờ khoảng 2 phút cho clip 10 giây (lần thử 26/10/2026). Flow: chưa đo thời gian, tính bằng credit (gói Google AI Pro 1.000 credit mỗi tháng cộng 50 credit mỗi ngày). Phần ghép trong Remotion theo LM-02.",
+        "nguon": "`05_cach_lam.md` mục LM-06 (lần thử 26/10/2026)"
+      },
+      "chi_phi_dung_moi": "Tạo clip: Muse chờ khoảng 2 phút mỗi clip 10 giây; Flow tạo tay, chưa đo."
+    },
+    {
+      "ma": "LM-07",
+      "ten": "Manim",
+      "cho": "chưa cài",
+      "trang_thai": "chua",
+      "kho": [
+        "ngang"
+      ],
+      "kho_da_chay": [],
+      "ghi_chu": "Thư viện Python vẽ hoạt hình toán học. Chưa cài; ghi để biết, 1 trên 703 prompt của repo mẫu dùng.",
+      "thoi_gian_may": {
+        "min": null,
+        "max": null,
+        "uoc": true,
+        "don_vi": "chưa đo",
+        "ghi": "Chưa cài, chưa đo.",
+        "nguon": "bản chỉ đạo thiết kế Media 27/10/2026"
+      },
+      "chi_phi_dung_moi": "Chưa cài, chưa đo."
+    }
+  ]
+}

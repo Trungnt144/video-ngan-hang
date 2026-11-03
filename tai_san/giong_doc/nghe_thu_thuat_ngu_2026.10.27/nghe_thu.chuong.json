@@ -1,0 +1,152 @@
+[
+ {
+  "id": 1,
+  "ten": "MWp A",
+  "doc": "Tổng công suất ghi trên nhãn mọi tấm pin gọi là mê-ga-oát pích, tức mê-ga-oát đỉnh."
+ },
+ {
+  "id": 2,
+  "ten": "MWp B",
+  "doc": "Tổng công suất ghi trên nhãn mọi tấm pin gọi là mê-ga-oát pê, tức mê-ga-oát đỉnh."
+ },
+ {
+  "id": 3,
+  "ten": "MWp C",
+  "doc": "Tổng công suất ghi trên nhãn mọi tấm pin gọi là em-đắp-liu-pê, tức mê-ga-oát đỉnh."
+ },
+ {
+  "id": 4,
+  "ten": "MWac A",
+  "doc": "Công suất tối đa đưa lên lưới gọi là mê-ga-oát a-xê, tức mê-ga-oát xoay chiều."
+ },
+ {
+  "id": 5,
+  "ten": "MWac B",
+  "doc": "Công suất tối đa đưa lên lưới gọi là mê-ga-oát ây-xi, tức mê-ga-oát xoay chiều."
+ },
+ {
+  "id": 6,
+  "ten": "MWac C",
+  "doc": "Công suất tối đa đưa lên lưới gọi là em-đắp-liu ây-xi, tức mê-ga-oát xoay chiều."
+ },
+ {
+  "id": 7,
+  "ten": "DC/AC A",
+  "doc": "Hai con số nối với nhau bằng tỷ lệ đê xê trên a xê."
+ },
+ {
+  "id": 8,
+  "ten": "DC/AC B",
+  "doc": "Hai con số nối với nhau bằng tỷ lệ đi-xi trên ây-xi."
+ },
+ {
+  "id": 9,
+  "ten": "PR A",
+  "doc": "Nhà máy chạy tốt thường có pê e-rờ quanh tám mươi phần trăm."
+ },
+ {
+  "id": 10,
+  "ten": "PR B",
+  "doc": "Nhà máy chạy tốt thường có pê-rờ quanh tám mươi phần trăm."
+ },
+ {
+  "id": 11,
+  "ten": "PR C",
+  "doc": "Nhà máy chạy tốt thường có pi-a quanh tám mươi phần trăm."
+ },
+ {
+  "id": 12,
+  "ten": "Betz A",
+  "doc": "Theo giới hạn Bét, phần lấy được tối đa là năm mươi chín phẩy ba phần trăm."
+ },
+ {
+  "id": 13,
+  "ten": "Betz B",
+  "doc": "Theo giới hạn Bét-xơ, phần lấy được tối đa là năm mươi chín phẩy ba phần trăm."
+ },
+ {
+  "id": 14,
+  "ten": "Betz C",
+  "doc": "Theo giới hạn Bết-dơ, phần lấy được tối đa là năm mươi chín phẩy ba phần trăm."
+ },
+ {
+  "id": 15,
+  "ten": "Yagi A",
+  "doc": "Bão Ya-gi tháng chín năm hai nghìn không trăm hai mươi tư là ví dụ."
+ },
+ {
+  "id": 16,
+  "ten": "Yagi B",
+  "doc": "Bão Ya-ghi tháng chín năm hai nghìn không trăm hai mươi tư là ví dụ."
+ },
+ {
+  "id": 17,
+  "ten": "Yagi C",
+  "doc": "Bão Gia-ghi tháng chín năm hai nghìn không trăm hai mươi tư là ví dụ."
+ },
+ {
+  "id": 18,
+  "ten": "cấp T A",
+  "doc": "Vùng hay có bão mạnh thì xem máy có thuộc cấp tê, chịu gió năm mươi bảy mét mỗi giây."
+ },
+ {
+  "id": 19,
+  "ten": "cấp T B",
+  "doc": "Vùng hay có bão mạnh thì xem máy có thuộc cấp ti, chịu gió năm mươi bảy mét mỗi giây."
+ },
+ {
+  "id": 20,
+  "ten": "Faxai A",
+  "doc": "Năm hai nghìn không trăm mười chín, bão Phắc-xai quét qua một nhà máy điện nổi ở Nhật."
+ },
+ {
+  "id": 21,
+  "ten": "Faxai B",
+  "doc": "Năm hai nghìn không trăm mười chín, bão Pha-xai quét qua một nhà máy điện nổi ở Nhật."
+ },
+ {
+  "id": 22,
+  "ten": "Faxai C",
+  "doc": "Năm hai nghìn không trăm mười chín, bão Phát-xai quét qua một nhà máy điện nổi ở Nhật."
+ },
+ {
+  "id": 23,
+  "ten": "capacity factor A",
+  "doc": "Tiếng Anh gọi là ca-pa-xi-ti phác-tơ."
+ },
+ {
+  "id": 24,
+  "ten": "capacity factor B",
+  "doc": "Tiếng Anh gọi là kờ-pa-xi-ti phắc-tơ."
+ },
+ {
+  "id": 25,
+  "ten": "cos phi A",
+  "doc": "Đừng nhầm với cốt phi của dòng điện xoay chiều."
+ },
+ {
+  "id": 26,
+  "ten": "cos phi B",
+  "doc": "Đừng nhầm với cô-sin phi của dòng điện xoay chiều."
+ },
+ {
+  "id": 27,
+  "ten": "cos phi C",
+  "doc": "Đừng nhầm với cốt-xin phi của dòng điện xoay chiều."
+ },
+ {
+  "id": 28,
+  "ten": "IRENA A",
+  "doc": "Theo I-rê-na, điện mặt trời mới xây bình quân khoảng mười bảy phần trăm."
+ },
+ {
+  "id": 29,
+  "ten": "IRENA B",
+  "doc": "Theo Ai-ri-na, điện mặt trời mới xây bình quân khoảng mười bảy phần trăm."
+ },
+ {
+  "id": 30,
+  "ten": "IRENA C",
+  "doc": "Theo Ai-rê-na, điện mặt trời mới xây bình quân khoảng mười bảy phần trăm."
+ }
+]

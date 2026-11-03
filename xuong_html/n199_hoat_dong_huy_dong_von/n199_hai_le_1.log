@@ -1,0 +1,13 @@
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 6803.41it/s]
+c2 câu 1 lề 0.05: thiếu {'huy động': (1, 0)} — Quỳ động vốn là việc ngân hàng nhận tiền của người dân, doanh nghiệp và các tổ chức khác để có tiền cho vay và đầu tư.
+c2 câu 1 lề 0.4: thiếu {'huy động': (1, 0)} — Quy động vốn là việc ngân hàng nhận tiền của người dân, doanh nghiệp và các tổ chức khác để có tiền cho vay và đầu tư.
+c2 câu 4 lề 0.05: thiếu {'lãi': (1, 0)} — Vốn chủ sở hữu là tiền cổ đông góp vào và lợi nhuận giữ lại, không phải trả tiền lại.
+c4 câu 3 lề 0.05: thiếu {'lãi': (1, 0)} — Trái phiếu ngân hàng thường có kỳ hạn vài năm, nên ngân hàng phải trả lại suất cao hơn để giữ tiền được lâu.
+c4 câu 3 lề 0.4: thiếu {'lãi': (1, 0)} — Trái phiếu ngân hàng thường có kỳ hạn vài năm Nên ngân hàng phải trả lại suất cao hơn để giữ tiền được lâu
+c4 câu 4 lề 0.05: thiếu {'cấp hai': (1, 0)} — Loại trái phiếu dài hạn đủ điều kiện còn được tính vào vốn cấp 2, phần vốn giúp ngân hàng chịu được rủi ro.
+c4 câu 4 lề 0.4: thiếu {'cấp hai': (1, 0)} — Loại trái phiếu dài hạn đủ điều kiện còn được tính vào vốn cấp 2, phần vốn giúp ngân hàng chịu được rủi ro
+c7 câu 6 lề 0.05: thiếu {'vay': (1, 0)} — Riêng tiền vai ngân hàng khác, giá lên xuống theo thị trường từng ngày.
+c7 câu 6 lề 0.4: thiếu {'vay': (1, 0)} — Riêng tiền vai ngân hàng khác giá lên xuống theo thị trường từng ngày
+c10 câu 5 lề 0.05: thiếu {'lãi': (1, 0)} — Vì vậy, ngân hàng tăng lại suất kỳ hạn khi cần tiền, tặng quà, miễn phí chuyển tiền và làm ứng dụng tiện hơn, để khách để nhiều tiền hơn trong tài khoản thanh toán.
+c10 câu 5 lề 0.4: thiếu {'lãi': (1, 0)} — Vì vậy, ngân hàng tăng lại suất kỳ hạn khi cần tiền, tặng quà, miễn phí chuyển tiền và làm ứng dụng tiện hơn, để khách để nhiều tiền hơn trong tài khoản thanh toán.
+đã nghe 38 câu ở hai lề; 11 lượt thiếu

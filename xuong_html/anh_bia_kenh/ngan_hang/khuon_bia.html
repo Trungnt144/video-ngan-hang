@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Ảnh bìa kênh Ngân hàng</title>
+<!--
+  Khuôn chữ ảnh bìa kênh "Chuyện nghề Ngân hàng" (29/10/2026): phủ tên kênh lên nền do ghep_nen.py trong thư mục này ghép (nen_2560x1440.png).
+  Cùng bố cục với ảnh bìa kênh Điện (../khuon_bia.html), đổi màu sang xanh ngọc + vàng chanh (Trung chốt qua bảng chọn) và biểu tượng
+  lấy đúng ảnh đại diện kênh (?bieu_tuong=A|B|C, file dd_<mẫu>.png do xuat.mjs dai_dien sinh) để hai ảnh cùng một nhận diện.
+  Khổ 2560×1440. Vùng an toàn mọi thiết bị 1546×423 ở giữa (x 507–2053, y 508–931); chữ chính nằm trọn trong vùng này.
+  App YouTube trên điện thoại thực tế chỉ hiện x 742–1971, y 535–875 (dò ảnh chụp Trung gửi 29/10/2026 trong ảnh gốc), hẹp hơn vùng an toàn:
+  bản v2 (chữ cỡ 1, cy 690) có đỉnh dấu mũ chữ NGHỀ ở y 531 nên bị cắt. Hai dòng chữ cách nhau 64px (v2, v3 chỉ 8px nên dấu mũ chữ Â,
+  dấu huyền chữ À của dòng NGÂN HÀNG đè lên dấu nặng chữ Ệ và chân chữ HỀ của dòng trên). Từ v4 chữ thu 0,72 lần, cy 712: khung chữ x 938–1611, y 577–834.
+  Ảnh bìa Facebook 1640×624: ?kho=facebook&nen=nen_facebook_1640x624.png, bỏ biểu tượng cạnh chữ (ảnh đại diện tròn của Trang
+  đã hiện ngay dưới, bản v2 có biểu tượng thì chữ chỉ còn cỡ 0,46), chữ thu 0,44 lần, tâm (790, 212), khung chữ x 625–953, y 130–283: nằm trong vùng chữ dùng được trên app x 440–975, y 120–300 (lý do ở ../README.md)
+  và trên khoảng trời trống x 620–960, không đè chữ AGRIBANK trên nóc toà (x 425–610).
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Nunito:wght@700;900&display=block" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --ngoc: #13c2b0; --ngoc-toi: #04403f; --chanh: #dcf542; }
+  body { background: #05121b; }
+  #bia { --w: 2560px; --h: 1440px; --cx: 1280px; --cy: 712px; --k: 0.72; position: relative; width: var(--w); height: var(--h); overflow: hidden; background: #05121b; }
+  #bia > img { position: absolute; inset: 0; width: var(--w); height: var(--h); display: block; }
+  .toi { position: absolute; left: var(--cx); top: var(--cy); width: 1180px; height: 460px; transform: translate(-50%, -50%) scale(var(--k));
+    background: radial-gradient(closest-side, rgba(3,30,40,.55) 0%, rgba(3,30,40,.32) 55%, rgba(3,30,40,0) 100%); }
+  .ten { position: absolute; left: var(--cx); top: var(--cy); transform: translate(-50%, -50%) scale(var(--k)); text-align: center; white-space: nowrap; }
+  .ten .d1 { font: 400 100px/1 'Anton', sans-serif; letter-spacing: .04em; color: #fff;
+    -webkit-text-stroke: 8px var(--ngoc-toi); paint-order: stroke fill; text-shadow: 0 8px 26px rgba(0,0,0,.55); }
+  .ten .d2 { margin-top: 64px; display: flex; align-items: center; justify-content: center; gap: 26px; isolation: isolate; }
+  .ten .d2 .chu { font: 400 172px/1 'Anton', sans-serif; letter-spacing: .02em; color: transparent; position: relative; }
+  .ten .d2 .chu::before, .ten .d2 .chu::after { content: attr(data-chu); position: absolute; left: 0; top: -.3em; padding: .3em 0; }
+  .ten .d2 .chu::before { z-index: -1; color: var(--ngoc-toi); -webkit-text-stroke: 16px var(--ngoc-toi); text-shadow: 0 8px 26px rgba(0,0,0,.6); }
+  .ten .d2 .chu::after { color: transparent; background: linear-gradient(180deg, #f6ffc4 4%, var(--chanh) 42%, #8de86a 78%, var(--ngoc) 100%);
+    -webkit-background-clip: text; background-clip: text; }
+  .bt { flex: none; width: 150px; height: 150px; border-radius: 50%; overflow: hidden;
+    box-shadow: 0 0 0 7px #fff, 0 0 0 13px var(--ngoc-toi), 0 8px 26px rgba(0,0,0,.55); }
+  .bt img { width: 100%; height: 100%; display: block; }
+  .guide { position: absolute; border: 3px dashed #fff; pointer-events: none; display: none; }
+  .guide span { position: absolute; left: 10px; top: 6px; font: 700 24px 'Nunito', sans-serif; color: #fff; background: rgba(0,0,0,.6); padding: 2px 8px; }
+  body.g .guide { display: block; }
+  body.fb .bt { display: none; }
+</style>
+</head>
+<body>
+<div id="bia">
+  <img id="nen" alt="">
+  <div class="toi"></div>
+  <div class="ten">
+    <div class="d1">CHUYỆN NGHỀ</div>
+    <div class="d2"><div class="bt"><img id="bt" alt=""></div><div class="chu" data-chu="NGÂN HÀNG">NGÂN HÀNG</div></div>
+  </div>
+  <div class="guide" id="g1"><span id="t1"></span></div>
+  <div class="guide" id="g2" style="border-color:#ff0"><span id="t2"></span></div>
+  <div class="guide" id="g3"><span id="t3"></span></div>
+</div>
+<script>
+  const q = new URLSearchParams(location.search);
+  const bia = document.getElementById('bia'), dat = (id, kieu) => Object.assign(document.getElementById(id).style, kieu);
+  if (q.get('kho') === 'facebook') {
+    document.body.classList.add('fb');
+    for (const [k, v] of Object.entries({ '--w': '1640px', '--h': '624px', '--cx': '790px', '--cy': '212px', '--k': '0.44' })) bia.style.setProperty(k, v);
+    dat('g1', { left: '440px', top: '120px', width: '535px', height: '180px' }); document.getElementById('t1').textContent = 'vùng chữ dùng được trên app điện thoại';
+    dat('g2', { left: '354px', top: '0', width: '920px', height: '560px' }); document.getElementById('t2').textContent = 'app điện thoại thấy 920×560 giữa khung';
+    dat('g3', { left: '619px', top: '303px', width: '390px', height: '321px', borderColor: '#f55' }); document.getElementById('t3').textContent = 'ảnh đại diện đè lên';
+  } else {
+    dat('g1', { left: '507px', top: '508px', width: '1546px', height: '423px' }); document.getElementById('t1').textContent = 'điện thoại · vùng an toàn 1546×423';
+    dat('g2', { left: '0', top: '508px', width: '2560px', height: '423px' }); document.getElementById('t2').textContent = 'máy tính · 2560×423';
+    dat('g3', { left: '742px', top: '535px', width: '1229px', height: '340px', borderColor: '#f55' }); document.getElementById('t3').textContent = 'app YouTube thực tế (đo 29/10)';
+  }
+  if (q.get('guide')) document.body.classList.add('g');
+  const im = document.getElementById('nen'), bt = document.getElementById('bt');
+  let cho = 2;
+  const xong = () => { if (--cho === 0) document.fonts.ready.then(() => { document.body.dataset.xong = '1'; }); };
+  im.onload = xong; bt.onload = xong;
+  im.src = q.get('nen') || 'nen_2560x1440.png';
+  bt.src = 'dd_' + (q.get('bieu_tuong') || 'A') + '.png';
+</script>
+</body>
+</html>

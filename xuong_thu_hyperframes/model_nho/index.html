@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="vi" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #000000; }
+      #root { width: 100%; height: 100%; position: relative; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="75.008" data-width="1080" data-height="1920">
+      <div id="nen" data-composition-id="nen" data-composition-src="compositions/nen.html" data-start="0" data-duration="75.008" data-track-index="0" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:1"></div>
+      <div id="canh-01" data-composition-id="canh-01" data-composition-src="compositions/canh-01.html" data-start="0" data-duration="2.983" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:10"></div>
+      <div id="canh-02" data-composition-id="canh-02" data-composition-src="compositions/canh-02.html" data-start="2.733" data-duration="2.917" data-track-index="2" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:11"></div>
+      <div id="canh-03" data-composition-id="canh-03" data-composition-src="compositions/canh-03.html" data-start="5.4" data-duration="11.867" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:12"></div>
+      <div id="canh-04" data-composition-id="canh-04" data-composition-src="compositions/canh-04.html" data-start="17.017" data-duration="6.192" data-track-index="2" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:13"></div>
+      <div id="canh-05" data-composition-id="canh-05" data-composition-src="compositions/canh-05.html" data-start="22.958" data-duration="10.867" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:14"></div>
+      <div id="canh-06" data-composition-id="canh-06" data-composition-src="compositions/canh-06.html" data-start="33.575" data-duration="4.858" data-track-index="2" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:15"></div>
+      <div id="canh-07" data-composition-id="canh-07" data-composition-src="compositions/canh-07.html" data-start="38.183" data-duration="3.917" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:16"></div>
+      <div id="canh-08" data-composition-id="canh-08" data-composition-src="compositions/canh-08.html" data-start="41.85" data-duration="3.517" data-track-index="2" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:17"></div>
+      <div id="canh-09" data-composition-id="canh-09" data-composition-src="compositions/canh-09.html" data-start="45.117" data-duration="5.725" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:18"></div>
+      <div id="canh-10" data-composition-id="canh-10" data-composition-src="compositions/canh-10.html" data-start="50.592" data-duration="4.65" data-track-index="2" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:19"></div>
+      <div id="canh-11" data-composition-id="canh-11" data-composition-src="compositions/canh-11.html" data-start="54.992" data-duration="5.858" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:20"></div>
+      <div id="canh-12" data-composition-id="canh-12" data-composition-src="compositions/canh-12.html" data-start="60.6" data-duration="9.325" data-track-index="2" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:21"></div>
+      <div id="canh-13" data-composition-id="canh-13" data-composition-src="compositions/canh-13.html" data-start="69.675" data-duration="3.583" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:22"></div>
+      <div id="canh-14" data-composition-id="canh-14" data-composition-src="compositions/canh-14.html" data-start="73.008" data-duration="2" data-track-index="2" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:23"></div>
+      <div id="phu-de" data-composition-id="phu-de" data-composition-src="compositions/phu-de.html" data-start="0" data-duration="75.008" data-track-index="3" data-track-kind="captions" data-width="1080" data-height="1920" style="z-index:100"></div>
+      <audio id="giong" class="clip" src="assets/giong_doc.mp3" data-start="0" data-track-index="4" data-volume="1"></audio>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

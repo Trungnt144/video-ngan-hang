@@ -1,0 +1,888 @@
+{
+ "_ghi_chu": "Từ điển hình của loạt thuật ngữ ngân hàng cho skills/ra-soat-dung-chung/scripts/ra_soat_lo.py. tu_khoa: cụm chữ thường tìm trong mục sổ nợ và kịch bản; dau_ma: biểu thức chính quy tên hàm nhận ra hình đã vẽ trong mã. Lập 29/10/2026 từ ma trận nhu cầu 64 video do tác tử con đọc.",
+ "toa_nha_ngan_hang": {
+  "loai": "vat_the_2d",
+  "mo_ta": "Toà nhà ngân hàng phẳng, chung chung, không logo, không màu nhận diện; cột, cửa, mái.",
+  "tu_khoa": [
+   "toà nhà ngân hàng",
+   "tòa nhà ngân hàng",
+   "ngân hàng a",
+   "ngân hàng b",
+   "quầy ngân hàng",
+   "chi nhánh"
+  ],
+  "dau_ma": [
+   "\\bnganHang\\b",
+   "\\bbuilding\\b",
+   "\\btoaNha\\b"
+  ]
+ },
+ "khuon_trich_van_ban_phap_luat": {
+  "loai": "khuon_bo_cuc",
+  "mo_ta": "Khuôn thẻ trích văn bản pháp luật: tên văn bản, số hiệu, điều khoản, ngày hiệu lực, vài dòng tóm tắt, ghi nguồn.",
+  "tu_khoa": [
+   "thông tư",
+   "nghị định",
+   "điều khoản",
+   "số hiệu",
+   "văn bản pháp luật",
+   "bộ luật dân sự",
+   "luật các tổ chức tín dụng"
+  ],
+  "dau_ma": [
+   "the-luat",
+   "theLuat",
+   "TheLuat"
+  ]
+ },
+ "khuon_so_sanh_hai_cot": {
+  "loai": "khuon_bo_cuc",
+  "mo_ta": "Khuôn so sánh hai cột (hoặc bảng nhiều hàng, bốn cột) theo từng tiêu chí, hàng hiện dần theo câu đọc.",
+  "tu_khoa": [
+   "so sánh",
+   "phân biệt",
+   "khác nhau",
+   "hai cột",
+   "giống và khác"
+  ],
+  "dau_ma": [
+   "haiCot",
+   "HaiCot"
+  ]
+ },
+ "khuon_vi_du_tinh_tien_tung_buoc": {
+  "loai": "khuon_bo_cuc",
+  "mo_ta": "Khuôn ví dụ tính tiền từng bước bằng số giả định: phép tính viết dần, thẻ số đếm chạy, nhãn 'minh hoạ' hoặc 'giả định', tổng cuối đóng dấu.",
+  "tu_khoa": [
+   "ví dụ",
+   "giả định",
+   "tính tiền",
+   "phép tính",
+   "số giả định"
+  ],
+  "dau_ma": [
+   "NhanGiaDinh",
+   "so_gia_dinh",
+   "PhepTinh"
+  ]
+ },
+ "truc_thoi_gian": {
+  "loai": "bieu_do",
+  "mo_ta": "Trục thời gian có mốc, đoạn, ngoặc, thanh kéo dài (12 tháng, ngày giải ngân tới đáo hạn, ân hạn, kỳ hạn, năm 1988 tới Basel III, 5 năm giữ nợ xấu).",
+  "tu_khoa": [
+   "dòng thời gian",
+   "trục thời gian",
+   "kỳ hạn",
+   "đáo hạn",
+   "mốc",
+   "12 tháng",
+   "13 tháng"
+  ],
+  "dau_ma": [
+   "DaiLich",
+   "trucThoiGian",
+   "TrucTG"
+  ]
+ },
+ "khach_hang_ca_nhan": {
+  "loai": "nhan_vat",
+  "mo_ta": "Nhân vật khách hàng cá nhân (người vay, người gửi tiền, chủ thẻ, người chuyển tiền), dáng đơn giản, không ảnh người thật.",
+  "tu_khoa": [
+   "người vay",
+   "người gửi",
+   "khách hàng cá nhân",
+   "chủ thẻ",
+   "người đi vay",
+   "người gửi tiền"
+  ],
+  "dau_ma": [
+   "\\bperson\\b",
+   "MH\\.nguoi",
+   "\\bnguoi\\("
+  ]
+ },
+ "can_bo_tin_dung": {
+  "loai": "nhan_vat",
+  "mo_ta": "Nhân vật cán bộ tín dụng, nhân viên ngân hàng (cùng bộ dáng với khách hàng nhưng đồng phục trung tính, không logo).",
+  "tu_khoa": [
+   "cán bộ tín dụng",
+   "nhân viên ngân hàng",
+   "chuyên viên",
+   "rm"
+  ],
+  "dau_ma": [
+   "canBo",
+   "CanBo"
+  ]
+ },
+ "giao_dich_vien": {
+  "loai": "nhan_vat",
+  "mo_ta": "Nhân vật giao dịch viên ở quầy.",
+  "tu_khoa": [
+   "giao dịch viên",
+   "quầy giao dịch"
+  ],
+  "dau_ma": [
+   "giaoDichVien"
+  ]
+ },
+ "doanh_nghiep_nha_xuong": {
+  "loai": "vat_the_2d",
+  "mo_ta": "Nhà xưởng có ống khói và mái răng cưa, đại diện doanh nghiệp vay vốn.",
+  "tu_khoa": [
+   "doanh nghiệp",
+   "nhà xưởng",
+   "công ty",
+   "nhà máy"
+  ],
+  "dau_ma": [
+   "nhaXuong",
+   "factory"
+  ]
+ },
+ "xap_tien_dong_xu": {
+  "loai": "vat_the_2d",
+  "mo_ta": "Xấp tiền, chồng đồng xu, phong bì lương, đồng USD (biến thể ngoại tệ).",
+  "tu_khoa": [
+   "tiền mặt",
+   "xấp tiền",
+   "đồng xu",
+   "tờ tiền",
+   "usd"
+  ],
+  "dau_ma": [
+   "xapTien",
+   "\\bchong\\(",
+   "dongXu"
+  ]
+ },
+ "khuon_checklist_dieu_can_luu_y": {
+  "loai": "khuon_bo_cuc",
+  "mo_ta": "Khuôn danh sách điều cần lưu ý hoặc việc nên làm: tích dần, dòng đang đọc có mũi tên, dòng chưa tới mờ.",
+  "tu_khoa": [
+   "lưu ý",
+   "cần nhớ",
+   "checklist",
+   "điều cần",
+   "nên làm"
+  ],
+  "dau_ma": [
+   "checklist",
+   "luuY"
+  ]
+ },
+ "khuon_luong_cac_buoc": {
+  "loai": "khuon_bo_cuc",
+  "mo_ta": "Khuôn sơ đồ luồng nhiều bước: hộp, mũi tên, trạm dừng, nhánh rẽ, danh sách bước một bên có mũi tên hiện hành, dấu tích khi xong.",
+  "tu_khoa": [
+   "các bước",
+   "quy trình",
+   "thủ tục",
+   "luồng",
+   "bước 1"
+  ],
+  "dau_ma": [
+   "luongBuoc",
+   "LuongBuoc"
+  ]
+ },
+ "hop_dong_giay_to": {
+  "loai": "vat_the_2d",
+  "mo_ta": "Tờ giấy, hợp đồng, phụ lục, khế ước, thư bảo lãnh, thư tín dụng, giấy đề nghị: một tờ khuôn có tham số tiêu đề và các dòng.",
+  "tu_khoa": [
+   "hợp đồng",
+   "khế ước",
+   "giấy nhận nợ",
+   "phụ lục",
+   "thư bảo lãnh",
+   "giấy đề nghị",
+   "hồ sơ"
+  ],
+  "dau_ma": [
+   "hopDong",
+   "MH\\.giay\\b",
+   "the-hop-dong"
+  ]
+ },
+ "dong_tien_chay": {
+  "loai": "vat_the_2d",
+  "mo_ta": "Hạt tiền chạy dọc ống hoặc đường nét đứt giữa hai hộp, có màu theo dòng (vào, ra, bị ngắt).",
+  "tu_khoa": [
+   "dòng tiền",
+   "chảy vào",
+   "chảy ra",
+   "chuyển tiền",
+   "dòng vốn"
+  ],
+  "dau_ma": [
+   "MH\\.ong",
+   "MH\\.hat",
+   "\\bduong\\("
+  ]
+ },
+ "thanh_ngang_chia_doan": {
+  "loai": "bieu_do",
+  "mo_ta": "Thanh ngang tách thành nhiều đoạn có nhãn và số (6 tỷ chia 2,5 · 1,5 · 2; dư nợ A, khấu trừ C; giá mua, giá thị trường, giá định; gốc và lãi).",
+  "tu_khoa": [
+   "chia thành",
+   "phần còn lại",
+   "khấu trừ",
+   "cơ cấu"
+  ],
+  "dau_ma": [
+   "thanhChia",
+   "ThanhChia"
+  ]
+ },
+ "con_dau_chu_ky": {
+  "loai": "vat_the_2d",
+  "mo_ta": "Con dấu tròn, dấu nghiêng (Từ chối, Lừa đảo, Chọn sai = đắt, Đã công chứng) và nét chữ ký.",
+  "tu_khoa": [
+   "con dấu",
+   "đóng dấu",
+   "chữ ký",
+   "ký tên",
+   "công chứng"
+  ],
+  "dau_ma": [
+   "conDau",
+   "chuKy"
+  ]
+ },
+ "the_so_do_dem_chay": {
+  "loai": "giao_dien",
+  "mo_ta": "Thẻ số đo lớn, số chạy từ giá trị cũ tới giá trị mới trong 0,6 giây, đơn vị nhỏ bên cạnh.",
+  "tu_khoa": [
+   "số đo",
+   "số chạy",
+   "con số lớn"
+  ],
+  "dau_ma": [
+   "demChay",
+   "SoChay"
+  ]
+ },
+ "ben_ban_ben_mua": {
+  "loai": "nhan_vat",
+  "mo_ta": "Nhân vật hoặc biểu tượng bên bán, bên mua, bên nhận bảo lãnh, nhà cung cấp, nhà xuất khẩu và nhập khẩu, mỗi bên có cờ hoặc nhãn nước.",
+  "tu_khoa": [
+   "bên bán",
+   "bên mua",
+   "nhà xuất khẩu",
+   "nhà nhập khẩu",
+   "nhà cung cấp",
+   "người thụ hưởng"
+  ],
+  "dau_ma": [
+   "benBan",
+   "benMua"
+  ]
+ },
+ "bo_chung_tu_hoa_don": {
+  "loai": "vat_the_2d",
+  "mo_ta": "Bộ chứng từ: hoá đơn, hợp đồng mua bán, vận đơn, chứng từ thanh toán, xếp chồng.",
+  "tu_khoa": [
+   "chứng từ",
+   "hoá đơn",
+   "hóa đơn",
+   "vận đơn",
+   "bộ chứng từ"
+  ],
+  "dau_ma": [
+   "chungTu",
+   "hoaDon"
+  ]
+ },
+ "kinh_lup_tham_dinh": {
+  "loai": "vat_the_2d",
+  "mo_ta": "Kính lúp (thẩm định, kiểm tra, định giá lại, soi chứng từ).",
+  "tu_khoa": [
+   "thẩm định",
+   "kiểm tra",
+   "định giá",
+   "soi"
+  ],
+  "dau_ma": [
+   "kinhLup"
+  ]
+ },
+ "nha_o": {
+  "loai": "vat_the_2d",
+  "mo_ta": "Căn nhà phố hai tầng mái dốc (tài sản bảo đảm, nhà vay mua).",
+  "tu_khoa": [
+   "căn nhà",
+   "nhà ở",
+   "nhà đất",
+   "bất động sản",
+   "nhà phố",
+   "mua nhà"
+  ],
+  "dau_ma": [
+   "MH\\.nha\\b",
+   "c2_nha",
+   "\\bnha\\("
+  ]
+ },
+ "giay_chung_nhan_nha_dat": {
+  "loai": "vat_the_2d",
+  "mo_ta": "Giấy chứng nhận quyền sử dụng đất, quyền sở hữu nhà (sổ đỏ), vẽ chung chung.",
+  "tu_khoa": [
+   "sổ đỏ",
+   "sổ hồng",
+   "giấy chứng nhận quyền sử dụng"
+  ],
+  "dau_ma": [
+   "soDangKy",
+   "soDo\\b"
+  ]
+ },
+ "bieu_do_duong_lai_suat": {
+  "loai": "bieu_do",
+  "mo_ta": "Đường theo thời gian hoặc theo kỳ hạn có tham số: lãi suất theo kỳ hạn, lãi tham chiếu cộng biên độ, đường cong FTP, lãi qua đêm, tỉ giá, giá tài sản.",
+  "tu_khoa": [
+   "lãi suất",
+   "đường lãi",
+   "lãi suất thả nổi",
+   "lãi suất cố định",
+   "biên độ"
+  ],
+  "dau_ma": [
+   "\\bBIEU\\b",
+   "duongLai"
+  ]
+ },
+ "can_dong_ho_ty_le": {
+  "loai": "bieu_do",
+  "mo_ta": "Đồng hồ cung tròn hoặc thanh đo tỉ lệ có vạch ngưỡng (LTV, CASA, LDR, NIM, CAR, dự trữ bắt buộc, tỉ lệ tài trợ, room 15%).",
+  "tu_khoa": [
+   "ltv",
+   "tỉ lệ",
+   "tỷ lệ",
+   "ldr",
+   "casa",
+   "nim",
+   "car",
+   "ngưỡng"
+  ],
+  "dau_ma": [
+   "dongHoTyLe",
+   "gauge"
+  ]
+ },
+ "man_hinh_ung_dung": {
+  "loai": "giao_dien",
+  "mo_ta": "Màn hình điện thoại hoặc trình duyệt mô phỏng, giao diện chung chung tự vẽ (ngân hàng số, thẻ, OTP, chuyển tiền nhanh, cổng tra cứu), con trỏ chuột và bấm.",
+  "tu_khoa": [
+   "ứng dụng",
+   "app",
+   "ngân hàng số",
+   "điện thoại",
+   "màn hình",
+   "internet banking"
+  ],
+  "dau_ma": [
+   "\\bphone\\(",
+   "c9_dt",
+   "#p9"
+  ]
+ },
+ "khuon_cong_thuc_tach_ky_hieu": {
+  "loai": "khuon_bo_cuc",
+  "mo_ta": "Khuôn công thức lớn tách từng ký hiệu và nối mũi tên tới thanh hoặc đồng hồ tương ứng (R=(A−C)×r, LTV, NIM, LDR, CAR, FTP, giá trị hiện tại).",
+  "tu_khoa": [
+   "công thức",
+   "tử số",
+   "mẫu số"
+  ],
+  "dau_ma": [
+   "congThuc",
+   "CongThuc"
+  ]
+ },
+ "bieu_do_cot_don_gian_tham_so": {
+  "loai": "bieu_do",
+  "mo_ta": "Biểu đồ cột ít cột có nhãn (4 cột năm 13% đến 10%, 5 cột tỷ lệ theo nhóm nợ, tăng trưởng theo năm, LTV theo loại tài sản).",
+  "tu_khoa": [
+   "biểu đồ cột",
+   "cột",
+   "tăng trưởng"
+  ],
+  "dau_ma": [
+   "datCot",
+   "MH\\.cot\\b"
+  ]
+ },
+ "khien_bao_hiem": {
+  "loai": "vat_the_2d",
+  "mo_ta": "Tấm khiên (bảo hiểm tiền gửi, bảo hiểm tài sản, bảo hiểm hàng hoá, bảo lãnh).",
+  "tu_khoa": [
+   "bảo hiểm",
+   "bảo hiểm tiền gửi",
+   "khiên"
+  ],
+  "dau_ma": [
+   "khien"
+  ]
+ },
+ "kho_hang_ton_kho": {
+  "loai": "vat_the_2d",
+  "mo_ta": "Kệ kho, thùng hàng, bao nguyên liệu (hàng tồn kho, hàng hoá nhập).",
+  "tu_khoa": [
+   "hàng tồn kho",
+   "kho hàng",
+   "nguyên liệu",
+   "hàng hoá",
+   "hàng hóa"
+  ],
+  "dau_ma": [
+   "khoHang",
+   "MH\\.kho\\b"
+  ]
+ },
+ "khuon_so_sanh_nhom_ngan_hang_an_danh": {
+  "loai": "khuon_bo_cuc",
+  "mo_ta": "Khuôn so sánh các nhóm ngân hàng không nêu tên: nhà nước nắm cổ phần chi phối, cổ phần lớn, cổ phần vừa và nhỏ; số dạng khoảng.",
+  "tu_khoa": [
+   "nhóm ngân hàng",
+   "ngân hàng nhà nước nắm",
+   "cổ phần lớn",
+   "cổ phần vừa và nhỏ"
+  ],
+  "dau_ma": [
+   "nhomNH"
+  ]
+ },
+ "bieu_do_co_cau_ty_trong": {
+  "loai": "bieu_do",
+  "mo_ta": "Biểu đồ cơ cấu tỉ trọng: cột xếp chồng hoặc bánh (nguồn vốn 25/60/15, CASA so với tổng, dư nợ theo ngành, tỉ lệ cổ phần, chia tiền ba phần).",
+  "tu_khoa": [
+   "tỉ trọng",
+   "tỷ trọng",
+   "cơ cấu",
+   "chiếm"
+  ],
+  "dau_ma": [
+   "coCau",
+   "banh"
+  ]
+ },
+ "khuon_quan_he_ba_ben": {
+  "loai": "khuon_bo_cuc",
+  "mo_ta": "Khuôn quan hệ ba bên: ba hộp, ba văn bản nối giữa các hộp (bảo lãnh, bao thanh toán, L/C, LOI, chuyển khẩu, cho thuê tài chính).",
+  "tu_khoa": [
+   "ba bên",
+   "bên thứ ba",
+   "bên nhận bảo lãnh",
+   "bên được bảo lãnh"
+  ],
+  "dau_ma": [
+   "baBen"
+  ]
+ },
+ "may_chu_he_thong_trung_tam": {
+  "loai": "vat_the_2d",
+  "mo_ta": "Khối máy chủ, cơ sở dữ liệu trung tâm (core ngân hàng, CIC, SWIFT, hệ thống thanh toán, trung tâm xử lý tập trung).",
+  "tu_khoa": [
+   "hệ thống",
+   "core",
+   "máy chủ",
+   "cơ sở dữ liệu",
+   "napas",
+   "citad",
+   "swift",
+   "cic"
+  ],
+  "dau_ma": [
+   "mayChu",
+   "server"
+  ]
+ },
+ "may_moc_thiet_bi": {
+  "loai": "vat_the_2d",
+  "mo_ta": "Máy móc, thiết bị sản xuất (tài sản bảo đảm, tài sản mua bằng vốn vay).",
+  "tu_khoa": [
+   "máy móc",
+   "thiết bị",
+   "dây chuyền"
+  ],
+  "dau_ma": [
+   "mayMoc",
+   "MH\\.may\\b"
+  ]
+ },
+ "ban_do_the_gioi_tuyen_thuong_mai": {
+  "loai": "canh_nen",
+  "mo_ta": "Bản đồ thế giới đơn giản với tuyến hàng hải, điểm cảng, múi giờ và đường mạng điện (SWIFT).",
+  "tu_khoa": [
+   "xuất khẩu",
+   "nhập khẩu",
+   "quốc tế",
+   "cảng",
+   "hàng hải"
+  ],
+  "dau_ma": [
+   "banDo",
+   "theGioi"
+  ]
+ },
+ "giay_to_co_gia": {
+  "loai": "vat_the_2d",
+  "mo_ta": "Giấy tờ có giá: chứng chỉ tiền gửi, hối phiếu, kỳ phiếu, tín phiếu, trái phiếu.",
+  "tu_khoa": [
+   "giấy tờ có giá",
+   "chứng chỉ tiền gửi",
+   "hối phiếu",
+   "kỳ phiếu",
+   "trái phiếu",
+   "tín phiếu"
+  ],
+  "dau_ma": [
+   "giayCoGia",
+   "chungChi"
+  ]
+ },
+ "ngan_hang_nha_nuoc": {
+  "loai": "vat_the_2d",
+  "mo_ta": "Toà nhà ngân hàng trung ương, tách biệt kiểu dáng với toà ngân hàng thương mại (có cột lớn, cổng, huy hiệu trung tính).",
+  "tu_khoa": [
+   "ngân hàng nhà nước",
+   "ngân hàng trung ương"
+  ],
+  "dau_ma": [
+   "veNHNN",
+   "toaNHNN"
+  ]
+ },
+ "o_to": {
+  "loai": "vat_the_2d",
+  "mo_ta": "Ô tô hoặc xe tải phẳng (tài sản bảo đảm, tài sản thuê).",
+  "tu_khoa": [
+   "ô tô",
+   "xe tải",
+   "xe"
+  ],
+  "dau_ma": [
+   "MH\\.xe\\b",
+   "\\boto\\("
+  ]
+ },
+ "so_tiet_kiem": {
+  "loai": "vat_the_2d",
+  "mo_ta": "Sổ tiết kiệm (cuốn sổ, thẻ tiết kiệm, dạng điện tử trên màn hình).",
+  "tu_khoa": [
+   "sổ tiết kiệm",
+   "thẻ tiết kiệm"
+  ],
+  "dau_ma": [
+   "soBia",
+   "MH\\.so\\b"
+  ]
+ },
+ "tau_container_hang_hoa": {
+  "loai": "mo_hinh_3d",
+  "mo_ta": "Tàu chở container, cảng biển, container, hàng xuất nhập khẩu.",
+  "tu_khoa": [
+   "tàu",
+   "container",
+   "vận đơn",
+   "fob",
+   "cif",
+   "incoterms"
+  ],
+  "dau_ma": [
+   "container",
+   "tauHang"
+  ]
+ },
+ "the_ngan_hang": {
+  "loai": "vat_the_2d",
+  "mo_ta": "Thẻ ngân hàng phẳng có chip, chữ 'THẺ TÍN DỤNG', không logo, không tên ngân hàng.",
+  "tu_khoa": [
+   "thẻ tín dụng",
+   "thẻ ghi nợ",
+   "thẻ ngân hàng",
+   "thẻ atm"
+  ],
+  "dau_ma": [
+   "theNH",
+   "theTinDung"
+  ]
+ },
+ "vong_von_luu_dong": {
+  "loai": "vat_the_2d",
+  "mo_ta": "Vòng bốn bước Nhập hàng, Bán hàng, Thu tiền, Trả nợ, có chấm sáng chạy vòng.",
+  "tu_khoa": [
+   "vốn lưu động",
+   "vòng quay",
+   "nhập hàng",
+   "thu tiền"
+  ],
+  "dau_ma": [
+   "vongVon"
+  ]
+ },
+ "bieu_do_cot_lich_tra_no": {
+  "loai": "bieu_do",
+  "mo_ta": "Biểu đồ cột tiền trả theo kỳ: gốc trả cuối kỳ, gốc đều lãi giảm dần, niên kim, ân hạn có ngoặc, lãi thả nổi nhô lên.",
+  "tu_khoa": [
+   "lịch trả nợ",
+   "trả gốc",
+   "trả lãi",
+   "niên kim",
+   "ân hạn"
+  ],
+  "dau_ma": [
+   "lichTraNo"
+  ]
+ },
+ "binh_chua_muc_nuoc": {
+  "loai": "bieu_do",
+  "mo_ta": "Cột chứa có vạch trần, mực nước dâng hạ (hạn mức, bình dự phòng, room tín dụng, phần dự trữ giữ lại).",
+  "tu_khoa": [
+   "hạn mức",
+   "room",
+   "dự phòng",
+   "bình chứa"
+  ],
+  "dau_ma": [
+   "binhHanMuc",
+   "binhDuPhong"
+  ]
+ },
+ "dong_ho_dem_nguoc": {
+  "loai": "vat_the_2d",
+  "mo_ta": "Đồng hồ kim, đồng hồ đếm số, đồng hồ cát (số ngày quá hạn, giờ chốt, thời hạn xử lý).",
+  "tu_khoa": [
+   "quá hạn",
+   "giờ chốt",
+   "cut-off",
+   "đồng hồ",
+   "số ngày"
+  ],
+  "dau_ma": [
+   "dongHo",
+   "DongHo"
+  ]
+ },
+ "lich_thang_danh_dau_ngay": {
+  "loai": "bieu_do",
+  "mo_ta": "Lịch tháng đánh dấu ngày (ngày quá hạn, ngày trả nợ rơi vào ngày nghỉ, chu kỳ sao kê, ngày lễ, cuối năm).",
+  "tu_khoa": [
+   "ngày trả nợ",
+   "sao kê",
+   "ngày nghỉ",
+   "lịch"
+  ],
+  "dau_ma": [
+   "LichIcon",
+   "\\bLICH\\b"
+  ]
+ },
+ "thang_bac_5_nhom": {
+  "loai": "bieu_do",
+  "mo_ta": "Thang năm bậc màu theo nhóm nợ, có trục số ngày quá hạn và con trượt; dùng lại làm thang mức điểm tín dụng, thang chức danh, thang theo mức độ.",
+  "tu_khoa": [
+   "nhóm 1",
+   "nhóm 5",
+   "nợ xấu",
+   "nhóm nợ",
+   "phân loại nợ"
+  ],
+  "dau_ma": [
+   "ThangNhom",
+   "mauNhom",
+   "c7_muc",
+   "\\bChip\\b"
+  ]
+ },
+ "bao_cao_tin_dung_mo_phong": {
+  "loai": "giao_dien",
+  "mo_ta": "Bản báo cáo tín dụng mô phỏng, dữ liệu giả: định danh che, dư nợ từng ngân hàng, nhóm nợ, lịch sử 12 tháng, thẻ tín dụng, tài sản bảo đảm, lịch sử tra cứu.",
+  "tu_khoa": [
+   "báo cáo tín dụng",
+   "cic",
+   "lịch sử tín dụng"
+  ],
+  "dau_ma": [
+   "baoCaoCIC",
+   "c12_khoa"
+  ]
+ },
+ "ket_sat": {
+  "loai": "vat_the_2d",
+  "mo_ta": "Két sắt, hộp khoá (nơi ngân hàng giữ tài sản cầm cố, giữ tiền dự trữ).",
+  "tu_khoa": [
+   "két",
+   "két sắt",
+   "cầm cố",
+   "giữ tài sản"
+  ],
+  "dau_ma": [
+   "MH\\.ket\\b",
+   "\\bket\\("
+  ]
+ },
+ "o_khoa_chot_khoa": {
+  "loai": "vat_the_2d",
+  "mo_ta": "Ổ khoá, chốt khoá (tài sản bị ràng buộc, điều kiện chưa đủ, cần đồng ý mới mở).",
+  "tu_khoa": [
+   "ổ khoá",
+   "ổ khóa",
+   "khoá",
+   "khóa",
+   "phong toả",
+   "phong tỏa"
+  ],
+  "dau_ma": [
+   "\\block\\(",
+   "MH\\.oKhoa",
+   "MH\\.hopKhoa"
+  ]
+ },
+ "thac_nuoc_dong_tien": {
+  "loai": "bieu_do",
+  "mo_ta": "Biểu đồ thác nước: bắt đầu từ một số, trừ dần các khoản, ra số cuối (lợi nhuận trước dự phòng trừ dự phòng; thu lãi trừ chi lãi; giá bán tài sản trừ chi phí trả nợ còn phần dư).",
+  "tu_khoa": [
+   "lợi nhuận",
+   "trừ dần",
+   "chi phí"
+  ],
+  "dau_ma": [
+   "thacNuoc"
+  ]
+ },
+ "can_dia_nghieng": {
+  "loai": "vat_the_2d",
+  "mo_ta": "Cân đòn hai đĩa nghiêng theo tham số (giá trị tài sản so với nợ, ưa so với rủi ro).",
+  "tu_khoa": [
+   "cân",
+   "so với",
+   "đổi lấy"
+  ],
+  "dau_ma": [
+   "MH\\.canDon",
+   "canDon"
+  ]
+ },
+ "duong_du_no_theo_thoi_gian": {
+  "loai": "bieu_do",
+  "mo_ta": "Đường dư nợ lên xuống theo thời gian dưới vạch hạn mức, có đường giải ngân cộng dồn.",
+  "tu_khoa": [
+   "dư nợ",
+   "giải ngân",
+   "quay vòng"
+  ],
+  "dau_ma": [
+   "duNo",
+   "DuNo"
+  ]
+ },
+ "de_sa_ban_tron_3d": {
+  "loai": "canh_nen",
+  "mo_ta": "Đế sa bàn tròn có máy quay xoay chậm, vật mọc bằng lò xo lên đế (CL-13).",
+  "tu_khoa": [
+   "sa bàn"
+  ],
+  "dau_ma": [
+   "dung3D",
+   "N\\.de\\b"
+  ]
+ },
+ "bo_bieu_tuong_co_ban": {
+  "loai": "vat_the_2d",
+  "mo_ta": "Bộ biểu tượng cơ bản: dấu tích, dấu gạch chéo, dấu hỏi, mũi tên, mũi tên cong, ngoặc, vòng khoanh, dấu cảnh báo.",
+  "tu_khoa": [
+   "đúng",
+   "sai",
+   "dấu tích",
+   "mũi tên"
+  ],
+  "dau_ma": [
+   "DauTich",
+   "\\bcheck\\(",
+   "\\bcross\\(",
+   "MH\\.dauX",
+   "\\bMuiTen\\b"
+  ]
+ },
+ "phu_de_chay_chu": {
+  "loai": "vat_the_2d",
+  "mo_ta": "Phụ đề chạy chữ theo từng từ, khớp mốc giọng đọc",
+  "tu_khoa": [
+   "phụ đề"
+  ],
+  "dau_ma": [
+   "vePhuDe",
+   "PhuDeChayChu",
+   "dungPhuDe"
+  ]
+ },
+ "khuon_canh_mo_dau_cau_hoi": {
+  "loai": "khuon_bo_cuc",
+  "mo_ta": "Khuôn cảnh mở đầu: câu hỏi hoặc câu niềm tin chữ lớn giữa khung, tên thuật ngữ, dấu hỏi, khung đầu đủ bố cục từ t=0.",
+  "tu_khoa": [
+   "câu hỏi",
+   "vì sao",
+   "là gì"
+  ],
+  "dau_ma": [
+   "moDau",
+   "MoDau"
+  ]
+ },
+ "khuon_canh_ket_tom_lai": {
+  "loai": "khuon_bo_cuc",
+  "mo_ta": "Khuôn cảnh kết: ba ý cần nhớ đánh số, một câu hỏi chốt, giữ khung cuối 2 giây vẫn có chuyển động nhẹ.",
+  "tu_khoa": [
+   "tóm lại",
+   "cần nhớ",
+   "ba ý"
+  ],
+  "dau_ma": [
+   "canhKet",
+   "TomLai"
+  ]
+ },
+ "can_ho_chung_cu": {
+  "loai": "vat_the_2d",
+  "mo_ta": "Toà căn hộ nhiều tầng, có biến thể đang xây có cần cẩu (nhà hình thành trong tương lai).",
+  "tu_khoa": [
+   "căn hộ",
+   "chung cư",
+   "hình thành trong tương lai"
+  ],
+  "dau_ma": [
+   "canHo"
+  ]
+ },
+ "khuon_bang_can_doi_ngan_hang": {
+  "loai": "khuon_bo_cuc",
+  "mo_ta": "Bảng cân đối kế toán ngân hàng hai cột Tài sản, Nguồn vốn, ngăn cao theo giá trị, dải ngoại bảng phía dưới.",
+  "tu_khoa": [
+   "bảng cân đối",
+   "ngoại bảng",
+   "nguồn vốn",
+   "tài sản có",
+   "vốn chủ sở hữu"
+  ],
+  "dau_ma": [
+   "bangCanDoi",
+   "canDoi"
+  ]
+ },
+ "so_do_dong_tien_cac_ben": {
+  "loai": "khuon_bo_cuc",
+  "mo_ta": "Sơ đồ các bên nối bằng mũi tên có nhãn và hạt tiền chạy (cho vay liên ngân hàng, ngân hàng và VAMC, ATM qua NAPAS, giao dịch thẻ chia phí).",
+  "tu_khoa": [
+   "đường đi của tiền",
+   "sơ đồ",
+   "các bên",
+   "chảy về",
+   "đường đi tín hiệu"
+  ],
+  "dau_ma": [
+   "soDo",
+   "dongTien"
+  ]
+ }
+}

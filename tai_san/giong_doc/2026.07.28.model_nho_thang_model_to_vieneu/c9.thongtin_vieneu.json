@@ -1,0 +1,31 @@
+{
+ "ten_file": "c9.wav",
+ "giong": "Hải Đăng",
+ "phien_ban_goi": {
+  "vieneu": "3.8.3",
+  "onnxruntime": "1.22.1",
+  "mlx-whisper": "0.4.3"
+ },
+ "mo_hinh_nghe_lai": "mlx-community/whisper-large-v3-turbo",
+ "nguong_sai_ky_tu": 0.1,
+ "khoang_nghi_cau_giay": 0.25,
+ "so_ky_tu": 109,
+ "thoi_luong_giay": 6.09,
+ "nguon_van_ban": "/Users/macbooktrungnt/Documents/VideoNganHang/kich_ban/2026.07.28.model_nho_thang_model_to.chuong.json",
+ "tung_cau": [
+  {
+   "cau": "Thứ nhất, model lớn không hề bị loại.",
+   "whisper": "Thứ nhất, model lớn không hề bị loại.",
+   "ty_le_sai": 0.0,
+   "so_lan_doc": 1,
+   "lan_duoc_giu": 1
+  },
+  {
+   "cau": "Nó vẫn ngồi đó gánh phần khó nhất, và bỏ nó ra thì con số kia sập ngay.",
+   "whisper": "Nó vẫn ngồi đó gánh phân khó nhất và bỏ nó ra thì con số kia sập ngay.",
+   "ty_le_sai": 0.014,
+   "so_lan_doc": 1,
+   "lan_duoc_giu": 1
+  }
+ ]
+}

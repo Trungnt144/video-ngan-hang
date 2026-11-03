@@ -1,0 +1,16 @@
+{
+ "doc": "Thứ nhất, model lớn không hề bị loại. Nó vẫn ngồi đó gánh phần khó nhất, và bỏ nó ra thì con số kia sập ngay.",
+ "giay": 6.09,
+ "cau": [
+  {
+   "cau": "Thứ nhất, model lớn không hề bị loại.",
+   "bd": 0.0,
+   "kt": 2.0
+  },
+  {
+   "cau": "Nó vẫn ngồi đó gánh phần khó nhất, và bỏ nó ra thì con số kia sập ngay.",
+   "bd": 2.25,
+   "kt": 6.09
+  }
+ ]
+}

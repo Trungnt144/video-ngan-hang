@@ -1,0 +1,16 @@
+{
+ "doc": "Nhưng nếu vẫn giữ nguyên phản xạ cũ, cái giá không nằm ở chỗ làm sai. Nó nằm ở chỗ trả tiền gấp đôi cho một kết quả kém hơn, mà không bao giờ biết là mình đã trả thừa, vì không có gì để so.",
+ "giay": 10.41,
+ "cau": [
+  {
+   "cau": "Nhưng nếu vẫn giữ nguyên phản xạ cũ, cái giá không nằm ở chỗ làm sai.",
+   "bd": 0.0,
+   "kt": 3.76
+  },
+  {
+   "cau": "Nó nằm ở chỗ trả tiền gấp đôi cho một kết quả kém hơn, mà không bao giờ biết là mình đã trả thừa, vì không có gì để so.",
+   "bd": 4.01,
+   "kt": 10.41
+  }
+ ]
+}

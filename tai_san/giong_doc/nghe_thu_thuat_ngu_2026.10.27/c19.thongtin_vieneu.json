@@ -1,0 +1,24 @@
+{
+ "ten_file": "c19.wav",
+ "giong": "Hải Đăng",
+ "phien_ban_goi": {
+  "vieneu": "3.8.3",
+  "onnxruntime": "1.22.1",
+  "mlx-whisper": "0.4.3"
+ },
+ "mo_hinh_nghe_lai": "mlx-community/whisper-large-v3-turbo",
+ "nguong_sai_ky_tu": 0.1,
+ "khoang_nghi_cau_giay": 0.25,
+ "so_ky_tu": 85,
+ "thoi_luong_giay": 4.32,
+ "nguon_van_ban": "/Users/macbooktrungnt/Documents/VideoNganHang/tai_san/giong_doc/nghe_thu_thuat_ngu_2026.10.27/nghe_thu.chuong.json",
+ "tung_cau": [
+  {
+   "cau": "Vùng hay có bão mạnh thì xem máy có thuộc cấp ti, chịu gió năm mươi bảy mét mỗi giây.",
+   "whisper": "Vùng 2 có bão mạnh thì xe máy có thuộc cấp ti, chịu gió 57m mỗi giây.",
+   "ty_le_sai": 0.06,
+   "so_lan_doc": 1,
+   "lan_duoc_giu": 1
+  }
+ ]
+}

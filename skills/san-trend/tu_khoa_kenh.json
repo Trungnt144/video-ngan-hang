@@ -1,0 +1,92 @@
+{
+  "_ghi_chu": "Từ khoá lĩnh vực kênh của xưởng Media (chốt 26/10/2026: khoa học năng lượng, AI cho dân ngân hàng). Sửa tay được; script đọc lại mỗi lượt. 'tu_goc': bộ từ gốc đo câu hỏi đại chúng. 'mau_ghep': mẫu ghép với từng từ lĩnh vực khi gọi gợi ý tìm kiếm. 'tu_loc_them': từ dùng để nhận ra một trend thuộc lĩnh vực kênh (so khớp nguyên từ, không phân biệt hoa thường; từ viết hoa toàn bộ như AI thì phân biệt hoa thường để không nhầm chữ \"ai\" tiếng Việt). 'facebook_tim': từ khoá Claude tìm bài viết trên Facebook mỗi lượt (bước 2c của SKILL.md), giữ 5 từ trở xuống. 'chu_de_theo_doi': chủ đề Trung quy định, mỗi lượt đều theo dõi (lượt tìm Keyword Planner, gợi ý tìm kiếm, video tuần, TikTok, Facebook). 'thu_tu_nen_tang': thứ tự bốn phần nền tảng trên trang HTML. 'an_loai': loại mục không hiện trong phần ý tưởng (ví dụ 'tin nóng'). Ba mục này sửa qua so_thoi_quen.py ap-dung sau khi Trung duyệt, hoặc sửa tay. 'kham_pha_chung' (bản 3.0, 28/10/2026): từ khoá đưa vào trang khám phá Google Trends và tìm video YouTube theo khung tuần/tháng/quý khi rà chung (không nhập chủ đề); giữ 5 từ trở xuống để không bị Google chặn.",
+  "tu_goc": [
+    "cách làm",
+    "là gì",
+    "tại sao",
+    "review"
+  ],
+  "mau_ghep": [
+    "{kw}",
+    "{kw} là gì"
+  ],
+  "linh_vuc": {
+    "nang_luong": [
+      "năng lượng",
+      "điện mặt trời",
+      "pin mặt trời",
+      "điện gió",
+      "tua bin gió",
+      "máy biến áp",
+      "inverter",
+      "pin lưu trữ",
+      "xe điện",
+      "điện hạt nhân",
+      "lưới điện"
+    ],
+    "ai_ngan_hang": [
+      "AI",
+      "ChatGPT",
+      "Claude",
+      "Gemini",
+      "trí tuệ nhân tạo",
+      "ngân hàng",
+      "lãi suất",
+      "tín dụng"
+    ]
+  },
+  "tu_loc_them": [
+    "năng lượng",
+    "mặt trời",
+    "điện mặt trời",
+    "điện gió",
+    "tua bin",
+    "solar",
+    "pin",
+    "biến áp",
+    "inverter",
+    "hạt nhân",
+    "lưới điện",
+    "giá điện",
+    "tiền điện",
+    "mất điện",
+    "xe điện",
+    "vinfast",
+    "evn",
+    "AI",
+    "chatgpt",
+    "claude",
+    "gemini",
+    "openai",
+    "trí tuệ nhân tạo",
+    "robot",
+    "ngân hàng",
+    "lãi suất",
+    "tín dụng",
+    "khoa học",
+    "công nghệ",
+    "vật lý"
+  ],
+  "facebook_tim": [
+    "điện mặt trời",
+    "giá điện",
+    "điện hạt nhân",
+    "trí tuệ nhân tạo",
+    "ChatGPT"
+  ],
+  "chu_de_theo_doi": [],
+  "kham_pha_chung": [
+    "năng lượng",
+    "điện mặt trời",
+    "điện gió",
+    "trí tuệ nhân tạo",
+    "ngân hàng"
+  ],
+  "thu_tu_nen_tang": [
+    "google",
+    "youtube",
+    "tiktok",
+    "facebook"
+  ],
+  "an_loai": []
+}
