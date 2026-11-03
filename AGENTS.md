@@ -24,6 +24,9 @@ Xưởng làm video giải thích thuật ngữ và nghiệp vụ ngân hàng ch
 | Viết kịch bản, kiểm chứng nguồn, quy tắc lời đọc | `03_kich_ban_va_loi_viet.md` |
 | Chọn tổ hợp dựng (chất liệu, bố cục, màu, nhạc), chống nhàm chán | `04_he_truc_dung.md`, rồi `python3 scripts/goi_y_to_hop_dung.py` |
 | Chọn cách làm, chi phí, thời gian máy | `05_cach_lam.md` |
+| Học phong cách, hoạt hoạ từ mẫu hoặc từ bộ sưu tập (repo awesome-opus5-5-videos: 703 mục, 100 mục đã chấm, 109 thủ pháp, chất liệu CL-09…CL-16) | `11_hoc_phong_cach_tu_mau.md`; dữ liệu `tai_san/hoc_tu_repo/awesome_opus55/` (mục lục `muc_luc.md`, hồ sơ `muc_da_cham.json`) và `tai_san/thu_phap/thu_vien_thu_phap.md` (tra bằng `grep`); nguồn gốc repo ghi ở README của thư mục đó |
+| Skill Remotion (11 skill: best-practices, captions, create, docs, interactivity, maps, markup, multimedia, render, saas, upgrade) và mediabunny | `.agents/skills/remotion-*` (bản gốc `xuong/.agents/skills/`) |
+| Skill HyperFrames (hyperframes, hyperframes-cli, hyperframes-registry, remotion-to-hyperframes, media-use, slideshow, figma) | `.agents/skills/hyperframes*` (bản gốc `xuong_thu_hyperframes/.claude/skills/`), `12_cong_cu_media_ai.md` mục HyperFrames |
 | Thủ pháp chuyển động, chữ, số liệu, lớp hoàn thiện | `06_thu_phap_va_hieu_ung.md` |
 | Prompt giao tác tử dựng hình, thanh chất lượng, chạy lô ba pha | `07_khuon_prompt_va_kiem_chat_luong.md` (mục 14 cho lô) |
 | Giọng VieNeu, nhạc nền, phụ đề, mốc thời gian, đo âm thanh | `08_giong_am_thanh_phu_de.md` |
@@ -94,6 +97,6 @@ Các module và skill viết lại từ Media, nhiều chỗ ghi "Claude" hoặc
 
 ## Bản đồ kho
 
-`skills/` (bản gốc; `.agents/skills/` cho Antigravity và `.claude/skills/` cho Claude Code là lối tắt) · `scripts/` (giọng, mốc thời gian, pha máy, kiểm) · `xuong_html/` (cách làm chính: `cong_cu/` xuất MP4, `hinh_thu_nho/` khuôn hình thu nhỏ, `n199_…` video mẫu chỉ có mã nguồn) · `xuong/` (Remotion dọc) · `xuong_dai/` (Remotion ngang, một dự án mẫu) · `xuong_thu_hyperframes/` (ffmpeg, HyperFrames) · `tai_san/` (`chien_dich_ngan_hang/`, `so_tay_gu/`, `giong_doc/`, `nhac_nen/`, `kho_hinh_chung/`, `anh_that/`, `thu_phap/`, `khuon_prompt/`…) · `san_pham/` (mỗi video một thư mục `yyyy.mm.dd.<tiêu đề>`, quy ước ở `san_pham/README.md`) · `du_lieu/` · `_luu_tru/` (không quét).
+`skills/` (bản gốc; `.agents/skills/` cho Antigravity và `.claude/skills/` cho Claude Code là lối tắt, gồm cả 19 skill Remotion, mediabunny, HyperFrames nằm trong `xuong/` và `xuong_thu_hyperframes/`) · `scripts/` (giọng, mốc thời gian, pha máy, kiểm) · `xuong_html/` (cách làm chính: `cong_cu/` xuất MP4, `hinh_thu_nho/` khuôn hình thu nhỏ, `n199_…` video mẫu chỉ có mã nguồn) · `xuong/` (Remotion dọc) · `xuong_dai/` (Remotion ngang, một dự án mẫu) · `xuong_thu_hyperframes/` (ffmpeg, HyperFrames) · `tai_san/` (`chien_dich_ngan_hang/`, `so_tay_gu/`, `giong_doc/`, `nhac_nen/`, `kho_hinh_chung/`, `anh_that/`, `thu_phap/`, `khuon_prompt/`…) · `san_pham/` (mỗi video một thư mục `yyyy.mm.dd.<tiêu đề>`, quy ước ở `san_pham/README.md`) · `du_lieu/` · `_luu_tru/` (không quét).
 
 Phần không chép từ Media (tải hoặc tạo lại khi cần): thư viện Node (`npm install`), môi trường Python VieNeu (`.venv_vieneu`), ô bản đồ `xuong/public/tiles` (`scripts/tai_tile_eox.py`), video mẫu của người khác `tai_san/so_tay_gu/mau_tham_khao/`, ảnh khu công nghiệp, clip AI. Cài đặt: `bash scripts/cai_dat.sh`.
