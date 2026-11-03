@@ -1,0 +1,66 @@
+{
+  "video": "N301 · Vốn lưu động ròng là gì",
+  "ngay": "2026-11-03",
+  "don_vi": "đồng (ví dụ giả định)",
+  "so_lieu": {
+    "vi_du_goc": {
+      "tong_tai_san": 100,
+      "tai_san_ngan_han": 60,
+      "tien_mat": 10,
+      "phai_thu": 20,
+      "hang_ton_kho": 30,
+      "tai_san_dai_han": 40,
+      "nha_xuong_may_moc": 40,
+      "tong_nguon_von": 100,
+      "no_ngan_han": 40,
+      "phai_tra_nguoi_ban": 20,
+      "vay_ngan_han": 20,
+      "nguon_von_dai_han": 60,
+      "vay_dai_han": 15,
+      "von_chu_so_huu": 45,
+      "nwc": 20
+    },
+    "vi_du_lay_ngan_nuoi_dai": {
+      "vay_ngan_han_them": 30,
+      "no_ngan_han_moi": 70,
+      "tai_san_dai_han_moi": 70,
+      "tai_san_ngan_han_cu": 60,
+      "nguon_von_dai_han_cu": 60,
+      "nwc_moi": -10
+    },
+    "cong_thuc": [
+      {
+        "ten": "Cách 1: Góc nhìn luân chuyển",
+        "bieu_thuc": "NWC = Tài sản ngắn hạn − Nợ ngắn hạn",
+        "tinh_toan": "60 − 40 = +20 đồng"
+      },
+      {
+        "ten": "Cách 2: Góc nhìn tài trợ dài hạn",
+        "bieu_thuc": "NWC = Nguồn vốn dài hạn − Tài sản dài hạn",
+        "tinh_toan": "60 − 40 = +20 đồng"
+      }
+    ],
+    "ba_trang_thai": [
+      {
+        "trang_thai": "NWC > 0",
+        "ten": "Dương (An toàn)",
+        "y_nghia": "Nguồn vốn dài hạn tài trợ một phần tài sản ngắn hạn. Doanh nghiệp có đệm thanh khoản vững chắc."
+      },
+      {
+        "trang_thai": "NWC = 0",
+        "ten": "Bằng 0 (Mong manh)",
+        "y_nghia": "Tài sản ngắn hạn vừa khít nợ ngắn hạn. Chỉ cần khách chậm trả tiền là kẹt thanh khoản."
+      },
+      {
+        "trang_thai": "NWC < 0",
+        "ten": "Âm (Nguy hiểm - Lấy ngắn nuôi dài)",
+        "y_nghia": "Nợ ngắn hạn đang phải tài trợ cho tài sản dài hạn. Rủi ro vỡ nợ dòng tiền rất cao."
+      }
+    ],
+    "phap_ly": [
+      "Luật Các TCTD số 32/2024/QH15 (Điều 102)",
+      "Thông tư 39/2016/TT-NHNN & Thông tư 06/2023/TT-NHNN, 12/2024/TT-NHNN",
+      "Thông tư 200/2014/TT-BTC (Điều 112 Bảng cân đối kế toán)"
+    ]
+  }
+}

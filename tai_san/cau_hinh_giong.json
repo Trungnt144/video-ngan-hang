@@ -1,4 +1,4 @@
-﻿{
+{
   "_ghi_chu": "Cấu hình giọng đọc của xưởng. Chỉ còn khối 'vieneu': giọng Hải Đăng, giọng mặc định của cả xưởng, video dài và video ngắn (Trung chốt 2026-10-25), đọc bằng scripts/sinh_giong_vieneu.py. Ngày 2026-10-27 Trung bỏ ElevenLabs; các khối ElevenLabs cũ (nha_cung_cap, giong_chinh, model_id, voice_settings, dinh_dang_xuat, duong_dan_khoa) chuyển sang _luu_tru/elevenlabs_da_bo_2026.10.27/cau_hinh_elevenlabs_cu.json.",
   "vieneu": {
     "giong": "Hải Đăng",
@@ -14,6 +14,7 @@
     "mo_hinh_nghe_lai": "mlx-community/whisper-large-v3-turbo",
     "_chuan_hoa_nghe_lai": "Whisper viết thuật ngữ theo chính tả quốc tế; quy về cách viết của trường doc trước khi so. Mẫu là biểu thức chính quy Python, áp lên chữ thường đã bỏ dấu câu, theo thứ tự.",
     "chuan_hoa_nghe_lai": [
+      ["\\bnwc\\b", "en đắp liu xi"],
       ["\\bsilicon\\b", "xi li côn"],
       ["\\belectrons?\\b", "ê léc trôn"],
       ["\\bphotons?\\b", "phô tôn"],

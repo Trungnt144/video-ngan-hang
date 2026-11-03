@@ -1,0 +1,97 @@
+{
+ "ten": "n301_von_luu_dong_rong",
+ "ngay": "2026-11-03",
+ "ghi_chu": "N301 Vốn lưu động ròng là gì, CL-05 đồ thị và bảng cân đối, BC-06 bảng toàn khung, MAU-22, NH09.",
+ "kho": "1920x1080",
+ "thoi_luong_giay": 308.031,
+ "fps_xem_truoc": 10,
+ "fps_cuoi": 30,
+ "giong": [
+  {
+   "tep": "am_thanh/c1.wav",
+   "t": 1.2
+  },
+  {
+   "tep": "am_thanh/c2.wav",
+   "t": 32.285
+  },
+  {
+   "tep": "am_thanh/c3.wav",
+   "t": 73.902
+  },
+  {
+   "tep": "am_thanh/c4.wav",
+   "t": 112.527
+  },
+  {
+   "tep": "am_thanh/c5.wav",
+   "t": 149.637
+  },
+  {
+   "tep": "am_thanh/c6.wav",
+   "t": 195.667
+  },
+  {
+   "tep": "am_thanh/c7.wav",
+   "t": 228.246
+  },
+  {
+   "tep": "am_thanh/c8.wav",
+   "t": 273.449
+  }
+ ],
+ "nhac": "am_thanh/n301_nhac_noi.wav",
+ "nhac_db": -10.0,
+ "mo_dan": 2,
+ "chuong": [
+  {
+   "id": "1",
+   "ten": "Nghịch lý có lãi nhưng cạn tiền",
+   "t": 0.0,
+   "den": 31.785
+  },
+  {
+   "id": "2",
+   "ten": "Cắt đôi bảng cân đối kế toán",
+   "t": 31.785,
+   "den": 73.402
+  },
+  {
+   "id": "3",
+   "ten": "Vốn lưu động ròng là gì và hai cách tính",
+   "t": 73.402,
+   "den": 112.027
+  },
+  {
+   "id": "4",
+   "ten": "Đệm an toàn thanh khoản",
+   "t": 112.027,
+   "den": 149.137
+  },
+  {
+   "id": "5",
+   "ten": "Căn bệnh nguy hiểm: Lấy ngắn nuôi dài",
+   "t": 149.137,
+   "den": 195.167
+  },
+  {
+   "id": "6",
+   "ten": "Phân biệt vốn lưu động ròng và nhu cầu vốn lưu động",
+   "t": 195.167,
+   "den": 227.746
+  },
+  {
+   "id": "7",
+   "ten": "Ngân hàng thẩm định vốn lưu động thế nào?",
+   "t": 227.746,
+   "den": 272.949
+  },
+  {
+   "id": "8",
+   "ten": "Bài học quản trị dòng tiền và lời khuyên · Màn hình kết",
+   "t": 272.949,
+   "den": 308.031
+  }
+ ],
+ "nhip": []
+}

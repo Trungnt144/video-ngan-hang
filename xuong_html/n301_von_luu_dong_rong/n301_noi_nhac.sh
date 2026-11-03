@@ -1,0 +1,18 @@
+#!/bin/bash
+# N301: nối lặp nhạc NH09 Coffee or Tea (Michael Ramir C., Mixkit 1168, 124,8 giây) có mờ chéo 4 giây cho đủ độ dài video.
+set -e
+cd "$(dirname "$0")"
+FF=../../xuong_thu_hyperframes/bin/ffmpeg
+BAI=../../tai_san/nhac_nen/mixkit-coffee-or-tea-1168.mp3
+N=$(python3 -c "import math,sys; print(max(2, math.ceil((float(sys.argv[1]) + 4) / 120.8)))" "$1")
+IN=""; FG=""
+for ((i=0;i<N;i++)); do IN="$IN -i $BAI"; done
+PREV="[0:a]"
+for ((i=1;i<N;i++)); do
+  OUT="[x$i]"; [ $i -eq $((N-1)) ] && OUT="[y]"
+  FG="$FG$PREV[$i:a]acrossfade=d=4:c1=tri:c2=tri$OUT;"
+  PREV="[x$i]"
+done
+mkdir -p am_thanh
+$FF -v error -y $IN -filter_complex "${FG%;}" -map "[y]" -t "$1" -ar 48000 am_thanh/n301_nhac_noi.wav
+echo "đã ghi am_thanh/n301_nhac_noi.wav ($1 giây, $N lần lặp)"
