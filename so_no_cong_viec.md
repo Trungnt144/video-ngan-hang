@@ -11,7 +11,7 @@
 - **Cách hiểu tạm:** Giải thích thuật ngữ Vốn lưu động ròng (Net Working Capital - NWC) cho người mới vào nghề ngân hàng và người đi vay: định nghĩa (NWC = Tài sản ngắn hạn - Nợ ngắn hạn = Nguồn vốn dài hạn - Tài sản dài hạn), đệm an toàn thanh khoản, 3 trạng thái NWC (>0, =0, <0) và rủi ro lấy nợ ngắn hạn tài trợ tài sản dài hạn, phân biệt NWC với Nhu cầu vốn lưu động ròng (WCR), góc nhìn ngân hàng khi thẩm định hạn mức vay vốn lưu động, ví dụ tính tiền bằng số giả định xuyên suốt.
 - **Trùng với video đã làm:** Chưa có video riêng về NWC (khái niệm liên quan đến hoạt động cho vay N198).
 - **Điều kiện bắt đầu:** Không phụ thuộc video khác.
-- **Trạng thái:** Đang làm (phiên Antigravity, 2026-11-03)
+- **Trạng thái:** Bản nháp chờ Trung duyệt (2026-11-03)
 
 ## Đã đóng
 

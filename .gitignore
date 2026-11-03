@@ -119,6 +119,7 @@ skills/viet-chu-dang-video/tu_cam_rieng.txt
 
 # Kết quả soi hình thu nhỏ YouTube (skills/soi-hinh-thu-nho/scripts/soi.py)
 du_lieu/soi_hinh_thu_nho/
+du_lieu/toi_uu_phan_phoi/
 
 # --- 2026-10-29 xuong_html: ảnh tĩnh chụp để soát và âm thanh (giọng, nhạc) giữ trên đĩa, KHÔNG đưa vào git.
 # Hook tự lưu đã lỡ đưa ~1.600 file (~890 MB) của lô video ngân hàng vào git ngày 28–29/10/2026.
