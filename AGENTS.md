@@ -1,7 +1,7 @@
 # AGENTS — Project "VideoNganHang"
 
 > Đọc file này ĐẦU TIÊN mỗi phiên, rồi chỉ mở đúng file cần cho việc đang làm (nạp lười). Dùng chung cho Hermes, Antigravity và Claude Code.
-> **1.1** · 2026-11-03 · Toàn bộ việc chạy bằng Gemini 3.8 Flash qua Antigravity (Trung chốt); thêm chuẩn hình, máy đo hình làm cổng, soát độc lập bằng phiên mới (sau khi video N301 không đạt: 0/8 chương qua máy đo). **1.0** · 2026-11-03 · Dựng từ project Media (nằm trong `~/Documents/Grok/Media`) để làm video chiến dịch Chuyện nghề Ngân hàng theo đúng cách 13 video làm bằng Claude ngày 29/10–02/11/2026. Project này độc lập: có bản chép riêng của khuôn dựng, công cụ, skill và kho tài sản; sửa ở đây không ảnh hưởng Media và ngược lại.
+> **1.2** · 2026-11-03 · Quy tắc 9 đổi sang hình vẽ đúng cơ chế (câu cơ chế, phép thử tắt tiếng, không chép cảnh n199), vì N301 và N302 qua hết cổng nhưng hình không liên quan khái niệm; chuẩn hình và phiếu soát độc lập lên bản 2. **1.1** · 2026-11-03 · Toàn bộ việc chạy bằng Gemini 3.8 Flash qua Antigravity (Trung chốt); thêm chuẩn hình, máy đo hình làm cổng, soát độc lập bằng phiên mới (sau khi video N301 không đạt: 0/8 chương qua máy đo). **1.0** · 2026-11-03 · Dựng từ project Media (nằm trong `~/Documents/Grok/Media`) để làm video chiến dịch Chuyện nghề Ngân hàng theo đúng cách 13 video làm bằng Claude ngày 29/10–02/11/2026. Project này độc lập: có bản chép riêng của khuôn dựng, công cụ, skill và kho tài sản; sửa ở đây không ảnh hưởng Media và ngược lại.
 
 ## Vai trò
 
@@ -63,7 +63,7 @@ Chưa khớp dòng nào → hỏi một lần.
 7. **Lời đọc không trỏ sang video khác** (việc trỏ đặt ở mô tả YouTube). Câu cuối cùng của lời đọc là câu kêu gọi đăng ký kênh ghi ở file quy tắc chiến dịch.
 
 8. **Cổng chất lượng hình (trước khi ghi phiếu pha máy):** (a) ảnh tĩnh ít nhất 3 vòng, mỗi vòng nhìn từng ảnh và ghi lỗi vào `SO_VONG_SUA.md`; (b) `node scripts/do_chat_luong_hinh.mjs xuong_html/<mã>_<tên> --buoc 2` thoát 0 (mỗi chương: chuyển động thật, tối đa 26 từ trên hình, chữ nhỏ dưới 26 px không quá 25%); (c) bản soát độc lập do MỘT PHIÊN ANTIGRAVITY MỚI viết theo `mau_soat_doc_lap.md`, không còn mục nặng. Không tự khen hình; chỉ máy đo và phiên soát có giá trị. Không sửa ngưỡng để cho qua.
-9. **Mỗi chương một hình chính chuyển động theo số liệu, tối đa 12 từ trên hình**; dùng khuôn trong `tai_san/kho_hinh_chung/` trước khi tự vẽ; không thẻ chữ dày, không bảng chữ nhỏ (chi tiết: `chuan_hinh_video_ngang.md`).
+9. **Mỗi chương một hình chính vẽ đúng cơ chế của khái niệm**: viết câu cơ chế vào `nhip.json` trước, hình chính vẽ các đại lượng trong câu đó và chuyển động là đại lượng đang đổi; tắt tiếng chỉ nhìn hình phải đoán ra chương nói gì; nhà xưởng, toà nhà, người chỉ làm hình phụ; không chép cảnh bể, vòi, hạt của n199 rồi đổi nhãn; tối đa 12 từ trên hình, nhãn gọi đúng tên phần đang vẽ; chọn khuôn theo cơ chế trong `tai_san/kho_hinh_chung/` trước khi tự vẽ; không thẻ chữ dày, không bảng chữ nhỏ, không chuyển động trang trí (chi tiết: `chuan_hinh_video_ngang.md` bản 2).
 
 ## Một công cụ một lúc
 

@@ -79,14 +79,16 @@ Nghe lại và đọc lại riêng câu đọc sai bằng `<mã>_doc_lai.py` (m�
 
 ## Bước 5 — Mã dựng và nhịp
 
-**Đọc trước, bắt buộc:** `skills/lam-video-ngan-hang/chuan_hinh_video_ngang.md` (sáu luật cảnh, bảng ý → khuôn trong kho, số đo n199 và n301) và mở hai ảnh trong `tai_san/anh_chuan_hinh/`. Ghi nhịp trong `nhip.json` trước (mỗi chương một dòng: hình chính, chuyển động, khuôn), rồi dựng MỘT chương một lần: chụp ảnh tĩnh, nhìn, đạt mới sang chương sau. Không viết cả video rồi mới chụp.
+**Đọc trước, bắt buộc:** `skills/lam-video-ngan-hang/chuan_hinh_video_ngang.md` bản 2 (tám luật cảnh, bảng cơ chế → khuôn trong kho, câu cơ chế mẫu, số đo n199 và n301) và mở hai ảnh trong `tai_san/anh_chuan_hinh/`. Ghi nhịp trong mảng `nhip` của `nhip.json` trước (mỗi chương: `co_che` câu cơ chế, `hinh_chinh`, `chuyen_dong`, `khuon`), rồi dựng MỘT chương một lần: chụp ảnh tĩnh, làm phép thử tắt tiếng (chỉ nhìn ảnh, viết "hình này giải thích …" vào `SO_VONG_SUA.md`, so với `co_che`), đạt mới sang chương sau. Không viết cả video rồi mới chụp.
 
-Chép khuôn từ video mẫu rồi đổi tiền tố:
+Chép khung trang từ video mẫu rồi đổi tiền tố:
 
 ```bash
 cp -R xuong_html/n199_hoat_dong_huy_dong_von xuong_html/<mã>_<tên>
 # đổi tên mọi file n199_* thành <mã>_*, rồi sửa nội dung: trang.html, canh.js, nhip.json, các script <mã>_*
 ```
+
+Trong `canh.js` chép sang, giữ khung trang (`seek`, phụ đề, logo, màn hình kết, hàm đếm chữ) nhưng XOÁ các cảnh chương của n199 rồi viết lại theo câu cơ chế. Các hàm vẽ cảnh `be`, `voi`, `roi`, `cham`, `toa` vẽ tiền gửi chảy vào ngân hàng; chỉ dùng khi câu cơ chế của chương cũng là tiền chảy vào hoặc ra. Không giữ cảnh cũ rồi đổi nhãn (lỗi của N301, N302 ngày 03/11/2026).
 
 Khuôn chung (khung, phụ đề chạy chữ, logo kênh, màn hình kết 10 giây) nằm trong `xuong_html/<mã>_<tên>/thu_vien/` và `tai_san/kho_hinh_chung/`. Cách viết trang và hợp đồng `seek(t)`: skill `dung-video-html` và `skills/dung-video-html/tham_chieu/hop_dong_trang.md`. Màn hình kết bắt đầu đúng lúc câu kêu gọi đăng ký kênh bắt đầu.
 
@@ -157,5 +159,6 @@ Máy kết xuất theo chương, thay khung hỏng, chỉnh âm lượng về �
 - Khuôn CL-07 nạp phông hai đợt có thể làm trình chụp pha máy treo: nạp đủ năm độ đậm phông ngay sau `kho_nen.js` (ghi nhận 01/11/2026, chờ ghi `90_bai_hoc.md`).
 - Whisper nghe thuật ngữ theo chính tả quốc tế: quy về cách viết của trường `doc` trước khi so (`chuan_hoa_nghe_lai` trong `tai_san/cau_hinh_giong.json`).
 - Gemini 3.8 Flash dựng "slide" thay vì hình chuyển động và tự khen: chỉ tin cổng máy đo và phiên soát mới, không tin lời tự đánh giá của phiên dựng.
+- Giữ cảnh bể, vòi, hạt, chấm của n199 rồi đổi nhãn, hoặc lấy nhà xưởng, toà nhà làm hình chính: máy đo vẫn đạt (lắc khung hình đủ tính là chuyển động) nhưng hình không giải thích khái niệm. N301 và N302 ngày 03/11/2026 mắc lỗi này. Chặn bằng câu cơ chế trong `nhip.json` và phép thử tắt tiếng.
 - Ghi sai nhãn chất liệu (ví dụ ghi CL-14 mà dựng thẻ chữ): máy đo sẽ bắt vì không có chuyển động.
 - Chữ trên hình lặp lại lời đọc: chữ chi tiết đã có ở phụ đề; hình chỉ giữ nhãn ngắn và số.

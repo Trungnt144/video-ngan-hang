@@ -417,3 +417,11 @@ cd xuong_html/cong_cu && node xuat_mp4.mjs "<đường dẫn>/trang.html" 30 --f
 
 **Cảnh báo:** máy đo chỉ bắt chuyển động, chữ dày, chữ nhỏ. Model có thể thêm chuyển động giả (hạt nền) để qua cổng: phiên soát độc lập và Trung xem vẫn cần. Ngưỡng đặt theo một video mẫu (n199), nên điều chỉnh khi có thêm video đạt.
 
+## 2026-11-03 — N301 và N302 qua hết cổng nhưng hình minh hoạ không liên quan tới khái niệm
+
+**Bối cảnh:** N301 "Vốn lưu động ròng" (Antigravity, Gemini 3.8 Flash) dựng lại theo chuẩn hình bản 1, N302 "EBITDA" (Codex). Cả hai: máy đo 8/8 và 9/9 chương đạt, soát độc lập 0 nặng 0 vừa. Trung xem thấy hình không liên quan nội dung: nhà xưởng bốc khói cho "lấy ngắn nuôi dài", cốc nước cho vốn lưu động ròng, đoạn thẳng hai chấm nghiêng qua lại cho "ba nguyên tắc", hàng chấm chạy dưới các cột EBITDA, bốn ô nối bằng đường chấm cho "EBITDA loại những khoản nào".
+
+**Nguyên nhân (đã kiểm trong mã):** (1) chuẩn hình bản 1 dặn "lấy cảnh gần nhất trong n199 và đổi nội dung, không viết lại từ đầu"; `canh.js` của cả hai video giữ nguyên bộ hàm vẽ cảnh n199 (`be`, `voi`, `roi`, `cham`, `toa`), mảng `nhip` của N302 ghi `khuon` "roi, cham, be từ n199" cho cả chín chương; bể, hạt đúng nghĩa với tiền gửi (n199), sai nghĩa với vốn lưu động ròng và EBITDA; (2) bảng khuôn tra theo danh từ (doanh nghiệp → nhà xưởng, ngân hàng → toà nhà), N301 không gọi `khuon_bang_can_doi.js` dù chương 2 nói bảng cân đối; (3) mục 3b bản 1 đề xuất hình bể nước cho vốn lưu động ròng; (4) luật tối đa 12 từ và bắt chuyển động đẩy model vẽ hình trừu tượng không nhãn; (5) khung trang n199 lắc khung hình và cho nhãn nhấp nhô, đo N301 giây 170–190 (hình không đổi nội dung) chênh lệch khung 3,0–4,8 so với ngưỡng 0,35, nên máy đo chấm chuyển động 1,00; (6) phiếu soát chỉ hỏi chuyển động, số chữ, cỡ chữ; người soát tả lại vật trên hình rồi tự gán nghĩa.
+
+**Cách xử lý:** `chuan_hinh_video_ngang.md` bản 2 (câu cơ chế trong `nhip.json`, phép thử tắt tiếng, biểu tượng nhân vật chỉ làm phụ, cấm chuyển động trang trí, bảng khuôn theo cơ chế, câu cơ chế mẫu cho vốn lưu động ròng và EBITDA, bỏ lời dặn chép cảnh n199); `mau_soat_doc_lap.md` bản 2 (đoán khái niệm từ ảnh trước khi đọc kịch bản, đoán sai là nặng); AGENTS.md quy tắc 9; skill bước 5. Chưa sửa máy đo (`do_chat_luong_hinh.mjs` vẫn tính lắc khung hình là chuyển động). N301 và N302 chưa dựng lại.
+
