@@ -22,6 +22,15 @@
 - **Điều kiện bắt đầu:** Trung cho phép Codex trực tiếp làm video này, giữ cổng chất lượng và cửa duyệt (03/11/2026).
 - **Trạng thái:** Pha 1 hoàn tất — ảnh và lời chờ Trung duyệt (Codex, 2026-11-03). Dài 5:24; máy đo 9/9; soát Antigravity mới 0 nặng/0 vừa, 2 nhẹ. Chưa kết xuất MP4. Ghi chú 03/11 tối: máy đo hình sửa (tắt lắc khung khi đo) cho 4/9 chương đạt, chuẩn hình bản 2 coi hình hiện tại không đạt; cần dựng lại hình trước khi duyệt.
 
+
+### N303 · Tài sản ngắn hạn là gì
+- **Ngày ghi:** 2026-11-07
+- **Trung nói nguyên văn:** "Làm 1 video ngắn 1 phút giải thích về tài sản ngắn hạn là gì"
+- **Cách hiểu tạm:** Video ngang 1920×1080 dài khoảng 1 phút (4 chương), dựng bằng một trang HTML (`xuong_html/n303_tai_san_ngan_han`), giọng VieNeu Quốc Tuấn: giải thích định nghĩa tài sản ngắn hạn (mốc 12 tháng hoặc 1 chu kỳ kinh doanh thông thường), 3 nhóm cấu phần chính (tiền và tương đương tiền, khoản phải thu ngắn hạn, hàng tồn kho), và góc nhìn thẩm định ngân hàng (bẫy tài sản ngắn hạn trên sổ sách lớn nhưng kẹt ở tồn kho ế hoặc phải thu quá hạn làm hụt tiền trả nợ đến hạn), kèm ví dụ số giả định xuyên suốt.
+- **Trùng với video đã làm:** N301 (Vốn lưu động ròng) có nhắc tới tài sản ngắn hạn; video này giải thích độc lập, không trỏ sang video khác trong lời đọc.
+- **Điều kiện bắt đầu:** Không phụ thuộc video khác. Trung chốt dừng ở cửa duyệt ảnh tĩnh trước khi chạy pha máy.
+- **Trạng thái:** Pha 1 hoàn tất — ảnh tĩnh và kịch bản chờ Trung duyệt ở cửa duyệt ảnh tĩnh (Antigravity, 2026-11-07). Dài 1:25,5 (`75,5s` nội dung + `10s` màn kết); `kiem_loi_doc` 0 lỗi; `quet_kiem` 0 lỗi; `tuong_phan` 0 chữ < 4,5; `do_chat_luong_hinh` 4/4 chương đạt; soát độc lập phiên mới 0 nặng / 2 vừa / 1 nhẹ / 1 đạt (`ĐẠT để chạy pha máy`). Chưa chạy Pha 2 kết xuất MP4.
+
 ## Đã đóng
 
 (trống)

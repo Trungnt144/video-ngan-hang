@@ -1,0 +1,104 @@
+{
+  "ghi_chu": "Nguồn duy nhất cho mọi số và văn bản pháp luật trên màn hình của N303 (07/11/2026). trang_thai da_kiem: quy định pháp luật đã kiểm 2 nguồn còn hiệu lực; minh_hoa: số giả định bắt buộc có nhãn 'ví dụ giả định' trên hình. Nguồn chi tiết: 2026.11.07.tai_san_ngan_han_v1.nguon_kiem_chung.md.",
+  "gia_tri": {
+    "tong_tai_san": 100,
+    "tai_san_ngan_han": 60,
+    "tai_san_dai_han": 40,
+    "moc_thang": 12,
+    "tien_mat": 10,
+    "phai_thu": 20,
+    "ton_kho": 30,
+    "no_den_han": 25,
+    "thieu_hut_tien": -15
+  },
+  "muc": [
+    {
+      "id": "vd_tong_ts_100",
+      "chuong": [1],
+      "gia_tri": "100 tỷ",
+      "don_vi": "tổng tài sản ví dụ giả định (60 + 40 = 100)",
+      "nguon": "D1",
+      "trang_thai": "minh_hoa"
+    },
+    {
+      "id": "vd_tsnh_60",
+      "chuong": [1, 2, 3, 4],
+      "gia_tri": "60 tỷ",
+      "don_vi": "tài sản ngắn hạn ví dụ giả định (10 + 20 + 30 = 60)",
+      "nguon": "D1",
+      "trang_thai": "minh_hoa"
+    },
+    {
+      "id": "vd_tsdh_40",
+      "chuong": [1],
+      "gia_tri": "40 tỷ",
+      "don_vi": "tài sản dài hạn ví dụ giả định",
+      "nguon": "D1",
+      "trang_thai": "minh_hoa"
+    },
+    {
+      "id": "moc_12_thang",
+      "chuong": [1],
+      "gia_tri": "12 tháng",
+      "don_vi": "mốc phân loại tài sản ngắn hạn và dài hạn (≤ 12 tháng hoặc 1 chu kỳ kinh doanh)",
+      "nguon": "A1",
+      "trang_thai": "da_kiem"
+    },
+    {
+      "id": "vb_tt99_vas21",
+      "chuong": [1],
+      "gia_tri": "Thông tư 99/2025 · VAS 21",
+      "don_vi": "căn cứ phân loại tài sản ngắn hạn",
+      "nguon": "A1",
+      "trang_thai": "da_kiem"
+    },
+    {
+      "id": "vd_tien_10",
+      "chuong": [2, 3, 4],
+      "gia_tri": "10 tỷ",
+      "don_vi": "tiền và tương đương tiền trong 60 tỷ tài sản ngắn hạn",
+      "nguon": "D1",
+      "trang_thai": "minh_hoa"
+    },
+    {
+      "id": "vd_phai_thu_20",
+      "chuong": [2, 3, 4],
+      "gia_tri": "20 tỷ",
+      "don_vi": "khoản phải thu ngắn hạn trong 60 tỷ tài sản ngắn hạn",
+      "nguon": "D1",
+      "trang_thai": "minh_hoa"
+    },
+    {
+      "id": "vd_ton_kho_30",
+      "chuong": [2, 3, 4],
+      "gia_tri": "30 tỷ",
+      "don_vi": "hàng tồn kho trong 60 tỷ tài sản ngắn hạn",
+      "nguon": "D1",
+      "trang_thai": "minh_hoa"
+    },
+    {
+      "id": "vd_no_den_han_25",
+      "chuong": [1, 3],
+      "gia_tri": "25 tỷ",
+      "don_vi": "nợ ngắn hạn đến hạn phải trả ngay trong ví dụ giả định",
+      "nguon": "D1",
+      "trang_thai": "minh_hoa"
+    },
+    {
+      "id": "vd_thieu_hut_15",
+      "chuong": [3],
+      "gia_tri": "−15 tỷ",
+      "don_vi": "thiếu hụt tiền mặt trả nợ đến hạn khi tồn kho và phải thu bị kẹt (10 − 25 = −15)",
+      "nguon": "D1",
+      "trang_thai": "minh_hoa"
+    },
+    {
+      "id": "vb_luat_tctd_2024",
+      "chuong": [4],
+      "gia_tri": "Luật 32/2024 · Điều 94",
+      "don_vi": "thẩm định khả năng trả nợ của khách hàng vay",
+      "nguon": "A3",
+      "trang_thai": "da_kiem"
+    }
+  ]
+}

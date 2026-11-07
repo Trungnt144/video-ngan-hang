@@ -1,0 +1,86 @@
+{
+ "ten": "n303_tai_san_ngan_han",
+ "ngay": "2026-11-07",
+ "ghi_chu": "N303 Tài sản ngắn hạn là gì, CL-05 đồ thị và thanh số liệu SVG, BC-07 chia đôi đối chiếu, MAU-33, NH06. Sinh bằng n303_tao_nhip.py; trường 'nhip' (storyboard) viết tay, giữ nguyên khi chạy lại.",
+ "kho": "1920x1080",
+ "thoi_luong_giay": 85.536,
+ "fps_xem_truoc": 10,
+ "fps_cuoi": 30,
+ "giong": [
+  {
+   "tep": "am_thanh/c1.wav",
+   "t": 1.2
+  },
+  {
+   "tep": "am_thanh/c2.wav",
+   "t": 27.386
+  },
+  {
+   "tep": "am_thanh/c3.wav",
+   "t": 45.137
+  },
+  {
+   "tep": "am_thanh/c4.wav",
+   "t": 62.645
+  }
+ ],
+ "nhac": "am_thanh/n303_nhac_noi.wav",
+ "nhac_db": -16.0,
+ "mo_dan": 2,
+ "chuong": [
+  {
+   "id": "1",
+   "ten": "Định nghĩa tài sản ngắn hạn và mốc 12 tháng",
+   "t": 0.0,
+   "den": 26.886
+  },
+  {
+   "id": "2",
+   "ten": "Ba nhóm chính trong tài sản ngắn hạn",
+   "t": 26.886,
+   "den": 44.637
+  },
+  {
+   "id": "3",
+   "ten": "Bẫy tồn kho và phải thu làm hụt tiền trả nợ",
+   "t": 44.637,
+   "den": 62.145
+  },
+  {
+   "id": "4",
+   "ten": "Ngân hàng thẩm định tài sản ngắn hạn thế nào · Màn hình kết",
+   "t": 62.145,
+   "den": 85.536
+  }
+ ],
+ "nhip": [
+  {
+   "chuong": 1,
+   "co_che": "Tổng tài sản 100 tỷ đồng đặt trên trục thời gian có vạch ranh giới 12 tháng: phần thu hồi trong vòng 12 tháng là tài sản ngắn hạn 60 tỷ đồng, phần thu hồi trên 12 tháng là tài sản dài hạn 40 tỷ đồng.",
+   "hinh_chinh": "Khối Tổng 100 tỷ ở bên trái nối ngoặc tách sang phải thành hai thanh ngang trên trục thời gian có vạch mốc 12 tháng: thanh Ngắn hạn 60 tỷ nằm trọn trước vạch 12 tháng, thanh Dài hạn 40 tỷ kéo vượt qua vạch 12 tháng; dưới đáy hiện căn cứ Thông tư 99/2025 · VAS 21.",
+   "chuyen_dong": "Câu 1 (1,2–7,1s): cột Tài sản ngắn hạn 60 tỷ dâng lên cạnh cột Nợ đến hạn 25 tỷ; Câu 2 (7,3–17,6s): trục thời gian kéo qua vạch Mốc 12 tháng và thanh Ngắn hạn ≤ 12 tháng giãn tới vạch 12 tháng; Câu 3 (17,8–26,8s): khối 100 tỷ bên trái tách ngoặc thành hai thanh Ngắn hạn 60 tỷ (≤ 12 tháng) và Dài hạn 40 tỷ (> 12 tháng).",
+   "khuon": "chung/truc_thoi_gian.js + chung/thanh_chia_doan.js (vẽ trực tiếp thanh tỉ lệ trên trục thời gian 12 tháng)"
+  },
+  {
+   "chuong": 2,
+   "co_che": "Tài sản ngắn hạn 60 tỷ đồng chia thành 3 nhóm xếp theo độ thanh khoản (tốc độ đổi thành tiền) giảm dần từ cao xuống thấp: Tiền 10 tỷ đồng ở bậc thanh khoản cao nhất, Phải thu 20 tỷ đồng ở bậc giữa, Tồn kho 30 tỷ đồng có quy mô lớn nhất nhưng ở bậc thanh khoản thấp nhất (chậm nhất).",
+   "hinh_chinh": "Bậc thang thanh khoản hạ dần từ trái sang phải kết hợp bề rộng khối tỉ lệ 10 : 20 : 30: bậc 1 cao nhất là Tiền 10 tỷ (hẹp nhất, đổi tiền nhanh nhất), bậc 2 hạ thấp là Phải thu 20 tỷ, bậc 3 thấp nhất là Tồn kho 30 tỷ (rộng nhất nhưng thanh khoản chậm nhất) kèm mũi tên dốc xuống Thanh khoản giảm dần.",
+   "chuyen_dong": "Câu 1 (27,4–31,8s): thanh 60 tỷ chia 3 phần Tiền · Phải thu · Tồn kho kèm mũi tên dốc xuống Thanh khoản giảm dần; Câu 2 (32,1–35,4s): bậc Tiền 10 tỷ dâng lên ở mức thanh khoản cao nhất; Câu 3 (35,7–39,5s): bậc Phải thu 20 tỷ hiện ra rộng gấp đôi nhưng độ cao thanh khoản hạ xuống bậc giữa; Câu 4 (39,7–44,6s): bậc Tồn kho 30 tỷ rộng nhất nhưng hạ xuống bậc thanh khoản thấp nhất (Chậm).",
+   "khuon": "chung/thanh_chia_doan.js (vẽ 3 khối bề rộng tỉ lệ 10 : 20 : 30 đặt trên 3 bậc cao độ thanh khoản giảm dần từ trái sang phải)"
+  },
+  {
+   "chuong": 3,
+   "co_che": "Cột tài sản ngắn hạn 60 tỷ đồng (gồm tồn kho 30 tỷ, phải thu 20 tỷ, tiền 10 tỷ) đặt đối diện cột nợ đến hạn 25 tỷ đồng; khi tồn kho 30 tỷ và phải thu 20 tỷ bị đóng băng (khóa), chỉ còn tiền mặt 10 tỷ đồng thấp hơn nợ đến hạn 25 tỷ đồng, tạo khoảng thiếu hụt −15 tỷ đồng.",
+   "hinh_chinh": "Đối chiếu chiều cao cột theo tỉ lệ thật: cột Tài sản ngắn hạn 60 tỷ tách bỏ 2 ngăn trên bị khóa (Tồn kho 30 tỷ, Phải thu 20 tỷ), chỉ còn cột Tiền mặt 10 tỷ (cao 140 px) đứng đối diện cột Nợ đến hạn 25 tỷ (cao 350 px), ở giữa là khối đỏ Thiếu −15 tỷ (cao đúng 210 px lấp khoảng chênh từ 10 tỷ lên 25 tỷ).",
+   "chuyen_dong": "Câu 1 (45,1–49,6s): cột Tài sản ngắn hạn 60 tỷ dâng cao gấp hơn hai lần cột Nợ đến hạn 25 tỷ; Câu 2 (49,8–54,7s): cột 60 tỷ tách 2 ngăn trên (Tồn kho 30 tỷ, Phải thu 20 tỷ) chuyển xám kèm dấu khóa trượt sang bên, chỉ giữ ngăn đáy Tiền 10 tỷ; Câu 3 (55,0–62,1s): cột Tiền mặt 10 tỷ đặt cạnh cột Nợ đến hạn 25 tỷ, khối đỏ Thiếu −15 tỷ dâng lên lấp đúng khoảng chênh chiều cao giữa 10 tỷ và 25 tỷ.",
+   "khuon": "ngan_hang/khuon_bang_can_doi.js (vẽ cột tỉ lệ thật 1 tỷ = 14 px để khoảng chênh Thiếu −15 tỷ khớp chính xác hiệu chiều cao 25 tỷ − 10 tỷ)"
+  },
+  {
+   "chuong": 4,
+   "co_che": "Từ cột sổ sách 60 tỷ đồng, ngân hàng kiểm tra vòng quay tồn kho và tuổi nợ phải thu để cắt trừ đi phần hàng ế và nợ quá hạn ở phía trên, chỉ giữ lại phần thực thu hồi tạo thành cột tiền thực 10 tỷ đồng thấp hơn hẳn cột sổ sách.",
+   "hinh_chinh": "Phép trừ trực tiếp trên chiều cao cột tỉ lệ thật: bên trái là cột Sổ sách 60 tỷ (cao 480 px), trừ (−) khối Hàng ế, quá hạn bị tách ra ở giữa (cao 360 px), bằng (=) cột xanh Tiền thực 10 tỷ ở bên phải (cao 120 px, gióng ngang đúng phần đáy còn lại của cột sổ sách).",
+   "chuyen_dong": "Câu 1 (62,6–69,2s): cột Sổ sách 60 tỷ dâng lên bên trái, vạch cắt thẩm định nối từ hộp Vòng quay, tuổi nợ quét dọc từ đỉnh cột xuống ranh giới thực thu kèm căn cứ Luật 32/2024 · Điều 94; Câu 2 (69,5–75,3s): phần trên của cột tách sang giữa thành khối Hàng ế, quá hạn (cao 360 px) với dấu trừ (−), đồng thời phần đáy gióng ngang sang phải dựng cột Tiền thực 10 tỷ (cao 120 px) với dấu bằng (=); Câu 3 (75,5–85,5s): màn hình kết.",
+   "khuon": "ngan_hang/khuon_vi_du_tinh_tien.js (vẽ phép trừ chiều cao cột tỉ lệ thật: Sổ sách 60 tỷ − Hàng ế, quá hạn = Tiền thực 10 tỷ)"
+  }
+ ]
+}

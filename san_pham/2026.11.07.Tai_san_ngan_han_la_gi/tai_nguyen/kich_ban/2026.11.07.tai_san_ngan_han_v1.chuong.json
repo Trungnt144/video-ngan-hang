@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "ten": "Định nghĩa tài sản ngắn hạn và mốc 12 tháng",
+    "text": "Ví dụ giả định: một công ty có 60 tỷ đồng tài sản ngắn hạn, nhưng khi 25 tỷ đồng nợ đến hạn lại thiếu tiền trả. Theo Chuẩn mực kế toán số 21 và Thông tư 99 năm 2025, tài sản ngắn hạn là tiền và tài sản dự kiến thu hồi, bán hoặc dùng trong một chu kỳ kinh doanh thông thường, hoặc không quá 12 tháng. Trong 100 tỷ đồng tổng tài sản, 60 tỷ đồng thu hồi trong 12 tháng là tài sản ngắn hạn, còn 40 tỷ đồng thu hồi trên 12 tháng là tài sản dài hạn.",
+    "doc": "Ví dụ giả định: một công ty có sáu mươi tỷ đồng tài sản ngắn hạn, nhưng khi hai mươi lăm tỷ đồng nợ đến hạn lại thiếu tiền trả. Theo Chuẩn mực kế toán số hai mươi mốt và Thông tư chín mươi chín năm hai nghìn hai mươi lăm, tài sản ngắn hạn là tiền và tài sản dự kiến thu hồi, bán hoặc dùng trong một chu kỳ kinh doanh thông thường, hoặc không quá mười hai tháng. Trong một trăm tỷ đồng tổng tài sản, sáu mươi tỷ đồng thu hồi trong mười hai tháng là tài sản ngắn hạn, còn bốn mươi tỷ đồng thu hồi trên mười hai tháng là tài sản dài hạn."
+  },
+  {
+    "id": 2,
+    "ten": "Ba nhóm chính trong tài sản ngắn hạn",
+    "text": "Khoản 60 tỷ đồng tài sản ngắn hạn gồm ba nhóm chính xếp theo tốc độ đổi thành tiền giảm dần. Nhóm một là tiền và tương đương tiền 10 tỷ đồng, dùng trả nợ được ngay. Nhóm hai là khoản phải thu ngắn hạn 20 tỷ đồng, tức tiền bán chịu chờ khách trả. Nhóm ba là hàng tồn kho 30 tỷ đồng, phải qua sản xuất và bán hàng mới thu về tiền.",
+    "doc": "Khoản sáu mươi tỷ đồng tài sản ngắn hạn gồm ba nhóm chính xếp theo tốc độ đổi thành tiền giảm dần. Nhóm một là tiền và tương đương tiền mười tỷ đồng, dùng trả nợ được ngay. Nhóm hai là khoản phải thu ngắn hạn hai mươi tỷ đồng, tức tiền bán chịu chờ khách trả. Nhóm ba là hàng tồn kho ba mươi tỷ đồng, phải qua sản xuất và bán hàng mới thu về tiền."
+  },
+  {
+    "id": 3,
+    "ten": "Bẫy tồn kho và phải thu làm hụt tiền trả nợ",
+    "text": "Vì sao có 60 tỷ đồng tài sản ngắn hạn mà không trả nổi 25 tỷ đồng nợ đến hạn? Bẫy nằm ở chỗ 30 tỷ đồng hàng tồn kho bị ế và 20 tỷ đồng phải thu bị khách nợ quá hạn. Khi hai khoản này đóng băng, công ty chỉ còn 10 tỷ đồng tiền mặt đối diện với 25 tỷ đồng nợ đến hạn, nên thiếu hụt 15 tỷ đồng.",
+    "doc": "Vì sao có sáu mươi tỷ đồng tài sản ngắn hạn mà không trả nổi hai mươi lăm tỷ đồng nợ đến hạn? Bẫy nằm ở chỗ ba mươi tỷ đồng hàng tồn kho bị ế và hai mươi tỷ đồng phải thu bị khách nợ quá hạn. Khi hai khoản này đóng băng, công ty chỉ còn mười tỷ đồng tiền mặt đối diện với hai mươi lăm tỷ đồng nợ đến hạn, nên thiếu hụt mười lăm tỷ đồng."
+  },
+  {
+    "id": 4,
+    "ten": "Ngân hàng thẩm định tài sản ngắn hạn thế nào",
+    "text": "Vì vậy, khi thẩm định cho vay theo Luật Các tổ chức tín dụng năm 2024, ngân hàng không chỉ nhìn tổng số 60 tỷ đồng trên sổ sách. Ngân hàng kiểm tra vòng quay tồn kho và tuổi nợ phải thu, loại phần hàng ế và nợ khó đòi để tính dòng tiền thực trả nợ. Đăng ký kênh Chuyện nghề Ngân hàng để biết thêm nhiều nội dung thú vị về ngân hàng và đi vay.",
+    "doc": "Vì vậy, khi thẩm định cho vay theo Luật Các tổ chức tín dụng năm hai nghìn hai mươi tư, ngân hàng không chỉ nhìn tổng số sáu mươi tỷ đồng trên sổ sách. Ngân hàng kiểm tra vòng quay tồn kho và tuổi nợ phải thu, loại phần hàng ế và nợ khó đòi để tính dòng tiền thực trả nợ. Đăng ký kênh Chuyện nghề Ngân hàng để biết thêm nhiều nội dung thú vị về ngân hàng và đi vay."
+  }
+]
