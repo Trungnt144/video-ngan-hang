@@ -144,3 +144,7 @@ tai_san/kho_hinh_chung/anh_mau/
 
 # 2026-11-02 tile ảnh vệ tinh Sentinel-2 (EOX cloudless 2016) tải về cho cảnh bản đồ, ngoài git
 xuong/public/tiles/
+
+# --- 2026-11-08 luồng Claude–Muse: ảnh nền Muse tải từ Drive (thư mục "Muse-Claude") giữ trên đĩa, KHÔNG đưa vào git; ảnh mẫu phong cách ở muse/phong_cach/anh_mau/ thì vào git ---
+xuong_html/**/nen/
+xuong_html/**/nen_muse_tai/

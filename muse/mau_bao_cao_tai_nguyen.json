@@ -1,0 +1,55 @@
+{
+  "_chu_thich": {
+    "_doc_truoc": "Khuôn báo cáo Muse gửi kèm tài nguyên, bản 1.0 (08/11/2026). Muse ghi file thật tên bao_cao_tai_nguyen.json vào Drive 02_Muse_gui_Mac/<ma_video>/ và bỏ các khoá _chu_thich. Vòng sửa thì ghi đè file này, tăng vong, giữ mục của file cũ không sửa.",
+    "ma_video": "chép từ phiếu",
+    "vong": "0 là lần gửi đầu; 1, 2 là các vòng sửa theo phieu_sua.json",
+    "ngay_gui": "yyyy-mm-dd",
+    "cong_cu": "model hoặc chế độ tạo ảnh, tạo video đã dùng",
+    "tai_nguyen": "mỗi file đã gửi một mục",
+    "viec_chua_xong": "cảnh hoặc biến thể chưa làm được, kèm lý do",
+    "cau_hoi_cho_claude": "điểm phiếu chưa rõ; Muse vẫn làm theo cách hợp lý nhất và ghi đã chọn gì"
+  },
+  "ma_video": "vi_du_video",
+  "vong": 0,
+  "ngay_gui": "2026-11-08",
+  "cong_cu": "Meta AI tạo ảnh (chế độ tạo mới và chế độ chỉnh ảnh)",
+  "tai_nguyen": [
+    {
+      "_chu_thich": {
+        "id_canh": "id cảnh trong phiếu",
+        "bien_the": "tên biến thể trong phiếu; tấm nền không biến thể thì để chuỗi rỗng",
+        "file": "đường dẫn trong thư mục 02_Muse_gui_Mac/<ma_video>/",
+        "kich_thuoc": "[rộng, cao] đo trên file thật",
+        "dung_luong_byte": "cỡ file",
+        "tao_tu": "tao_moi: tạo từ câu lệnh, có ảnh khung bố cục làm tham chiếu · sua_tu:<file tấm gốc>: biến thể sửa từ tấm gốc",
+        "cau_lenh": "nguyên văn câu lệnh đã dùng cho lần tạo được chọn",
+        "anh_tham_chieu": "các ảnh đã gắn làm tham chiếu",
+        "so_lan_tao": "số lần tạo trước khi chọn được ảnh này",
+        "tu_kiem": "kết quả từng mục của muse/bang_kiem_tai_nguyen.md; số đo lệch tính bằng điểm ảnh",
+        "ghi_chu": "điều Claude cần biết khi nghiệm thu"
+      },
+      "id_canh": "nen_vat_the",
+      "bien_the": "nguyen_ven",
+      "file": "nen/nen_vat_the__nguyen_ven.webp",
+      "kich_thuoc": [1920, 1080],
+      "dung_luong_byte": 0,
+      "tao_tu": "tao_moi",
+      "cau_lenh": "Photorealistic technical studio product shot, 16:9 ...",
+      "anh_tham_chieu": ["khung_bo_cuc/nen_vat_the.png"],
+      "so_lan_tao": 3,
+      "tu_kiem": {
+        "kich_thuoc_dung": true,
+        "khong_chu_logo": true,
+        "vung_sach_trong": true,
+        "vung_neo_lech_lon_nhat_px": 14,
+        "dung_cau_tao": true,
+        "cung_goc_may_voi_tam_goc_lech_px": null,
+        "khong_ve_co_che": true,
+        "phong_cach_dung": true
+      },
+      "ghi_chu": ""
+    }
+  ],
+  "viec_chua_xong": [],
+  "cau_hoi_cho_claude": []
+}

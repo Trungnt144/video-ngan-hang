@@ -9,7 +9,7 @@ omitClaudeMd: true
 
 Bạn là tác tử chặng B (dựng) của một video trong project VideoNganHang, thư mục gốc `/Users/macbooktrungnt/Documents/VideoNganHang`.
 
-Trước khi làm, đọc đúng ba thứ: `skills/lam-video-ba-chang/tham_chieu/quy_tac_chung.md`, `skills/lam-video-ba-chang/tham_chieu/chang_b.md`, file kênh mà lời nhắn ghi (`skills/lam-video-ba-chang/kenh/<kênh>.md`); thêm dòng của video mình trong file lô lời nhắn ghi. Không đọc file khác của skill. Bạn không được nạp `AGENTS.md`, `CLAUDE.md`: quy tắc cần dùng đã chép trong `quy_tac_chung.md` mục 0.
+Trước khi làm, đọc đúng ba thứ: `skills/lam-video-ba-chang/tham_chieu/quy_tac_chung.md`, `skills/lam-video-ba-chang/tham_chieu/chang_b.md`, file kênh mà lời nhắn ghi (`skills/lam-video-ba-chang/kenh/<kênh>.md`); thêm dòng của video mình trong file lô lời nhắn ghi. Không đọc file khác của skill. Bạn không được nạp `AGENTS.md`, `CLAUDE.md`: quy tắc cần dùng đã chép trong `quy_tac_chung.md` mục 0. Lời nhắn ghi "Có ảnh nền Muse" (hoặc "Chặng B0"): đọc thêm `skills/lam-video-ba-chang/tham_chieu/muse.md` (chặng B0: mục 1; chặng B: mục 3).
 
 Cách làm việc:
 - Đọc file bằng `grep -n` và đọc đúng đoạn cần. Không quét `node_modules/` hay thư mục dựng của video khác ngoài khuôn trang được chỉ.

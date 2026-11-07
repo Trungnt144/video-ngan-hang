@@ -1,0 +1,99 @@
+{
+  "_chu_thich": {
+    "_doc_truoc": "Khuôn phiếu đặt hình, bản 1.0 (08/11/2026). JSON không có dòng chú thích nên mỗi khối có một khoá _chu_thich giải nghĩa các trường cùng cấp. Phiếu thật của từng video bỏ hết khoá _chu_thich và đặt ở Drive 01_Mac_gui_Muse/<ma_video>/phieu_dat_hinh.json.",
+    "phien_ban_mau": "bản khuôn mà phiếu theo, để Muse biết đọc trường nào",
+    "ma_video": "mã thư mục trên Drive; Muse ghi kết quả vào 02_Muse_gui_Mac/<ma_video>/",
+    "ngay_lap": "ngày Claude lập phiếu, yyyy-mm-dd",
+    "vong": "0 là đặt lần đầu; vòng sửa dùng phieu_sua.json, không sửa phiếu này",
+    "tong_quan": "hai ba câu: video nói gì, người xem là ai; để Muse hiểu vật thể dùng làm gì",
+    "phong_cach": "mã file phong cách trong muse/phong_cach/ (A_studio là phong_cach_A_studio.md)",
+    "kich_thuoc": "khổ tấm nền [rộng, cao] điểm ảnh; mọi toạ độ trong phiếu tính trên khổ này",
+    "dinh_dang": "định dạng file tấm nền",
+    "mau_co_che": "mã màu lớp hoạt hình của Claude; hiệu ứng màu trong biến thể dùng đúng các màu này",
+    "vung_sach": "các vùng [x1, y1, x2, y2] phải để nền trơn trên mọi tấm nền: phụ đề, cột chú thích. Gốc toạ độ ở góc trên bên trái",
+    "canh": "danh sách cảnh cần tài nguyên, kể cả cảnh Muse không phải làm (để Muse thấy cả video)"
+  },
+  "phien_ban_mau": "1.0",
+  "ma_video": "vi_du_video",
+  "ngay_lap": "2026-11-08",
+  "vong": 0,
+  "tong_quan": "Video giải thích ... cho người mới vào nghề. Mọi chương so trên cùng một vật thể để người xem thấy khác nhau ở đâu.",
+  "phong_cach": "A_studio",
+  "kich_thuoc": [1920, 1080],
+  "dinh_dang": "webp",
+  "mau_co_che": {
+    "co_che_1": "#E0662A",
+    "co_che_2": "#2FA8FF"
+  },
+  "vung_sach": {
+    "phu_de": [0, 900, 1920, 1080],
+    "chu_thich": [1400, 120, 1860, 860]
+  },
+  "canh": [
+    {
+      "_chu_thich": {
+        "id": "tên cảnh, chữ thường không dấu, nối bằng gạch dưới; dùng trong tên file",
+        "loai": "nen_muse: tấm nền tả thực Muse làm, Claude vẽ cơ chế lên trên · clip_muse: clip 5–10 giây cho mở đầu, chuyển chương, bối cảnh · hinh_thu_nho: ảnh nền hình thu nhỏ · ma_claude: Claude vẽ hoàn toàn bằng mã, Muse không làm",
+        "trang_thai": "dat_moi: Muse làm · dung_lai: dùng ảnh Muse đã có (trường file_co_san), Muse không làm · khong_can_muse: cảnh ma_claude",
+        "dung_o_chuong": "các chương của kịch bản dùng cảnh này",
+        "mo_ta": "vật thể cần có, kể theo thứ tự không gian (từ trên xuống, từ trái sang); chỉ tả vật thể, không tả cơ chế",
+        "goc_may": "hướng nhìn, độ cao máy, tiêu cự; mọi biến thể giữ nguyên",
+        "anh_sang": "ánh sáng của tấm gốc, nếu khác file phong cách",
+        "khung_bo_cuc": "ảnh xám 1920x1080 Claude xuất từ trang dựng, mỗi vùng neo là một ô có tên; Muse dùng làm ảnh tham chiếu bố cục",
+        "tham_chieu": "ảnh tham chiếu thêm (cấu tạo, chất liệu) trong thư mục tham_chieu/ của Drive, kèm việc cần lấy từ mỗi ảnh",
+        "vung_neo": "tên vùng: [x1, y1, x2, y2]. Phần vật thể mang tên đó phải nằm trong ô, mép lệch tối đa 20 điểm ảnh; Claude đặt hạt, mũi tên, nhãn đúng vào ô",
+        "bien_the": "danh sách biến thể; mục đầu là tấm gốc, các mục sau sửa từ tấm gốc, chỉ đổi đúng phần mo_ta nêu",
+        "cam": "những thứ không được có trong ảnh",
+        "kiem_cau_tao": "điều kiện cấu tạo Muse tự kiểm và Claude kiểm khi nghiệm thu; trượt một điều là trượt ảnh",
+        "file_ra": "tên file Muse phải gửi, theo HUONG_DAN_MUSE.md mục 6",
+        "thoi_luong_giay": "chỉ cho clip_muse",
+        "ghi_chu": "điều cần biết thêm"
+      },
+      "id": "nen_vat_the",
+      "loai": "nen_muse",
+      "trang_thai": "dat_moi",
+      "dung_o_chuong": [2, 3, 4],
+      "mo_ta": "Mặt cắt ngang ... Từ trên xuống: ...; bên trái: ...",
+      "goc_may": "nhìn thẳng mặt cắt, máy cao hơn mặt trên 20 độ, tiêu cự tương đương 90 mm",
+      "anh_sang": "theo phong cách A",
+      "khung_bo_cuc": "khung_bo_cuc/nen_vat_the.png",
+      "tham_chieu": [
+        { "file": "tham_chieu/cau_tao.jpg", "lay": "thứ tự và độ dày tương đối của các lớp", "khong_lay": "màu, phong cách vẽ" }
+      ],
+      "vung_neo": {
+        "lop_a": [300, 300, 1340, 420],
+        "lop_b": [300, 486, 1340, 600]
+      },
+      "bien_the": [
+        { "ten": "nguyen_ven", "mo_ta": "tấm gốc, vật liệu bình thường" },
+        { "ten": "trang_thai_2", "mo_ta": "chỉ lop_b ngả màu ... ; mọi phần khác giữ nguyên" }
+      ],
+      "cam": ["chữ, số, nhãn, logo", "đổi góc máy giữa các biến thể", "vật thể không có trong mô tả", "hạt sáng, tia sáng, dòng điện vẽ sẵn"],
+      "kiem_cau_tao": ["đúng thứ tự lớp như mo_ta", "lop_b là lát mỏng phẳng, không phải khối"],
+      "file_ra": ["nen/nen_vat_the__nguyen_ven.webp", "nen/nen_vat_the__trang_thai_2.webp"],
+      "ghi_chu": ""
+    },
+    {
+      "id": "mo_dau_boi_canh",
+      "loai": "clip_muse",
+      "trang_thai": "dat_moi",
+      "dung_o_chuong": [1],
+      "mo_ta": "Cảnh bối cảnh ..., máy đẩy chậm vào giữa",
+      "goc_may": "ngang tầm mắt, đẩy gần 10% trong suốt clip",
+      "thoi_luong_giay": 6,
+      "vung_neo": {},
+      "bien_the": [],
+      "cam": ["chữ, logo", "người nhận diện được"],
+      "kiem_cau_tao": [],
+      "file_ra": ["clip/mo_dau_boi_canh.mp4"]
+    },
+    {
+      "id": "bang_tong_hop",
+      "loai": "ma_claude",
+      "trang_thai": "khong_can_muse",
+      "dung_o_chuong": [8],
+      "mo_ta": "Bảng so sánh, Claude vẽ bằng mã. Muse không làm.",
+      "file_ra": []
+    }
+  ]
+}

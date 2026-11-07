@@ -1,0 +1,93 @@
+[
+ {
+  "id": 1,
+  "ten": "Bốn kiểu mất công suất",
+  "to": "3d",
+  "khoi": [
+   "TamPinLon"
+  ],
+  "text": "Tấm pin mới không giữ mãi công suất ghi trên nhãn. Có bốn cơ chế khác nhau làm nó yếu dần. Tên mỗi cơ chế chính là nguyên nhân gây ra nó. Đó là suy giảm do nắng đầu, do nắng và nhiệt, do điện áp cao, do tia cực tím. Mỗi cơ chế xảy ra ở một chỗ khác, vào lúc khác, và cách phòng cũng khác. Video này đặt bốn cơ chế cạnh nhau, mỗi cơ chế giữ một màu.",
+  "doc": "Tấm pin mới không giữ mãi công suất ghi trên nhãn. Có bốn cơ chế khác nhau làm nó yếu dần. Tên mỗi cơ chế chính là nguyên nhân gây ra nó. Đó là suy giảm do nắng đầu, do nắng và nhiệt, do điện áp cao, do tia cực tím. Mỗi cơ chế xảy ra ở một chỗ khác, vào lúc khác, và cách phòng cũng khác. Video này đặt bốn cơ chế cạnh nhau, mỗi cơ chế giữ một màu."
+ },
+ {
+  "id": 2,
+  "ten": "Bốn chỗ trong một tấm pin",
+  "to": "3d",
+  "khoi": [
+   "TamPinLon",
+   "TeBaoCat"
+  ],
+  "text": "Để thấy chúng khác nhau ở đâu, hãy cắt ngang một tấm pin. Từ trên xuống có kính, lớp nhựa bao, lớp chống phản xạ, đế silicon, rồi lớp mặt sau. Suy giảm do nắng đầu và suy giảm do nắng và nhiệt đều xảy ra trong đế silicon. Suy giảm do điện áp cao kéo ion từ kính và lớp bao xuống tế bào. Suy giảm do tia cực tím làm hỏng lớp phủ mỏng trên bề mặt tế bào.",
+  "doc": "Để thấy chúng khác nhau ở đâu, hãy cắt ngang một tấm pin. Từ trên xuống có kính, lớp nhựa bao, lớp chống phản xạ, đế xi-li-côn, rồi lớp mặt sau. Suy giảm do nắng đầu và suy giảm do nắng và nhiệt đều xảy ra trong đế xi-li-côn. Suy giảm do điện áp cao kéo ion từ kính và lớp bao xuống tế bào. Suy giảm do tia cực tím làm hỏng lớp phủ mỏng trên bề mặt tế bào."
+ },
+ {
+  "id": 3,
+  "ten": "Suy giảm do nắng đầu",
+  "to": "3d",
+  "khoi": [
+   "TeBaoCat"
+  ],
+  "text": "Suy giảm do nắng đầu xảy ra ngay những giờ đầu tấm pin ra nắng. Đế silicon loại p được pha bo, và trong đế còn có ô-xy. Khi có ánh sáng, nguyên tử bo kết với phân tử ô-xy thành một cặp. Mỗi cặp bẫy electron, nên electron không ra được mạch ngoài. Công suất mất vài phần trăm trong vài giờ đến vài ngày đầu, rồi dừng ở một mức. Đế loại n, pha phốt pho, gần như không bị kiểu này, vì không có bo.",
+  "doc": "Suy giảm do nắng đầu xảy ra ngay những giờ đầu tấm pin ra nắng. Đế xi-li-côn loại pê được pha bo, và trong đế còn có ô-xi. Khi có ánh sáng, nguyên tử bo kết với phân tử ô-xi thành một cặp. Mỗi cặp bẫy electron, nên electron không ra được mạch ngoài. Công suất mất vài phần trăm trong vài giờ đến vài ngày đầu, rồi dừng ở một mức. Đế loại en, pha phốt pho, gần như không bị kiểu này, vì không có bo."
+ },
+ {
+  "id": 4,
+  "ten": "Suy giảm do nắng và nhiệt",
+  "to": "3d",
+  "khoi": [
+   "TeBaoCat"
+  ],
+  "text": "Suy giảm do nắng và nhiệt cũng làm hỏng đế silicon, nhưng cần thêm nhiệt. Khi tấm pin vừa có nắng vừa nóng quá khoảng 50 độ C, điểm bẫy mới hình thành. Hydro trong tế bào có liên quan. Cơ chế chi tiết vẫn đang được nghiên cứu. Kiểu này chậm hơn kiểu do nắng đầu nhiều, kéo dài từ vài tháng đến vài năm. Tế bào PERC đời đầu từng mất tới khoảng 10%. Sau đó công suất hồi lại một phần, có khi hồi cả phần. Sản phẩm mới đã tối ưu quy trình, nên mất ít hơn nhiều.",
+  "doc": "Suy giảm do nắng và nhiệt cũng làm hỏng đế xi-li-côn, nhưng cần thêm nhiệt. Khi tấm pin vừa có nắng vừa nóng quá khoảng năm mươi độ xê, điểm bẫy mới hình thành. Hi-đrô trong tế bào có liên quan. Cơ chế chi tiết vẫn đang được nghiên cứu. Kiểu này chậm hơn kiểu do nắng đầu nhiều, kéo dài từ vài tháng đến vài năm. Tế bào pếch đời đầu từng mất tới khoảng mười phần trăm. Sau đó công suất hồi lại một phần, có khi hồi cả phần. Sản phẩm mới đã tối ưu quy trình, nên mất ít hơn nhiều."
+ },
+ {
+  "id": 5,
+  "ten": "Suy giảm do điện áp cao",
+  "to": "3d",
+  "khoi": [
+   "TeBaoCat"
+  ],
+  "text": "Tiếp theo là suy giảm do điện áp cao. Trong dãy pin, tế bào ở điện áp rất cao so với khung nhôm nối đất. Điện trường kéo ion natri từ kính và lớp bao xuống tế bào. Ion natri tạo đường rò điện, làm công suất tụt. Trời nóng và ẩm làm kiểu do điện áp cao nặng hơn. Ảnh phát quang điện cho thấy các tế bào tối đi, thường ở gần mép khung. Nhiều trường hợp, đảo chiều điện áp vào ban đêm giúp công suất hồi lại.",
+  "doc": "Tiếp theo là suy giảm do điện áp cao. Trong dãy pin, tế bào ở điện áp rất cao so với khung nhôm nối đất. Điện trường kéo ion na-tri từ kính và lớp bao xuống tế bào. Ion na-tri tạo đường rò điện, làm công suất tụt. Trời nóng và ẩm làm kiểu do điện áp cao nặng hơn. Ảnh phát quang điện cho thấy các tế bào tối đi, thường ở gần mép khung. Nhiều trường hợp, đảo chiều điện áp vào ban đêm giúp công suất hồi lại."
+ },
+ {
+  "id": 6,
+  "ten": "Suy giảm do tia cực tím",
+  "to": "3d",
+  "khoi": [
+   "TeBaoCat"
+  ],
+  "text": "Cuối cùng là suy giảm do tia cực tím. Lớp thụ động là lớp phủ mỏng, giữ cho electron ở bề mặt tế bào không bị mất. Tia cực tím xuyên qua kính và lớp bao, làm đứt liên kết trong lớp này. Kiểu này được báo cáo nhiều từ năm 2022 ở tế bào loại n như TOPCon và HJT. Loại PERC cũng bị. Thí nghiệm tăng tốc cho thấy mất vài phần trăm, rất khác nhau giữa các sản phẩm. Công suất hồi lại được một phần.",
+  "doc": "Cuối cùng là suy giảm do tia cực tím. Lớp thụ động là lớp phủ mỏng, giữ cho electron ở bề mặt tế bào không bị mất. Tia cực tím xuyên qua kính và lớp bao, làm đứt liên kết trong lớp này. Kiểu này được báo cáo nhiều từ năm hai nghìn không trăm hai mươi hai ở tế bào loại en như tóp con và hát di tê. Loại pếch cũng bị. Thí nghiệm tăng tốc cho thấy mất vài phần trăm, rất khác nhau giữa các sản phẩm. Công suất hồi lại được một phần."
+ },
+ {
+  "id": 7,
+  "ten": "Bốn đường theo thời gian",
+  "to": "do_thi",
+  "khoi": [
+   "CanhDoThi"
+  ],
+  "text": "Đặt bốn cơ chế lên cùng một trục thời gian. Suy giảm do nắng đầu là một bậc rơi trong những ngày đầu, rồi phẳng. Suy giảm do nắng và nhiệt võng xuống chậm trong nhiều tháng, rồi hồi lên một phần. Suy giảm do điện áp cao tụt dần khi điện áp còn cao, hồi lại khi đảo chiều điện áp. Suy giảm do tia cực tím tụt dần theo liều cộng dồn. Hình vẽ chỉ cho thấy hình dạng, không phải số đo của một tấm pin cụ thể.",
+  "doc": "Đặt bốn cơ chế lên cùng một trục thời gian. Suy giảm do nắng đầu là một bậc rơi trong những ngày đầu, rồi phẳng. Suy giảm do nắng và nhiệt võng xuống chậm trong nhiều tháng, rồi hồi lên một phần. Suy giảm do điện áp cao tụt dần khi điện áp còn cao, hồi lại khi đảo chiều điện áp. Suy giảm do tia cực tím tụt dần theo liều cộng dồn. Hình vẽ chỉ cho thấy hình dạng, không phải số đo của một tấm pin cụ thể."
+ },
+ {
+  "id": 8,
+  "ten": "Bảng so sánh cạnh nhau",
+  "to": "do_thi",
+  "khoi": [
+   "CanhDoThi"
+  ],
+  "text": "Bảng này gom bốn cơ chế lại. Suy giảm do nắng đầu đến từ cặp bo và ô-xy. Kiểu này xảy ra trong vài ngày đầu. Tế bào loại p pha bo bị nặng hơn. Mất xong thì dừng ở một mức. Cách phòng là pha gali thay bo. Suy giảm do nắng và nhiệt cần thêm nhiệt độ cao, có hydro liên quan. Kiểu này kéo dài từ vài tháng đến vài năm. Tế bào PERC bị nặng hơn. Công suất hồi lại một phần. Cách phòng là tối ưu quy trình nung. Suy giảm do điện áp cao đến từ ion natri bị kéo vào tế bào. Mức độ tuỳ điện áp và độ ẩm. Nặng nhẹ còn tuỳ cấu trúc tế bào. Nhiều trường hợp hồi lại được. Cách phòng là lớp bao điện trở cao và nối đất. Suy giảm do tia cực tím đến từ lớp thụ động bị phá. Kiểu này cộng dồn theo liều. Báo cáo nhiều ở TOPCon và HJT. Công suất hồi một phần. Cách phòng là lớp bao chắn tia cực tím.",
+  "doc": "Bảng này gom bốn cơ chế lại. Suy giảm do nắng đầu đến từ cặp bo và ô-xi. Kiểu này xảy ra trong vài ngày đầu. Tế bào loại pê pha bo bị nặng hơn. Mất xong thì dừng ở một mức. Cách phòng là pha ga-li thay bo. Suy giảm do nắng và nhiệt cần thêm nhiệt độ cao, có hi-đrô liên quan. Kiểu này kéo dài từ vài tháng đến vài năm. Tế bào pếch bị nặng hơn. Công suất hồi lại một phần. Cách phòng là tối ưu quy trình nung. Suy giảm do điện áp cao đến từ ion na-tri bị kéo vào tế bào. Mức độ tuỳ điện áp và độ ẩm. Nặng nhẹ còn tuỳ cấu trúc tế bào. Nhiều trường hợp hồi lại được. Cách phòng là lớp bao điện trở cao và nối đất. Suy giảm do tia cực tím đến từ lớp thụ động bị phá. Kiểu này cộng dồn theo liều. Báo cáo nhiều ở tóp con và hát di tê. Công suất hồi một phần. Cách phòng là lớp bao chắn tia cực tím."
+ },
+ {
+  "id": 9,
+  "ten": "Không có một đáp án chung",
+  "to": "3d",
+  "text": "Không kiểu nào áp dụng cho mọi tấm pin. Mức mất phụ thuộc loại tế bào, vật liệu bao, khí hậu và cách lắp. Lần tới đọc báo cáo độ tin cậy của tấm pin, hãy hỏi: nó đã được thử bốn kiểu này chưa?",
+  "doc": "Không kiểu nào áp dụng cho mọi tấm pin. Mức mất phụ thuộc loại tế bào, vật liệu bao, khí hậu và cách lắp. Lần tới đọc báo cáo độ tin cậy của tấm pin, hãy hỏi: nó đã được thử bốn kiểu này chưa?",
+  "khoi": [
+   "TamPinLon"
+  ]
+ }
+]

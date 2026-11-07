@@ -2410,6 +2410,35 @@
    ],
    "dung_o": [],
    "ghi_chu": "Chờ Trung duyệt hướng mỹ thuật kcn_dong_bang; 4 mặt bằng còn lại (kcn_ven_bien, kcn_trung_du, ccn_ven_lo, ccn_lang_nghe) dựng sau. Lắp trang video bằng khu_cong_nghiep/lap_trang.py, không dùng chep_kho.py. Xuất với --co-chromium=--use-angle=metal; 1,1–1,8 giây máy mỗi giây video ở 1920×1080."
+  },
+  {
+   "ten": "nen_anh",
+   "loai": "nen_mong",
+   "linh_vuc": "chung",
+   "file": [
+    "chung/nen_anh.js"
+   ],
+   "can": [
+    "kho_nen"
+   ],
+   "phien_ban": "1.0",
+   "tham_so": {
+    "nap": "{ phieu, thuMuc='nen/' } nạp ảnh mọi cảnh nen_muse của phiếu nhúng trong trang (#phieu_dat_hinh)",
+    "canh": "(id, cha, { lich: [{t, bien_the, mo}], may_quay: [{t, s, tam}] }) trả về { el, svg, html, ngoai, vung, diem, raManHinh, seek }",
+    "vung": "(id, tên vùng) -> { x1, y1, x2, y2, w, h, cx, cy }",
+    "chiKhung": "(id | null) vẽ đè khung bố cục xám của cảnh lên #stage để chụp"
+   },
+   "trang_thai": "dang_dung",
+   "dot": 2,
+   "nguon_gom": "viết mới 08/11/2026 cho luồng Claude–Muse (muse/HUONG_DAN_MUSE.md)",
+   "video_can": [
+    "pin_mat_troi"
+   ],
+   "dung_o": [
+    "xuong_html/pin_mat_troi"
+   ],
+   "ghi_chu": "Lớp ảnh nền tả thực do Muse tạo: biến thể hoà theo giây, máy quay đẩy gần vào vùng neo, lớp cơ chế SVG/HTML đi theo máy quay; thiếu ảnh thì hiện khung xám làm đường lui. Xuất khung bố cục: node scripts/khung_bo_cuc.mjs <thư mục dựng>.",
+   "duyet": "Claude tự kiểm bằng xuong_html/pin_mat_troi 08/11/2026; chờ Trung xem."
   }
  ]
 }

@@ -4,6 +4,8 @@ Dùng ở bước 6 của skill `lam-video-ngan-hang`, sau khi đã qua cổng m
 
 **Bản 2 (03/11/2026, tối).** Bản 1 chỉ hỏi chuyển động, số chữ, cỡ chữ; người soát tả lại vật trên hình rồi tự gán nghĩa ("vầng hào quang báo động đỏ") và chấm đạt cả 8 chương của N301, dù hình không giải thích khái niệm. Bản 2 bắt người soát đoán khái niệm từ ảnh TRƯỚC khi đọc kịch bản (phép thử tắt tiếng, luật 2 của `chuan_hinh_video_ngang.md`), rồi mới so với câu cơ chế; đoán sai là mức nặng.
 
+**Bổ sung 08/11/2026 (luồng Claude–Muse).** Thêm cột và quy tắc "ảnh tả thực đúng cấu tạo": video có ảnh nền do Muse tạo (file `phieu_dat_hinh.json` trong thư mục dựng) thì người soát đối chiếu ảnh với `mo_ta` và `kiem_cau_tao` của phiếu. Lý do: ở bản Muse dựng lại video pin mặt trời (07/11/2026), ảnh chương "suy giảm do nắng đầu" là khối pha lê có đốm sáng thay cho mặt cắt tế bào silicon; người xem tin ảnh tả thực hơn ảnh vẽ nên ảnh sai cấu tạo có hại hơn.
+
 Cách mở phiên soát: trong app Antigravity, mở hội thoại MỚI trong project VideoNganHang và dán nội dung "Phiếu" bên dưới (thay `<…>`), hoặc chạy ở gốc project:
 
 ```bash
@@ -24,15 +26,15 @@ Bước 2. Mở hai ảnh mẫu:
 
 Bước 3. Đọc luật ở `skills/lam-video-ngan-hang/chuan_hinh_video_ngang.md` mục 2.
 
-Bước 4. Mở `<thư mục dựng>/nhip.json` (mảng `nhip`, trường `co_che` của từng chương) và kịch bản `<thư mục video>/tai_nguyen/kich_ban/<tên>.chuong.json`. Nếu `nhip.json` không có `co_che` thì tự rút một câu cơ chế từ kịch bản chương đó và ghi rõ là tự rút.
+Bước 4. Mở `<thư mục dựng>/nhip.json` (mảng `nhip`, trường `co_che` của từng chương) và kịch bản `<thư mục video>/tai_nguyen/kich_ban/<tên>.chuong.json`. Nếu `nhip.json` không có `co_che` thì tự rút một câu cơ chế từ kịch bản chương đó và ghi rõ là tự rút. Nếu thư mục dựng có `phieu_dat_hinh.json` (ảnh nền tả thực do Muse tạo), mở thêm phiếu: với mỗi cảnh `nen_muse` đọc `mo_ta` và từng điều `kiem_cau_tao`.
 
 Bước 5. Với MỖI chương, trả lời đúng bảng này (một dòng mỗi chương):
 
-| Chương | Câu đoán ở bước 1 | Câu cơ chế (`co_che` hoặc tự rút) | Đoán có khớp cơ chế không | Hình chính là gì (vật gì đang làm gì) và có phải chỉ là biểu tượng nhân vật (nhà xưởng, toà nhà, người) không | Vật không mang nghĩa (từ bước 1) | Chuyển động giữa hai ảnh có phải là đại lượng đang đổi không | Số từ trên hình (đếm tay, không tính phụ đề) | Chữ nào khó đọc trên điện thoại | Mức: nặng / vừa / nhẹ / đạt |
+| Chương | Câu đoán ở bước 1 | Câu cơ chế (`co_che` hoặc tự rút) | Đoán có khớp cơ chế không | Hình chính là gì (vật gì đang làm gì) và có phải chỉ là biểu tượng nhân vật (nhà xưởng, toà nhà, người) không | Vật không mang nghĩa (từ bước 1) | Chuyển động giữa hai ảnh có phải là đại lượng đang đổi không | Số từ trên hình (đếm tay, không tính phụ đề) | Chữ nào khó đọc trên điện thoại | Ảnh tả thực đúng cấu tạo không (chỉ chương có ảnh nền Muse: đủ bộ phận, đúng thứ tự, đúng hình dạng theo `kiem_cau_tao`; ghi điều trượt; chương không có ảnh nền ghi "không áp") | Mức: nặng / vừa / nhẹ / đạt |
 
 Quy tắc chấm:
-- Nặng: câu đoán ở bước 1 không khớp câu cơ chế; hình chính chỉ là biểu tượng nhân vật, không vẽ các đại lượng trong câu cơ chế; chuyển động duy nhất là vật trang trí (vòng sáng phập phồng, chấm chạy, vật lắc) chứ không phải đại lượng đang đổi; hình chính là thẻ chữ, bảng chữ, đoạn văn; chữ chồng lên nhau; có tên, logo ngân hàng thật.
-- Vừa: có vật không mang nghĩa nằm cạnh một hình chính đúng; hơn 12 từ trên hình; có chữ nhỏ khó đọc; số trên hình khác file `du_kien.json`; nhãn thiếu tới mức phải đọc phụ đề mới biết khối nào là đại lượng nào.
+- Nặng: câu đoán ở bước 1 không khớp câu cơ chế; hình chính chỉ là biểu tượng nhân vật, không vẽ các đại lượng trong câu cơ chế; chuyển động duy nhất là vật trang trí (vòng sáng phập phồng, chấm chạy, vật lắc) chứ không phải đại lượng đang đổi; hình chính là thẻ chữ, bảng chữ, đoạn văn; chữ chồng lên nhau; có tên, logo ngân hàng thật; ảnh tả thực sai cấu tạo (trượt một điều `kiem_cau_tao`, ví dụ lát silicon vẽ thành khối pha lê, thiếu hoặc đảo lớp); ảnh tả thực có chữ, logo; các chương cùng so một vật mà ảnh nền đổi góc máy hoặc đổi vật.
+- Vừa: có vật không mang nghĩa nằm cạnh một hình chính đúng; lớp cơ chế lệch khỏi phần vật thể nó bám (hạt bay ngoài lớp kính, mũi tên chỉ sai lớp); ảnh nền đứng yên cả chương mà lớp cơ chế không chạy; hơn 12 từ trên hình; có chữ nhỏ khó đọc; số trên hình khác file `du_kien.json`; nhãn thiếu tới mức phải đọc phụ đề mới biết khối nào là đại lượng nào.
 - Nhẹ: lệch căn, khoảng cách, màu chưa đẹp.
 
 Bước 6. Cuối cùng viết: số chương nặng, vừa, nhẹ, đạt; và kết luận một dòng "ĐẠT để chạy pha máy" khi không còn nặng và không quá 2 chương vừa, nếu không thì "KHÔNG ĐẠT, sửa các chương: …". Đừng khen chung chung; mỗi nhận xét phải trỏ tới một ảnh cụ thể. Không tự gán nghĩa cho một vật mà hình không nói rõ: vật nào phải đọc phụ đề mới hiểu thì ghi là vật không mang nghĩa.

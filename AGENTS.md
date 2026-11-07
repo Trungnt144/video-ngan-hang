@@ -21,6 +21,7 @@ Xưởng làm video giải thích thuật ngữ và nghiệp vụ ngân hàng ch
 |---|---|
 | Làm một video mới (chủ đề từ sổ nợ hoặc Trung vừa gửi) | skill `lam-video-ngan-hang` |
 | Làm video hoặc một lô video bằng Claude Code theo cách ba chặng (phiên giữ lô giao bốn tác tử `.claude/agents/ba-chang-*`; 28,4 USD mỗi video ở Media 05/11/2026). Chỉ Claude Code chạy được; Antigravity, Hermes dùng skill `lam-video-ngan-hang` | skill `skills/lam-video-ba-chang/` (tác tử không nạp file này: sửa quy tắc cứng thì sửa cả `tham_chieu/quy_tac_chung.md` mục 0) |
+| Video có ảnh nền tả thực do Muse tạo (phân cảnh theo câu, phiếu đặt hình, khung bố cục xám, nghiệm thu ảnh); quy tắc giao cho Muse | `skills/lam-video-ba-chang/tham_chieu/muse.md`; quy tắc Muse đọc ở `muse/` (`HUONG_DAN_MUSE.md`); thư viện `tai_san/kho_hinh_chung/chung/nen_anh.js`, lệnh `node scripts/khung_bo_cuc.mjs <thư mục dựng>`; video thử `xuong_html/pin_mat_troi/` |
 | Quy tắc chiến dịch ngân hàng | `tai_san/chien_dich_ngan_hang/quy_tac_chien_dich.md` |
 | Hỏi lại cho rõ yêu cầu; câu hỏi mẫu | `02_lam_ro_yeu_cau.md` |
 | Viết kịch bản, kiểm chứng nguồn, quy tắc lời đọc | `03_kich_ban_va_loi_viet.md` |

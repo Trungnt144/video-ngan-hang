@@ -1,0 +1,124 @@
+{
+  "phien_ban_mau": "1.0",
+  "ma_video": "pin_mat_troi",
+  "ngay_lap": "2026-11-08",
+  "vong": 0,
+  "tong_quan": "Dựng lại video 'Những nguyên nhân nào làm suy giảm chất lượng tấm pin mặt trời' (kênh Chuyện nghề Điện, bản Claude 28/10/2026). Video so bốn cơ chế suy giảm (do nắng đầu, do nắng và nhiệt, do điện áp cao, do tia cực tím) trên CÙNG MỘT mặt cắt tấm pin, nên cần một tấm gốc và bốn biến thể cùng góc máy. Claude vẽ hạt bo, ô-xy, hydro, ion natri, tia cực tím, mũi tên điện trường lên trên ảnh theo từng câu. Chương 7, 8 là đồ thị và bảng, Claude vẽ bằng mã. Không cần clip, không cần hình thu nhỏ.",
+  "phong_cach": "A_studio",
+  "kich_thuoc": [1920, 1080],
+  "dinh_dang": "webp",
+  "mau_co_che": {
+    "nang_dau": "#2E5BD8",
+    "nang_va_nhiet": "#E0662A",
+    "dien_ap_cao": "#2FA8FF",
+    "tia_cuc_tim": "#8A4DFF"
+  },
+  "vung_sach": {
+    "phu_de": [0, 900, 1920, 1080],
+    "chu_thich": [1400, 120, 1860, 860]
+  },
+  "canh": [
+    {
+      "id": "nen_mat_cat",
+      "loai": "nen_muse",
+      "trang_thai": "dat_moi",
+      "dung_o_chuong": [2, 3, 4, 5, 6],
+      "mo_ta": "Mặt cắt ngang một tấm pin mặt trời silicon tinh thể, cắt thẳng qua cả tấm, đặt trên sàn phòng chụp. Mặt cắt quay thẳng về phía máy, phẳng như cắt bằng dao, các ranh giới lớp là đường ngang thẳng. Phía sau mặt cắt thấy một dải hẹp của mặt trên tấm pin (mặt kính) chạy lùi vào trong. Từ trên xuống, các lớp dính liền nhau: (1) kính cường lực trong, dày nhất, cạnh cắt hơi xanh lục nhạt; (2) lớp nhựa bao EVA trong, hơi đục; (3) lớp phủ mỏng màu xanh đậm gần đen trên mặt tế bào (lớp chống phản xạ và lớp thụ động), trên đó có các gờ lưới bạc nhỏ hình chữ nhật cách đều nhau khoảng 80 điểm ảnh; (4) đế silicon: một lát phẳng liền màu xám xanh đậm, bề mặt mờ, đồng nhất; (5) lớp nhựa bao EVA dưới; (6) tấm nền mặt sau màu trắng sữa. Bên trái: thanh khung nhôm xước mịn, mặt cắt hình chữ C ôm mép trái của cả tấm (gờ trên đè lên mặt kính, gờ dưới đỡ dưới tấm nền mặt sau), mặt cắt nhôm lộ ra phía máy. Độ dày các lớp phóng to tượng trưng theo đúng các ô trong khung bố cục, không theo tỷ lệ thật.",
+      "goc_may": "nhìn thẳng vào mặt cắt, máy cao hơn mặt trên tấm pin khoảng 15–20 độ để thấy một dải mặt kính phía sau; tiêu cự tương đương 90 mm, ít méo phối cảnh. Mọi biến thể giữ nguyên góc máy này.",
+      "anh_sang": "theo phong cách A: đèn chính mềm từ trên bên phải, đèn viền lạnh làm sáng cạnh kính và cạnh nhôm; mặt cắt được chiếu đều để từng lớp phân biệt rõ.",
+      "khung_bo_cuc": "khung_bo_cuc/nen_mat_cat.png",
+      "tham_chieu": [
+        { "file": "tham_chieu/mat_cat_ban_claude.jpg", "lay": "hướng nhìn thẳng vào mặt cắt, các lớp xếp ngang, vật thể chiếm nửa trái và giữa khung", "khong_lay": "màu phẳng, độ dày từng lớp, các chấm tròn, sàn lưới, chữ" },
+        { "file": "tham_chieu/hero.jpg", "lay": "nền, sàn bóng, ánh sáng, chất kính và chất nhôm của phong cách A", "khong_lay": "góc nhìn ba phần tư, tấm pin nguyên tấm" },
+        { "file": "tham_chieu/pin_a_mat_cat.jpg", "lay": "chất liệu từng lớp (kính sần, EVA trong, tế bào xanh đậm có lưới bạc, tấm nền trắng)", "khong_lay": "các lớp tách rời bay lơ lửng, hộp nối và dây cáp, thiếu lớp EVA dưới tế bào" }
+      ],
+      "vung_neo": {
+        "mat_tren": [300, 200, 1340, 300],
+        "kinh": [300, 300, 1340, 410],
+        "eva_tren": [300, 410, 1340, 450],
+        "lop_phu_be_mat": [300, 450, 1340, 466],
+        "de_silicon": [300, 466, 1340, 616],
+        "eva_duoi": [300, 616, 1340, 652],
+        "lop_mat_sau": [300, 652, 1340, 692],
+        "khung_nhom": [140, 270, 300, 730],
+        "mep_khung": [300, 450, 620, 616]
+      },
+      "ten_vung": {
+        "mat_tren": "mặt trên tấm pin (kính)",
+        "kinh": "kính cường lực",
+        "eva_tren": "nhựa bao EVA trên",
+        "lop_phu_be_mat": "lớp chống phản xạ và thụ động, lưới bạc",
+        "de_silicon": "đế silicon (lát phẳng)",
+        "eva_duoi": "nhựa bao EVA dưới",
+        "lop_mat_sau": "tấm nền mặt sau trắng",
+        "khung_nhom": "khung nhôm chữ C",
+        "mep_khung": "tế bào sát khung"
+      },
+      "bien_the": [
+        { "ten": "nguyen_ven", "mo_ta": "Tấm gốc. Vật liệu bình thường, không có hiệu ứng màu, không phát sáng." },
+        { "ten": "nong_cam", "mo_ta": "Sửa từ tấm gốc. Chỉ lớp de_silicon ngả màu nâu cam ấm đều trên cả dải, như đang nóng (pha màu #E0662A, vẫn thấy chất silicon); ánh sáng chiếu lên mat_tren ấm hơn một chút. Không sóng nhiệt, không lửa, không khói, không đốm sáng. Kính, EVA, tấm nền, khung nhôm giữ nguyên màu." },
+        { "ten": "mep_khung_xanh_dien", "mo_ta": "Sửa từ tấm gốc. Khung nhôm có viền ánh xanh điện (#2FA8FF) dọc mép tiếp giáp tấm pin; vùng mep_khung (tế bào và lớp phủ sát khung, từ x=300 tới x=620) ánh xanh điện mạnh nhất sát khung và nhạt dần, tới x=700 thì hết hẳn; phần kính ngay trên mep_khung ánh xanh rất nhạt. Phần giữa và bên phải tấm giữ nguyên như tấm gốc. Không vẽ tia, hạt, dòng điện." },
+        { "ten": "kinh_anh_tim", "mo_ta": "Sửa từ tấm gốc. Ánh sáng tím (#8A4DFF) chiếu từ trên xuống: mat_tren ánh tím, kính và EVA trên nhuốm tím trong suốt nhạt, lop_phu_be_mat thành một đường tím sáng mảnh chạy hết chiều ngang. Đế silicon và các lớp dưới giữ nguyên màu. Không vẽ tia rời, không đốm sáng." }
+      ],
+      "cam": [
+        "chữ, số, nhãn, logo, tem trên tấm pin",
+        "đổi góc máy, khung hình, bố cục giữa các biến thể",
+        "hộp nối, dây cáp, giá đỡ, người, tay",
+        "các lớp tách rời, bay lơ lửng",
+        "hạt sáng, tia sáng, dòng điện, mũi tên, sóng nhiệt vẽ sẵn",
+        "vật thể trong vung_sach (dải dưới y >= 900 và cột phải x 1400–1860)"
+      ],
+      "kiem_cau_tao": [
+        "Từ trên xuống đủ sáu lớp đúng thứ tự: kính, EVA trên, lớp phủ xanh đậm có lưới bạc, đế silicon, EVA dưới, tấm nền mặt sau trắng",
+        "Đế silicon là một lát phẳng liền, đồng nhất, dày không quá 1,5 lần lớp kính; không phải khối pha lê, không có đốm sáng, không chia thành hộp rỗng",
+        "Lưới bạc là các gờ nhỏ nằm trên mặt đế silicon, cách đều; không nằm trong kính",
+        "Khung nhôm hình chữ C ôm mép trái cả tấm: gờ trên đè lên mặt kính, gờ dưới đỡ dưới tấm nền mặt sau",
+        "Mặt cắt phẳng, ranh giới lớp là đường ngang thẳng song song mép ảnh",
+        "Bốn biến thể chồng lên nhau trùng viền (lệch tối đa 8 điểm ảnh)"
+      ],
+      "file_ra": [
+        "nen/nen_mat_cat__nguyen_ven.webp",
+        "nen/nen_mat_cat__nong_cam.webp",
+        "nen/nen_mat_cat__mep_khung_xanh_dien.webp",
+        "nen/nen_mat_cat__kinh_anh_tim.webp"
+      ],
+      "ghi_chu": "Chương 3 và chương 6, Claude đẩy máy quay gần tới khoảng 1,6 lần vào đế silicon và lớp phủ. Nếu công cụ xuất được 3840×2160 thì gửi thêm bản đó cùng tên, đuôi _4k.webp (không bắt buộc)."
+    },
+    {
+      "id": "nen_hero",
+      "loai": "nen_muse",
+      "trang_thai": "dung_lai",
+      "dung_o_chuong": [1, 9],
+      "mo_ta": "Tấm pin nguyên tấm, góc ba phần tư, phong cách A. Dùng lại hero.webp của bộ ảnh 07/11/2026 (02_Muse_gui_Mac/Pin_mat_troi_2026.11.07/anh/hero.webp). Muse không làm lại.",
+      "file_co_san": "nen/hero.webp",
+      "cat": [0, 40, 1920, 1080],
+      "khung_bo_cuc": "khung_bo_cuc/nen_hero.png",
+      "vung_neo": {
+        "mat_tam_pin": [300, 60, 1500, 960],
+        "khung_nhom_phai": [1480, 0, 1620, 1000]
+      },
+      "ten_vung": { "mat_tam_pin": "mặt kính, lưới tế bào", "khung_nhom_phai": "khung nhôm cạnh phải" },
+      "vung_sach": { "chu_thich": [1640, 120, 1900, 860] },
+      "bien_the": [],
+      "kiem_cau_tao": [],
+      "file_ra": [],
+      "ghi_chu": "Claude đã nghiệm thu 08/11/2026: đạt có điều kiện. Ảnh khổ 1920×1280, Claude cắt 1920×1080 từ y=40. Phản chiếu tấm pin nằm trong dải phụ đề; Claude phủ dải tối mờ dưới phụ đề. Cột chú thích dời sang x 1640–1900 vì tấm pin chiếm tới x≈1600."
+    },
+    {
+      "id": "do_thi_bon_duong",
+      "loai": "ma_claude",
+      "trang_thai": "khong_can_muse",
+      "dung_o_chuong": [7],
+      "mo_ta": "Đồ thị bốn đường công suất theo thời gian, Claude vẽ bằng mã. Muse không làm.",
+      "file_ra": []
+    },
+    {
+      "id": "bang_so_sanh",
+      "loai": "ma_claude",
+      "trang_thai": "khong_can_muse",
+      "dung_o_chuong": [8],
+      "mo_ta": "Bảng bốn cột năm hàng, Claude vẽ bằng mã. Muse không làm.",
+      "file_ra": []
+    }
+  ]
+}

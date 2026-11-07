@@ -29,6 +29,7 @@ Skill này dành cho **phiên giữ lô**: phiên Claude Code mở tại gốc `
 | `tham_chieu/chang_b.md` | `ba-chang-dung` | sửa câu "nghe tai", dựng trang theo từng chương, ảnh tĩnh, máy kiểm, gọi chuỗi kết xuất |
 | `tham_chieu/soat.md` | `ba-chang-soat` | soát chữ, hình, nhạc trên bản nháp |
 | `tham_chieu/chang_c.md` | `ba-chang-sua` | sửa hết lời theo soát, giọng, máy kiểm, kết xuất một lần, chữ đăng, hình thu nhỏ |
+| `tham_chieu/muse.md` | `ba-chang-dung` (chặng B0, chặng B), `ba-chang-soat` (nghiệm thu), chỉ khi video có ảnh nền Muse | phân cảnh theo câu, phiếu đặt hình, khung bố cục xám, đẩy Drive; nghiệm thu ảnh Muse; dựng trên ảnh nền |
 | `kenh/<kênh>.md` | mọi tác tử, theo lời nhắn | khuôn kịch bản, khuôn trang, bảng màu, câu cuối, từ điển đọc, nhạc, danh sách phát. Hiện có `kenh/chuyen_nghe_ngan_hang.md`; kênh mới theo `kenh/README.md` |
 
 ## Luồng (phiên giữ lô làm theo)
@@ -37,7 +38,10 @@ Skill này dành cho **phiên giữ lô**: phiên Claude Code mở tại gốc `
 |---|---|---|---|---|
 | A | `ba-chang-kich-ban` (Opus 5.5), ngữ cảnh mới | nguồn, kịch bản, kiểm lời đọc, gọi chuỗi giọng chạy nền | đã gọi `chuoi_giong.py --nen` | `out/may/chang_a.md` |
 | máy | `scripts/chuoi_giong.py` | sinh giọng, quét Whisper hai lề, đọc lại câu lệch | `out/may/giong.trang_thai.json` báo `xong` | `out/may/giong.bao_cao.md` |
-| B | `ba-chang-dung` (Opus 5.5), ngữ cảnh mới | sửa lời câu "nghe tai", dựng trang, ảnh tĩnh, máy kiểm trang, gọi chuỗi kết xuất chạy nền | đã gọi `chuoi_ket_xuat.py --nen` | `out/may/chang_b.md` |
+| B0 (chỉ video có ảnh nền Muse) | `ba-chang-dung`, ngữ cảnh mới, lời nhắn "Chặng B0"; chạy song song với chuỗi giọng | phân cảnh theo câu (mỗi cảnh gắn `nen_muse` / `clip_muse` / `ma_claude`), `phieu_dat_hinh.json`, trang khung, khung bố cục xám xuất từ trang (`scripts/khung_bo_cuc.mjs`), đẩy Drive `01_Mac_gui_Muse/<mã video>/` | đã đẩy Drive | `out/may/chang_b0.md` (có câu nhắn cho Muse) |
+| Muse | Trung dán câu nhắn cho Muse | Muse tạo tấm nền, biến thể theo phiếu, đẩy `02_Muse_gui_Mac/<mã video>/` | Trung báo "Muse đã gửi" | `bao_cao_tai_nguyen.json` |
+| nghiệm thu (chỉ video có ảnh nền Muse) | `ba-chang-soat`, lời nhắn "Nghiệm thu ảnh Muse" | đọc từng ảnh, đối chiếu phiếu và bảng kiểm (đúng cấu tạo, vùng neo, vùng sạch, không chữ, cùng góc máy); trượt thì `phieu_sua.json`, tối đa hai vòng rồi chuyển cảnh sang `ma_claude` | ghi xong `nghiem_thu_muse.md` | `xuong_html/<mã>_<tên>/nghiem_thu_muse.md` |
+| B | `ba-chang-dung` (Opus 5.5), ngữ cảnh mới | sửa lời câu "nghe tai", dựng trang (video có ảnh nền Muse: lớp cơ chế đặt lên ảnh theo vùng neo, `tham_chieu/muse.md` mục 3), ảnh tĩnh, máy kiểm trang, gọi chuỗi kết xuất chạy nền | đã gọi `chuoi_ket_xuat.py --nen` | `out/may/chang_b.md` |
 | máy | `scripts/chuoi_ket_xuat.py` | tạo nhịp, nối lại nhạc khi video dài hơn nhạc, kiểm trang, pha máy, đo, chép bản nháp, nghe mọi câu trên tiếng có nhạc | `out/may/ket_xuat.trang_thai.json` báo `xong` | `out/may/ket_xuat.bao_cao.md` |
 | soát | `ba-chang-soat` (Opus 5.5), không dựng video này | soát chữ, hình (bảng ảnh pha máy, giây đầu chương), nhạc độc lập trên bản nháp; giọng do máy và chặng C | ghi xong file soát | `tai_nguyen/ban_nhap/<tên>_soat_doc_lap.md` |
 | C | `ba-chang-sua` (Sonnet 5.5), ngữ cảnh mới | sửa hết lời theo danh sách soát, đọc lại giọng, máy kiểm, kết xuất một lần, chữ đăng, hình thu nhỏ, `nguon_goc.md`, danh sách mốc "nghe tai" | bản nháp mới, commit | `out/may/chang_c.md` |
@@ -68,6 +72,7 @@ Soát bằng Opus: ở lô 11, Sonnet sót lỗi vừa sai nội dung ở cả N
 
 1. Giao `ba-chang-kich-ban` (chạy nền) bằng lời nhắn mẫu dưới.
 2. Tác tử báo xong: đọc `out/may/chang_a.md`. Chờ chuỗi giọng bằng lệnh Bash chạy nền (`run_in_background`): `python3 -I scripts/chuoi_ket_xuat.py <thư mục dựng> <mã> --cho-giong --cho-giay 3300`; app gọi lại phiên khi lệnh xong. Mã thoát 3 thì chạy lại lệnh chờ; mã 1 thì đọc `out/may/giong.bao_cao.md` và nhật ký, báo Trung.
+2a. **Video có ảnh nền Muse** (file lô hoặc Trung ghi; `tham_chieu/muse.md`): ngay sau chặng A, giao `ba-chang-dung` với lời nhắn thêm dòng "Chặng B0: phân cảnh và phiếu đặt hình. Phong cách Muse: A_studio. Mã video trên Drive: <ma_video>". Xong: đọc `out/may/chang_b0.md`, báo Trung đường Drive và câu nhắn cho Muse (Muse không có API, Trung dán tay). Trung báo Muse đã gửi: giao `ba-chang-soat` với lời nhắn "Nghiệm thu ảnh Muse"; còn ảnh trượt thì báo Trung đẩy `phieu_sua.json` cho Muse (tối đa hai vòng). Chặng B chỉ giao khi mọi cảnh `nen_muse` đã đạt hoặc đã chuyển `ma_claude`. Video kênh Ngân hàng: Muse chỉ hợp cảnh đời thực, nhân vật minh hoạ, hình thu nhỏ; không giao Muse hình cơ chế.
 3. Giao `ba-chang-dung`. Xong: đọc `chang_b.md`, chờ chuỗi kết xuất bằng `--cho --cho-giay 3300` chạy nền như trên.
 4. Giao `ba-chang-soat` (model Opus của file tác tử). Xong: đọc dòng kết luận và bảng lỗi nặng, vừa của file soát.
 5. Giao `ba-chang-sua`. Xong: đọc `chang_c.md`; kiểm bản nháp có ở ngoài cùng thư mục sản phẩm.
@@ -88,6 +93,7 @@ Lối viết: KB-xx (video lẻ: mã Trung chọn ở cửa chọn 1) · Tổ h�
 Điểm Trung đã chốt: <chép dòng của video trong file rà trước, hoặc "không">
 [chặng A, video lẻ có cửa duyệt: Dừng trước giọng.]
 [soát: ghi file tai_nguyen/ban_nhap/<ngày>.<tên>_soat_doc_lap.md]
+[video có ảnh nền Muse: Có ảnh nền Muse (skills/lam-video-ba-chang/tham_chieu/muse.md). Mã video trên Drive: <ma_video>. Chặng B0: phân cảnh và phiếu đặt hình | Nghiệm thu ảnh Muse, vòng <n>]
 ```
 
 Tác tử tự đọc file của mình theo file tác tử; lời nhắn không chép quy tắc.
