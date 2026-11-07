@@ -1176,7 +1176,7 @@
     {
       "ma": "BC-14",
       "ten": "Ba tầng dọc",
-      "mo_ta": "Nền một màu (lấy màu nền của video ngang); tiêu đề hai dòng in hoa (vàng viền đen, đỏ viền trắng) đứng yên ở y 330–560; hình ngang rộng 900 điểm ảnh ở giữa (x 90–990, từ y 660); phụ đề 87 điểm ảnh có viền, từng chữ nảy lên khi được đọc, ngay dưới hình; chừa trống trên 320, dưới 420 và mỗi bên 90 điểm ảnh (ứng dụng Facebook cắt khoảng 60 điểm ảnh mỗi bên, đo 02/11/2026). Ghép từ video ngang YouTube đã xong bằng scripts/ghep_ba_tang.py, không dựng lại cảnh",
+      "mo_ta": "Nền một màu (lấy màu nền của video ngang); tiêu đề hai dòng in hoa (vàng viền đen, đỏ viền trắng) đứng yên ở y 330–580; hình ngang rộng 900 điểm ảnh ở giữa (x 90–990, từ y 660); phụ đề 87 điểm ảnh có viền, từng chữ nảy lên khi được đọc, ngay dưới hình; chừa trống trên 320, dưới 420 và mỗi bên 90 điểm ảnh (ứng dụng Facebook cắt khoảng 60 điểm ảnh mỗi bên, đo 02/11/2026). Ghép từ video ngang YouTube đã xong bằng scripts/ghep_ba_tang.py, không dựng lại cảnh",
       "kho": [
         "doc"
       ],

@@ -2,6 +2,13 @@
 
 python3 -I ghep_ba_tang.py <video ngang> <thoi_gian.json> <tu giây> <tới giây> <dòng 1> <dòng 2> <file ra> [mau_nen] [--doc <video dọc 1080x1920>]
 
+--y-tieu-de N, --y-phu-de N: đặt lại mép trên dòng 1 tiêu đề (mặc định 345) và tâm trên của phụ đề
+(mặc định theo chế độ); dùng khi hình dọc tự dựng chiếm vùng khác y 600–1240 (ví dụ bố cục lấp khung 4:5).
+
+--khong-duoi: không thêm 2,5 giây lời mời xem bản đầy đủ (bản Reels đã là bản đầy đủ, hoặc mẫu ngắn để chốt).
+
+--doc-da-cat: video --doc đã cắt sẵn, bắt đầu đúng ở <tu giây> (không tua theo mốc bản ngang).
+
 --doc: dùng video dọc đã dựng lại khổ 1080x1920 (nội dung trong x 90–990, y 600–1240) làm hình,
 tiếng vẫn lấy từ video ngang; phụ đề đặt ở y 1270, lệch trái để tránh cột nút bấm bên phải của Facebook.
 """
@@ -16,18 +23,39 @@ CAT_DAY = 900       # bỏ dải phụ đề cũ 900–1080 của khung ngang
 # nên hình và chữ nằm trong x 90–990.
 RONG = 900
 Y_HINH = 660
+# Dòng 2 cách dòng 1 bằng 1,55 lần cỡ chữ: ở 1,35 viền trắng của dòng 2 (dấu Ê, Ì, Ế) đè lên
+# dấu nặng dưới Ạ, Ụ của dòng 1 (Trung báo 05/11/2026, N212). Dòng 2 kết thúc khoảng y 575, trên hình.
+GIAN_DONG = 1.55
 Y_PHU_DE = Y_HINH + round(RONG * CAT_DAY / 1920 / 2) * 2 + 70
 
 thamso = sys.argv[1:]
 doc = None
 if '--doc' in thamso:
     i = thamso.index('--doc'); doc = thamso[i + 1]; del thamso[i:i + 2]
+y_td = y_pd = None
+doc_da_cat = '--doc-da-cat' in thamso
+khong_duoi = '--khong-duoi' in thamso
+if khong_duoi:
+    thamso.remove('--khong-duoi')
+    DUOI = 0
+if doc_da_cat:
+    thamso.remove('--doc-da-cat')
+for co_ten in ('--y-tieu-de', '--y-phu-de'):
+    if co_ten in thamso:
+        i = thamso.index(co_ten); gt = int(thamso[i + 1]); del thamso[i:i + 2]
+        if co_ten == '--y-tieu-de':
+            y_td = gt
+        else:
+            y_pd = gt
 video, tg, t0, t1, dong1, dong2, ra = thamso[:7]
 t0, t1 = float(t0), float(t1)
 nen = thamso[7] if len(thamso) > 7 else '0x001640'
 X_PHU_DE = 540
 if doc:
     Y_PHU_DE, X_PHU_DE = 1270, 495
+if y_pd is not None:
+    Y_PHU_DE = y_pd
+Y_TIEU_DE = 345 if y_td is None else y_td
 
 
 def chia_cum(tu):
@@ -89,7 +117,8 @@ for a, b in zip(cum, cum[1:]):
     a[1] = min(a[1], b[0])
 
 dai = t1 - t0
-cum.append([dai + 0.2, dai + DUOI, [(w, 0) for w in 'Xem bản đầy đủ trên YouTube'.split()]])
+if not khong_duoi:
+    cum.append([dai + 0.2, dai + DUOI, [(w, 0) for w in 'Xem bản đầy đủ trên YouTube'.split()]])
 ass = ['[Script Info]', 'ScriptType: v4.00+', 'WrapStyle: 2', 'PlayResX: 1080', 'PlayResY: 1920', '',
        '[V4+ Styles]',
        'Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding',
@@ -108,14 +137,15 @@ open(os.path.join(tam, 't1.txt'), 'w').write(dong1)
 open(os.path.join(tam, 't2.txt'), 'w').write(dong2)
 
 tong = dai + DUOI
+MO = 0.3 if khong_duoi else 1.5   # giây nhỏ dần tiếng cuối; không có lời mời thì chỉ 0,3 để câu cuối không bị nhỏ
 co = min(84, int(RONG / (0.43 * max(len(dong1), len(dong2)))))
-chu = (f"drawtext=fontfile={ANTON}:textfile=t1.txt:fontsize={co}:fontcolor=0xFFF200:borderw=5:bordercolor=0x111111:x=(w-tw)/2:y=345,"
-       f"drawtext=fontfile={ANTON}:textfile=t2.txt:fontsize={co}:fontcolor=0xE8202A:borderw=5:bordercolor=white:x=(w-tw)/2:y={345 + int(co * 1.35)},"
+chu = (f"drawtext=fontfile={ANTON}:textfile=t1.txt:fontsize={co}:fontcolor=0xFFF200:borderw=5:bordercolor=0x111111:x=(w-tw)/2:y={Y_TIEU_DE},"
+       f"drawtext=fontfile={ANTON}:textfile=t2.txt:fontsize={co}:fontcolor=0xE8202A:borderw=5:bordercolor=white:x=(w-tw)/2:y={Y_TIEU_DE + int(co * GIAN_DONG)},"
        f"subtitles=pd.ass:fontsdir={PHONG}[v];")
-tieng = f"[0:a]apad=pad_dur={DUOI},atrim=0:{tong},afade=t=out:st={tong - 1.5}:d=1.5[a]"
+tieng = f"[0:a]apad=pad_dur={DUOI},atrim=0:{tong},afade=t=out:st={tong - MO}:d={MO}[a]"
 if doc:
     loc = f"[1:v]tpad=stop_mode=clone:stop_duration={DUOI}," + chu + tieng
-    vao = ['-ss', str(t0), '-to', str(t1), '-i', os.path.abspath(video), '-ss', str(t0), '-to', str(t1), '-i', os.path.abspath(doc)]
+    vao = ['-ss', str(t0), '-to', str(t1), '-i', os.path.abspath(video), *([] if doc_da_cat else ['-ss', str(t0), '-to', str(t1)]), '-i', os.path.abspath(doc)]
 else:
     loc = (f"color=c={nen}:s=1080x1920:r=30:d={tong}[bg];"
            f"[0:v]crop=1920:{CAT_DAY}:0:0,scale={RONG}:-2,tpad=stop_mode=clone:stop_duration={DUOI}[h];"

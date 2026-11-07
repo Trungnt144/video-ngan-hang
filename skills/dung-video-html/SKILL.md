@@ -1,16 +1,18 @@
 ---
 name: dung-video-html
-description: "Dựng video bằng MỘT trang HTML do Opus viết (cách làm LM-03 của Media): mọi giá trị trên màn hình là hàm của thời gian t (hàm seek(t)), công cụ chụp từng khung theo đồng hồ ảo rồi mã hoá MP4 bằng FFmpeg (30 khung/giây, hoặc 60 khung/giây có nhoè chuyển động), ghép giọng đọc và nhạc nền, soát bằng khung cắt từ chính file MP4. Dùng khi Trung nói: dựng video bằng HTML, một trang HTML ra video, làm theo mẫu repo Opus 5.5, dựng chất liệu CL-09 đến CL-14 khi chưa có khối cảnh Remotion, dựng thử một phong cách mới, dựng một cảnh để ghép vào Remotion, xuong_html, xuất MP4 từ HTML, nhoè chuyển động 60 khung/giây, cắt khung ghép ảnh lưới để xem, ghép nhạc và giọng vào MP4, LM-03. KHÔNG dùng cho: video dọc dùng 7 khối cảnh Remotion có sẵn (LM-01), dự án ngang Remotion có thuyết minh (LM-02), HyperFrames (LM-04), cảnh 3D tả thực bằng Blender (LM-05), clip AI (LM-06); khi video cần phát âm thanh hoặc video nhúng ngay trong trang; khi Trung chưa duyệt tổ hợp trục và kịch bản (chỉ dựng thử thì ghi rõ là bản thử)."
-version: 1.0.0
+description: "Dựng video bằng MỘT trang HTML do Opus viết (cách làm LM-03 của Media): mọi giá trị trên màn hình là hàm của thời gian t (hàm seek(t)), công cụ chụp từng khung theo đồng hồ ảo rồi mã hoá MP4 bằng FFmpeg (30 khung/giây, hoặc 60 khung/giây có nhoè chuyển động), ghép giọng đọc và nhạc nền, soát bằng khung cắt từ chính file MP4. Dùng khi Trung nói: dựng video bằng HTML, một trang HTML ra video, làm theo mẫu repo Opus 5.5, dựng chất liệu CL-09 đến CL-14 khi chưa có khối cảnh Remotion, dựng thử một phong cách mới, dựng một cảnh để ghép vào Remotion, xuong_html, xuất MP4 từ HTML, nhoè chuyển động 60 khung/giây, cắt khung ghép ảnh lưới để xem, ghép nhạc và giọng vào MP4, LM-03. KHÔNG dùng cho: video ngang có giọng thuyết minh làm theo kịch bản của kênh đã có file khuôn, một video hay một lô (skill lam-video-ba-chang); video dọc dùng 7 khối cảnh Remotion có sẵn (LM-01), dự án ngang Remotion có thuyết minh (LM-02), HyperFrames (LM-04), cảnh 3D tả thực bằng Blender (LM-05), clip AI (LM-06); khi video cần phát âm thanh hoặc video nhúng ngay trong trang; khi Trung chưa duyệt tổ hợp trục và kịch bản (chỉ dựng thử thì ghi rõ là bản thử)."
+version: 1.1.0
 author: macbooktrungnt, Claude Code
 platforms: [macos]
 metadata:
   lap_ngay: 2026-10-27
-  related_skills: [dung-hoat-canh-3d-blender, giao-muse-video]
+  related_skills: [dung-hoat-canh-3d-blender, giao-muse-video, lam-video-ba-chang]
   du_an_mau: xuong_html/2026.10.27_thu_ky_thuat
 ---
 
 # Dựng video bằng một trang HTML (LM-03)
+
+> **1.1.0** · 2026-11-05 · Video có giọng thuyết minh làm theo kịch bản chuyển sang skill `lam-video-ba-chang` (cách ba chặng, Trung chốt 05/11/2026); skill này giữ dựng thử phong cách và dựng một cảnh lẻ. **1.0.0** · 2026-10-27 · Bản đầu.
 
 Skill này gói cách làm đã chạy thật ngày 27/10/2026: mẫu lịch sử AI 60 giây theo phong cách repo Opus 5.5 (ba vòng xem và sửa, 4 khung đích) và lần thử kỹ thuật 6 giây của `xuong_html/`. Công cụ, cài đặt và lệnh mẫu: `xuong_html/README.md`. Điều kiện để trang xuất đúng: `tham_chieu/hop_dong_trang.md`. Lỗi đã gặp: `tham_chieu/loi_hay_gap.md`. Trang sống làm mẫu: `xuong_html/2026.10.27_thu_ky_thuat/trang.html` (kèm `nhip.json` và `SO_VONG_SUA.md` mẫu).
 
@@ -20,6 +22,7 @@ Tác tử Opus viết một file HTML (mẫu 60 giây: 1.324 dòng); công cụ 
 
 | Tình huống | Chọn |
 |---|---|
+| Video ngang có giọng thuyết minh làm theo kịch bản, một video hay một lô, của kênh đã có file khuôn trong `skills/lam-video-ba-chang/kenh/` (hiện: Chuyện nghề Ngân hàng) | skill `lam-video-ba-chang` (cách ba chặng: bốn tác tử ngữ cảnh mới, lệnh máy dùng chung); không làm theo các bước dưới đây. Kênh chưa có file khuôn: xem `kenh/README.md` của skill đó (video mẫu đầu tiên của kênh dựng bằng skill này) |
 | Chất liệu CL-09 đến CL-14 chưa có khối cảnh Remotion; dựng thử một phong cách mới; một cảnh lạ ngắn | LM-03 (skill này) |
 | Cần một cảnh làm bằng HTML rồi ghép vào video Remotion | LM-03 xuất MP4 một cảnh không tiếng, đưa vào Remotion như một clip (xem mục LM-06 của `05_cach_lam.md`) |
 | Video dọc dùng 7 khối cảnh có sẵn | LM-01: rẻ hơn (0,44 giây máy mỗi giây video, không tốn token viết trang) |

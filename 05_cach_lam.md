@@ -1,6 +1,7 @@
 # 05 — Bảy cách làm video (LM-01 đến LM-07)
 
 > Đọc khi chọn cách dựng một video (cửa chọn dựng ở `04_he_truc_dung.md`), hoặc khi Trung hỏi "làm bằng gì, mất bao lâu, tốn gì".
+> **Phiên bản:** 1.2 · **Cập nhật:** 2026-11-05 · LM-03 thêm chi phí video có giọng theo cách ba chặng đo trên lô 11 (52,6 → 28,4 USD mỗi video) và trỏ skill `lam-video-ba-chang`; bảng chọn nhanh, sơ đồ chọn, "Dùng khi", "Không dùng khi", "Giới hạn" của LM-03 cập nhật theo (Trung chốt 05/11/2026).
 > **Phiên bản:** 1.1 · **Cập nhật:** 2026-10-27 · Giới hạn LM-01 bỏ nhắc ElevenLabs (trỏ mốc từng từ bằng Whisper); dòng giấy phép Remotion trỏ `13_ban_quyen_va_bao_mat.md` mục 5.2 sau khi đối chiếu giấy phép gốc.
 > **Phiên bản:** 1.0 · **Cập nhật:** 2026-10-27 · Bản đầu. Gom số đo từ module video ngắn dọc (nay `09_video_doc_ngan.md`), công cụ media AI (nay `12_cong_cu_media_ai.md`), video ngang (nay `10_video_ngang_thuyet_minh.md`), phép thử "Lịch sử AI" ngày 27/10/2026 và bộ đo `xuong_html/cong_cu/KET_QUA_DO.md`. Cập nhật khi có số đo mới; mỗi số ghi nguồn và ngày.
 
@@ -18,7 +19,7 @@ Mã chất liệu CL-01 đến CL-16 và tên: xem bảng "Chất liệu và cá
 |---|---|---|---|---|---|---|
 | LM-01 | Remotion khối cảnh dọc | Điền dữ liệu JSON vào 7 khối cảnh dựng sẵn của Remotion (khung dựng video bằng React) | dọc 1080×1920 | 0,44 giây máy mỗi giây video | không đo riêng (chỉ chạy lệnh) | có sẵn |
 | LM-02 | Remotion dự án ngang | Mỗi video một dự án React, có giọng đọc, sơ đồ hoặc 3D bằng Three.js (thư viện dựng 3D trong trình duyệt) | ngang 1920×1080 | 2,8 giây máy mỗi giây video (3D) | chưa đo | có sẵn |
-| LM-03 | HTML một trang, chụp khung theo đồng hồ ảo | Opus viết một trang HTML, công cụ chụp từng khung rồi ghép MP4 | cả hai | 1,2–1,5 giây máy mỗi giây video (30 khung/giây); 23,3 phút cho 60 giây (60 khung/giây có nhoè) | 150 nghìn (30 giây, một lượt); 219 nghìn (60 giây, 3 vòng sửa) | đã thử |
+| LM-03 | HTML một trang, chụp khung theo đồng hồ ảo | Opus viết một trang HTML, công cụ chụp từng khung rồi ghép MP4 | cả hai | 1,2–1,5 giây máy mỗi giây video (30 khung/giây); 23,3 phút cho 60 giây (60 khung/giây có nhoè) | 150 nghìn (30 giây, một lượt); 219 nghìn (60 giây, 3 vòng sửa); video 5–6 phút có giọng theo cách ba chặng: 28,4 USD quy đổi mỗi video (lô 11, mục 4) | có sẵn cho video có giọng (skill `lam-video-ba-chang`); đã thử cho chất liệu mới |
 | LM-04 | HyperFrames | Trang HTML + GSAP theo khuôn HeyGen, có lệnh kiểm chữ đè | cả hai | 0,44 giây máy mỗi giây video | 154 nghìn (75 giây, dựng từ đầu) | đã thử |
 | LM-05 | Blender Cycles + ghép Remotion | Vật thật dò tia sáng, bóng mềm, nhoè chuyển động | ngang | 13 giây máy mỗi khung (bản nháp 960×540) | chưa đo | có sẵn (skill) |
 | LM-06 | Clip AI ghép Remotion | Clip quay tả thực do AI sinh, dùng làm cảnh nền | cả hai | Muse khoảng 2 phút mỗi clip 10 giây | chưa đo | có sẵn (Muse), tay (Flow) |
@@ -30,6 +31,7 @@ Sơ đồ chọn, đi từ trên xuống, dừng ở dòng đầu tiên khớp:
 Video cần gì?
 │
 ├─ Dọc, tối đa 90 giây, chữ + khối + số, tông MAU-01 (Đêm & đỏ) ──► LM-01
+├─ Ngang có giọng, kênh đã có khuôn trang HTML (Ngân hàng) ───────► LM-03 ba chặng
 ├─ Ngang có giọng đọc, sơ đồ hoặc 3D dựng từ khối cơ bản ─────────► LM-02
 ├─ Chất liệu hoặc bố cục chưa có khối cảnh (CL-09 đến CL-16),
 │  tối đa khoảng 60 giây, học từ video mẫu ───────────────────────► LM-03
@@ -104,8 +106,8 @@ Trước khi hứa với Trung: LM-03, LM-05 và LM-06 phải nói rõ giờ má
 
 **Là gì.** Opus viết một file HTML; mọi giá trị trên màn hình là hàm của thời gian t (`seek(t)` hoặc `renderAt(t)`: cho t giây thì vẽ đúng khung hình giây đó, không hẹn giờ, không số ngẫu nhiên thật). Công cụ `xuong_html/cong_cu/xuat_mp4.mjs` thay đồng hồ của trang bằng đồng hồ ảo (Playwright, công cụ điều khiển trình duyệt bằng mã), chụp từng khung, đẩy vào FFmpeg (công cụ xử lý video) ghép MP4; kết quả không đổi dù máy nhanh hay chậm. `xuat_nhoe.sh` chụp gấp 8 lần số khung rồi trộn 4 khung phụ thành một bằng bộ lọc `tmix` để có nhoè chuyển động.
 
-**Dùng khi.** Cần thử nhanh một chất liệu hoặc bố cục học từ video mẫu; video không có giọng đọc dài hoặc giọng ghép sau; cảnh 3 đến 60 giây; muốn nhoè chuyển động và hạt kiểu phim; cảnh lẻ để ghép vào video Remotion (mục 9).
-**Không dùng khi.** Video 5 phút có giọng đọc, mốc câu, phụ đề chạy chữ nối sẵn (LM-02 làm sẵn những phần đó); cần tuyệt đối không phụ thuộc mạng mà chưa lưu thư viện cạnh file; cảnh WebGL nặng (chưa đo).
+**Dùng khi.** Cần thử nhanh một chất liệu hoặc bố cục học từ video mẫu; video không có giọng đọc dài hoặc giọng ghép sau; cảnh 3 đến 60 giây; muốn nhoè chuyển động và hạt kiểu phim; cảnh lẻ để ghép vào video Remotion (mục 9); video ngang có giọng thuyết minh của kênh đã có khuôn trang HTML (Chuyện nghề Ngân hàng), làm theo skill `lam-video-ba-chang` (từ 05/11/2026; chi phí ở bảng dưới).
+**Không dùng khi.** Video 5 phút có giọng đọc, mốc câu, phụ đề chạy chữ nối sẵn mà kênh chưa có khuôn trang HTML (LM-02 làm sẵn những phần đó); cần tuyệt đối không phụ thuộc mạng mà chưa lưu thư viện cạnh file; cảnh WebGL nặng (chưa đo).
 
 **Chất liệu làm được.** CL-09 đã thử. CL-12, CL-13, CL-05 đã thử một phần trong video "Lịch sử AI". CL-10, CL-11, CL-14, CL-16 phải dựng, chưa chạy lần nào. Hướng viết sẵn cho từng chất liệu: `tai_san/khuon_prompt/huong_theo_chat_lieu.md`.
 
@@ -134,7 +136,21 @@ ffmpeg -i "<ra>.mp4" -i "<giong_va_nhac>.wav" -c:v copy -c:a aac "<ra_co_tieng>.
 | Giờ máy | 30 khung/giây: 36–45 giây máy cho 30 giây video (1,2–1,5 giây máy mỗi giây video, bản một lượt); bộ đo 10 giây: Canvas 0,96, SVG và GSAP 0,97, WebGL (một khối hộp) 1,39 giây máy mỗi giây video (`KET_QUA_DO.md`, 27/10/2026). 60 khung/giây có nhoè, 60 giây: 23,3 phút máy (chụp 28.800 khung phụ 21,6 phút, trộn và mã hoá 1,7 phút), RAM 0,86 GB, file 134 MB do lớp hạt nhiễu. Nhoè làm máy chạy lâu gấp khoảng 8 lần; bỏ nhoè ước khoảng 3 phút cho 60 giây |
 | Công của Trung | Phép thử 27/10: 3 lần chọn trong bảng hỏi, khoảng 5–10 phút xem so sánh. Video thật: thêm cửa duyệt storyboard |
 
-**Giới hạn.** MP4 ra không có tiếng, ghép sau bằng FFmpeg hoặc trong Remotion. Thẻ `<video>` nhúng, Web Audio, Web Worker, `OffscreenCanvas` trong worker, bộ lập lịch `MessageChannel` vẫn dùng giờ thật nên không dùng trong trang. `Math.random` bị thay bằng bộ sinh cố định khi xuất, nên trang phải có bộ sinh riêng có hạt giống. `--song-song N` chỉ nhanh hơn khoảng 20% và tốn gấp đôi RAM, chỉ đúng khi trang xác định. Bản một lượt còn 1–2 lỗi nhìn thấy; mẫu lịch sử AI sau 3 vòng sửa đạt ngang bản Skillry làm lại nhưng còn kém bản gốc ở độ chi tiết từng chương và chất liệu 3D. Chưa có video LM-03 nào dùng giọng đọc và mốc câu VieNeu của Media.
+**Chi phí video có giọng theo cách ba chặng** (skill `lam-video-ba-chang`). USD quy đổi giá niêm yết mỗi video, tính từ nhật ký tác tử; nguồn `~/Documents/Grok/Su dung grok/research/2026.11.04_chi_phi_video_ngan_hang/ket_qua_thu_ba_chang.md` mục 9–10, đo 05/11/2026.
+
+| Chặng | Cách cũ N201–N205 (một tác tử dựng trọn) | Lô 11 ba chặng (N216, N217, N211, N215, N212, N221) | Đổi |
+|---|---|---|---|
+| A nguồn, kịch bản (Opus) | 7,4 | 5,5 | −27% |
+| B dựng (Opus) | 15,0 | 10,1 | −33% |
+| Soát (Opus) | 5,7 | 5,1 | −9% |
+| C sửa (cách cũ: tác tử Opus làm trọn; ba chặng: Sonnet) | 13,9 | 5,1 | −64% |
+| Phần chung (phiên giữ lô, tra nguồn ngoài) | 10,6 | 2,7 | −75% |
+| **Tổng** | **52,6** | **28,4** | **−46%** |
+| USD mỗi phút video | 10,6 | 4,9 | −53% |
+
+Thời gian từ chặng A tới bản nháp sau chặng C: 1 giờ 45 phút tới 2 giờ mỗi video (chặng B 30–43 phút, chặng C 27–43 phút); máy chạy nền mỗi video: giọng 238–455 giây, kết xuất 364–472 giây. Không video nào trượt soát trên 10 video ba chặng. Ngữ cảnh lượt đầu mỗi tác tử: 33,6–35,0 nghìn token ở lô 11 (phiên giao diện, Opus). Đo cùng một cách ngày 05/11/2026 (phiên `claude -p`, tác tử Sonnet, cùng lời nhắn): 32,4–33,2 nghìn trước khi bật `omitClaudeMd`, 5,8–6,5 nghìn sau. Bốn việc tối ưu chốt 05/11/2026 (quãng chờ của tác tử dưới 5 phút, chặng C kết xuất một lần, mức suy luận theo chặng, `omitClaudeMd`) ước đưa chi phí về khoảng 23–25 USD mỗi video có kịch bản sẵn, 25–27 nếu viết từ đầu; chưa đo trên video thật.
+
+**Giới hạn.** MP4 ra không có tiếng, ghép sau bằng FFmpeg hoặc trong Remotion. Thẻ `<video>` nhúng, Web Audio, Web Worker, `OffscreenCanvas` trong worker, bộ lập lịch `MessageChannel` vẫn dùng giờ thật nên không dùng trong trang. `Math.random` bị thay bằng bộ sinh cố định khi xuất, nên trang phải có bộ sinh riêng có hạt giống. `--song-song N` chỉ nhanh hơn khoảng 20% và tốn gấp đôi RAM, chỉ đúng khi trang xác định. Bản một lượt còn 1–2 lỗi nhìn thấy; mẫu lịch sử AI sau 3 vòng sửa đạt ngang bản Skillry làm lại nhưng còn kém bản gốc ở độ chi tiết từng chương và chất liệu 3D. Chưa có video LM-03 nào dùng giọng đọc và mốc câu VieNeu của Media tới 27/10/2026; sau đó các video kênh Chuyện nghề Ngân hàng dùng giọng và mốc câu VieNeu, từ 05/11/2026 làm theo skill `lam-video-ba-chang`.
 
 **Thành phẩm mẫu.** `san_pham/2026.10.27.duyet_phong_cach_opus55/tai_nguyen/ban_nhap/2026.10.27.lich_su_ai_claude_v2.mp4` (60 giây, 60 khung/giây có nhoè), `2026.10.27.chay_thu_cocktail_v1.mp4`, `2026.10.27.chay_thu_tang_ap_v1.mp4` (hai bản chạy thử một lượt 30 giây); mã `kloss_claude_v2.html`; sổ 3 vòng sửa `NHAT_KY_VONG_SUA.md` cùng thư mục.
 

@@ -1,6 +1,7 @@
 # AGENTS — Project "VideoNganHang"
 
 > Đọc file này ĐẦU TIÊN mỗi phiên, rồi chỉ mở đúng file cần cho việc đang làm (nạp lười). Dùng chung cho Hermes, Antigravity và Claude Code.
+> **1.3** · 2026-11-07 · Chép từ Media skill `lam-video-ba-chang` (cách ba chặng), bốn tác tử `ba-chang-*`, các script `chuoi_giong.py`, `chuoi_ket_xuat.py`, `kiem_trang.mjs`, `gop_kich_ban_pdf.py`, `kiem_an_danh_kich_ban.py` và bản sửa module 01, 05, 07, 18 tới ngày 05/11/2026; đổi thư mục gốc trong skill sang VideoNganHang. Project lên GitHub repo riêng tư `video-ngan-hang`.
 > **1.2** · 2026-11-03 · Quy tắc 9 đổi sang hình vẽ đúng cơ chế (câu cơ chế, phép thử tắt tiếng, không chép cảnh n199), vì N301 và N302 qua hết cổng nhưng hình không liên quan khái niệm; chuẩn hình và phiếu soát độc lập lên bản 2. **1.1** · 2026-11-03 · Toàn bộ việc chạy bằng Gemini 3.8 Flash qua Antigravity (Trung chốt); thêm chuẩn hình, máy đo hình làm cổng, soát độc lập bằng phiên mới (sau khi video N301 không đạt: 0/8 chương qua máy đo). **1.0** · 2026-11-03 · Dựng từ project Media (nằm trong `~/Documents/Grok/Media`) để làm video chiến dịch Chuyện nghề Ngân hàng theo đúng cách 13 video làm bằng Claude ngày 29/10–02/11/2026. Project này độc lập: có bản chép riêng của khuôn dựng, công cụ, skill và kho tài sản; sửa ở đây không ảnh hưởng Media và ngược lại.
 
 ## Vai trò
@@ -19,6 +20,7 @@ Xưởng làm video giải thích thuật ngữ và nghiệp vụ ngân hàng ch
 | Yêu cầu | Đọc trước |
 |---|---|
 | Làm một video mới (chủ đề từ sổ nợ hoặc Trung vừa gửi) | skill `lam-video-ngan-hang` |
+| Làm video hoặc một lô video bằng Claude Code theo cách ba chặng (phiên giữ lô giao bốn tác tử `.claude/agents/ba-chang-*`; 28,4 USD mỗi video ở Media 05/11/2026). Chỉ Claude Code chạy được; Antigravity, Hermes dùng skill `lam-video-ngan-hang` | skill `skills/lam-video-ba-chang/` (tác tử không nạp file này: sửa quy tắc cứng thì sửa cả `tham_chieu/quy_tac_chung.md` mục 0) |
 | Quy tắc chiến dịch ngân hàng | `tai_san/chien_dich_ngan_hang/quy_tac_chien_dich.md` |
 | Hỏi lại cho rõ yêu cầu; câu hỏi mẫu | `02_lam_ro_yeu_cau.md` |
 | Viết kịch bản, kiểm chứng nguồn, quy tắc lời đọc | `03_kich_ban_va_loi_viet.md` |

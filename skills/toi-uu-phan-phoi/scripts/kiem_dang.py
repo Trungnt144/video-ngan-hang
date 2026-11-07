@@ -147,7 +147,7 @@ def kiem(thu_muc, kiem_chu=True):
         ra["viec_tay"] += ["%s: %s" % (TEN_KHOI[khoi], x) for x in VIEC_TAY[khoi]]
     if not ra["ban"]:
         ra["loi"].append("không có file video ngoài cùng thư mục")
-    if "youtube_shorts" not in ra["ban"] and "youtube_dai" in ra["ban"]:
+    if not {"youtube_shorts", "tiktok", "facebook"} & set(ra["ban"]) and "youtube_dai" in ra["ban"]:
         ra["nhac"].append("chưa có bản dọc (_shorts_, _tiktok_, _reels_): chỉ đăng được YouTube video dài")
     ra["nhan_ai"] = nhan_ai(thu_muc)
     qua_han = [g["khoa"] for g in ds_gh if (dt.date.today() - dt.date.fromisoformat(g["ngay_doc"])).days > 90]

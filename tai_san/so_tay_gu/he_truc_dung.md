@@ -78,7 +78,7 @@ Nguồn mẫu: https://github.com/yihui-dev/awesome-opus5-5-videos Liên kết m
 | BC-11 | Một ý toàn khung ngang | Chữ khổng lồ chiếm gần hết khung, một ý mỗi nhịp; bản dọc dùng BC-01 kèm CL-11 | ngang 1920×1080 | CL-11, CL-12, CL-15 | D-01 | nháp |
 | BC-12 | Sa bàn giữa khung dọc | Sa bàn 3D hoặc bề mặt toán ở giữa khung, tiêu đề phía trên, thẻ nhỏ ở phía dưới | dọc 1080×1920 | CL-13, CL-14 | D-11 | nháp |
 | BC-13 | Bảng trắng toàn khung | Bảng trắng chiếm toàn khung, tiêu đề viết tay ở góc trái trên, phụ đề ở dải chân khung | ngang 1920×1080 | CL-10, CL-05 | D-10 | nháp |
-| BC-14 | Ba tầng dọc | Nền một màu (lấy màu nền của video ngang); tiêu đề hai dòng in hoa (vàng viền đen, đỏ viền trắng) đứng yên ở y 330–560; hình ngang rộng 900 điểm ảnh ở giữa (x 90–990, từ y 660); phụ đề 87 điểm ảnh có viền, từng chữ nảy lên khi được đọc, ngay dưới hình; chừa trống trên 320, dưới 420 và mỗi bên 90 điểm ảnh (ứng dụng Facebook cắt khoảng 60 điểm ảnh mỗi bên, đo 02/11/2026). Ghép từ video ngang YouTube đã xong bằng scripts/ghep_ba_tang.py, không dựng lại cảnh | dọc 1080×1920 | CL-01, CL-02, CL-03 |  | nháp |
+| BC-14 | Ba tầng dọc | Nền một màu (lấy màu nền của video ngang); tiêu đề hai dòng in hoa (vàng viền đen, đỏ viền trắng) đứng yên ở y 330–580; hình ngang rộng 900 điểm ảnh ở giữa (x 90–990, từ y 660); phụ đề 87 điểm ảnh có viền, từng chữ nảy lên khi được đọc, ngay dưới hình; chừa trống trên 320, dưới 420 và mỗi bên 90 điểm ảnh (ứng dụng Facebook cắt khoảng 60 điểm ảnh mỗi bên, đo 02/11/2026). Ghép từ video ngang YouTube đã xong bằng scripts/ghep_ba_tang.py, không dựng lại cảnh | dọc 1080×1920 | CL-01, CL-02, CL-03 |  | nháp |
 
 ## Tông màu (MAU)
 
